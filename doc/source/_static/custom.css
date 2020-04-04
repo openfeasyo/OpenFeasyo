@@ -1,0 +1,16 @@
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+    color: rgba(11, 206, 196, 1.0);
+}
+
+
+.wy-nav-top {
+	background: rgba(11, 206, 196, 1.0);
+}
+
+a {
+	color: rgba(8, 189, 180, 1.0);
+}
+
+.wy-nav-content a:hover {
+	color: rgba(102, 102, 102, 1.0);
+}
