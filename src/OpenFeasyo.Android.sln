@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.Platform", "OpenFeasyo.Platform\Platforms\Android\OpenFeasyo.Platform.csproj", "{629E19A8-CD11-4AE9-A9BF-D37345DC5D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.GameTools", "OpenFeasyo.GameTools\Platforms\Android\OpenFeasyo.GameTools.csproj", "{280DC56F-77A2-4A1E-A9C7-72FF2231447F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drivers", "Drivers", "{5D3C36D4-FB60-47E3-989E-C30B388D3D93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrignoEmg", "Drivers\TrignoEmg\Platforms\Android\TrignoEmg.csproj", "{A98071C3-9492-42E6-B440-BCD8EDA74AE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzers", "Analyzers", "{B3BC6B20-63C2-45DF-8444-451933113A40}"
+EndProject	
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C3dSerializer", "Analyzers\C3dSerializer\Platforms\Android\C3dSerializer.csproj", "{1C965840-4110-4CFA-827C-3B48C0AEB35B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{629E19A8-CD11-4AE9-A9BF-D37345DC5D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629E19A8-CD11-4AE9-A9BF-D37345DC5D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629E19A8-CD11-4AE9-A9BF-D37345DC5D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629E19A8-CD11-4AE9-A9BF-D37345DC5D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280DC56F-77A2-4A1E-A9C7-72FF2231447F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280DC56F-77A2-4A1E-A9C7-72FF2231447F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280DC56F-77A2-4A1E-A9C7-72FF2231447F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280DC56F-77A2-4A1E-A9C7-72FF2231447F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A98071C3-9492-42E6-B440-BCD8EDA74AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98071C3-9492-42E6-B440-BCD8EDA74AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98071C3-9492-42E6-B440-BCD8EDA74AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98071C3-9492-42E6-B440-BCD8EDA74AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C965840-4110-4CFA-827C-3B48C0AEB35B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C965840-4110-4CFA-827C-3B48C0AEB35B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C965840-4110-4CFA-827C-3B48C0AEB35B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C965840-4110-4CFA-827C-3B48C0AEB35B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A98071C3-9492-42E6-B440-BCD8EDA74AE8} = {5D3C36D4-FB60-47E3-989E-C30B388D3D93}
+		{1C965840-4110-4CFA-827C-3B48C0AEB35B} = {B3BC6B20-63C2-45DF-8444-451933113A40}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F88C5233-DA1D-4C3D-8322-CF2D61DE0996}
+	EndGlobalSection
+EndGlobal
