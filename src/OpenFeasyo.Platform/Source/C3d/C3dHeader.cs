@@ -6,12 +6,7 @@
 // ETRO, Vrije Universiteit Brussel
 // Copyright (C) 2015 Lubos Omelina. All rights reserved.
 //-----------------------------------------------------------------------------
-
-
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Vub.Etro.IO
 {
