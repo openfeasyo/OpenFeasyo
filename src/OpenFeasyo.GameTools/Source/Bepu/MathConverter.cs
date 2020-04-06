@@ -1,11 +1,21 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*
+ * The program is developed as a data collection tool in the fields of motion 
+ * analysis and physical condition.The user of the software is motivated to 
+ * complete exercises through the use of Games. This program is available as
+ * a part of the open source project OpenFeasyo found at
+ * https://github.com/openfeasyo/OpenFeasyo>.
+ * 
+ * Copyright (c) 2020 - Lubos Omelina
+ * 
+ * This program is free software: you can redistribute it and/or modify it 
+ * under the terms of the GNU General Public License version 3 as published 
+ * by the Free Software Foundation. The Software Source Code is submitted 
+ * within i-DEPOT holding reference number: 122388.
+ */
+using Microsoft.Xna.Framework;
 
 namespace OpenFeasyo.GameTools.Bepu
 {
-    /// <summary>
-    /// Helps convert between XNA math types and the BEPUphysics replacement math types.
-    /// A version of this converter could be created for other platforms to ease the integration of the engine.
-    /// </summary>
     public static class MathConverter
     {
         //Vector2
@@ -37,7 +47,6 @@ namespace OpenFeasyo.GameTools.Bepu
             bepuVector.Y = xnaVector.Y;
         }
 
-        //Vector3
         public static Vector3 Convert(BEPUutilities.Vector3 bepuVector)
         {
             Vector3 toReturn;
@@ -92,7 +101,6 @@ namespace OpenFeasyo.GameTools.Bepu
 
         }
 
-        //Matrix
         public static Matrix Convert(BEPUutilities.Matrix matrix)
         {
             Matrix toReturn;
@@ -201,7 +209,6 @@ namespace OpenFeasyo.GameTools.Bepu
 
         }
 
-        //Quaternion
         public static Quaternion Convert(BEPUutilities.Quaternion quaternion)
         {
             Quaternion toReturn;
@@ -238,7 +245,6 @@ namespace OpenFeasyo.GameTools.Bepu
             bepuQuaternion.W = quaternion.W;
         }
 
-        //Ray
         public static BEPUutilities.Ray Convert(Ray ray)
         {
             BEPUutilities.Ray toReturn;
@@ -267,7 +273,6 @@ namespace OpenFeasyo.GameTools.Bepu
             Convert(ref ray.Direction, out xnaRay.Direction);
         }
 
-        //BoundingBox
         public static BoundingBox Convert(BEPUutilities.BoundingBox boundingBox)
         {
             BoundingBox toReturn;
@@ -296,7 +301,6 @@ namespace OpenFeasyo.GameTools.Bepu
             Convert(ref boundingBox.Max, out bepuBoundingBox.Max);
         }
 
-        //BoundingSphere
         public static BoundingSphere Convert(BEPUutilities.BoundingSphere boundingSphere)
         {
             BoundingSphere toReturn;
@@ -325,7 +329,6 @@ namespace OpenFeasyo.GameTools.Bepu
             bepuBoundingSphere.Radius = boundingSphere.Radius;
         }
 
-        //Plane
         public static Plane Convert(BEPUutilities.Plane plane)
         {
             Plane toReturn;
