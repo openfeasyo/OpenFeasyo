@@ -298,9 +298,6 @@
     <Compile Include="..\..\Source\Data\Offline\OfflineDatapoint.cs">
       <Link>Data\Offline\OfflineDatapoint.cs</Link>
     </Compile>
-    <Compile Include="..\..\Source\Data\Program.cs">
-      <Link>Data\Program.cs</Link>
-    </Compile>
     <Compile Include="..\..\Source\Data\SeriousGames.cs">
       <Link>Data\SeriousGames.cs</Link>
     </Compile>
