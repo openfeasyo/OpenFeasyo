@@ -1,0 +1,27 @@
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                                               \\                             \\         \\                        \\                            \\\\\                                                                                  e
+                                               \\                             \\         \\                        \\                             \\\\\                                                                                 e
+                  R        3          3        \\                             \\      3  \\            R           \\                              \\\\\                          R                                   3                 e
+                     R        R           R    \\                  R          \\         \\        3         R     \\           R                   \\\\\                 R                  3         R                                e
+                        3         R            \\         3            R      \\   3       R             3         \\       R             3          \\\\\           3               3           R             R             3          e
+                \\\                            \\              R              \\                R                                   R          R      \\\\\                   R                          3          R                   e
+                \\\          G                        3                   3                                           3                                         3                           R                             3             e
+                \\\                     G                                                    3                   B                          3                                                                   G                       e
+                \\\      3        B            3                   3       B          G                   3               G       3                      3              lmmmmmmmmmmmmmr           3                  3            @     e
+                \\\                   3                 3                                        B                                              G                                                         B                             e
+                \\\           3                \\              G        3     G           B                   lmmmmmmmmmmr             B                                                     G                       lmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+                \\\                       1    \\          B                      B                  G                                                                                  B             3           lmr
+                \\\             Y              \\                                                  1                 1                     1      \\\\\                Y                                       lmr
+                \\\       1         Y          \\                      mmm                1                    Y             1                  \\\\\             Y           mmm                           lmr
+                \\\                            \\                   mmm###mmm                            Y               Y           1         \\\\\                 Y     mmm###mmm                     lmr
+                \\\                            \\                mmm#########mmm                                                              \\\\\                     mmm#########mmm               lmr
+mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+! m ground_grass
+! # ground_dirt
+! * ice
+! ~ water
+! % deep_water
+! ! exclamation tile
+! @ exit
+! \ crate
+! =fence

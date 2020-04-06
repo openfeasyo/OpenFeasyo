@@ -1,0 +1,99 @@
+In this game we use following assets:
+
+--------------- 
+Font:
+---------------
+Vitamin
+Link: https://www.dafont.com/vitamin.font
+License: Free for personal use
+--------------- 
+
+
+--------------- 
+Graphics:
+---------------
+Platformer Art: Pixel Redux
+Link: https://www.kenney.nl/assets/platformer-art-pixel-redux
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+Nature Parallax Background
+Link: https://raventale.itch.io/parallax-background
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+Underwater background
+Author: lzubiaur
+Link: https://opengameart.org/content/underwater-background-0
+License: https://creativecommons.org/licenses/by/3.0/
+---------------
+
+--------------- 
+Sound:
+--------------- 
+Success Fanfare Trumpets
+Link: https://freesound.org/people/FunWithSound/sounds/456966/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+explosion7.wav
+Link: https://freesound.org/people/ReadeOnly/sounds/186958/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+UI Button Click
+Link: https://freesound.org/people/benzix2/sounds/467951/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+coin object
+Link: https://freesound.org/people/Leszek_Szary/sounds/146723/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+cute impact
+Link: https://freesound.org/people/Reitanna/sounds/344033/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+euh3.wav
+Link: https://freesound.org/people/Reitanna/sounds/344059/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+big gasp.wav
+Link: https://freesound.org/people/Reitanna/sounds/343878/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+SFX_Submerge
+Link: https://freesound.org/people/Perel/sounds/173438/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+3 up fast 1
+Link: https://freesound.org/people/Leszek_Szary/sounds/171583/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+Click_effect.wav
+Link: https://freesound.org/people/Fachii/sounds/216859/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+Button hover.wav
+Link: https://freesound.org/people/Fachii/sounds/338229/
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+Goblins Sound Pack (goblin-8.wav)
+Link: https://opengameart.org/content/goblins-sound-pack
+License: https://creativecommons.org/share-your-work/public-domain/cc0/
+--------------- 
+
+
+
+
+--------------- 
+Music:
+--------------- 
+
+Arcadia by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/3377-arcadia
+License: http://creativecommons.org/licenses/by/4.0/
+--------------- 
+Scheming Weasel (faster version) by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/4326-scheming-weasel-faster-version-
+License: http://creativecommons.org/licenses/by/4.0/
+--------------- 
+Wholesome by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/5050-wholesome
+License: http://creativecommons.org/licenses/by/4.0/
+--------------- 

@@ -1,0 +1,34 @@
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                                                                                                                                                                                                                                                                                                e
+                                                                                                                                                                                                                               B                                                                e
+                                                                                                                                                                                                                        G                                                                       e
+                                                              2                     B                                                    B                                                                                  B                                                                   e
+                                                                              3        G        R                                            B                                                                      2              3                                                            e
+                                                            lmmmr                                                                         G        R                                                                                         2                2                                 e
+                                                      1                     lmmmr             lmmmr      3                                                                                                      lmmmmmmmmmmmmmr                                                                 e
+                                                                                     lm!mr                                    lmmmmmr   lmmmr   lmmmmmr                              2                    R                                lmmmr            lmmmr                         @     e
+                                                    lmmmr                                              lmmmr           1                                           lmmmr                                                                                                                        e
+                                             2                      lmmmr                                                                                    1                     lmmmr           lmmmmmmmmr                     lmmmr             lmmmr                           lmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+                                                              1                                                   lmmmmmmmmmr              G                                                                           2                                                         lmr
+                                          lmmmmmr                          G                  lmmmr             lr           lr               B            lm!mr    B                                                                                                         lmr
+                   2           2                            lmmmr             B      lmmmr                    lr               lr      B                               B   lm!mr           lmmmr                     lmmmr                                 2               lmr
+                                                                        B                                                                   G                    G                    Y                                                                                 lmr
+             Y           Y                                    Y                        Y                   Y   Y                                                                   Y                                 Y  Y                             Y              lmr
+                                                                                                                                                                                                                                                                  lmr
+mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm'''mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm'''mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm'''mmmmmmmmmmmmmmmmmmm
+! l grass left
+! m grass middle
+! r grass right
+! # dirt
+
+! | invisible tile
+
+! \ crate
+! = fence
+! ' lava
+! " deep lava
+
+! ! special tile
+! @ exit
+
+! R red enemy
