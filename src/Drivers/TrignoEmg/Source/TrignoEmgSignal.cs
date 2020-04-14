@@ -5,7 +5,7 @@
  * a part of the open source project OpenFeasyo found at
  * https://github.com/openfeasyo/OpenFeasyo>.
  * 
- * Copyright (c) 2020 - Lubos Omelina
+ * Copyright (c) 2020 - Katarina Kostkova
  * 
  * This program is free software: you can redistribute it and/or modify it 
  * under the terms of the GNU General Public License version 3 as published 

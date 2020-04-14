@@ -5,7 +5,7 @@
  * a part of the open source project OpenFeasyo found at
  * https://github.com/openfeasyo/OpenFeasyo>.
  * 
- * Copyright (c) 2020 - Katarina Kostkova
+ * Copyright (c) 2020 - Katarina Kostkova, Lubos Omelina
  * 
  * This program is free software: you can redistribute it and/or modify it 
  * under the terms of the GNU General Public License version 3 as published 
@@ -14,6 +14,8 @@
  */
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using DelsysAPI.Channels.Transform;
 using DelsysAPI.Components.TrignoBT;
 using DelsysAPI.Configurations;
@@ -135,19 +137,19 @@ namespace TrignoEmg
 
         public void InitializeDataSource()
         {
-            string key = "MIIBKjCB4wYHKoZIzj0CATCB1wIBATAsBgcqhkjOPQEBAiEA/////wAAAAEAAAAAAAAAAAA" +
-                         "AAAD///////////////8wWwQg/////wAAAAEAAAAAAAAAAAAAAAD///////////////wEIF" +
-                         "rGNdiqOpPns+u9VXaYhrxlHQawzFOw9jvOPD4n0mBLAxUAxJ02CIbnBJNqZnjhE50mt4Gff" +
-                         "pAEIQNrF9Hy4SxCR/i85uVjpEDydwN9gS3rM6D0oTlF2JjClgIhAP////8AAAAA////////" +
-                         "//+85vqtpxeehPO5ysL8YyVRAgEBA0IABEF0xR0UgL1Hm6go8bjoiqZZfbRPLIBc/UPicR3" +
-                         "2a454buNHg+oZqor4nbOxxLCz8B3EL93A1b4aFiSAbtOtkLk=";
-            string license = "<License><Id>4de59409-fc87-4778-8460-f5b80e609ad9</Id><Type>Standard</Type>" +
-                             "<Quantity>10</Quantity><LicenseAttributes><Attribute name=\"Software\">VS2012</Attribute>" +
-                             "</LicenseAttributes><ProductFeatures><Feature name=\"Sales\">True</Feature><Feature name=\"Billing\">False</Feature>" +
-                             "</ProductFeatures><Customer><Name>Bart Jansen</Name><Email>bjansen@etrovub.be</Email></Customer>" +
-                             "<Expiration>Sun, 16 Aug 2020 04:00:00 GMT</Expiration>" +
-                             "<Signature>MEYCIQCqAaLghKO9TG0EPFAwDlfVGIZRhLHk36ADv+Ih0md2sQIhALW0/kHRNc8k9vXOm4gB9kdriexC2Rnj/bwosUF/t5gG</Signature>" +
-                             "</License>";
+            var assembly = Assembly.GetCallingAssembly();
+            string key;
+            using (Stream stream = assembly.GetManifestResourceStream("PublicKey.lic"))
+            {
+                StreamReader sr = new StreamReader(stream);
+                key = sr.ReadLine();
+            }
+            string license;
+            using (Stream stream = assembly.GetManifestResourceStream("OpenFeasyo.lic"))
+            {
+                StreamReader sr = new StreamReader(stream);
+                license = sr.ReadToEnd();
+            }
 
 #if ANDROID
             var deviceSourceCreator = new DelsysAPI.Android.DeviceSourcePortable(key, license);
