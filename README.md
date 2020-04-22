@@ -6,7 +6,7 @@ The main goal is that our serious games:
 * support multiple input devices (accelerometers, 3D cameras, balance boards, EMG sensors) and their use at the same time
 <!--- * can be configured while playing, either directly or from second screen application -->
 
-Play our game Ghostly using touch or EMG sensors. More games and features are coming soon.
+Play our game [Ghostly](https://play.google.com/store/apps/details?id=be.vub.etro.ghostlyandroid) using touch or [EMG sensors](https://www.delsys.com/trigno/). More games and features are coming soon.
 
 # License
 All code in this repository is licensed under the GPLv3.
