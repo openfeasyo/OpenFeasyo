@@ -3076,6 +3076,2100 @@ namespace GhostlyGame
 			global::TrignoEmg.Resource.Styleable.ViewStubCompat_android_id = global::GhostlyGame.Resource.Styleable.ViewStubCompat_android_id;
 			global::TrignoEmg.Resource.Styleable.ViewStubCompat_android_inflatedId = global::GhostlyGame.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::TrignoEmg.Resource.Styleable.ViewStubCompat_android_layout = global::GhostlyGame.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Xamarin.Essentials.Resource.Attribute.font = global::GhostlyGame.Resource.Attribute.font;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::GhostlyGame.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderCerts = global::GhostlyGame.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderFetchStrategy = global::GhostlyGame.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderFetchTimeout = global::GhostlyGame.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderPackage = global::GhostlyGame.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Attribute.fontProviderQuery = global::GhostlyGame.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Essentials.Resource.Attribute.fontStyle = global::GhostlyGame.Resource.Attribute.fontStyle;
+			global::Xamarin.Essentials.Resource.Attribute.fontWeight = global::GhostlyGame.Resource.Attribute.fontWeight;
+			global::Xamarin.Essentials.Resource.Boolean.abc_action_bar_embed_tabs = global::GhostlyGame.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Xamarin.Essentials.Resource.Color.notification_action_color_filter = global::GhostlyGame.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Essentials.Resource.Color.notification_icon_bg_color = global::GhostlyGame.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Essentials.Resource.Color.ripple_material_light = global::GhostlyGame.Resource.Color.ripple_material_light;
+			global::Xamarin.Essentials.Resource.Color.secondary_text_default_material_light = global::GhostlyGame.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_horizontal_material = global::GhostlyGame.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_vertical_material = global::GhostlyGame.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_padding_horizontal_material = global::GhostlyGame.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_button_padding_vertical_material = global::GhostlyGame.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Essentials.Resource.Dimension.compat_control_corner_material = global::GhostlyGame.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Essentials.Resource.Dimension.notification_action_icon_size = global::GhostlyGame.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_action_text_size = global::GhostlyGame.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_big_circle_margin = global::GhostlyGame.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Essentials.Resource.Dimension.notification_content_margin_start = global::GhostlyGame.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Essentials.Resource.Dimension.notification_large_icon_height = global::GhostlyGame.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Essentials.Resource.Dimension.notification_large_icon_width = global::GhostlyGame.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Essentials.Resource.Dimension.notification_main_column_padding_top = global::GhostlyGame.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Essentials.Resource.Dimension.notification_media_narrow_margin = global::GhostlyGame.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Essentials.Resource.Dimension.notification_right_icon_size = global::GhostlyGame.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_right_side_padding_top = global::GhostlyGame.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Essentials.Resource.Dimension.notification_small_icon_background_padding = global::GhostlyGame.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Essentials.Resource.Dimension.notification_small_icon_size_as_large = global::GhostlyGame.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Essentials.Resource.Dimension.notification_subtext_size = global::GhostlyGame.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Essentials.Resource.Dimension.notification_top_pad = global::GhostlyGame.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Essentials.Resource.Dimension.notification_top_pad_large_text = global::GhostlyGame.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Essentials.Resource.Drawable.notification_action_background = global::GhostlyGame.Resource.Drawable.notification_action_background;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg = global::GhostlyGame.Resource.Drawable.notification_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low = global::GhostlyGame.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low_normal = global::GhostlyGame.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_low_pressed = global::GhostlyGame.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_normal = global::GhostlyGame.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Essentials.Resource.Drawable.notification_bg_normal_pressed = global::GhostlyGame.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Essentials.Resource.Drawable.notification_icon_background = global::GhostlyGame.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_bg = global::GhostlyGame.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_low_bg = global::GhostlyGame.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notification_tile_bg = global::GhostlyGame.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Essentials.Resource.Drawable.notify_panel_notification_icon_bg = global::GhostlyGame.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Essentials.Resource.Id.actions = global::GhostlyGame.Resource.Id.actions;
+			global::Xamarin.Essentials.Resource.Id.action_container = global::GhostlyGame.Resource.Id.action_container;
+			global::Xamarin.Essentials.Resource.Id.action_divider = global::GhostlyGame.Resource.Id.action_divider;
+			global::Xamarin.Essentials.Resource.Id.action_image = global::GhostlyGame.Resource.Id.action_image;
+			global::Xamarin.Essentials.Resource.Id.action_text = global::GhostlyGame.Resource.Id.action_text;
+			global::Xamarin.Essentials.Resource.Id.async = global::GhostlyGame.Resource.Id.async;
+			global::Xamarin.Essentials.Resource.Id.blocking = global::GhostlyGame.Resource.Id.blocking;
+			global::Xamarin.Essentials.Resource.Id.chronometer = global::GhostlyGame.Resource.Id.chronometer;
+			global::Xamarin.Essentials.Resource.Id.forever = global::GhostlyGame.Resource.Id.forever;
+			global::Xamarin.Essentials.Resource.Id.icon = global::GhostlyGame.Resource.Id.icon;
+			global::Xamarin.Essentials.Resource.Id.icon_group = global::GhostlyGame.Resource.Id.icon_group;
+			global::Xamarin.Essentials.Resource.Id.info = global::GhostlyGame.Resource.Id.info;
+			global::Xamarin.Essentials.Resource.Id.italic = global::GhostlyGame.Resource.Id.italic;
+			global::Xamarin.Essentials.Resource.Id.line1 = global::GhostlyGame.Resource.Id.line1;
+			global::Xamarin.Essentials.Resource.Id.line3 = global::GhostlyGame.Resource.Id.line3;
+			global::Xamarin.Essentials.Resource.Id.normal = global::GhostlyGame.Resource.Id.normal;
+			global::Xamarin.Essentials.Resource.Id.notification_background = global::GhostlyGame.Resource.Id.notification_background;
+			global::Xamarin.Essentials.Resource.Id.notification_main_column = global::GhostlyGame.Resource.Id.notification_main_column;
+			global::Xamarin.Essentials.Resource.Id.notification_main_column_container = global::GhostlyGame.Resource.Id.notification_main_column_container;
+			global::Xamarin.Essentials.Resource.Id.right_icon = global::GhostlyGame.Resource.Id.right_icon;
+			global::Xamarin.Essentials.Resource.Id.right_side = global::GhostlyGame.Resource.Id.right_side;
+			global::Xamarin.Essentials.Resource.Id.tag_transition_group = global::GhostlyGame.Resource.Id.tag_transition_group;
+			global::Xamarin.Essentials.Resource.Id.text = global::GhostlyGame.Resource.Id.text;
+			global::Xamarin.Essentials.Resource.Id.text2 = global::GhostlyGame.Resource.Id.text2;
+			global::Xamarin.Essentials.Resource.Id.time = global::GhostlyGame.Resource.Id.time;
+			global::Xamarin.Essentials.Resource.Id.title = global::GhostlyGame.Resource.Id.title;
+			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::GhostlyGame.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Essentials.Resource.Layout.notification_action = global::GhostlyGame.Resource.Layout.notification_action;
+			global::Xamarin.Essentials.Resource.Layout.notification_action_tombstone = global::GhostlyGame.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_custom_big = global::GhostlyGame.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_icon_group = global::GhostlyGame.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_part_chronometer = global::GhostlyGame.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Essentials.Resource.Layout.notification_template_part_time = global::GhostlyGame.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Essentials.Resource.String.status_bar_notification_info_overflow = global::GhostlyGame.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Info = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Time = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Title = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::GhostlyGame.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::GhostlyGame.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::GhostlyGame.Resource.Styleable.FontFamily;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::GhostlyGame.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::GhostlyGame.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontStyle = global::GhostlyGame.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontWeight = global::GhostlyGame.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_font = global::GhostlyGame.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontStyle = global::GhostlyGame.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontWeight = global::GhostlyGame.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderAuthority = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderCerts = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderPackage = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderQuery = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::GhostlyGame.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::GhostlyGame.Resource.Animation.abc_fade_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::GhostlyGame.Resource.Animation.abc_fade_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::GhostlyGame.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_popup_enter = global::GhostlyGame.Resource.Animation.abc_popup_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_popup_exit = global::GhostlyGame.Resource.Animation.abc_popup_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_shrink_fade_out_from_bottom = global::GhostlyGame.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_in_bottom = global::GhostlyGame.Resource.Animation.abc_slide_in_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_in_top = global::GhostlyGame.Resource.Animation.abc_slide_in_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_out_bottom = global::GhostlyGame.Resource.Animation.abc_slide_out_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_out_top = global::GhostlyGame.Resource.Animation.abc_slide_out_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_in = global::GhostlyGame.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_out = global::GhostlyGame.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_in = global::GhostlyGame.Resource.Animation.design_snackbar_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_out = global::GhostlyGame.Resource.Animation.design_snackbar_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromLeft = global::GhostlyGame.Resource.Animation.EnterFromLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromRight = global::GhostlyGame.Resource.Animation.EnterFromRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToLeft = global::GhostlyGame.Resource.Animation.ExitToLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToRight = global::GhostlyGame.Resource.Animation.ExitToRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.tooltip_enter = global::GhostlyGame.Resource.Animation.tooltip_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.tooltip_exit = global::GhostlyGame.Resource.Animation.tooltip_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_appbar_state_list_animator = global::GhostlyGame.Resource.Animator.design_appbar_state_list_animator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarDivider = global::GhostlyGame.Resource.Attribute.actionBarDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarItemBackground = global::GhostlyGame.Resource.Attribute.actionBarItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarPopupTheme = global::GhostlyGame.Resource.Attribute.actionBarPopupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::GhostlyGame.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSplitStyle = global::GhostlyGame.Resource.Attribute.actionBarSplitStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarStyle = global::GhostlyGame.Resource.Attribute.actionBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabBarStyle = global::GhostlyGame.Resource.Attribute.actionBarTabBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabStyle = global::GhostlyGame.Resource.Attribute.actionBarTabStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabTextStyle = global::GhostlyGame.Resource.Attribute.actionBarTabTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTheme = global::GhostlyGame.Resource.Attribute.actionBarTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarWidgetTheme = global::GhostlyGame.Resource.Attribute.actionBarWidgetTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionButtonStyle = global::GhostlyGame.Resource.Attribute.actionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionDropDownStyle = global::GhostlyGame.Resource.Attribute.actionDropDownStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionLayout = global::GhostlyGame.Resource.Attribute.actionLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionMenuTextAppearance = global::GhostlyGame.Resource.Attribute.actionMenuTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionMenuTextColor = global::GhostlyGame.Resource.Attribute.actionMenuTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeBackground = global::GhostlyGame.Resource.Attribute.actionModeBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCloseButtonStyle = global::GhostlyGame.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCloseDrawable = global::GhostlyGame.Resource.Attribute.actionModeCloseDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCopyDrawable = global::GhostlyGame.Resource.Attribute.actionModeCopyDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCutDrawable = global::GhostlyGame.Resource.Attribute.actionModeCutDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeFindDrawable = global::GhostlyGame.Resource.Attribute.actionModeFindDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModePasteDrawable = global::GhostlyGame.Resource.Attribute.actionModePasteDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModePopupWindowStyle = global::GhostlyGame.Resource.Attribute.actionModePopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeSelectAllDrawable = global::GhostlyGame.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeShareDrawable = global::GhostlyGame.Resource.Attribute.actionModeShareDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeSplitBackground = global::GhostlyGame.Resource.Attribute.actionModeSplitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeStyle = global::GhostlyGame.Resource.Attribute.actionModeStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeWebSearchDrawable = global::GhostlyGame.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionOverflowButtonStyle = global::GhostlyGame.Resource.Attribute.actionOverflowButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionOverflowMenuStyle = global::GhostlyGame.Resource.Attribute.actionOverflowMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionProviderClass = global::GhostlyGame.Resource.Attribute.actionProviderClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionViewClass = global::GhostlyGame.Resource.Attribute.actionViewClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.activityChooserViewStyle = global::GhostlyGame.Resource.Attribute.activityChooserViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogButtonGroupStyle = global::GhostlyGame.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogCenterButtons = global::GhostlyGame.Resource.Attribute.alertDialogCenterButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogStyle = global::GhostlyGame.Resource.Attribute.alertDialogStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogTheme = global::GhostlyGame.Resource.Attribute.alertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.allowStacking = global::GhostlyGame.Resource.Attribute.allowStacking;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alpha = global::GhostlyGame.Resource.Attribute.alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alphabeticModifiers = global::GhostlyGame.Resource.Attribute.alphabeticModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.arrowHeadLength = global::GhostlyGame.Resource.Attribute.arrowHeadLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.arrowShaftLength = global::GhostlyGame.Resource.Attribute.arrowShaftLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoCompleteTextViewStyle = global::GhostlyGame.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeMaxTextSize = global::GhostlyGame.Resource.Attribute.autoSizeMaxTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeMinTextSize = global::GhostlyGame.Resource.Attribute.autoSizeMinTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizePresetSizes = global::GhostlyGame.Resource.Attribute.autoSizePresetSizes;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeStepGranularity = global::GhostlyGame.Resource.Attribute.autoSizeStepGranularity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeTextType = global::GhostlyGame.Resource.Attribute.autoSizeTextType;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.background = global::GhostlyGame.Resource.Attribute.background;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundSplit = global::GhostlyGame.Resource.Attribute.backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundStacked = global::GhostlyGame.Resource.Attribute.backgroundStacked;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundTint = global::GhostlyGame.Resource.Attribute.backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundTintMode = global::GhostlyGame.Resource.Attribute.backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.barLength = global::GhostlyGame.Resource.Attribute.barLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_autoHide = global::GhostlyGame.Resource.Attribute.behavior_autoHide;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_hideable = global::GhostlyGame.Resource.Attribute.behavior_hideable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_overlapTop = global::GhostlyGame.Resource.Attribute.behavior_overlapTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_peekHeight = global::GhostlyGame.Resource.Attribute.behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_skipCollapsed = global::GhostlyGame.Resource.Attribute.behavior_skipCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.borderWidth = global::GhostlyGame.Resource.Attribute.borderWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.borderlessButtonStyle = global::GhostlyGame.Resource.Attribute.borderlessButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.bottomSheetDialogTheme = global::GhostlyGame.Resource.Attribute.bottomSheetDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.bottomSheetStyle = global::GhostlyGame.Resource.Attribute.bottomSheetStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarButtonStyle = global::GhostlyGame.Resource.Attribute.buttonBarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNegativeButtonStyle = global::GhostlyGame.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNeutralButtonStyle = global::GhostlyGame.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarPositiveButtonStyle = global::GhostlyGame.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarStyle = global::GhostlyGame.Resource.Attribute.buttonBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonGravity = global::GhostlyGame.Resource.Attribute.buttonGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonPanelSideLayout = global::GhostlyGame.Resource.Attribute.buttonPanelSideLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonStyle = global::GhostlyGame.Resource.Attribute.buttonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonStyleSmall = global::GhostlyGame.Resource.Attribute.buttonStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonTint = global::GhostlyGame.Resource.Attribute.buttonTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonTintMode = global::GhostlyGame.Resource.Attribute.buttonTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardBackgroundColor = global::GhostlyGame.Resource.Attribute.cardBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardCornerRadius = global::GhostlyGame.Resource.Attribute.cardCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardElevation = global::GhostlyGame.Resource.Attribute.cardElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardMaxElevation = global::GhostlyGame.Resource.Attribute.cardMaxElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardPreventCornerOverlap = global::GhostlyGame.Resource.Attribute.cardPreventCornerOverlap;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardUseCompatPadding = global::GhostlyGame.Resource.Attribute.cardUseCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkboxStyle = global::GhostlyGame.Resource.Attribute.checkboxStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedTextViewStyle = global::GhostlyGame.Resource.Attribute.checkedTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIcon = global::GhostlyGame.Resource.Attribute.closeIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeItemLayout = global::GhostlyGame.Resource.Attribute.closeItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapseContentDescription = global::GhostlyGame.Resource.Attribute.collapseContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapseIcon = global::GhostlyGame.Resource.Attribute.collapseIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapsedTitleGravity = global::GhostlyGame.Resource.Attribute.collapsedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapsedTitleTextAppearance = global::GhostlyGame.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.color = global::GhostlyGame.Resource.Attribute.color;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorAccent = global::GhostlyGame.Resource.Attribute.colorAccent;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorBackgroundFloating = global::GhostlyGame.Resource.Attribute.colorBackgroundFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorButtonNormal = global::GhostlyGame.Resource.Attribute.colorButtonNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlActivated = global::GhostlyGame.Resource.Attribute.colorControlActivated;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlHighlight = global::GhostlyGame.Resource.Attribute.colorControlHighlight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlNormal = global::GhostlyGame.Resource.Attribute.colorControlNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorError = global::GhostlyGame.Resource.Attribute.colorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimary = global::GhostlyGame.Resource.Attribute.colorPrimary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimaryDark = global::GhostlyGame.Resource.Attribute.colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSwitchThumbNormal = global::GhostlyGame.Resource.Attribute.colorSwitchThumbNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.commitIcon = global::GhostlyGame.Resource.Attribute.commitIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentDescription = global::GhostlyGame.Resource.Attribute.contentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetEnd = global::GhostlyGame.Resource.Attribute.contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetEndWithActions = global::GhostlyGame.Resource.Attribute.contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetLeft = global::GhostlyGame.Resource.Attribute.contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetRight = global::GhostlyGame.Resource.Attribute.contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetStart = global::GhostlyGame.Resource.Attribute.contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetStartWithNavigation = global::GhostlyGame.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPadding = global::GhostlyGame.Resource.Attribute.contentPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingBottom = global::GhostlyGame.Resource.Attribute.contentPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingLeft = global::GhostlyGame.Resource.Attribute.contentPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingRight = global::GhostlyGame.Resource.Attribute.contentPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingTop = global::GhostlyGame.Resource.Attribute.contentPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentScrim = global::GhostlyGame.Resource.Attribute.contentScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.controlBackground = global::GhostlyGame.Resource.Attribute.controlBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterEnabled = global::GhostlyGame.Resource.Attribute.counterEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterMaxLength = global::GhostlyGame.Resource.Attribute.counterMaxLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterOverflowTextAppearance = global::GhostlyGame.Resource.Attribute.counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterTextAppearance = global::GhostlyGame.Resource.Attribute.counterTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.customNavigationLayout = global::GhostlyGame.Resource.Attribute.customNavigationLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.defaultQueryHint = global::GhostlyGame.Resource.Attribute.defaultQueryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogPreferredPadding = global::GhostlyGame.Resource.Attribute.dialogPreferredPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogTheme = global::GhostlyGame.Resource.Attribute.dialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.displayOptions = global::GhostlyGame.Resource.Attribute.displayOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.divider = global::GhostlyGame.Resource.Attribute.divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerHorizontal = global::GhostlyGame.Resource.Attribute.dividerHorizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerPadding = global::GhostlyGame.Resource.Attribute.dividerPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerVertical = global::GhostlyGame.Resource.Attribute.dividerVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableSize = global::GhostlyGame.Resource.Attribute.drawableSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawerArrowStyle = global::GhostlyGame.Resource.Attribute.drawerArrowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropDownListViewStyle = global::GhostlyGame.Resource.Attribute.dropDownListViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropdownListPreferredItemHeight = global::GhostlyGame.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextBackground = global::GhostlyGame.Resource.Attribute.editTextBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextColor = global::GhostlyGame.Resource.Attribute.editTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextStyle = global::GhostlyGame.Resource.Attribute.editTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevation = global::GhostlyGame.Resource.Attribute.elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorEnabled = global::GhostlyGame.Resource.Attribute.errorEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorTextAppearance = global::GhostlyGame.Resource.Attribute.errorTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandActivityOverflowButtonDrawable = global::GhostlyGame.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expanded = global::GhostlyGame.Resource.Attribute.expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleGravity = global::GhostlyGame.Resource.Attribute.expandedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMargin = global::GhostlyGame.Resource.Attribute.expandedTitleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginBottom = global::GhostlyGame.Resource.Attribute.expandedTitleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginEnd = global::GhostlyGame.Resource.Attribute.expandedTitleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginStart = global::GhostlyGame.Resource.Attribute.expandedTitleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginTop = global::GhostlyGame.Resource.Attribute.expandedTitleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleTextAppearance = global::GhostlyGame.Resource.Attribute.expandedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabSize = global::GhostlyGame.Resource.Attribute.fabSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollEnabled = global::GhostlyGame.Resource.Attribute.fastScrollEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::GhostlyGame.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::GhostlyGame.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollVerticalThumbDrawable = global::GhostlyGame.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollVerticalTrackDrawable = global::GhostlyGame.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.font = global::GhostlyGame.Resource.Attribute.font;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontFamily = global::GhostlyGame.Resource.Attribute.fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderAuthority = global::GhostlyGame.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderCerts = global::GhostlyGame.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderFetchStrategy = global::GhostlyGame.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderFetchTimeout = global::GhostlyGame.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderPackage = global::GhostlyGame.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderQuery = global::GhostlyGame.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontStyle = global::GhostlyGame.Resource.Attribute.fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontWeight = global::GhostlyGame.Resource.Attribute.fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.foregroundInsidePadding = global::GhostlyGame.Resource.Attribute.foregroundInsidePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.gapBetweenBars = global::GhostlyGame.Resource.Attribute.gapBetweenBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.goIcon = global::GhostlyGame.Resource.Attribute.goIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.headerLayout = global::GhostlyGame.Resource.Attribute.headerLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.height = global::GhostlyGame.Resource.Attribute.height;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hideOnContentScroll = global::GhostlyGame.Resource.Attribute.hideOnContentScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintAnimationEnabled = global::GhostlyGame.Resource.Attribute.hintAnimationEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintEnabled = global::GhostlyGame.Resource.Attribute.hintEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintTextAppearance = global::GhostlyGame.Resource.Attribute.hintTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.homeAsUpIndicator = global::GhostlyGame.Resource.Attribute.homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.homeLayout = global::GhostlyGame.Resource.Attribute.homeLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.icon = global::GhostlyGame.Resource.Attribute.icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconTint = global::GhostlyGame.Resource.Attribute.iconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconTintMode = global::GhostlyGame.Resource.Attribute.iconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconifiedByDefault = global::GhostlyGame.Resource.Attribute.iconifiedByDefault;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.imageButtonStyle = global::GhostlyGame.Resource.Attribute.imageButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.indeterminateProgressStyle = global::GhostlyGame.Resource.Attribute.indeterminateProgressStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.initialActivityCount = global::GhostlyGame.Resource.Attribute.initialActivityCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.insetForeground = global::GhostlyGame.Resource.Attribute.insetForeground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.isLightTheme = global::GhostlyGame.Resource.Attribute.isLightTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemBackground = global::GhostlyGame.Resource.Attribute.itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemIconTint = global::GhostlyGame.Resource.Attribute.itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemPadding = global::GhostlyGame.Resource.Attribute.itemPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextAppearance = global::GhostlyGame.Resource.Attribute.itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextColor = global::GhostlyGame.Resource.Attribute.itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.keylines = global::GhostlyGame.Resource.Attribute.keylines;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout = global::GhostlyGame.Resource.Attribute.layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layoutManager = global::GhostlyGame.Resource.Attribute.layoutManager;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_anchor = global::GhostlyGame.Resource.Attribute.layout_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_anchorGravity = global::GhostlyGame.Resource.Attribute.layout_anchorGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_behavior = global::GhostlyGame.Resource.Attribute.layout_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_collapseMode = global::GhostlyGame.Resource.Attribute.layout_collapseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_collapseParallaxMultiplier = global::GhostlyGame.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_dodgeInsetEdges = global::GhostlyGame.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_insetEdge = global::GhostlyGame.Resource.Attribute.layout_insetEdge;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_keyline = global::GhostlyGame.Resource.Attribute.layout_keyline;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_scrollFlags = global::GhostlyGame.Resource.Attribute.layout_scrollFlags;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_scrollInterpolator = global::GhostlyGame.Resource.Attribute.layout_scrollInterpolator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceBackgroundIndicator = global::GhostlyGame.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listDividerAlertDialog = global::GhostlyGame.Resource.Attribute.listDividerAlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listItemLayout = global::GhostlyGame.Resource.Attribute.listItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listLayout = global::GhostlyGame.Resource.Attribute.listLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listMenuViewStyle = global::GhostlyGame.Resource.Attribute.listMenuViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPopupWindowStyle = global::GhostlyGame.Resource.Attribute.listPopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeight = global::GhostlyGame.Resource.Attribute.listPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightLarge = global::GhostlyGame.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightSmall = global::GhostlyGame.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingLeft = global::GhostlyGame.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingRight = global::GhostlyGame.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logo = global::GhostlyGame.Resource.Attribute.logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logoDescription = global::GhostlyGame.Resource.Attribute.logoDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxActionInlineWidth = global::GhostlyGame.Resource.Attribute.maxActionInlineWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxButtonHeight = global::GhostlyGame.Resource.Attribute.maxButtonHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.measureWithLargestChild = global::GhostlyGame.Resource.Attribute.measureWithLargestChild;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.menu = global::GhostlyGame.Resource.Attribute.menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.multiChoiceItemLayout = global::GhostlyGame.Resource.Attribute.multiChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationContentDescription = global::GhostlyGame.Resource.Attribute.navigationContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationIcon = global::GhostlyGame.Resource.Attribute.navigationIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationMode = global::GhostlyGame.Resource.Attribute.navigationMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.numericModifiers = global::GhostlyGame.Resource.Attribute.numericModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.overlapAnchor = global::GhostlyGame.Resource.Attribute.overlapAnchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingBottomNoButtons = global::GhostlyGame.Resource.Attribute.paddingBottomNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingEnd = global::GhostlyGame.Resource.Attribute.paddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingStart = global::GhostlyGame.Resource.Attribute.paddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingTopNoTitle = global::GhostlyGame.Resource.Attribute.paddingTopNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelBackground = global::GhostlyGame.Resource.Attribute.panelBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelMenuListTheme = global::GhostlyGame.Resource.Attribute.panelMenuListTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelMenuListWidth = global::GhostlyGame.Resource.Attribute.panelMenuListWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleContentDescription = global::GhostlyGame.Resource.Attribute.passwordToggleContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleDrawable = global::GhostlyGame.Resource.Attribute.passwordToggleDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleEnabled = global::GhostlyGame.Resource.Attribute.passwordToggleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleTint = global::GhostlyGame.Resource.Attribute.passwordToggleTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleTintMode = global::GhostlyGame.Resource.Attribute.passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupMenuStyle = global::GhostlyGame.Resource.Attribute.popupMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupTheme = global::GhostlyGame.Resource.Attribute.popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupWindowStyle = global::GhostlyGame.Resource.Attribute.popupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.preserveIconSpacing = global::GhostlyGame.Resource.Attribute.preserveIconSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.pressedTranslationZ = global::GhostlyGame.Resource.Attribute.pressedTranslationZ;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.progressBarPadding = global::GhostlyGame.Resource.Attribute.progressBarPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.progressBarStyle = global::GhostlyGame.Resource.Attribute.progressBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.queryBackground = global::GhostlyGame.Resource.Attribute.queryBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.queryHint = global::GhostlyGame.Resource.Attribute.queryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.radioButtonStyle = global::GhostlyGame.Resource.Attribute.radioButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyle = global::GhostlyGame.Resource.Attribute.ratingBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleIndicator = global::GhostlyGame.Resource.Attribute.ratingBarStyleIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleSmall = global::GhostlyGame.Resource.Attribute.ratingBarStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.reverseLayout = global::GhostlyGame.Resource.Attribute.reverseLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.rippleColor = global::GhostlyGame.Resource.Attribute.rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimAnimationDuration = global::GhostlyGame.Resource.Attribute.scrimAnimationDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimVisibleHeightTrigger = global::GhostlyGame.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchHintIcon = global::GhostlyGame.Resource.Attribute.searchHintIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchIcon = global::GhostlyGame.Resource.Attribute.searchIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchViewStyle = global::GhostlyGame.Resource.Attribute.searchViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.seekBarStyle = global::GhostlyGame.Resource.Attribute.seekBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.selectableItemBackground = global::GhostlyGame.Resource.Attribute.selectableItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.selectableItemBackgroundBorderless = global::GhostlyGame.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showAsAction = global::GhostlyGame.Resource.Attribute.showAsAction;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showDividers = global::GhostlyGame.Resource.Attribute.showDividers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showText = global::GhostlyGame.Resource.Attribute.showText;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showTitle = global::GhostlyGame.Resource.Attribute.showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.singleChoiceItemLayout = global::GhostlyGame.Resource.Attribute.singleChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spanCount = global::GhostlyGame.Resource.Attribute.spanCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinBars = global::GhostlyGame.Resource.Attribute.spinBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinnerDropDownItemStyle = global::GhostlyGame.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinnerStyle = global::GhostlyGame.Resource.Attribute.spinnerStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.splitTrack = global::GhostlyGame.Resource.Attribute.splitTrack;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.srcCompat = global::GhostlyGame.Resource.Attribute.srcCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.stackFromEnd = global::GhostlyGame.Resource.Attribute.stackFromEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_above_anchor = global::GhostlyGame.Resource.Attribute.state_above_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_collapsed = global::GhostlyGame.Resource.Attribute.state_collapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_collapsible = global::GhostlyGame.Resource.Attribute.state_collapsible;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarBackground = global::GhostlyGame.Resource.Attribute.statusBarBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarScrim = global::GhostlyGame.Resource.Attribute.statusBarScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subMenuArrow = global::GhostlyGame.Resource.Attribute.subMenuArrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.submitBackground = global::GhostlyGame.Resource.Attribute.submitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitle = global::GhostlyGame.Resource.Attribute.subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextAppearance = global::GhostlyGame.Resource.Attribute.subtitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextColor = global::GhostlyGame.Resource.Attribute.subtitleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextStyle = global::GhostlyGame.Resource.Attribute.subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.suggestionRowLayout = global::GhostlyGame.Resource.Attribute.suggestionRowLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchMinWidth = global::GhostlyGame.Resource.Attribute.switchMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchPadding = global::GhostlyGame.Resource.Attribute.switchPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchStyle = global::GhostlyGame.Resource.Attribute.switchStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchTextAppearance = global::GhostlyGame.Resource.Attribute.switchTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabBackground = global::GhostlyGame.Resource.Attribute.tabBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabContentStart = global::GhostlyGame.Resource.Attribute.tabContentStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabGravity = global::GhostlyGame.Resource.Attribute.tabGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorColor = global::GhostlyGame.Resource.Attribute.tabIndicatorColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorHeight = global::GhostlyGame.Resource.Attribute.tabIndicatorHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMaxWidth = global::GhostlyGame.Resource.Attribute.tabMaxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMinWidth = global::GhostlyGame.Resource.Attribute.tabMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMode = global::GhostlyGame.Resource.Attribute.tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPadding = global::GhostlyGame.Resource.Attribute.tabPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingBottom = global::GhostlyGame.Resource.Attribute.tabPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingEnd = global::GhostlyGame.Resource.Attribute.tabPaddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingStart = global::GhostlyGame.Resource.Attribute.tabPaddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingTop = global::GhostlyGame.Resource.Attribute.tabPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabSelectedTextColor = global::GhostlyGame.Resource.Attribute.tabSelectedTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabTextAppearance = global::GhostlyGame.Resource.Attribute.tabTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabTextColor = global::GhostlyGame.Resource.Attribute.tabTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAllCaps = global::GhostlyGame.Resource.Attribute.textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceLargePopupMenu = global::GhostlyGame.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItem = global::GhostlyGame.Resource.Attribute.textAppearanceListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItemSecondary = global::GhostlyGame.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItemSmall = global::GhostlyGame.Resource.Attribute.textAppearanceListItemSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearancePopupMenuHeader = global::GhostlyGame.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSearchResultSubtitle = global::GhostlyGame.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSearchResultTitle = global::GhostlyGame.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSmallPopupMenu = global::GhostlyGame.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorAlertDialogListItem = global::GhostlyGame.Resource.Attribute.textColorAlertDialogListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorError = global::GhostlyGame.Resource.Attribute.textColorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorSearchUrl = global::GhostlyGame.Resource.Attribute.textColorSearchUrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.theme = global::GhostlyGame.Resource.Attribute.theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thickness = global::GhostlyGame.Resource.Attribute.thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTextPadding = global::GhostlyGame.Resource.Attribute.thumbTextPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTint = global::GhostlyGame.Resource.Attribute.thumbTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTintMode = global::GhostlyGame.Resource.Attribute.thumbTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMark = global::GhostlyGame.Resource.Attribute.tickMark;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMarkTint = global::GhostlyGame.Resource.Attribute.tickMarkTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMarkTintMode = global::GhostlyGame.Resource.Attribute.tickMarkTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tint = global::GhostlyGame.Resource.Attribute.tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tintMode = global::GhostlyGame.Resource.Attribute.tintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.title = global::GhostlyGame.Resource.Attribute.title;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleEnabled = global::GhostlyGame.Resource.Attribute.titleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMargin = global::GhostlyGame.Resource.Attribute.titleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginBottom = global::GhostlyGame.Resource.Attribute.titleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginEnd = global::GhostlyGame.Resource.Attribute.titleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginStart = global::GhostlyGame.Resource.Attribute.titleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginTop = global::GhostlyGame.Resource.Attribute.titleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMargins = global::GhostlyGame.Resource.Attribute.titleMargins;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextAppearance = global::GhostlyGame.Resource.Attribute.titleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextColor = global::GhostlyGame.Resource.Attribute.titleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextStyle = global::GhostlyGame.Resource.Attribute.titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarId = global::GhostlyGame.Resource.Attribute.toolbarId;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarNavigationButtonStyle = global::GhostlyGame.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarStyle = global::GhostlyGame.Resource.Attribute.toolbarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipForegroundColor = global::GhostlyGame.Resource.Attribute.tooltipForegroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipFrameBackground = global::GhostlyGame.Resource.Attribute.tooltipFrameBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipText = global::GhostlyGame.Resource.Attribute.tooltipText;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.track = global::GhostlyGame.Resource.Attribute.track;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.trackTint = global::GhostlyGame.Resource.Attribute.trackTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.trackTintMode = global::GhostlyGame.Resource.Attribute.trackTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.useCompatPadding = global::GhostlyGame.Resource.Attribute.useCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.voiceIcon = global::GhostlyGame.Resource.Attribute.voiceIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionBar = global::GhostlyGame.Resource.Attribute.windowActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionBarOverlay = global::GhostlyGame.Resource.Attribute.windowActionBarOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionModeOverlay = global::GhostlyGame.Resource.Attribute.windowActionModeOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedHeightMajor = global::GhostlyGame.Resource.Attribute.windowFixedHeightMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedHeightMinor = global::GhostlyGame.Resource.Attribute.windowFixedHeightMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedWidthMajor = global::GhostlyGame.Resource.Attribute.windowFixedWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedWidthMinor = global::GhostlyGame.Resource.Attribute.windowFixedWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowMinWidthMajor = global::GhostlyGame.Resource.Attribute.windowMinWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowMinWidthMinor = global::GhostlyGame.Resource.Attribute.windowMinWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowNoTitle = global::GhostlyGame.Resource.Attribute.windowNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_action_bar_embed_tabs = global::GhostlyGame.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_allow_stacked_button_bar = global::GhostlyGame.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::GhostlyGame.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::GhostlyGame.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::GhostlyGame.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_background_cache_hint_selector_material_dark = global::GhostlyGame.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_background_cache_hint_selector_material_light = global::GhostlyGame.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_btn_colored_borderless_text_material = global::GhostlyGame.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_btn_colored_text_material = global::GhostlyGame.Resource.Color.abc_btn_colored_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_color_highlight_material = global::GhostlyGame.Resource.Color.abc_color_highlight_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_hint_foreground_material_dark = global::GhostlyGame.Resource.Color.abc_hint_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_hint_foreground_material_light = global::GhostlyGame.Resource.Color.abc_hint_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_input_method_navigation_guard = global::GhostlyGame.Resource.Color.abc_input_method_navigation_guard;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_disable_only_material_dark = global::GhostlyGame.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_disable_only_material_light = global::GhostlyGame.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_material_dark = global::GhostlyGame.Resource.Color.abc_primary_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_material_light = global::GhostlyGame.Resource.Color.abc_primary_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text = global::GhostlyGame.Resource.Color.abc_search_url_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_normal = global::GhostlyGame.Resource.Color.abc_search_url_text_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_pressed = global::GhostlyGame.Resource.Color.abc_search_url_text_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_selected = global::GhostlyGame.Resource.Color.abc_search_url_text_selected;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_secondary_text_material_dark = global::GhostlyGame.Resource.Color.abc_secondary_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_secondary_text_material_light = global::GhostlyGame.Resource.Color.abc_secondary_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_btn_checkable = global::GhostlyGame.Resource.Color.abc_tint_btn_checkable;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_default = global::GhostlyGame.Resource.Color.abc_tint_default;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_edittext = global::GhostlyGame.Resource.Color.abc_tint_edittext;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_seek_thumb = global::GhostlyGame.Resource.Color.abc_tint_seek_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_spinner = global::GhostlyGame.Resource.Color.abc_tint_spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_switch_track = global::GhostlyGame.Resource.Color.abc_tint_switch_track;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.accent_material_dark = global::GhostlyGame.Resource.Color.accent_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.accent_material_light = global::GhostlyGame.Resource.Color.accent_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_floating_material_dark = global::GhostlyGame.Resource.Color.background_floating_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_floating_material_light = global::GhostlyGame.Resource.Color.background_floating_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_material_dark = global::GhostlyGame.Resource.Color.background_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_material_light = global::GhostlyGame.Resource.Color.background_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_disabled_material_dark = global::GhostlyGame.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_disabled_material_light = global::GhostlyGame.Resource.Color.bright_foreground_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_inverse_material_dark = global::GhostlyGame.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_inverse_material_light = global::GhostlyGame.Resource.Color.bright_foreground_inverse_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_material_dark = global::GhostlyGame.Resource.Color.bright_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_material_light = global::GhostlyGame.Resource.Color.bright_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.button_material_dark = global::GhostlyGame.Resource.Color.button_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.button_material_light = global::GhostlyGame.Resource.Color.button_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_dark_background = global::GhostlyGame.Resource.Color.cardview_dark_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_light_background = global::GhostlyGame.Resource.Color.cardview_light_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_end_color = global::GhostlyGame.Resource.Color.cardview_shadow_end_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_start_color = global::GhostlyGame.Resource.Color.cardview_shadow_start_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_bottom_navigation_shadow_color = global::GhostlyGame.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_error = global::GhostlyGame.Resource.Color.design_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_end_color = global::GhostlyGame.Resource.Color.design_fab_shadow_end_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_mid_color = global::GhostlyGame.Resource.Color.design_fab_shadow_mid_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_start_color = global::GhostlyGame.Resource.Color.design_fab_shadow_start_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_end_inner_color = global::GhostlyGame.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_end_outer_color = global::GhostlyGame.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_top_inner_color = global::GhostlyGame.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_top_outer_color = global::GhostlyGame.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_snackbar_background_color = global::GhostlyGame.Resource.Color.design_snackbar_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_tint_password_toggle = global::GhostlyGame.Resource.Color.design_tint_password_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_disabled_material_dark = global::GhostlyGame.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_disabled_material_light = global::GhostlyGame.Resource.Color.dim_foreground_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_material_dark = global::GhostlyGame.Resource.Color.dim_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_material_light = global::GhostlyGame.Resource.Color.dim_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.error_color_material = global::GhostlyGame.Resource.Color.error_color_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.foreground_material_dark = global::GhostlyGame.Resource.Color.foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.foreground_material_light = global::GhostlyGame.Resource.Color.foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.highlighted_text_material_dark = global::GhostlyGame.Resource.Color.highlighted_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.highlighted_text_material_light = global::GhostlyGame.Resource.Color.highlighted_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_800 = global::GhostlyGame.Resource.Color.material_blue_grey_800;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_900 = global::GhostlyGame.Resource.Color.material_blue_grey_900;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_950 = global::GhostlyGame.Resource.Color.material_blue_grey_950;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_deep_teal_200 = global::GhostlyGame.Resource.Color.material_deep_teal_200;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_deep_teal_500 = global::GhostlyGame.Resource.Color.material_deep_teal_500;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_100 = global::GhostlyGame.Resource.Color.material_grey_100;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_300 = global::GhostlyGame.Resource.Color.material_grey_300;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_50 = global::GhostlyGame.Resource.Color.material_grey_50;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_600 = global::GhostlyGame.Resource.Color.material_grey_600;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_800 = global::GhostlyGame.Resource.Color.material_grey_800;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_850 = global::GhostlyGame.Resource.Color.material_grey_850;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_900 = global::GhostlyGame.Resource.Color.material_grey_900;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_action_color_filter = global::GhostlyGame.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_icon_bg_color = global::GhostlyGame.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_material_background_media_default_color = global::GhostlyGame.Resource.Color.notification_material_background_media_default_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_dark_material_dark = global::GhostlyGame.Resource.Color.primary_dark_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_dark_material_light = global::GhostlyGame.Resource.Color.primary_dark_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_material_dark = global::GhostlyGame.Resource.Color.primary_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_material_light = global::GhostlyGame.Resource.Color.primary_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_default_material_dark = global::GhostlyGame.Resource.Color.primary_text_default_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_default_material_light = global::GhostlyGame.Resource.Color.primary_text_default_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_disabled_material_dark = global::GhostlyGame.Resource.Color.primary_text_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_disabled_material_light = global::GhostlyGame.Resource.Color.primary_text_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.ripple_material_dark = global::GhostlyGame.Resource.Color.ripple_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.ripple_material_light = global::GhostlyGame.Resource.Color.ripple_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_default_material_dark = global::GhostlyGame.Resource.Color.secondary_text_default_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_default_material_light = global::GhostlyGame.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_disabled_material_dark = global::GhostlyGame.Resource.Color.secondary_text_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_disabled_material_light = global::GhostlyGame.Resource.Color.secondary_text_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_disabled_material_dark = global::GhostlyGame.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_disabled_material_light = global::GhostlyGame.Resource.Color.switch_thumb_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_material_dark = global::GhostlyGame.Resource.Color.switch_thumb_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_material_light = global::GhostlyGame.Resource.Color.switch_thumb_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_dark = global::GhostlyGame.Resource.Color.switch_thumb_normal_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_light = global::GhostlyGame.Resource.Color.switch_thumb_normal_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_dark = global::GhostlyGame.Resource.Color.tooltip_background_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_light = global::GhostlyGame.Resource.Color.tooltip_background_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::GhostlyGame.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_height_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_padding_end_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_padding_start_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_elevation_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_progress_bar_size = global::GhostlyGame.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_stacked_max_height = global::GhostlyGame.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::GhostlyGame.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::GhostlyGame.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_height_material = global::GhostlyGame.Resource.Dimension.abc_action_button_min_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_width_material = global::GhostlyGame.Resource.Dimension.abc_action_button_min_width_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_width_overflow_material = global::GhostlyGame.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_alert_dialog_button_bar_height = global::GhostlyGame.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_inset_horizontal_material = global::GhostlyGame.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_inset_vertical_material = global::GhostlyGame.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_padding_horizontal_material = global::GhostlyGame.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_padding_vertical_material = global::GhostlyGame.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::GhostlyGame.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_config_prefDialogWidth = global::GhostlyGame.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_corner_material = global::GhostlyGame.Resource.Dimension.abc_control_corner_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_inset_material = global::GhostlyGame.Resource.Dimension.abc_control_inset_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_padding_material = global::GhostlyGame.Resource.Dimension.abc_control_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_height_major = global::GhostlyGame.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_height_minor = global::GhostlyGame.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_width_major = global::GhostlyGame.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_width_minor = global::GhostlyGame.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::GhostlyGame.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::GhostlyGame.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_min_width_major = global::GhostlyGame.Resource.Dimension.abc_dialog_min_width_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_min_width_minor = global::GhostlyGame.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_padding_material = global::GhostlyGame.Resource.Dimension.abc_dialog_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_padding_top_material = global::GhostlyGame.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_title_divider_material = global::GhostlyGame.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_disabled_alpha_material_dark = global::GhostlyGame.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_disabled_alpha_material_light = global::GhostlyGame.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_icon_width = global::GhostlyGame.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_text_padding_left = global::GhostlyGame.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_text_padding_right = global::GhostlyGame.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_bottom_material = global::GhostlyGame.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::GhostlyGame.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_top_material = global::GhostlyGame.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_floating_window_z = global::GhostlyGame.Resource.Dimension.abc_floating_window_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_padding_horizontal_material = global::GhostlyGame.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_panel_menu_list_width = global::GhostlyGame.Resource.Dimension.abc_panel_menu_list_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_progress_bar_height_material = global::GhostlyGame.Resource.Dimension.abc_progress_bar_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_search_view_preferred_height = global::GhostlyGame.Resource.Dimension.abc_search_view_preferred_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_search_view_preferred_width = global::GhostlyGame.Resource.Dimension.abc_search_view_preferred_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_seekbar_track_background_height_material = global::GhostlyGame.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_seekbar_track_progress_height_material = global::GhostlyGame.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_select_dialog_padding_start_material = global::GhostlyGame.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_switch_padding = global::GhostlyGame.Resource.Dimension.abc_switch_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_body_1_material = global::GhostlyGame.Resource.Dimension.abc_text_size_body_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_body_2_material = global::GhostlyGame.Resource.Dimension.abc_text_size_body_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_button_material = global::GhostlyGame.Resource.Dimension.abc_text_size_button_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_caption_material = global::GhostlyGame.Resource.Dimension.abc_text_size_caption_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_1_material = global::GhostlyGame.Resource.Dimension.abc_text_size_display_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_2_material = global::GhostlyGame.Resource.Dimension.abc_text_size_display_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_3_material = global::GhostlyGame.Resource.Dimension.abc_text_size_display_3_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_4_material = global::GhostlyGame.Resource.Dimension.abc_text_size_display_4_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_headline_material = global::GhostlyGame.Resource.Dimension.abc_text_size_headline_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_large_material = global::GhostlyGame.Resource.Dimension.abc_text_size_large_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_medium_material = global::GhostlyGame.Resource.Dimension.abc_text_size_medium_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_menu_header_material = global::GhostlyGame.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_menu_material = global::GhostlyGame.Resource.Dimension.abc_text_size_menu_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_small_material = global::GhostlyGame.Resource.Dimension.abc_text_size_small_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_subhead_material = global::GhostlyGame.Resource.Dimension.abc_text_size_subhead_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::GhostlyGame.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material = global::GhostlyGame.Resource.Dimension.abc_text_size_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material_toolbar = global::GhostlyGame.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_compat_inset_shadow = global::GhostlyGame.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_elevation = global::GhostlyGame.Resource.Dimension.cardview_default_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_radius = global::GhostlyGame.Resource.Dimension.cardview_default_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_inset_horizontal_material = global::GhostlyGame.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_inset_vertical_material = global::GhostlyGame.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_padding_horizontal_material = global::GhostlyGame.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_padding_vertical_material = global::GhostlyGame.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_control_corner_material = global::GhostlyGame.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_appbar_elevation = global::GhostlyGame.Resource.Dimension.design_appbar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_text_size = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_elevation = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_height = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_item_max_width = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_item_min_width = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_margin = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_shadow_height = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_text_size = global::GhostlyGame.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_modal_elevation = global::GhostlyGame.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_peek_height_min = global::GhostlyGame.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_border_width = global::GhostlyGame.Resource.Dimension.design_fab_border_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_elevation = global::GhostlyGame.Resource.Dimension.design_fab_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_image_size = global::GhostlyGame.Resource.Dimension.design_fab_image_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_size_mini = global::GhostlyGame.Resource.Dimension.design_fab_size_mini;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_size_normal = global::GhostlyGame.Resource.Dimension.design_fab_size_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_translation_z_pressed = global::GhostlyGame.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_elevation = global::GhostlyGame.Resource.Dimension.design_navigation_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_icon_padding = global::GhostlyGame.Resource.Dimension.design_navigation_icon_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_icon_size = global::GhostlyGame.Resource.Dimension.design_navigation_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_max_width = global::GhostlyGame.Resource.Dimension.design_navigation_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_padding_bottom = global::GhostlyGame.Resource.Dimension.design_navigation_padding_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_separator_vertical_padding = global::GhostlyGame.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_action_inline_max_width = global::GhostlyGame.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_background_corner_radius = global::GhostlyGame.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_elevation = global::GhostlyGame.Resource.Dimension.design_snackbar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::GhostlyGame.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_max_width = global::GhostlyGame.Resource.Dimension.design_snackbar_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_min_width = global::GhostlyGame.Resource.Dimension.design_snackbar_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_horizontal = global::GhostlyGame.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_vertical = global::GhostlyGame.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::GhostlyGame.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_text_size = global::GhostlyGame.Resource.Dimension.design_snackbar_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_max_width = global::GhostlyGame.Resource.Dimension.design_tab_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_scrollable_min_width = global::GhostlyGame.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_text_size = global::GhostlyGame.Resource.Dimension.design_tab_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_text_size_2line = global::GhostlyGame.Resource.Dimension.design_tab_text_size_2line;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.disabled_alpha_material_dark = global::GhostlyGame.Resource.Dimension.disabled_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.disabled_alpha_material_light = global::GhostlyGame.Resource.Dimension.disabled_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_default_thickness = global::GhostlyGame.Resource.Dimension.fastscroll_default_thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_margin = global::GhostlyGame.Resource.Dimension.fastscroll_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_minimum_range = global::GhostlyGame.Resource.Dimension.fastscroll_minimum_range;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_colored = global::GhostlyGame.Resource.Dimension.highlight_alpha_material_colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_dark = global::GhostlyGame.Resource.Dimension.highlight_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_light = global::GhostlyGame.Resource.Dimension.highlight_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_alpha_material_dark = global::GhostlyGame.Resource.Dimension.hint_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_alpha_material_light = global::GhostlyGame.Resource.Dimension.hint_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_pressed_alpha_material_dark = global::GhostlyGame.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_pressed_alpha_material_light = global::GhostlyGame.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::GhostlyGame.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::GhostlyGame.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::GhostlyGame.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_action_icon_size = global::GhostlyGame.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_action_text_size = global::GhostlyGame.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_big_circle_margin = global::GhostlyGame.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_content_margin_start = global::GhostlyGame.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_large_icon_height = global::GhostlyGame.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_large_icon_width = global::GhostlyGame.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_main_column_padding_top = global::GhostlyGame.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_media_narrow_margin = global::GhostlyGame.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_right_icon_size = global::GhostlyGame.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_right_side_padding_top = global::GhostlyGame.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_small_icon_background_padding = global::GhostlyGame.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_small_icon_size_as_large = global::GhostlyGame.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_subtext_size = global::GhostlyGame.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad = global::GhostlyGame.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad_large_text = global::GhostlyGame.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_corner_radius = global::GhostlyGame.Resource.Dimension.tooltip_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_horizontal_padding = global::GhostlyGame.Resource.Dimension.tooltip_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_margin = global::GhostlyGame.Resource.Dimension.tooltip_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::GhostlyGame.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_precise_anchor_threshold = global::GhostlyGame.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_vertical_padding = global::GhostlyGame.Resource.Dimension.tooltip_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_y_offset_non_touch = global::GhostlyGame.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_y_offset_touch = global::GhostlyGame.Resource.Dimension.tooltip_y_offset_touch;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_action_bar_item_background_material = global::GhostlyGame.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_borderless_material = global::GhostlyGame.Resource.Drawable.abc_btn_borderless_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_material = global::GhostlyGame.Resource.Drawable.abc_btn_check_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::GhostlyGame.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::GhostlyGame.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_colored_material = global::GhostlyGame.Resource.Drawable.abc_btn_colored_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_default_mtrl_shape = global::GhostlyGame.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_material = global::GhostlyGame.Resource.Drawable.abc_btn_radio_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::GhostlyGame.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::GhostlyGame.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::GhostlyGame.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::GhostlyGame.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_internal_bg = global::GhostlyGame.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_top_material = global::GhostlyGame.Resource.Drawable.abc_cab_background_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_control_background_material = global::GhostlyGame.Resource.Drawable.abc_control_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_dialog_material_background = global::GhostlyGame.Resource.Drawable.abc_dialog_material_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_edit_text_material = global::GhostlyGame.Resource.Drawable.abc_edit_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_ab_back_material = global::GhostlyGame.Resource.Drawable.abc_ic_ab_back_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::GhostlyGame.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_clear_material = global::GhostlyGame.Resource.Drawable.abc_ic_clear_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_go_search_api_material = global::GhostlyGame.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::GhostlyGame.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_overflow_material = global::GhostlyGame.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::GhostlyGame.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_search_api_material = global::GhostlyGame.Resource.Drawable.abc_ic_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_16dp = global::GhostlyGame.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_36dp = global::GhostlyGame.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_48dp = global::GhostlyGame.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_16dp = global::GhostlyGame.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_36dp = global::GhostlyGame.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_48dp = global::GhostlyGame.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_voice_search_api_material = global::GhostlyGame.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_item_background_holo_dark = global::GhostlyGame.Resource.Drawable.abc_item_background_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_item_background_holo_light = global::GhostlyGame.Resource.Drawable.abc_item_background_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_divider_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_focused_holo = global::GhostlyGame.Resource.Drawable.abc_list_focused_holo;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_longpressed_holo = global::GhostlyGame.Resource.Drawable.abc_list_longpressed_holo;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_pressed_holo_dark = global::GhostlyGame.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_pressed_holo_light = global::GhostlyGame.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::GhostlyGame.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::GhostlyGame.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::GhostlyGame.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_disabled_holo_light = global::GhostlyGame.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_holo_dark = global::GhostlyGame.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_holo_light = global::GhostlyGame.Resource.Drawable.abc_list_selector_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::GhostlyGame.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_popup_background_mtrl_mult = global::GhostlyGame.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_indicator_material = global::GhostlyGame.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_material = global::GhostlyGame.Resource.Drawable.abc_ratingbar_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_small_material = global::GhostlyGame.Resource.Drawable.abc_ratingbar_small_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::GhostlyGame.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::GhostlyGame.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_thumb_material = global::GhostlyGame.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_tick_mark_material = global::GhostlyGame.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_track_material = global::GhostlyGame.Resource.Drawable.abc_seekbar_track_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::GhostlyGame.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_spinner_textfield_background_material = global::GhostlyGame.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_switch_thumb_material = global::GhostlyGame.Resource.Drawable.abc_switch_thumb_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_switch_track_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_tab_indicator_material = global::GhostlyGame.Resource.Drawable.abc_tab_indicator_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_cursor_material = global::GhostlyGame.Resource.Drawable.abc_text_cursor_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::GhostlyGame.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::GhostlyGame.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::GhostlyGame.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::GhostlyGame.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::GhostlyGame.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::GhostlyGame.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::GhostlyGame.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_material = global::GhostlyGame.Resource.Drawable.abc_textfield_search_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_vector_test = global::GhostlyGame.Resource.Drawable.abc_vector_test;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password = global::GhostlyGame.Resource.Drawable.avd_hide_password;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password_1 = global::GhostlyGame.Resource.Drawable.avd_hide_password_1;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password_2 = global::GhostlyGame.Resource.Drawable.avd_hide_password_2;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password_3 = global::GhostlyGame.Resource.Drawable.avd_hide_password_3;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password = global::GhostlyGame.Resource.Drawable.avd_show_password;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password_1 = global::GhostlyGame.Resource.Drawable.avd_show_password_1;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password_2 = global::GhostlyGame.Resource.Drawable.avd_show_password_2;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password_3 = global::GhostlyGame.Resource.Drawable.avd_show_password_3;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_bottom_navigation_item_background = global::GhostlyGame.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_fab_background = global::GhostlyGame.Resource.Drawable.design_fab_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility = global::GhostlyGame.Resource.Drawable.design_ic_visibility;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility_off = global::GhostlyGame.Resource.Drawable.design_ic_visibility_off;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_password_eye = global::GhostlyGame.Resource.Drawable.design_password_eye;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_snackbar_background = global::GhostlyGame.Resource.Drawable.design_snackbar_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.navigation_empty_icon = global::GhostlyGame.Resource.Drawable.navigation_empty_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_action_background = global::GhostlyGame.Resource.Drawable.notification_action_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg = global::GhostlyGame.Resource.Drawable.notification_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low = global::GhostlyGame.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low_normal = global::GhostlyGame.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low_pressed = global::GhostlyGame.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_normal = global::GhostlyGame.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_normal_pressed = global::GhostlyGame.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_icon_background = global::GhostlyGame.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_template_icon_bg = global::GhostlyGame.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_template_icon_low_bg = global::GhostlyGame.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_tile_bg = global::GhostlyGame.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::GhostlyGame.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_dark = global::GhostlyGame.Resource.Drawable.tooltip_frame_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_light = global::GhostlyGame.Resource.Drawable.tooltip_frame_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ALT = global::GhostlyGame.Resource.Id.ALT;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.CTRL = global::GhostlyGame.Resource.Id.CTRL;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.FUNCTION = global::GhostlyGame.Resource.Id.FUNCTION;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.META = global::GhostlyGame.Resource.Id.META;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.SHIFT = global::GhostlyGame.Resource.Id.SHIFT;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.SYM = global::GhostlyGame.Resource.Id.SYM;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action0 = global::GhostlyGame.Resource.Id.action0;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar = global::GhostlyGame.Resource.Id.action_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_activity_content = global::GhostlyGame.Resource.Id.action_bar_activity_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_container = global::GhostlyGame.Resource.Id.action_bar_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_root = global::GhostlyGame.Resource.Id.action_bar_root;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_spinner = global::GhostlyGame.Resource.Id.action_bar_spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_subtitle = global::GhostlyGame.Resource.Id.action_bar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_title = global::GhostlyGame.Resource.Id.action_bar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_container = global::GhostlyGame.Resource.Id.action_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_context_bar = global::GhostlyGame.Resource.Id.action_context_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_divider = global::GhostlyGame.Resource.Id.action_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_image = global::GhostlyGame.Resource.Id.action_image;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_menu_divider = global::GhostlyGame.Resource.Id.action_menu_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_menu_presenter = global::GhostlyGame.Resource.Id.action_menu_presenter;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_bar = global::GhostlyGame.Resource.Id.action_mode_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_bar_stub = global::GhostlyGame.Resource.Id.action_mode_bar_stub;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_close_button = global::GhostlyGame.Resource.Id.action_mode_close_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_text = global::GhostlyGame.Resource.Id.action_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.actions = global::GhostlyGame.Resource.Id.actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.activity_chooser_view_content = global::GhostlyGame.Resource.Id.activity_chooser_view_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.add = global::GhostlyGame.Resource.Id.add;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.alertTitle = global::GhostlyGame.Resource.Id.alertTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.all = global::GhostlyGame.Resource.Id.all;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.always = global::GhostlyGame.Resource.Id.always;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.async = global::GhostlyGame.Resource.Id.async;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.auto = global::GhostlyGame.Resource.Id.auto;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.beginning = global::GhostlyGame.Resource.Id.beginning;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.blocking = global::GhostlyGame.Resource.Id.blocking;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottom = global::GhostlyGame.Resource.Id.bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_navarea = global::GhostlyGame.Resource.Id.bottomtab_navarea;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_tabbar = global::GhostlyGame.Resource.Id.bottomtab_tabbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.buttonPanel = global::GhostlyGame.Resource.Id.buttonPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.cancel_action = global::GhostlyGame.Resource.Id.cancel_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center = global::GhostlyGame.Resource.Id.center;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center_horizontal = global::GhostlyGame.Resource.Id.center_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center_vertical = global::GhostlyGame.Resource.Id.center_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.checkbox = global::GhostlyGame.Resource.Id.checkbox;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.chronometer = global::GhostlyGame.Resource.Id.chronometer;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_horizontal = global::GhostlyGame.Resource.Id.clip_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_vertical = global::GhostlyGame.Resource.Id.clip_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.collapseActionView = global::GhostlyGame.Resource.Id.collapseActionView;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.container = global::GhostlyGame.Resource.Id.container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.contentPanel = global::GhostlyGame.Resource.Id.contentPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.coordinator = global::GhostlyGame.Resource.Id.coordinator;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.custom = global::GhostlyGame.Resource.Id.custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.customPanel = global::GhostlyGame.Resource.Id.customPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.decor_content_parent = global::GhostlyGame.Resource.Id.decor_content_parent;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.default_activity_button = global::GhostlyGame.Resource.Id.default_activity_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_bottom_sheet = global::GhostlyGame.Resource.Id.design_bottom_sheet;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_action_area = global::GhostlyGame.Resource.Id.design_menu_item_action_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_action_area_stub = global::GhostlyGame.Resource.Id.design_menu_item_action_area_stub;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_text = global::GhostlyGame.Resource.Id.design_menu_item_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_navigation_view = global::GhostlyGame.Resource.Id.design_navigation_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.disableHome = global::GhostlyGame.Resource.Id.disableHome;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.edit_query = global::GhostlyGame.Resource.Id.edit_query;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.end = global::GhostlyGame.Resource.Id.end;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.end_padder = global::GhostlyGame.Resource.Id.end_padder;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.enterAlways = global::GhostlyGame.Resource.Id.enterAlways;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.enterAlwaysCollapsed = global::GhostlyGame.Resource.Id.enterAlwaysCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.exitUntilCollapsed = global::GhostlyGame.Resource.Id.exitUntilCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.expand_activities_button = global::GhostlyGame.Resource.Id.expand_activities_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.expanded_menu = global::GhostlyGame.Resource.Id.expanded_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill = global::GhostlyGame.Resource.Id.fill;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_horizontal = global::GhostlyGame.Resource.Id.fill_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_vertical = global::GhostlyGame.Resource.Id.fill_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.@fixed = global::GhostlyGame.Resource.Id.@fixed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_appbar = global::GhostlyGame.Resource.Id.flyoutcontent_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_recycler = global::GhostlyGame.Resource.Id.flyoutcontent_recycler;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.forever = global::GhostlyGame.Resource.Id.forever;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ghost_view = global::GhostlyGame.Resource.Id.ghost_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.home = global::GhostlyGame.Resource.Id.home;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.homeAsUp = global::GhostlyGame.Resource.Id.homeAsUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.icon = global::GhostlyGame.Resource.Id.icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.icon_group = global::GhostlyGame.Resource.Id.icon_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ifRoom = global::GhostlyGame.Resource.Id.ifRoom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.image = global::GhostlyGame.Resource.Id.image;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.info = global::GhostlyGame.Resource.Id.info;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.italic = global::GhostlyGame.Resource.Id.italic;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.item_touch_helper_previous_elevation = global::GhostlyGame.Resource.Id.item_touch_helper_previous_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.largeLabel = global::GhostlyGame.Resource.Id.largeLabel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.left = global::GhostlyGame.Resource.Id.left;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.line1 = global::GhostlyGame.Resource.Id.line1;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.line3 = global::GhostlyGame.Resource.Id.line3;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.listMode = global::GhostlyGame.Resource.Id.listMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.list_item = global::GhostlyGame.Resource.Id.list_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_appbar = global::GhostlyGame.Resource.Id.main_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_tablayout = global::GhostlyGame.Resource.Id.main_tablayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_toolbar = global::GhostlyGame.Resource.Id.main_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_viewpager = global::GhostlyGame.Resource.Id.main_viewpager;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.masked = global::GhostlyGame.Resource.Id.masked;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.media_actions = global::GhostlyGame.Resource.Id.media_actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.message = global::GhostlyGame.Resource.Id.message;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.middle = global::GhostlyGame.Resource.Id.middle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mini = global::GhostlyGame.Resource.Id.mini;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.multiply = global::GhostlyGame.Resource.Id.multiply;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.navigation_header_container = global::GhostlyGame.Resource.Id.navigation_header_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.never = global::GhostlyGame.Resource.Id.never;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.none = global::GhostlyGame.Resource.Id.none;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.normal = global::GhostlyGame.Resource.Id.normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_background = global::GhostlyGame.Resource.Id.notification_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column = global::GhostlyGame.Resource.Id.notification_main_column;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column_container = global::GhostlyGame.Resource.Id.notification_main_column_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parallax = global::GhostlyGame.Resource.Id.parallax;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parentPanel = global::GhostlyGame.Resource.Id.parentPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parent_matrix = global::GhostlyGame.Resource.Id.parent_matrix;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.pin = global::GhostlyGame.Resource.Id.pin;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_circular = global::GhostlyGame.Resource.Id.progress_circular;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_horizontal = global::GhostlyGame.Resource.Id.progress_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.radio = global::GhostlyGame.Resource.Id.radio;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right = global::GhostlyGame.Resource.Id.right;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right_icon = global::GhostlyGame.Resource.Id.right_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right_side = global::GhostlyGame.Resource.Id.right_side;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_image_matrix = global::GhostlyGame.Resource.Id.save_image_matrix;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_non_transition_alpha = global::GhostlyGame.Resource.Id.save_non_transition_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_scale_type = global::GhostlyGame.Resource.Id.save_scale_type;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.screen = global::GhostlyGame.Resource.Id.screen;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scroll = global::GhostlyGame.Resource.Id.scroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollIndicatorDown = global::GhostlyGame.Resource.Id.scrollIndicatorDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollIndicatorUp = global::GhostlyGame.Resource.Id.scrollIndicatorUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollView = global::GhostlyGame.Resource.Id.scrollView;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollable = global::GhostlyGame.Resource.Id.scrollable;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_badge = global::GhostlyGame.Resource.Id.search_badge;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_bar = global::GhostlyGame.Resource.Id.search_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_button = global::GhostlyGame.Resource.Id.search_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_close_btn = global::GhostlyGame.Resource.Id.search_close_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_edit_frame = global::GhostlyGame.Resource.Id.search_edit_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_go_btn = global::GhostlyGame.Resource.Id.search_go_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_mag_icon = global::GhostlyGame.Resource.Id.search_mag_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_plate = global::GhostlyGame.Resource.Id.search_plate;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_src_text = global::GhostlyGame.Resource.Id.search_src_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_voice_btn = global::GhostlyGame.Resource.Id.search_voice_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.select_dialog_listview = global::GhostlyGame.Resource.Id.select_dialog_listview;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_appbar = global::GhostlyGame.Resource.Id.shellcontent_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_toolbar = global::GhostlyGame.Resource.Id.shellcontent_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shortcut = global::GhostlyGame.Resource.Id.shortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showCustom = global::GhostlyGame.Resource.Id.showCustom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showHome = global::GhostlyGame.Resource.Id.showHome;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showTitle = global::GhostlyGame.Resource.Id.showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.smallLabel = global::GhostlyGame.Resource.Id.smallLabel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_action = global::GhostlyGame.Resource.Id.snackbar_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_text = global::GhostlyGame.Resource.Id.snackbar_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snap = global::GhostlyGame.Resource.Id.snap;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.spacer = global::GhostlyGame.Resource.Id.spacer;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.split_action_bar = global::GhostlyGame.Resource.Id.split_action_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_atop = global::GhostlyGame.Resource.Id.src_atop;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_in = global::GhostlyGame.Resource.Id.src_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_over = global::GhostlyGame.Resource.Id.src_over;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.start = global::GhostlyGame.Resource.Id.start;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.status_bar_latest_event_content = global::GhostlyGame.Resource.Id.status_bar_latest_event_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.submenuarrow = global::GhostlyGame.Resource.Id.submenuarrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.submit_area = global::GhostlyGame.Resource.Id.submit_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tabMode = global::GhostlyGame.Resource.Id.tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_transition_group = global::GhostlyGame.Resource.Id.tag_transition_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text = global::GhostlyGame.Resource.Id.text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text2 = global::GhostlyGame.Resource.Id.text2;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textSpacerNoButtons = global::GhostlyGame.Resource.Id.textSpacerNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textSpacerNoTitle = global::GhostlyGame.Resource.Id.textSpacerNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text_input_password_toggle = global::GhostlyGame.Resource.Id.text_input_password_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_counter = global::GhostlyGame.Resource.Id.textinput_counter;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_error = global::GhostlyGame.Resource.Id.textinput_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.time = global::GhostlyGame.Resource.Id.time;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.title = global::GhostlyGame.Resource.Id.title;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.titleDividerNoCustom = global::GhostlyGame.Resource.Id.titleDividerNoCustom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.title_template = global::GhostlyGame.Resource.Id.title_template;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.top = global::GhostlyGame.Resource.Id.top;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.topPanel = global::GhostlyGame.Resource.Id.topPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.touch_outside = global::GhostlyGame.Resource.Id.touch_outside;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_current_scene = global::GhostlyGame.Resource.Id.transition_current_scene;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_layout_save = global::GhostlyGame.Resource.Id.transition_layout_save;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_position = global::GhostlyGame.Resource.Id.transition_position;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_scene_layoutid_cache = global::GhostlyGame.Resource.Id.transition_scene_layoutid_cache;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_transform = global::GhostlyGame.Resource.Id.transition_transform;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.uniform = global::GhostlyGame.Resource.Id.uniform;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.up = global::GhostlyGame.Resource.Id.up;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.useLogo = global::GhostlyGame.Resource.Id.useLogo;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.view_offset_helper = global::GhostlyGame.Resource.Id.view_offset_helper;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.visible = global::GhostlyGame.Resource.Id.visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.withText = global::GhostlyGame.Resource.Id.withText;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.wrap_content = global::GhostlyGame.Resource.Id.wrap_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityDefaultDur = global::GhostlyGame.Resource.Integer.abc_config_activityDefaultDur;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityShortDur = global::GhostlyGame.Resource.Integer.abc_config_activityShortDur;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.app_bar_elevation_anim_duration = global::GhostlyGame.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.bottom_sheet_slide_duration = global::GhostlyGame.Resource.Integer.bottom_sheet_slide_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.cancel_button_image_alpha = global::GhostlyGame.Resource.Integer.cancel_button_image_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.config_tooltipAnimTime = global::GhostlyGame.Resource.Integer.config_tooltipAnimTime;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.design_snackbar_text_max_lines = global::GhostlyGame.Resource.Integer.design_snackbar_text_max_lines;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.hide_password_duration = global::GhostlyGame.Resource.Integer.hide_password_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.show_password_duration = global::GhostlyGame.Resource.Integer.show_password_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.status_bar_notification_info_maxnum = global::GhostlyGame.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_bar_title_item = global::GhostlyGame.Resource.Layout.abc_action_bar_title_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_bar_up_container = global::GhostlyGame.Resource.Layout.abc_action_bar_up_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_menu_item_layout = global::GhostlyGame.Resource.Layout.abc_action_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_menu_layout = global::GhostlyGame.Resource.Layout.abc_action_menu_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_mode_bar = global::GhostlyGame.Resource.Layout.abc_action_mode_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_mode_close_item_material = global::GhostlyGame.Resource.Layout.abc_action_mode_close_item_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_activity_chooser_view = global::GhostlyGame.Resource.Layout.abc_activity_chooser_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_activity_chooser_view_list_item = global::GhostlyGame.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_button_bar_material = global::GhostlyGame.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_material = global::GhostlyGame.Resource.Layout.abc_alert_dialog_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_title_material = global::GhostlyGame.Resource.Layout.abc_alert_dialog_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_dialog_title_material = global::GhostlyGame.Resource.Layout.abc_dialog_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_expanded_menu_layout = global::GhostlyGame.Resource.Layout.abc_expanded_menu_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_checkbox = global::GhostlyGame.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_icon = global::GhostlyGame.Resource.Layout.abc_list_menu_item_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_layout = global::GhostlyGame.Resource.Layout.abc_list_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_radio = global::GhostlyGame.Resource.Layout.abc_list_menu_item_radio;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_popup_menu_header_item_layout = global::GhostlyGame.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_popup_menu_item_layout = global::GhostlyGame.Resource.Layout.abc_popup_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_content_include = global::GhostlyGame.Resource.Layout.abc_screen_content_include;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_simple = global::GhostlyGame.Resource.Layout.abc_screen_simple;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_simple_overlay_action_mode = global::GhostlyGame.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_toolbar = global::GhostlyGame.Resource.Layout.abc_screen_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_search_dropdown_item_icons_2line = global::GhostlyGame.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_search_view = global::GhostlyGame.Resource.Layout.abc_search_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_select_dialog_material = global::GhostlyGame.Resource.Layout.abc_select_dialog_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.BottomTabLayout = global::GhostlyGame.Resource.Layout.BottomTabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_navigation_item = global::GhostlyGame.Resource.Layout.design_bottom_navigation_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_sheet_dialog = global::GhostlyGame.Resource.Layout.design_bottom_sheet_dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar = global::GhostlyGame.Resource.Layout.design_layout_snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar_include = global::GhostlyGame.Resource.Layout.design_layout_snackbar_include;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_tab_icon = global::GhostlyGame.Resource.Layout.design_layout_tab_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_tab_text = global::GhostlyGame.Resource.Layout.design_layout_tab_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_menu_item_action_area = global::GhostlyGame.Resource.Layout.design_menu_item_action_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item = global::GhostlyGame.Resource.Layout.design_navigation_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_header = global::GhostlyGame.Resource.Layout.design_navigation_item_header;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_separator = global::GhostlyGame.Resource.Layout.design_navigation_item_separator;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_subheader = global::GhostlyGame.Resource.Layout.design_navigation_item_subheader;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu = global::GhostlyGame.Resource.Layout.design_navigation_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu_item = global::GhostlyGame.Resource.Layout.design_navigation_menu_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_text_input_password_icon = global::GhostlyGame.Resource.Layout.design_text_input_password_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.FlyoutContent = global::GhostlyGame.Resource.Layout.FlyoutContent;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action = global::GhostlyGame.Resource.Layout.notification_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action_tombstone = global::GhostlyGame.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_media_action = global::GhostlyGame.Resource.Layout.notification_media_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_media_cancel_action = global::GhostlyGame.Resource.Layout.notification_media_cancel_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media = global::GhostlyGame.Resource.Layout.notification_template_big_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_custom = global::GhostlyGame.Resource.Layout.notification_template_big_media_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_narrow = global::GhostlyGame.Resource.Layout.notification_template_big_media_narrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_narrow_custom = global::GhostlyGame.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_custom_big = global::GhostlyGame.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_icon_group = global::GhostlyGame.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_lines_media = global::GhostlyGame.Resource.Layout.notification_template_lines_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_media = global::GhostlyGame.Resource.Layout.notification_template_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_media_custom = global::GhostlyGame.Resource.Layout.notification_template_media_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_part_chronometer = global::GhostlyGame.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_part_time = global::GhostlyGame.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.RootLayout = global::GhostlyGame.Resource.Layout.RootLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_item_material = global::GhostlyGame.Resource.Layout.select_dialog_item_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_multichoice_material = global::GhostlyGame.Resource.Layout.select_dialog_multichoice_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_singlechoice_material = global::GhostlyGame.Resource.Layout.select_dialog_singlechoice_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.ShellContent = global::GhostlyGame.Resource.Layout.ShellContent;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::GhostlyGame.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.tooltip = global::GhostlyGame.Resource.Layout.tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_home_description = global::GhostlyGame.Resource.String.abc_action_bar_home_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_up_description = global::GhostlyGame.Resource.String.abc_action_bar_up_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_menu_overflow_description = global::GhostlyGame.Resource.String.abc_action_menu_overflow_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_mode_done = global::GhostlyGame.Resource.String.abc_action_mode_done;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_activity_chooser_view_see_all = global::GhostlyGame.Resource.String.abc_activity_chooser_view_see_all;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_activitychooserview_choose_application = global::GhostlyGame.Resource.String.abc_activitychooserview_choose_application;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_capital_off = global::GhostlyGame.Resource.String.abc_capital_off;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_capital_on = global::GhostlyGame.Resource.String.abc_capital_on;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_body_1_material = global::GhostlyGame.Resource.String.abc_font_family_body_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_body_2_material = global::GhostlyGame.Resource.String.abc_font_family_body_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_button_material = global::GhostlyGame.Resource.String.abc_font_family_button_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_caption_material = global::GhostlyGame.Resource.String.abc_font_family_caption_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_1_material = global::GhostlyGame.Resource.String.abc_font_family_display_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_2_material = global::GhostlyGame.Resource.String.abc_font_family_display_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_3_material = global::GhostlyGame.Resource.String.abc_font_family_display_3_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_4_material = global::GhostlyGame.Resource.String.abc_font_family_display_4_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_headline_material = global::GhostlyGame.Resource.String.abc_font_family_headline_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_menu_material = global::GhostlyGame.Resource.String.abc_font_family_menu_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_subhead_material = global::GhostlyGame.Resource.String.abc_font_family_subhead_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_title_material = global::GhostlyGame.Resource.String.abc_font_family_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_search_hint = global::GhostlyGame.Resource.String.abc_search_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_clear = global::GhostlyGame.Resource.String.abc_searchview_description_clear;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_query = global::GhostlyGame.Resource.String.abc_searchview_description_query;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_search = global::GhostlyGame.Resource.String.abc_searchview_description_search;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_submit = global::GhostlyGame.Resource.String.abc_searchview_description_submit;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_voice = global::GhostlyGame.Resource.String.abc_searchview_description_voice;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_shareactionprovider_share_with = global::GhostlyGame.Resource.String.abc_shareactionprovider_share_with;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_shareactionprovider_share_with_application = global::GhostlyGame.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_toolbar_collapse_description = global::GhostlyGame.Resource.String.abc_toolbar_collapse_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.appbar_scrolling_view_behavior = global::GhostlyGame.Resource.String.appbar_scrolling_view_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.bottom_sheet_behavior = global::GhostlyGame.Resource.String.bottom_sheet_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_pattern = global::GhostlyGame.Resource.String.character_counter_pattern;
+			global::Xamarin.Forms.Platform.Android.Resource.String.password_toggle_content_description = global::GhostlyGame.Resource.String.password_toggle_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye = global::GhostlyGame.Resource.String.path_password_eye;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye_mask_strike_through = global::GhostlyGame.Resource.String.path_password_eye_mask_strike_through;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye_mask_visible = global::GhostlyGame.Resource.String.path_password_eye_mask_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_strike_through = global::GhostlyGame.Resource.String.path_password_strike_through;
+			global::Xamarin.Forms.Platform.Android.Resource.String.search_menu_title = global::GhostlyGame.Resource.String.search_menu_title;
+			global::Xamarin.Forms.Platform.Android.Resource.String.status_bar_notification_info_overflow = global::GhostlyGame.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.AlertDialog_AppCompat = global::GhostlyGame.Resource.Style.AlertDialog_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.AlertDialog_AppCompat_Light = global::GhostlyGame.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Animation_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_DropDownUp = global::GhostlyGame.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Tooltip = global::GhostlyGame.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_Design_BottomSheetDialog = global::GhostlyGame.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_AlertDialog_AppCompat = global::GhostlyGame.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_AlertDialog_AppCompat_Light = global::GhostlyGame.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::GhostlyGame.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_Tooltip = global::GhostlyGame.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_CardView = global::GhostlyGame.Resource.Style.Base_CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_DialogWindowTitle_AppCompat = global::GhostlyGame.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::GhostlyGame.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Button = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Large = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Small = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Title = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::GhostlyGame.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::GhostlyGame.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::GhostlyGame.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::GhostlyGame.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::GhostlyGame.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat = global::GhostlyGame.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::GhostlyGame.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::GhostlyGame.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::GhostlyGame.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::GhostlyGame.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::GhostlyGame.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::GhostlyGame.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::GhostlyGame.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::GhostlyGame.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Widget_Design_AppBarLayout = global::GhostlyGame.Resource.Style.Base_V14_Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat = global::GhostlyGame.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Light = global::GhostlyGame.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::GhostlyGame.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Widget_Design_AppBarLayout = global::GhostlyGame.Resource.Style.Base_V21_Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V22_Theme_AppCompat = global::GhostlyGame.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V22_Theme_AppCompat_Light = global::GhostlyGame.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V23_Theme_AppCompat = global::GhostlyGame.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V23_Theme_AppCompat_Light = global::GhostlyGame.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Theme_AppCompat = global::GhostlyGame.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Theme_AppCompat_Light = global::GhostlyGame.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::GhostlyGame.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Widget_Design_AppBarLayout = global::GhostlyGame.Resource.Style.Base_V26_Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat = global::GhostlyGame.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Light = global::GhostlyGame.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::GhostlyGame.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::GhostlyGame.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::GhostlyGame.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::GhostlyGame.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionMode = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Small = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_EditText = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ImageButton = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SearchView = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SeekBar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::GhostlyGame.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_Design_AppBarLayout = global::GhostlyGame.Resource.Style.Base_Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_Design_TabLayout = global::GhostlyGame.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView = global::GhostlyGame.Resource.Style.CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Dark = global::GhostlyGame.Resource.Style.CardView_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Light = global::GhostlyGame.Resource.Style.CardView_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_AppCompat = global::GhostlyGame.Resource.Style.Platform_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_AppCompat_Light = global::GhostlyGame.Resource.Style.Platform_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat = global::GhostlyGame.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::GhostlyGame.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::GhostlyGame.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V11_AppCompat = global::GhostlyGame.Resource.Style.Platform_V11_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V11_AppCompat_Light = global::GhostlyGame.Resource.Style.Platform_V11_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V14_AppCompat = global::GhostlyGame.Resource.Style.Platform_V14_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V14_AppCompat_Light = global::GhostlyGame.Resource.Style.Platform_V14_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V21_AppCompat = global::GhostlyGame.Resource.Style.Platform_V21_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V21_AppCompat_Light = global::GhostlyGame.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V25_AppCompat = global::GhostlyGame.Resource.Style.Platform_V25_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V25_AppCompat_Light = global::GhostlyGame.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_Widget_AppCompat_Spinner = global::GhostlyGame.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::GhostlyGame.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::GhostlyGame.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::GhostlyGame.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::GhostlyGame.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body1 = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body2 = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Button = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Caption = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display1 = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display2 = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display3 = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display4 = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Headline = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Large = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Medium = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Menu = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Small = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Subhead = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Title = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Tooltip = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::GhostlyGame.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Info = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Media = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Time = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Title = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::GhostlyGame.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::GhostlyGame.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Counter = global::GhostlyGame.Resource.Style.TextAppearance_Design_Counter;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Counter_Overflow = global::GhostlyGame.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Error = global::GhostlyGame.Resource.Style.TextAppearance_Design_Error;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Hint = global::GhostlyGame.Resource.Style.TextAppearance_Design_Hint;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Snackbar_Message = global::GhostlyGame.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Tab = global::GhostlyGame.Resource.Style.TextAppearance_Design_Tab;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::GhostlyGame.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::GhostlyGame.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::GhostlyGame.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat = global::GhostlyGame.Resource.Style.Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_CompactMenu = global::GhostlyGame.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight = global::GhostlyGame.Resource.Style.Theme_AppCompat_DayNight;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::GhostlyGame.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::GhostlyGame.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::GhostlyGame.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::GhostlyGame.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::GhostlyGame.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::GhostlyGame.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog = global::GhostlyGame.Resource.Style.Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog_Alert = global::GhostlyGame.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::GhostlyGame.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::GhostlyGame.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light = global::GhostlyGame.Resource.Style.Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::GhostlyGame.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog = global::GhostlyGame.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::GhostlyGame.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::GhostlyGame.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::GhostlyGame.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::GhostlyGame.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_NoActionBar = global::GhostlyGame.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design = global::GhostlyGame.Resource.Style.Theme_Design;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_BottomSheetDialog = global::GhostlyGame.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light = global::GhostlyGame.Resource.Style.Theme_Design_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::GhostlyGame.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light_NoActionBar = global::GhostlyGame.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_NoActionBar = global::GhostlyGame.Resource.Style.Theme_Design_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat = global::GhostlyGame.Resource.Style.ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::GhostlyGame.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark = global::GhostlyGame.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::GhostlyGame.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::GhostlyGame.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::GhostlyGame.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Light = global::GhostlyGame.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionMode = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActivityChooserView = global::GhostlyGame.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::GhostlyGame.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button = global::GhostlyGame.Resource.Style.Widget_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Borderless = global::GhostlyGame.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::GhostlyGame.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::GhostlyGame.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Colored = global::GhostlyGame.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Small = global::GhostlyGame.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ButtonBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::GhostlyGame.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::GhostlyGame.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::GhostlyGame.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::GhostlyGame.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::GhostlyGame.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::GhostlyGame.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_EditText = global::GhostlyGame.Resource.Style.Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ImageButton = global::GhostlyGame.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_SearchView = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListMenuView = global::GhostlyGame.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListPopupWindow = global::GhostlyGame.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView = global::GhostlyGame.Resource.Style.Widget_AppCompat_ListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView_DropDown = global::GhostlyGame.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView_Menu = global::GhostlyGame.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupMenu = global::GhostlyGame.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::GhostlyGame.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupWindow = global::GhostlyGame.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ProgressBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::GhostlyGame.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::GhostlyGame.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar_Small = global::GhostlyGame.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SearchView = global::GhostlyGame.Resource.Style.Widget_AppCompat_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SeekBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::GhostlyGame.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner = global::GhostlyGame.Resource.Style.Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::GhostlyGame.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::GhostlyGame.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::GhostlyGame.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::GhostlyGame.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar = global::GhostlyGame.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::GhostlyGame.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Compat_NotificationActionContainer = global::GhostlyGame.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Compat_NotificationActionText = global::GhostlyGame.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_AppBarLayout = global::GhostlyGame.Resource.Style.Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_BottomNavigationView = global::GhostlyGame.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_BottomSheet_Modal = global::GhostlyGame.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_CollapsingToolbar = global::GhostlyGame.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_CoordinatorLayout = global::GhostlyGame.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_FloatingActionButton = global::GhostlyGame.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_NavigationView = global::GhostlyGame.Resource.Style.Widget_Design_NavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::GhostlyGame.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_Snackbar = global::GhostlyGame.Resource.Style.Widget_Design_Snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_TabLayout = global::GhostlyGame.Resource.Style.Widget_Design_TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_TextInputLayout = global::GhostlyGame.Resource.Style.Widget_Design_TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.collectionViewStyle = global::GhostlyGame.Resource.Style.collectionViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar = global::GhostlyGame.Resource.Styleable.ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_background = global::GhostlyGame.Resource.Styleable.ActionBar_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_backgroundSplit = global::GhostlyGame.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_backgroundStacked = global::GhostlyGame.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetEnd = global::GhostlyGame.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::GhostlyGame.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetLeft = global::GhostlyGame.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetRight = global::GhostlyGame.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetStart = global::GhostlyGame.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::GhostlyGame.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_customNavigationLayout = global::GhostlyGame.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_displayOptions = global::GhostlyGame.Resource.Styleable.ActionBar_displayOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_divider = global::GhostlyGame.Resource.Styleable.ActionBar_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_elevation = global::GhostlyGame.Resource.Styleable.ActionBar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_height = global::GhostlyGame.Resource.Styleable.ActionBar_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_hideOnContentScroll = global::GhostlyGame.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_homeAsUpIndicator = global::GhostlyGame.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_homeLayout = global::GhostlyGame.Resource.Styleable.ActionBar_homeLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_icon = global::GhostlyGame.Resource.Styleable.ActionBar_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::GhostlyGame.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_itemPadding = global::GhostlyGame.Resource.Styleable.ActionBar_itemPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_logo = global::GhostlyGame.Resource.Styleable.ActionBar_logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_navigationMode = global::GhostlyGame.Resource.Styleable.ActionBar_navigationMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_popupTheme = global::GhostlyGame.Resource.Styleable.ActionBar_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_progressBarPadding = global::GhostlyGame.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_progressBarStyle = global::GhostlyGame.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_subtitle = global::GhostlyGame.Resource.Styleable.ActionBar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_subtitleTextStyle = global::GhostlyGame.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_title = global::GhostlyGame.Resource.Styleable.ActionBar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_titleTextStyle = global::GhostlyGame.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBarLayout = global::GhostlyGame.Resource.Styleable.ActionBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::GhostlyGame.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuItemView = global::GhostlyGame.Resource.Styleable.ActionMenuItemView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuItemView_android_minWidth = global::GhostlyGame.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuView = global::GhostlyGame.Resource.Styleable.ActionMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode = global::GhostlyGame.Resource.Styleable.ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_background = global::GhostlyGame.Resource.Styleable.ActionMode_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_backgroundSplit = global::GhostlyGame.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_closeItemLayout = global::GhostlyGame.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_height = global::GhostlyGame.Resource.Styleable.ActionMode_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_subtitleTextStyle = global::GhostlyGame.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_titleTextStyle = global::GhostlyGame.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView = global::GhostlyGame.Resource.Styleable.ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::GhostlyGame.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView_initialActivityCount = global::GhostlyGame.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog = global::GhostlyGame.Resource.Styleable.AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_android_layout = global::GhostlyGame.Resource.Styleable.AlertDialog_android_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::GhostlyGame.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_listItemLayout = global::GhostlyGame.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_listLayout = global::GhostlyGame.Resource.Styleable.AlertDialog_listLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::GhostlyGame.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_showTitle = global::GhostlyGame.Resource.Styleable.AlertDialog_showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::GhostlyGame.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout = global::GhostlyGame.Resource.Styleable.AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_background = global::GhostlyGame.Resource.Styleable.AppBarLayout_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::GhostlyGame.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::GhostlyGame.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_elevation = global::GhostlyGame.Resource.Styleable.AppBarLayout_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_expanded = global::GhostlyGame.Resource.Styleable.AppBarLayout_expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates = global::GhostlyGame.Resource.Styleable.AppBarLayoutStates;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::GhostlyGame.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::GhostlyGame.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout = global::GhostlyGame.Resource.Styleable.AppBarLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::GhostlyGame.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::GhostlyGame.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView = global::GhostlyGame.Resource.Styleable.AppCompatImageView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_android_src = global::GhostlyGame.Resource.Styleable.AppCompatImageView_android_src;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_srcCompat = global::GhostlyGame.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_tint = global::GhostlyGame.Resource.Styleable.AppCompatImageView_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_tintMode = global::GhostlyGame.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar = global::GhostlyGame.Resource.Styleable.AppCompatSeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_android_thumb = global::GhostlyGame.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMark = global::GhostlyGame.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::GhostlyGame.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::GhostlyGame.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper = global::GhostlyGame.Resource.Styleable.AppCompatTextHelper;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::GhostlyGame.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::GhostlyGame.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::GhostlyGame.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::GhostlyGame.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::GhostlyGame.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::GhostlyGame.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::GhostlyGame.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView = global::GhostlyGame.Resource.Styleable.AppCompatTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_android_textAppearance = global::GhostlyGame.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::GhostlyGame.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::GhostlyGame.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::GhostlyGame.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::GhostlyGame.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::GhostlyGame.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontFamily = global::GhostlyGame.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_textAllCaps = global::GhostlyGame.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme = global::GhostlyGame.Resource.Styleable.AppCompatTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarDivider = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarSize = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTheme = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeBackground = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::GhostlyGame.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::GhostlyGame.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::GhostlyGame.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::GhostlyGame.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_checkboxStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorAccent = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlActivated = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlNormal = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorError = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorPrimary = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::GhostlyGame.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_controlBackground = global::GhostlyGame.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::GhostlyGame.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dialogTheme = global::GhostlyGame.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::GhostlyGame.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dividerVertical = global::GhostlyGame.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::GhostlyGame.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextBackground = global::GhostlyGame.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextColor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::GhostlyGame.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::GhostlyGame.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelBackground = global::GhostlyGame.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::GhostlyGame.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::GhostlyGame.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::GhostlyGame.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::GhostlyGame.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_searchViewStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_seekBarStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::GhostlyGame.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::GhostlyGame.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_spinnerStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_switchStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::GhostlyGame.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_toolbarStyle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::GhostlyGame.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionBar = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowNoTitle = global::GhostlyGame.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView = global::GhostlyGame.Resource.Styleable.BottomNavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_elevation = global::GhostlyGame.Resource.Styleable.BottomNavigationView_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemBackground = global::GhostlyGame.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemIconTint = global::GhostlyGame.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemTextColor = global::GhostlyGame.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_menu = global::GhostlyGame.Resource.Styleable.BottomNavigationView_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout = global::GhostlyGame.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::GhostlyGame.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::GhostlyGame.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::GhostlyGame.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ButtonBarLayout = global::GhostlyGame.Resource.Styleable.ButtonBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ButtonBarLayout_allowStacking = global::GhostlyGame.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView = global::GhostlyGame.Resource.Styleable.CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_android_minHeight = global::GhostlyGame.Resource.Styleable.CardView_android_minHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_android_minWidth = global::GhostlyGame.Resource.Styleable.CardView_android_minWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardBackgroundColor = global::GhostlyGame.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardCornerRadius = global::GhostlyGame.Resource.Styleable.CardView_cardCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardElevation = global::GhostlyGame.Resource.Styleable.CardView_cardElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardMaxElevation = global::GhostlyGame.Resource.Styleable.CardView_cardMaxElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardPreventCornerOverlap = global::GhostlyGame.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardUseCompatPadding = global::GhostlyGame.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPadding = global::GhostlyGame.Resource.Styleable.CardView_contentPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingBottom = global::GhostlyGame.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingLeft = global::GhostlyGame.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingRight = global::GhostlyGame.Resource.Styleable.CardView_contentPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingTop = global::GhostlyGame.Resource.Styleable.CardView_contentPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_title = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::GhostlyGame.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem = global::GhostlyGame.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_alpha = global::GhostlyGame.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_alpha = global::GhostlyGame.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_color = global::GhostlyGame.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton = global::GhostlyGame.Resource.Styleable.CompoundButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_android_button = global::GhostlyGame.Resource.Styleable.CompoundButton_android_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTint = global::GhostlyGame.Resource.Styleable.CompoundButton_buttonTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTintMode = global::GhostlyGame.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout = global::GhostlyGame.Resource.Styleable.CoordinatorLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_keylines = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::GhostlyGame.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme = global::GhostlyGame.Resource.Styleable.DesignTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::GhostlyGame.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme_bottomSheetStyle = global::GhostlyGame.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme_textColorError = global::GhostlyGame.Resource.Styleable.DesignTheme_textColorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_barLength = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_color = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_drawableSize = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_spinBars = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_thickness = global::GhostlyGame.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton = global::GhostlyGame.Resource.Styleable.FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_backgroundTint = global::GhostlyGame.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::GhostlyGame.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_borderWidth = global::GhostlyGame.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_elevation = global::GhostlyGame.Resource.Styleable.FloatingActionButton_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_fabSize = global::GhostlyGame.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::GhostlyGame.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_rippleColor = global::GhostlyGame.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_useCompatPadding = global::GhostlyGame.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::GhostlyGame.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::GhostlyGame.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily = global::GhostlyGame.Resource.Styleable.FontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderAuthority = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderCerts = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderPackage = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderQuery = global::GhostlyGame.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont = global::GhostlyGame.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_font = global::GhostlyGame.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_fontStyle = global::GhostlyGame.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_fontWeight = global::GhostlyGame.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_font = global::GhostlyGame.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_fontStyle = global::GhostlyGame.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_fontWeight = global::GhostlyGame.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout = global::GhostlyGame.Resource.Styleable.ForegroundLinearLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::GhostlyGame.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::GhostlyGame.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::GhostlyGame.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_gravity = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_orientation = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_divider = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_showDividers = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::GhostlyGame.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow = global::GhostlyGame.Resource.Styleable.ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::GhostlyGame.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::GhostlyGame.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup = global::GhostlyGame.Resource.Styleable.MenuGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_checkableBehavior = global::GhostlyGame.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_enabled = global::GhostlyGame.Resource.Styleable.MenuGroup_android_enabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_id = global::GhostlyGame.Resource.Styleable.MenuGroup_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_menuCategory = global::GhostlyGame.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_orderInCategory = global::GhostlyGame.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_visible = global::GhostlyGame.Resource.Styleable.MenuGroup_android_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem = global::GhostlyGame.Resource.Styleable.MenuItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionLayout = global::GhostlyGame.Resource.Styleable.MenuItem_actionLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionProviderClass = global::GhostlyGame.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionViewClass = global::GhostlyGame.Resource.Styleable.MenuItem_actionViewClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_alphabeticModifiers = global::GhostlyGame.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::GhostlyGame.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_checkable = global::GhostlyGame.Resource.Styleable.MenuItem_android_checkable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_checked = global::GhostlyGame.Resource.Styleable.MenuItem_android_checked;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_enabled = global::GhostlyGame.Resource.Styleable.MenuItem_android_enabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_icon = global::GhostlyGame.Resource.Styleable.MenuItem_android_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_id = global::GhostlyGame.Resource.Styleable.MenuItem_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_menuCategory = global::GhostlyGame.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_numericShortcut = global::GhostlyGame.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_onClick = global::GhostlyGame.Resource.Styleable.MenuItem_android_onClick;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_orderInCategory = global::GhostlyGame.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_title = global::GhostlyGame.Resource.Styleable.MenuItem_android_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_titleCondensed = global::GhostlyGame.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_visible = global::GhostlyGame.Resource.Styleable.MenuItem_android_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_contentDescription = global::GhostlyGame.Resource.Styleable.MenuItem_contentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_iconTint = global::GhostlyGame.Resource.Styleable.MenuItem_iconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_iconTintMode = global::GhostlyGame.Resource.Styleable.MenuItem_iconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_numericModifiers = global::GhostlyGame.Resource.Styleable.MenuItem_numericModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_showAsAction = global::GhostlyGame.Resource.Styleable.MenuItem_showAsAction;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_tooltipText = global::GhostlyGame.Resource.Styleable.MenuItem_tooltipText;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView = global::GhostlyGame.Resource.Styleable.MenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_headerBackground = global::GhostlyGame.Resource.Styleable.MenuView_android_headerBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_horizontalDivider = global::GhostlyGame.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemBackground = global::GhostlyGame.Resource.Styleable.MenuView_android_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::GhostlyGame.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemTextAppearance = global::GhostlyGame.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_verticalDivider = global::GhostlyGame.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_windowAnimationStyle = global::GhostlyGame.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_preserveIconSpacing = global::GhostlyGame.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_subMenuArrow = global::GhostlyGame.Resource.Styleable.MenuView_subMenuArrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView = global::GhostlyGame.Resource.Styleable.NavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_background = global::GhostlyGame.Resource.Styleable.NavigationView_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::GhostlyGame.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_maxWidth = global::GhostlyGame.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_elevation = global::GhostlyGame.Resource.Styleable.NavigationView_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_headerLayout = global::GhostlyGame.Resource.Styleable.NavigationView_headerLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemBackground = global::GhostlyGame.Resource.Styleable.NavigationView_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemIconTint = global::GhostlyGame.Resource.Styleable.NavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemTextAppearance = global::GhostlyGame.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemTextColor = global::GhostlyGame.Resource.Styleable.NavigationView_itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_menu = global::GhostlyGame.Resource.Styleable.NavigationView_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow = global::GhostlyGame.Resource.Styleable.PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::GhostlyGame.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_android_popupBackground = global::GhostlyGame.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_overlapAnchor = global::GhostlyGame.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindowBackgroundState = global::GhostlyGame.Resource.Styleable.PopupWindowBackgroundState;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::GhostlyGame.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView = global::GhostlyGame.Resource.Styleable.RecycleListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::GhostlyGame.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::GhostlyGame.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView = global::GhostlyGame.Resource.Styleable.RecyclerView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_descendantFocusability = global::GhostlyGame.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_orientation = global::GhostlyGame.Resource.Styleable.RecyclerView_android_orientation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollEnabled = global::GhostlyGame.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::GhostlyGame.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::GhostlyGame.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::GhostlyGame.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::GhostlyGame.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_layoutManager = global::GhostlyGame.Resource.Styleable.RecyclerView_layoutManager;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_reverseLayout = global::GhostlyGame.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_spanCount = global::GhostlyGame.Resource.Styleable.RecyclerView_spanCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_stackFromEnd = global::GhostlyGame.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrimInsetsFrameLayout = global::GhostlyGame.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::GhostlyGame.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrollingViewBehavior_Layout = global::GhostlyGame.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::GhostlyGame.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView = global::GhostlyGame.Resource.Styleable.SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_focusable = global::GhostlyGame.Resource.Styleable.SearchView_android_focusable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_imeOptions = global::GhostlyGame.Resource.Styleable.SearchView_android_imeOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_inputType = global::GhostlyGame.Resource.Styleable.SearchView_android_inputType;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_maxWidth = global::GhostlyGame.Resource.Styleable.SearchView_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_closeIcon = global::GhostlyGame.Resource.Styleable.SearchView_closeIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_commitIcon = global::GhostlyGame.Resource.Styleable.SearchView_commitIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_defaultQueryHint = global::GhostlyGame.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_goIcon = global::GhostlyGame.Resource.Styleable.SearchView_goIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_iconifiedByDefault = global::GhostlyGame.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_layout = global::GhostlyGame.Resource.Styleable.SearchView_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_queryBackground = global::GhostlyGame.Resource.Styleable.SearchView_queryBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_queryHint = global::GhostlyGame.Resource.Styleable.SearchView_queryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_searchHintIcon = global::GhostlyGame.Resource.Styleable.SearchView_searchHintIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_searchIcon = global::GhostlyGame.Resource.Styleable.SearchView_searchIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_submitBackground = global::GhostlyGame.Resource.Styleable.SearchView_submitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_suggestionRowLayout = global::GhostlyGame.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_voiceIcon = global::GhostlyGame.Resource.Styleable.SearchView_voiceIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout = global::GhostlyGame.Resource.Styleable.SnackbarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_android_maxWidth = global::GhostlyGame.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_elevation = global::GhostlyGame.Resource.Styleable.SnackbarLayout_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::GhostlyGame.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner = global::GhostlyGame.Resource.Styleable.Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_dropDownWidth = global::GhostlyGame.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_entries = global::GhostlyGame.Resource.Styleable.Spinner_android_entries;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_popupBackground = global::GhostlyGame.Resource.Styleable.Spinner_android_popupBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_prompt = global::GhostlyGame.Resource.Styleable.Spinner_android_prompt;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_popupTheme = global::GhostlyGame.Resource.Styleable.Spinner_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat = global::GhostlyGame.Resource.Styleable.SwitchCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_textOff = global::GhostlyGame.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_textOn = global::GhostlyGame.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_thumb = global::GhostlyGame.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_showText = global::GhostlyGame.Resource.Styleable.SwitchCompat_showText;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_splitTrack = global::GhostlyGame.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchMinWidth = global::GhostlyGame.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchPadding = global::GhostlyGame.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchTextAppearance = global::GhostlyGame.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTextPadding = global::GhostlyGame.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTint = global::GhostlyGame.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTintMode = global::GhostlyGame.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_track = global::GhostlyGame.Resource.Styleable.SwitchCompat_track;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_trackTint = global::GhostlyGame.Resource.Styleable.SwitchCompat_trackTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_trackTintMode = global::GhostlyGame.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem = global::GhostlyGame.Resource.Styleable.TabItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_icon = global::GhostlyGame.Resource.Styleable.TabItem_android_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_layout = global::GhostlyGame.Resource.Styleable.TabItem_android_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_text = global::GhostlyGame.Resource.Styleable.TabItem_android_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout = global::GhostlyGame.Resource.Styleable.TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabBackground = global::GhostlyGame.Resource.Styleable.TabLayout_tabBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabContentStart = global::GhostlyGame.Resource.Styleable.TabLayout_tabContentStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabGravity = global::GhostlyGame.Resource.Styleable.TabLayout_tabGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorColor = global::GhostlyGame.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorHeight = global::GhostlyGame.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMaxWidth = global::GhostlyGame.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMinWidth = global::GhostlyGame.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMode = global::GhostlyGame.Resource.Styleable.TabLayout_tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPadding = global::GhostlyGame.Resource.Styleable.TabLayout_tabPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingBottom = global::GhostlyGame.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingEnd = global::GhostlyGame.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingStart = global::GhostlyGame.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingTop = global::GhostlyGame.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabSelectedTextColor = global::GhostlyGame.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabTextAppearance = global::GhostlyGame.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabTextColor = global::GhostlyGame.Resource.Styleable.TabLayout_tabTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance = global::GhostlyGame.Resource.Styleable.TextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_fontFamily = global::GhostlyGame.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowColor = global::GhostlyGame.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowDx = global::GhostlyGame.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowDy = global::GhostlyGame.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowRadius = global::GhostlyGame.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColor = global::GhostlyGame.Resource.Styleable.TextAppearance_android_textColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorHint = global::GhostlyGame.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorLink = global::GhostlyGame.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textSize = global::GhostlyGame.Resource.Styleable.TextAppearance_android_textSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textStyle = global::GhostlyGame.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_typeface = global::GhostlyGame.Resource.Styleable.TextAppearance_android_typeface;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_fontFamily = global::GhostlyGame.Resource.Styleable.TextAppearance_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_textAllCaps = global::GhostlyGame.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout = global::GhostlyGame.Resource.Styleable.TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_hint = global::GhostlyGame.Resource.Styleable.TextInputLayout_android_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_textColorHint = global::GhostlyGame.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterEnabled = global::GhostlyGame.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterMaxLength = global::GhostlyGame.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::GhostlyGame.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterTextAppearance = global::GhostlyGame.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorEnabled = global::GhostlyGame.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorTextAppearance = global::GhostlyGame.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::GhostlyGame.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintEnabled = global::GhostlyGame.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintTextAppearance = global::GhostlyGame.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::GhostlyGame.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::GhostlyGame.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::GhostlyGame.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleTint = global::GhostlyGame.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::GhostlyGame.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar = global::GhostlyGame.Resource.Styleable.Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_android_gravity = global::GhostlyGame.Resource.Styleable.Toolbar_android_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_android_minHeight = global::GhostlyGame.Resource.Styleable.Toolbar_android_minHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_buttonGravity = global::GhostlyGame.Resource.Styleable.Toolbar_buttonGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_collapseContentDescription = global::GhostlyGame.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_collapseIcon = global::GhostlyGame.Resource.Styleable.Toolbar_collapseIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetEnd = global::GhostlyGame.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::GhostlyGame.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetLeft = global::GhostlyGame.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetRight = global::GhostlyGame.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetStart = global::GhostlyGame.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::GhostlyGame.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logo = global::GhostlyGame.Resource.Styleable.Toolbar_logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logoDescription = global::GhostlyGame.Resource.Styleable.Toolbar_logoDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_maxButtonHeight = global::GhostlyGame.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationContentDescription = global::GhostlyGame.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationIcon = global::GhostlyGame.Resource.Styleable.Toolbar_navigationIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_popupTheme = global::GhostlyGame.Resource.Styleable.Toolbar_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitle = global::GhostlyGame.Resource.Styleable.Toolbar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitleTextAppearance = global::GhostlyGame.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitleTextColor = global::GhostlyGame.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_title = global::GhostlyGame.Resource.Styleable.Toolbar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMargin = global::GhostlyGame.Resource.Styleable.Toolbar_titleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginBottom = global::GhostlyGame.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginEnd = global::GhostlyGame.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginStart = global::GhostlyGame.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginTop = global::GhostlyGame.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMargins = global::GhostlyGame.Resource.Styleable.Toolbar_titleMargins;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleTextAppearance = global::GhostlyGame.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleTextColor = global::GhostlyGame.Resource.Styleable.Toolbar_titleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View = global::GhostlyGame.Resource.Styleable.View;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_android_focusable = global::GhostlyGame.Resource.Styleable.View_android_focusable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_android_theme = global::GhostlyGame.Resource.Styleable.View_android_theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingEnd = global::GhostlyGame.Resource.Styleable.View_paddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingStart = global::GhostlyGame.Resource.Styleable.View_paddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_theme = global::GhostlyGame.Resource.Styleable.View_theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper = global::GhostlyGame.Resource.Styleable.ViewBackgroundHelper;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_android_background = global::GhostlyGame.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::GhostlyGame.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::GhostlyGame.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat = global::GhostlyGame.Resource.Styleable.ViewStubCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_id = global::GhostlyGame.Resource.Styleable.ViewStubCompat_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::GhostlyGame.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_layout = global::GhostlyGame.Resource.Styleable.ViewStubCompat_android_layout;
 		}
 		
 		public partial class Animation
@@ -3124,10 +5218,22 @@ namespace GhostlyGame
 			public const int design_snackbar_out = 2131034125;
 			
 			// aapt resource value: 0x7f05000e
-			public const int tooltip_enter = 2131034126;
+			public const int EnterFromLeft = 2131034126;
 			
 			// aapt resource value: 0x7f05000f
-			public const int tooltip_exit = 2131034127;
+			public const int EnterFromRight = 2131034127;
+			
+			// aapt resource value: 0x7f050010
+			public const int ExitToLeft = 2131034128;
+			
+			// aapt resource value: 0x7f050011
+			public const int ExitToRight = 2131034129;
+			
+			// aapt resource value: 0x7f050012
+			public const int tooltip_enter = 2131034130;
+			
+			// aapt resource value: 0x7f050013
+			public const int tooltip_exit = 2131034131;
 			
 			static Animation()
 			{
@@ -3158,416 +5264,449 @@ namespace GhostlyGame
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f010052
-			public const int actionBarDivider = 2130772050;
-			
-			// aapt resource value: 0x7f010053
-			public const int actionBarItemBackground = 2130772051;
-			
-			// aapt resource value: 0x7f01004c
-			public const int actionBarPopupTheme = 2130772044;
-			
-			// aapt resource value: 0x7f010051
-			public const int actionBarSize = 2130772049;
-			
-			// aapt resource value: 0x7f01004e
-			public const int actionBarSplitStyle = 2130772046;
-			
-			// aapt resource value: 0x7f01004d
-			public const int actionBarStyle = 2130772045;
-			
-			// aapt resource value: 0x7f010048
-			public const int actionBarTabBarStyle = 2130772040;
-			
-			// aapt resource value: 0x7f010047
-			public const int actionBarTabStyle = 2130772039;
-			
-			// aapt resource value: 0x7f010049
-			public const int actionBarTabTextStyle = 2130772041;
-			
-			// aapt resource value: 0x7f01004f
-			public const int actionBarTheme = 2130772047;
-			
-			// aapt resource value: 0x7f010050
-			public const int actionBarWidgetTheme = 2130772048;
-			
-			// aapt resource value: 0x7f01006d
-			public const int actionButtonStyle = 2130772077;
-			
-			// aapt resource value: 0x7f010069
-			public const int actionDropDownStyle = 2130772073;
-			
-			// aapt resource value: 0x7f0100c4
-			public const int actionLayout = 2130772164;
-			
-			// aapt resource value: 0x7f010054
-			public const int actionMenuTextAppearance = 2130772052;
-			
-			// aapt resource value: 0x7f010055
-			public const int actionMenuTextColor = 2130772053;
-			
-			// aapt resource value: 0x7f010058
-			public const int actionModeBackground = 2130772056;
-			
-			// aapt resource value: 0x7f010057
-			public const int actionModeCloseButtonStyle = 2130772055;
-			
-			// aapt resource value: 0x7f01005a
-			public const int actionModeCloseDrawable = 2130772058;
-			
-			// aapt resource value: 0x7f01005c
-			public const int actionModeCopyDrawable = 2130772060;
-			
-			// aapt resource value: 0x7f01005b
-			public const int actionModeCutDrawable = 2130772059;
-			
-			// aapt resource value: 0x7f010060
-			public const int actionModeFindDrawable = 2130772064;
-			
 			// aapt resource value: 0x7f01005d
-			public const int actionModePasteDrawable = 2130772061;
-			
-			// aapt resource value: 0x7f010062
-			public const int actionModePopupWindowStyle = 2130772066;
+			public const int actionBarDivider = 2130772061;
 			
 			// aapt resource value: 0x7f01005e
-			public const int actionModeSelectAllDrawable = 2130772062;
+			public const int actionBarItemBackground = 2130772062;
 			
-			// aapt resource value: 0x7f01005f
-			public const int actionModeShareDrawable = 2130772063;
+			// aapt resource value: 0x7f010057
+			public const int actionBarPopupTheme = 2130772055;
+			
+			// aapt resource value: 0x7f01005c
+			public const int actionBarSize = 2130772060;
 			
 			// aapt resource value: 0x7f010059
-			public const int actionModeSplitBackground = 2130772057;
+			public const int actionBarSplitStyle = 2130772057;
 			
-			// aapt resource value: 0x7f010056
-			public const int actionModeStyle = 2130772054;
+			// aapt resource value: 0x7f010058
+			public const int actionBarStyle = 2130772056;
 			
-			// aapt resource value: 0x7f010061
-			public const int actionModeWebSearchDrawable = 2130772065;
+			// aapt resource value: 0x7f010053
+			public const int actionBarTabBarStyle = 2130772051;
 			
-			// aapt resource value: 0x7f01004a
-			public const int actionOverflowButtonStyle = 2130772042;
+			// aapt resource value: 0x7f010052
+			public const int actionBarTabStyle = 2130772050;
 			
-			// aapt resource value: 0x7f01004b
-			public const int actionOverflowMenuStyle = 2130772043;
+			// aapt resource value: 0x7f010054
+			public const int actionBarTabTextStyle = 2130772052;
 			
-			// aapt resource value: 0x7f0100c6
-			public const int actionProviderClass = 2130772166;
+			// aapt resource value: 0x7f01005a
+			public const int actionBarTheme = 2130772058;
 			
-			// aapt resource value: 0x7f0100c5
-			public const int actionViewClass = 2130772165;
+			// aapt resource value: 0x7f01005b
+			public const int actionBarWidgetTheme = 2130772059;
 			
-			// aapt resource value: 0x7f010075
-			public const int activityChooserViewStyle = 2130772085;
-			
-			// aapt resource value: 0x7f01009a
-			public const int alertDialogButtonGroupStyle = 2130772122;
-			
-			// aapt resource value: 0x7f01009b
-			public const int alertDialogCenterButtons = 2130772123;
-			
-			// aapt resource value: 0x7f010099
-			public const int alertDialogStyle = 2130772121;
-			
-			// aapt resource value: 0x7f01009c
-			public const int alertDialogTheme = 2130772124;
-			
-			// aapt resource value: 0x7f0100b2
-			public const int allowStacking = 2130772146;
-			
-			// aapt resource value: 0x7f0100b3
-			public const int alpha = 2130772147;
-			
-			// aapt resource value: 0x7f0100c1
-			public const int alphabeticModifiers = 2130772161;
-			
-			// aapt resource value: 0x7f0100ba
-			public const int arrowHeadLength = 2130772154;
-			
-			// aapt resource value: 0x7f0100bb
-			public const int arrowShaftLength = 2130772155;
-			
-			// aapt resource value: 0x7f0100a1
-			public const int autoCompleteTextViewStyle = 2130772129;
-			
-			// aapt resource value: 0x7f01003b
-			public const int autoSizeMaxTextSize = 2130772027;
-			
-			// aapt resource value: 0x7f01003a
-			public const int autoSizeMinTextSize = 2130772026;
-			
-			// aapt resource value: 0x7f010039
-			public const int autoSizePresetSizes = 2130772025;
-			
-			// aapt resource value: 0x7f010038
-			public const int autoSizeStepGranularity = 2130772024;
-			
-			// aapt resource value: 0x7f010037
-			public const int autoSizeTextType = 2130772023;
-			
-			// aapt resource value: 0x7f010015
-			public const int background = 2130771989;
-			
-			// aapt resource value: 0x7f010017
-			public const int backgroundSplit = 2130771991;
-			
-			// aapt resource value: 0x7f010016
-			public const int backgroundStacked = 2130771990;
-			
-			// aapt resource value: 0x7f0100fd
-			public const int backgroundTint = 2130772221;
-			
-			// aapt resource value: 0x7f0100fe
-			public const int backgroundTintMode = 2130772222;
-			
-			// aapt resource value: 0x7f0100bc
-			public const int barLength = 2130772156;
-			
-			// aapt resource value: 0x7f010128
-			public const int behavior_autoHide = 2130772264;
-			
-			// aapt resource value: 0x7f010105
-			public const int behavior_hideable = 2130772229;
-			
-			// aapt resource value: 0x7f010131
-			public const int behavior_overlapTop = 2130772273;
-			
-			// aapt resource value: 0x7f010104
-			public const int behavior_peekHeight = 2130772228;
-			
-			// aapt resource value: 0x7f010106
-			public const int behavior_skipCollapsed = 2130772230;
-			
-			// aapt resource value: 0x7f010126
-			public const int borderWidth = 2130772262;
-			
-			// aapt resource value: 0x7f010072
-			public const int borderlessButtonStyle = 2130772082;
-			
-			// aapt resource value: 0x7f010120
-			public const int bottomSheetDialogTheme = 2130772256;
-			
-			// aapt resource value: 0x7f010121
-			public const int bottomSheetStyle = 2130772257;
-			
-			// aapt resource value: 0x7f01006f
-			public const int buttonBarButtonStyle = 2130772079;
-			
-			// aapt resource value: 0x7f01009f
-			public const int buttonBarNegativeButtonStyle = 2130772127;
-			
-			// aapt resource value: 0x7f0100a0
-			public const int buttonBarNeutralButtonStyle = 2130772128;
-			
-			// aapt resource value: 0x7f01009e
-			public const int buttonBarPositiveButtonStyle = 2130772126;
-			
-			// aapt resource value: 0x7f01006e
-			public const int buttonBarStyle = 2130772078;
-			
-			// aapt resource value: 0x7f0100f2
-			public const int buttonGravity = 2130772210;
-			
-			// aapt resource value: 0x7f01002a
-			public const int buttonPanelSideLayout = 2130772010;
-			
-			// aapt resource value: 0x7f0100a2
-			public const int buttonStyle = 2130772130;
-			
-			// aapt resource value: 0x7f0100a3
-			public const int buttonStyleSmall = 2130772131;
-			
-			// aapt resource value: 0x7f0100b4
-			public const int buttonTint = 2130772148;
-			
-			// aapt resource value: 0x7f0100b5
-			public const int buttonTintMode = 2130772149;
-			
-			// aapt resource value: 0x7f0100a4
-			public const int checkboxStyle = 2130772132;
-			
-			// aapt resource value: 0x7f0100a5
-			public const int checkedTextViewStyle = 2130772133;
-			
-			// aapt resource value: 0x7f0100d5
-			public const int closeIcon = 2130772181;
-			
-			// aapt resource value: 0x7f010027
-			public const int closeItemLayout = 2130772007;
-			
-			// aapt resource value: 0x7f0100f4
-			public const int collapseContentDescription = 2130772212;
-			
-			// aapt resource value: 0x7f0100f3
-			public const int collapseIcon = 2130772211;
-			
-			// aapt resource value: 0x7f010113
-			public const int collapsedTitleGravity = 2130772243;
-			
-			// aapt resource value: 0x7f01010d
-			public const int collapsedTitleTextAppearance = 2130772237;
-			
-			// aapt resource value: 0x7f0100b6
-			public const int color = 2130772150;
-			
-			// aapt resource value: 0x7f010091
-			public const int colorAccent = 2130772113;
-			
-			// aapt resource value: 0x7f010098
-			public const int colorBackgroundFloating = 2130772120;
-			
-			// aapt resource value: 0x7f010095
-			public const int colorButtonNormal = 2130772117;
-			
-			// aapt resource value: 0x7f010093
-			public const int colorControlActivated = 2130772115;
-			
-			// aapt resource value: 0x7f010094
-			public const int colorControlHighlight = 2130772116;
-			
-			// aapt resource value: 0x7f010092
-			public const int colorControlNormal = 2130772114;
-			
-			// aapt resource value: 0x7f0100b1
-			public const int colorError = 2130772145;
-			
-			// aapt resource value: 0x7f01008f
-			public const int colorPrimary = 2130772111;
-			
-			// aapt resource value: 0x7f010090
-			public const int colorPrimaryDark = 2130772112;
-			
-			// aapt resource value: 0x7f010096
-			public const int colorSwitchThumbNormal = 2130772118;
-			
-			// aapt resource value: 0x7f0100da
-			public const int commitIcon = 2130772186;
-			
-			// aapt resource value: 0x7f0100c7
-			public const int contentDescription = 2130772167;
-			
-			// aapt resource value: 0x7f010020
-			public const int contentInsetEnd = 2130772000;
-			
-			// aapt resource value: 0x7f010024
-			public const int contentInsetEndWithActions = 2130772004;
-			
-			// aapt resource value: 0x7f010021
-			public const int contentInsetLeft = 2130772001;
-			
-			// aapt resource value: 0x7f010022
-			public const int contentInsetRight = 2130772002;
-			
-			// aapt resource value: 0x7f01001f
-			public const int contentInsetStart = 2130771999;
-			
-			// aapt resource value: 0x7f010023
-			public const int contentInsetStartWithNavigation = 2130772003;
-			
-			// aapt resource value: 0x7f01010e
-			public const int contentScrim = 2130772238;
-			
-			// aapt resource value: 0x7f010097
-			public const int controlBackground = 2130772119;
-			
-			// aapt resource value: 0x7f010147
-			public const int counterEnabled = 2130772295;
-			
-			// aapt resource value: 0x7f010148
-			public const int counterMaxLength = 2130772296;
-			
-			// aapt resource value: 0x7f01014a
-			public const int counterOverflowTextAppearance = 2130772298;
-			
-			// aapt resource value: 0x7f010149
-			public const int counterTextAppearance = 2130772297;
-			
-			// aapt resource value: 0x7f010018
-			public const int customNavigationLayout = 2130771992;
-			
-			// aapt resource value: 0x7f0100d4
-			public const int defaultQueryHint = 2130772180;
-			
-			// aapt resource value: 0x7f010067
-			public const int dialogPreferredPadding = 2130772071;
-			
-			// aapt resource value: 0x7f010066
-			public const int dialogTheme = 2130772070;
-			
-			// aapt resource value: 0x7f01000e
-			public const int displayOptions = 2130771982;
-			
-			// aapt resource value: 0x7f010014
-			public const int divider = 2130771988;
+			// aapt resource value: 0x7f010078
+			public const int actionButtonStyle = 2130772088;
 			
 			// aapt resource value: 0x7f010074
-			public const int dividerHorizontal = 2130772084;
+			public const int actionDropDownStyle = 2130772084;
 			
-			// aapt resource value: 0x7f0100c0
-			public const int dividerPadding = 2130772160;
+			// aapt resource value: 0x7f0100cf
+			public const int actionLayout = 2130772175;
 			
-			// aapt resource value: 0x7f010073
-			public const int dividerVertical = 2130772083;
+			// aapt resource value: 0x7f01005f
+			public const int actionMenuTextAppearance = 2130772063;
 			
-			// aapt resource value: 0x7f0100b8
-			public const int drawableSize = 2130772152;
+			// aapt resource value: 0x7f010060
+			public const int actionMenuTextColor = 2130772064;
 			
-			// aapt resource value: 0x7f010009
-			public const int drawerArrowStyle = 2130771977;
+			// aapt resource value: 0x7f010063
+			public const int actionModeBackground = 2130772067;
 			
-			// aapt resource value: 0x7f010086
-			public const int dropDownListViewStyle = 2130772102;
+			// aapt resource value: 0x7f010062
+			public const int actionModeCloseButtonStyle = 2130772066;
+			
+			// aapt resource value: 0x7f010065
+			public const int actionModeCloseDrawable = 2130772069;
+			
+			// aapt resource value: 0x7f010067
+			public const int actionModeCopyDrawable = 2130772071;
+			
+			// aapt resource value: 0x7f010066
+			public const int actionModeCutDrawable = 2130772070;
+			
+			// aapt resource value: 0x7f01006b
+			public const int actionModeFindDrawable = 2130772075;
+			
+			// aapt resource value: 0x7f010068
+			public const int actionModePasteDrawable = 2130772072;
+			
+			// aapt resource value: 0x7f01006d
+			public const int actionModePopupWindowStyle = 2130772077;
+			
+			// aapt resource value: 0x7f010069
+			public const int actionModeSelectAllDrawable = 2130772073;
 			
 			// aapt resource value: 0x7f01006a
-			public const int dropdownListPreferredItemHeight = 2130772074;
+			public const int actionModeShareDrawable = 2130772074;
 			
-			// aapt resource value: 0x7f01007b
-			public const int editTextBackground = 2130772091;
+			// aapt resource value: 0x7f010064
+			public const int actionModeSplitBackground = 2130772068;
 			
-			// aapt resource value: 0x7f01007a
-			public const int editTextColor = 2130772090;
+			// aapt resource value: 0x7f010061
+			public const int actionModeStyle = 2130772065;
+			
+			// aapt resource value: 0x7f01006c
+			public const int actionModeWebSearchDrawable = 2130772076;
+			
+			// aapt resource value: 0x7f010055
+			public const int actionOverflowButtonStyle = 2130772053;
+			
+			// aapt resource value: 0x7f010056
+			public const int actionOverflowMenuStyle = 2130772054;
+			
+			// aapt resource value: 0x7f0100d1
+			public const int actionProviderClass = 2130772177;
+			
+			// aapt resource value: 0x7f0100d0
+			public const int actionViewClass = 2130772176;
+			
+			// aapt resource value: 0x7f010080
+			public const int activityChooserViewStyle = 2130772096;
+			
+			// aapt resource value: 0x7f0100a5
+			public const int alertDialogButtonGroupStyle = 2130772133;
 			
 			// aapt resource value: 0x7f0100a6
-			public const int editTextStyle = 2130772134;
+			public const int alertDialogCenterButtons = 2130772134;
 			
-			// aapt resource value: 0x7f010025
-			public const int elevation = 2130772005;
+			// aapt resource value: 0x7f0100a4
+			public const int alertDialogStyle = 2130772132;
 			
-			// aapt resource value: 0x7f010145
-			public const int errorEnabled = 2130772293;
+			// aapt resource value: 0x7f0100a7
+			public const int alertDialogTheme = 2130772135;
 			
-			// aapt resource value: 0x7f010146
-			public const int errorTextAppearance = 2130772294;
+			// aapt resource value: 0x7f0100bd
+			public const int allowStacking = 2130772157;
 			
-			// aapt resource value: 0x7f010029
-			public const int expandActivityOverflowButtonDrawable = 2130772009;
+			// aapt resource value: 0x7f0100be
+			public const int alpha = 2130772158;
 			
-			// aapt resource value: 0x7f0100ff
-			public const int expanded = 2130772223;
+			// aapt resource value: 0x7f0100cc
+			public const int alphabeticModifiers = 2130772172;
 			
-			// aapt resource value: 0x7f010114
-			public const int expandedTitleGravity = 2130772244;
+			// aapt resource value: 0x7f0100c5
+			public const int arrowHeadLength = 2130772165;
 			
-			// aapt resource value: 0x7f010107
-			public const int expandedTitleMargin = 2130772231;
+			// aapt resource value: 0x7f0100c6
+			public const int arrowShaftLength = 2130772166;
 			
-			// aapt resource value: 0x7f01010b
-			public const int expandedTitleMarginBottom = 2130772235;
+			// aapt resource value: 0x7f0100ac
+			public const int autoCompleteTextViewStyle = 2130772140;
 			
-			// aapt resource value: 0x7f01010a
-			public const int expandedTitleMarginEnd = 2130772234;
+			// aapt resource value: 0x7f010046
+			public const int autoSizeMaxTextSize = 2130772038;
+			
+			// aapt resource value: 0x7f010045
+			public const int autoSizeMinTextSize = 2130772037;
+			
+			// aapt resource value: 0x7f010044
+			public const int autoSizePresetSizes = 2130772036;
+			
+			// aapt resource value: 0x7f010043
+			public const int autoSizeStepGranularity = 2130772035;
+			
+			// aapt resource value: 0x7f010042
+			public const int autoSizeTextType = 2130772034;
+			
+			// aapt resource value: 0x7f010020
+			public const int background = 2130772000;
+			
+			// aapt resource value: 0x7f010022
+			public const int backgroundSplit = 2130772002;
+			
+			// aapt resource value: 0x7f010021
+			public const int backgroundStacked = 2130772001;
 			
 			// aapt resource value: 0x7f010108
-			public const int expandedTitleMarginStart = 2130772232;
+			public const int backgroundTint = 2130772232;
 			
 			// aapt resource value: 0x7f010109
-			public const int expandedTitleMarginTop = 2130772233;
+			public const int backgroundTintMode = 2130772233;
 			
-			// aapt resource value: 0x7f01010c
-			public const int expandedTitleTextAppearance = 2130772236;
+			// aapt resource value: 0x7f0100c7
+			public const int barLength = 2130772167;
 			
-			// aapt resource value: 0x7f010124
-			public const int fabSize = 2130772260;
+			// aapt resource value: 0x7f010133
+			public const int behavior_autoHide = 2130772275;
+			
+			// aapt resource value: 0x7f010110
+			public const int behavior_hideable = 2130772240;
+			
+			// aapt resource value: 0x7f01013c
+			public const int behavior_overlapTop = 2130772284;
+			
+			// aapt resource value: 0x7f01010f
+			public const int behavior_peekHeight = 2130772239;
+			
+			// aapt resource value: 0x7f010111
+			public const int behavior_skipCollapsed = 2130772241;
+			
+			// aapt resource value: 0x7f010131
+			public const int borderWidth = 2130772273;
+			
+			// aapt resource value: 0x7f01007d
+			public const int borderlessButtonStyle = 2130772093;
+			
+			// aapt resource value: 0x7f01012b
+			public const int bottomSheetDialogTheme = 2130772267;
+			
+			// aapt resource value: 0x7f01012c
+			public const int bottomSheetStyle = 2130772268;
+			
+			// aapt resource value: 0x7f01007a
+			public const int buttonBarButtonStyle = 2130772090;
+			
+			// aapt resource value: 0x7f0100aa
+			public const int buttonBarNegativeButtonStyle = 2130772138;
+			
+			// aapt resource value: 0x7f0100ab
+			public const int buttonBarNeutralButtonStyle = 2130772139;
+			
+			// aapt resource value: 0x7f0100a9
+			public const int buttonBarPositiveButtonStyle = 2130772137;
+			
+			// aapt resource value: 0x7f010079
+			public const int buttonBarStyle = 2130772089;
+			
+			// aapt resource value: 0x7f0100fd
+			public const int buttonGravity = 2130772221;
+			
+			// aapt resource value: 0x7f010035
+			public const int buttonPanelSideLayout = 2130772021;
+			
+			// aapt resource value: 0x7f0100ad
+			public const int buttonStyle = 2130772141;
+			
+			// aapt resource value: 0x7f0100ae
+			public const int buttonStyleSmall = 2130772142;
+			
+			// aapt resource value: 0x7f0100bf
+			public const int buttonTint = 2130772159;
+			
+			// aapt resource value: 0x7f0100c0
+			public const int buttonTintMode = 2130772160;
+			
+			// aapt resource value: 0x7f010009
+			public const int cardBackgroundColor = 2130771977;
+			
+			// aapt resource value: 0x7f01000a
+			public const int cardCornerRadius = 2130771978;
+			
+			// aapt resource value: 0x7f01000b
+			public const int cardElevation = 2130771979;
+			
+			// aapt resource value: 0x7f01000c
+			public const int cardMaxElevation = 2130771980;
+			
+			// aapt resource value: 0x7f01000e
+			public const int cardPreventCornerOverlap = 2130771982;
+			
+			// aapt resource value: 0x7f01000d
+			public const int cardUseCompatPadding = 2130771981;
+			
+			// aapt resource value: 0x7f0100af
+			public const int checkboxStyle = 2130772143;
+			
+			// aapt resource value: 0x7f0100b0
+			public const int checkedTextViewStyle = 2130772144;
+			
+			// aapt resource value: 0x7f0100e0
+			public const int closeIcon = 2130772192;
+			
+			// aapt resource value: 0x7f010032
+			public const int closeItemLayout = 2130772018;
+			
+			// aapt resource value: 0x7f0100ff
+			public const int collapseContentDescription = 2130772223;
+			
+			// aapt resource value: 0x7f0100fe
+			public const int collapseIcon = 2130772222;
+			
+			// aapt resource value: 0x7f01011e
+			public const int collapsedTitleGravity = 2130772254;
+			
+			// aapt resource value: 0x7f010118
+			public const int collapsedTitleTextAppearance = 2130772248;
+			
+			// aapt resource value: 0x7f0100c1
+			public const int color = 2130772161;
+			
+			// aapt resource value: 0x7f01009c
+			public const int colorAccent = 2130772124;
+			
+			// aapt resource value: 0x7f0100a3
+			public const int colorBackgroundFloating = 2130772131;
+			
+			// aapt resource value: 0x7f0100a0
+			public const int colorButtonNormal = 2130772128;
+			
+			// aapt resource value: 0x7f01009e
+			public const int colorControlActivated = 2130772126;
+			
+			// aapt resource value: 0x7f01009f
+			public const int colorControlHighlight = 2130772127;
+			
+			// aapt resource value: 0x7f01009d
+			public const int colorControlNormal = 2130772125;
+			
+			// aapt resource value: 0x7f0100bc
+			public const int colorError = 2130772156;
+			
+			// aapt resource value: 0x7f01009a
+			public const int colorPrimary = 2130772122;
+			
+			// aapt resource value: 0x7f01009b
+			public const int colorPrimaryDark = 2130772123;
+			
+			// aapt resource value: 0x7f0100a1
+			public const int colorSwitchThumbNormal = 2130772129;
+			
+			// aapt resource value: 0x7f0100e5
+			public const int commitIcon = 2130772197;
+			
+			// aapt resource value: 0x7f0100d2
+			public const int contentDescription = 2130772178;
+			
+			// aapt resource value: 0x7f01002b
+			public const int contentInsetEnd = 2130772011;
+			
+			// aapt resource value: 0x7f01002f
+			public const int contentInsetEndWithActions = 2130772015;
+			
+			// aapt resource value: 0x7f01002c
+			public const int contentInsetLeft = 2130772012;
+			
+			// aapt resource value: 0x7f01002d
+			public const int contentInsetRight = 2130772013;
+			
+			// aapt resource value: 0x7f01002a
+			public const int contentInsetStart = 2130772010;
+			
+			// aapt resource value: 0x7f01002e
+			public const int contentInsetStartWithNavigation = 2130772014;
+			
+			// aapt resource value: 0x7f01000f
+			public const int contentPadding = 2130771983;
+			
+			// aapt resource value: 0x7f010013
+			public const int contentPaddingBottom = 2130771987;
+			
+			// aapt resource value: 0x7f010010
+			public const int contentPaddingLeft = 2130771984;
+			
+			// aapt resource value: 0x7f010011
+			public const int contentPaddingRight = 2130771985;
+			
+			// aapt resource value: 0x7f010012
+			public const int contentPaddingTop = 2130771986;
+			
+			// aapt resource value: 0x7f010119
+			public const int contentScrim = 2130772249;
+			
+			// aapt resource value: 0x7f0100a2
+			public const int controlBackground = 2130772130;
+			
+			// aapt resource value: 0x7f010152
+			public const int counterEnabled = 2130772306;
+			
+			// aapt resource value: 0x7f010153
+			public const int counterMaxLength = 2130772307;
+			
+			// aapt resource value: 0x7f010155
+			public const int counterOverflowTextAppearance = 2130772309;
+			
+			// aapt resource value: 0x7f010154
+			public const int counterTextAppearance = 2130772308;
+			
+			// aapt resource value: 0x7f010023
+			public const int customNavigationLayout = 2130772003;
+			
+			// aapt resource value: 0x7f0100df
+			public const int defaultQueryHint = 2130772191;
+			
+			// aapt resource value: 0x7f010072
+			public const int dialogPreferredPadding = 2130772082;
+			
+			// aapt resource value: 0x7f010071
+			public const int dialogTheme = 2130772081;
+			
+			// aapt resource value: 0x7f010019
+			public const int displayOptions = 2130771993;
+			
+			// aapt resource value: 0x7f01001f
+			public const int divider = 2130771999;
+			
+			// aapt resource value: 0x7f01007f
+			public const int dividerHorizontal = 2130772095;
+			
+			// aapt resource value: 0x7f0100cb
+			public const int dividerPadding = 2130772171;
+			
+			// aapt resource value: 0x7f01007e
+			public const int dividerVertical = 2130772094;
+			
+			// aapt resource value: 0x7f0100c3
+			public const int drawableSize = 2130772163;
+			
+			// aapt resource value: 0x7f010014
+			public const int drawerArrowStyle = 2130771988;
+			
+			// aapt resource value: 0x7f010091
+			public const int dropDownListViewStyle = 2130772113;
+			
+			// aapt resource value: 0x7f010075
+			public const int dropdownListPreferredItemHeight = 2130772085;
+			
+			// aapt resource value: 0x7f010086
+			public const int editTextBackground = 2130772102;
+			
+			// aapt resource value: 0x7f010085
+			public const int editTextColor = 2130772101;
+			
+			// aapt resource value: 0x7f0100b1
+			public const int editTextStyle = 2130772145;
+			
+			// aapt resource value: 0x7f010030
+			public const int elevation = 2130772016;
+			
+			// aapt resource value: 0x7f010150
+			public const int errorEnabled = 2130772304;
+			
+			// aapt resource value: 0x7f010151
+			public const int errorTextAppearance = 2130772305;
+			
+			// aapt resource value: 0x7f010034
+			public const int expandActivityOverflowButtonDrawable = 2130772020;
+			
+			// aapt resource value: 0x7f01010a
+			public const int expanded = 2130772234;
+			
+			// aapt resource value: 0x7f01011f
+			public const int expandedTitleGravity = 2130772255;
+			
+			// aapt resource value: 0x7f010112
+			public const int expandedTitleMargin = 2130772242;
+			
+			// aapt resource value: 0x7f010116
+			public const int expandedTitleMarginBottom = 2130772246;
+			
+			// aapt resource value: 0x7f010115
+			public const int expandedTitleMarginEnd = 2130772245;
+			
+			// aapt resource value: 0x7f010113
+			public const int expandedTitleMarginStart = 2130772243;
+			
+			// aapt resource value: 0x7f010114
+			public const int expandedTitleMarginTop = 2130772244;
+			
+			// aapt resource value: 0x7f010117
+			public const int expandedTitleTextAppearance = 2130772247;
+			
+			// aapt resource value: 0x7f01012f
+			public const int fabSize = 2130772271;
 			
 			// aapt resource value: 0x7f010004
 			public const int fastScrollEnabled = 2130771972;
@@ -3584,617 +5723,617 @@ namespace GhostlyGame
 			// aapt resource value: 0x7f010006
 			public const int fastScrollVerticalTrackDrawable = 2130771974;
 			
-			// aapt resource value: 0x7f010158
-			public const int font = 2130772312;
+			// aapt resource value: 0x7f010163
+			public const int font = 2130772323;
 			
-			// aapt resource value: 0x7f01003c
-			public const int fontFamily = 2130772028;
+			// aapt resource value: 0x7f010047
+			public const int fontFamily = 2130772039;
 			
-			// aapt resource value: 0x7f010151
-			public const int fontProviderAuthority = 2130772305;
+			// aapt resource value: 0x7f01015c
+			public const int fontProviderAuthority = 2130772316;
 			
-			// aapt resource value: 0x7f010154
-			public const int fontProviderCerts = 2130772308;
+			// aapt resource value: 0x7f01015f
+			public const int fontProviderCerts = 2130772319;
 			
-			// aapt resource value: 0x7f010155
-			public const int fontProviderFetchStrategy = 2130772309;
+			// aapt resource value: 0x7f010160
+			public const int fontProviderFetchStrategy = 2130772320;
+			
+			// aapt resource value: 0x7f010161
+			public const int fontProviderFetchTimeout = 2130772321;
+			
+			// aapt resource value: 0x7f01015d
+			public const int fontProviderPackage = 2130772317;
+			
+			// aapt resource value: 0x7f01015e
+			public const int fontProviderQuery = 2130772318;
+			
+			// aapt resource value: 0x7f010162
+			public const int fontStyle = 2130772322;
+			
+			// aapt resource value: 0x7f010164
+			public const int fontWeight = 2130772324;
+			
+			// aapt resource value: 0x7f010134
+			public const int foregroundInsidePadding = 2130772276;
+			
+			// aapt resource value: 0x7f0100c4
+			public const int gapBetweenBars = 2130772164;
+			
+			// aapt resource value: 0x7f0100e1
+			public const int goIcon = 2130772193;
+			
+			// aapt resource value: 0x7f01013a
+			public const int headerLayout = 2130772282;
+			
+			// aapt resource value: 0x7f010015
+			public const int height = 2130771989;
+			
+			// aapt resource value: 0x7f010029
+			public const int hideOnContentScroll = 2130772009;
 			
 			// aapt resource value: 0x7f010156
-			public const int fontProviderFetchTimeout = 2130772310;
+			public const int hintAnimationEnabled = 2130772310;
 			
-			// aapt resource value: 0x7f010152
-			public const int fontProviderPackage = 2130772306;
+			// aapt resource value: 0x7f01014f
+			public const int hintEnabled = 2130772303;
 			
-			// aapt resource value: 0x7f010153
-			public const int fontProviderQuery = 2130772307;
+			// aapt resource value: 0x7f01014e
+			public const int hintTextAppearance = 2130772302;
 			
-			// aapt resource value: 0x7f010157
-			public const int fontStyle = 2130772311;
+			// aapt resource value: 0x7f010077
+			public const int homeAsUpIndicator = 2130772087;
 			
-			// aapt resource value: 0x7f010159
-			public const int fontWeight = 2130772313;
-			
-			// aapt resource value: 0x7f010129
-			public const int foregroundInsidePadding = 2130772265;
-			
-			// aapt resource value: 0x7f0100b9
-			public const int gapBetweenBars = 2130772153;
-			
-			// aapt resource value: 0x7f0100d6
-			public const int goIcon = 2130772182;
-			
-			// aapt resource value: 0x7f01012f
-			public const int headerLayout = 2130772271;
-			
-			// aapt resource value: 0x7f01000a
-			public const int height = 2130771978;
-			
-			// aapt resource value: 0x7f01001e
-			public const int hideOnContentScroll = 2130771998;
-			
-			// aapt resource value: 0x7f01014b
-			public const int hintAnimationEnabled = 2130772299;
-			
-			// aapt resource value: 0x7f010144
-			public const int hintEnabled = 2130772292;
-			
-			// aapt resource value: 0x7f010143
-			public const int hintTextAppearance = 2130772291;
-			
-			// aapt resource value: 0x7f01006c
-			public const int homeAsUpIndicator = 2130772076;
-			
-			// aapt resource value: 0x7f010019
-			public const int homeLayout = 2130771993;
-			
-			// aapt resource value: 0x7f010012
-			public const int icon = 2130771986;
-			
-			// aapt resource value: 0x7f0100c9
-			public const int iconTint = 2130772169;
-			
-			// aapt resource value: 0x7f0100ca
-			public const int iconTintMode = 2130772170;
-			
-			// aapt resource value: 0x7f0100d2
-			public const int iconifiedByDefault = 2130772178;
-			
-			// aapt resource value: 0x7f01007c
-			public const int imageButtonStyle = 2130772092;
-			
-			// aapt resource value: 0x7f01001b
-			public const int indeterminateProgressStyle = 2130771995;
-			
-			// aapt resource value: 0x7f010028
-			public const int initialActivityCount = 2130772008;
-			
-			// aapt resource value: 0x7f010130
-			public const int insetForeground = 2130772272;
-			
-			// aapt resource value: 0x7f01000b
-			public const int isLightTheme = 2130771979;
-			
-			// aapt resource value: 0x7f01012d
-			public const int itemBackground = 2130772269;
-			
-			// aapt resource value: 0x7f01012b
-			public const int itemIconTint = 2130772267;
+			// aapt resource value: 0x7f010024
+			public const int homeLayout = 2130772004;
 			
 			// aapt resource value: 0x7f01001d
-			public const int itemPadding = 2130771997;
+			public const int icon = 2130771997;
 			
-			// aapt resource value: 0x7f01012e
-			public const int itemTextAppearance = 2130772270;
+			// aapt resource value: 0x7f0100d4
+			public const int iconTint = 2130772180;
 			
-			// aapt resource value: 0x7f01012c
-			public const int itemTextColor = 2130772268;
+			// aapt resource value: 0x7f0100d5
+			public const int iconTintMode = 2130772181;
 			
-			// aapt resource value: 0x7f010118
-			public const int keylines = 2130772248;
+			// aapt resource value: 0x7f0100dd
+			public const int iconifiedByDefault = 2130772189;
 			
-			// aapt resource value: 0x7f0100d1
-			public const int layout = 2130772177;
+			// aapt resource value: 0x7f010087
+			public const int imageButtonStyle = 2130772103;
+			
+			// aapt resource value: 0x7f010026
+			public const int indeterminateProgressStyle = 2130772006;
+			
+			// aapt resource value: 0x7f010033
+			public const int initialActivityCount = 2130772019;
+			
+			// aapt resource value: 0x7f01013b
+			public const int insetForeground = 2130772283;
+			
+			// aapt resource value: 0x7f010016
+			public const int isLightTheme = 2130771990;
+			
+			// aapt resource value: 0x7f010138
+			public const int itemBackground = 2130772280;
+			
+			// aapt resource value: 0x7f010136
+			public const int itemIconTint = 2130772278;
+			
+			// aapt resource value: 0x7f010028
+			public const int itemPadding = 2130772008;
+			
+			// aapt resource value: 0x7f010139
+			public const int itemTextAppearance = 2130772281;
+			
+			// aapt resource value: 0x7f010137
+			public const int itemTextColor = 2130772279;
+			
+			// aapt resource value: 0x7f010123
+			public const int keylines = 2130772259;
+			
+			// aapt resource value: 0x7f0100dc
+			public const int layout = 2130772188;
 			
 			// aapt resource value: 0x7f010000
 			public const int layoutManager = 2130771968;
 			
-			// aapt resource value: 0x7f01011b
-			public const int layout_anchor = 2130772251;
+			// aapt resource value: 0x7f010126
+			public const int layout_anchor = 2130772262;
 			
-			// aapt resource value: 0x7f01011d
-			public const int layout_anchorGravity = 2130772253;
-			
-			// aapt resource value: 0x7f01011a
-			public const int layout_behavior = 2130772250;
-			
-			// aapt resource value: 0x7f010116
-			public const int layout_collapseMode = 2130772246;
-			
-			// aapt resource value: 0x7f010117
-			public const int layout_collapseParallaxMultiplier = 2130772247;
-			
-			// aapt resource value: 0x7f01011f
-			public const int layout_dodgeInsetEdges = 2130772255;
-			
-			// aapt resource value: 0x7f01011e
-			public const int layout_insetEdge = 2130772254;
-			
-			// aapt resource value: 0x7f01011c
-			public const int layout_keyline = 2130772252;
-			
-			// aapt resource value: 0x7f010102
-			public const int layout_scrollFlags = 2130772226;
-			
-			// aapt resource value: 0x7f010103
-			public const int layout_scrollInterpolator = 2130772227;
-			
-			// aapt resource value: 0x7f01008e
-			public const int listChoiceBackgroundIndicator = 2130772110;
-			
-			// aapt resource value: 0x7f010068
-			public const int listDividerAlertDialog = 2130772072;
-			
-			// aapt resource value: 0x7f01002e
-			public const int listItemLayout = 2130772014;
-			
-			// aapt resource value: 0x7f01002b
-			public const int listLayout = 2130772011;
-			
-			// aapt resource value: 0x7f0100ae
-			public const int listMenuViewStyle = 2130772142;
-			
-			// aapt resource value: 0x7f010087
-			public const int listPopupWindowStyle = 2130772103;
-			
-			// aapt resource value: 0x7f010081
-			public const int listPreferredItemHeight = 2130772097;
-			
-			// aapt resource value: 0x7f010083
-			public const int listPreferredItemHeightLarge = 2130772099;
-			
-			// aapt resource value: 0x7f010082
-			public const int listPreferredItemHeightSmall = 2130772098;
-			
-			// aapt resource value: 0x7f010084
-			public const int listPreferredItemPaddingLeft = 2130772100;
-			
-			// aapt resource value: 0x7f010085
-			public const int listPreferredItemPaddingRight = 2130772101;
-			
-			// aapt resource value: 0x7f010013
-			public const int logo = 2130771987;
-			
-			// aapt resource value: 0x7f0100f7
-			public const int logoDescription = 2130772215;
-			
-			// aapt resource value: 0x7f010132
-			public const int maxActionInlineWidth = 2130772274;
-			
-			// aapt resource value: 0x7f0100f1
-			public const int maxButtonHeight = 2130772209;
-			
-			// aapt resource value: 0x7f0100be
-			public const int measureWithLargestChild = 2130772158;
-			
-			// aapt resource value: 0x7f01012a
-			public const int menu = 2130772266;
-			
-			// aapt resource value: 0x7f01002c
-			public const int multiChoiceItemLayout = 2130772012;
-			
-			// aapt resource value: 0x7f0100f6
-			public const int navigationContentDescription = 2130772214;
-			
-			// aapt resource value: 0x7f0100f5
-			public const int navigationIcon = 2130772213;
-			
-			// aapt resource value: 0x7f01000d
-			public const int navigationMode = 2130771981;
-			
-			// aapt resource value: 0x7f0100c2
-			public const int numericModifiers = 2130772162;
-			
-			// aapt resource value: 0x7f0100cd
-			public const int overlapAnchor = 2130772173;
-			
-			// aapt resource value: 0x7f0100cf
-			public const int paddingBottomNoButtons = 2130772175;
-			
-			// aapt resource value: 0x7f0100fb
-			public const int paddingEnd = 2130772219;
-			
-			// aapt resource value: 0x7f0100fa
-			public const int paddingStart = 2130772218;
-			
-			// aapt resource value: 0x7f0100d0
-			public const int paddingTopNoTitle = 2130772176;
-			
-			// aapt resource value: 0x7f01008b
-			public const int panelBackground = 2130772107;
-			
-			// aapt resource value: 0x7f01008d
-			public const int panelMenuListTheme = 2130772109;
-			
-			// aapt resource value: 0x7f01008c
-			public const int panelMenuListWidth = 2130772108;
-			
-			// aapt resource value: 0x7f01014e
-			public const int passwordToggleContentDescription = 2130772302;
-			
-			// aapt resource value: 0x7f01014d
-			public const int passwordToggleDrawable = 2130772301;
-			
-			// aapt resource value: 0x7f01014c
-			public const int passwordToggleEnabled = 2130772300;
-			
-			// aapt resource value: 0x7f01014f
-			public const int passwordToggleTint = 2130772303;
-			
-			// aapt resource value: 0x7f010150
-			public const int passwordToggleTintMode = 2130772304;
-			
-			// aapt resource value: 0x7f010078
-			public const int popupMenuStyle = 2130772088;
-			
-			// aapt resource value: 0x7f010026
-			public const int popupTheme = 2130772006;
-			
-			// aapt resource value: 0x7f010079
-			public const int popupWindowStyle = 2130772089;
-			
-			// aapt resource value: 0x7f0100cb
-			public const int preserveIconSpacing = 2130772171;
+			// aapt resource value: 0x7f010128
+			public const int layout_anchorGravity = 2130772264;
 			
 			// aapt resource value: 0x7f010125
-			public const int pressedTranslationZ = 2130772261;
+			public const int layout_behavior = 2130772261;
 			
-			// aapt resource value: 0x7f01001c
-			public const int progressBarPadding = 2130771996;
+			// aapt resource value: 0x7f010121
+			public const int layout_collapseMode = 2130772257;
 			
-			// aapt resource value: 0x7f01001a
-			public const int progressBarStyle = 2130771994;
+			// aapt resource value: 0x7f010122
+			public const int layout_collapseParallaxMultiplier = 2130772258;
 			
-			// aapt resource value: 0x7f0100dc
-			public const int queryBackground = 2130772188;
+			// aapt resource value: 0x7f01012a
+			public const int layout_dodgeInsetEdges = 2130772266;
 			
-			// aapt resource value: 0x7f0100d3
-			public const int queryHint = 2130772179;
+			// aapt resource value: 0x7f010129
+			public const int layout_insetEdge = 2130772265;
 			
-			// aapt resource value: 0x7f0100a7
-			public const int radioButtonStyle = 2130772135;
+			// aapt resource value: 0x7f010127
+			public const int layout_keyline = 2130772263;
 			
-			// aapt resource value: 0x7f0100a8
-			public const int ratingBarStyle = 2130772136;
+			// aapt resource value: 0x7f01010d
+			public const int layout_scrollFlags = 2130772237;
 			
-			// aapt resource value: 0x7f0100a9
-			public const int ratingBarStyleIndicator = 2130772137;
+			// aapt resource value: 0x7f01010e
+			public const int layout_scrollInterpolator = 2130772238;
 			
-			// aapt resource value: 0x7f0100aa
-			public const int ratingBarStyleSmall = 2130772138;
+			// aapt resource value: 0x7f010099
+			public const int listChoiceBackgroundIndicator = 2130772121;
+			
+			// aapt resource value: 0x7f010073
+			public const int listDividerAlertDialog = 2130772083;
+			
+			// aapt resource value: 0x7f010039
+			public const int listItemLayout = 2130772025;
+			
+			// aapt resource value: 0x7f010036
+			public const int listLayout = 2130772022;
+			
+			// aapt resource value: 0x7f0100b9
+			public const int listMenuViewStyle = 2130772153;
+			
+			// aapt resource value: 0x7f010092
+			public const int listPopupWindowStyle = 2130772114;
+			
+			// aapt resource value: 0x7f01008c
+			public const int listPreferredItemHeight = 2130772108;
+			
+			// aapt resource value: 0x7f01008e
+			public const int listPreferredItemHeightLarge = 2130772110;
+			
+			// aapt resource value: 0x7f01008d
+			public const int listPreferredItemHeightSmall = 2130772109;
+			
+			// aapt resource value: 0x7f01008f
+			public const int listPreferredItemPaddingLeft = 2130772111;
+			
+			// aapt resource value: 0x7f010090
+			public const int listPreferredItemPaddingRight = 2130772112;
+			
+			// aapt resource value: 0x7f01001e
+			public const int logo = 2130771998;
+			
+			// aapt resource value: 0x7f010102
+			public const int logoDescription = 2130772226;
+			
+			// aapt resource value: 0x7f01013d
+			public const int maxActionInlineWidth = 2130772285;
+			
+			// aapt resource value: 0x7f0100fc
+			public const int maxButtonHeight = 2130772220;
+			
+			// aapt resource value: 0x7f0100c9
+			public const int measureWithLargestChild = 2130772169;
+			
+			// aapt resource value: 0x7f010135
+			public const int menu = 2130772277;
+			
+			// aapt resource value: 0x7f010037
+			public const int multiChoiceItemLayout = 2130772023;
+			
+			// aapt resource value: 0x7f010101
+			public const int navigationContentDescription = 2130772225;
+			
+			// aapt resource value: 0x7f010100
+			public const int navigationIcon = 2130772224;
+			
+			// aapt resource value: 0x7f010018
+			public const int navigationMode = 2130771992;
+			
+			// aapt resource value: 0x7f0100cd
+			public const int numericModifiers = 2130772173;
+			
+			// aapt resource value: 0x7f0100d8
+			public const int overlapAnchor = 2130772184;
+			
+			// aapt resource value: 0x7f0100da
+			public const int paddingBottomNoButtons = 2130772186;
+			
+			// aapt resource value: 0x7f010106
+			public const int paddingEnd = 2130772230;
+			
+			// aapt resource value: 0x7f010105
+			public const int paddingStart = 2130772229;
+			
+			// aapt resource value: 0x7f0100db
+			public const int paddingTopNoTitle = 2130772187;
+			
+			// aapt resource value: 0x7f010096
+			public const int panelBackground = 2130772118;
+			
+			// aapt resource value: 0x7f010098
+			public const int panelMenuListTheme = 2130772120;
+			
+			// aapt resource value: 0x7f010097
+			public const int panelMenuListWidth = 2130772119;
+			
+			// aapt resource value: 0x7f010159
+			public const int passwordToggleContentDescription = 2130772313;
+			
+			// aapt resource value: 0x7f010158
+			public const int passwordToggleDrawable = 2130772312;
+			
+			// aapt resource value: 0x7f010157
+			public const int passwordToggleEnabled = 2130772311;
+			
+			// aapt resource value: 0x7f01015a
+			public const int passwordToggleTint = 2130772314;
+			
+			// aapt resource value: 0x7f01015b
+			public const int passwordToggleTintMode = 2130772315;
+			
+			// aapt resource value: 0x7f010083
+			public const int popupMenuStyle = 2130772099;
+			
+			// aapt resource value: 0x7f010031
+			public const int popupTheme = 2130772017;
+			
+			// aapt resource value: 0x7f010084
+			public const int popupWindowStyle = 2130772100;
+			
+			// aapt resource value: 0x7f0100d6
+			public const int preserveIconSpacing = 2130772182;
+			
+			// aapt resource value: 0x7f010130
+			public const int pressedTranslationZ = 2130772272;
+			
+			// aapt resource value: 0x7f010027
+			public const int progressBarPadding = 2130772007;
+			
+			// aapt resource value: 0x7f010025
+			public const int progressBarStyle = 2130772005;
+			
+			// aapt resource value: 0x7f0100e7
+			public const int queryBackground = 2130772199;
+			
+			// aapt resource value: 0x7f0100de
+			public const int queryHint = 2130772190;
+			
+			// aapt resource value: 0x7f0100b2
+			public const int radioButtonStyle = 2130772146;
+			
+			// aapt resource value: 0x7f0100b3
+			public const int ratingBarStyle = 2130772147;
+			
+			// aapt resource value: 0x7f0100b4
+			public const int ratingBarStyleIndicator = 2130772148;
+			
+			// aapt resource value: 0x7f0100b5
+			public const int ratingBarStyleSmall = 2130772149;
 			
 			// aapt resource value: 0x7f010002
 			public const int reverseLayout = 2130771970;
 			
-			// aapt resource value: 0x7f010123
-			public const int rippleColor = 2130772259;
+			// aapt resource value: 0x7f01012e
+			public const int rippleColor = 2130772270;
 			
-			// aapt resource value: 0x7f010112
-			public const int scrimAnimationDuration = 2130772242;
+			// aapt resource value: 0x7f01011d
+			public const int scrimAnimationDuration = 2130772253;
 			
-			// aapt resource value: 0x7f010111
-			public const int scrimVisibleHeightTrigger = 2130772241;
+			// aapt resource value: 0x7f01011c
+			public const int scrimVisibleHeightTrigger = 2130772252;
 			
-			// aapt resource value: 0x7f0100d8
-			public const int searchHintIcon = 2130772184;
+			// aapt resource value: 0x7f0100e3
+			public const int searchHintIcon = 2130772195;
 			
-			// aapt resource value: 0x7f0100d7
-			public const int searchIcon = 2130772183;
+			// aapt resource value: 0x7f0100e2
+			public const int searchIcon = 2130772194;
 			
-			// aapt resource value: 0x7f010080
-			public const int searchViewStyle = 2130772096;
+			// aapt resource value: 0x7f01008b
+			public const int searchViewStyle = 2130772107;
 			
-			// aapt resource value: 0x7f0100ab
-			public const int seekBarStyle = 2130772139;
+			// aapt resource value: 0x7f0100b6
+			public const int seekBarStyle = 2130772150;
 			
-			// aapt resource value: 0x7f010070
-			public const int selectableItemBackground = 2130772080;
+			// aapt resource value: 0x7f01007b
+			public const int selectableItemBackground = 2130772091;
 			
-			// aapt resource value: 0x7f010071
-			public const int selectableItemBackgroundBorderless = 2130772081;
+			// aapt resource value: 0x7f01007c
+			public const int selectableItemBackgroundBorderless = 2130772092;
 			
-			// aapt resource value: 0x7f0100c3
-			public const int showAsAction = 2130772163;
+			// aapt resource value: 0x7f0100ce
+			public const int showAsAction = 2130772174;
 			
-			// aapt resource value: 0x7f0100bf
-			public const int showDividers = 2130772159;
+			// aapt resource value: 0x7f0100ca
+			public const int showDividers = 2130772170;
 			
-			// aapt resource value: 0x7f0100e8
-			public const int showText = 2130772200;
+			// aapt resource value: 0x7f0100f3
+			public const int showText = 2130772211;
 			
-			// aapt resource value: 0x7f01002f
-			public const int showTitle = 2130772015;
+			// aapt resource value: 0x7f01003a
+			public const int showTitle = 2130772026;
 			
-			// aapt resource value: 0x7f01002d
-			public const int singleChoiceItemLayout = 2130772013;
+			// aapt resource value: 0x7f010038
+			public const int singleChoiceItemLayout = 2130772024;
 			
 			// aapt resource value: 0x7f010001
 			public const int spanCount = 2130771969;
 			
+			// aapt resource value: 0x7f0100c2
+			public const int spinBars = 2130772162;
+			
+			// aapt resource value: 0x7f010076
+			public const int spinnerDropDownItemStyle = 2130772086;
+			
 			// aapt resource value: 0x7f0100b7
-			public const int spinBars = 2130772151;
+			public const int spinnerStyle = 2130772151;
 			
-			// aapt resource value: 0x7f01006b
-			public const int spinnerDropDownItemStyle = 2130772075;
+			// aapt resource value: 0x7f0100f2
+			public const int splitTrack = 2130772210;
 			
-			// aapt resource value: 0x7f0100ac
-			public const int spinnerStyle = 2130772140;
-			
-			// aapt resource value: 0x7f0100e7
-			public const int splitTrack = 2130772199;
-			
-			// aapt resource value: 0x7f010030
-			public const int srcCompat = 2130772016;
+			// aapt resource value: 0x7f01003b
+			public const int srcCompat = 2130772027;
 			
 			// aapt resource value: 0x7f010003
 			public const int stackFromEnd = 2130771971;
 			
-			// aapt resource value: 0x7f0100ce
-			public const int state_above_anchor = 2130772174;
+			// aapt resource value: 0x7f0100d9
+			public const int state_above_anchor = 2130772185;
 			
-			// aapt resource value: 0x7f010100
-			public const int state_collapsed = 2130772224;
+			// aapt resource value: 0x7f01010b
+			public const int state_collapsed = 2130772235;
 			
-			// aapt resource value: 0x7f010101
-			public const int state_collapsible = 2130772225;
+			// aapt resource value: 0x7f01010c
+			public const int state_collapsible = 2130772236;
 			
-			// aapt resource value: 0x7f010119
-			public const int statusBarBackground = 2130772249;
+			// aapt resource value: 0x7f010124
+			public const int statusBarBackground = 2130772260;
 			
-			// aapt resource value: 0x7f01010f
-			public const int statusBarScrim = 2130772239;
+			// aapt resource value: 0x7f01011a
+			public const int statusBarScrim = 2130772250;
 			
-			// aapt resource value: 0x7f0100cc
-			public const int subMenuArrow = 2130772172;
+			// aapt resource value: 0x7f0100d7
+			public const int subMenuArrow = 2130772183;
 			
-			// aapt resource value: 0x7f0100dd
-			public const int submitBackground = 2130772189;
+			// aapt resource value: 0x7f0100e8
+			public const int submitBackground = 2130772200;
 			
-			// aapt resource value: 0x7f01000f
-			public const int subtitle = 2130771983;
+			// aapt resource value: 0x7f01001a
+			public const int subtitle = 2130771994;
 			
-			// aapt resource value: 0x7f0100ea
-			public const int subtitleTextAppearance = 2130772202;
+			// aapt resource value: 0x7f0100f5
+			public const int subtitleTextAppearance = 2130772213;
 			
-			// aapt resource value: 0x7f0100f9
-			public const int subtitleTextColor = 2130772217;
+			// aapt resource value: 0x7f010104
+			public const int subtitleTextColor = 2130772228;
 			
-			// aapt resource value: 0x7f010011
-			public const int subtitleTextStyle = 2130771985;
-			
-			// aapt resource value: 0x7f0100db
-			public const int suggestionRowLayout = 2130772187;
-			
-			// aapt resource value: 0x7f0100e5
-			public const int switchMinWidth = 2130772197;
+			// aapt resource value: 0x7f01001c
+			public const int subtitleTextStyle = 2130771996;
 			
 			// aapt resource value: 0x7f0100e6
-			public const int switchPadding = 2130772198;
-			
-			// aapt resource value: 0x7f0100ad
-			public const int switchStyle = 2130772141;
-			
-			// aapt resource value: 0x7f0100e4
-			public const int switchTextAppearance = 2130772196;
-			
-			// aapt resource value: 0x7f010136
-			public const int tabBackground = 2130772278;
-			
-			// aapt resource value: 0x7f010135
-			public const int tabContentStart = 2130772277;
-			
-			// aapt resource value: 0x7f010138
-			public const int tabGravity = 2130772280;
-			
-			// aapt resource value: 0x7f010133
-			public const int tabIndicatorColor = 2130772275;
-			
-			// aapt resource value: 0x7f010134
-			public const int tabIndicatorHeight = 2130772276;
-			
-			// aapt resource value: 0x7f01013a
-			public const int tabMaxWidth = 2130772282;
-			
-			// aapt resource value: 0x7f010139
-			public const int tabMinWidth = 2130772281;
-			
-			// aapt resource value: 0x7f010137
-			public const int tabMode = 2130772279;
-			
-			// aapt resource value: 0x7f010142
-			public const int tabPadding = 2130772290;
-			
-			// aapt resource value: 0x7f010141
-			public const int tabPaddingBottom = 2130772289;
-			
-			// aapt resource value: 0x7f010140
-			public const int tabPaddingEnd = 2130772288;
-			
-			// aapt resource value: 0x7f01013e
-			public const int tabPaddingStart = 2130772286;
-			
-			// aapt resource value: 0x7f01013f
-			public const int tabPaddingTop = 2130772287;
-			
-			// aapt resource value: 0x7f01013d
-			public const int tabSelectedTextColor = 2130772285;
-			
-			// aapt resource value: 0x7f01013b
-			public const int tabTextAppearance = 2130772283;
-			
-			// aapt resource value: 0x7f01013c
-			public const int tabTextColor = 2130772284;
-			
-			// aapt resource value: 0x7f010036
-			public const int textAllCaps = 2130772022;
-			
-			// aapt resource value: 0x7f010063
-			public const int textAppearanceLargePopupMenu = 2130772067;
-			
-			// aapt resource value: 0x7f010088
-			public const int textAppearanceListItem = 2130772104;
-			
-			// aapt resource value: 0x7f010089
-			public const int textAppearanceListItemSecondary = 2130772105;
-			
-			// aapt resource value: 0x7f01008a
-			public const int textAppearanceListItemSmall = 2130772106;
-			
-			// aapt resource value: 0x7f010065
-			public const int textAppearancePopupMenuHeader = 2130772069;
-			
-			// aapt resource value: 0x7f01007e
-			public const int textAppearanceSearchResultSubtitle = 2130772094;
-			
-			// aapt resource value: 0x7f01007d
-			public const int textAppearanceSearchResultTitle = 2130772093;
-			
-			// aapt resource value: 0x7f010064
-			public const int textAppearanceSmallPopupMenu = 2130772068;
-			
-			// aapt resource value: 0x7f01009d
-			public const int textColorAlertDialogListItem = 2130772125;
-			
-			// aapt resource value: 0x7f010122
-			public const int textColorError = 2130772258;
-			
-			// aapt resource value: 0x7f01007f
-			public const int textColorSearchUrl = 2130772095;
-			
-			// aapt resource value: 0x7f0100fc
-			public const int theme = 2130772220;
-			
-			// aapt resource value: 0x7f0100bd
-			public const int thickness = 2130772157;
-			
-			// aapt resource value: 0x7f0100e3
-			public const int thumbTextPadding = 2130772195;
-			
-			// aapt resource value: 0x7f0100de
-			public const int thumbTint = 2130772190;
-			
-			// aapt resource value: 0x7f0100df
-			public const int thumbTintMode = 2130772191;
-			
-			// aapt resource value: 0x7f010033
-			public const int tickMark = 2130772019;
-			
-			// aapt resource value: 0x7f010034
-			public const int tickMarkTint = 2130772020;
-			
-			// aapt resource value: 0x7f010035
-			public const int tickMarkTintMode = 2130772021;
-			
-			// aapt resource value: 0x7f010031
-			public const int tint = 2130772017;
-			
-			// aapt resource value: 0x7f010032
-			public const int tintMode = 2130772018;
-			
-			// aapt resource value: 0x7f01000c
-			public const int title = 2130771980;
-			
-			// aapt resource value: 0x7f010115
-			public const int titleEnabled = 2130772245;
-			
-			// aapt resource value: 0x7f0100eb
-			public const int titleMargin = 2130772203;
-			
-			// aapt resource value: 0x7f0100ef
-			public const int titleMarginBottom = 2130772207;
-			
-			// aapt resource value: 0x7f0100ed
-			public const int titleMarginEnd = 2130772205;
-			
-			// aapt resource value: 0x7f0100ec
-			public const int titleMarginStart = 2130772204;
-			
-			// aapt resource value: 0x7f0100ee
-			public const int titleMarginTop = 2130772206;
+			public const int suggestionRowLayout = 2130772198;
 			
 			// aapt resource value: 0x7f0100f0
-			public const int titleMargins = 2130772208;
+			public const int switchMinWidth = 2130772208;
 			
-			// aapt resource value: 0x7f0100e9
-			public const int titleTextAppearance = 2130772201;
+			// aapt resource value: 0x7f0100f1
+			public const int switchPadding = 2130772209;
 			
-			// aapt resource value: 0x7f0100f8
-			public const int titleTextColor = 2130772216;
+			// aapt resource value: 0x7f0100b8
+			public const int switchStyle = 2130772152;
 			
-			// aapt resource value: 0x7f010010
-			public const int titleTextStyle = 2130771984;
+			// aapt resource value: 0x7f0100ef
+			public const int switchTextAppearance = 2130772207;
 			
-			// aapt resource value: 0x7f010110
-			public const int toolbarId = 2130772240;
+			// aapt resource value: 0x7f010141
+			public const int tabBackground = 2130772289;
 			
-			// aapt resource value: 0x7f010077
-			public const int toolbarNavigationButtonStyle = 2130772087;
+			// aapt resource value: 0x7f010140
+			public const int tabContentStart = 2130772288;
 			
-			// aapt resource value: 0x7f010076
-			public const int toolbarStyle = 2130772086;
+			// aapt resource value: 0x7f010143
+			public const int tabGravity = 2130772291;
 			
-			// aapt resource value: 0x7f0100b0
-			public const int tooltipForegroundColor = 2130772144;
+			// aapt resource value: 0x7f01013e
+			public const int tabIndicatorColor = 2130772286;
 			
-			// aapt resource value: 0x7f0100af
-			public const int tooltipFrameBackground = 2130772143;
+			// aapt resource value: 0x7f01013f
+			public const int tabIndicatorHeight = 2130772287;
 			
-			// aapt resource value: 0x7f0100c8
-			public const int tooltipText = 2130772168;
+			// aapt resource value: 0x7f010145
+			public const int tabMaxWidth = 2130772293;
 			
-			// aapt resource value: 0x7f0100e0
-			public const int track = 2130772192;
+			// aapt resource value: 0x7f010144
+			public const int tabMinWidth = 2130772292;
 			
-			// aapt resource value: 0x7f0100e1
-			public const int trackTint = 2130772193;
+			// aapt resource value: 0x7f010142
+			public const int tabMode = 2130772290;
 			
-			// aapt resource value: 0x7f0100e2
-			public const int trackTintMode = 2130772194;
+			// aapt resource value: 0x7f01014d
+			public const int tabPadding = 2130772301;
 			
-			// aapt resource value: 0x7f010127
-			public const int useCompatPadding = 2130772263;
+			// aapt resource value: 0x7f01014c
+			public const int tabPaddingBottom = 2130772300;
 			
-			// aapt resource value: 0x7f0100d9
-			public const int voiceIcon = 2130772185;
+			// aapt resource value: 0x7f01014b
+			public const int tabPaddingEnd = 2130772299;
 			
-			// aapt resource value: 0x7f01003d
-			public const int windowActionBar = 2130772029;
+			// aapt resource value: 0x7f010149
+			public const int tabPaddingStart = 2130772297;
 			
-			// aapt resource value: 0x7f01003f
-			public const int windowActionBarOverlay = 2130772031;
+			// aapt resource value: 0x7f01014a
+			public const int tabPaddingTop = 2130772298;
 			
-			// aapt resource value: 0x7f010040
-			public const int windowActionModeOverlay = 2130772032;
+			// aapt resource value: 0x7f010148
+			public const int tabSelectedTextColor = 2130772296;
 			
-			// aapt resource value: 0x7f010044
-			public const int windowFixedHeightMajor = 2130772036;
+			// aapt resource value: 0x7f010146
+			public const int tabTextAppearance = 2130772294;
 			
-			// aapt resource value: 0x7f010042
-			public const int windowFixedHeightMinor = 2130772034;
+			// aapt resource value: 0x7f010147
+			public const int tabTextColor = 2130772295;
 			
 			// aapt resource value: 0x7f010041
-			public const int windowFixedWidthMajor = 2130772033;
+			public const int textAllCaps = 2130772033;
 			
-			// aapt resource value: 0x7f010043
-			public const int windowFixedWidthMinor = 2130772035;
+			// aapt resource value: 0x7f01006e
+			public const int textAppearanceLargePopupMenu = 2130772078;
 			
-			// aapt resource value: 0x7f010045
-			public const int windowMinWidthMajor = 2130772037;
+			// aapt resource value: 0x7f010093
+			public const int textAppearanceListItem = 2130772115;
 			
-			// aapt resource value: 0x7f010046
-			public const int windowMinWidthMinor = 2130772038;
+			// aapt resource value: 0x7f010094
+			public const int textAppearanceListItemSecondary = 2130772116;
+			
+			// aapt resource value: 0x7f010095
+			public const int textAppearanceListItemSmall = 2130772117;
+			
+			// aapt resource value: 0x7f010070
+			public const int textAppearancePopupMenuHeader = 2130772080;
+			
+			// aapt resource value: 0x7f010089
+			public const int textAppearanceSearchResultSubtitle = 2130772105;
+			
+			// aapt resource value: 0x7f010088
+			public const int textAppearanceSearchResultTitle = 2130772104;
+			
+			// aapt resource value: 0x7f01006f
+			public const int textAppearanceSmallPopupMenu = 2130772079;
+			
+			// aapt resource value: 0x7f0100a8
+			public const int textColorAlertDialogListItem = 2130772136;
+			
+			// aapt resource value: 0x7f01012d
+			public const int textColorError = 2130772269;
+			
+			// aapt resource value: 0x7f01008a
+			public const int textColorSearchUrl = 2130772106;
+			
+			// aapt resource value: 0x7f010107
+			public const int theme = 2130772231;
+			
+			// aapt resource value: 0x7f0100c8
+			public const int thickness = 2130772168;
+			
+			// aapt resource value: 0x7f0100ee
+			public const int thumbTextPadding = 2130772206;
+			
+			// aapt resource value: 0x7f0100e9
+			public const int thumbTint = 2130772201;
+			
+			// aapt resource value: 0x7f0100ea
+			public const int thumbTintMode = 2130772202;
 			
 			// aapt resource value: 0x7f01003e
-			public const int windowNoTitle = 2130772030;
+			public const int tickMark = 2130772030;
+			
+			// aapt resource value: 0x7f01003f
+			public const int tickMarkTint = 2130772031;
+			
+			// aapt resource value: 0x7f010040
+			public const int tickMarkTintMode = 2130772032;
+			
+			// aapt resource value: 0x7f01003c
+			public const int tint = 2130772028;
+			
+			// aapt resource value: 0x7f01003d
+			public const int tintMode = 2130772029;
+			
+			// aapt resource value: 0x7f010017
+			public const int title = 2130771991;
+			
+			// aapt resource value: 0x7f010120
+			public const int titleEnabled = 2130772256;
+			
+			// aapt resource value: 0x7f0100f6
+			public const int titleMargin = 2130772214;
+			
+			// aapt resource value: 0x7f0100fa
+			public const int titleMarginBottom = 2130772218;
+			
+			// aapt resource value: 0x7f0100f8
+			public const int titleMarginEnd = 2130772216;
+			
+			// aapt resource value: 0x7f0100f7
+			public const int titleMarginStart = 2130772215;
+			
+			// aapt resource value: 0x7f0100f9
+			public const int titleMarginTop = 2130772217;
+			
+			// aapt resource value: 0x7f0100fb
+			public const int titleMargins = 2130772219;
+			
+			// aapt resource value: 0x7f0100f4
+			public const int titleTextAppearance = 2130772212;
+			
+			// aapt resource value: 0x7f010103
+			public const int titleTextColor = 2130772227;
+			
+			// aapt resource value: 0x7f01001b
+			public const int titleTextStyle = 2130771995;
+			
+			// aapt resource value: 0x7f01011b
+			public const int toolbarId = 2130772251;
+			
+			// aapt resource value: 0x7f010082
+			public const int toolbarNavigationButtonStyle = 2130772098;
+			
+			// aapt resource value: 0x7f010081
+			public const int toolbarStyle = 2130772097;
+			
+			// aapt resource value: 0x7f0100bb
+			public const int tooltipForegroundColor = 2130772155;
+			
+			// aapt resource value: 0x7f0100ba
+			public const int tooltipFrameBackground = 2130772154;
+			
+			// aapt resource value: 0x7f0100d3
+			public const int tooltipText = 2130772179;
+			
+			// aapt resource value: 0x7f0100eb
+			public const int track = 2130772203;
+			
+			// aapt resource value: 0x7f0100ec
+			public const int trackTint = 2130772204;
+			
+			// aapt resource value: 0x7f0100ed
+			public const int trackTintMode = 2130772205;
+			
+			// aapt resource value: 0x7f010132
+			public const int useCompatPadding = 2130772274;
+			
+			// aapt resource value: 0x7f0100e4
+			public const int voiceIcon = 2130772196;
+			
+			// aapt resource value: 0x7f010048
+			public const int windowActionBar = 2130772040;
+			
+			// aapt resource value: 0x7f01004a
+			public const int windowActionBarOverlay = 2130772042;
+			
+			// aapt resource value: 0x7f01004b
+			public const int windowActionModeOverlay = 2130772043;
+			
+			// aapt resource value: 0x7f01004f
+			public const int windowFixedHeightMajor = 2130772047;
+			
+			// aapt resource value: 0x7f01004d
+			public const int windowFixedHeightMinor = 2130772045;
+			
+			// aapt resource value: 0x7f01004c
+			public const int windowFixedWidthMajor = 2130772044;
+			
+			// aapt resource value: 0x7f01004e
+			public const int windowFixedWidthMinor = 2130772046;
+			
+			// aapt resource value: 0x7f010050
+			public const int windowMinWidthMajor = 2130772048;
+			
+			// aapt resource value: 0x7f010051
+			public const int windowMinWidthMinor = 2130772049;
+			
+			// aapt resource value: 0x7f010049
+			public const int windowNoTitle = 2130772041;
 			
 			static Attribute()
 			{
@@ -4209,20 +6348,20 @@ namespace GhostlyGame
 		public partial class Boolean
 		{
 			
-			// aapt resource value: 0x7f0b0000
-			public const int abc_action_bar_embed_tabs = 2131427328;
+			// aapt resource value: 0x7f0d0000
+			public const int abc_action_bar_embed_tabs = 2131558400;
 			
-			// aapt resource value: 0x7f0b0001
-			public const int abc_allow_stacked_button_bar = 2131427329;
+			// aapt resource value: 0x7f0d0001
+			public const int abc_allow_stacked_button_bar = 2131558401;
 			
-			// aapt resource value: 0x7f0b0002
-			public const int abc_config_actionMenuItemAllCaps = 2131427330;
+			// aapt resource value: 0x7f0d0002
+			public const int abc_config_actionMenuItemAllCaps = 2131558402;
 			
-			// aapt resource value: 0x7f0b0003
-			public const int abc_config_closeDialogWhenTouchOutside = 2131427331;
+			// aapt resource value: 0x7f0d0003
+			public const int abc_config_closeDialogWhenTouchOutside = 2131558403;
 			
-			// aapt resource value: 0x7f0b0004
-			public const int abc_config_showMenuShortcutsWhenKeyboardPresent = 2131427332;
+			// aapt resource value: 0x7f0d0004
+			public const int abc_config_showMenuShortcutsWhenKeyboardPresent = 2131558404;
 			
 			static Boolean()
 			{
@@ -4237,302 +6376,320 @@ namespace GhostlyGame
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c004b
-			public const int abc_background_cache_hint_selector_material_dark = 2131492939;
-			
-			// aapt resource value: 0x7f0c004c
-			public const int abc_background_cache_hint_selector_material_light = 2131492940;
-			
-			// aapt resource value: 0x7f0c004d
-			public const int abc_btn_colored_borderless_text_material = 2131492941;
+			// aapt resource value: 0x7f0c004f
+			public const int ListViewHighlighted = 2131492943;
 			
 			// aapt resource value: 0x7f0c004e
-			public const int abc_btn_colored_text_material = 2131492942;
-			
-			// aapt resource value: 0x7f0c004f
-			public const int abc_color_highlight_material = 2131492943;
-			
-			// aapt resource value: 0x7f0c0050
-			public const int abc_hint_foreground_material_dark = 2131492944;
+			public const int ListViewSelected = 2131492942;
 			
 			// aapt resource value: 0x7f0c0051
-			public const int abc_hint_foreground_material_light = 2131492945;
-			
-			// aapt resource value: 0x7f0c0000
-			public const int abc_input_method_navigation_guard = 2131492864;
+			public const int abc_background_cache_hint_selector_material_dark = 2131492945;
 			
 			// aapt resource value: 0x7f0c0052
-			public const int abc_primary_text_disable_only_material_dark = 2131492946;
+			public const int abc_background_cache_hint_selector_material_light = 2131492946;
 			
 			// aapt resource value: 0x7f0c0053
-			public const int abc_primary_text_disable_only_material_light = 2131492947;
+			public const int abc_btn_colored_borderless_text_material = 2131492947;
 			
 			// aapt resource value: 0x7f0c0054
-			public const int abc_primary_text_material_dark = 2131492948;
+			public const int abc_btn_colored_text_material = 2131492948;
 			
 			// aapt resource value: 0x7f0c0055
-			public const int abc_primary_text_material_light = 2131492949;
+			public const int abc_color_highlight_material = 2131492949;
 			
 			// aapt resource value: 0x7f0c0056
-			public const int abc_search_url_text = 2131492950;
-			
-			// aapt resource value: 0x7f0c0001
-			public const int abc_search_url_text_normal = 2131492865;
-			
-			// aapt resource value: 0x7f0c0002
-			public const int abc_search_url_text_pressed = 2131492866;
-			
-			// aapt resource value: 0x7f0c0003
-			public const int abc_search_url_text_selected = 2131492867;
+			public const int abc_hint_foreground_material_dark = 2131492950;
 			
 			// aapt resource value: 0x7f0c0057
-			public const int abc_secondary_text_material_dark = 2131492951;
-			
-			// aapt resource value: 0x7f0c0058
-			public const int abc_secondary_text_material_light = 2131492952;
-			
-			// aapt resource value: 0x7f0c0059
-			public const int abc_tint_btn_checkable = 2131492953;
-			
-			// aapt resource value: 0x7f0c005a
-			public const int abc_tint_default = 2131492954;
-			
-			// aapt resource value: 0x7f0c005b
-			public const int abc_tint_edittext = 2131492955;
-			
-			// aapt resource value: 0x7f0c005c
-			public const int abc_tint_seek_thumb = 2131492956;
-			
-			// aapt resource value: 0x7f0c005d
-			public const int abc_tint_spinner = 2131492957;
-			
-			// aapt resource value: 0x7f0c005e
-			public const int abc_tint_switch_track = 2131492958;
+			public const int abc_hint_foreground_material_light = 2131492951;
 			
 			// aapt resource value: 0x7f0c0004
-			public const int accent_material_dark = 2131492868;
+			public const int abc_input_method_navigation_guard = 2131492868;
+			
+			// aapt resource value: 0x7f0c0058
+			public const int abc_primary_text_disable_only_material_dark = 2131492952;
+			
+			// aapt resource value: 0x7f0c0059
+			public const int abc_primary_text_disable_only_material_light = 2131492953;
+			
+			// aapt resource value: 0x7f0c005a
+			public const int abc_primary_text_material_dark = 2131492954;
+			
+			// aapt resource value: 0x7f0c005b
+			public const int abc_primary_text_material_light = 2131492955;
+			
+			// aapt resource value: 0x7f0c005c
+			public const int abc_search_url_text = 2131492956;
 			
 			// aapt resource value: 0x7f0c0005
-			public const int accent_material_light = 2131492869;
+			public const int abc_search_url_text_normal = 2131492869;
 			
 			// aapt resource value: 0x7f0c0006
-			public const int background_floating_material_dark = 2131492870;
+			public const int abc_search_url_text_pressed = 2131492870;
 			
 			// aapt resource value: 0x7f0c0007
-			public const int background_floating_material_light = 2131492871;
+			public const int abc_search_url_text_selected = 2131492871;
 			
-			// aapt resource value: 0x7f0c0008
-			public const int background_material_dark = 2131492872;
+			// aapt resource value: 0x7f0c005d
+			public const int abc_secondary_text_material_dark = 2131492957;
 			
-			// aapt resource value: 0x7f0c0009
-			public const int background_material_light = 2131492873;
-			
-			// aapt resource value: 0x7f0c000a
-			public const int bright_foreground_disabled_material_dark = 2131492874;
-			
-			// aapt resource value: 0x7f0c000b
-			public const int bright_foreground_disabled_material_light = 2131492875;
-			
-			// aapt resource value: 0x7f0c000c
-			public const int bright_foreground_inverse_material_dark = 2131492876;
-			
-			// aapt resource value: 0x7f0c000d
-			public const int bright_foreground_inverse_material_light = 2131492877;
-			
-			// aapt resource value: 0x7f0c000e
-			public const int bright_foreground_material_dark = 2131492878;
-			
-			// aapt resource value: 0x7f0c000f
-			public const int bright_foreground_material_light = 2131492879;
-			
-			// aapt resource value: 0x7f0c0010
-			public const int button_material_dark = 2131492880;
-			
-			// aapt resource value: 0x7f0c0011
-			public const int button_material_light = 2131492881;
-			
-			// aapt resource value: 0x7f0c0049
-			public const int colorAccent = 2131492937;
-			
-			// aapt resource value: 0x7f0c0047
-			public const int colorPrimary = 2131492935;
-			
-			// aapt resource value: 0x7f0c0048
-			public const int colorPrimaryDark = 2131492936;
-			
-			// aapt resource value: 0x7f0c003c
-			public const int design_bottom_navigation_shadow_color = 2131492924;
+			// aapt resource value: 0x7f0c005e
+			public const int abc_secondary_text_material_light = 2131492958;
 			
 			// aapt resource value: 0x7f0c005f
-			public const int design_error = 2131492959;
-			
-			// aapt resource value: 0x7f0c003d
-			public const int design_fab_shadow_end_color = 2131492925;
-			
-			// aapt resource value: 0x7f0c003e
-			public const int design_fab_shadow_mid_color = 2131492926;
-			
-			// aapt resource value: 0x7f0c003f
-			public const int design_fab_shadow_start_color = 2131492927;
-			
-			// aapt resource value: 0x7f0c0040
-			public const int design_fab_stroke_end_inner_color = 2131492928;
-			
-			// aapt resource value: 0x7f0c0041
-			public const int design_fab_stroke_end_outer_color = 2131492929;
-			
-			// aapt resource value: 0x7f0c0042
-			public const int design_fab_stroke_top_inner_color = 2131492930;
-			
-			// aapt resource value: 0x7f0c0043
-			public const int design_fab_stroke_top_outer_color = 2131492931;
-			
-			// aapt resource value: 0x7f0c0044
-			public const int design_snackbar_background_color = 2131492932;
+			public const int abc_tint_btn_checkable = 2131492959;
 			
 			// aapt resource value: 0x7f0c0060
-			public const int design_tint_password_toggle = 2131492960;
-			
-			// aapt resource value: 0x7f0c0012
-			public const int dim_foreground_disabled_material_dark = 2131492882;
-			
-			// aapt resource value: 0x7f0c0013
-			public const int dim_foreground_disabled_material_light = 2131492883;
-			
-			// aapt resource value: 0x7f0c0014
-			public const int dim_foreground_material_dark = 2131492884;
-			
-			// aapt resource value: 0x7f0c0015
-			public const int dim_foreground_material_light = 2131492885;
-			
-			// aapt resource value: 0x7f0c0016
-			public const int error_color_material = 2131492886;
-			
-			// aapt resource value: 0x7f0c0017
-			public const int foreground_material_dark = 2131492887;
-			
-			// aapt resource value: 0x7f0c0018
-			public const int foreground_material_light = 2131492888;
-			
-			// aapt resource value: 0x7f0c0019
-			public const int highlighted_text_material_dark = 2131492889;
-			
-			// aapt resource value: 0x7f0c001a
-			public const int highlighted_text_material_light = 2131492890;
-			
-			// aapt resource value: 0x7f0c004a
-			public const int ic_launcher_background = 2131492938;
-			
-			// aapt resource value: 0x7f0c001b
-			public const int material_blue_grey_800 = 2131492891;
-			
-			// aapt resource value: 0x7f0c001c
-			public const int material_blue_grey_900 = 2131492892;
-			
-			// aapt resource value: 0x7f0c001d
-			public const int material_blue_grey_950 = 2131492893;
-			
-			// aapt resource value: 0x7f0c001e
-			public const int material_deep_teal_200 = 2131492894;
-			
-			// aapt resource value: 0x7f0c001f
-			public const int material_deep_teal_500 = 2131492895;
-			
-			// aapt resource value: 0x7f0c0020
-			public const int material_grey_100 = 2131492896;
-			
-			// aapt resource value: 0x7f0c0021
-			public const int material_grey_300 = 2131492897;
-			
-			// aapt resource value: 0x7f0c0022
-			public const int material_grey_50 = 2131492898;
-			
-			// aapt resource value: 0x7f0c0023
-			public const int material_grey_600 = 2131492899;
-			
-			// aapt resource value: 0x7f0c0024
-			public const int material_grey_800 = 2131492900;
-			
-			// aapt resource value: 0x7f0c0025
-			public const int material_grey_850 = 2131492901;
-			
-			// aapt resource value: 0x7f0c0026
-			public const int material_grey_900 = 2131492902;
-			
-			// aapt resource value: 0x7f0c0045
-			public const int notification_action_color_filter = 2131492933;
-			
-			// aapt resource value: 0x7f0c0046
-			public const int notification_icon_bg_color = 2131492934;
-			
-			// aapt resource value: 0x7f0c003b
-			public const int notification_material_background_media_default_color = 2131492923;
-			
-			// aapt resource value: 0x7f0c0027
-			public const int primary_dark_material_dark = 2131492903;
-			
-			// aapt resource value: 0x7f0c0028
-			public const int primary_dark_material_light = 2131492904;
-			
-			// aapt resource value: 0x7f0c0029
-			public const int primary_material_dark = 2131492905;
-			
-			// aapt resource value: 0x7f0c002a
-			public const int primary_material_light = 2131492906;
-			
-			// aapt resource value: 0x7f0c002b
-			public const int primary_text_default_material_dark = 2131492907;
-			
-			// aapt resource value: 0x7f0c002c
-			public const int primary_text_default_material_light = 2131492908;
-			
-			// aapt resource value: 0x7f0c002d
-			public const int primary_text_disabled_material_dark = 2131492909;
-			
-			// aapt resource value: 0x7f0c002e
-			public const int primary_text_disabled_material_light = 2131492910;
-			
-			// aapt resource value: 0x7f0c002f
-			public const int ripple_material_dark = 2131492911;
-			
-			// aapt resource value: 0x7f0c0030
-			public const int ripple_material_light = 2131492912;
-			
-			// aapt resource value: 0x7f0c0031
-			public const int secondary_text_default_material_dark = 2131492913;
-			
-			// aapt resource value: 0x7f0c0032
-			public const int secondary_text_default_material_light = 2131492914;
-			
-			// aapt resource value: 0x7f0c0033
-			public const int secondary_text_disabled_material_dark = 2131492915;
-			
-			// aapt resource value: 0x7f0c0034
-			public const int secondary_text_disabled_material_light = 2131492916;
-			
-			// aapt resource value: 0x7f0c0035
-			public const int switch_thumb_disabled_material_dark = 2131492917;
-			
-			// aapt resource value: 0x7f0c0036
-			public const int switch_thumb_disabled_material_light = 2131492918;
+			public const int abc_tint_default = 2131492960;
 			
 			// aapt resource value: 0x7f0c0061
-			public const int switch_thumb_material_dark = 2131492961;
+			public const int abc_tint_edittext = 2131492961;
 			
 			// aapt resource value: 0x7f0c0062
-			public const int switch_thumb_material_light = 2131492962;
+			public const int abc_tint_seek_thumb = 2131492962;
+			
+			// aapt resource value: 0x7f0c0063
+			public const int abc_tint_spinner = 2131492963;
+			
+			// aapt resource value: 0x7f0c0064
+			public const int abc_tint_switch_track = 2131492964;
+			
+			// aapt resource value: 0x7f0c0008
+			public const int accent_material_dark = 2131492872;
+			
+			// aapt resource value: 0x7f0c0009
+			public const int accent_material_light = 2131492873;
+			
+			// aapt resource value: 0x7f0c000a
+			public const int background_floating_material_dark = 2131492874;
+			
+			// aapt resource value: 0x7f0c000b
+			public const int background_floating_material_light = 2131492875;
+			
+			// aapt resource value: 0x7f0c000c
+			public const int background_material_dark = 2131492876;
+			
+			// aapt resource value: 0x7f0c000d
+			public const int background_material_light = 2131492877;
+			
+			// aapt resource value: 0x7f0c000e
+			public const int bright_foreground_disabled_material_dark = 2131492878;
+			
+			// aapt resource value: 0x7f0c000f
+			public const int bright_foreground_disabled_material_light = 2131492879;
+			
+			// aapt resource value: 0x7f0c0010
+			public const int bright_foreground_inverse_material_dark = 2131492880;
+			
+			// aapt resource value: 0x7f0c0011
+			public const int bright_foreground_inverse_material_light = 2131492881;
+			
+			// aapt resource value: 0x7f0c0012
+			public const int bright_foreground_material_dark = 2131492882;
+			
+			// aapt resource value: 0x7f0c0013
+			public const int bright_foreground_material_light = 2131492883;
+			
+			// aapt resource value: 0x7f0c0014
+			public const int button_material_dark = 2131492884;
+			
+			// aapt resource value: 0x7f0c0015
+			public const int button_material_light = 2131492885;
+			
+			// aapt resource value: 0x7f0c0000
+			public const int cardview_dark_background = 2131492864;
+			
+			// aapt resource value: 0x7f0c0001
+			public const int cardview_light_background = 2131492865;
+			
+			// aapt resource value: 0x7f0c0002
+			public const int cardview_shadow_end_color = 2131492866;
+			
+			// aapt resource value: 0x7f0c0003
+			public const int cardview_shadow_start_color = 2131492867;
+			
+			// aapt resource value: 0x7f0c004d
+			public const int colorAccent = 2131492941;
+			
+			// aapt resource value: 0x7f0c004b
+			public const int colorPrimary = 2131492939;
+			
+			// aapt resource value: 0x7f0c004c
+			public const int colorPrimaryDark = 2131492940;
+			
+			// aapt resource value: 0x7f0c0040
+			public const int design_bottom_navigation_shadow_color = 2131492928;
+			
+			// aapt resource value: 0x7f0c0065
+			public const int design_error = 2131492965;
+			
+			// aapt resource value: 0x7f0c0041
+			public const int design_fab_shadow_end_color = 2131492929;
+			
+			// aapt resource value: 0x7f0c0042
+			public const int design_fab_shadow_mid_color = 2131492930;
+			
+			// aapt resource value: 0x7f0c0043
+			public const int design_fab_shadow_start_color = 2131492931;
+			
+			// aapt resource value: 0x7f0c0044
+			public const int design_fab_stroke_end_inner_color = 2131492932;
+			
+			// aapt resource value: 0x7f0c0045
+			public const int design_fab_stroke_end_outer_color = 2131492933;
+			
+			// aapt resource value: 0x7f0c0046
+			public const int design_fab_stroke_top_inner_color = 2131492934;
+			
+			// aapt resource value: 0x7f0c0047
+			public const int design_fab_stroke_top_outer_color = 2131492935;
+			
+			// aapt resource value: 0x7f0c0048
+			public const int design_snackbar_background_color = 2131492936;
+			
+			// aapt resource value: 0x7f0c0066
+			public const int design_tint_password_toggle = 2131492966;
+			
+			// aapt resource value: 0x7f0c0016
+			public const int dim_foreground_disabled_material_dark = 2131492886;
+			
+			// aapt resource value: 0x7f0c0017
+			public const int dim_foreground_disabled_material_light = 2131492887;
+			
+			// aapt resource value: 0x7f0c0018
+			public const int dim_foreground_material_dark = 2131492888;
+			
+			// aapt resource value: 0x7f0c0019
+			public const int dim_foreground_material_light = 2131492889;
+			
+			// aapt resource value: 0x7f0c001a
+			public const int error_color_material = 2131492890;
+			
+			// aapt resource value: 0x7f0c001b
+			public const int foreground_material_dark = 2131492891;
+			
+			// aapt resource value: 0x7f0c001c
+			public const int foreground_material_light = 2131492892;
+			
+			// aapt resource value: 0x7f0c001d
+			public const int highlighted_text_material_dark = 2131492893;
+			
+			// aapt resource value: 0x7f0c001e
+			public const int highlighted_text_material_light = 2131492894;
+			
+			// aapt resource value: 0x7f0c0050
+			public const int ic_launcher_background = 2131492944;
+			
+			// aapt resource value: 0x7f0c001f
+			public const int material_blue_grey_800 = 2131492895;
+			
+			// aapt resource value: 0x7f0c0020
+			public const int material_blue_grey_900 = 2131492896;
+			
+			// aapt resource value: 0x7f0c0021
+			public const int material_blue_grey_950 = 2131492897;
+			
+			// aapt resource value: 0x7f0c0022
+			public const int material_deep_teal_200 = 2131492898;
+			
+			// aapt resource value: 0x7f0c0023
+			public const int material_deep_teal_500 = 2131492899;
+			
+			// aapt resource value: 0x7f0c0024
+			public const int material_grey_100 = 2131492900;
+			
+			// aapt resource value: 0x7f0c0025
+			public const int material_grey_300 = 2131492901;
+			
+			// aapt resource value: 0x7f0c0026
+			public const int material_grey_50 = 2131492902;
+			
+			// aapt resource value: 0x7f0c0027
+			public const int material_grey_600 = 2131492903;
+			
+			// aapt resource value: 0x7f0c0028
+			public const int material_grey_800 = 2131492904;
+			
+			// aapt resource value: 0x7f0c0029
+			public const int material_grey_850 = 2131492905;
+			
+			// aapt resource value: 0x7f0c002a
+			public const int material_grey_900 = 2131492906;
+			
+			// aapt resource value: 0x7f0c0049
+			public const int notification_action_color_filter = 2131492937;
+			
+			// aapt resource value: 0x7f0c004a
+			public const int notification_icon_bg_color = 2131492938;
+			
+			// aapt resource value: 0x7f0c003f
+			public const int notification_material_background_media_default_color = 2131492927;
+			
+			// aapt resource value: 0x7f0c002b
+			public const int primary_dark_material_dark = 2131492907;
+			
+			// aapt resource value: 0x7f0c002c
+			public const int primary_dark_material_light = 2131492908;
+			
+			// aapt resource value: 0x7f0c002d
+			public const int primary_material_dark = 2131492909;
+			
+			// aapt resource value: 0x7f0c002e
+			public const int primary_material_light = 2131492910;
+			
+			// aapt resource value: 0x7f0c002f
+			public const int primary_text_default_material_dark = 2131492911;
+			
+			// aapt resource value: 0x7f0c0030
+			public const int primary_text_default_material_light = 2131492912;
+			
+			// aapt resource value: 0x7f0c0031
+			public const int primary_text_disabled_material_dark = 2131492913;
+			
+			// aapt resource value: 0x7f0c0032
+			public const int primary_text_disabled_material_light = 2131492914;
+			
+			// aapt resource value: 0x7f0c0033
+			public const int ripple_material_dark = 2131492915;
+			
+			// aapt resource value: 0x7f0c0034
+			public const int ripple_material_light = 2131492916;
+			
+			// aapt resource value: 0x7f0c0035
+			public const int secondary_text_default_material_dark = 2131492917;
+			
+			// aapt resource value: 0x7f0c0036
+			public const int secondary_text_default_material_light = 2131492918;
 			
 			// aapt resource value: 0x7f0c0037
-			public const int switch_thumb_normal_material_dark = 2131492919;
+			public const int secondary_text_disabled_material_dark = 2131492919;
 			
 			// aapt resource value: 0x7f0c0038
-			public const int switch_thumb_normal_material_light = 2131492920;
+			public const int secondary_text_disabled_material_light = 2131492920;
 			
 			// aapt resource value: 0x7f0c0039
-			public const int tooltip_background_dark = 2131492921;
+			public const int switch_thumb_disabled_material_dark = 2131492921;
 			
 			// aapt resource value: 0x7f0c003a
-			public const int tooltip_background_light = 2131492922;
+			public const int switch_thumb_disabled_material_light = 2131492922;
+			
+			// aapt resource value: 0x7f0c0067
+			public const int switch_thumb_material_dark = 2131492967;
+			
+			// aapt resource value: 0x7f0c0068
+			public const int switch_thumb_material_light = 2131492968;
+			
+			// aapt resource value: 0x7f0c003b
+			public const int switch_thumb_normal_material_dark = 2131492923;
+			
+			// aapt resource value: 0x7f0c003c
+			public const int switch_thumb_normal_material_light = 2131492924;
+			
+			// aapt resource value: 0x7f0c003d
+			public const int tooltip_background_dark = 2131492925;
+			
+			// aapt resource value: 0x7f0c003e
+			public const int tooltip_background_light = 2131492926;
 			
 			static Color()
 			{
@@ -4547,470 +6704,479 @@ namespace GhostlyGame
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f080012
-			public const int abc_action_bar_content_inset_material = 2131230738;
+			// aapt resource value: 0x7f0a0015
+			public const int abc_action_bar_content_inset_material = 2131361813;
 			
-			// aapt resource value: 0x7f080013
-			public const int abc_action_bar_content_inset_with_nav = 2131230739;
+			// aapt resource value: 0x7f0a0016
+			public const int abc_action_bar_content_inset_with_nav = 2131361814;
 			
-			// aapt resource value: 0x7f080007
-			public const int abc_action_bar_default_height_material = 2131230727;
+			// aapt resource value: 0x7f0a000a
+			public const int abc_action_bar_default_height_material = 2131361802;
 			
-			// aapt resource value: 0x7f080014
-			public const int abc_action_bar_default_padding_end_material = 2131230740;
+			// aapt resource value: 0x7f0a0017
+			public const int abc_action_bar_default_padding_end_material = 2131361815;
 			
-			// aapt resource value: 0x7f080015
-			public const int abc_action_bar_default_padding_start_material = 2131230741;
+			// aapt resource value: 0x7f0a0018
+			public const int abc_action_bar_default_padding_start_material = 2131361816;
 			
-			// aapt resource value: 0x7f080017
-			public const int abc_action_bar_elevation_material = 2131230743;
+			// aapt resource value: 0x7f0a001a
+			public const int abc_action_bar_elevation_material = 2131361818;
 			
-			// aapt resource value: 0x7f080018
-			public const int abc_action_bar_icon_vertical_padding_material = 2131230744;
+			// aapt resource value: 0x7f0a001b
+			public const int abc_action_bar_icon_vertical_padding_material = 2131361819;
 			
-			// aapt resource value: 0x7f080019
-			public const int abc_action_bar_overflow_padding_end_material = 2131230745;
+			// aapt resource value: 0x7f0a001c
+			public const int abc_action_bar_overflow_padding_end_material = 2131361820;
 			
-			// aapt resource value: 0x7f08001a
-			public const int abc_action_bar_overflow_padding_start_material = 2131230746;
+			// aapt resource value: 0x7f0a001d
+			public const int abc_action_bar_overflow_padding_start_material = 2131361821;
 			
-			// aapt resource value: 0x7f080008
-			public const int abc_action_bar_progress_bar_size = 2131230728;
+			// aapt resource value: 0x7f0a000b
+			public const int abc_action_bar_progress_bar_size = 2131361803;
 			
-			// aapt resource value: 0x7f08001b
-			public const int abc_action_bar_stacked_max_height = 2131230747;
+			// aapt resource value: 0x7f0a001e
+			public const int abc_action_bar_stacked_max_height = 2131361822;
 			
-			// aapt resource value: 0x7f08001c
-			public const int abc_action_bar_stacked_tab_max_width = 2131230748;
+			// aapt resource value: 0x7f0a001f
+			public const int abc_action_bar_stacked_tab_max_width = 2131361823;
 			
-			// aapt resource value: 0x7f08001d
-			public const int abc_action_bar_subtitle_bottom_margin_material = 2131230749;
+			// aapt resource value: 0x7f0a0020
+			public const int abc_action_bar_subtitle_bottom_margin_material = 2131361824;
 			
-			// aapt resource value: 0x7f08001e
-			public const int abc_action_bar_subtitle_top_margin_material = 2131230750;
+			// aapt resource value: 0x7f0a0021
+			public const int abc_action_bar_subtitle_top_margin_material = 2131361825;
 			
-			// aapt resource value: 0x7f08001f
-			public const int abc_action_button_min_height_material = 2131230751;
+			// aapt resource value: 0x7f0a0022
+			public const int abc_action_button_min_height_material = 2131361826;
 			
-			// aapt resource value: 0x7f080020
-			public const int abc_action_button_min_width_material = 2131230752;
+			// aapt resource value: 0x7f0a0023
+			public const int abc_action_button_min_width_material = 2131361827;
 			
-			// aapt resource value: 0x7f080021
-			public const int abc_action_button_min_width_overflow_material = 2131230753;
+			// aapt resource value: 0x7f0a0024
+			public const int abc_action_button_min_width_overflow_material = 2131361828;
 			
-			// aapt resource value: 0x7f080006
-			public const int abc_alert_dialog_button_bar_height = 2131230726;
+			// aapt resource value: 0x7f0a0009
+			public const int abc_alert_dialog_button_bar_height = 2131361801;
 			
-			// aapt resource value: 0x7f080022
-			public const int abc_button_inset_horizontal_material = 2131230754;
+			// aapt resource value: 0x7f0a0025
+			public const int abc_button_inset_horizontal_material = 2131361829;
 			
-			// aapt resource value: 0x7f080023
-			public const int abc_button_inset_vertical_material = 2131230755;
+			// aapt resource value: 0x7f0a0026
+			public const int abc_button_inset_vertical_material = 2131361830;
 			
-			// aapt resource value: 0x7f080024
-			public const int abc_button_padding_horizontal_material = 2131230756;
+			// aapt resource value: 0x7f0a0027
+			public const int abc_button_padding_horizontal_material = 2131361831;
 			
-			// aapt resource value: 0x7f080025
-			public const int abc_button_padding_vertical_material = 2131230757;
+			// aapt resource value: 0x7f0a0028
+			public const int abc_button_padding_vertical_material = 2131361832;
 			
-			// aapt resource value: 0x7f080026
-			public const int abc_cascading_menus_min_smallest_width = 2131230758;
+			// aapt resource value: 0x7f0a0029
+			public const int abc_cascading_menus_min_smallest_width = 2131361833;
 			
-			// aapt resource value: 0x7f08000b
-			public const int abc_config_prefDialogWidth = 2131230731;
+			// aapt resource value: 0x7f0a000e
+			public const int abc_config_prefDialogWidth = 2131361806;
 			
-			// aapt resource value: 0x7f080027
-			public const int abc_control_corner_material = 2131230759;
+			// aapt resource value: 0x7f0a002a
+			public const int abc_control_corner_material = 2131361834;
 			
-			// aapt resource value: 0x7f080028
-			public const int abc_control_inset_material = 2131230760;
+			// aapt resource value: 0x7f0a002b
+			public const int abc_control_inset_material = 2131361835;
 			
-			// aapt resource value: 0x7f080029
-			public const int abc_control_padding_material = 2131230761;
+			// aapt resource value: 0x7f0a002c
+			public const int abc_control_padding_material = 2131361836;
 			
-			// aapt resource value: 0x7f08000c
-			public const int abc_dialog_fixed_height_major = 2131230732;
+			// aapt resource value: 0x7f0a000f
+			public const int abc_dialog_fixed_height_major = 2131361807;
 			
-			// aapt resource value: 0x7f08000d
-			public const int abc_dialog_fixed_height_minor = 2131230733;
+			// aapt resource value: 0x7f0a0010
+			public const int abc_dialog_fixed_height_minor = 2131361808;
 			
-			// aapt resource value: 0x7f08000e
-			public const int abc_dialog_fixed_width_major = 2131230734;
+			// aapt resource value: 0x7f0a0011
+			public const int abc_dialog_fixed_width_major = 2131361809;
 			
-			// aapt resource value: 0x7f08000f
-			public const int abc_dialog_fixed_width_minor = 2131230735;
+			// aapt resource value: 0x7f0a0012
+			public const int abc_dialog_fixed_width_minor = 2131361810;
 			
-			// aapt resource value: 0x7f08002a
-			public const int abc_dialog_list_padding_bottom_no_buttons = 2131230762;
+			// aapt resource value: 0x7f0a002d
+			public const int abc_dialog_list_padding_bottom_no_buttons = 2131361837;
 			
-			// aapt resource value: 0x7f08002b
-			public const int abc_dialog_list_padding_top_no_title = 2131230763;
+			// aapt resource value: 0x7f0a002e
+			public const int abc_dialog_list_padding_top_no_title = 2131361838;
 			
-			// aapt resource value: 0x7f080010
-			public const int abc_dialog_min_width_major = 2131230736;
+			// aapt resource value: 0x7f0a0013
+			public const int abc_dialog_min_width_major = 2131361811;
 			
-			// aapt resource value: 0x7f080011
-			public const int abc_dialog_min_width_minor = 2131230737;
+			// aapt resource value: 0x7f0a0014
+			public const int abc_dialog_min_width_minor = 2131361812;
 			
-			// aapt resource value: 0x7f08002c
-			public const int abc_dialog_padding_material = 2131230764;
+			// aapt resource value: 0x7f0a002f
+			public const int abc_dialog_padding_material = 2131361839;
 			
-			// aapt resource value: 0x7f08002d
-			public const int abc_dialog_padding_top_material = 2131230765;
+			// aapt resource value: 0x7f0a0030
+			public const int abc_dialog_padding_top_material = 2131361840;
 			
-			// aapt resource value: 0x7f08002e
-			public const int abc_dialog_title_divider_material = 2131230766;
+			// aapt resource value: 0x7f0a0031
+			public const int abc_dialog_title_divider_material = 2131361841;
 			
-			// aapt resource value: 0x7f08002f
-			public const int abc_disabled_alpha_material_dark = 2131230767;
+			// aapt resource value: 0x7f0a0032
+			public const int abc_disabled_alpha_material_dark = 2131361842;
 			
-			// aapt resource value: 0x7f080030
-			public const int abc_disabled_alpha_material_light = 2131230768;
+			// aapt resource value: 0x7f0a0033
+			public const int abc_disabled_alpha_material_light = 2131361843;
 			
-			// aapt resource value: 0x7f080031
-			public const int abc_dropdownitem_icon_width = 2131230769;
+			// aapt resource value: 0x7f0a0034
+			public const int abc_dropdownitem_icon_width = 2131361844;
 			
-			// aapt resource value: 0x7f080032
-			public const int abc_dropdownitem_text_padding_left = 2131230770;
+			// aapt resource value: 0x7f0a0035
+			public const int abc_dropdownitem_text_padding_left = 2131361845;
 			
-			// aapt resource value: 0x7f080033
-			public const int abc_dropdownitem_text_padding_right = 2131230771;
+			// aapt resource value: 0x7f0a0036
+			public const int abc_dropdownitem_text_padding_right = 2131361846;
 			
-			// aapt resource value: 0x7f080034
-			public const int abc_edit_text_inset_bottom_material = 2131230772;
+			// aapt resource value: 0x7f0a0037
+			public const int abc_edit_text_inset_bottom_material = 2131361847;
 			
-			// aapt resource value: 0x7f080035
-			public const int abc_edit_text_inset_horizontal_material = 2131230773;
+			// aapt resource value: 0x7f0a0038
+			public const int abc_edit_text_inset_horizontal_material = 2131361848;
 			
-			// aapt resource value: 0x7f080036
-			public const int abc_edit_text_inset_top_material = 2131230774;
+			// aapt resource value: 0x7f0a0039
+			public const int abc_edit_text_inset_top_material = 2131361849;
 			
-			// aapt resource value: 0x7f080037
-			public const int abc_floating_window_z = 2131230775;
+			// aapt resource value: 0x7f0a003a
+			public const int abc_floating_window_z = 2131361850;
 			
-			// aapt resource value: 0x7f080038
-			public const int abc_list_item_padding_horizontal_material = 2131230776;
+			// aapt resource value: 0x7f0a003b
+			public const int abc_list_item_padding_horizontal_material = 2131361851;
 			
-			// aapt resource value: 0x7f080039
-			public const int abc_panel_menu_list_width = 2131230777;
+			// aapt resource value: 0x7f0a003c
+			public const int abc_panel_menu_list_width = 2131361852;
 			
-			// aapt resource value: 0x7f08003a
-			public const int abc_progress_bar_height_material = 2131230778;
+			// aapt resource value: 0x7f0a003d
+			public const int abc_progress_bar_height_material = 2131361853;
 			
-			// aapt resource value: 0x7f08003b
-			public const int abc_search_view_preferred_height = 2131230779;
+			// aapt resource value: 0x7f0a003e
+			public const int abc_search_view_preferred_height = 2131361854;
 			
-			// aapt resource value: 0x7f08003c
-			public const int abc_search_view_preferred_width = 2131230780;
+			// aapt resource value: 0x7f0a003f
+			public const int abc_search_view_preferred_width = 2131361855;
 			
-			// aapt resource value: 0x7f08003d
-			public const int abc_seekbar_track_background_height_material = 2131230781;
+			// aapt resource value: 0x7f0a0040
+			public const int abc_seekbar_track_background_height_material = 2131361856;
 			
-			// aapt resource value: 0x7f08003e
-			public const int abc_seekbar_track_progress_height_material = 2131230782;
+			// aapt resource value: 0x7f0a0041
+			public const int abc_seekbar_track_progress_height_material = 2131361857;
 			
-			// aapt resource value: 0x7f08003f
-			public const int abc_select_dialog_padding_start_material = 2131230783;
+			// aapt resource value: 0x7f0a0042
+			public const int abc_select_dialog_padding_start_material = 2131361858;
 			
-			// aapt resource value: 0x7f080016
-			public const int abc_switch_padding = 2131230742;
+			// aapt resource value: 0x7f0a0019
+			public const int abc_switch_padding = 2131361817;
 			
-			// aapt resource value: 0x7f080040
-			public const int abc_text_size_body_1_material = 2131230784;
+			// aapt resource value: 0x7f0a0043
+			public const int abc_text_size_body_1_material = 2131361859;
 			
-			// aapt resource value: 0x7f080041
-			public const int abc_text_size_body_2_material = 2131230785;
+			// aapt resource value: 0x7f0a0044
+			public const int abc_text_size_body_2_material = 2131361860;
 			
-			// aapt resource value: 0x7f080042
-			public const int abc_text_size_button_material = 2131230786;
+			// aapt resource value: 0x7f0a0045
+			public const int abc_text_size_button_material = 2131361861;
 			
-			// aapt resource value: 0x7f080043
-			public const int abc_text_size_caption_material = 2131230787;
+			// aapt resource value: 0x7f0a0046
+			public const int abc_text_size_caption_material = 2131361862;
 			
-			// aapt resource value: 0x7f080044
-			public const int abc_text_size_display_1_material = 2131230788;
+			// aapt resource value: 0x7f0a0047
+			public const int abc_text_size_display_1_material = 2131361863;
 			
-			// aapt resource value: 0x7f080045
-			public const int abc_text_size_display_2_material = 2131230789;
+			// aapt resource value: 0x7f0a0048
+			public const int abc_text_size_display_2_material = 2131361864;
 			
-			// aapt resource value: 0x7f080046
-			public const int abc_text_size_display_3_material = 2131230790;
+			// aapt resource value: 0x7f0a0049
+			public const int abc_text_size_display_3_material = 2131361865;
 			
-			// aapt resource value: 0x7f080047
-			public const int abc_text_size_display_4_material = 2131230791;
+			// aapt resource value: 0x7f0a004a
+			public const int abc_text_size_display_4_material = 2131361866;
 			
-			// aapt resource value: 0x7f080048
-			public const int abc_text_size_headline_material = 2131230792;
+			// aapt resource value: 0x7f0a004b
+			public const int abc_text_size_headline_material = 2131361867;
 			
-			// aapt resource value: 0x7f080049
-			public const int abc_text_size_large_material = 2131230793;
+			// aapt resource value: 0x7f0a004c
+			public const int abc_text_size_large_material = 2131361868;
 			
-			// aapt resource value: 0x7f08004a
-			public const int abc_text_size_medium_material = 2131230794;
+			// aapt resource value: 0x7f0a004d
+			public const int abc_text_size_medium_material = 2131361869;
 			
-			// aapt resource value: 0x7f08004b
-			public const int abc_text_size_menu_header_material = 2131230795;
+			// aapt resource value: 0x7f0a004e
+			public const int abc_text_size_menu_header_material = 2131361870;
 			
-			// aapt resource value: 0x7f08004c
-			public const int abc_text_size_menu_material = 2131230796;
+			// aapt resource value: 0x7f0a004f
+			public const int abc_text_size_menu_material = 2131361871;
 			
-			// aapt resource value: 0x7f08004d
-			public const int abc_text_size_small_material = 2131230797;
+			// aapt resource value: 0x7f0a0050
+			public const int abc_text_size_small_material = 2131361872;
 			
-			// aapt resource value: 0x7f08004e
-			public const int abc_text_size_subhead_material = 2131230798;
+			// aapt resource value: 0x7f0a0051
+			public const int abc_text_size_subhead_material = 2131361873;
 			
-			// aapt resource value: 0x7f080009
-			public const int abc_text_size_subtitle_material_toolbar = 2131230729;
+			// aapt resource value: 0x7f0a000c
+			public const int abc_text_size_subtitle_material_toolbar = 2131361804;
 			
-			// aapt resource value: 0x7f08004f
-			public const int abc_text_size_title_material = 2131230799;
+			// aapt resource value: 0x7f0a0052
+			public const int abc_text_size_title_material = 2131361874;
 			
-			// aapt resource value: 0x7f08000a
-			public const int abc_text_size_title_material_toolbar = 2131230730;
+			// aapt resource value: 0x7f0a000d
+			public const int abc_text_size_title_material_toolbar = 2131361805;
 			
-			// aapt resource value: 0x7f08008b
-			public const int compat_button_inset_horizontal_material = 2131230859;
+			// aapt resource value: 0x7f0a0006
+			public const int cardview_compat_inset_shadow = 2131361798;
 			
-			// aapt resource value: 0x7f08008c
-			public const int compat_button_inset_vertical_material = 2131230860;
+			// aapt resource value: 0x7f0a0007
+			public const int cardview_default_elevation = 2131361799;
 			
-			// aapt resource value: 0x7f08008d
-			public const int compat_button_padding_horizontal_material = 2131230861;
+			// aapt resource value: 0x7f0a0008
+			public const int cardview_default_radius = 2131361800;
 			
-			// aapt resource value: 0x7f08008e
-			public const int compat_button_padding_vertical_material = 2131230862;
+			// aapt resource value: 0x7f0a008e
+			public const int compat_button_inset_horizontal_material = 2131361934;
 			
-			// aapt resource value: 0x7f08008f
-			public const int compat_control_corner_material = 2131230863;
+			// aapt resource value: 0x7f0a008f
+			public const int compat_button_inset_vertical_material = 2131361935;
 			
-			// aapt resource value: 0x7f080069
-			public const int design_appbar_elevation = 2131230825;
+			// aapt resource value: 0x7f0a0090
+			public const int compat_button_padding_horizontal_material = 2131361936;
 			
-			// aapt resource value: 0x7f08006a
-			public const int design_bottom_navigation_active_item_max_width = 2131230826;
+			// aapt resource value: 0x7f0a0091
+			public const int compat_button_padding_vertical_material = 2131361937;
 			
-			// aapt resource value: 0x7f08006b
-			public const int design_bottom_navigation_active_text_size = 2131230827;
+			// aapt resource value: 0x7f0a0092
+			public const int compat_control_corner_material = 2131361938;
 			
-			// aapt resource value: 0x7f08006c
-			public const int design_bottom_navigation_elevation = 2131230828;
+			// aapt resource value: 0x7f0a006c
+			public const int design_appbar_elevation = 2131361900;
 			
-			// aapt resource value: 0x7f08006d
-			public const int design_bottom_navigation_height = 2131230829;
+			// aapt resource value: 0x7f0a006d
+			public const int design_bottom_navigation_active_item_max_width = 2131361901;
 			
-			// aapt resource value: 0x7f08006e
-			public const int design_bottom_navigation_item_max_width = 2131230830;
+			// aapt resource value: 0x7f0a006e
+			public const int design_bottom_navigation_active_text_size = 2131361902;
 			
-			// aapt resource value: 0x7f08006f
-			public const int design_bottom_navigation_item_min_width = 2131230831;
+			// aapt resource value: 0x7f0a006f
+			public const int design_bottom_navigation_elevation = 2131361903;
 			
-			// aapt resource value: 0x7f080070
-			public const int design_bottom_navigation_margin = 2131230832;
+			// aapt resource value: 0x7f0a0070
+			public const int design_bottom_navigation_height = 2131361904;
 			
-			// aapt resource value: 0x7f080071
-			public const int design_bottom_navigation_shadow_height = 2131230833;
+			// aapt resource value: 0x7f0a0071
+			public const int design_bottom_navigation_item_max_width = 2131361905;
 			
-			// aapt resource value: 0x7f080072
-			public const int design_bottom_navigation_text_size = 2131230834;
+			// aapt resource value: 0x7f0a0072
+			public const int design_bottom_navigation_item_min_width = 2131361906;
 			
-			// aapt resource value: 0x7f080073
-			public const int design_bottom_sheet_modal_elevation = 2131230835;
+			// aapt resource value: 0x7f0a0073
+			public const int design_bottom_navigation_margin = 2131361907;
 			
-			// aapt resource value: 0x7f080074
-			public const int design_bottom_sheet_peek_height_min = 2131230836;
+			// aapt resource value: 0x7f0a0074
+			public const int design_bottom_navigation_shadow_height = 2131361908;
 			
-			// aapt resource value: 0x7f080075
-			public const int design_fab_border_width = 2131230837;
+			// aapt resource value: 0x7f0a0075
+			public const int design_bottom_navigation_text_size = 2131361909;
 			
-			// aapt resource value: 0x7f080076
-			public const int design_fab_elevation = 2131230838;
+			// aapt resource value: 0x7f0a0076
+			public const int design_bottom_sheet_modal_elevation = 2131361910;
 			
-			// aapt resource value: 0x7f080077
-			public const int design_fab_image_size = 2131230839;
+			// aapt resource value: 0x7f0a0077
+			public const int design_bottom_sheet_peek_height_min = 2131361911;
 			
-			// aapt resource value: 0x7f080078
-			public const int design_fab_size_mini = 2131230840;
+			// aapt resource value: 0x7f0a0078
+			public const int design_fab_border_width = 2131361912;
 			
-			// aapt resource value: 0x7f080079
-			public const int design_fab_size_normal = 2131230841;
+			// aapt resource value: 0x7f0a0079
+			public const int design_fab_elevation = 2131361913;
 			
-			// aapt resource value: 0x7f08007a
-			public const int design_fab_translation_z_pressed = 2131230842;
+			// aapt resource value: 0x7f0a007a
+			public const int design_fab_image_size = 2131361914;
 			
-			// aapt resource value: 0x7f08007b
-			public const int design_navigation_elevation = 2131230843;
+			// aapt resource value: 0x7f0a007b
+			public const int design_fab_size_mini = 2131361915;
 			
-			// aapt resource value: 0x7f08007c
-			public const int design_navigation_icon_padding = 2131230844;
+			// aapt resource value: 0x7f0a007c
+			public const int design_fab_size_normal = 2131361916;
 			
-			// aapt resource value: 0x7f08007d
-			public const int design_navigation_icon_size = 2131230845;
+			// aapt resource value: 0x7f0a007d
+			public const int design_fab_translation_z_pressed = 2131361917;
 			
-			// aapt resource value: 0x7f080061
-			public const int design_navigation_max_width = 2131230817;
+			// aapt resource value: 0x7f0a007e
+			public const int design_navigation_elevation = 2131361918;
 			
-			// aapt resource value: 0x7f08007e
-			public const int design_navigation_padding_bottom = 2131230846;
+			// aapt resource value: 0x7f0a007f
+			public const int design_navigation_icon_padding = 2131361919;
 			
-			// aapt resource value: 0x7f08007f
-			public const int design_navigation_separator_vertical_padding = 2131230847;
+			// aapt resource value: 0x7f0a0080
+			public const int design_navigation_icon_size = 2131361920;
 			
-			// aapt resource value: 0x7f080062
-			public const int design_snackbar_action_inline_max_width = 2131230818;
+			// aapt resource value: 0x7f0a0064
+			public const int design_navigation_max_width = 2131361892;
 			
-			// aapt resource value: 0x7f080063
-			public const int design_snackbar_background_corner_radius = 2131230819;
+			// aapt resource value: 0x7f0a0081
+			public const int design_navigation_padding_bottom = 2131361921;
 			
-			// aapt resource value: 0x7f080080
-			public const int design_snackbar_elevation = 2131230848;
+			// aapt resource value: 0x7f0a0082
+			public const int design_navigation_separator_vertical_padding = 2131361922;
 			
-			// aapt resource value: 0x7f080064
-			public const int design_snackbar_extra_spacing_horizontal = 2131230820;
+			// aapt resource value: 0x7f0a0065
+			public const int design_snackbar_action_inline_max_width = 2131361893;
 			
-			// aapt resource value: 0x7f080065
-			public const int design_snackbar_max_width = 2131230821;
+			// aapt resource value: 0x7f0a0066
+			public const int design_snackbar_background_corner_radius = 2131361894;
 			
-			// aapt resource value: 0x7f080066
-			public const int design_snackbar_min_width = 2131230822;
+			// aapt resource value: 0x7f0a0083
+			public const int design_snackbar_elevation = 2131361923;
 			
-			// aapt resource value: 0x7f080081
-			public const int design_snackbar_padding_horizontal = 2131230849;
+			// aapt resource value: 0x7f0a0067
+			public const int design_snackbar_extra_spacing_horizontal = 2131361895;
 			
-			// aapt resource value: 0x7f080082
-			public const int design_snackbar_padding_vertical = 2131230850;
+			// aapt resource value: 0x7f0a0068
+			public const int design_snackbar_max_width = 2131361896;
 			
-			// aapt resource value: 0x7f080067
-			public const int design_snackbar_padding_vertical_2lines = 2131230823;
+			// aapt resource value: 0x7f0a0069
+			public const int design_snackbar_min_width = 2131361897;
 			
-			// aapt resource value: 0x7f080083
-			public const int design_snackbar_text_size = 2131230851;
+			// aapt resource value: 0x7f0a0084
+			public const int design_snackbar_padding_horizontal = 2131361924;
 			
-			// aapt resource value: 0x7f080084
-			public const int design_tab_max_width = 2131230852;
+			// aapt resource value: 0x7f0a0085
+			public const int design_snackbar_padding_vertical = 2131361925;
 			
-			// aapt resource value: 0x7f080068
-			public const int design_tab_scrollable_min_width = 2131230824;
+			// aapt resource value: 0x7f0a006a
+			public const int design_snackbar_padding_vertical_2lines = 2131361898;
 			
-			// aapt resource value: 0x7f080085
-			public const int design_tab_text_size = 2131230853;
+			// aapt resource value: 0x7f0a0086
+			public const int design_snackbar_text_size = 2131361926;
 			
-			// aapt resource value: 0x7f080086
-			public const int design_tab_text_size_2line = 2131230854;
+			// aapt resource value: 0x7f0a0087
+			public const int design_tab_max_width = 2131361927;
 			
-			// aapt resource value: 0x7f080050
-			public const int disabled_alpha_material_dark = 2131230800;
+			// aapt resource value: 0x7f0a006b
+			public const int design_tab_scrollable_min_width = 2131361899;
 			
-			// aapt resource value: 0x7f080051
-			public const int disabled_alpha_material_light = 2131230801;
+			// aapt resource value: 0x7f0a0088
+			public const int design_tab_text_size = 2131361928;
 			
-			// aapt resource value: 0x7f080000
-			public const int fastscroll_default_thickness = 2131230720;
+			// aapt resource value: 0x7f0a0089
+			public const int design_tab_text_size_2line = 2131361929;
 			
-			// aapt resource value: 0x7f080001
-			public const int fastscroll_margin = 2131230721;
+			// aapt resource value: 0x7f0a0053
+			public const int disabled_alpha_material_dark = 2131361875;
 			
-			// aapt resource value: 0x7f080002
-			public const int fastscroll_minimum_range = 2131230722;
+			// aapt resource value: 0x7f0a0054
+			public const int disabled_alpha_material_light = 2131361876;
 			
-			// aapt resource value: 0x7f080052
-			public const int highlight_alpha_material_colored = 2131230802;
+			// aapt resource value: 0x7f0a0000
+			public const int fastscroll_default_thickness = 2131361792;
 			
-			// aapt resource value: 0x7f080053
-			public const int highlight_alpha_material_dark = 2131230803;
+			// aapt resource value: 0x7f0a0001
+			public const int fastscroll_margin = 2131361793;
 			
-			// aapt resource value: 0x7f080054
-			public const int highlight_alpha_material_light = 2131230804;
+			// aapt resource value: 0x7f0a0002
+			public const int fastscroll_minimum_range = 2131361794;
 			
-			// aapt resource value: 0x7f080055
-			public const int hint_alpha_material_dark = 2131230805;
+			// aapt resource value: 0x7f0a0055
+			public const int highlight_alpha_material_colored = 2131361877;
 			
-			// aapt resource value: 0x7f080056
-			public const int hint_alpha_material_light = 2131230806;
+			// aapt resource value: 0x7f0a0056
+			public const int highlight_alpha_material_dark = 2131361878;
 			
-			// aapt resource value: 0x7f080057
-			public const int hint_pressed_alpha_material_dark = 2131230807;
+			// aapt resource value: 0x7f0a0057
+			public const int highlight_alpha_material_light = 2131361879;
 			
-			// aapt resource value: 0x7f080058
-			public const int hint_pressed_alpha_material_light = 2131230808;
+			// aapt resource value: 0x7f0a0058
+			public const int hint_alpha_material_dark = 2131361880;
 			
-			// aapt resource value: 0x7f080003
-			public const int item_touch_helper_max_drag_scroll_per_frame = 2131230723;
+			// aapt resource value: 0x7f0a0059
+			public const int hint_alpha_material_light = 2131361881;
 			
-			// aapt resource value: 0x7f080004
-			public const int item_touch_helper_swipe_escape_max_velocity = 2131230724;
+			// aapt resource value: 0x7f0a005a
+			public const int hint_pressed_alpha_material_dark = 2131361882;
 			
-			// aapt resource value: 0x7f080005
-			public const int item_touch_helper_swipe_escape_velocity = 2131230725;
+			// aapt resource value: 0x7f0a005b
+			public const int hint_pressed_alpha_material_light = 2131361883;
 			
-			// aapt resource value: 0x7f080090
-			public const int notification_action_icon_size = 2131230864;
+			// aapt resource value: 0x7f0a0003
+			public const int item_touch_helper_max_drag_scroll_per_frame = 2131361795;
 			
-			// aapt resource value: 0x7f080091
-			public const int notification_action_text_size = 2131230865;
+			// aapt resource value: 0x7f0a0004
+			public const int item_touch_helper_swipe_escape_max_velocity = 2131361796;
 			
-			// aapt resource value: 0x7f080092
-			public const int notification_big_circle_margin = 2131230866;
+			// aapt resource value: 0x7f0a0005
+			public const int item_touch_helper_swipe_escape_velocity = 2131361797;
 			
-			// aapt resource value: 0x7f080088
-			public const int notification_content_margin_start = 2131230856;
+			// aapt resource value: 0x7f0a0093
+			public const int notification_action_icon_size = 2131361939;
 			
-			// aapt resource value: 0x7f080093
-			public const int notification_large_icon_height = 2131230867;
+			// aapt resource value: 0x7f0a0094
+			public const int notification_action_text_size = 2131361940;
 			
-			// aapt resource value: 0x7f080094
-			public const int notification_large_icon_width = 2131230868;
+			// aapt resource value: 0x7f0a0095
+			public const int notification_big_circle_margin = 2131361941;
 			
-			// aapt resource value: 0x7f080089
-			public const int notification_main_column_padding_top = 2131230857;
+			// aapt resource value: 0x7f0a008b
+			public const int notification_content_margin_start = 2131361931;
 			
-			// aapt resource value: 0x7f08008a
-			public const int notification_media_narrow_margin = 2131230858;
+			// aapt resource value: 0x7f0a0096
+			public const int notification_large_icon_height = 2131361942;
 			
-			// aapt resource value: 0x7f080095
-			public const int notification_right_icon_size = 2131230869;
+			// aapt resource value: 0x7f0a0097
+			public const int notification_large_icon_width = 2131361943;
 			
-			// aapt resource value: 0x7f080087
-			public const int notification_right_side_padding_top = 2131230855;
+			// aapt resource value: 0x7f0a008c
+			public const int notification_main_column_padding_top = 2131361932;
 			
-			// aapt resource value: 0x7f080096
-			public const int notification_small_icon_background_padding = 2131230870;
+			// aapt resource value: 0x7f0a008d
+			public const int notification_media_narrow_margin = 2131361933;
 			
-			// aapt resource value: 0x7f080097
-			public const int notification_small_icon_size_as_large = 2131230871;
+			// aapt resource value: 0x7f0a0098
+			public const int notification_right_icon_size = 2131361944;
 			
-			// aapt resource value: 0x7f080098
-			public const int notification_subtext_size = 2131230872;
+			// aapt resource value: 0x7f0a008a
+			public const int notification_right_side_padding_top = 2131361930;
 			
-			// aapt resource value: 0x7f080099
-			public const int notification_top_pad = 2131230873;
+			// aapt resource value: 0x7f0a0099
+			public const int notification_small_icon_background_padding = 2131361945;
 			
-			// aapt resource value: 0x7f08009a
-			public const int notification_top_pad_large_text = 2131230874;
+			// aapt resource value: 0x7f0a009a
+			public const int notification_small_icon_size_as_large = 2131361946;
 			
-			// aapt resource value: 0x7f080059
-			public const int tooltip_corner_radius = 2131230809;
+			// aapt resource value: 0x7f0a009b
+			public const int notification_subtext_size = 2131361947;
 			
-			// aapt resource value: 0x7f08005a
-			public const int tooltip_horizontal_padding = 2131230810;
+			// aapt resource value: 0x7f0a009c
+			public const int notification_top_pad = 2131361948;
 			
-			// aapt resource value: 0x7f08005b
-			public const int tooltip_margin = 2131230811;
+			// aapt resource value: 0x7f0a009d
+			public const int notification_top_pad_large_text = 2131361949;
 			
-			// aapt resource value: 0x7f08005c
-			public const int tooltip_precise_anchor_extra_offset = 2131230812;
+			// aapt resource value: 0x7f0a005c
+			public const int tooltip_corner_radius = 2131361884;
 			
-			// aapt resource value: 0x7f08005d
-			public const int tooltip_precise_anchor_threshold = 2131230813;
+			// aapt resource value: 0x7f0a005d
+			public const int tooltip_horizontal_padding = 2131361885;
 			
-			// aapt resource value: 0x7f08005e
-			public const int tooltip_vertical_padding = 2131230814;
+			// aapt resource value: 0x7f0a005e
+			public const int tooltip_margin = 2131361886;
 			
-			// aapt resource value: 0x7f08005f
-			public const int tooltip_y_offset_non_touch = 2131230815;
+			// aapt resource value: 0x7f0a005f
+			public const int tooltip_precise_anchor_extra_offset = 2131361887;
 			
-			// aapt resource value: 0x7f080060
-			public const int tooltip_y_offset_touch = 2131230816;
+			// aapt resource value: 0x7f0a0060
+			public const int tooltip_precise_anchor_threshold = 2131361888;
+			
+			// aapt resource value: 0x7f0a0061
+			public const int tooltip_vertical_padding = 2131361889;
+			
+			// aapt resource value: 0x7f0a0062
+			public const int tooltip_y_offset_non_touch = 2131361890;
+			
+			// aapt resource value: 0x7f0a0063
+			public const int tooltip_y_offset_touch = 2131361891;
 			
 			static Dimension()
 			{
@@ -5374,530 +7540,569 @@ namespace GhostlyGame
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090032
-			public const int ALT = 2131296306;
+			// aapt resource value: 0x7f0b0032
+			public const int ALT = 2131427378;
 			
-			// aapt resource value: 0x7f090033
-			public const int CTRL = 2131296307;
+			// aapt resource value: 0x7f0b0033
+			public const int CTRL = 2131427379;
 			
-			// aapt resource value: 0x7f090034
-			public const int FUNCTION = 2131296308;
+			// aapt resource value: 0x7f0b0034
+			public const int FUNCTION = 2131427380;
 			
-			// aapt resource value: 0x7f090035
-			public const int META = 2131296309;
+			// aapt resource value: 0x7f0b0035
+			public const int META = 2131427381;
 			
-			// aapt resource value: 0x7f090036
-			public const int SHIFT = 2131296310;
+			// aapt resource value: 0x7f0b0036
+			public const int SHIFT = 2131427382;
 			
-			// aapt resource value: 0x7f090037
-			public const int SYM = 2131296311;
+			// aapt resource value: 0x7f0b0037
+			public const int SYM = 2131427383;
 			
-			// aapt resource value: 0x7f09009c
-			public const int action0 = 2131296412;
+			// aapt resource value: 0x7f0b00a3
+			public const int action0 = 2131427491;
 			
-			// aapt resource value: 0x7f09007c
-			public const int action_bar = 2131296380;
+			// aapt resource value: 0x7f0b007c
+			public const int action_bar = 2131427452;
 			
-			// aapt resource value: 0x7f090001
-			public const int action_bar_activity_content = 2131296257;
+			// aapt resource value: 0x7f0b0001
+			public const int action_bar_activity_content = 2131427329;
 			
-			// aapt resource value: 0x7f09007b
-			public const int action_bar_container = 2131296379;
+			// aapt resource value: 0x7f0b007b
+			public const int action_bar_container = 2131427451;
 			
-			// aapt resource value: 0x7f090077
-			public const int action_bar_root = 2131296375;
+			// aapt resource value: 0x7f0b0077
+			public const int action_bar_root = 2131427447;
 			
-			// aapt resource value: 0x7f090002
-			public const int action_bar_spinner = 2131296258;
+			// aapt resource value: 0x7f0b0002
+			public const int action_bar_spinner = 2131427330;
 			
-			// aapt resource value: 0x7f09005b
-			public const int action_bar_subtitle = 2131296347;
+			// aapt resource value: 0x7f0b005b
+			public const int action_bar_subtitle = 2131427419;
 			
-			// aapt resource value: 0x7f09005a
-			public const int action_bar_title = 2131296346;
+			// aapt resource value: 0x7f0b005a
+			public const int action_bar_title = 2131427418;
 			
-			// aapt resource value: 0x7f090099
-			public const int action_container = 2131296409;
+			// aapt resource value: 0x7f0b00a0
+			public const int action_container = 2131427488;
 			
-			// aapt resource value: 0x7f09007d
-			public const int action_context_bar = 2131296381;
+			// aapt resource value: 0x7f0b007d
+			public const int action_context_bar = 2131427453;
 			
-			// aapt resource value: 0x7f0900a0
-			public const int action_divider = 2131296416;
+			// aapt resource value: 0x7f0b00a7
+			public const int action_divider = 2131427495;
 			
-			// aapt resource value: 0x7f09009a
-			public const int action_image = 2131296410;
+			// aapt resource value: 0x7f0b00a1
+			public const int action_image = 2131427489;
 			
-			// aapt resource value: 0x7f090003
-			public const int action_menu_divider = 2131296259;
+			// aapt resource value: 0x7f0b0003
+			public const int action_menu_divider = 2131427331;
 			
-			// aapt resource value: 0x7f090004
-			public const int action_menu_presenter = 2131296260;
+			// aapt resource value: 0x7f0b0004
+			public const int action_menu_presenter = 2131427332;
 			
-			// aapt resource value: 0x7f090079
-			public const int action_mode_bar = 2131296377;
+			// aapt resource value: 0x7f0b0079
+			public const int action_mode_bar = 2131427449;
 			
-			// aapt resource value: 0x7f090078
-			public const int action_mode_bar_stub = 2131296376;
+			// aapt resource value: 0x7f0b0078
+			public const int action_mode_bar_stub = 2131427448;
 			
-			// aapt resource value: 0x7f09005c
-			public const int action_mode_close_button = 2131296348;
+			// aapt resource value: 0x7f0b005c
+			public const int action_mode_close_button = 2131427420;
 			
-			// aapt resource value: 0x7f09009b
-			public const int action_text = 2131296411;
+			// aapt resource value: 0x7f0b00a2
+			public const int action_text = 2131427490;
 			
-			// aapt resource value: 0x7f0900a9
-			public const int actions = 2131296425;
+			// aapt resource value: 0x7f0b00b0
+			public const int actions = 2131427504;
 			
-			// aapt resource value: 0x7f09005d
-			public const int activity_chooser_view_content = 2131296349;
+			// aapt resource value: 0x7f0b005d
+			public const int activity_chooser_view_content = 2131427421;
 			
-			// aapt resource value: 0x7f090027
-			public const int add = 2131296295;
+			// aapt resource value: 0x7f0b0027
+			public const int add = 2131427367;
 			
-			// aapt resource value: 0x7f090070
-			public const int alertTitle = 2131296368;
+			// aapt resource value: 0x7f0b0070
+			public const int alertTitle = 2131427440;
 			
-			// aapt resource value: 0x7f090052
-			public const int all = 2131296338;
+			// aapt resource value: 0x7f0b0052
+			public const int all = 2131427410;
 			
-			// aapt resource value: 0x7f090038
-			public const int always = 2131296312;
+			// aapt resource value: 0x7f0b0038
+			public const int always = 2131427384;
 			
-			// aapt resource value: 0x7f090056
-			public const int async = 2131296342;
+			// aapt resource value: 0x7f0b0056
+			public const int async = 2131427414;
 			
-			// aapt resource value: 0x7f090044
-			public const int auto = 2131296324;
+			// aapt resource value: 0x7f0b0044
+			public const int auto = 2131427396;
 			
-			// aapt resource value: 0x7f09002f
-			public const int beginning = 2131296303;
+			// aapt resource value: 0x7f0b002f
+			public const int beginning = 2131427375;
 			
-			// aapt resource value: 0x7f090057
-			public const int blocking = 2131296343;
+			// aapt resource value: 0x7f0b0057
+			public const int blocking = 2131427415;
 			
-			// aapt resource value: 0x7f09003d
-			public const int bottom = 2131296317;
+			// aapt resource value: 0x7f0b003d
+			public const int bottom = 2131427389;
 			
-			// aapt resource value: 0x7f090063
-			public const int buttonPanel = 2131296355;
+			// aapt resource value: 0x7f0b008b
+			public const int bottomtab_navarea = 2131427467;
 			
-			// aapt resource value: 0x7f09009d
-			public const int cancel_action = 2131296413;
+			// aapt resource value: 0x7f0b008c
+			public const int bottomtab_tabbar = 2131427468;
 			
-			// aapt resource value: 0x7f090045
-			public const int center = 2131296325;
+			// aapt resource value: 0x7f0b0063
+			public const int buttonPanel = 2131427427;
 			
-			// aapt resource value: 0x7f090046
-			public const int center_horizontal = 2131296326;
+			// aapt resource value: 0x7f0b00a4
+			public const int cancel_action = 2131427492;
 			
-			// aapt resource value: 0x7f090047
-			public const int center_vertical = 2131296327;
+			// aapt resource value: 0x7f0b0045
+			public const int center = 2131427397;
 			
-			// aapt resource value: 0x7f090073
-			public const int checkbox = 2131296371;
+			// aapt resource value: 0x7f0b0046
+			public const int center_horizontal = 2131427398;
 			
-			// aapt resource value: 0x7f0900a5
-			public const int chronometer = 2131296421;
+			// aapt resource value: 0x7f0b0047
+			public const int center_vertical = 2131427399;
 			
-			// aapt resource value: 0x7f09004e
-			public const int clip_horizontal = 2131296334;
+			// aapt resource value: 0x7f0b0073
+			public const int checkbox = 2131427443;
 			
-			// aapt resource value: 0x7f09004f
-			public const int clip_vertical = 2131296335;
+			// aapt resource value: 0x7f0b00ac
+			public const int chronometer = 2131427500;
 			
-			// aapt resource value: 0x7f090039
-			public const int collapseActionView = 2131296313;
+			// aapt resource value: 0x7f0b004e
+			public const int clip_horizontal = 2131427406;
 			
-			// aapt resource value: 0x7f09008d
-			public const int container = 2131296397;
+			// aapt resource value: 0x7f0b004f
+			public const int clip_vertical = 2131427407;
 			
-			// aapt resource value: 0x7f090066
-			public const int contentPanel = 2131296358;
+			// aapt resource value: 0x7f0b0039
+			public const int collapseActionView = 2131427385;
 			
-			// aapt resource value: 0x7f09008e
-			public const int coordinator = 2131296398;
+			// aapt resource value: 0x7f0b008f
+			public const int container = 2131427471;
 			
-			// aapt resource value: 0x7f09006d
-			public const int custom = 2131296365;
+			// aapt resource value: 0x7f0b0066
+			public const int contentPanel = 2131427430;
 			
-			// aapt resource value: 0x7f09006c
-			public const int customPanel = 2131296364;
+			// aapt resource value: 0x7f0b0090
+			public const int coordinator = 2131427472;
 			
-			// aapt resource value: 0x7f09007a
-			public const int decor_content_parent = 2131296378;
+			// aapt resource value: 0x7f0b006d
+			public const int custom = 2131427437;
 			
-			// aapt resource value: 0x7f090060
-			public const int default_activity_button = 2131296352;
+			// aapt resource value: 0x7f0b006c
+			public const int customPanel = 2131427436;
 			
-			// aapt resource value: 0x7f090090
-			public const int design_bottom_sheet = 2131296400;
+			// aapt resource value: 0x7f0b007a
+			public const int decor_content_parent = 2131427450;
 			
-			// aapt resource value: 0x7f090097
-			public const int design_menu_item_action_area = 2131296407;
+			// aapt resource value: 0x7f0b0060
+			public const int default_activity_button = 2131427424;
 			
-			// aapt resource value: 0x7f090096
-			public const int design_menu_item_action_area_stub = 2131296406;
+			// aapt resource value: 0x7f0b0092
+			public const int design_bottom_sheet = 2131427474;
 			
-			// aapt resource value: 0x7f090095
-			public const int design_menu_item_text = 2131296405;
+			// aapt resource value: 0x7f0b0099
+			public const int design_menu_item_action_area = 2131427481;
 			
-			// aapt resource value: 0x7f090094
-			public const int design_navigation_view = 2131296404;
+			// aapt resource value: 0x7f0b0098
+			public const int design_menu_item_action_area_stub = 2131427480;
 			
-			// aapt resource value: 0x7f090020
-			public const int disableHome = 2131296288;
+			// aapt resource value: 0x7f0b0097
+			public const int design_menu_item_text = 2131427479;
 			
-			// aapt resource value: 0x7f09007e
-			public const int edit_query = 2131296382;
+			// aapt resource value: 0x7f0b0096
+			public const int design_navigation_view = 2131427478;
 			
-			// aapt resource value: 0x7f090030
-			public const int end = 2131296304;
+			// aapt resource value: 0x7f0b0020
+			public const int disableHome = 2131427360;
 			
-			// aapt resource value: 0x7f0900ab
-			public const int end_padder = 2131296427;
+			// aapt resource value: 0x7f0b007e
+			public const int edit_query = 2131427454;
 			
-			// aapt resource value: 0x7f09003f
-			public const int enterAlways = 2131296319;
+			// aapt resource value: 0x7f0b0030
+			public const int end = 2131427376;
 			
-			// aapt resource value: 0x7f090040
-			public const int enterAlwaysCollapsed = 2131296320;
+			// aapt resource value: 0x7f0b00b2
+			public const int end_padder = 2131427506;
 			
-			// aapt resource value: 0x7f090041
-			public const int exitUntilCollapsed = 2131296321;
+			// aapt resource value: 0x7f0b003f
+			public const int enterAlways = 2131427391;
 			
-			// aapt resource value: 0x7f09005e
-			public const int expand_activities_button = 2131296350;
+			// aapt resource value: 0x7f0b0040
+			public const int enterAlwaysCollapsed = 2131427392;
 			
-			// aapt resource value: 0x7f090072
-			public const int expanded_menu = 2131296370;
+			// aapt resource value: 0x7f0b0041
+			public const int exitUntilCollapsed = 2131427393;
 			
-			// aapt resource value: 0x7f090050
-			public const int fill = 2131296336;
+			// aapt resource value: 0x7f0b005e
+			public const int expand_activities_button = 2131427422;
 			
-			// aapt resource value: 0x7f090051
-			public const int fill_horizontal = 2131296337;
+			// aapt resource value: 0x7f0b0072
+			public const int expanded_menu = 2131427442;
 			
-			// aapt resource value: 0x7f090048
-			public const int fill_vertical = 2131296328;
+			// aapt resource value: 0x7f0b0050
+			public const int fill = 2131427408;
 			
-			// aapt resource value: 0x7f090054
-			public const int @fixed = 2131296340;
+			// aapt resource value: 0x7f0b0051
+			public const int fill_horizontal = 2131427409;
 			
-			// aapt resource value: 0x7f090058
-			public const int forever = 2131296344;
+			// aapt resource value: 0x7f0b0048
+			public const int fill_vertical = 2131427400;
 			
-			// aapt resource value: 0x7f09000a
-			public const int ghost_view = 2131296266;
+			// aapt resource value: 0x7f0b0054
+			public const int @fixed = 2131427412;
 			
-			// aapt resource value: 0x7f090005
-			public const int home = 2131296261;
+			// aapt resource value: 0x7f0b009b
+			public const int flyoutcontent_appbar = 2131427483;
 			
-			// aapt resource value: 0x7f090021
-			public const int homeAsUp = 2131296289;
+			// aapt resource value: 0x7f0b009c
+			public const int flyoutcontent_recycler = 2131427484;
 			
-			// aapt resource value: 0x7f090062
-			public const int icon = 2131296354;
+			// aapt resource value: 0x7f0b0058
+			public const int forever = 2131427416;
 			
-			// aapt resource value: 0x7f0900aa
-			public const int icon_group = 2131296426;
+			// aapt resource value: 0x7f0b009f
+			public const int fragment_frame_layout = 2131427487;
 			
-			// aapt resource value: 0x7f09003a
-			public const int ifRoom = 2131296314;
+			// aapt resource value: 0x7f0b000a
+			public const int ghost_view = 2131427338;
 			
-			// aapt resource value: 0x7f09005f
-			public const int image = 2131296351;
+			// aapt resource value: 0x7f0b0005
+			public const int home = 2131427333;
 			
-			// aapt resource value: 0x7f0900a6
-			public const int info = 2131296422;
+			// aapt resource value: 0x7f0b0021
+			public const int homeAsUp = 2131427361;
 			
-			// aapt resource value: 0x7f090059
-			public const int italic = 2131296345;
+			// aapt resource value: 0x7f0b0062
+			public const int icon = 2131427426;
 			
-			// aapt resource value: 0x7f090000
-			public const int item_touch_helper_previous_elevation = 2131296256;
+			// aapt resource value: 0x7f0b00b1
+			public const int icon_group = 2131427505;
 			
-			// aapt resource value: 0x7f09008c
-			public const int largeLabel = 2131296396;
+			// aapt resource value: 0x7f0b003a
+			public const int ifRoom = 2131427386;
 			
-			// aapt resource value: 0x7f090049
-			public const int left = 2131296329;
+			// aapt resource value: 0x7f0b005f
+			public const int image = 2131427423;
 			
-			// aapt resource value: 0x7f090017
-			public const int line1 = 2131296279;
+			// aapt resource value: 0x7f0b00ad
+			public const int info = 2131427501;
 			
-			// aapt resource value: 0x7f090018
-			public const int line3 = 2131296280;
+			// aapt resource value: 0x7f0b0059
+			public const int italic = 2131427417;
 			
-			// aapt resource value: 0x7f09001d
-			public const int listMode = 2131296285;
+			// aapt resource value: 0x7f0b0000
+			public const int item_touch_helper_previous_elevation = 2131427328;
 			
-			// aapt resource value: 0x7f090061
-			public const int list_item = 2131296353;
+			// aapt resource value: 0x7f0b008e
+			public const int largeLabel = 2131427470;
 			
-			// aapt resource value: 0x7f0900ae
-			public const int masked = 2131296430;
+			// aapt resource value: 0x7f0b0049
+			public const int left = 2131427401;
 			
-			// aapt resource value: 0x7f09009f
-			public const int media_actions = 2131296415;
+			// aapt resource value: 0x7f0b0017
+			public const int line1 = 2131427351;
 			
-			// aapt resource value: 0x7f0900ac
-			public const int message = 2131296428;
+			// aapt resource value: 0x7f0b0018
+			public const int line3 = 2131427352;
 			
-			// aapt resource value: 0x7f090031
-			public const int middle = 2131296305;
+			// aapt resource value: 0x7f0b001d
+			public const int listMode = 2131427357;
 			
-			// aapt resource value: 0x7f090053
-			public const int mini = 2131296339;
+			// aapt resource value: 0x7f0b0061
+			public const int list_item = 2131427425;
 			
-			// aapt resource value: 0x7f090028
-			public const int multiply = 2131296296;
+			// aapt resource value: 0x7f0b00b3
+			public const int main_appbar = 2131427507;
 			
-			// aapt resource value: 0x7f090093
-			public const int navigation_header_container = 2131296403;
+			// aapt resource value: 0x7f0b00b5
+			public const int main_tablayout = 2131427509;
 			
-			// aapt resource value: 0x7f09003b
-			public const int never = 2131296315;
+			// aapt resource value: 0x7f0b00b4
+			public const int main_toolbar = 2131427508;
 			
-			// aapt resource value: 0x7f090022
-			public const int none = 2131296290;
+			// aapt resource value: 0x7f0b00b6
+			public const int main_viewpager = 2131427510;
 			
-			// aapt resource value: 0x7f09001e
-			public const int normal = 2131296286;
+			// aapt resource value: 0x7f0b00bb
+			public const int masked = 2131427515;
 			
-			// aapt resource value: 0x7f0900a8
-			public const int notification_background = 2131296424;
+			// aapt resource value: 0x7f0b00a6
+			public const int media_actions = 2131427494;
 			
-			// aapt resource value: 0x7f0900a2
-			public const int notification_main_column = 2131296418;
+			// aapt resource value: 0x7f0b00b9
+			public const int message = 2131427513;
 			
-			// aapt resource value: 0x7f0900a1
-			public const int notification_main_column_container = 2131296417;
+			// aapt resource value: 0x7f0b0031
+			public const int middle = 2131427377;
 			
-			// aapt resource value: 0x7f09004c
-			public const int parallax = 2131296332;
+			// aapt resource value: 0x7f0b0053
+			public const int mini = 2131427411;
 			
-			// aapt resource value: 0x7f090065
-			public const int parentPanel = 2131296357;
+			// aapt resource value: 0x7f0b0028
+			public const int multiply = 2131427368;
 			
-			// aapt resource value: 0x7f09000b
-			public const int parent_matrix = 2131296267;
+			// aapt resource value: 0x7f0b0095
+			public const int navigation_header_container = 2131427477;
 			
-			// aapt resource value: 0x7f09004d
-			public const int pin = 2131296333;
+			// aapt resource value: 0x7f0b003b
+			public const int never = 2131427387;
 			
-			// aapt resource value: 0x7f090006
-			public const int progress_circular = 2131296262;
+			// aapt resource value: 0x7f0b0022
+			public const int none = 2131427362;
 			
-			// aapt resource value: 0x7f090007
-			public const int progress_horizontal = 2131296263;
+			// aapt resource value: 0x7f0b001e
+			public const int normal = 2131427358;
 			
-			// aapt resource value: 0x7f090075
-			public const int radio = 2131296373;
+			// aapt resource value: 0x7f0b00af
+			public const int notification_background = 2131427503;
 			
-			// aapt resource value: 0x7f09004a
-			public const int right = 2131296330;
+			// aapt resource value: 0x7f0b00a9
+			public const int notification_main_column = 2131427497;
 			
-			// aapt resource value: 0x7f0900a7
-			public const int right_icon = 2131296423;
+			// aapt resource value: 0x7f0b00a8
+			public const int notification_main_column_container = 2131427496;
 			
-			// aapt resource value: 0x7f0900a3
-			public const int right_side = 2131296419;
+			// aapt resource value: 0x7f0b004c
+			public const int parallax = 2131427404;
 			
-			// aapt resource value: 0x7f09000c
-			public const int save_image_matrix = 2131296268;
+			// aapt resource value: 0x7f0b0065
+			public const int parentPanel = 2131427429;
 			
-			// aapt resource value: 0x7f09000d
-			public const int save_non_transition_alpha = 2131296269;
+			// aapt resource value: 0x7f0b000b
+			public const int parent_matrix = 2131427339;
 			
-			// aapt resource value: 0x7f09000e
-			public const int save_scale_type = 2131296270;
+			// aapt resource value: 0x7f0b004d
+			public const int pin = 2131427405;
 			
-			// aapt resource value: 0x7f090029
-			public const int screen = 2131296297;
+			// aapt resource value: 0x7f0b0006
+			public const int progress_circular = 2131427334;
 			
-			// aapt resource value: 0x7f090042
-			public const int scroll = 2131296322;
+			// aapt resource value: 0x7f0b0007
+			public const int progress_horizontal = 2131427335;
 			
-			// aapt resource value: 0x7f09006b
-			public const int scrollIndicatorDown = 2131296363;
+			// aapt resource value: 0x7f0b0075
+			public const int radio = 2131427445;
 			
-			// aapt resource value: 0x7f090067
-			public const int scrollIndicatorUp = 2131296359;
+			// aapt resource value: 0x7f0b004a
+			public const int right = 2131427402;
 			
-			// aapt resource value: 0x7f090068
-			public const int scrollView = 2131296360;
+			// aapt resource value: 0x7f0b00ae
+			public const int right_icon = 2131427502;
 			
-			// aapt resource value: 0x7f090055
-			public const int scrollable = 2131296341;
+			// aapt resource value: 0x7f0b00aa
+			public const int right_side = 2131427498;
 			
-			// aapt resource value: 0x7f090080
-			public const int search_badge = 2131296384;
+			// aapt resource value: 0x7f0b009d
+			public const int root = 2131427485;
 			
-			// aapt resource value: 0x7f09007f
-			public const int search_bar = 2131296383;
+			// aapt resource value: 0x7f0b000c
+			public const int save_image_matrix = 2131427340;
 			
-			// aapt resource value: 0x7f090081
-			public const int search_button = 2131296385;
+			// aapt resource value: 0x7f0b000d
+			public const int save_non_transition_alpha = 2131427341;
 			
-			// aapt resource value: 0x7f090086
-			public const int search_close_btn = 2131296390;
+			// aapt resource value: 0x7f0b000e
+			public const int save_scale_type = 2131427342;
 			
-			// aapt resource value: 0x7f090082
-			public const int search_edit_frame = 2131296386;
+			// aapt resource value: 0x7f0b0029
+			public const int screen = 2131427369;
 			
-			// aapt resource value: 0x7f090088
-			public const int search_go_btn = 2131296392;
+			// aapt resource value: 0x7f0b0042
+			public const int scroll = 2131427394;
 			
-			// aapt resource value: 0x7f090083
-			public const int search_mag_icon = 2131296387;
+			// aapt resource value: 0x7f0b006b
+			public const int scrollIndicatorDown = 2131427435;
 			
-			// aapt resource value: 0x7f090084
-			public const int search_plate = 2131296388;
+			// aapt resource value: 0x7f0b0067
+			public const int scrollIndicatorUp = 2131427431;
 			
-			// aapt resource value: 0x7f090085
-			public const int search_src_text = 2131296389;
+			// aapt resource value: 0x7f0b0068
+			public const int scrollView = 2131427432;
 			
-			// aapt resource value: 0x7f090089
-			public const int search_voice_btn = 2131296393;
+			// aapt resource value: 0x7f0b0055
+			public const int scrollable = 2131427413;
 			
-			// aapt resource value: 0x7f09008a
-			public const int select_dialog_listview = 2131296394;
+			// aapt resource value: 0x7f0b0080
+			public const int search_badge = 2131427456;
 			
-			// aapt resource value: 0x7f090074
-			public const int shortcut = 2131296372;
+			// aapt resource value: 0x7f0b007f
+			public const int search_bar = 2131427455;
 			
-			// aapt resource value: 0x7f090023
-			public const int showCustom = 2131296291;
+			// aapt resource value: 0x7f0b0081
+			public const int search_button = 2131427457;
 			
-			// aapt resource value: 0x7f090024
-			public const int showHome = 2131296292;
+			// aapt resource value: 0x7f0b0086
+			public const int search_close_btn = 2131427462;
 			
-			// aapt resource value: 0x7f090025
-			public const int showTitle = 2131296293;
+			// aapt resource value: 0x7f0b0082
+			public const int search_edit_frame = 2131427458;
 			
-			// aapt resource value: 0x7f09008b
-			public const int smallLabel = 2131296395;
+			// aapt resource value: 0x7f0b0088
+			public const int search_go_btn = 2131427464;
 			
-			// aapt resource value: 0x7f090092
-			public const int snackbar_action = 2131296402;
+			// aapt resource value: 0x7f0b0083
+			public const int search_mag_icon = 2131427459;
 			
-			// aapt resource value: 0x7f090091
-			public const int snackbar_text = 2131296401;
+			// aapt resource value: 0x7f0b0084
+			public const int search_plate = 2131427460;
 			
-			// aapt resource value: 0x7f090043
-			public const int snap = 2131296323;
+			// aapt resource value: 0x7f0b0085
+			public const int search_src_text = 2131427461;
 			
-			// aapt resource value: 0x7f090064
-			public const int spacer = 2131296356;
+			// aapt resource value: 0x7f0b0089
+			public const int search_voice_btn = 2131427465;
 			
-			// aapt resource value: 0x7f090008
-			public const int split_action_bar = 2131296264;
+			// aapt resource value: 0x7f0b008a
+			public const int select_dialog_listview = 2131427466;
 			
-			// aapt resource value: 0x7f09002a
-			public const int src_atop = 2131296298;
+			// aapt resource value: 0x7f0b00b7
+			public const int shellcontent_appbar = 2131427511;
 			
-			// aapt resource value: 0x7f09002b
-			public const int src_in = 2131296299;
+			// aapt resource value: 0x7f0b00b8
+			public const int shellcontent_toolbar = 2131427512;
 			
-			// aapt resource value: 0x7f09002c
-			public const int src_over = 2131296300;
+			// aapt resource value: 0x7f0b0074
+			public const int shortcut = 2131427444;
 			
-			// aapt resource value: 0x7f09004b
-			public const int start = 2131296331;
+			// aapt resource value: 0x7f0b0023
+			public const int showCustom = 2131427363;
 			
-			// aapt resource value: 0x7f09009e
-			public const int status_bar_latest_event_content = 2131296414;
+			// aapt resource value: 0x7f0b0024
+			public const int showHome = 2131427364;
 			
-			// aapt resource value: 0x7f090076
-			public const int submenuarrow = 2131296374;
+			// aapt resource value: 0x7f0b0025
+			public const int showTitle = 2131427365;
 			
-			// aapt resource value: 0x7f090087
-			public const int submit_area = 2131296391;
+			// aapt resource value: 0x7f0b008d
+			public const int smallLabel = 2131427469;
 			
-			// aapt resource value: 0x7f09001f
-			public const int tabMode = 2131296287;
+			// aapt resource value: 0x7f0b0094
+			public const int snackbar_action = 2131427476;
 			
-			// aapt resource value: 0x7f090019
-			public const int tag_transition_group = 2131296281;
+			// aapt resource value: 0x7f0b0093
+			public const int snackbar_text = 2131427475;
 			
-			// aapt resource value: 0x7f09001a
-			public const int text = 2131296282;
+			// aapt resource value: 0x7f0b0043
+			public const int snap = 2131427395;
 			
-			// aapt resource value: 0x7f09001b
-			public const int text2 = 2131296283;
+			// aapt resource value: 0x7f0b0064
+			public const int spacer = 2131427428;
 			
-			// aapt resource value: 0x7f09006a
-			public const int textSpacerNoButtons = 2131296362;
+			// aapt resource value: 0x7f0b0008
+			public const int split_action_bar = 2131427336;
 			
-			// aapt resource value: 0x7f090069
-			public const int textSpacerNoTitle = 2131296361;
+			// aapt resource value: 0x7f0b002a
+			public const int src_atop = 2131427370;
 			
-			// aapt resource value: 0x7f090098
-			public const int text_input_password_toggle = 2131296408;
+			// aapt resource value: 0x7f0b002b
+			public const int src_in = 2131427371;
 			
-			// aapt resource value: 0x7f090014
-			public const int textinput_counter = 2131296276;
+			// aapt resource value: 0x7f0b002c
+			public const int src_over = 2131427372;
 			
-			// aapt resource value: 0x7f090015
-			public const int textinput_error = 2131296277;
+			// aapt resource value: 0x7f0b004b
+			public const int start = 2131427403;
 			
-			// aapt resource value: 0x7f0900a4
-			public const int time = 2131296420;
+			// aapt resource value: 0x7f0b00a5
+			public const int status_bar_latest_event_content = 2131427493;
 			
-			// aapt resource value: 0x7f09001c
-			public const int title = 2131296284;
+			// aapt resource value: 0x7f0b0076
+			public const int submenuarrow = 2131427446;
 			
-			// aapt resource value: 0x7f090071
-			public const int titleDividerNoCustom = 2131296369;
+			// aapt resource value: 0x7f0b0087
+			public const int submit_area = 2131427463;
 			
-			// aapt resource value: 0x7f09006f
-			public const int title_template = 2131296367;
+			// aapt resource value: 0x7f0b001f
+			public const int tabMode = 2131427359;
 			
-			// aapt resource value: 0x7f09003e
-			public const int top = 2131296318;
+			// aapt resource value: 0x7f0b0019
+			public const int tag_transition_group = 2131427353;
 			
-			// aapt resource value: 0x7f09006e
-			public const int topPanel = 2131296366;
+			// aapt resource value: 0x7f0b001a
+			public const int text = 2131427354;
 			
-			// aapt resource value: 0x7f09008f
-			public const int touch_outside = 2131296399;
+			// aapt resource value: 0x7f0b001b
+			public const int text2 = 2131427355;
 			
-			// aapt resource value: 0x7f09000f
-			public const int transition_current_scene = 2131296271;
+			// aapt resource value: 0x7f0b006a
+			public const int textSpacerNoButtons = 2131427434;
 			
-			// aapt resource value: 0x7f090010
-			public const int transition_layout_save = 2131296272;
+			// aapt resource value: 0x7f0b0069
+			public const int textSpacerNoTitle = 2131427433;
 			
-			// aapt resource value: 0x7f090011
-			public const int transition_position = 2131296273;
+			// aapt resource value: 0x7f0b009a
+			public const int text_input_password_toggle = 2131427482;
 			
-			// aapt resource value: 0x7f090012
-			public const int transition_scene_layoutid_cache = 2131296274;
+			// aapt resource value: 0x7f0b0014
+			public const int textinput_counter = 2131427348;
 			
-			// aapt resource value: 0x7f090013
-			public const int transition_transform = 2131296275;
+			// aapt resource value: 0x7f0b0015
+			public const int textinput_error = 2131427349;
 			
-			// aapt resource value: 0x7f09002d
-			public const int uniform = 2131296301;
+			// aapt resource value: 0x7f0b00ab
+			public const int time = 2131427499;
 			
-			// aapt resource value: 0x7f090009
-			public const int up = 2131296265;
+			// aapt resource value: 0x7f0b001c
+			public const int title = 2131427356;
 			
-			// aapt resource value: 0x7f090026
-			public const int useLogo = 2131296294;
+			// aapt resource value: 0x7f0b0071
+			public const int titleDividerNoCustom = 2131427441;
 			
-			// aapt resource value: 0x7f090016
-			public const int view_offset_helper = 2131296278;
+			// aapt resource value: 0x7f0b006f
+			public const int title_template = 2131427439;
 			
-			// aapt resource value: 0x7f0900ad
-			public const int visible = 2131296429;
+			// aapt resource value: 0x7f0b009e
+			public const int toolbar = 2131427486;
 			
-			// aapt resource value: 0x7f09003c
-			public const int withText = 2131296316;
+			// aapt resource value: 0x7f0b003e
+			public const int top = 2131427390;
 			
-			// aapt resource value: 0x7f09002e
-			public const int wrap_content = 2131296302;
+			// aapt resource value: 0x7f0b006e
+			public const int topPanel = 2131427438;
+			
+			// aapt resource value: 0x7f0b0091
+			public const int touch_outside = 2131427473;
+			
+			// aapt resource value: 0x7f0b000f
+			public const int transition_current_scene = 2131427343;
+			
+			// aapt resource value: 0x7f0b0010
+			public const int transition_layout_save = 2131427344;
+			
+			// aapt resource value: 0x7f0b0011
+			public const int transition_position = 2131427345;
+			
+			// aapt resource value: 0x7f0b0012
+			public const int transition_scene_layoutid_cache = 2131427346;
+			
+			// aapt resource value: 0x7f0b0013
+			public const int transition_transform = 2131427347;
+			
+			// aapt resource value: 0x7f0b002d
+			public const int uniform = 2131427373;
+			
+			// aapt resource value: 0x7f0b0009
+			public const int up = 2131427337;
+			
+			// aapt resource value: 0x7f0b0026
+			public const int useLogo = 2131427366;
+			
+			// aapt resource value: 0x7f0b0016
+			public const int view_offset_helper = 2131427350;
+			
+			// aapt resource value: 0x7f0b00ba
+			public const int visible = 2131427514;
+			
+			// aapt resource value: 0x7f0b003c
+			public const int withText = 2131427388;
+			
+			// aapt resource value: 0x7f0b002e
+			public const int wrap_content = 2131427374;
 			
 			static Id()
 			{
@@ -5912,35 +8117,35 @@ namespace GhostlyGame
 		public partial class Integer
 		{
 			
-			// aapt resource value: 0x7f0d0000
-			public const int abc_config_activityDefaultDur = 2131558400;
+			// aapt resource value: 0x7f0e0000
+			public const int abc_config_activityDefaultDur = 2131623936;
 			
-			// aapt resource value: 0x7f0d0001
-			public const int abc_config_activityShortDur = 2131558401;
+			// aapt resource value: 0x7f0e0001
+			public const int abc_config_activityShortDur = 2131623937;
 			
-			// aapt resource value: 0x7f0d0005
-			public const int app_bar_elevation_anim_duration = 2131558405;
+			// aapt resource value: 0x7f0e0005
+			public const int app_bar_elevation_anim_duration = 2131623941;
 			
-			// aapt resource value: 0x7f0d0006
-			public const int bottom_sheet_slide_duration = 2131558406;
+			// aapt resource value: 0x7f0e0006
+			public const int bottom_sheet_slide_duration = 2131623942;
 			
-			// aapt resource value: 0x7f0d0002
-			public const int cancel_button_image_alpha = 2131558402;
+			// aapt resource value: 0x7f0e0002
+			public const int cancel_button_image_alpha = 2131623938;
 			
-			// aapt resource value: 0x7f0d0003
-			public const int config_tooltipAnimTime = 2131558403;
+			// aapt resource value: 0x7f0e0003
+			public const int config_tooltipAnimTime = 2131623939;
 			
-			// aapt resource value: 0x7f0d0004
-			public const int design_snackbar_text_max_lines = 2131558404;
+			// aapt resource value: 0x7f0e0004
+			public const int design_snackbar_text_max_lines = 2131623940;
 			
-			// aapt resource value: 0x7f0d0007
-			public const int hide_password_duration = 2131558407;
+			// aapt resource value: 0x7f0e0007
+			public const int hide_password_duration = 2131623943;
 			
-			// aapt resource value: 0x7f0d0008
-			public const int show_password_duration = 2131558408;
+			// aapt resource value: 0x7f0e0008
+			public const int show_password_duration = 2131623944;
 			
-			// aapt resource value: 0x7f0d0009
-			public const int status_bar_notification_info_maxnum = 2131558409;
+			// aapt resource value: 0x7f0e0009
+			public const int status_bar_notification_info_maxnum = 2131623945;
 			
 			static Integer()
 			{
@@ -6037,106 +8242,124 @@ namespace GhostlyGame
 			public const int activity_main = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int design_bottom_navigation_item = 2130968603;
+			public const int BottomTabLayout = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int design_bottom_sheet_dialog = 2130968604;
+			public const int design_bottom_navigation_item = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int design_layout_snackbar = 2130968605;
+			public const int design_bottom_sheet_dialog = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int design_layout_snackbar_include = 2130968606;
+			public const int design_layout_snackbar = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int design_layout_tab_icon = 2130968607;
+			public const int design_layout_snackbar_include = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int design_layout_tab_text = 2130968608;
+			public const int design_layout_tab_icon = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int design_menu_item_action_area = 2130968609;
+			public const int design_layout_tab_text = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int design_navigation_item = 2130968610;
+			public const int design_menu_item_action_area = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int design_navigation_item_header = 2130968611;
+			public const int design_navigation_item = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int design_navigation_item_separator = 2130968612;
+			public const int design_navigation_item_header = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int design_navigation_item_subheader = 2130968613;
+			public const int design_navigation_item_separator = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int design_navigation_menu = 2130968614;
+			public const int design_navigation_item_subheader = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int design_navigation_menu_item = 2130968615;
+			public const int design_navigation_menu = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int design_text_input_password_icon = 2130968616;
+			public const int design_navigation_menu_item = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int notification_action = 2130968617;
+			public const int design_text_input_password_icon = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int notification_action_tombstone = 2130968618;
+			public const int FlyoutContent = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int notification_media_action = 2130968619;
+			public const int GhostlyLogMain = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int notification_media_cancel_action = 2130968620;
+			public const int notification_action = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int notification_template_big_media = 2130968621;
+			public const int notification_action_tombstone = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int notification_template_big_media_custom = 2130968622;
+			public const int notification_media_action = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int notification_template_big_media_narrow = 2130968623;
+			public const int notification_media_cancel_action = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int notification_template_big_media_narrow_custom = 2130968624;
+			public const int notification_template_big_media = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int notification_template_custom_big = 2130968625;
+			public const int notification_template_big_media_custom = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int notification_template_icon_group = 2130968626;
+			public const int notification_template_big_media_narrow = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_template_lines_media = 2130968627;
+			public const int notification_template_big_media_narrow_custom = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_template_media = 2130968628;
+			public const int notification_template_custom_big = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_template_media_custom = 2130968629;
+			public const int notification_template_icon_group = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_template_part_chronometer = 2130968630;
+			public const int notification_template_lines_media = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_part_time = 2130968631;
+			public const int notification_template_media = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int select_dialog_item_material = 2130968632;
+			public const int notification_template_media_custom = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int select_dialog_multichoice_material = 2130968633;
+			public const int notification_template_part_chronometer = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int select_dialog_singlechoice_material = 2130968634;
+			public const int notification_template_part_time = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int support_simple_spinner_dropdown_item = 2130968635;
+			public const int RootLayout = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int tooltip = 2130968636;
+			public const int select_dialog_item_material = 2130968636;
+			
+			// aapt resource value: 0x7f04003d
+			public const int select_dialog_multichoice_material = 2130968637;
+			
+			// aapt resource value: 0x7f04003e
+			public const int select_dialog_singlechoice_material = 2130968638;
+			
+			// aapt resource value: 0x7f04003f
+			public const int ShellContent = 2130968639;
+			
+			// aapt resource value: 0x7f040040
+			public const int support_simple_spinner_dropdown_item = 2130968640;
+			
+			// aapt resource value: 0x7f040041
+			public const int Toolbar = 2130968641;
+			
+			// aapt resource value: 0x7f040042
+			public const int tooltip = 2130968642;
 			
 			static Layout()
 			{
@@ -6170,137 +8393,137 @@ namespace GhostlyGame
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f070001
-			public const int ApplicationName = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int ApplicationName = 2131230721;
 			
-			// aapt resource value: 0x7f070000
-			public const int Hello = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int Hello = 2131230720;
 			
-			// aapt resource value: 0x7f070002
-			public const int abc_action_bar_home_description = 2131165186;
+			// aapt resource value: 0x7f080002
+			public const int abc_action_bar_home_description = 2131230722;
 			
-			// aapt resource value: 0x7f070003
-			public const int abc_action_bar_up_description = 2131165187;
+			// aapt resource value: 0x7f080003
+			public const int abc_action_bar_up_description = 2131230723;
 			
-			// aapt resource value: 0x7f070004
-			public const int abc_action_menu_overflow_description = 2131165188;
+			// aapt resource value: 0x7f080004
+			public const int abc_action_menu_overflow_description = 2131230724;
 			
-			// aapt resource value: 0x7f070005
-			public const int abc_action_mode_done = 2131165189;
+			// aapt resource value: 0x7f080005
+			public const int abc_action_mode_done = 2131230725;
 			
-			// aapt resource value: 0x7f070006
-			public const int abc_activity_chooser_view_see_all = 2131165190;
+			// aapt resource value: 0x7f080006
+			public const int abc_activity_chooser_view_see_all = 2131230726;
 			
-			// aapt resource value: 0x7f070007
-			public const int abc_activitychooserview_choose_application = 2131165191;
+			// aapt resource value: 0x7f080007
+			public const int abc_activitychooserview_choose_application = 2131230727;
 			
-			// aapt resource value: 0x7f070008
-			public const int abc_capital_off = 2131165192;
+			// aapt resource value: 0x7f080008
+			public const int abc_capital_off = 2131230728;
 			
-			// aapt resource value: 0x7f070009
-			public const int abc_capital_on = 2131165193;
+			// aapt resource value: 0x7f080009
+			public const int abc_capital_on = 2131230729;
 			
-			// aapt resource value: 0x7f070014
-			public const int abc_font_family_body_1_material = 2131165204;
+			// aapt resource value: 0x7f080014
+			public const int abc_font_family_body_1_material = 2131230740;
 			
-			// aapt resource value: 0x7f070015
-			public const int abc_font_family_body_2_material = 2131165205;
+			// aapt resource value: 0x7f080015
+			public const int abc_font_family_body_2_material = 2131230741;
 			
-			// aapt resource value: 0x7f070016
-			public const int abc_font_family_button_material = 2131165206;
+			// aapt resource value: 0x7f080016
+			public const int abc_font_family_button_material = 2131230742;
 			
-			// aapt resource value: 0x7f070017
-			public const int abc_font_family_caption_material = 2131165207;
+			// aapt resource value: 0x7f080017
+			public const int abc_font_family_caption_material = 2131230743;
 			
-			// aapt resource value: 0x7f070018
-			public const int abc_font_family_display_1_material = 2131165208;
+			// aapt resource value: 0x7f080018
+			public const int abc_font_family_display_1_material = 2131230744;
 			
-			// aapt resource value: 0x7f070019
-			public const int abc_font_family_display_2_material = 2131165209;
+			// aapt resource value: 0x7f080019
+			public const int abc_font_family_display_2_material = 2131230745;
 			
-			// aapt resource value: 0x7f07001a
-			public const int abc_font_family_display_3_material = 2131165210;
+			// aapt resource value: 0x7f08001a
+			public const int abc_font_family_display_3_material = 2131230746;
 			
-			// aapt resource value: 0x7f07001b
-			public const int abc_font_family_display_4_material = 2131165211;
+			// aapt resource value: 0x7f08001b
+			public const int abc_font_family_display_4_material = 2131230747;
 			
-			// aapt resource value: 0x7f07001c
-			public const int abc_font_family_headline_material = 2131165212;
+			// aapt resource value: 0x7f08001c
+			public const int abc_font_family_headline_material = 2131230748;
 			
-			// aapt resource value: 0x7f07001d
-			public const int abc_font_family_menu_material = 2131165213;
+			// aapt resource value: 0x7f08001d
+			public const int abc_font_family_menu_material = 2131230749;
 			
-			// aapt resource value: 0x7f07001e
-			public const int abc_font_family_subhead_material = 2131165214;
+			// aapt resource value: 0x7f08001e
+			public const int abc_font_family_subhead_material = 2131230750;
 			
-			// aapt resource value: 0x7f07001f
-			public const int abc_font_family_title_material = 2131165215;
+			// aapt resource value: 0x7f08001f
+			public const int abc_font_family_title_material = 2131230751;
 			
-			// aapt resource value: 0x7f07000a
-			public const int abc_search_hint = 2131165194;
+			// aapt resource value: 0x7f08000a
+			public const int abc_search_hint = 2131230730;
 			
-			// aapt resource value: 0x7f07000b
-			public const int abc_searchview_description_clear = 2131165195;
+			// aapt resource value: 0x7f08000b
+			public const int abc_searchview_description_clear = 2131230731;
 			
-			// aapt resource value: 0x7f07000c
-			public const int abc_searchview_description_query = 2131165196;
+			// aapt resource value: 0x7f08000c
+			public const int abc_searchview_description_query = 2131230732;
 			
-			// aapt resource value: 0x7f07000d
-			public const int abc_searchview_description_search = 2131165197;
+			// aapt resource value: 0x7f08000d
+			public const int abc_searchview_description_search = 2131230733;
 			
-			// aapt resource value: 0x7f07000e
-			public const int abc_searchview_description_submit = 2131165198;
+			// aapt resource value: 0x7f08000e
+			public const int abc_searchview_description_submit = 2131230734;
 			
-			// aapt resource value: 0x7f07000f
-			public const int abc_searchview_description_voice = 2131165199;
+			// aapt resource value: 0x7f08000f
+			public const int abc_searchview_description_voice = 2131230735;
 			
-			// aapt resource value: 0x7f070010
-			public const int abc_shareactionprovider_share_with = 2131165200;
+			// aapt resource value: 0x7f080010
+			public const int abc_shareactionprovider_share_with = 2131230736;
 			
-			// aapt resource value: 0x7f070011
-			public const int abc_shareactionprovider_share_with_application = 2131165201;
+			// aapt resource value: 0x7f080011
+			public const int abc_shareactionprovider_share_with_application = 2131230737;
 			
-			// aapt resource value: 0x7f070012
-			public const int abc_toolbar_collapse_description = 2131165202;
+			// aapt resource value: 0x7f080012
+			public const int abc_toolbar_collapse_description = 2131230738;
 			
-			// aapt resource value: 0x7f07002b
-			public const int action_settings = 2131165227;
+			// aapt resource value: 0x7f08002b
+			public const int action_settings = 2131230763;
 			
-			// aapt resource value: 0x7f07002a
-			public const int app_name = 2131165226;
+			// aapt resource value: 0x7f08002a
+			public const int app_name = 2131230762;
 			
-			// aapt resource value: 0x7f070020
-			public const int appbar_scrolling_view_behavior = 2131165216;
+			// aapt resource value: 0x7f080020
+			public const int appbar_scrolling_view_behavior = 2131230752;
 			
-			// aapt resource value: 0x7f070021
-			public const int bottom_sheet_behavior = 2131165217;
+			// aapt resource value: 0x7f080021
+			public const int bottom_sheet_behavior = 2131230753;
 			
-			// aapt resource value: 0x7f070022
-			public const int character_counter_pattern = 2131165218;
+			// aapt resource value: 0x7f080022
+			public const int character_counter_pattern = 2131230754;
 			
-			// aapt resource value: 0x7f070029
-			public const int hello = 2131165225;
+			// aapt resource value: 0x7f080029
+			public const int hello = 2131230761;
 			
-			// aapt resource value: 0x7f070023
-			public const int password_toggle_content_description = 2131165219;
+			// aapt resource value: 0x7f080023
+			public const int password_toggle_content_description = 2131230755;
 			
-			// aapt resource value: 0x7f070024
-			public const int path_password_eye = 2131165220;
+			// aapt resource value: 0x7f080024
+			public const int path_password_eye = 2131230756;
 			
-			// aapt resource value: 0x7f070025
-			public const int path_password_eye_mask_strike_through = 2131165221;
+			// aapt resource value: 0x7f080025
+			public const int path_password_eye_mask_strike_through = 2131230757;
 			
-			// aapt resource value: 0x7f070026
-			public const int path_password_eye_mask_visible = 2131165222;
+			// aapt resource value: 0x7f080026
+			public const int path_password_eye_mask_visible = 2131230758;
 			
-			// aapt resource value: 0x7f070027
-			public const int path_password_strike_through = 2131165223;
+			// aapt resource value: 0x7f080027
+			public const int path_password_strike_through = 2131230759;
 			
-			// aapt resource value: 0x7f070013
-			public const int search_menu_title = 2131165203;
+			// aapt resource value: 0x7f080013
+			public const int search_menu_title = 2131230739;
 			
-			// aapt resource value: 0x7f070028
-			public const int status_bar_notification_info_overflow = 2131165224;
+			// aapt resource value: 0x7f080028
+			public const int status_bar_notification_info_overflow = 2131230760;
 			
 			static String()
 			{
@@ -6315,1160 +8538,1178 @@ namespace GhostlyGame
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f0a0095
-			public const int AlertDialog_AppCompat = 2131361941;
+			// aapt resource value: 0x7f09009a
+			public const int AlertDialog_AppCompat = 2131296410;
 			
-			// aapt resource value: 0x7f0a0096
-			public const int AlertDialog_AppCompat_Light = 2131361942;
+			// aapt resource value: 0x7f09009b
+			public const int AlertDialog_AppCompat_Light = 2131296411;
 			
-			// aapt resource value: 0x7f0a0097
-			public const int Animation_AppCompat_Dialog = 2131361943;
+			// aapt resource value: 0x7f09009c
+			public const int Animation_AppCompat_Dialog = 2131296412;
 			
-			// aapt resource value: 0x7f0a0098
-			public const int Animation_AppCompat_DropDownUp = 2131361944;
+			// aapt resource value: 0x7f09009d
+			public const int Animation_AppCompat_DropDownUp = 2131296413;
 			
-			// aapt resource value: 0x7f0a0099
-			public const int Animation_AppCompat_Tooltip = 2131361945;
+			// aapt resource value: 0x7f09009e
+			public const int Animation_AppCompat_Tooltip = 2131296414;
 			
-			// aapt resource value: 0x7f0a015f
-			public const int Animation_Design_BottomSheetDialog = 2131362143;
+			// aapt resource value: 0x7f090164
+			public const int Animation_Design_BottomSheetDialog = 2131296612;
 			
-			// aapt resource value: 0x7f0a0180
-			public const int AppTheme = 2131362176;
+			// aapt resource value: 0x7f090185
+			public const int AppTheme = 2131296645;
 			
-			// aapt resource value: 0x7f0a009a
-			public const int Base_AlertDialog_AppCompat = 2131361946;
+			// aapt resource value: 0x7f09009f
+			public const int Base_AlertDialog_AppCompat = 2131296415;
 			
-			// aapt resource value: 0x7f0a009b
-			public const int Base_AlertDialog_AppCompat_Light = 2131361947;
+			// aapt resource value: 0x7f0900a0
+			public const int Base_AlertDialog_AppCompat_Light = 2131296416;
 			
-			// aapt resource value: 0x7f0a009c
-			public const int Base_Animation_AppCompat_Dialog = 2131361948;
+			// aapt resource value: 0x7f0900a1
+			public const int Base_Animation_AppCompat_Dialog = 2131296417;
 			
-			// aapt resource value: 0x7f0a009d
-			public const int Base_Animation_AppCompat_DropDownUp = 2131361949;
+			// aapt resource value: 0x7f0900a2
+			public const int Base_Animation_AppCompat_DropDownUp = 2131296418;
 			
-			// aapt resource value: 0x7f0a009e
-			public const int Base_Animation_AppCompat_Tooltip = 2131361950;
+			// aapt resource value: 0x7f0900a3
+			public const int Base_Animation_AppCompat_Tooltip = 2131296419;
 			
-			// aapt resource value: 0x7f0a009f
-			public const int Base_DialogWindowTitle_AppCompat = 2131361951;
+			// aapt resource value: 0x7f090002
+			public const int Base_CardView = 2131296258;
 			
-			// aapt resource value: 0x7f0a00a0
-			public const int Base_DialogWindowTitleBackground_AppCompat = 2131361952;
+			// aapt resource value: 0x7f0900a4
+			public const int Base_DialogWindowTitle_AppCompat = 2131296420;
 			
-			// aapt resource value: 0x7f0a0039
-			public const int Base_TextAppearance_AppCompat = 2131361849;
+			// aapt resource value: 0x7f0900a5
+			public const int Base_DialogWindowTitleBackground_AppCompat = 2131296421;
 			
-			// aapt resource value: 0x7f0a003a
-			public const int Base_TextAppearance_AppCompat_Body1 = 2131361850;
+			// aapt resource value: 0x7f09003e
+			public const int Base_TextAppearance_AppCompat = 2131296318;
 			
-			// aapt resource value: 0x7f0a003b
-			public const int Base_TextAppearance_AppCompat_Body2 = 2131361851;
+			// aapt resource value: 0x7f09003f
+			public const int Base_TextAppearance_AppCompat_Body1 = 2131296319;
 			
-			// aapt resource value: 0x7f0a0027
-			public const int Base_TextAppearance_AppCompat_Button = 2131361831;
+			// aapt resource value: 0x7f090040
+			public const int Base_TextAppearance_AppCompat_Body2 = 2131296320;
 			
-			// aapt resource value: 0x7f0a003c
-			public const int Base_TextAppearance_AppCompat_Caption = 2131361852;
+			// aapt resource value: 0x7f09002c
+			public const int Base_TextAppearance_AppCompat_Button = 2131296300;
 			
-			// aapt resource value: 0x7f0a003d
-			public const int Base_TextAppearance_AppCompat_Display1 = 2131361853;
+			// aapt resource value: 0x7f090041
+			public const int Base_TextAppearance_AppCompat_Caption = 2131296321;
 			
-			// aapt resource value: 0x7f0a003e
-			public const int Base_TextAppearance_AppCompat_Display2 = 2131361854;
+			// aapt resource value: 0x7f090042
+			public const int Base_TextAppearance_AppCompat_Display1 = 2131296322;
 			
-			// aapt resource value: 0x7f0a003f
-			public const int Base_TextAppearance_AppCompat_Display3 = 2131361855;
+			// aapt resource value: 0x7f090043
+			public const int Base_TextAppearance_AppCompat_Display2 = 2131296323;
 			
-			// aapt resource value: 0x7f0a0040
-			public const int Base_TextAppearance_AppCompat_Display4 = 2131361856;
+			// aapt resource value: 0x7f090044
+			public const int Base_TextAppearance_AppCompat_Display3 = 2131296324;
 			
-			// aapt resource value: 0x7f0a0041
-			public const int Base_TextAppearance_AppCompat_Headline = 2131361857;
+			// aapt resource value: 0x7f090045
+			public const int Base_TextAppearance_AppCompat_Display4 = 2131296325;
 			
-			// aapt resource value: 0x7f0a000b
-			public const int Base_TextAppearance_AppCompat_Inverse = 2131361803;
+			// aapt resource value: 0x7f090046
+			public const int Base_TextAppearance_AppCompat_Headline = 2131296326;
 			
-			// aapt resource value: 0x7f0a0042
-			public const int Base_TextAppearance_AppCompat_Large = 2131361858;
+			// aapt resource value: 0x7f090010
+			public const int Base_TextAppearance_AppCompat_Inverse = 2131296272;
 			
-			// aapt resource value: 0x7f0a000c
-			public const int Base_TextAppearance_AppCompat_Large_Inverse = 2131361804;
+			// aapt resource value: 0x7f090047
+			public const int Base_TextAppearance_AppCompat_Large = 2131296327;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131361859;
+			// aapt resource value: 0x7f090011
+			public const int Base_TextAppearance_AppCompat_Large_Inverse = 2131296273;
 			
-			// aapt resource value: 0x7f0a0044
-			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131361860;
+			// aapt resource value: 0x7f090048
+			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131296328;
 			
-			// aapt resource value: 0x7f0a0045
-			public const int Base_TextAppearance_AppCompat_Medium = 2131361861;
+			// aapt resource value: 0x7f090049
+			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131296329;
 			
-			// aapt resource value: 0x7f0a000d
-			public const int Base_TextAppearance_AppCompat_Medium_Inverse = 2131361805;
+			// aapt resource value: 0x7f09004a
+			public const int Base_TextAppearance_AppCompat_Medium = 2131296330;
 			
-			// aapt resource value: 0x7f0a0046
-			public const int Base_TextAppearance_AppCompat_Menu = 2131361862;
+			// aapt resource value: 0x7f090012
+			public const int Base_TextAppearance_AppCompat_Medium_Inverse = 2131296274;
 			
-			// aapt resource value: 0x7f0a00a1
-			public const int Base_TextAppearance_AppCompat_SearchResult = 2131361953;
+			// aapt resource value: 0x7f09004b
+			public const int Base_TextAppearance_AppCompat_Menu = 2131296331;
 			
-			// aapt resource value: 0x7f0a0047
-			public const int Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131361863;
+			// aapt resource value: 0x7f0900a6
+			public const int Base_TextAppearance_AppCompat_SearchResult = 2131296422;
 			
-			// aapt resource value: 0x7f0a0048
-			public const int Base_TextAppearance_AppCompat_SearchResult_Title = 2131361864;
+			// aapt resource value: 0x7f09004c
+			public const int Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131296332;
 			
-			// aapt resource value: 0x7f0a0049
-			public const int Base_TextAppearance_AppCompat_Small = 2131361865;
+			// aapt resource value: 0x7f09004d
+			public const int Base_TextAppearance_AppCompat_SearchResult_Title = 2131296333;
 			
-			// aapt resource value: 0x7f0a000e
-			public const int Base_TextAppearance_AppCompat_Small_Inverse = 2131361806;
+			// aapt resource value: 0x7f09004e
+			public const int Base_TextAppearance_AppCompat_Small = 2131296334;
 			
-			// aapt resource value: 0x7f0a004a
-			public const int Base_TextAppearance_AppCompat_Subhead = 2131361866;
+			// aapt resource value: 0x7f090013
+			public const int Base_TextAppearance_AppCompat_Small_Inverse = 2131296275;
 			
-			// aapt resource value: 0x7f0a000f
-			public const int Base_TextAppearance_AppCompat_Subhead_Inverse = 2131361807;
+			// aapt resource value: 0x7f09004f
+			public const int Base_TextAppearance_AppCompat_Subhead = 2131296335;
 			
-			// aapt resource value: 0x7f0a004b
-			public const int Base_TextAppearance_AppCompat_Title = 2131361867;
+			// aapt resource value: 0x7f090014
+			public const int Base_TextAppearance_AppCompat_Subhead_Inverse = 2131296276;
 			
-			// aapt resource value: 0x7f0a0010
-			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131361808;
+			// aapt resource value: 0x7f090050
+			public const int Base_TextAppearance_AppCompat_Title = 2131296336;
 			
-			// aapt resource value: 0x7f0a00a2
-			public const int Base_TextAppearance_AppCompat_Tooltip = 2131361954;
+			// aapt resource value: 0x7f090015
+			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131296277;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131361926;
+			// aapt resource value: 0x7f0900a7
+			public const int Base_TextAppearance_AppCompat_Tooltip = 2131296423;
 			
-			// aapt resource value: 0x7f0a004c
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131361868;
+			// aapt resource value: 0x7f09008b
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131296395;
 			
-			// aapt resource value: 0x7f0a004d
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131361869;
+			// aapt resource value: 0x7f090051
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131296337;
 			
-			// aapt resource value: 0x7f0a004e
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131361870;
+			// aapt resource value: 0x7f090052
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131296338;
 			
-			// aapt resource value: 0x7f0a004f
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131361871;
+			// aapt resource value: 0x7f090053
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131296339;
 			
-			// aapt resource value: 0x7f0a0050
-			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131361872;
+			// aapt resource value: 0x7f090054
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131296340;
 			
-			// aapt resource value: 0x7f0a0051
-			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131361873;
+			// aapt resource value: 0x7f090055
+			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131296341;
 			
-			// aapt resource value: 0x7f0a0052
-			public const int Base_TextAppearance_AppCompat_Widget_Button = 2131361874;
+			// aapt resource value: 0x7f090056
+			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131296342;
 			
-			// aapt resource value: 0x7f0a008d
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131361933;
+			// aapt resource value: 0x7f090057
+			public const int Base_TextAppearance_AppCompat_Widget_Button = 2131296343;
 			
-			// aapt resource value: 0x7f0a008e
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131361934;
+			// aapt resource value: 0x7f090092
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131296402;
 			
-			// aapt resource value: 0x7f0a0087
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131361927;
+			// aapt resource value: 0x7f090093
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131296403;
 			
-			// aapt resource value: 0x7f0a00a3
-			public const int Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131361955;
+			// aapt resource value: 0x7f09008c
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131296396;
 			
-			// aapt resource value: 0x7f0a0053
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131361875;
+			// aapt resource value: 0x7f0900a8
+			public const int Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131296424;
 			
-			// aapt resource value: 0x7f0a0054
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131361876;
+			// aapt resource value: 0x7f090058
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131296344;
 			
-			// aapt resource value: 0x7f0a0055
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131361877;
+			// aapt resource value: 0x7f090059
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131296345;
 			
-			// aapt resource value: 0x7f0a0056
-			public const int Base_TextAppearance_AppCompat_Widget_Switch = 2131361878;
+			// aapt resource value: 0x7f09005a
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131296346;
 			
-			// aapt resource value: 0x7f0a0057
-			public const int Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131361879;
+			// aapt resource value: 0x7f09005b
+			public const int Base_TextAppearance_AppCompat_Widget_Switch = 2131296347;
 			
-			// aapt resource value: 0x7f0a00a4
-			public const int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131361956;
+			// aapt resource value: 0x7f09005c
+			public const int Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131296348;
 			
-			// aapt resource value: 0x7f0a0058
-			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131361880;
+			// aapt resource value: 0x7f0900a9
+			public const int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131296425;
 			
-			// aapt resource value: 0x7f0a0059
-			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Title = 2131361881;
+			// aapt resource value: 0x7f09005d
+			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131296349;
 			
-			// aapt resource value: 0x7f0a005a
-			public const int Base_Theme_AppCompat = 2131361882;
+			// aapt resource value: 0x7f09005e
+			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Title = 2131296350;
 			
-			// aapt resource value: 0x7f0a00a5
-			public const int Base_Theme_AppCompat_CompactMenu = 2131361957;
+			// aapt resource value: 0x7f09005f
+			public const int Base_Theme_AppCompat = 2131296351;
 			
-			// aapt resource value: 0x7f0a0011
-			public const int Base_Theme_AppCompat_Dialog = 2131361809;
+			// aapt resource value: 0x7f0900aa
+			public const int Base_Theme_AppCompat_CompactMenu = 2131296426;
 			
-			// aapt resource value: 0x7f0a0012
-			public const int Base_Theme_AppCompat_Dialog_Alert = 2131361810;
+			// aapt resource value: 0x7f090016
+			public const int Base_Theme_AppCompat_Dialog = 2131296278;
 			
-			// aapt resource value: 0x7f0a00a6
-			public const int Base_Theme_AppCompat_Dialog_FixedSize = 2131361958;
+			// aapt resource value: 0x7f090017
+			public const int Base_Theme_AppCompat_Dialog_Alert = 2131296279;
 			
-			// aapt resource value: 0x7f0a0013
-			public const int Base_Theme_AppCompat_Dialog_MinWidth = 2131361811;
+			// aapt resource value: 0x7f0900ab
+			public const int Base_Theme_AppCompat_Dialog_FixedSize = 2131296427;
 			
-			// aapt resource value: 0x7f0a0001
-			public const int Base_Theme_AppCompat_DialogWhenLarge = 2131361793;
+			// aapt resource value: 0x7f090018
+			public const int Base_Theme_AppCompat_Dialog_MinWidth = 2131296280;
 			
-			// aapt resource value: 0x7f0a005b
-			public const int Base_Theme_AppCompat_Light = 2131361883;
+			// aapt resource value: 0x7f090006
+			public const int Base_Theme_AppCompat_DialogWhenLarge = 2131296262;
 			
-			// aapt resource value: 0x7f0a00a7
-			public const int Base_Theme_AppCompat_Light_DarkActionBar = 2131361959;
+			// aapt resource value: 0x7f090060
+			public const int Base_Theme_AppCompat_Light = 2131296352;
 			
-			// aapt resource value: 0x7f0a0014
-			public const int Base_Theme_AppCompat_Light_Dialog = 2131361812;
+			// aapt resource value: 0x7f0900ac
+			public const int Base_Theme_AppCompat_Light_DarkActionBar = 2131296428;
 			
-			// aapt resource value: 0x7f0a0015
-			public const int Base_Theme_AppCompat_Light_Dialog_Alert = 2131361813;
+			// aapt resource value: 0x7f090019
+			public const int Base_Theme_AppCompat_Light_Dialog = 2131296281;
 			
-			// aapt resource value: 0x7f0a00a8
-			public const int Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131361960;
+			// aapt resource value: 0x7f09001a
+			public const int Base_Theme_AppCompat_Light_Dialog_Alert = 2131296282;
 			
-			// aapt resource value: 0x7f0a0016
-			public const int Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131361814;
+			// aapt resource value: 0x7f0900ad
+			public const int Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131296429;
 			
-			// aapt resource value: 0x7f0a0002
-			public const int Base_Theme_AppCompat_Light_DialogWhenLarge = 2131361794;
+			// aapt resource value: 0x7f09001b
+			public const int Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131296283;
 			
-			// aapt resource value: 0x7f0a00a9
-			public const int Base_ThemeOverlay_AppCompat = 2131361961;
+			// aapt resource value: 0x7f090007
+			public const int Base_Theme_AppCompat_Light_DialogWhenLarge = 2131296263;
 			
-			// aapt resource value: 0x7f0a00aa
-			public const int Base_ThemeOverlay_AppCompat_ActionBar = 2131361962;
+			// aapt resource value: 0x7f0900ae
+			public const int Base_ThemeOverlay_AppCompat = 2131296430;
 			
-			// aapt resource value: 0x7f0a00ab
-			public const int Base_ThemeOverlay_AppCompat_Dark = 2131361963;
+			// aapt resource value: 0x7f0900af
+			public const int Base_ThemeOverlay_AppCompat_ActionBar = 2131296431;
 			
-			// aapt resource value: 0x7f0a00ac
-			public const int Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131361964;
+			// aapt resource value: 0x7f0900b0
+			public const int Base_ThemeOverlay_AppCompat_Dark = 2131296432;
 			
-			// aapt resource value: 0x7f0a0017
-			public const int Base_ThemeOverlay_AppCompat_Dialog = 2131361815;
+			// aapt resource value: 0x7f0900b1
+			public const int Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131296433;
 			
-			// aapt resource value: 0x7f0a0018
-			public const int Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131361816;
+			// aapt resource value: 0x7f09001c
+			public const int Base_ThemeOverlay_AppCompat_Dialog = 2131296284;
 			
-			// aapt resource value: 0x7f0a00ad
-			public const int Base_ThemeOverlay_AppCompat_Light = 2131361965;
+			// aapt resource value: 0x7f09001d
+			public const int Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131296285;
 			
-			// aapt resource value: 0x7f0a0019
-			public const int Base_V11_Theme_AppCompat_Dialog = 2131361817;
+			// aapt resource value: 0x7f0900b2
+			public const int Base_ThemeOverlay_AppCompat_Light = 2131296434;
 			
-			// aapt resource value: 0x7f0a001a
-			public const int Base_V11_Theme_AppCompat_Light_Dialog = 2131361818;
+			// aapt resource value: 0x7f09001e
+			public const int Base_V11_Theme_AppCompat_Dialog = 2131296286;
 			
-			// aapt resource value: 0x7f0a001b
-			public const int Base_V11_ThemeOverlay_AppCompat_Dialog = 2131361819;
+			// aapt resource value: 0x7f09001f
+			public const int Base_V11_Theme_AppCompat_Light_Dialog = 2131296287;
 			
-			// aapt resource value: 0x7f0a0023
-			public const int Base_V12_Widget_AppCompat_AutoCompleteTextView = 2131361827;
+			// aapt resource value: 0x7f090020
+			public const int Base_V11_ThemeOverlay_AppCompat_Dialog = 2131296288;
 			
-			// aapt resource value: 0x7f0a0024
-			public const int Base_V12_Widget_AppCompat_EditText = 2131361828;
+			// aapt resource value: 0x7f090028
+			public const int Base_V12_Widget_AppCompat_AutoCompleteTextView = 2131296296;
 			
-			// aapt resource value: 0x7f0a0160
-			public const int Base_V14_Widget_Design_AppBarLayout = 2131362144;
+			// aapt resource value: 0x7f090029
+			public const int Base_V12_Widget_AppCompat_EditText = 2131296297;
 			
-			// aapt resource value: 0x7f0a005c
-			public const int Base_V21_Theme_AppCompat = 2131361884;
+			// aapt resource value: 0x7f090165
+			public const int Base_V14_Widget_Design_AppBarLayout = 2131296613;
 			
-			// aapt resource value: 0x7f0a005d
-			public const int Base_V21_Theme_AppCompat_Dialog = 2131361885;
+			// aapt resource value: 0x7f090061
+			public const int Base_V21_Theme_AppCompat = 2131296353;
 			
-			// aapt resource value: 0x7f0a005e
-			public const int Base_V21_Theme_AppCompat_Light = 2131361886;
+			// aapt resource value: 0x7f090062
+			public const int Base_V21_Theme_AppCompat_Dialog = 2131296354;
 			
-			// aapt resource value: 0x7f0a005f
-			public const int Base_V21_Theme_AppCompat_Light_Dialog = 2131361887;
+			// aapt resource value: 0x7f090063
+			public const int Base_V21_Theme_AppCompat_Light = 2131296355;
 			
-			// aapt resource value: 0x7f0a0060
-			public const int Base_V21_ThemeOverlay_AppCompat_Dialog = 2131361888;
+			// aapt resource value: 0x7f090064
+			public const int Base_V21_Theme_AppCompat_Light_Dialog = 2131296356;
 			
-			// aapt resource value: 0x7f0a015c
-			public const int Base_V21_Widget_Design_AppBarLayout = 2131362140;
+			// aapt resource value: 0x7f090065
+			public const int Base_V21_ThemeOverlay_AppCompat_Dialog = 2131296357;
 			
-			// aapt resource value: 0x7f0a0084
-			public const int Base_V22_Theme_AppCompat = 2131361924;
+			// aapt resource value: 0x7f090161
+			public const int Base_V21_Widget_Design_AppBarLayout = 2131296609;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int Base_V22_Theme_AppCompat_Light = 2131361925;
+			// aapt resource value: 0x7f090089
+			public const int Base_V22_Theme_AppCompat = 2131296393;
 			
-			// aapt resource value: 0x7f0a0088
-			public const int Base_V23_Theme_AppCompat = 2131361928;
+			// aapt resource value: 0x7f09008a
+			public const int Base_V22_Theme_AppCompat_Light = 2131296394;
 			
-			// aapt resource value: 0x7f0a0089
-			public const int Base_V23_Theme_AppCompat_Light = 2131361929;
+			// aapt resource value: 0x7f09008d
+			public const int Base_V23_Theme_AppCompat = 2131296397;
 			
-			// aapt resource value: 0x7f0a0091
-			public const int Base_V26_Theme_AppCompat = 2131361937;
+			// aapt resource value: 0x7f09008e
+			public const int Base_V23_Theme_AppCompat_Light = 2131296398;
 			
-			// aapt resource value: 0x7f0a0092
-			public const int Base_V26_Theme_AppCompat_Light = 2131361938;
+			// aapt resource value: 0x7f090096
+			public const int Base_V26_Theme_AppCompat = 2131296406;
 			
-			// aapt resource value: 0x7f0a0093
-			public const int Base_V26_Widget_AppCompat_Toolbar = 2131361939;
+			// aapt resource value: 0x7f090097
+			public const int Base_V26_Theme_AppCompat_Light = 2131296407;
 			
-			// aapt resource value: 0x7f0a015e
-			public const int Base_V26_Widget_Design_AppBarLayout = 2131362142;
+			// aapt resource value: 0x7f090098
+			public const int Base_V26_Widget_AppCompat_Toolbar = 2131296408;
 			
-			// aapt resource value: 0x7f0a00ae
-			public const int Base_V7_Theme_AppCompat = 2131361966;
+			// aapt resource value: 0x7f090163
+			public const int Base_V26_Widget_Design_AppBarLayout = 2131296611;
 			
-			// aapt resource value: 0x7f0a00af
-			public const int Base_V7_Theme_AppCompat_Dialog = 2131361967;
+			// aapt resource value: 0x7f0900b3
+			public const int Base_V7_Theme_AppCompat = 2131296435;
 			
-			// aapt resource value: 0x7f0a00b0
-			public const int Base_V7_Theme_AppCompat_Light = 2131361968;
+			// aapt resource value: 0x7f0900b4
+			public const int Base_V7_Theme_AppCompat_Dialog = 2131296436;
 			
-			// aapt resource value: 0x7f0a00b1
-			public const int Base_V7_Theme_AppCompat_Light_Dialog = 2131361969;
+			// aapt resource value: 0x7f0900b5
+			public const int Base_V7_Theme_AppCompat_Light = 2131296437;
 			
-			// aapt resource value: 0x7f0a00b2
-			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131361970;
+			// aapt resource value: 0x7f0900b6
+			public const int Base_V7_Theme_AppCompat_Light_Dialog = 2131296438;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131361971;
+			// aapt resource value: 0x7f0900b7
+			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131296439;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int Base_V7_Widget_AppCompat_EditText = 2131361972;
+			// aapt resource value: 0x7f0900b8
+			public const int Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131296440;
 			
-			// aapt resource value: 0x7f0a00b5
-			public const int Base_V7_Widget_AppCompat_Toolbar = 2131361973;
+			// aapt resource value: 0x7f0900b9
+			public const int Base_V7_Widget_AppCompat_EditText = 2131296441;
 			
-			// aapt resource value: 0x7f0a00b6
-			public const int Base_Widget_AppCompat_ActionBar = 2131361974;
+			// aapt resource value: 0x7f0900ba
+			public const int Base_V7_Widget_AppCompat_Toolbar = 2131296442;
 			
-			// aapt resource value: 0x7f0a00b7
-			public const int Base_Widget_AppCompat_ActionBar_Solid = 2131361975;
+			// aapt resource value: 0x7f0900bb
+			public const int Base_Widget_AppCompat_ActionBar = 2131296443;
 			
-			// aapt resource value: 0x7f0a00b8
-			public const int Base_Widget_AppCompat_ActionBar_TabBar = 2131361976;
+			// aapt resource value: 0x7f0900bc
+			public const int Base_Widget_AppCompat_ActionBar_Solid = 2131296444;
 			
-			// aapt resource value: 0x7f0a0061
-			public const int Base_Widget_AppCompat_ActionBar_TabText = 2131361889;
+			// aapt resource value: 0x7f0900bd
+			public const int Base_Widget_AppCompat_ActionBar_TabBar = 2131296445;
 			
-			// aapt resource value: 0x7f0a0062
-			public const int Base_Widget_AppCompat_ActionBar_TabView = 2131361890;
+			// aapt resource value: 0x7f090066
+			public const int Base_Widget_AppCompat_ActionBar_TabText = 2131296358;
 			
-			// aapt resource value: 0x7f0a0063
-			public const int Base_Widget_AppCompat_ActionButton = 2131361891;
+			// aapt resource value: 0x7f090067
+			public const int Base_Widget_AppCompat_ActionBar_TabView = 2131296359;
 			
-			// aapt resource value: 0x7f0a0064
-			public const int Base_Widget_AppCompat_ActionButton_CloseMode = 2131361892;
+			// aapt resource value: 0x7f090068
+			public const int Base_Widget_AppCompat_ActionButton = 2131296360;
 			
-			// aapt resource value: 0x7f0a0065
-			public const int Base_Widget_AppCompat_ActionButton_Overflow = 2131361893;
+			// aapt resource value: 0x7f090069
+			public const int Base_Widget_AppCompat_ActionButton_CloseMode = 2131296361;
 			
-			// aapt resource value: 0x7f0a00b9
-			public const int Base_Widget_AppCompat_ActionMode = 2131361977;
+			// aapt resource value: 0x7f09006a
+			public const int Base_Widget_AppCompat_ActionButton_Overflow = 2131296362;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int Base_Widget_AppCompat_ActivityChooserView = 2131361978;
+			// aapt resource value: 0x7f0900be
+			public const int Base_Widget_AppCompat_ActionMode = 2131296446;
 			
-			// aapt resource value: 0x7f0a0025
-			public const int Base_Widget_AppCompat_AutoCompleteTextView = 2131361829;
+			// aapt resource value: 0x7f0900bf
+			public const int Base_Widget_AppCompat_ActivityChooserView = 2131296447;
 			
-			// aapt resource value: 0x7f0a0066
-			public const int Base_Widget_AppCompat_Button = 2131361894;
+			// aapt resource value: 0x7f09002a
+			public const int Base_Widget_AppCompat_AutoCompleteTextView = 2131296298;
 			
-			// aapt resource value: 0x7f0a0067
-			public const int Base_Widget_AppCompat_Button_Borderless = 2131361895;
+			// aapt resource value: 0x7f09006b
+			public const int Base_Widget_AppCompat_Button = 2131296363;
 			
-			// aapt resource value: 0x7f0a0068
-			public const int Base_Widget_AppCompat_Button_Borderless_Colored = 2131361896;
+			// aapt resource value: 0x7f09006c
+			public const int Base_Widget_AppCompat_Button_Borderless = 2131296364;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131361979;
+			// aapt resource value: 0x7f09006d
+			public const int Base_Widget_AppCompat_Button_Borderless_Colored = 2131296365;
 			
-			// aapt resource value: 0x7f0a008a
-			public const int Base_Widget_AppCompat_Button_Colored = 2131361930;
+			// aapt resource value: 0x7f0900c0
+			public const int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131296448;
 			
-			// aapt resource value: 0x7f0a0069
-			public const int Base_Widget_AppCompat_Button_Small = 2131361897;
+			// aapt resource value: 0x7f09008f
+			public const int Base_Widget_AppCompat_Button_Colored = 2131296399;
 			
-			// aapt resource value: 0x7f0a006a
-			public const int Base_Widget_AppCompat_ButtonBar = 2131361898;
+			// aapt resource value: 0x7f09006e
+			public const int Base_Widget_AppCompat_Button_Small = 2131296366;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131361980;
+			// aapt resource value: 0x7f09006f
+			public const int Base_Widget_AppCompat_ButtonBar = 2131296367;
 			
-			// aapt resource value: 0x7f0a006b
-			public const int Base_Widget_AppCompat_CompoundButton_CheckBox = 2131361899;
+			// aapt resource value: 0x7f0900c1
+			public const int Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131296449;
 			
-			// aapt resource value: 0x7f0a006c
-			public const int Base_Widget_AppCompat_CompoundButton_RadioButton = 2131361900;
+			// aapt resource value: 0x7f090070
+			public const int Base_Widget_AppCompat_CompoundButton_CheckBox = 2131296368;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int Base_Widget_AppCompat_CompoundButton_Switch = 2131361981;
+			// aapt resource value: 0x7f090071
+			public const int Base_Widget_AppCompat_CompoundButton_RadioButton = 2131296369;
 			
-			// aapt resource value: 0x7f0a0000
-			public const int Base_Widget_AppCompat_DrawerArrowToggle = 2131361792;
+			// aapt resource value: 0x7f0900c2
+			public const int Base_Widget_AppCompat_CompoundButton_Switch = 2131296450;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131361982;
+			// aapt resource value: 0x7f090005
+			public const int Base_Widget_AppCompat_DrawerArrowToggle = 2131296261;
 			
-			// aapt resource value: 0x7f0a006d
-			public const int Base_Widget_AppCompat_DropDownItem_Spinner = 2131361901;
+			// aapt resource value: 0x7f0900c3
+			public const int Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131296451;
 			
-			// aapt resource value: 0x7f0a0026
-			public const int Base_Widget_AppCompat_EditText = 2131361830;
+			// aapt resource value: 0x7f090072
+			public const int Base_Widget_AppCompat_DropDownItem_Spinner = 2131296370;
 			
-			// aapt resource value: 0x7f0a006e
-			public const int Base_Widget_AppCompat_ImageButton = 2131361902;
+			// aapt resource value: 0x7f09002b
+			public const int Base_Widget_AppCompat_EditText = 2131296299;
 			
-			// aapt resource value: 0x7f0a00bf
-			public const int Base_Widget_AppCompat_Light_ActionBar = 2131361983;
+			// aapt resource value: 0x7f090073
+			public const int Base_Widget_AppCompat_ImageButton = 2131296371;
 			
-			// aapt resource value: 0x7f0a00c0
-			public const int Base_Widget_AppCompat_Light_ActionBar_Solid = 2131361984;
+			// aapt resource value: 0x7f0900c4
+			public const int Base_Widget_AppCompat_Light_ActionBar = 2131296452;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131361985;
+			// aapt resource value: 0x7f0900c5
+			public const int Base_Widget_AppCompat_Light_ActionBar_Solid = 2131296453;
 			
-			// aapt resource value: 0x7f0a006f
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabText = 2131361903;
+			// aapt resource value: 0x7f0900c6
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131296454;
 			
-			// aapt resource value: 0x7f0a0070
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131361904;
+			// aapt resource value: 0x7f090074
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabText = 2131296372;
 			
-			// aapt resource value: 0x7f0a0071
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabView = 2131361905;
+			// aapt resource value: 0x7f090075
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131296373;
 			
-			// aapt resource value: 0x7f0a0072
-			public const int Base_Widget_AppCompat_Light_PopupMenu = 2131361906;
+			// aapt resource value: 0x7f090076
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabView = 2131296374;
 			
-			// aapt resource value: 0x7f0a0073
-			public const int Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131361907;
+			// aapt resource value: 0x7f090077
+			public const int Base_Widget_AppCompat_Light_PopupMenu = 2131296375;
 			
-			// aapt resource value: 0x7f0a00c2
-			public const int Base_Widget_AppCompat_ListMenuView = 2131361986;
+			// aapt resource value: 0x7f090078
+			public const int Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131296376;
 			
-			// aapt resource value: 0x7f0a0074
-			public const int Base_Widget_AppCompat_ListPopupWindow = 2131361908;
+			// aapt resource value: 0x7f0900c7
+			public const int Base_Widget_AppCompat_ListMenuView = 2131296455;
 			
-			// aapt resource value: 0x7f0a0075
-			public const int Base_Widget_AppCompat_ListView = 2131361909;
+			// aapt resource value: 0x7f090079
+			public const int Base_Widget_AppCompat_ListPopupWindow = 2131296377;
 			
-			// aapt resource value: 0x7f0a0076
-			public const int Base_Widget_AppCompat_ListView_DropDown = 2131361910;
+			// aapt resource value: 0x7f09007a
+			public const int Base_Widget_AppCompat_ListView = 2131296378;
 			
-			// aapt resource value: 0x7f0a0077
-			public const int Base_Widget_AppCompat_ListView_Menu = 2131361911;
+			// aapt resource value: 0x7f09007b
+			public const int Base_Widget_AppCompat_ListView_DropDown = 2131296379;
 			
-			// aapt resource value: 0x7f0a0078
-			public const int Base_Widget_AppCompat_PopupMenu = 2131361912;
+			// aapt resource value: 0x7f09007c
+			public const int Base_Widget_AppCompat_ListView_Menu = 2131296380;
 			
-			// aapt resource value: 0x7f0a0079
-			public const int Base_Widget_AppCompat_PopupMenu_Overflow = 2131361913;
+			// aapt resource value: 0x7f09007d
+			public const int Base_Widget_AppCompat_PopupMenu = 2131296381;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int Base_Widget_AppCompat_PopupWindow = 2131361987;
+			// aapt resource value: 0x7f09007e
+			public const int Base_Widget_AppCompat_PopupMenu_Overflow = 2131296382;
 			
-			// aapt resource value: 0x7f0a001c
-			public const int Base_Widget_AppCompat_ProgressBar = 2131361820;
+			// aapt resource value: 0x7f0900c8
+			public const int Base_Widget_AppCompat_PopupWindow = 2131296456;
 			
-			// aapt resource value: 0x7f0a001d
-			public const int Base_Widget_AppCompat_ProgressBar_Horizontal = 2131361821;
+			// aapt resource value: 0x7f090021
+			public const int Base_Widget_AppCompat_ProgressBar = 2131296289;
 			
-			// aapt resource value: 0x7f0a007a
-			public const int Base_Widget_AppCompat_RatingBar = 2131361914;
+			// aapt resource value: 0x7f090022
+			public const int Base_Widget_AppCompat_ProgressBar_Horizontal = 2131296290;
 			
-			// aapt resource value: 0x7f0a008b
-			public const int Base_Widget_AppCompat_RatingBar_Indicator = 2131361931;
+			// aapt resource value: 0x7f09007f
+			public const int Base_Widget_AppCompat_RatingBar = 2131296383;
 			
-			// aapt resource value: 0x7f0a008c
-			public const int Base_Widget_AppCompat_RatingBar_Small = 2131361932;
+			// aapt resource value: 0x7f090090
+			public const int Base_Widget_AppCompat_RatingBar_Indicator = 2131296400;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int Base_Widget_AppCompat_SearchView = 2131361988;
+			// aapt resource value: 0x7f090091
+			public const int Base_Widget_AppCompat_RatingBar_Small = 2131296401;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int Base_Widget_AppCompat_SearchView_ActionBar = 2131361989;
+			// aapt resource value: 0x7f0900c9
+			public const int Base_Widget_AppCompat_SearchView = 2131296457;
 			
-			// aapt resource value: 0x7f0a007b
-			public const int Base_Widget_AppCompat_SeekBar = 2131361915;
+			// aapt resource value: 0x7f0900ca
+			public const int Base_Widget_AppCompat_SearchView_ActionBar = 2131296458;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int Base_Widget_AppCompat_SeekBar_Discrete = 2131361990;
+			// aapt resource value: 0x7f090080
+			public const int Base_Widget_AppCompat_SeekBar = 2131296384;
 			
-			// aapt resource value: 0x7f0a007c
-			public const int Base_Widget_AppCompat_Spinner = 2131361916;
+			// aapt resource value: 0x7f0900cb
+			public const int Base_Widget_AppCompat_SeekBar_Discrete = 2131296459;
 			
-			// aapt resource value: 0x7f0a0003
-			public const int Base_Widget_AppCompat_Spinner_Underlined = 2131361795;
+			// aapt resource value: 0x7f090081
+			public const int Base_Widget_AppCompat_Spinner = 2131296385;
 			
-			// aapt resource value: 0x7f0a007d
-			public const int Base_Widget_AppCompat_TextView_SpinnerItem = 2131361917;
+			// aapt resource value: 0x7f090008
+			public const int Base_Widget_AppCompat_Spinner_Underlined = 2131296264;
 			
-			// aapt resource value: 0x7f0a0094
-			public const int Base_Widget_AppCompat_Toolbar = 2131361940;
+			// aapt resource value: 0x7f090082
+			public const int Base_Widget_AppCompat_TextView_SpinnerItem = 2131296386;
 			
-			// aapt resource value: 0x7f0a007e
-			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131361918;
+			// aapt resource value: 0x7f090099
+			public const int Base_Widget_AppCompat_Toolbar = 2131296409;
 			
-			// aapt resource value: 0x7f0a015d
-			public const int Base_Widget_Design_AppBarLayout = 2131362141;
+			// aapt resource value: 0x7f090083
+			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131296387;
 			
-			// aapt resource value: 0x7f0a0161
-			public const int Base_Widget_Design_TabLayout = 2131362145;
+			// aapt resource value: 0x7f090162
+			public const int Base_Widget_Design_AppBarLayout = 2131296610;
 			
-			// aapt resource value: 0x7f0a001e
-			public const int Platform_AppCompat = 2131361822;
+			// aapt resource value: 0x7f090166
+			public const int Base_Widget_Design_TabLayout = 2131296614;
 			
-			// aapt resource value: 0x7f0a001f
-			public const int Platform_AppCompat_Light = 2131361823;
+			// aapt resource value: 0x7f090186
+			public const int BrowserTheme = 2131296646;
 			
-			// aapt resource value: 0x7f0a007f
-			public const int Platform_ThemeOverlay_AppCompat = 2131361919;
+			// aapt resource value: 0x7f090001
+			public const int CardView = 2131296257;
 			
-			// aapt resource value: 0x7f0a0080
-			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131361920;
+			// aapt resource value: 0x7f090003
+			public const int CardView_Dark = 2131296259;
 			
-			// aapt resource value: 0x7f0a0081
-			public const int Platform_ThemeOverlay_AppCompat_Light = 2131361921;
+			// aapt resource value: 0x7f090004
+			public const int CardView_Light = 2131296260;
 			
-			// aapt resource value: 0x7f0a0020
-			public const int Platform_V11_AppCompat = 2131361824;
+			// aapt resource value: 0x7f090023
+			public const int Platform_AppCompat = 2131296291;
 			
-			// aapt resource value: 0x7f0a0021
-			public const int Platform_V11_AppCompat_Light = 2131361825;
+			// aapt resource value: 0x7f090024
+			public const int Platform_AppCompat_Light = 2131296292;
 			
-			// aapt resource value: 0x7f0a0028
-			public const int Platform_V14_AppCompat = 2131361832;
+			// aapt resource value: 0x7f090084
+			public const int Platform_ThemeOverlay_AppCompat = 2131296388;
 			
-			// aapt resource value: 0x7f0a0029
-			public const int Platform_V14_AppCompat_Light = 2131361833;
+			// aapt resource value: 0x7f090085
+			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131296389;
 			
-			// aapt resource value: 0x7f0a0082
-			public const int Platform_V21_AppCompat = 2131361922;
+			// aapt resource value: 0x7f090086
+			public const int Platform_ThemeOverlay_AppCompat_Light = 2131296390;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int Platform_V21_AppCompat_Light = 2131361923;
+			// aapt resource value: 0x7f090025
+			public const int Platform_V11_AppCompat = 2131296293;
 			
-			// aapt resource value: 0x7f0a008f
-			public const int Platform_V25_AppCompat = 2131361935;
+			// aapt resource value: 0x7f090026
+			public const int Platform_V11_AppCompat_Light = 2131296294;
 			
-			// aapt resource value: 0x7f0a0090
-			public const int Platform_V25_AppCompat_Light = 2131361936;
+			// aapt resource value: 0x7f09002d
+			public const int Platform_V14_AppCompat = 2131296301;
 			
-			// aapt resource value: 0x7f0a0022
-			public const int Platform_Widget_AppCompat_Spinner = 2131361826;
+			// aapt resource value: 0x7f09002e
+			public const int Platform_V14_AppCompat_Light = 2131296302;
 			
-			// aapt resource value: 0x7f0a002b
-			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131361835;
+			// aapt resource value: 0x7f090087
+			public const int Platform_V21_AppCompat = 2131296391;
 			
-			// aapt resource value: 0x7f0a002c
-			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131361836;
+			// aapt resource value: 0x7f090088
+			public const int Platform_V21_AppCompat_Light = 2131296392;
 			
-			// aapt resource value: 0x7f0a002d
-			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131361837;
+			// aapt resource value: 0x7f090094
+			public const int Platform_V25_AppCompat = 2131296404;
 			
-			// aapt resource value: 0x7f0a002e
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131361838;
+			// aapt resource value: 0x7f090095
+			public const int Platform_V25_AppCompat_Light = 2131296405;
 			
-			// aapt resource value: 0x7f0a002f
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131361839;
+			// aapt resource value: 0x7f090027
+			public const int Platform_Widget_AppCompat_Spinner = 2131296295;
 			
-			// aapt resource value: 0x7f0a0030
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131361840;
+			// aapt resource value: 0x7f090030
+			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131296304;
 			
-			// aapt resource value: 0x7f0a0031
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131361841;
+			// aapt resource value: 0x7f090031
+			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131296305;
 			
-			// aapt resource value: 0x7f0a0032
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131361842;
+			// aapt resource value: 0x7f090032
+			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131296306;
 			
-			// aapt resource value: 0x7f0a0033
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131361843;
+			// aapt resource value: 0x7f090033
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131296307;
 			
-			// aapt resource value: 0x7f0a0034
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131361844;
+			// aapt resource value: 0x7f090034
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131296308;
 			
-			// aapt resource value: 0x7f0a0035
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131361845;
+			// aapt resource value: 0x7f090035
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131296309;
 			
-			// aapt resource value: 0x7f0a0036
-			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131361846;
+			// aapt resource value: 0x7f090036
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131296310;
 			
-			// aapt resource value: 0x7f0a0037
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131361847;
+			// aapt resource value: 0x7f090037
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131296311;
 			
-			// aapt resource value: 0x7f0a0038
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131361848;
+			// aapt resource value: 0x7f090038
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131296312;
 			
-			// aapt resource value: 0x7f0a00c7
-			public const int TextAppearance_AppCompat = 2131361991;
+			// aapt resource value: 0x7f090039
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131296313;
 			
-			// aapt resource value: 0x7f0a00c8
-			public const int TextAppearance_AppCompat_Body1 = 2131361992;
+			// aapt resource value: 0x7f09003a
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131296314;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int TextAppearance_AppCompat_Body2 = 2131361993;
+			// aapt resource value: 0x7f09003b
+			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131296315;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int TextAppearance_AppCompat_Button = 2131361994;
+			// aapt resource value: 0x7f09003c
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131296316;
 			
-			// aapt resource value: 0x7f0a00cb
-			public const int TextAppearance_AppCompat_Caption = 2131361995;
+			// aapt resource value: 0x7f09003d
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131296317;
 			
-			// aapt resource value: 0x7f0a00cc
-			public const int TextAppearance_AppCompat_Display1 = 2131361996;
+			// aapt resource value: 0x7f0900cc
+			public const int TextAppearance_AppCompat = 2131296460;
 			
-			// aapt resource value: 0x7f0a00cd
-			public const int TextAppearance_AppCompat_Display2 = 2131361997;
+			// aapt resource value: 0x7f0900cd
+			public const int TextAppearance_AppCompat_Body1 = 2131296461;
 			
-			// aapt resource value: 0x7f0a00ce
-			public const int TextAppearance_AppCompat_Display3 = 2131361998;
+			// aapt resource value: 0x7f0900ce
+			public const int TextAppearance_AppCompat_Body2 = 2131296462;
 			
-			// aapt resource value: 0x7f0a00cf
-			public const int TextAppearance_AppCompat_Display4 = 2131361999;
+			// aapt resource value: 0x7f0900cf
+			public const int TextAppearance_AppCompat_Button = 2131296463;
 			
-			// aapt resource value: 0x7f0a00d0
-			public const int TextAppearance_AppCompat_Headline = 2131362000;
+			// aapt resource value: 0x7f0900d0
+			public const int TextAppearance_AppCompat_Caption = 2131296464;
 			
-			// aapt resource value: 0x7f0a00d1
-			public const int TextAppearance_AppCompat_Inverse = 2131362001;
+			// aapt resource value: 0x7f0900d1
+			public const int TextAppearance_AppCompat_Display1 = 2131296465;
 			
-			// aapt resource value: 0x7f0a00d2
-			public const int TextAppearance_AppCompat_Large = 2131362002;
+			// aapt resource value: 0x7f0900d2
+			public const int TextAppearance_AppCompat_Display2 = 2131296466;
 			
-			// aapt resource value: 0x7f0a00d3
-			public const int TextAppearance_AppCompat_Large_Inverse = 2131362003;
+			// aapt resource value: 0x7f0900d3
+			public const int TextAppearance_AppCompat_Display3 = 2131296467;
 			
-			// aapt resource value: 0x7f0a00d4
-			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131362004;
+			// aapt resource value: 0x7f0900d4
+			public const int TextAppearance_AppCompat_Display4 = 2131296468;
 			
-			// aapt resource value: 0x7f0a00d5
-			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131362005;
+			// aapt resource value: 0x7f0900d5
+			public const int TextAppearance_AppCompat_Headline = 2131296469;
 			
-			// aapt resource value: 0x7f0a00d6
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131362006;
+			// aapt resource value: 0x7f0900d6
+			public const int TextAppearance_AppCompat_Inverse = 2131296470;
 			
-			// aapt resource value: 0x7f0a00d7
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131362007;
+			// aapt resource value: 0x7f0900d7
+			public const int TextAppearance_AppCompat_Large = 2131296471;
 			
-			// aapt resource value: 0x7f0a00d8
-			public const int TextAppearance_AppCompat_Medium = 2131362008;
+			// aapt resource value: 0x7f0900d8
+			public const int TextAppearance_AppCompat_Large_Inverse = 2131296472;
 			
-			// aapt resource value: 0x7f0a00d9
-			public const int TextAppearance_AppCompat_Medium_Inverse = 2131362009;
+			// aapt resource value: 0x7f0900d9
+			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131296473;
 			
-			// aapt resource value: 0x7f0a00da
-			public const int TextAppearance_AppCompat_Menu = 2131362010;
+			// aapt resource value: 0x7f0900da
+			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131296474;
 			
-			// aapt resource value: 0x7f0a00db
-			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131362011;
+			// aapt resource value: 0x7f0900db
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131296475;
 			
-			// aapt resource value: 0x7f0a00dc
-			public const int TextAppearance_AppCompat_SearchResult_Title = 2131362012;
+			// aapt resource value: 0x7f0900dc
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131296476;
 			
-			// aapt resource value: 0x7f0a00dd
-			public const int TextAppearance_AppCompat_Small = 2131362013;
+			// aapt resource value: 0x7f0900dd
+			public const int TextAppearance_AppCompat_Medium = 2131296477;
 			
-			// aapt resource value: 0x7f0a00de
-			public const int TextAppearance_AppCompat_Small_Inverse = 2131362014;
+			// aapt resource value: 0x7f0900de
+			public const int TextAppearance_AppCompat_Medium_Inverse = 2131296478;
 			
-			// aapt resource value: 0x7f0a00df
-			public const int TextAppearance_AppCompat_Subhead = 2131362015;
+			// aapt resource value: 0x7f0900df
+			public const int TextAppearance_AppCompat_Menu = 2131296479;
 			
-			// aapt resource value: 0x7f0a00e0
-			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131362016;
+			// aapt resource value: 0x7f0900e0
+			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131296480;
 			
-			// aapt resource value: 0x7f0a00e1
-			public const int TextAppearance_AppCompat_Title = 2131362017;
+			// aapt resource value: 0x7f0900e1
+			public const int TextAppearance_AppCompat_SearchResult_Title = 2131296481;
 			
-			// aapt resource value: 0x7f0a00e2
-			public const int TextAppearance_AppCompat_Title_Inverse = 2131362018;
+			// aapt resource value: 0x7f0900e2
+			public const int TextAppearance_AppCompat_Small = 2131296482;
 			
-			// aapt resource value: 0x7f0a002a
-			public const int TextAppearance_AppCompat_Tooltip = 2131361834;
+			// aapt resource value: 0x7f0900e3
+			public const int TextAppearance_AppCompat_Small_Inverse = 2131296483;
 			
-			// aapt resource value: 0x7f0a00e3
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131362019;
+			// aapt resource value: 0x7f0900e4
+			public const int TextAppearance_AppCompat_Subhead = 2131296484;
 			
-			// aapt resource value: 0x7f0a00e4
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131362020;
+			// aapt resource value: 0x7f0900e5
+			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131296485;
 			
-			// aapt resource value: 0x7f0a00e5
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131362021;
+			// aapt resource value: 0x7f0900e6
+			public const int TextAppearance_AppCompat_Title = 2131296486;
 			
-			// aapt resource value: 0x7f0a00e6
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131362022;
+			// aapt resource value: 0x7f0900e7
+			public const int TextAppearance_AppCompat_Title_Inverse = 2131296487;
 			
-			// aapt resource value: 0x7f0a00e7
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131362023;
+			// aapt resource value: 0x7f09002f
+			public const int TextAppearance_AppCompat_Tooltip = 2131296303;
 			
-			// aapt resource value: 0x7f0a00e8
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131362024;
+			// aapt resource value: 0x7f0900e8
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131296488;
 			
-			// aapt resource value: 0x7f0a00e9
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131362025;
+			// aapt resource value: 0x7f0900e9
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131296489;
 			
-			// aapt resource value: 0x7f0a00ea
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131362026;
+			// aapt resource value: 0x7f0900ea
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131296490;
 			
-			// aapt resource value: 0x7f0a00eb
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131362027;
+			// aapt resource value: 0x7f0900eb
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131296491;
 			
-			// aapt resource value: 0x7f0a00ec
-			public const int TextAppearance_AppCompat_Widget_Button = 2131362028;
+			// aapt resource value: 0x7f0900ec
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131296492;
 			
-			// aapt resource value: 0x7f0a00ed
-			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131362029;
+			// aapt resource value: 0x7f0900ed
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131296493;
 			
-			// aapt resource value: 0x7f0a00ee
-			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131362030;
+			// aapt resource value: 0x7f0900ee
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131296494;
 			
-			// aapt resource value: 0x7f0a00ef
-			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131362031;
+			// aapt resource value: 0x7f0900ef
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131296495;
 			
-			// aapt resource value: 0x7f0a00f0
-			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131362032;
+			// aapt resource value: 0x7f0900f0
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131296496;
 			
-			// aapt resource value: 0x7f0a00f1
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131362033;
+			// aapt resource value: 0x7f0900f1
+			public const int TextAppearance_AppCompat_Widget_Button = 2131296497;
 			
-			// aapt resource value: 0x7f0a00f2
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131362034;
+			// aapt resource value: 0x7f0900f2
+			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131296498;
 			
-			// aapt resource value: 0x7f0a00f3
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131362035;
+			// aapt resource value: 0x7f0900f3
+			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131296499;
 			
-			// aapt resource value: 0x7f0a00f4
-			public const int TextAppearance_AppCompat_Widget_Switch = 2131362036;
+			// aapt resource value: 0x7f0900f4
+			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131296500;
 			
-			// aapt resource value: 0x7f0a00f5
-			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131362037;
+			// aapt resource value: 0x7f0900f5
+			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131296501;
 			
-			// aapt resource value: 0x7f0a0179
-			public const int TextAppearance_Compat_Notification = 2131362169;
+			// aapt resource value: 0x7f0900f6
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131296502;
 			
-			// aapt resource value: 0x7f0a017a
-			public const int TextAppearance_Compat_Notification_Info = 2131362170;
+			// aapt resource value: 0x7f0900f7
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131296503;
 			
-			// aapt resource value: 0x7f0a0156
-			public const int TextAppearance_Compat_Notification_Info_Media = 2131362134;
+			// aapt resource value: 0x7f0900f8
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131296504;
 			
-			// aapt resource value: 0x7f0a017f
-			public const int TextAppearance_Compat_Notification_Line2 = 2131362175;
+			// aapt resource value: 0x7f0900f9
+			public const int TextAppearance_AppCompat_Widget_Switch = 2131296505;
 			
-			// aapt resource value: 0x7f0a015a
-			public const int TextAppearance_Compat_Notification_Line2_Media = 2131362138;
+			// aapt resource value: 0x7f0900fa
+			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131296506;
 			
-			// aapt resource value: 0x7f0a0157
-			public const int TextAppearance_Compat_Notification_Media = 2131362135;
+			// aapt resource value: 0x7f09017e
+			public const int TextAppearance_Compat_Notification = 2131296638;
 			
-			// aapt resource value: 0x7f0a017b
-			public const int TextAppearance_Compat_Notification_Time = 2131362171;
+			// aapt resource value: 0x7f09017f
+			public const int TextAppearance_Compat_Notification_Info = 2131296639;
 			
-			// aapt resource value: 0x7f0a0158
-			public const int TextAppearance_Compat_Notification_Time_Media = 2131362136;
+			// aapt resource value: 0x7f09015b
+			public const int TextAppearance_Compat_Notification_Info_Media = 2131296603;
 			
-			// aapt resource value: 0x7f0a017c
-			public const int TextAppearance_Compat_Notification_Title = 2131362172;
+			// aapt resource value: 0x7f090184
+			public const int TextAppearance_Compat_Notification_Line2 = 2131296644;
 			
-			// aapt resource value: 0x7f0a0159
-			public const int TextAppearance_Compat_Notification_Title_Media = 2131362137;
+			// aapt resource value: 0x7f09015f
+			public const int TextAppearance_Compat_Notification_Line2_Media = 2131296607;
 			
-			// aapt resource value: 0x7f0a0162
-			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131362146;
+			// aapt resource value: 0x7f09015c
+			public const int TextAppearance_Compat_Notification_Media = 2131296604;
 			
-			// aapt resource value: 0x7f0a0163
-			public const int TextAppearance_Design_Counter = 2131362147;
+			// aapt resource value: 0x7f090180
+			public const int TextAppearance_Compat_Notification_Time = 2131296640;
 			
-			// aapt resource value: 0x7f0a0164
-			public const int TextAppearance_Design_Counter_Overflow = 2131362148;
+			// aapt resource value: 0x7f09015d
+			public const int TextAppearance_Compat_Notification_Time_Media = 2131296605;
 			
-			// aapt resource value: 0x7f0a0165
-			public const int TextAppearance_Design_Error = 2131362149;
+			// aapt resource value: 0x7f090181
+			public const int TextAppearance_Compat_Notification_Title = 2131296641;
 			
-			// aapt resource value: 0x7f0a0166
-			public const int TextAppearance_Design_Hint = 2131362150;
+			// aapt resource value: 0x7f09015e
+			public const int TextAppearance_Compat_Notification_Title_Media = 2131296606;
 			
-			// aapt resource value: 0x7f0a0167
-			public const int TextAppearance_Design_Snackbar_Message = 2131362151;
+			// aapt resource value: 0x7f090167
+			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131296615;
 			
-			// aapt resource value: 0x7f0a0168
-			public const int TextAppearance_Design_Tab = 2131362152;
+			// aapt resource value: 0x7f090168
+			public const int TextAppearance_Design_Counter = 2131296616;
 			
-			// aapt resource value: 0x7f0a00f6
-			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131362038;
+			// aapt resource value: 0x7f090169
+			public const int TextAppearance_Design_Counter_Overflow = 2131296617;
 			
-			// aapt resource value: 0x7f0a00f7
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131362039;
+			// aapt resource value: 0x7f09016a
+			public const int TextAppearance_Design_Error = 2131296618;
 			
-			// aapt resource value: 0x7f0a00f8
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131362040;
+			// aapt resource value: 0x7f09016b
+			public const int TextAppearance_Design_Hint = 2131296619;
 			
-			// aapt resource value: 0x7f0a00f9
-			public const int Theme_AppCompat = 2131362041;
+			// aapt resource value: 0x7f09016c
+			public const int TextAppearance_Design_Snackbar_Message = 2131296620;
 			
-			// aapt resource value: 0x7f0a00fa
-			public const int Theme_AppCompat_CompactMenu = 2131362042;
+			// aapt resource value: 0x7f09016d
+			public const int TextAppearance_Design_Tab = 2131296621;
 			
-			// aapt resource value: 0x7f0a0004
-			public const int Theme_AppCompat_DayNight = 2131361796;
+			// aapt resource value: 0x7f0900fb
+			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131296507;
 			
-			// aapt resource value: 0x7f0a0005
-			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131361797;
+			// aapt resource value: 0x7f0900fc
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131296508;
 			
-			// aapt resource value: 0x7f0a0006
-			public const int Theme_AppCompat_DayNight_Dialog = 2131361798;
+			// aapt resource value: 0x7f0900fd
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131296509;
 			
-			// aapt resource value: 0x7f0a0007
-			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131361799;
+			// aapt resource value: 0x7f0900fe
+			public const int Theme_AppCompat = 2131296510;
 			
-			// aapt resource value: 0x7f0a0008
-			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131361800;
+			// aapt resource value: 0x7f0900ff
+			public const int Theme_AppCompat_CompactMenu = 2131296511;
 			
-			// aapt resource value: 0x7f0a0009
-			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131361801;
+			// aapt resource value: 0x7f090009
+			public const int Theme_AppCompat_DayNight = 2131296265;
 			
-			// aapt resource value: 0x7f0a000a
-			public const int Theme_AppCompat_DayNight_NoActionBar = 2131361802;
+			// aapt resource value: 0x7f09000a
+			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131296266;
 			
-			// aapt resource value: 0x7f0a00fb
-			public const int Theme_AppCompat_Dialog = 2131362043;
+			// aapt resource value: 0x7f09000b
+			public const int Theme_AppCompat_DayNight_Dialog = 2131296267;
 			
-			// aapt resource value: 0x7f0a00fc
-			public const int Theme_AppCompat_Dialog_Alert = 2131362044;
+			// aapt resource value: 0x7f09000c
+			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131296268;
 			
-			// aapt resource value: 0x7f0a00fd
-			public const int Theme_AppCompat_Dialog_MinWidth = 2131362045;
+			// aapt resource value: 0x7f09000d
+			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131296269;
 			
-			// aapt resource value: 0x7f0a00fe
-			public const int Theme_AppCompat_DialogWhenLarge = 2131362046;
+			// aapt resource value: 0x7f09000e
+			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131296270;
 			
-			// aapt resource value: 0x7f0a00ff
-			public const int Theme_AppCompat_Light = 2131362047;
+			// aapt resource value: 0x7f09000f
+			public const int Theme_AppCompat_DayNight_NoActionBar = 2131296271;
 			
-			// aapt resource value: 0x7f0a0100
-			public const int Theme_AppCompat_Light_DarkActionBar = 2131362048;
+			// aapt resource value: 0x7f090100
+			public const int Theme_AppCompat_Dialog = 2131296512;
 			
-			// aapt resource value: 0x7f0a0101
-			public const int Theme_AppCompat_Light_Dialog = 2131362049;
+			// aapt resource value: 0x7f090101
+			public const int Theme_AppCompat_Dialog_Alert = 2131296513;
 			
-			// aapt resource value: 0x7f0a0102
-			public const int Theme_AppCompat_Light_Dialog_Alert = 2131362050;
+			// aapt resource value: 0x7f090102
+			public const int Theme_AppCompat_Dialog_MinWidth = 2131296514;
 			
-			// aapt resource value: 0x7f0a0103
-			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131362051;
+			// aapt resource value: 0x7f090103
+			public const int Theme_AppCompat_DialogWhenLarge = 2131296515;
 			
-			// aapt resource value: 0x7f0a0104
-			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131362052;
+			// aapt resource value: 0x7f090104
+			public const int Theme_AppCompat_Light = 2131296516;
 			
-			// aapt resource value: 0x7f0a0105
-			public const int Theme_AppCompat_Light_NoActionBar = 2131362053;
+			// aapt resource value: 0x7f090105
+			public const int Theme_AppCompat_Light_DarkActionBar = 2131296517;
 			
-			// aapt resource value: 0x7f0a0106
-			public const int Theme_AppCompat_NoActionBar = 2131362054;
+			// aapt resource value: 0x7f090106
+			public const int Theme_AppCompat_Light_Dialog = 2131296518;
 			
-			// aapt resource value: 0x7f0a0169
-			public const int Theme_Design = 2131362153;
+			// aapt resource value: 0x7f090107
+			public const int Theme_AppCompat_Light_Dialog_Alert = 2131296519;
 			
-			// aapt resource value: 0x7f0a016a
-			public const int Theme_Design_BottomSheetDialog = 2131362154;
+			// aapt resource value: 0x7f090108
+			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131296520;
 			
-			// aapt resource value: 0x7f0a016b
-			public const int Theme_Design_Light = 2131362155;
+			// aapt resource value: 0x7f090109
+			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131296521;
 			
-			// aapt resource value: 0x7f0a016c
-			public const int Theme_Design_Light_BottomSheetDialog = 2131362156;
+			// aapt resource value: 0x7f09010a
+			public const int Theme_AppCompat_Light_NoActionBar = 2131296522;
 			
-			// aapt resource value: 0x7f0a016d
-			public const int Theme_Design_Light_NoActionBar = 2131362157;
+			// aapt resource value: 0x7f09010b
+			public const int Theme_AppCompat_NoActionBar = 2131296523;
 			
-			// aapt resource value: 0x7f0a016e
-			public const int Theme_Design_NoActionBar = 2131362158;
+			// aapt resource value: 0x7f09016e
+			public const int Theme_Design = 2131296622;
 			
-			// aapt resource value: 0x7f0a0107
-			public const int ThemeOverlay_AppCompat = 2131362055;
+			// aapt resource value: 0x7f09016f
+			public const int Theme_Design_BottomSheetDialog = 2131296623;
 			
-			// aapt resource value: 0x7f0a0108
-			public const int ThemeOverlay_AppCompat_ActionBar = 2131362056;
+			// aapt resource value: 0x7f090170
+			public const int Theme_Design_Light = 2131296624;
 			
-			// aapt resource value: 0x7f0a0109
-			public const int ThemeOverlay_AppCompat_Dark = 2131362057;
+			// aapt resource value: 0x7f090171
+			public const int Theme_Design_Light_BottomSheetDialog = 2131296625;
 			
-			// aapt resource value: 0x7f0a010a
-			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131362058;
+			// aapt resource value: 0x7f090172
+			public const int Theme_Design_Light_NoActionBar = 2131296626;
 			
-			// aapt resource value: 0x7f0a010b
-			public const int ThemeOverlay_AppCompat_Dialog = 2131362059;
+			// aapt resource value: 0x7f090173
+			public const int Theme_Design_NoActionBar = 2131296627;
 			
-			// aapt resource value: 0x7f0a010c
-			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131362060;
+			// aapt resource value: 0x7f09010c
+			public const int ThemeOverlay_AppCompat = 2131296524;
 			
-			// aapt resource value: 0x7f0a010d
-			public const int ThemeOverlay_AppCompat_Light = 2131362061;
+			// aapt resource value: 0x7f09010d
+			public const int ThemeOverlay_AppCompat_ActionBar = 2131296525;
 			
-			// aapt resource value: 0x7f0a010e
-			public const int Widget_AppCompat_ActionBar = 2131362062;
+			// aapt resource value: 0x7f09010e
+			public const int ThemeOverlay_AppCompat_Dark = 2131296526;
 			
-			// aapt resource value: 0x7f0a010f
-			public const int Widget_AppCompat_ActionBar_Solid = 2131362063;
+			// aapt resource value: 0x7f09010f
+			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131296527;
 			
-			// aapt resource value: 0x7f0a0110
-			public const int Widget_AppCompat_ActionBar_TabBar = 2131362064;
+			// aapt resource value: 0x7f090110
+			public const int ThemeOverlay_AppCompat_Dialog = 2131296528;
 			
-			// aapt resource value: 0x7f0a0111
-			public const int Widget_AppCompat_ActionBar_TabText = 2131362065;
+			// aapt resource value: 0x7f090111
+			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131296529;
 			
-			// aapt resource value: 0x7f0a0112
-			public const int Widget_AppCompat_ActionBar_TabView = 2131362066;
+			// aapt resource value: 0x7f090112
+			public const int ThemeOverlay_AppCompat_Light = 2131296530;
 			
-			// aapt resource value: 0x7f0a0113
-			public const int Widget_AppCompat_ActionButton = 2131362067;
+			// aapt resource value: 0x7f090113
+			public const int Widget_AppCompat_ActionBar = 2131296531;
 			
-			// aapt resource value: 0x7f0a0114
-			public const int Widget_AppCompat_ActionButton_CloseMode = 2131362068;
+			// aapt resource value: 0x7f090114
+			public const int Widget_AppCompat_ActionBar_Solid = 2131296532;
 			
-			// aapt resource value: 0x7f0a0115
-			public const int Widget_AppCompat_ActionButton_Overflow = 2131362069;
+			// aapt resource value: 0x7f090115
+			public const int Widget_AppCompat_ActionBar_TabBar = 2131296533;
 			
-			// aapt resource value: 0x7f0a0116
-			public const int Widget_AppCompat_ActionMode = 2131362070;
+			// aapt resource value: 0x7f090116
+			public const int Widget_AppCompat_ActionBar_TabText = 2131296534;
 			
-			// aapt resource value: 0x7f0a0117
-			public const int Widget_AppCompat_ActivityChooserView = 2131362071;
+			// aapt resource value: 0x7f090117
+			public const int Widget_AppCompat_ActionBar_TabView = 2131296535;
 			
-			// aapt resource value: 0x7f0a0118
-			public const int Widget_AppCompat_AutoCompleteTextView = 2131362072;
+			// aapt resource value: 0x7f090118
+			public const int Widget_AppCompat_ActionButton = 2131296536;
 			
-			// aapt resource value: 0x7f0a0119
-			public const int Widget_AppCompat_Button = 2131362073;
+			// aapt resource value: 0x7f090119
+			public const int Widget_AppCompat_ActionButton_CloseMode = 2131296537;
 			
-			// aapt resource value: 0x7f0a011a
-			public const int Widget_AppCompat_Button_Borderless = 2131362074;
+			// aapt resource value: 0x7f09011a
+			public const int Widget_AppCompat_ActionButton_Overflow = 2131296538;
 			
-			// aapt resource value: 0x7f0a011b
-			public const int Widget_AppCompat_Button_Borderless_Colored = 2131362075;
+			// aapt resource value: 0x7f09011b
+			public const int Widget_AppCompat_ActionMode = 2131296539;
 			
-			// aapt resource value: 0x7f0a011c
-			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131362076;
+			// aapt resource value: 0x7f09011c
+			public const int Widget_AppCompat_ActivityChooserView = 2131296540;
 			
-			// aapt resource value: 0x7f0a011d
-			public const int Widget_AppCompat_Button_Colored = 2131362077;
+			// aapt resource value: 0x7f09011d
+			public const int Widget_AppCompat_AutoCompleteTextView = 2131296541;
 			
-			// aapt resource value: 0x7f0a011e
-			public const int Widget_AppCompat_Button_Small = 2131362078;
+			// aapt resource value: 0x7f09011e
+			public const int Widget_AppCompat_Button = 2131296542;
 			
-			// aapt resource value: 0x7f0a011f
-			public const int Widget_AppCompat_ButtonBar = 2131362079;
+			// aapt resource value: 0x7f09011f
+			public const int Widget_AppCompat_Button_Borderless = 2131296543;
 			
-			// aapt resource value: 0x7f0a0120
-			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131362080;
+			// aapt resource value: 0x7f090120
+			public const int Widget_AppCompat_Button_Borderless_Colored = 2131296544;
 			
-			// aapt resource value: 0x7f0a0121
-			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131362081;
+			// aapt resource value: 0x7f090121
+			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131296545;
 			
-			// aapt resource value: 0x7f0a0122
-			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131362082;
+			// aapt resource value: 0x7f090122
+			public const int Widget_AppCompat_Button_Colored = 2131296546;
 			
-			// aapt resource value: 0x7f0a0123
-			public const int Widget_AppCompat_CompoundButton_Switch = 2131362083;
+			// aapt resource value: 0x7f090123
+			public const int Widget_AppCompat_Button_Small = 2131296547;
 			
-			// aapt resource value: 0x7f0a0124
-			public const int Widget_AppCompat_DrawerArrowToggle = 2131362084;
+			// aapt resource value: 0x7f090124
+			public const int Widget_AppCompat_ButtonBar = 2131296548;
 			
-			// aapt resource value: 0x7f0a0125
-			public const int Widget_AppCompat_DropDownItem_Spinner = 2131362085;
+			// aapt resource value: 0x7f090125
+			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131296549;
 			
-			// aapt resource value: 0x7f0a0126
-			public const int Widget_AppCompat_EditText = 2131362086;
+			// aapt resource value: 0x7f090126
+			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131296550;
 			
-			// aapt resource value: 0x7f0a0127
-			public const int Widget_AppCompat_ImageButton = 2131362087;
+			// aapt resource value: 0x7f090127
+			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131296551;
 			
-			// aapt resource value: 0x7f0a0128
-			public const int Widget_AppCompat_Light_ActionBar = 2131362088;
+			// aapt resource value: 0x7f090128
+			public const int Widget_AppCompat_CompoundButton_Switch = 2131296552;
 			
-			// aapt resource value: 0x7f0a0129
-			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131362089;
+			// aapt resource value: 0x7f090129
+			public const int Widget_AppCompat_DrawerArrowToggle = 2131296553;
 			
-			// aapt resource value: 0x7f0a012a
-			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131362090;
+			// aapt resource value: 0x7f09012a
+			public const int Widget_AppCompat_DropDownItem_Spinner = 2131296554;
 			
-			// aapt resource value: 0x7f0a012b
-			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131362091;
+			// aapt resource value: 0x7f09012b
+			public const int Widget_AppCompat_EditText = 2131296555;
 			
-			// aapt resource value: 0x7f0a012c
-			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131362092;
+			// aapt resource value: 0x7f09012c
+			public const int Widget_AppCompat_ImageButton = 2131296556;
 			
-			// aapt resource value: 0x7f0a012d
-			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131362093;
+			// aapt resource value: 0x7f09012d
+			public const int Widget_AppCompat_Light_ActionBar = 2131296557;
 			
-			// aapt resource value: 0x7f0a012e
-			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131362094;
+			// aapt resource value: 0x7f09012e
+			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131296558;
 			
-			// aapt resource value: 0x7f0a012f
-			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131362095;
+			// aapt resource value: 0x7f09012f
+			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131296559;
 			
-			// aapt resource value: 0x7f0a0130
-			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131362096;
+			// aapt resource value: 0x7f090130
+			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131296560;
 			
-			// aapt resource value: 0x7f0a0131
-			public const int Widget_AppCompat_Light_ActionButton = 2131362097;
+			// aapt resource value: 0x7f090131
+			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131296561;
 			
-			// aapt resource value: 0x7f0a0132
-			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131362098;
+			// aapt resource value: 0x7f090132
+			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131296562;
 			
-			// aapt resource value: 0x7f0a0133
-			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131362099;
+			// aapt resource value: 0x7f090133
+			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131296563;
 			
-			// aapt resource value: 0x7f0a0134
-			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131362100;
+			// aapt resource value: 0x7f090134
+			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131296564;
 			
-			// aapt resource value: 0x7f0a0135
-			public const int Widget_AppCompat_Light_ActivityChooserView = 2131362101;
+			// aapt resource value: 0x7f090135
+			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131296565;
 			
-			// aapt resource value: 0x7f0a0136
-			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131362102;
+			// aapt resource value: 0x7f090136
+			public const int Widget_AppCompat_Light_ActionButton = 2131296566;
 			
-			// aapt resource value: 0x7f0a0137
-			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131362103;
+			// aapt resource value: 0x7f090137
+			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131296567;
 			
-			// aapt resource value: 0x7f0a0138
-			public const int Widget_AppCompat_Light_ListPopupWindow = 2131362104;
+			// aapt resource value: 0x7f090138
+			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131296568;
 			
-			// aapt resource value: 0x7f0a0139
-			public const int Widget_AppCompat_Light_ListView_DropDown = 2131362105;
+			// aapt resource value: 0x7f090139
+			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131296569;
 			
-			// aapt resource value: 0x7f0a013a
-			public const int Widget_AppCompat_Light_PopupMenu = 2131362106;
+			// aapt resource value: 0x7f09013a
+			public const int Widget_AppCompat_Light_ActivityChooserView = 2131296570;
 			
-			// aapt resource value: 0x7f0a013b
-			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131362107;
+			// aapt resource value: 0x7f09013b
+			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131296571;
 			
-			// aapt resource value: 0x7f0a013c
-			public const int Widget_AppCompat_Light_SearchView = 2131362108;
+			// aapt resource value: 0x7f09013c
+			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131296572;
 			
-			// aapt resource value: 0x7f0a013d
-			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131362109;
+			// aapt resource value: 0x7f09013d
+			public const int Widget_AppCompat_Light_ListPopupWindow = 2131296573;
 			
-			// aapt resource value: 0x7f0a013e
-			public const int Widget_AppCompat_ListMenuView = 2131362110;
+			// aapt resource value: 0x7f09013e
+			public const int Widget_AppCompat_Light_ListView_DropDown = 2131296574;
 			
-			// aapt resource value: 0x7f0a013f
-			public const int Widget_AppCompat_ListPopupWindow = 2131362111;
+			// aapt resource value: 0x7f09013f
+			public const int Widget_AppCompat_Light_PopupMenu = 2131296575;
 			
-			// aapt resource value: 0x7f0a0140
-			public const int Widget_AppCompat_ListView = 2131362112;
+			// aapt resource value: 0x7f090140
+			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131296576;
 			
-			// aapt resource value: 0x7f0a0141
-			public const int Widget_AppCompat_ListView_DropDown = 2131362113;
+			// aapt resource value: 0x7f090141
+			public const int Widget_AppCompat_Light_SearchView = 2131296577;
 			
-			// aapt resource value: 0x7f0a0142
-			public const int Widget_AppCompat_ListView_Menu = 2131362114;
+			// aapt resource value: 0x7f090142
+			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131296578;
 			
-			// aapt resource value: 0x7f0a0143
-			public const int Widget_AppCompat_PopupMenu = 2131362115;
+			// aapt resource value: 0x7f090143
+			public const int Widget_AppCompat_ListMenuView = 2131296579;
 			
-			// aapt resource value: 0x7f0a0144
-			public const int Widget_AppCompat_PopupMenu_Overflow = 2131362116;
+			// aapt resource value: 0x7f090144
+			public const int Widget_AppCompat_ListPopupWindow = 2131296580;
 			
-			// aapt resource value: 0x7f0a0145
-			public const int Widget_AppCompat_PopupWindow = 2131362117;
+			// aapt resource value: 0x7f090145
+			public const int Widget_AppCompat_ListView = 2131296581;
 			
-			// aapt resource value: 0x7f0a0146
-			public const int Widget_AppCompat_ProgressBar = 2131362118;
+			// aapt resource value: 0x7f090146
+			public const int Widget_AppCompat_ListView_DropDown = 2131296582;
 			
-			// aapt resource value: 0x7f0a0147
-			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131362119;
+			// aapt resource value: 0x7f090147
+			public const int Widget_AppCompat_ListView_Menu = 2131296583;
 			
-			// aapt resource value: 0x7f0a0148
-			public const int Widget_AppCompat_RatingBar = 2131362120;
+			// aapt resource value: 0x7f090148
+			public const int Widget_AppCompat_PopupMenu = 2131296584;
 			
-			// aapt resource value: 0x7f0a0149
-			public const int Widget_AppCompat_RatingBar_Indicator = 2131362121;
+			// aapt resource value: 0x7f090149
+			public const int Widget_AppCompat_PopupMenu_Overflow = 2131296585;
 			
-			// aapt resource value: 0x7f0a014a
-			public const int Widget_AppCompat_RatingBar_Small = 2131362122;
+			// aapt resource value: 0x7f09014a
+			public const int Widget_AppCompat_PopupWindow = 2131296586;
 			
-			// aapt resource value: 0x7f0a014b
-			public const int Widget_AppCompat_SearchView = 2131362123;
+			// aapt resource value: 0x7f09014b
+			public const int Widget_AppCompat_ProgressBar = 2131296587;
 			
-			// aapt resource value: 0x7f0a014c
-			public const int Widget_AppCompat_SearchView_ActionBar = 2131362124;
+			// aapt resource value: 0x7f09014c
+			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131296588;
 			
-			// aapt resource value: 0x7f0a014d
-			public const int Widget_AppCompat_SeekBar = 2131362125;
+			// aapt resource value: 0x7f09014d
+			public const int Widget_AppCompat_RatingBar = 2131296589;
 			
-			// aapt resource value: 0x7f0a014e
-			public const int Widget_AppCompat_SeekBar_Discrete = 2131362126;
+			// aapt resource value: 0x7f09014e
+			public const int Widget_AppCompat_RatingBar_Indicator = 2131296590;
 			
-			// aapt resource value: 0x7f0a014f
-			public const int Widget_AppCompat_Spinner = 2131362127;
+			// aapt resource value: 0x7f09014f
+			public const int Widget_AppCompat_RatingBar_Small = 2131296591;
 			
-			// aapt resource value: 0x7f0a0150
-			public const int Widget_AppCompat_Spinner_DropDown = 2131362128;
+			// aapt resource value: 0x7f090150
+			public const int Widget_AppCompat_SearchView = 2131296592;
 			
-			// aapt resource value: 0x7f0a0151
-			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131362129;
+			// aapt resource value: 0x7f090151
+			public const int Widget_AppCompat_SearchView_ActionBar = 2131296593;
 			
-			// aapt resource value: 0x7f0a0152
-			public const int Widget_AppCompat_Spinner_Underlined = 2131362130;
+			// aapt resource value: 0x7f090152
+			public const int Widget_AppCompat_SeekBar = 2131296594;
 			
-			// aapt resource value: 0x7f0a0153
-			public const int Widget_AppCompat_TextView_SpinnerItem = 2131362131;
+			// aapt resource value: 0x7f090153
+			public const int Widget_AppCompat_SeekBar_Discrete = 2131296595;
 			
-			// aapt resource value: 0x7f0a0154
-			public const int Widget_AppCompat_Toolbar = 2131362132;
+			// aapt resource value: 0x7f090154
+			public const int Widget_AppCompat_Spinner = 2131296596;
 			
-			// aapt resource value: 0x7f0a0155
-			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131362133;
+			// aapt resource value: 0x7f090155
+			public const int Widget_AppCompat_Spinner_DropDown = 2131296597;
 			
-			// aapt resource value: 0x7f0a017d
-			public const int Widget_Compat_NotificationActionContainer = 2131362173;
+			// aapt resource value: 0x7f090156
+			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131296598;
 			
-			// aapt resource value: 0x7f0a017e
-			public const int Widget_Compat_NotificationActionText = 2131362174;
+			// aapt resource value: 0x7f090157
+			public const int Widget_AppCompat_Spinner_Underlined = 2131296599;
 			
-			// aapt resource value: 0x7f0a016f
-			public const int Widget_Design_AppBarLayout = 2131362159;
+			// aapt resource value: 0x7f090158
+			public const int Widget_AppCompat_TextView_SpinnerItem = 2131296600;
 			
-			// aapt resource value: 0x7f0a0170
-			public const int Widget_Design_BottomNavigationView = 2131362160;
+			// aapt resource value: 0x7f090159
+			public const int Widget_AppCompat_Toolbar = 2131296601;
 			
-			// aapt resource value: 0x7f0a0171
-			public const int Widget_Design_BottomSheet_Modal = 2131362161;
+			// aapt resource value: 0x7f09015a
+			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131296602;
 			
-			// aapt resource value: 0x7f0a0172
-			public const int Widget_Design_CollapsingToolbar = 2131362162;
+			// aapt resource value: 0x7f090182
+			public const int Widget_Compat_NotificationActionContainer = 2131296642;
 			
-			// aapt resource value: 0x7f0a0173
-			public const int Widget_Design_CoordinatorLayout = 2131362163;
+			// aapt resource value: 0x7f090183
+			public const int Widget_Compat_NotificationActionText = 2131296643;
 			
-			// aapt resource value: 0x7f0a0174
-			public const int Widget_Design_FloatingActionButton = 2131362164;
+			// aapt resource value: 0x7f090174
+			public const int Widget_Design_AppBarLayout = 2131296628;
 			
-			// aapt resource value: 0x7f0a0175
-			public const int Widget_Design_NavigationView = 2131362165;
+			// aapt resource value: 0x7f090175
+			public const int Widget_Design_BottomNavigationView = 2131296629;
 			
-			// aapt resource value: 0x7f0a0176
-			public const int Widget_Design_ScrimInsetsFrameLayout = 2131362166;
+			// aapt resource value: 0x7f090176
+			public const int Widget_Design_BottomSheet_Modal = 2131296630;
 			
-			// aapt resource value: 0x7f0a0177
-			public const int Widget_Design_Snackbar = 2131362167;
+			// aapt resource value: 0x7f090177
+			public const int Widget_Design_CollapsingToolbar = 2131296631;
 			
-			// aapt resource value: 0x7f0a015b
-			public const int Widget_Design_TabLayout = 2131362139;
+			// aapt resource value: 0x7f090178
+			public const int Widget_Design_CoordinatorLayout = 2131296632;
 			
-			// aapt resource value: 0x7f0a0178
-			public const int Widget_Design_TextInputLayout = 2131362168;
+			// aapt resource value: 0x7f090179
+			public const int Widget_Design_FloatingActionButton = 2131296633;
+			
+			// aapt resource value: 0x7f09017a
+			public const int Widget_Design_NavigationView = 2131296634;
+			
+			// aapt resource value: 0x7f09017b
+			public const int Widget_Design_ScrimInsetsFrameLayout = 2131296635;
+			
+			// aapt resource value: 0x7f09017c
+			public const int Widget_Design_Snackbar = 2131296636;
+			
+			// aapt resource value: 0x7f090160
+			public const int Widget_Design_TabLayout = 2131296608;
+			
+			// aapt resource value: 0x7f09017d
+			public const int Widget_Design_TextInputLayout = 2131296637;
+			
+			// aapt resource value: 0x7f090000
+			public const int collectionViewStyle = 2131296256;
 			
 			static Style()
 			{
@@ -7480,22 +9721,27 @@ namespace GhostlyGame
 			}
 		}
 		
+		public partial class Xml
+		{
+			
+			// aapt resource value: 0x7f070000
+			public const int xamarin_essentials_fileprovider_file_paths = 2131165184;
+			
+			static Xml()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Xml()
+			{
+			}
+		}
+		
 		public partial class Styleable
 		{
 			
 			public static int[] ActionBar = new int[] {
-					2130771978,
-					2130771980,
-					2130771981,
-					2130771982,
-					2130771983,
-					2130771984,
-					2130771985,
-					2130771986,
-					2130771987,
-					2130771988,
 					2130771989,
-					2130771990,
 					2130771991,
 					2130771992,
 					2130771993,
@@ -7512,7 +9758,18 @@ namespace GhostlyGame
 					2130772004,
 					2130772005,
 					2130772006,
-					2130772076};
+					2130772007,
+					2130772008,
+					2130772009,
+					2130772010,
+					2130772011,
+					2130772012,
+					2130772013,
+					2130772014,
+					2130772015,
+					2130772016,
+					2130772017,
+					2130772087};
 			
 			// aapt resource value: 10
 			public const int ActionBar_background = 10;
@@ -7616,12 +9873,12 @@ namespace GhostlyGame
 			public static int[] ActionMenuView;
 			
 			public static int[] ActionMode = new int[] {
-					2130771978,
-					2130771984,
-					2130771985,
 					2130771989,
-					2130771991,
-					2130772007};
+					2130771995,
+					2130771996,
+					2130772000,
+					2130772002,
+					2130772018};
 			
 			// aapt resource value: 3
 			public const int ActionMode_background = 3;
@@ -7642,8 +9899,8 @@ namespace GhostlyGame
 			public const int ActionMode_titleTextStyle = 1;
 			
 			public static int[] ActivityChooserView = new int[] {
-					2130772008,
-					2130772009};
+					2130772019,
+					2130772020};
 			
 			// aapt resource value: 1
 			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
@@ -7653,12 +9910,12 @@ namespace GhostlyGame
 			
 			public static int[] AlertDialog = new int[] {
 					16842994,
-					2130772010,
-					2130772011,
-					2130772012,
-					2130772013,
-					2130772014,
-					2130772015};
+					2130772021,
+					2130772022,
+					2130772023,
+					2130772024,
+					2130772025,
+					2130772026};
 			
 			// aapt resource value: 0
 			public const int AlertDialog_android_layout = 0;
@@ -7685,8 +9942,8 @@ namespace GhostlyGame
 					16842964,
 					16843919,
 					16844096,
-					2130772005,
-					2130772223};
+					2130772016,
+					2130772234};
 			
 			// aapt resource value: 0
 			public const int AppBarLayout_android_background = 0;
@@ -7704,8 +9961,8 @@ namespace GhostlyGame
 			public const int AppBarLayout_expanded = 4;
 			
 			public static int[] AppBarLayoutStates = new int[] {
-					2130772224,
-					2130772225};
+					2130772235,
+					2130772236};
 			
 			// aapt resource value: 0
 			public const int AppBarLayoutStates_state_collapsed = 0;
@@ -7714,8 +9971,8 @@ namespace GhostlyGame
 			public const int AppBarLayoutStates_state_collapsible = 1;
 			
 			public static int[] AppBarLayout_Layout = new int[] {
-					2130772226,
-					2130772227};
+					2130772237,
+					2130772238};
 			
 			// aapt resource value: 0
 			public const int AppBarLayout_Layout_layout_scrollFlags = 0;
@@ -7725,9 +9982,9 @@ namespace GhostlyGame
 			
 			public static int[] AppCompatImageView = new int[] {
 					16843033,
-					2130772016,
-					2130772017,
-					2130772018};
+					2130772027,
+					2130772028,
+					2130772029};
 			
 			// aapt resource value: 0
 			public const int AppCompatImageView_android_src = 0;
@@ -7743,9 +10000,9 @@ namespace GhostlyGame
 			
 			public static int[] AppCompatSeekBar = new int[] {
 					16843074,
-					2130772019,
-					2130772020,
-					2130772021};
+					2130772030,
+					2130772031,
+					2130772032};
 			
 			// aapt resource value: 0
 			public const int AppCompatSeekBar_android_thumb = 0;
@@ -7791,13 +10048,13 @@ namespace GhostlyGame
 			
 			public static int[] AppCompatTextView = new int[] {
 					16842804,
-					2130772022,
-					2130772023,
-					2130772024,
-					2130772025,
-					2130772026,
-					2130772027,
-					2130772028};
+					2130772033,
+					2130772034,
+					2130772035,
+					2130772036,
+					2130772037,
+					2130772038,
+					2130772039};
 			
 			// aapt resource value: 0
 			public const int AppCompatTextView_android_textAppearance = 0;
@@ -7826,17 +10083,6 @@ namespace GhostlyGame
 			public static int[] AppCompatTheme = new int[] {
 					16842839,
 					16842926,
-					2130772029,
-					2130772030,
-					2130772031,
-					2130772032,
-					2130772033,
-					2130772034,
-					2130772035,
-					2130772036,
-					2130772037,
-					2130772038,
-					2130772039,
 					2130772040,
 					2130772041,
 					2130772042,
@@ -7942,7 +10188,18 @@ namespace GhostlyGame
 					2130772142,
 					2130772143,
 					2130772144,
-					2130772145};
+					2130772145,
+					2130772146,
+					2130772147,
+					2130772148,
+					2130772149,
+					2130772150,
+					2130772151,
+					2130772152,
+					2130772153,
+					2130772154,
+					2130772155,
+					2130772156};
 			
 			// aapt resource value: 23
 			public const int AppCompatTheme_actionBarDivider = 23;
@@ -8302,11 +10559,11 @@ namespace GhostlyGame
 			public const int AppCompatTheme_windowNoTitle = 3;
 			
 			public static int[] BottomNavigationView = new int[] {
-					2130772005,
-					2130772266,
-					2130772267,
-					2130772268,
-					2130772269};
+					2130772016,
+					2130772277,
+					2130772278,
+					2130772279,
+					2130772280};
 			
 			// aapt resource value: 0
 			public const int BottomNavigationView_elevation = 0;
@@ -8324,9 +10581,9 @@ namespace GhostlyGame
 			public const int BottomNavigationView_menu = 1;
 			
 			public static int[] BottomSheetBehavior_Layout = new int[] {
-					2130772228,
-					2130772229,
-					2130772230};
+					2130772239,
+					2130772240,
+					2130772241};
 			
 			// aapt resource value: 1
 			public const int BottomSheetBehavior_Layout_behavior_hideable = 1;
@@ -8338,28 +10595,82 @@ namespace GhostlyGame
 			public const int BottomSheetBehavior_Layout_behavior_skipCollapsed = 2;
 			
 			public static int[] ButtonBarLayout = new int[] {
-					2130772146};
+					2130772157};
 			
 			// aapt resource value: 0
 			public const int ButtonBarLayout_allowStacking = 0;
 			
-			public static int[] CollapsingToolbarLayout = new int[] {
+			public static int[] CardView = new int[] {
+					16843071,
+					16843072,
+					2130771977,
+					2130771978,
+					2130771979,
 					2130771980,
-					2130772231,
-					2130772232,
-					2130772233,
-					2130772234,
-					2130772235,
-					2130772236,
-					2130772237,
-					2130772238,
-					2130772239,
-					2130772240,
-					2130772241,
+					2130771981,
+					2130771982,
+					2130771983,
+					2130771984,
+					2130771985,
+					2130771986,
+					2130771987};
+			
+			// aapt resource value: 1
+			public const int CardView_android_minHeight = 1;
+			
+			// aapt resource value: 0
+			public const int CardView_android_minWidth = 0;
+			
+			// aapt resource value: 2
+			public const int CardView_cardBackgroundColor = 2;
+			
+			// aapt resource value: 3
+			public const int CardView_cardCornerRadius = 3;
+			
+			// aapt resource value: 4
+			public const int CardView_cardElevation = 4;
+			
+			// aapt resource value: 5
+			public const int CardView_cardMaxElevation = 5;
+			
+			// aapt resource value: 7
+			public const int CardView_cardPreventCornerOverlap = 7;
+			
+			// aapt resource value: 6
+			public const int CardView_cardUseCompatPadding = 6;
+			
+			// aapt resource value: 8
+			public const int CardView_contentPadding = 8;
+			
+			// aapt resource value: 12
+			public const int CardView_contentPaddingBottom = 12;
+			
+			// aapt resource value: 9
+			public const int CardView_contentPaddingLeft = 9;
+			
+			// aapt resource value: 10
+			public const int CardView_contentPaddingRight = 10;
+			
+			// aapt resource value: 11
+			public const int CardView_contentPaddingTop = 11;
+			
+			public static int[] CollapsingToolbarLayout = new int[] {
+					2130771991,
 					2130772242,
 					2130772243,
 					2130772244,
-					2130772245};
+					2130772245,
+					2130772246,
+					2130772247,
+					2130772248,
+					2130772249,
+					2130772250,
+					2130772251,
+					2130772252,
+					2130772253,
+					2130772254,
+					2130772255,
+					2130772256};
 			
 			// aapt resource value: 13
 			public const int CollapsingToolbarLayout_collapsedTitleGravity = 13;
@@ -8410,8 +10721,8 @@ namespace GhostlyGame
 			public const int CollapsingToolbarLayout_toolbarId = 10;
 			
 			public static int[] CollapsingToolbarLayout_Layout = new int[] {
-					2130772246,
-					2130772247};
+					2130772257,
+					2130772258};
 			
 			// aapt resource value: 0
 			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 0;
@@ -8422,7 +10733,7 @@ namespace GhostlyGame
 			public static int[] ColorStateListItem = new int[] {
 					16843173,
 					16843551,
-					2130772147};
+					2130772158};
 			
 			// aapt resource value: 2
 			public const int ColorStateListItem_alpha = 2;
@@ -8435,8 +10746,8 @@ namespace GhostlyGame
 			
 			public static int[] CompoundButton = new int[] {
 					16843015,
-					2130772148,
-					2130772149};
+					2130772159,
+					2130772160};
 			
 			// aapt resource value: 0
 			public const int CompoundButton_android_button = 0;
@@ -8448,8 +10759,8 @@ namespace GhostlyGame
 			public const int CompoundButton_buttonTintMode = 2;
 			
 			public static int[] CoordinatorLayout = new int[] {
-					2130772248,
-					2130772249};
+					2130772259,
+					2130772260};
 			
 			// aapt resource value: 0
 			public const int CoordinatorLayout_keylines = 0;
@@ -8459,12 +10770,12 @@ namespace GhostlyGame
 			
 			public static int[] CoordinatorLayout_Layout = new int[] {
 					16842931,
-					2130772250,
-					2130772251,
-					2130772252,
-					2130772253,
-					2130772254,
-					2130772255};
+					2130772261,
+					2130772262,
+					2130772263,
+					2130772264,
+					2130772265,
+					2130772266};
 			
 			// aapt resource value: 0
 			public const int CoordinatorLayout_Layout_android_layout_gravity = 0;
@@ -8488,9 +10799,9 @@ namespace GhostlyGame
 			public const int CoordinatorLayout_Layout_layout_keyline = 3;
 			
 			public static int[] DesignTheme = new int[] {
-					2130772256,
-					2130772257,
-					2130772258};
+					2130772267,
+					2130772268,
+					2130772269};
 			
 			// aapt resource value: 0
 			public const int DesignTheme_bottomSheetDialogTheme = 0;
@@ -8502,14 +10813,14 @@ namespace GhostlyGame
 			public const int DesignTheme_textColorError = 2;
 			
 			public static int[] DrawerArrowToggle = new int[] {
-					2130772150,
-					2130772151,
-					2130772152,
-					2130772153,
-					2130772154,
-					2130772155,
-					2130772156,
-					2130772157};
+					2130772161,
+					2130772162,
+					2130772163,
+					2130772164,
+					2130772165,
+					2130772166,
+					2130772167,
+					2130772168};
 			
 			// aapt resource value: 4
 			public const int DrawerArrowToggle_arrowHeadLength = 4;
@@ -8536,14 +10847,14 @@ namespace GhostlyGame
 			public const int DrawerArrowToggle_thickness = 7;
 			
 			public static int[] FloatingActionButton = new int[] {
-					2130772005,
-					2130772221,
-					2130772222,
-					2130772259,
-					2130772260,
-					2130772261,
-					2130772262,
-					2130772263};
+					2130772016,
+					2130772232,
+					2130772233,
+					2130772270,
+					2130772271,
+					2130772272,
+					2130772273,
+					2130772274};
 			
 			// aapt resource value: 1
 			public const int FloatingActionButton_backgroundTint = 1;
@@ -8570,18 +10881,18 @@ namespace GhostlyGame
 			public const int FloatingActionButton_useCompatPadding = 7;
 			
 			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
-					2130772264};
+					2130772275};
 			
 			// aapt resource value: 0
 			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 0;
 			
 			public static int[] FontFamily = new int[] {
-					2130772305,
-					2130772306,
-					2130772307,
-					2130772308,
-					2130772309,
-					2130772310};
+					2130772316,
+					2130772317,
+					2130772318,
+					2130772319,
+					2130772320,
+					2130772321};
 			
 			// aapt resource value: 0
 			public const int FontFamily_fontProviderAuthority = 0;
@@ -8605,9 +10916,9 @@ namespace GhostlyGame
 					16844082,
 					16844083,
 					16844095,
-					2130772311,
-					2130772312,
-					2130772313};
+					2130772322,
+					2130772323,
+					2130772324};
 			
 			// aapt resource value: 0
 			public const int FontFamilyFont_android_font = 0;
@@ -8630,7 +10941,7 @@ namespace GhostlyGame
 			public static int[] ForegroundLinearLayout = new int[] {
 					16843017,
 					16843264,
-					2130772265};
+					2130772276};
 			
 			// aapt resource value: 0
 			public const int ForegroundLinearLayout_android_foreground = 0;
@@ -8647,10 +10958,10 @@ namespace GhostlyGame
 					16843046,
 					16843047,
 					16843048,
-					2130771988,
-					2130772158,
-					2130772159,
-					2130772160};
+					2130771999,
+					2130772169,
+					2130772170,
+					2130772171};
 			
 			// aapt resource value: 2
 			public const int LinearLayoutCompat_android_baselineAligned = 2;
@@ -8747,16 +11058,16 @@ namespace GhostlyGame
 					16843236,
 					16843237,
 					16843375,
-					2130772161,
-					2130772162,
-					2130772163,
-					2130772164,
-					2130772165,
-					2130772166,
-					2130772167,
-					2130772168,
-					2130772169,
-					2130772170};
+					2130772172,
+					2130772173,
+					2130772174,
+					2130772175,
+					2130772176,
+					2130772177,
+					2130772178,
+					2130772179,
+					2130772180,
+					2130772181};
 			
 			// aapt resource value: 16
 			public const int MenuItem_actionLayout = 16;
@@ -8835,8 +11146,8 @@ namespace GhostlyGame
 					16843055,
 					16843056,
 					16843057,
-					2130772171,
-					2130772172};
+					2130772182,
+					2130772183};
 			
 			// aapt resource value: 4
 			public const int MenuView_android_headerBackground = 4;
@@ -8869,13 +11180,13 @@ namespace GhostlyGame
 					16842964,
 					16842973,
 					16843039,
-					2130772005,
-					2130772266,
-					2130772267,
-					2130772268,
-					2130772269,
-					2130772270,
-					2130772271};
+					2130772016,
+					2130772277,
+					2130772278,
+					2130772279,
+					2130772280,
+					2130772281,
+					2130772282};
 			
 			// aapt resource value: 0
 			public const int NavigationView_android_background = 0;
@@ -8910,7 +11221,7 @@ namespace GhostlyGame
 			public static int[] PopupWindow = new int[] {
 					16843126,
 					16843465,
-					2130772173};
+					2130772184};
 			
 			// aapt resource value: 1
 			public const int PopupWindow_android_popupAnimationStyle = 1;
@@ -8922,14 +11233,14 @@ namespace GhostlyGame
 			public const int PopupWindow_overlapAnchor = 2;
 			
 			public static int[] PopupWindowBackgroundState = new int[] {
-					2130772174};
+					2130772185};
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
 			
 			public static int[] RecycleListView = new int[] {
-					2130772175,
-					2130772176};
+					2130772186,
+					2130772187};
 			
 			// aapt resource value: 0
 			public const int RecycleListView_paddingBottomNoButtons = 0;
@@ -8984,13 +11295,13 @@ namespace GhostlyGame
 			public const int RecyclerView_stackFromEnd = 5;
 			
 			public static int[] ScrimInsetsFrameLayout = new int[] {
-					2130772272};
+					2130772283};
 			
 			// aapt resource value: 0
 			public const int ScrimInsetsFrameLayout_insetForeground = 0;
 			
 			public static int[] ScrollingViewBehavior_Layout = new int[] {
-					2130772273};
+					2130772284};
 			
 			// aapt resource value: 0
 			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 0;
@@ -9000,19 +11311,19 @@ namespace GhostlyGame
 					16843039,
 					16843296,
 					16843364,
-					2130772177,
-					2130772178,
-					2130772179,
-					2130772180,
-					2130772181,
-					2130772182,
-					2130772183,
-					2130772184,
-					2130772185,
-					2130772186,
-					2130772187,
 					2130772188,
-					2130772189};
+					2130772189,
+					2130772190,
+					2130772191,
+					2130772192,
+					2130772193,
+					2130772194,
+					2130772195,
+					2130772196,
+					2130772197,
+					2130772198,
+					2130772199,
+					2130772200};
 			
 			// aapt resource value: 0
 			public const int SearchView_android_focusable = 0;
@@ -9067,8 +11378,8 @@ namespace GhostlyGame
 			
 			public static int[] SnackbarLayout = new int[] {
 					16843039,
-					2130772005,
-					2130772274};
+					2130772016,
+					2130772285};
 			
 			// aapt resource value: 0
 			public const int SnackbarLayout_android_maxWidth = 0;
@@ -9084,7 +11395,7 @@ namespace GhostlyGame
 					16843126,
 					16843131,
 					16843362,
-					2130772006};
+					2130772017};
 			
 			// aapt resource value: 3
 			public const int Spinner_android_dropDownWidth = 3;
@@ -9105,17 +11416,17 @@ namespace GhostlyGame
 					16843044,
 					16843045,
 					16843074,
-					2130772190,
-					2130772191,
-					2130772192,
-					2130772193,
-					2130772194,
-					2130772195,
-					2130772196,
-					2130772197,
-					2130772198,
-					2130772199,
-					2130772200};
+					2130772201,
+					2130772202,
+					2130772203,
+					2130772204,
+					2130772205,
+					2130772206,
+					2130772207,
+					2130772208,
+					2130772209,
+					2130772210,
+					2130772211};
 			
 			// aapt resource value: 1
 			public const int SwitchCompat_android_textOff = 1;
@@ -9174,22 +11485,22 @@ namespace GhostlyGame
 			public const int TabItem_android_text = 2;
 			
 			public static int[] TabLayout = new int[] {
-					2130772275,
-					2130772276,
-					2130772277,
-					2130772278,
-					2130772279,
-					2130772280,
-					2130772281,
-					2130772282,
-					2130772283,
-					2130772284,
-					2130772285,
 					2130772286,
 					2130772287,
 					2130772288,
 					2130772289,
-					2130772290};
+					2130772290,
+					2130772291,
+					2130772292,
+					2130772293,
+					2130772294,
+					2130772295,
+					2130772296,
+					2130772297,
+					2130772298,
+					2130772299,
+					2130772300,
+					2130772301};
 			
 			// aapt resource value: 3
 			public const int TabLayout_tabBackground = 3;
@@ -9251,8 +11562,8 @@ namespace GhostlyGame
 					16843107,
 					16843108,
 					16843692,
-					2130772022,
-					2130772028};
+					2130772033,
+					2130772039};
 			
 			// aapt resource value: 10
 			public const int TextAppearance_android_fontFamily = 10;
@@ -9296,20 +11607,20 @@ namespace GhostlyGame
 			public static int[] TextInputLayout = new int[] {
 					16842906,
 					16843088,
-					2130772291,
-					2130772292,
-					2130772293,
-					2130772294,
-					2130772295,
-					2130772296,
-					2130772297,
-					2130772298,
-					2130772299,
-					2130772300,
-					2130772301,
 					2130772302,
 					2130772303,
-					2130772304};
+					2130772304,
+					2130772305,
+					2130772306,
+					2130772307,
+					2130772308,
+					2130772309,
+					2130772310,
+					2130772311,
+					2130772312,
+					2130772313,
+					2130772314,
+					2130772315};
 			
 			// aapt resource value: 1
 			public const int TextInputLayout_android_hint = 1;
@@ -9362,33 +11673,33 @@ namespace GhostlyGame
 			public static int[] Toolbar = new int[] {
 					16842927,
 					16843072,
-					2130771980,
-					2130771983,
-					2130771987,
-					2130771999,
-					2130772000,
-					2130772001,
-					2130772002,
-					2130772003,
-					2130772004,
-					2130772006,
-					2130772201,
-					2130772202,
-					2130772203,
-					2130772204,
-					2130772205,
-					2130772206,
-					2130772207,
-					2130772208,
-					2130772209,
-					2130772210,
-					2130772211,
+					2130771991,
+					2130771994,
+					2130771998,
+					2130772010,
+					2130772011,
+					2130772012,
+					2130772013,
+					2130772014,
+					2130772015,
+					2130772017,
 					2130772212,
 					2130772213,
 					2130772214,
 					2130772215,
 					2130772216,
-					2130772217};
+					2130772217,
+					2130772218,
+					2130772219,
+					2130772220,
+					2130772221,
+					2130772222,
+					2130772223,
+					2130772224,
+					2130772225,
+					2130772226,
+					2130772227,
+					2130772228};
 			
 			// aapt resource value: 0
 			public const int Toolbar_android_gravity = 0;
@@ -9480,9 +11791,9 @@ namespace GhostlyGame
 			public static int[] View = new int[] {
 					16842752,
 					16842970,
-					2130772218,
-					2130772219,
-					2130772220};
+					2130772229,
+					2130772230,
+					2130772231};
 			
 			// aapt resource value: 1
 			public const int View_android_focusable = 1;
@@ -9501,8 +11812,8 @@ namespace GhostlyGame
 			
 			public static int[] ViewBackgroundHelper = new int[] {
 					16842964,
-					2130772221,
-					2130772222};
+					2130772232,
+					2130772233};
 			
 			// aapt resource value: 0
 			public const int ViewBackgroundHelper_android_background = 0;

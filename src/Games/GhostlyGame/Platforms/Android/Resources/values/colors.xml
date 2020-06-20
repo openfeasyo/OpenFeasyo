@@ -3,4 +3,6 @@
   <color name="colorPrimary">#88888888</color>
   <color name="colorPrimaryDark">#000000</color>
   <color name="colorAccent">#ffffff</color>
+  <color name="ListViewSelected">#0dfaee</color>
+  <color name="ListViewHighlighted">#0bcec4</color>
 </resources>
