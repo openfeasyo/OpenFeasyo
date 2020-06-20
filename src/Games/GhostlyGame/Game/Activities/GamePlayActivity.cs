@@ -194,7 +194,7 @@ namespace GhostlyLib.Activities
 
         private void _screen_GameFinished(object sender, GameFinishedEventArgs e)
         {
-            GhostlyGame.Instance.OnGameFinished(e.Score, e.Reason);
+            GhostlyGame.Instance.OnGameFinished(e.Score, e.Level, e.Reason);
 
             if (e.Reason == GameFinishedEventArgs.EndReason.GameFailed)
             {

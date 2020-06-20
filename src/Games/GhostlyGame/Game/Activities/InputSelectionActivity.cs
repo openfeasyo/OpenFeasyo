@@ -83,6 +83,8 @@ namespace GhostlyLib.Activities
                         Manifest.Permission.AccessCoarseLocation,
                         Manifest.Permission.AccessFineLocation,
                         Manifest.Permission.BluetoothAdmin}, 3, granted => { _permissionsGranted = granted; });
+#else
+            _permissionsGranted = true;
 #endif
         }
 

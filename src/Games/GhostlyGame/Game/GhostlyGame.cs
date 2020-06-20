@@ -263,12 +263,12 @@ namespace GhostlyLib
 
         public event EventHandler<GameFinishedEventArgs> GameFinished;
 
-        internal void OnGameFinished(int score, GameFinishedEventArgs.EndReason reason)
+        internal void OnGameFinished(int score, int level, GameFinishedEventArgs.EndReason reason)
         {
             Console.WriteLine("Game Finished - Score: " + score);
             if (GameFinished != null)
             {
-                GameFinished(this, new GameFinishedEventArgs(_definition.Name, score, reason));
+                GameFinished(this, new GameFinishedEventArgs(_definition.Name, score, level, reason));
             }
             string conf = ConfigurationLoader.GetConfigurationXml(
                 OpenFeasyo.Platform.Configuration.Configuration.CurrentConfigutration);

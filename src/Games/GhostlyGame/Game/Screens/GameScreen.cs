@@ -148,7 +148,7 @@ namespace GhostlyLib.Screens
             GameBackground.ContinuousLayer = this._level.Background;
             GhostlyActionHandlers.CurrentLevel = this._level;
 
-            Position = new Vector3((float)_level.Character.X, (float)(Screen.Height-_level.Character.Y),0);
+            Position = Vector3.Zero;
             GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position);
         }
         #endregion Loaders
@@ -160,8 +160,8 @@ namespace GhostlyLib.Screens
         
         public void Update(GameTime gameTime)
         {
-            Position = new Vector3(Position.X - GameBackground.HorizontalSpeed, (float)(Screen.Height-_level.Character.Y), GameBackground.HorizontalSpeed);
-            GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position);
+            Position = new Vector3((float)(Position.X - GameBackground.HorizontalSpeed), (float)(Screen.Height-_level.Character.Y), GameBackground.HorizontalSpeed);
+            GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position + new Vector3((float)(GameCharacter.X + GameCharacter.Width/2), 0,0));
             KeyboardUpdate();
             
             if (_gameState.Equals(GameState.Running))
@@ -223,25 +223,31 @@ namespace GhostlyLib.Screens
 
             DrawOnetimeAnimations(spriteBatch);
 
-            spriteBatch.DrawString(_font[2], "Level: " + this._currentLevel.ToString(), new Vector2(10, 20), GhostlyGame.MENU_FONT_COLOR);
+            float position = 15;
+
+            spriteBatch.DrawString(_font[2], "Level: " + this._currentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
+
+            position = _font[2].MeasureString("Level: " + this._currentLevel.ToString()).X + 100;
 
             switch (this.GameCharacter.CurrentHealth)
             {
                 case 3:
-                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartFull, new Rectangle(600, 20, 53, 45), Color.White);
+                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartFull, new Rectangle((int)position, 20, 53, 45), Color.White);
                     break;
                 case 2:
-                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartHalf, new Rectangle(600, 20, 53, 45), Color.White);
+                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartHalf, new Rectangle((int)position, 20, 53, 45), Color.White);
                     break;
                 case 1:
-                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartEmpty, new Rectangle(600, 20, 53, 45), Color.White);
+                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartEmpty, new Rectangle((int)position, 20, 53, 45), Color.White);
                     break;
                 default:
-                    spriteBatch.Draw(ImagesAndAnimations.Instance.InvisibleTile, new Rectangle(600, 20, 53, 45), Color.White);
+                    spriteBatch.Draw(ImagesAndAnimations.Instance.InvisibleTile, new Rectangle((int)position, 20, 53, 45), Color.White);
                     break;
             }
 
-            spriteBatch.DrawString(_font[2], "Score: " + GameCharacter.Score.ToString(), new Vector2(1050, 20), GhostlyGame.MENU_FONT_COLOR);
+            position += 153;
+
+            spriteBatch.DrawString(_font[2], "Score: " + GameCharacter.Score.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
         }
 
         private void DrawOnetimeAnimations(SpriteBatch spriteBatch)
@@ -294,7 +300,7 @@ namespace GhostlyLib.Screens
         {
             this.GameCharacter.Stop();
             this._gameState = GameState.GameOver;
-            OnGameFinished(GameCharacter.Score, GameFinishedEventArgs.EndReason.GameFailed);
+            OnGameFinished(GameCharacter.Score, _currentLevel, GameFinishedEventArgs.EndReason.GameFailed);
         }
 
         public void LevelDone()
@@ -302,7 +308,7 @@ namespace GhostlyLib.Screens
             MusicPlayer.PlayEffect("win");
             this.GameCharacter.Stop();
             this._gameState = GameState.LevelDone;
-            OnGameFinished(GameCharacter.Score, GameFinishedEventArgs.EndReason.GoalAccomplished);
+            OnGameFinished(GameCharacter.Score, _currentLevel, GameFinishedEventArgs.EndReason.GoalAccomplished);
         }
 
         public event EventHandler<GameStartedEventArgs> GameStarted;
@@ -316,12 +322,12 @@ namespace GhostlyLib.Screens
 
         public event EventHandler<GameFinishedEventArgs> GameFinished;
 
-        public void OnGameFinished(int score, GameFinishedEventArgs.EndReason reason)
+        public void OnGameFinished(int score, int level, GameFinishedEventArgs.EndReason reason)
         {
             Console.WriteLine("Game Finished - Score: " + score);
             if (GameFinished != null)
             {
-                GameFinished(this, new GameFinishedEventArgs("", score, reason));
+                GameFinished(this, new GameFinishedEventArgs("", score, level, reason));
             }
         }
 
