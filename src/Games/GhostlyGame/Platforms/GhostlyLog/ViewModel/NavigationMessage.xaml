@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GhostlyLog.ViewModel.NavigationMessage">
+  <ContentView.Content>
+      <StackLayout>
+          <Label Text="Use taouch to navigate in the report!" />
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

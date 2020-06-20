@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GhostlyLog.DetailedReportPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Export to PDF"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="Export_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+            <!-- WebView needs to be given height and width request within layouts to render. -->
+            <WebView x:Name="webView" WidthRequest="2000" HeightRequest="2000" />
+        </StackLayout>
+</ContentPage>

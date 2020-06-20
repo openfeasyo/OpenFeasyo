@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;ANDROID</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;ANDROID</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\report_template.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\..\OpenFeasyo.Platform\Source\C3d\C3dHeader.cs" Link="C3d4Sharp\C3dHeader.cs" />
+    <Compile Include="..\..\..\..\OpenFeasyo.Platform\Source\C3d\C3dReader.cs" Link="C3d4Sharp\C3dReader.cs" />
+    <Compile Include="..\..\..\..\OpenFeasyo.Platform\Source\C3d\C3dWriter.cs" Link="C3d4Sharp\C3dWriter.cs" />
+    <Compile Include="..\..\..\..\OpenFeasyo.Platform\Source\C3d\ParameterModel.cs" Link="C3d4Sharp\ParameterModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map1.txt" Link="Resources\Ghostly\map1.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map10.txt" Link="Resources\Ghostly\map10.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map11.txt" Link="Resources\Ghostly\map11.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map12.txt" Link="Resources\Ghostly\map12.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map13.txt" Link="Resources\Ghostly\map13.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map14.txt" Link="Resources\Ghostly\map14.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map15.txt" Link="Resources\Ghostly\map15.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map16.txt" Link="Resources\Ghostly\map16.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map17.txt" Link="Resources\Ghostly\map17.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map18.txt" Link="Resources\Ghostly\map18.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map19.txt" Link="Resources\Ghostly\map19.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map2.txt" Link="Resources\Ghostly\map2.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map20.txt" Link="Resources\Ghostly\map20.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map21.txt" Link="Resources\Ghostly\map21.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map22.txt" Link="Resources\Ghostly\map22.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map23.txt" Link="Resources\Ghostly\map23.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map24.txt" Link="Resources\Ghostly\map24.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map25.txt" Link="Resources\Ghostly\map25.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map26.txt" Link="Resources\Ghostly\map26.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map27.txt" Link="Resources\Ghostly\map27.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map28.txt" Link="Resources\Ghostly\map28.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map29.txt" Link="Resources\Ghostly\map29.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map3.txt" Link="Resources\Ghostly\map3.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map30.txt" Link="Resources\Ghostly\map30.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map4.txt" Link="Resources\Ghostly\map4.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map5.txt" Link="Resources\Ghostly\map5.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map6.txt" Link="Resources\Ghostly\map6.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map7.txt" Link="Resources\Ghostly\map7.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map8.txt" Link="Resources\Ghostly\map8.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\earth\map9.txt" Link="Resources\Ghostly\map9.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\report_template.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="BrowserPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="C3d4Sharp\" />
+    <Folder Include="Resources\Ghostly\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.991211" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="DetailedReportPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ViewModel\NavigationMessage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
