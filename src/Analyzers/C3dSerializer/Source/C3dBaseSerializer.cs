@@ -76,14 +76,10 @@ namespace FeasyMotion.C3dSerializer
         }
 
         internal void Create(Dictionary<string, string> parameters, IGame game, string[] pointNames, float expectedFrameRate, string[] analogChannelNames = null, Int16 analogSamplesPerFrame = 0, bool eventsEnabled = false) {
-            game.GameStarted += (o, args) =>
-            {
-                _level = (Int16)args.Level;
-            };
-
             game.GameFinished += (o, args) =>
             {
                 _score = (Int16)args.Score;
+                _level = (Int16)args.Level;
             };
             string version = SeriousGames.SoftwareVersion;
 
