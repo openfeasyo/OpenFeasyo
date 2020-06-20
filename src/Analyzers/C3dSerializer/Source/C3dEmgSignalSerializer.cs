@@ -35,6 +35,8 @@ namespace FeasyMotion.C3dSerializer
             string[] analogLabels = new string[] {
                 "CH1 Raw      ",
                 "CH2 Raw      ",
+                "CH1 activated",
+                "CH2 activated",
             };
             analogLabels = analogLabels.Union<string>(game.GameStream.Keys).ToArray<string>();
             _analogData = new float[analogLabels.Length];
@@ -60,6 +62,7 @@ namespace FeasyMotion.C3dSerializer
         {
             if (_writer == null)
                 return;
+           
             
             writeGameObjects(game, 0);
 
@@ -82,6 +85,14 @@ namespace FeasyMotion.C3dSerializer
                 if (emgSignal.Length > 1)
                 {
                     _analogData[pos++] = Convert.ToSingle(emgSignal[1].RawSample[i]);
+                }
+                if (emgSignal.Length > 0)
+                {
+                    _analogData[pos++] = Convert.ToSingle(emgSignal[0].OnOff[i]);
+                }
+                if (emgSignal.Length > 1)
+                {
+                    _analogData[pos++] = Convert.ToSingle(emgSignal[1].OnOff[i]);
                 }
 
                 foreach (string s in game.GameStream.Keys)
