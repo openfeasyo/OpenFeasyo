@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C3dSerializer", "..\..\Anal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Touchscreen", "..\..\Drivers\Touchscreen\Platforms\Android\Touchscreen.csproj", "{4E70F426-3ED9-4EC2-B0AC-5404AB5BBB19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostlyLog", "Platforms\GhostlyLog\GhostlyLog.csproj", "{5FFF88EA-9E66-425B-B184-A7011B863486}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4E70F426-3ED9-4EC2-B0AC-5404AB5BBB19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E70F426-3ED9-4EC2-B0AC-5404AB5BBB19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E70F426-3ED9-4EC2-B0AC-5404AB5BBB19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FFF88EA-9E66-425B-B184-A7011B863486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFF88EA-9E66-425B-B184-A7011B863486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFF88EA-9E66-425B-B184-A7011B863486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFF88EA-9E66-425B-B184-A7011B863486}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -139,13 +139,13 @@ namespace TrignoEmg
         {
             var assembly = Assembly.GetCallingAssembly();
             string key;
-            using (Stream stream = assembly.GetManifestResourceStream("PublicKey.lic"))
+            using (Stream stream = assembly.GetManifestResourceStream("TrignoEmg.PublicKey.lic"))
             {
                 StreamReader sr = new StreamReader(stream);
                 key = sr.ReadLine();
             }
             string license;
-            using (Stream stream = assembly.GetManifestResourceStream("OpenFeasyo.lic"))
+            using (Stream stream = assembly.GetManifestResourceStream("TrignoEmg.OpenFeasyo.lic"))
             {
                 StreamReader sr = new StreamReader(stream);
                 license = sr.ReadToEnd();

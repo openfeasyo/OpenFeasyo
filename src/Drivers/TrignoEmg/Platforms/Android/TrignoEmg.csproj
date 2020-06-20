@@ -67,6 +67,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\..\Source\OpenFeasyo.lic">
+      <Link>OpenFeasyo.lic</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Source\PublicKey.lic">
+      <Link>PublicKey.lic</Link>
+    </EmbeddedResource>
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -75,13 +75,17 @@ namespace OpenFeasyo.Platform.Controls
 
         public int Score { get { return _score; } }
 
+        private int _level;
+        public int Level { get { return _level; } }
+
         private EndReason _reason;
         public EndReason Reason { get { return _reason; } }
 
-        public GameFinishedEventArgs(string name, int score, EndReason reason) {
+        public GameFinishedEventArgs(string name, int score, int level, EndReason reason) {
             _name = name;
             _score = score;
             _reason = reason;
+            _level = level;
         }
     }
 
