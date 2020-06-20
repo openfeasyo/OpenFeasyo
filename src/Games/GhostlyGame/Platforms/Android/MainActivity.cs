@@ -90,7 +90,7 @@ namespace GhostlyLib
             }
             if (neededPermissions.Count > 0)
             {
-                RequestPermissions(neededPermissions.ToArray(), 1);
+                RequestPermissions(neededPermissions.ToArray(), requestCode);
                 permissionRequests.Add(requestCode, action);
             }
             else
