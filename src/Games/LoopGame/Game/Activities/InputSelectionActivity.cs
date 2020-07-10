@@ -32,6 +32,8 @@ namespace LoopLib.Activities
 
         public InputSelectionActivity(UIEngine engine) : base(engine)
         {
+            float cell = engine.Screen.ScreenHeight / 16;
+
             Image backgroundImage = new Image(_engine.Content.LoadTexture("Textures/menu_background"));
             backgroundImage.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
             backgroundImage.Position = Vector2.Zero;
@@ -50,21 +52,14 @@ namespace LoopLib.Activities
 
             TextButton emgButton = new TextButton("EMG", engine.Content.LoadFont(LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             emgButton.Clicked += EmgButton_Clicked;
-                //(object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectSensorActivity(_engine)); };
             emgButton.CursorEntered += (object sender, EventArgs e) => { engine.MusicPlayer.PlayEffect("hover"); };
             emgButton.Position = engine.Screen.ScreenMiddle - emgButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
 
-            Image vubetrologoImage = new Image(_engine.Content.LoadTexture("Textures/vubetrologo"));
-            vubetrologoImage.Size = vubetrologoImage.Size/2;
-            vubetrologoImage.Position = engine.Screen.ScreenMiddle + new Vector2(-vubetrologoImage.Size.X, engine.Screen.ScreenMiddle.Y * 2 / 3 - vubetrologoImage.Size.Y / 2);
-
-            Image delucalogoImage = new Image(_engine.Content.LoadTexture("Textures/delucafoundationlogo"));
-            delucalogoImage.Size = delucalogoImage.Size / 2;
-            delucalogoImage.Position = engine.Screen.ScreenMiddle + new Vector2(10, engine.Screen.ScreenMiddle.Y * 2 / 3 - delucalogoImage.Size.Y / 2); 
-
+            Image vubetrologoImage = new Image(_engine.Content.LoadTexture("textures/vubetrologo"));
+            vubetrologoImage.Size = new Vector2((vubetrologoImage.Size.X / vubetrologoImage.Size.Y) * cell * 2, cell * 2);
+            vubetrologoImage.Position = engine.Screen.ScreenMiddle + new Vector2(-vubetrologoImage.Size.X / 2, engine.Screen.ScreenMiddle.Y * 2 / 3 - vubetrologoImage.Size.Y / 2);
 
             Components.Add(vubetrologoImage);
-            Components.Add(delucalogoImage);
             Components.Add(questionLabel);
             Components.Add(orLabel);
             Components.Add(touchButton);

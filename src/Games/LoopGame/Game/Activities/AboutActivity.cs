@@ -65,13 +65,10 @@ namespace LoopLib.Activities
             backButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 15) - backButton.Size / 2;
 
             Image vubetrologoImage = new Image(_engine.Content.LoadTexture("Textures/vubetrologo"));
-            vubetrologoImage.Size = vubetrologoImage.Size / 2;
-            vubetrologoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 18) - new Vector2(vubetrologoImage.Size.X, vubetrologoImage.Size.Y / 2);
+            vubetrologoImage.Size = new Vector2((vubetrologoImage.Size.X / vubetrologoImage.Size.Y) * cell * 2, cell * 2);
+            vubetrologoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 18) - new Vector2(vubetrologoImage.Size.X / 2, vubetrologoImage.Size.Y / 2);
 
-            Image delucalogoImage = new Image(_engine.Content.LoadTexture("Textures/delucafoundationlogo"));
-            delucalogoImage.Size = delucalogoImage.Size / 2;
-            delucalogoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 18) - new Vector2(10, delucalogoImage.Size.Y / 2);
-
+            
 
             
             Components.Add(delucaLabel);
@@ -87,8 +84,6 @@ namespace LoopLib.Activities
             Components.Add(authors3Label);
 
             Components.Add(vubetrologoImage);
-            Components.Add(delucalogoImage);
-
             Components.Add(backButton);
 
         }

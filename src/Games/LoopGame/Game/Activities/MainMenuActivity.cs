@@ -34,7 +34,16 @@ namespace LoopLib.Activities
             
             TextButton startGameButton = new TextButton("Start Game", engine.Content.LoadFont(LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             //TextButton startGameButton = new TextButton("\uf04b", engine.Content.LoadFont("Fonts/Awesome48"), engine.Device);
-            startGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new GamePlayActivity(engine,1,"")); };
+            startGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new GamePlayActivity(engine,1,
+                "<?xml version=\"1.0\" encoding=\"utf - 8\"?><Configuration>" +
+                            "<devices><device name=\"TrignoEmg\">" +
+                                "<analyzers><analyzer file=\"C3DSerializer.dll\" /></analyzers>" +
+                            "</device></devices>" +
+                            "<bindings>" +
+                                "<binding point=\"Left\" zeroAngle=\"0\" sensitivity=\"1\" device=\"TrignoEmg\"><emgSensor device=\"TrignoEmg\" channel=\"0\"></emgSensor></binding>" +
+                                "<binding point=\"Right\" zeroAngle=\"0\" sensitivity=\"1\" device=\"TrignoEmg\"><emgSensor device=\"TrignoEmg\" channel=\"1\"></emgSensor></binding>" +
+                            "</bindings></Configuration>"
+                )); };
             startGameButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - startGameButton.Size/2;
 
             TextButton calibrateButton = new TextButton("Calibrate", engine.Content.LoadFont(LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE), engine.Device);
@@ -54,21 +63,15 @@ namespace LoopLib.Activities
             exitButton.Size = startGameButton.Size;
             exitButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 6) - exitButton.Size / 2;
 
-            Image vubetrologoImage = new Image(_engine.Content.LoadTexture("Textures/vubetrologo"));
-            vubetrologoImage.Size = vubetrologoImage.Size / 2;
-            vubetrologoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - new Vector2(vubetrologoImage.Size.X, vubetrologoImage.Size.Y / 2);
-
-            Image delucalogoImage = new Image(_engine.Content.LoadTexture("Textures/delucafoundationlogo"));
-            delucalogoImage.Size = delucalogoImage.Size / 2;
-            delucalogoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - new Vector2(10, delucalogoImage.Size.Y / 2);
+            Image vubetrologoImage = new Image(_engine.Content.LoadTexture("textures/vubetrologo"));
+            vubetrologoImage.Size = new Vector2((vubetrologoImage.Size.X / vubetrologoImage.Size.Y) * cell, cell);
+            vubetrologoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - new Vector2(vubetrologoImage.Size.X / 2, vubetrologoImage.Size.Y / 2);
 
 
             Components.Add(vubetrologoImage);
-            Components.Add(delucalogoImage);
             Components.Add(aboutButton);
             Components.Add(startGameButton);
             Components.Add(infoLabel);
-            //Components.Add(infoLabelOutline);
             Components.Add(exitButton);
             
         }

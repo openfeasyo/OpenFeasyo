@@ -34,24 +34,16 @@ namespace LoopLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            //Image ghostlyImage = new Image(_engine.Content.LoadTexture("textures/ghostly/ghostly"));
-            //ghostlyImage.Position = new Vector2(ghostlyImage.Size.X * -0.2f, engine.Screen.ScreenHeight-(ghostlyImage.Size.Y*0.8f));
-
-
             Label infoLabel = new Label("Loop", engine.Content.LoadFont("Fonts/PerfectDark128"), Color.FromNonPremultiplied(11, 206, 196, 256));
             infoLabel.Position = engine.Screen.ScreenMiddle - infoLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y / 2);
-
-            
-            Label info1Label = new Label("Application development was supported by the De Luca Foundation and Delsys, Inc.", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize ), LoopGame.MENU_FONT_COLOR);
-            info1Label.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - info1Label.Size / 2;
 
             Label info2Label = new Label("Application is intended for exploratory data acquisition and ", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
             info2Label.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 8.5f) - info2Label.Size / 2;
 
-            Label info3Label = new Label("feedback purposes, and is not intended for clinical/diagnostic use.", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
+            Label info3Label = new Label("feedback purposes, and is not intended for clinical/diagnostic use.", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize), Color.DarkRed);
             info3Label.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 9.0f) - info3Label.Size / 2;
 
-            Label info4Label = new Label("Application is not to be used for commercial distribution.", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
+            Label info4Label = new Label("Application is not to be used for commercial distribution.", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize), Color.DarkRed);
             info4Label.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 10) - info4Label.Size / 2;
 
 
@@ -63,24 +55,15 @@ namespace LoopLib.Activities
             next.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 12) - next.Size / 2;
 
             Image vubetrologoImage = new Image(_engine.Content.LoadTexture("Textures/vubetrologo"));
-            vubetrologoImage.Size = vubetrologoImage.Size / 2;
-            vubetrologoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 14) - new Vector2(vubetrologoImage.Size.X, vubetrologoImage.Size.Y / 2);
+            vubetrologoImage.Size = new Vector2((vubetrologoImage.Size.X / vubetrologoImage.Size.Y) * cell * 2, cell * 2);
+            vubetrologoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 14) - new Vector2(vubetrologoImage.Size.X / 2, vubetrologoImage.Size.Y / 2);
 
-            Image delucalogoImage = new Image(_engine.Content.LoadTexture("Textures/delucafoundationlogo"));
-            delucalogoImage.Size = delucalogoImage.Size / 2;
-            delucalogoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 14) - new Vector2(10 , delucalogoImage.Size.Y/ 2);
-
-
-            //Components.Add(ghostlyImage);
             Components.Add(next);
             Components.Add(infoLabel);
-            //Components.Add(infoLabelOutline);
-            Components.Add(info1Label);
             Components.Add(info2Label);
             Components.Add(info3Label);
             Components.Add(info4Label);
             Components.Add(vubetrologoImage);
-            Components.Add(delucalogoImage);
         }
 
         private bool _musicOn = false; 
