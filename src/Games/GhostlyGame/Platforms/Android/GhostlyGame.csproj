@@ -60,6 +60,7 @@
     <Compile Include="BaseUrlAndroid.cs" />
     <Compile Include="GhostlyLogActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="PrintServiceAndroid.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\..\Game\Activities\AboutActivity.cs">

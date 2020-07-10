@@ -340,8 +340,22 @@ namespace GhostlyLog
                     maxx = frame[0].X;
                 }
             }
-            int levelNum = reader.GetParameter<Int16>("INFO:GAME_LEVEL");
-            reader.Close();
+            int levelNum = -1;
+            try
+            {
+                if ((levelNum = reader.GetParameter<Int16>("INFO:GAME_LEVEL")) < 1) {
+                    return;
+                }
+            }
+            catch (ApplicationException e)
+            {
+                return;
+            }
+            finally { 
+                reader.Close();
+            }
+
+            
 
             List<string> map = new List<string>();
 
@@ -360,22 +374,11 @@ namespace GhostlyLog
             double tileSpace = PAGE_WIDTH * (running / (halt + running));
             double tile = tileSpace / (maxx / TILE_PIXEL_WIDTH);
 
-            //int maxLen = map.Aggregate("", (max, cur) => max.Length > cur.Length ? max : cur).Length;
-            //for (int x = 0; x < maxLen; x++) {
-            //    for (int y = 0; y < map.Count; y++) {
-            //        if (map[y].Length > x && 
-            //            (map[y][x] == 'l' || map[y][x] == 'm' || map[y][x] == 'r')) {
-            //            writer.WriteLine("<rect x=\"" + (x*tile).ToString("F5", culture) + "\" y=\"" +(150+(y*tile)).ToString("F5", culture) + "\" width=\"" + tile.ToString("F5", culture) + "\" height=\"" + tile.ToString("F5", culture) + "\" rx=\"" + (tile / 10).ToString("F5", culture) + "\" />");
-            //        }
-            //    }
-            //}
-
             StringBuilder playerPath = new StringBuilder();
 
             reader = new C3dReader();
             reader.Open(_c3dFile);
             double step = PAGE_WIDTH / reader.FramesCount;
-            //previous = 0;
             int lastTile = -1;
             double currentPosition = 0;
             double lastTilePosition = 0;

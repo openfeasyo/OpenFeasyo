@@ -26,12 +26,16 @@ namespace GhostlyLib
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Instance = this;
-
-            EnableImmersiveMode();
             this.Window.AddFlags(WindowManagerFlags.Fullscreen);
             this.Window.AddFlags(WindowManagerFlags.KeepScreenOn);
+            
+
             base.OnCreate(savedInstanceState);
+            EnableImmersiveMode();
+
+            Instance = this;
+
+            
 
             InputDeviceManager.Instance = new StaticDriverManager();
             InputAnalyzerManager.Instance = new StaticAnalysisManager();
@@ -41,11 +45,15 @@ namespace GhostlyLib
             
             UIThread.Instance = new AndroidUIThread(this);
 
-            this.RequestPermissions(new string[] {
-                        Manifest.Permission.WakeLock,
-                        Manifest.Permission.ReadExternalStorage,
-                        Manifest.Permission.WriteExternalStorage
-            }, 1);
+
+            if (Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.M) {
+                // TODO check whether we need to show permission rationalle
+                this.RequestPermissions(new string[] {
+                            Manifest.Permission.WakeLock,
+                            Manifest.Permission.ReadExternalStorage,
+                            Manifest.Permission.WriteExternalStorage
+                }, 1);
+            }
 
             var g = new GhostlyGame();
             SetContentView((View)g.Services.GetService(typeof(View)));
@@ -80,6 +88,12 @@ namespace GhostlyLib
 
         public void RequestPermissions(string[] permissions, int requestCode, Action<bool> action)
         {
+            // On older devices, permisisons are always granted while the app installation
+            if(Android.OS.Build.VERSION.SdkInt < BuildVersionCodes.M) {
+                action.Invoke(true);
+                return;
+            }
+
             List<string> neededPermissions = new List<string>();
             foreach (string permission in permissions)
             {

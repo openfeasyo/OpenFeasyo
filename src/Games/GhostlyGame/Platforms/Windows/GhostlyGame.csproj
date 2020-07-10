@@ -9,7 +9,7 @@
     <ProjectGuid>{8C4BEC08-EB16-4883-9D60-A641F82A0778}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GhostlyGame</RootNamespace>
+    <RootNamespace>GhostlyLib</RootNamespace>
     <AssemblyName>GhostlyGame</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
