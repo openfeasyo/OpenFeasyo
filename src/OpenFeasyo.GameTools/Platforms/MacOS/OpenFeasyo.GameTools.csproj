@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3580F871-E5E7-4B69-8066-027BA7C5E5D3}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OpenFeasyo.GameTools</RootNamespace>
+    <AssemblyName>OpenFeasyo.GameTools</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <UseXamMacFullFramework>true</UseXamMacFullFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <AOTMode>None</AOTMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <AOTMode>None</AOTMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\lib\netstandard2.0\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="BEPUutilities">
+      <HintPath>..\..\..\packages\BEPUutilities.1.5.1\lib\netstandard2.0\BEPUutilities.dll</HintPath>
+    </Reference>
+    <Reference Include="BEPUphysics">
+      <HintPath>..\..\..\packages\BEPUphysics.1.5.1\lib\netstandard2.0\BEPUphysics.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\Source\Bepu\MathConverter.cs">
+      <Link>Bepu\MathConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Components2D\InfoPanel.cs">
+      <Link>Components2D\InfoPanel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\BaseComponent.cs">
+      <Link>Core\BaseComponent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\Camera.cs">
+      <Link>Core\Camera.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\ContentDatabase.cs">
+      <Link>Core\ContentDatabase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\ContentRepository.cs">
+      <Link>Core\ContentRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\ICamera.cs">
+      <Link>Core\ICamera.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\ObjectManager.cs">
+      <Link>Core\ObjectManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\PrefabObjectGenerator.cs">
+      <Link>Core\PrefabObjectGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\Scene.cs">
+      <Link>Core\Scene.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\SceneEntity.cs">
+      <Link>Core\SceneEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\SceneInterface.cs">
+      <Link>Core\SceneInterface.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Core\SceneObject.cs">
+      <Link>Core\SceneObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Effects\MusicPlayer.cs">
+      <Link>Effects\MusicPlayer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Effects\Particles\ParticleEmitter.cs">
+      <Link>Effects\Particles\ParticleEmitter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Effects\Particles\ParticleSettings.cs">
+      <Link>Effects\Particles\ParticleSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Effects\Particles\ParticleSystem.cs">
+      <Link>Effects\Particles\ParticleSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Effects\Particles\ParticleVertex.cs">
+      <Link>Effects\Particles\ParticleVertex.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Effects\Particles\Projectile.cs">
+      <Link>Effects\Particles\Projectile.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\GameTools.cs">
+      <Link>GameTools.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\ILevel.cs">
+      <Link>ILevel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\Screen.cs">
+      <Link>Screen.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\Activity.cs">
+      <Link>UI\Activity.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\Button.cs">
+      <Link>UI\Button.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\Component.cs">
+      <Link>UI\Component.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\ComponentCollection.cs">
+      <Link>UI\ComponentCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\Image.cs">
+      <Link>UI\Image.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\ImageSwitch.cs">
+      <Link>UI\ImageSwitch.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\Label.cs">
+      <Link>UI\Label.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\ListItem.cs">
+      <Link>UI\ListItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Source\UI\UIEngine.cs">
+      <Link>UI\UIEngine.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <Import Project="..\..\..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('..\..\..\packages\MonoGame.Framework.DesktopGL.3.8.0.1641\build\MonoGame.Framework.DesktopGL.targets')" />
+</Project>
