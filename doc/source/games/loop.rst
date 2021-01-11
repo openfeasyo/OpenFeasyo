@@ -21,58 +21,41 @@ Quick Start Guide
 
 **Settings & Calibration**
 
-3) Start the Ghostly Game.
+3) Start the Loop Game.
 
-.. image:: images/ghostly_3_start.png
+.. image:: images/loop_3_start.png
 
 4) Choose EMG as a way to control the game. In case you want to control the game via touch, select TOUCH and continue with step 10
 
-.. image:: images/ghostly_4_input.jpg
+.. image:: images/loop_4_input.jpg
 
 5) Wait while the application is scanning for the sensors.
 
-.. image:: images/ghostly_5_scanning.jpg
+.. image:: images/loop_5_scanning.jpg
 
-6) Choose which sensor controls jumping, by clicking on the sensor name.
+6) Choose which sensor turns the ship to the left, by clicking on the sensor name.
 
-.. image:: images/ghostly_6_select_jump.jpg
+.. image:: images/loop_6_select_left.jpg
 
-7) Choose which sensor controls shooting, by clicking on the sensor name.
+7) Choose which sensor turns the ship to the right, by clicking on the sensor name.
 
-.. image:: images/ghostly_7_select_shoot.jpg
+.. image:: images/loop_7_select_right.jpg
 
-8) After choosing which sensor controls what action, tap on the "CONNECT" button.
+8) After choosing which sensor controls what action, tap on the "CONNECT	" button.
 
-.. image:: images/ghostly_8_connect.jpg
+.. image:: images/loop_8_connect.jpg
 
 **Level Selection & Play**
 
 9) Start the sensor calibration by clicking on the button 'Start Calibration'. You need to relax your muscles during the calibration.
 
-.. image:: images/ghostly_9_restmuscles.jpg
+.. image:: images/loop_9_restmuscles.jpg
 
 10) To start the game, click on "START GAME" button.
 
-.. image:: images/ghostly_10_main_menu.jpg
+.. image:: images/loop_10_main_menu.jpg
 
-11) Choose world you want to enter by clicking on it's name - Earth, Water, or Rock.
+11) Enjoy playing the game
 
-.. image:: images/ghostly_11_world.jpg
+.. image:: images/loop_13_play.jpg
 
-12) Choose the level you want to play.
-
-.. image:: images/ghostly_12_level.jpg
-
-13) Enjoy playing the game
-
-.. image:: images/ghostly_13_play.jpg
-
-**Game Data Browsing**
-
-14) Start the "Ghostly Log" application.
-
-.. image:: images/ghostly_14_log.png
-
-15) Browse the recorded files.
-
-.. image:: images/ghostly_15_browser.jpg
