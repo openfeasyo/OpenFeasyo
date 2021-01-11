@@ -37,7 +37,7 @@ namespace OpenFeasyo.Platform.Data
 
 
             object reg =
-#if ANDROID
+#if ANDROID || __MACOS__
                 1;
 #else
                 Registry.GetValue(RegistryElements.REGISTRY_ROOT_SECTION, RegistryElements.REGISTRY_ALLOW_ALL_CERTIFICATES, null);

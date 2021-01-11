@@ -22,7 +22,7 @@ using Microsoft.Win32;
     using OpenFeasyo.Platform.Data.Offline;
     using Vub.Etro.IO;
     using System.Globalization;
-    #if !ANDROID
+    #if !ANDROID && !__MACOS__
         using System.Windows.Threading;
     #endif
 #endif
@@ -364,7 +364,7 @@ namespace OpenFeasyo.Platform.Data
         }
 #endregion
 
-#if !INSTALLER && !ANDROID
+#if !INSTALLER && !ANDROID && !__MACOS__
         public static bool UploadFiles(Datapoint dp, ExtendedPatient patient, Dispatcher dispatcher) {
 
             List<DataUploading> uploadings = dispatcher.Invoke(new Func< List<DataUploading> >(() => {
