@@ -99,8 +99,17 @@ namespace LoopLib.World
 
             _tunnel.TunnelSectionCreated += TunnelSectionCreated;
             _tunnel.TunnelSectionSetZCalled += TunnelSectionSetZCalled;
-        }
 
+            StarFactory.ObjectRemoved += (o, i) => {
+                var data = LoopGame.Instance.GameObjects.GetValue("Objects");
+                LoopGame.Instance.GameObjects.TryUpdate("Objects", new Vector3(i.Angle, data.Y,data.Z));
+            };
+            BombFactory.ObjectRemoved += (o, i) => {
+                var data = LoopGame.Instance.GameObjects.GetValue("Objects");
+                LoopGame.Instance.GameObjects.TryUpdate("Objects", new Vector3(data.X, i.Angle, data.Z));
+            };
+        }
+        
         public Scene Scene { get; private set; }
 
         private Level _level;
@@ -148,6 +157,8 @@ namespace LoopLib.World
         public void Update(GameTime gameTime) {
             StarFactory.Update(gameTime, _tunnel, Scene,_player);
             BombFactory.Update(gameTime, _tunnel, Scene,_player);
+            // Log the position for the analysis
+            LoopGame.Instance.GameObjects.TryUpdate("PlayerPosition", new Vector3(_player.Angle, Globals.Lives, Globals.TotalScore));
 
             ExplosionParticles.Update(gameTime);
             FireParticles.Update(gameTime);

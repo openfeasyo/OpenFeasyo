@@ -33,26 +33,86 @@ namespace LoopLib.Activities
         private int _framesReceived = 0; // an increasing count
         private int _fps = 0;
 
+        private Label counterLabel;
+        private Label instructionLabel;
+        private Label infoLabel;
+        private double timer = 0;
+        private bool countdown;
+
 
         public CalibrationActivity(UIEngine engine, IEmgSensorInput emgInput) : base(engine)
         {
             _emgInput = emgInput;
 
-            Image backgroundImage = new Image(_engine.Content.LoadTexture("Textures/menu_background"));
+            Image backgroundImage = new Image(_engine.Content.LoadTexture("textures/menu_background"));
             backgroundImage.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label l = new Label("Calibrating ... ", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
-            l.Position = engine.Screen.ScreenMiddle - l.Size / 2;
-            Components.Add(l);
+
+            counterLabel = new Label("Rest your muscles in", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            counterLabel.Position = (engine.Screen.ScreenMiddle - counterLabel.Size / 2) - new Vector2(0, counterLabel.Size.Y);
+            Components.Add(counterLabel);
+
+            instructionLabel = new Label("5", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            instructionLabel.Position = (engine.Screen.ScreenMiddle - instructionLabel.Size / 2) + new Vector2(0, instructionLabel.Size.Y);
+            Components.Add(instructionLabel);
+
+            infoLabel = new Label("Calibrating ... ", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            infoLabel.Position = engine.Screen.ScreenMiddle - infoLabel.Size / 2;
+            Components.Add(infoLabel);
 
             _fpsLabel = new Label("Sensor data: - fps", engine.Content.LoadFont("Fonts/Ubuntu12"), LoopGame.MENU_FONT_COLOR);
             _fpsLabel.Position = new Vector2(0, engine.Screen.ScreenHeight - _fpsLabel.Size.Y) + new Vector2(10, -10);
             Components.Add(_fpsLabel);
 
             _emgInput.CalibrationChanged += _emgInput_CalibrationChanged;
-            
+
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+
+            if (countdown)
+            {
+                if (timer == 0)
+                {
+                    timer = gameTime.TotalGameTime.TotalMilliseconds + 5000;
+                    counterLabel.Visible = true;
+                    instructionLabel.Visible = true;
+                    infoLabel.Visible = false;
+                }
+                else if (timer > gameTime.TotalGameTime.TotalMilliseconds)
+                {
+                    // convert the difference to seconds
+                    int displayCount = (((int)(timer - gameTime.TotalGameTime.TotalMilliseconds)) / 1000) + 1;
+                    instructionLabel.Text = displayCount.ToString();
+                }
+                else
+                {
+                    countdown = false;
+                    counterLabel.Visible = false;
+                    instructionLabel.Visible = false;
+                    infoLabel.Visible = true;
+                    _emgInput.Calibrate();
+                }
+            }
+        }
+
+        public override void OnCreate()
+        {
+            timer = 0;
+            countdown = true;
+            _emgInput.MuscleActivationChanged += _emgInput_MuscleActivationChanged;
+
+            base.OnCreate();
+        }
+
+        public override void OnDestroy()
+        {
+            _emgInput.MuscleActivationChanged -= _emgInput_MuscleActivationChanged;
+            base.OnDestroy();
         }
 
         private void _emgInput_CalibrationChanged(object sender, CalibrationChangedEventArgs e)
@@ -61,20 +121,6 @@ namespace LoopLib.Activities
                 // TODO maybe show information about successful calibration first
                 StartActivity(new MainMenuActivity(_engine));
             }
-        }
-
-        public override void OnCreate()
-        {
-            _emgInput.Calibrate();
-            base.OnCreate();
-
-            _emgInput.MuscleActivationChanged += _emgInput_MuscleActivationChanged;
-        }
-
-        public override void OnDestroy()
-        {
-            _emgInput.MuscleActivationChanged -= _emgInput_MuscleActivationChanged;
-            base.OnDestroy();
         }
 
         private void _emgInput_MuscleActivationChanged(object sender, MuscleActivationChangedEventArgs e)

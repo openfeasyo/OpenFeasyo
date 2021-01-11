@@ -61,10 +61,8 @@ namespace LoopLib.World
             _tiltRotation = tiltAngle;
 
             Angle += change;
+
             Vector3 direction = Tunnel.GetTunnelDirection(_tunnel.CurrentPhase + _zDistance);
-
-            //Matrix orientation = Matrix.CreateFromYawPitchRoll((float)Math.Atan(direction.X), (float)Math.Atan(-direction.Y), 0/*(Angle /*+ (float)Math.PI - this.rollAngle*/);
-
             _position = new Vector3(0.0f, _distanceFromCenter, _zDistance);
             _position = Vector3.Transform(_position, Matrix.CreateRotationZ(Angle));
             Matrix m = _world * Matrix.CreateRotationZ(Angle - _tiltRotation);
