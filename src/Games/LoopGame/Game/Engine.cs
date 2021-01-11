@@ -56,8 +56,8 @@ namespace LoopLib
         private Effect      _effect;
         private Texture2D   _tile;
         private Texture2D   _inactiveBackground;
-        private SpriteFont[] _font = new SpriteFont[5];
-        private SpriteFont[] _fontIcons = new SpriteFont[5];
+        private SpriteFont  _font;
+        private SpriteFont  _fontIcons;
         private MusicPlayer _music;
         private LevelGenerator _generator;
         private double _elapsedTime;
@@ -135,11 +135,16 @@ namespace LoopLib
             _spriteBatch = new SpriteBatch(_game.GraphicsDevice);
             _infoPanel = new InfoPanel(ContentRepository, _screen);
 
+            Console.Out.WriteLine("Engine: Music/the_lift");
             _music.AddSong("the_lift", ContentRepository.LoadSong("Music/the_lift"));
+            Console.Out.WriteLine("Engine: Sounds/explode");
             _music.AddSoundEffect("explode",ContentRepository.LoadSoundEffect("Sounds/explode"));
+            Console.Out.WriteLine("Engine: Sounds/floop");
             _music.AddSoundEffect("star", ContentRepository.LoadSoundEffect("Sounds/floop"));
 
+            Console.Out.WriteLine("Engine: Textures/tile");
             _tile = ContentRepository.LoadTexture("Textures/tile");
+            Console.Out.WriteLine("Engine: Effects/Tunnel");
             _effect = ContentRepository.LoadEffect("Effects/Tunnel"
 #if ANDROID
                 +".android"
@@ -153,17 +158,30 @@ namespace LoopLib
             _elemManager = new ElementManager(ContentRepository, _sceneInterface, _game, _camera, _tunnel, _player,_music);
             angleUpdate = 0;
 
-            _font[0] = ContentRepository.LoadFont("Fonts/Ubuntu12");
-            _font[1] = ContentRepository.LoadFont("Fonts/Ubuntu24");
-            _font[2] = ContentRepository.LoadFont("Fonts/Ubuntu36");
-            _font[3] = ContentRepository.LoadFont("Fonts/Ubuntu48");
-            _font[4] = ContentRepository.LoadFont("Fonts/Ubuntu64");
-            _fontIcons[0] = ContentRepository.LoadFont("Fonts/Awesome12");
-            _fontIcons[1] = ContentRepository.LoadFont("Fonts/Awesome24");
-            _fontIcons[2] = ContentRepository.LoadFont("Fonts/Awesome36");
-            _fontIcons[3] = ContentRepository.LoadFont("Fonts/Awesome48");
-            _fontIcons[4] = ContentRepository.LoadFont("Fonts/Awesome64");
+            //_font[0] = ContentRepository.LoadFont("Fonts/Ubuntu12");
+            //_font[1] = ContentRepository.LoadFont("Fonts/Ubuntu24");
+            //_font[2] = ContentRepository.LoadFont("Fonts/Ubuntu36");
+            //_font[3] = ContentRepository.LoadFont("Fonts/Ubuntu48");
+            //_font[4] = ContentRepository.LoadFont("Fonts/Ubuntu64");
+            Console.Out.WriteLine("Engine: " + LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE);
+            _font = ContentRepository.LoadFont(LoopGame.MENU_BUTTON_FONT+LoopGame.MENU_BUTTON_FONT_SIZE);
+            Console.Out.WriteLine("Engine: " + "Fonts/Awesome" + LoopGame.MENU_BUTTON_FONT_SIZE);
+            _fontIcons = ContentRepository.LoadFont("Fonts/Awesome" + LoopGame.MENU_BUTTON_FONT_SIZE);
+            //_fontIcons[0] = ContentRepository.LoadFont("Fonts/Awesome12");
+            //_fontIcons[1] = ContentRepository.LoadFont("Fonts/Awesome24");
+            //_fontIcons[2] = ContentRepository.LoadFont("Fonts/Awesome36");
+            //_fontIcons[3] = ContentRepository.LoadFont("Fonts/Awesome48");
+            //_fontIcons[4] = ContentRepository.LoadFont("Fonts/Awesome64");
 
+        }
+
+        public void Pause() {
+            OpenFeasyo.GameTools.GameTools.IsPaused = true;
+        }
+
+        public void Resume()
+        {
+            OpenFeasyo.GameTools.GameTools.IsPaused = false;
         }
 
         public void Unload() {
@@ -176,6 +194,7 @@ namespace LoopLib
         }       
 
         public void Update(GameTime gameTime) {
+
             
             KeyboardState currentKeyboardState = Keyboard.GetState();
             if (currentKeyboardState.IsKeyDown(Keys.Right) ||
@@ -189,7 +208,7 @@ namespace LoopLib
             {
                 angleUpdate += 1f;
             }
-
+            
             if (Globals.IsFinnished && IsRunning) {
                 OnGameFinished(Globals.TotalScore,GameFinishedEventArgs.EndReason.GoalAccomplished);
                 if (MaxScore < Globals.TotalScore) {
@@ -244,7 +263,8 @@ namespace LoopLib
             
             _spriteBatch.Begin();
             _infoPanel.Draw(gametime,_spriteBatch);
-            DrawTools(_spriteBatch);
+            DrawLives(_spriteBatch);
+            //DrawTools(_spriteBatch);
             _spriteBatch.End();
         }
 
@@ -279,23 +299,21 @@ namespace LoopLib
 
         private void DrawLives(SpriteBatch spriteBatch)
         {
-            SpriteFont f = _fontIcons[_screen.FontSize];
+            //SpriteFont f = _fontIcons[_screen.FontSize];
             string lives = "";
             for(int i = 0; i < Globals.Lives; i++)
             {
                 lives += "";
             }
-            Vector2 size = f.MeasureString(lives);
-            spriteBatch.DrawString(f,lives,new Vector2(_screen.ScreenWidth - size.X - 10,_screen.ScreenHeight - size.Y - 10),Color.Black);
-            spriteBatch.DrawString(f, lives, new Vector2(_screen.ScreenWidth - size.X - 13, _screen.ScreenHeight - size.Y - 13), Color.Orange);
+            Vector2 size = _fontIcons.MeasureString(lives);
+            spriteBatch.DrawString(_fontIcons,lives,new Vector2(_screen.ScreenWidth - size.X - 10,_screen.ScreenHeight - size.Y - 10),Color.Black);
+            spriteBatch.DrawString(_fontIcons, lives, new Vector2(_screen.ScreenWidth - size.X - 13, _screen.ScreenHeight - size.Y - 13), Color.Orange);
 
         }
 
         private void DrawMessage(SpriteBatch spriteBatch, float verticalPosition, string message) { 
-            SpriteFont f = _font[_screen.FontSize];
-            Vector2 size = f.MeasureString(message);
-
-            spriteBatch.DrawString(f, message, new Vector2(_screen.ScreenWidth / 2 - size.X / 2, _screen.ScreenHeight * verticalPosition - size.Y / 2), Color.White);
+            Vector2 size = _font.MeasureString(message);
+            spriteBatch.DrawString(_font, message, new Vector2(_screen.ScreenWidth / 2 - size.X / 2, _screen.ScreenHeight * verticalPosition - size.Y / 2), Color.White);
         }
 
         public event GameStartedDelegate GameStarted;
@@ -331,7 +349,26 @@ namespace LoopLib
             angleUpdate = average.GetLastAverage();
         }
 
+
+
+        public static void LeftMovementHandle(int source, float value)
+        {
+            if (float.IsNaN(value)) return;
+            average.AddValue(value);
+            angleUpdate = average.GetLastAverage();
+        }
+
+        public static void RightMovementHandle(int source, float value)
+        {
+            if (float.IsNaN(value)) return;
+            average.AddValue(-value);
+            angleUpdate = average.GetLastAverage();
+        }
+
         private static FloatAverageFilter average = new FloatAverageFilter(10);
         private static float angleUpdate;
+
+        private static float leftControlInput = 0;
+        private static float rightControlInput = 0;
     }
 }

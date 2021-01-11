@@ -20,6 +20,7 @@ using OpenFeasyo.Platform.Configuration;
 using Microsoft.Xna.Framework.Input;
 using OpenFeasyo.GameTools.Core;
 using System.Collections.Generic;
+using System;
 
 namespace LoopLib.Activities
 {
@@ -36,10 +37,12 @@ namespace LoopLib.Activities
 
         private string _configuration;
 
-        
+        private bool _cursorDown = false;
+
+        private Vector2 _cursorPosition = Vector2.Zero;
 
         public GamePlayActivity(UIEngine engine, int level, string intputConfig) : base(engine) {
-
+            
             _gameEngine = new Engine(this, engine.Content, LoopGame.Instance, engine.Screen);
            
             //_gameEngine.MaxScore = MaxScore;
@@ -48,7 +51,10 @@ namespace LoopLib.Activities
             _gameEngine.GameFinished += _gameEngine_GameFinished;
             //(score, reason) => { OnGameFinished(score,reason); };
             InitializeSceneInterface();
+
             _gameEngine.LoadContent();
+
+            _configuration = intputConfig;
 
             #region Game Over Panel
             _gameOverPanel = new ComponentCollection();
@@ -119,7 +125,7 @@ namespace LoopLib.Activities
 
             TextButton exitButton = new TextButton("Exit", engine.Content.LoadFont(LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             exitButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
-                //_screen.Exit();
+                _gameEngine.Resume();
                 StartActivity(new MainMenuActivity(engine));
                 _engine.MusicPlayer.Play("menu");
             };
@@ -129,7 +135,7 @@ namespace LoopLib.Activities
             continueButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
                 Components.Remove(_pausePanel);
                 Components.Add(_gameplayPanel);
-                //_screen.ResumeGame();
+                _gameEngine.Resume();
             };
             continueButton.Position = engine.Screen.ScreenMiddle - continueButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
 
@@ -147,7 +153,7 @@ namespace LoopLib.Activities
             pauseButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
                 Components.Remove(_gameplayPanel);
                 Components.Add(_pausePanel);
-                //_screen.PauseGame();
+                _gameEngine.Pause();
             };
             pauseButton.TextMargin = 20;
             pauseButton.Position = new Vector2(engine.Screen.ScreenWidth - (pauseButton.Size.X), 0);
@@ -187,31 +193,29 @@ namespace LoopLib.Activities
             LoopGame.Instance.OnGameStarted();
         }
 
+        
+
         public override void OnCursorDown(Vector2 pos)
         {
+            base.OnCursorDown(pos);
+            _cursorDown = true;
+            _cursorPosition = pos;
+
+            
         }
 
+        public override void OnCursorMove(Vector2 oldPos, Vector2 newPos)
+        {
+            base.OnCursorMove(oldPos, newPos);
+            _cursorPosition = newPos;
+        }
 
+        public override void OnCursorUp(Vector2 pos)
+        {
+            _cursorDown = false;
+            base.OnCursorUp(pos);
+        }
 
-        //public override bool OnCursorClick(Vector2 pos)
-        //{
-        //    if (base.OnCursorClick(pos))
-        //    {
-        //        return true;
-        //    }
-        //    else {
-        //        if (GhostlyActionHandlers.CurrentLevel != null) { 
-        //            if (pos.X > _engine.Device.Viewport.Width / 2)
-        //            {
-        //                GhostlyActionHandlers.CurrentLevel.ProcessPrimaryAction(true);
-        //            } else {
-        //                GhostlyActionHandlers.CurrentLevel.ProcessSecondaryAction(true);
-        //            }
-        //        }
-        //        return false;
-        //    }
-
-        //}
         
         public override void OnCreate()
         {
@@ -249,6 +253,19 @@ namespace LoopLib.Activities
                     _engine.MusicPlayer.Play("menu");
                 }
 
+            }
+            if (_cursorDown)
+            {
+                bool right = _cursorPosition.X > _engine.Device.Viewport.Width / 2;
+                right = (ConfigureTouchActivity.Reversed ? !right : right);
+                if (right)
+                {
+                    Engine.RightMovementHandle(0, 1);
+                }
+                else
+                {
+                    Engine.LeftMovementHandle(0, 1);
+                }
             }
         }
         

@@ -31,10 +31,10 @@ namespace LoopLib.Activities
 
         private Label _scanningLabel;
         private Label _connectingLabel;
-        private Label _jumpLabel;
-        private Label _shootLabel;
-        private Label _jumpQuestionLabel;
-        private Label _shootQuestionLabel;
+        private Label _leftLabel;
+        private Label _rightLabel;
+        private Label _leftQuestionLabel;
+        private Label _rightQuestionLabel;
 
 
         private IDiscoverable _discoveryProvider = null;
@@ -131,31 +131,31 @@ namespace LoopLib.Activities
             _connectingLabel.Visible = false;
 
 
-            _jumpLabel = new Label("Jump", engine.Content.LoadFont(LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
-            _jumpLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 3) - _jumpLabel.Size / 2 + new Vector2(s.Size.X*1.5f, 0);
-            _jumpLabel.Visible = false;
+            _leftLabel = new Label("Left", engine.Content.LoadFont(LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            _leftLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 3) - _leftLabel.Size / 2 + new Vector2(s.Size.X*1.5f, 0);
+            _leftLabel.Visible = false;
 
-            _shootLabel = new Label("Shoot", engine.Content.LoadFont(LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
-            _shootLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - _shootLabel.Size / 2 + new Vector2(s.Size.X * 1.5f, 0);
-            _shootLabel.Visible = false;
+            _rightLabel = new Label("Right", engine.Content.LoadFont(LoopGame.MENU_BUTTON_FONT + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            _rightLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - _rightLabel.Size / 2 + new Vector2(s.Size.X * 1.5f, 0);
+            _rightLabel.Visible = false;
 
-            _jumpQuestionLabel = new Label("Select sensor for Jumping", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
-            _jumpQuestionLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 2) - _jumpQuestionLabel.Size / 2;
-            _jumpQuestionLabel.Visible = true;
+            _leftQuestionLabel = new Label("Select sensor for turning left", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            _leftQuestionLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 2) - _leftQuestionLabel.Size / 2;
+            _leftQuestionLabel.Visible = true;
 
-            _shootQuestionLabel = new Label("Select sensor for Shooting", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
-            _shootQuestionLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 2) - _shootQuestionLabel.Size / 2;
-            _shootQuestionLabel.Visible = false;
+            _rightQuestionLabel = new Label("Select sensor for turning right", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            _rightQuestionLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 2) - _rightQuestionLabel.Size / 2;
+            _rightQuestionLabel.Visible = false;
 
             Components.Add(_nextButton);
             Components.Add(_connectingLabel);
             Components.Add(_scanningLabel);
             Components.Add(_scanButton);
 
-            Components.Add(_jumpLabel);
-            Components.Add(_shootLabel);
-            Components.Add(_jumpQuestionLabel);
-            Components.Add(_shootQuestionLabel);
+            Components.Add(_leftLabel);
+            Components.Add(_rightLabel);
+            Components.Add(_leftQuestionLabel);
+            Components.Add(_rightQuestionLabel);
             
             UpdateButtons();
         }
@@ -172,7 +172,7 @@ namespace LoopLib.Activities
             if (_jumpingButton == null)
             {
                 _jumpingButton = (TextButton)sender;
-                _jumpLabel.Position = new Vector2(_jumpLabel.Position.X, _jumpingButton.Position.Y + (_jumpingButton.Size.Y - _jumpLabel.Size.Y)/2);
+                _leftLabel.Position = new Vector2(_leftLabel.Position.X, _jumpingButton.Position.Y + (_jumpingButton.Size.Y - _leftLabel.Size.Y)/2);
             }
             else if (_jumpingButton == sender)
             {
@@ -181,7 +181,7 @@ namespace LoopLib.Activities
             else if (_shootingButton == null)
             {
                 _shootingButton = (TextButton)sender;
-                _shootLabel.Position = new Vector2(_shootLabel.Position.X, _shootingButton.Position.Y + (_shootingButton.Size.Y - _shootLabel.Size.Y) / 2);
+                _rightLabel.Position = new Vector2(_rightLabel.Position.X, _shootingButton.Position.Y + (_shootingButton.Size.Y - _rightLabel.Size.Y) / 2);
             }
             else if (_shootingButton == sender)
             {
@@ -191,21 +191,21 @@ namespace LoopLib.Activities
         }
 
         private void UpdateButtons() {
-            _jumpLabel.Visible = _jumpingButton != null;
-            _shootLabel.Visible = _shootingButton != null;
+            _leftLabel.Visible = _jumpingButton != null;
+            _rightLabel.Visible = _shootingButton != null;
             if (_jumpingButton == null)
             {
-                _jumpQuestionLabel.Visible = _sensors.Count >= 2;
-                _shootQuestionLabel.Visible = false;
+                _leftQuestionLabel.Visible = _sensors.Count >= 2;
+                _rightQuestionLabel.Visible = false;
                 _nextButton.Visible = false;
             } else if (_shootingButton == null) {
 
-                _jumpQuestionLabel.Visible = false;
-                _shootQuestionLabel.Visible = true;
+                _leftQuestionLabel.Visible = false;
+                _rightQuestionLabel.Visible = true;
                 _nextButton.Visible = false;
             } else {
-                _jumpQuestionLabel.Visible = false;
-                _shootQuestionLabel.Visible = false;
+                _leftQuestionLabel.Visible = false;
+                _rightQuestionLabel.Visible = false;
                 _nextButton.Visible = true;
             }
         }

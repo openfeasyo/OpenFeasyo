@@ -53,6 +53,9 @@ namespace LoopLib
         public void GenerateElements(ElementManager manager, Tunnel.TunnelSectionCreatedEventArgs e)
         {
             _intermediatePositions.Clear();
+            //
+            // Generating the stars
+            //
             for (int i = 0; i < 10; i++)
             {
                 int pos = _rand.Next(0, e.tunnelSection.NumSegments * e.tunnelSection.TunnelLengthInCells);
@@ -67,9 +70,13 @@ namespace LoopLib
                     pos / e.tunnelSection.NumSegments, e);
 
                 TunnelObject obj = manager.StarFactory.GetElement(manager.Scene);
+                obj.CircularSegment = pos % e.tunnelSection.NumSegments;
                 obj.InitializeTransform(transform, Tunnel.GetTunnelOffset(e.tunnelSection.PhaseAtStart - transform.Translation.Z));
             }
 
+            //
+            // Generatig the bombs
+            //
             for (int i = 0; i < 10; i++)
             {
 
@@ -85,6 +92,7 @@ namespace LoopLib
                     pos / e.tunnelSection.NumSegments, e);
 
                 TunnelObject obj = manager.BombFactory.GetElement(manager.Scene);
+                obj.CircularSegment = pos % e.tunnelSection.NumSegments;
                 obj.InitializeTransform(transform, Tunnel.GetTunnelOffset(e.tunnelSection.PhaseAtStart - transform.Translation.Z));
             }
 

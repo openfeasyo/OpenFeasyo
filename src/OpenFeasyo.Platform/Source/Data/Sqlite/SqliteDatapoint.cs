@@ -16,7 +16,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+//#if ANDROID
+//    using Mono.Data.Sqlite;
+//#else
 using System.Data.SQLite;
+//#endif
+
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
@@ -359,5 +364,6 @@ namespace OpenFeasyo.Platform.Data.Sqlite
         {
             return t.Name + "s";
         }
+        
     }
 }

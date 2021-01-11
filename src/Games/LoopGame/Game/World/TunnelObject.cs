@@ -28,6 +28,7 @@ namespace LoopLib.World
     {
         private bool zInitialized;
         private Matrix _world;
+        public int CircularSegment { get; set; }
  
         public TunnelObject(String name, Entity entity, Model model, Matrix transform,
 #if WPF

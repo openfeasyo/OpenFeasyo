@@ -57,9 +57,6 @@ namespace LoopLib
         /// </summary>
         public MouseState MouseState { get; set; }
 
-       // Engine _engine;
-       // Screen _screen;
-
         private OpenFeasyo.GameTools.Screen viewport;
 
         private SpriteBatch spriteBatch;
@@ -81,8 +78,8 @@ namespace LoopLib
 #endif
             viewport = new OpenFeasyo.GameTools.Screen(
                 graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
-
-            _gameObjects = new PreDefinedDictionary<Vector3>(new string[] { }, Vector3.Zero);
+            
+            _gameObjects = new PreDefinedDictionary<Vector3>(new string[] { "PlayerPosition", "Objects"}, Vector3.Zero);
             _gameStream = new PreDefinedDictionary<double>(new string[] { }, 0.0);
             _gameEvents = new ConcurrentQueue<short>();
 
@@ -109,7 +106,8 @@ namespace LoopLib
             //
 
             OpenFeasyo.Platform.Configuration.Configuration.RegisterBindingPoint(Definition.BindingPoints[0], Engine.HorizontalMovementHandle);
-
+            OpenFeasyo.Platform.Configuration.Configuration.RegisterBindingPoint(Definition.BindingPoints[1], Engine.LeftMovementHandle);
+            OpenFeasyo.Platform.Configuration.Configuration.RegisterBindingPoint(Definition.BindingPoints[2], Engine.RightMovementHandle);
             // TODO: Add your initialization logic here
 
 
@@ -134,10 +132,14 @@ namespace LoopLib
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            _uiengine.MusicPlayer.AddSong("menu", ContentRepository.LoadSong("Music/son_of_a_rocket"));
+            _uiengine.MusicPlayer.AddSong("win", ContentRepository.LoadSong("Music/take_a_chance"));
+            _uiengine.MusicPlayer.AddSong("game", ContentRepository.LoadSong("Music/the_lift"));
+
         }
 
 
-        
+
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
@@ -241,7 +243,7 @@ namespace LoopLib
             get { return _definition; }
         }
 
-        private static GameDefinition _definition = new GameDefinition("FlightSimulator", new string[] { "Horizontal" }
+        private static GameDefinition _definition = new GameDefinition("Loop", new string[] { "Horizontal","Left", "Right" }
             , 10974
             );
 

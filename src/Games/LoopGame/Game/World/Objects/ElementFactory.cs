@@ -23,6 +23,14 @@ namespace LoopLib.World.Objects
 {
     public class ElementFactory<T> where T: TunnelObject
     {
+        public class ObjectEventArgs : EventArgs
+        {
+            public float Angle { get; private set; }
+            public ObjectEventArgs(float angle) {
+                Angle = angle;
+            }
+        }
+
         public static float CLEANING_DISTANCE = 5;
         public static float COLLISION_CHECKING_DISTANCE = 20;
 
@@ -47,6 +55,13 @@ namespace LoopLib.World.Objects
 #endif
             Game _game;
         private ICamera _camera;
+
+        public event EventHandler<ObjectEventArgs> ObjectRemoved;
+        protected virtual void OnObjectRemoved(ObjectEventArgs e)
+        {
+            var handler = ObjectRemoved;
+            handler?.Invoke(this, e);
+        }
 
         public ElementFactory(int initCount, ContentRepository repo,
 #if WPF
@@ -99,21 +114,35 @@ namespace LoopLib.World.Objects
 
         public void Update(GameTime gameTime, Tunnel tunnel, Scene scene,Player player)
         {
+            
             foreach (T obj in _usedObjects.ToList())
             {
-                if (obj.World.Translation.Z < CLEANING_DISTANCE) {
+                if (obj.World.Translation.Z < CLEANING_DISTANCE)
+                {
                     RecycleElement(obj);
                     scene.Remove(obj);
-                } else {
+                    
+                    OnObjectRemoved(new ObjectEventArgs(GetAngle(tunnel, obj)));
+
+                }
+                else {
                     obj.World = obj.World * Matrix.CreateTranslation(0.0f, 0.0f, - tunnel.DeltaPhase(gameTime));
                     
                     if (obj.World.Translation.Z < COLLISION_CHECKING_DISTANCE) {
                         obj.Entity.CollisionInformation.UpdateBoundingBox(0);
                         player.Entity.CollisionInformation.UpdateBoundingBox(0);
-                        HandleCollisions(obj, player, scene);
+                        HandleCollisions(obj, tunnel, player, scene);
                     }
                 }
             }
+            
+        }
+
+        private static float GetAngle(Tunnel tunnel, T obj)
+        {
+            float angle = ((float)(2 * Math.PI) / (float)tunnel.numSegments) * obj.CircularSegment;
+            angle += (float)Math.PI / (float)tunnel.numSegments;
+            return angle;
         }
 
         public void DestroyAll(Scene scene) {
@@ -124,17 +153,19 @@ namespace LoopLib.World.Objects
             }
         }
 
-        private void HandleCollisions(T obj, Player player, Scene scene)
+        private bool HandleCollisions(T obj, Tunnel tunnel, Player player, Scene scene)
         {
             if (!Collide(obj, player)) { 
-                return; 
+                return false; 
             }
             
             
             if(obj.OnCollision(player,_manager)){
                 RecycleElement(obj);
                 scene.Remove(obj);
+                OnObjectRemoved(new ObjectEventArgs(GetAngle(tunnel, obj)));
             }
+            return true;
         }
 
         private static bool Collide(SceneEntity e1, SceneEntity e2) { 

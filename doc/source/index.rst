@@ -12,6 +12,14 @@ Welcome to OpenFeasyo's documentation!
    :caption: Games:
    
    games/*
+   
+   
+.. toctree::
+   :glob:
+   :maxdepth: 2
+   :caption: Applications:
+
+   apps/*
 
    
 

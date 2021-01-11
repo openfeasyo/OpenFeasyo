@@ -34,10 +34,10 @@ namespace LoopLib.Activities
             Label infoLabel = new Label("Touch the halves of the screen to", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
             infoLabel.Position = engine.Screen.ScreenMiddle - infoLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y / 2);
 
-            _rightTurnLabel = new Label("Left turn", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            _rightTurnLabel = new Label("Right turn", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
             _rightTurnLabel.Position = engine.Screen.ScreenMiddle - _rightTurnLabel.Size / 2 + new Vector2(engine.Screen.ScreenMiddle.X/2, 0);
 
-            _leftTurnLabel = new Label("Right turn", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
+            _leftTurnLabel = new Label("Left turn", engine.Content.LoadFont("Fonts/Ubuntu" + LoopGame.MENU_BUTTON_FONT_SIZE), LoopGame.MENU_FONT_COLOR);
             _leftTurnLabel.Position = engine.Screen.ScreenMiddle - _leftTurnLabel.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
 

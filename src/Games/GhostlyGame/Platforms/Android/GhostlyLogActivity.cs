@@ -16,7 +16,7 @@ using Toolbar = Android.Support.V7.Widget.Toolbar;
 namespace GhostlyGame
 {
     [Activity(Label = "Ghostly Log",
-        MainLauncher = true,
+        MainLauncher = false,
         Icon = "@mipmap/ic_ghostlylog",
         Theme = "@style/BrowserTheme",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -48,11 +48,11 @@ namespace GhostlyGame
             FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
             BrowserPage mainPage = new BrowserPage(VersionTracking.CurrentVersion);
             mainPage.DetailedPageRequested += MainPage_DetailedPageRequested;
-            Android.Support.V4.App.Fragment mainFragment = mainPage.CreateSupportFragment(this);
-            SupportFragmentManager
-                .BeginTransaction()
-                .Replace(Resource.Id.fragment_frame_layout, mainFragment)
-                .Commit();
+            var mainFragment = mainPage.CreateSupportFragment(this);
+            //FragmentManager
+            //    .BeginTransaction()
+            //    .Replace(Resource.Id.fragment_frame_layout, mainFragment)
+            //    .Commit();
 
             SupportFragmentManager.BackStackChanged += (sender, e) =>
             {
@@ -65,12 +65,12 @@ namespace GhostlyGame
 
         private void MainPage_DetailedPageRequested(ContentPage page)
         {
-            Android.Support.V4.App.Fragment detailsPage = page.CreateSupportFragment(this);
-            SupportFragmentManager
-                .BeginTransaction()
-                .AddToBackStack(null)
-                .Replace(Resource.Id.fragment_frame_layout, detailsPage)
-                .Commit();
+            var detailsPage = page.CreateSupportFragment(this);
+            //SupportFragmentManager
+            //    .BeginTransaction()
+            //    .AddToBackStack(null)
+            //    .Replace(Resource.Id.fragment_frame_layout, detailsPage)
+            //    .Commit();
         }
 
         public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
