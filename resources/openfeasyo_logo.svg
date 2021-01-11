@@ -15,7 +15,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="openfeasyo_logo.svg">
+   sodipodi:docname="openfeasyo_logo.svg"
+   inkscape:export-filename="C:\Stuff\OpenFeasyo\resources\openfeasyo_logo_large.png"
+   inkscape:export-xdpi="130.05"
+   inkscape:export-ydpi="130.05">
   <defs
      id="defs2">
     <clipPath
@@ -35,8 +38,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.32"
-     inkscape:cx="251.78654"
-     inkscape:cy="156.66633"
+     inkscape:cx="122.61987"
+     inkscape:cy="157.04512"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -97,7 +100,7 @@
        id="g32"
        transform="matrix(0.35277777,0,0,-0.35277777,75.413275,68.386879)" />
     <path
-       style="fill:#666666;fill-opacity:1;stroke:none;stroke-width:4.73364496;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:4.73364496;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 43.644204,67.894844 25.242227,93.622993 a 49.777374,50.310417 0 0 0 49.458988,-0.10439 L 56.188135,67.894844 Z"
        id="path4705"
        inkscape:connector-curvature="0" />
