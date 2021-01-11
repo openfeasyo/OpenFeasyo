@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,9 +91,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OpenFeasyo.Platform\Platforms\Android\OpenFeasyo.Platform.csproj">
+    <ProjectReference Include="..\..\..\..\OpenFeasyo.Platform\Platforms\Android.old\OpenFeasyo.Platform.Old.csproj">
       <Project>{629e19a8-cd11-4ae9-a9bf-d37345dc5d69}</Project>
-      <Name>OpenFeasyo.Platform</Name>
+      <Name>OpenFeasyo.Platform.Old</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
