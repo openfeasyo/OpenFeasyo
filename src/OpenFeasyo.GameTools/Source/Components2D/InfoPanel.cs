@@ -30,8 +30,8 @@ namespace OpenFeasyo.GameTools.Components2D
         public string ScoreLabel { get; set; }
         public string ScoreUnit { get; set; }
 
-        private SpriteFont[] _font = new SpriteFont[4];
-        private SpriteFont[] _fontIcons = new SpriteFont[4];
+        private SpriteFont[] _font = new SpriteFont[5];
+        private SpriteFont[] _fontIcons = new SpriteFont[5];
         private GraphicsDevice _device;
         private Matrix _projection;
         private Vector2 _scoreLabelPos = new Vector2(0.01f, 0.01f);
@@ -49,6 +49,7 @@ namespace OpenFeasyo.GameTools.Components2D
             _font[1] = repo.LoadFont("Fonts/Ubuntu24");
             _font[2] = repo.LoadFont("Fonts/Ubuntu36");
             _font[3] = repo.LoadFont("Fonts/Ubuntu48");
+            _font[4] = repo.LoadFont("Fonts/Ubuntu64");
             _screen = screen;
             _projection = Matrix.CreateOrthographic(3f, 2f, 0.1f, 300);
         }
