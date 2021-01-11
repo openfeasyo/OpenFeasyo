@@ -490,7 +490,7 @@
     </MonoGameContentReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="Activities\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\OpenFeasyo.GameTools\Platforms\MacOS\OpenFeasyo.GameTools.csproj">

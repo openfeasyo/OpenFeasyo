@@ -37,7 +37,7 @@ namespace OpenFeasyo.GameTools.Effects
 
         public void Update()
         {
-            if (MediaPlayer.State != MediaState.Playing)
+            if (Microsoft.Xna.Framework.Media.MediaPlayer.State != MediaState.Playing)
             {
                 Play(currentPlaylist);
             }
@@ -60,25 +60,25 @@ namespace OpenFeasyo.GameTools.Effects
             {
                 currentPlaylist = playlist;
                 currentSong = 0;
-                if (MediaPlayer.State == MediaState.Playing) {
-                    MediaPlayer.Stop();
+                if (Microsoft.Xna.Framework.Media.MediaPlayer.State == MediaState.Playing) {
+                    Microsoft.Xna.Framework.Media.MediaPlayer.Stop();
                 }
             }
 
             if (playlists[playlist].Count == 0 || 
                 GameTools.Mute ||
-                MediaPlayer.State == MediaState.Playing) return;
+                Microsoft.Xna.Framework.Media.MediaPlayer.State == MediaState.Playing) return;
             
             if (playlists[playlist].Count <= currentSong)
             {
                 currentSong = 0;
             }
 
-            
-            MediaPlayer.IsRepeating = false;
+
+            Microsoft.Xna.Framework.Media.MediaPlayer.IsRepeating = false;
             try
             {
-                MediaPlayer.Play(playlists[playlist][currentSong]);
+                Microsoft.Xna.Framework.Media.MediaPlayer.Play(playlists[playlist][currentSong]);
             }
             catch (Exception e) {
                 Console.WriteLine(e.Message + " \n" + e.StackTrace);
@@ -89,8 +89,8 @@ namespace OpenFeasyo.GameTools.Effects
 
         public void Stop()
         {
-            if (MediaPlayer.State != MediaState.Playing) return;
-            MediaPlayer.Stop();
+            if (Microsoft.Xna.Framework.Media.MediaPlayer.State != MediaState.Playing) return;
+            Microsoft.Xna.Framework.Media.MediaPlayer.Stop();
         }
 
         private Dictionary<string, SoundEffect> _sounds = new Dictionary<string, SoundEffect>();
