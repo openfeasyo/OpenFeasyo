@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.808.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.Platform", "OpenFeasyo.Platform\Platforms\MacOS\OpenFeasyo.Platform.csproj", "{F2906194-F29D-4C3C-B02B-3CABFB6ED875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.GameTools", "OpenFeasyo.GameTools\Platforms\MacOS\OpenFeasyo.GameTools.csproj", "{3580F871-E5E7-4B69-8066-027BA7C5E5D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2906194-F29D-4C3C-B02B-3CABFB6ED875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2906194-F29D-4C3C-B02B-3CABFB6ED875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2906194-F29D-4C3C-B02B-3CABFB6ED875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2906194-F29D-4C3C-B02B-3CABFB6ED875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3580F871-E5E7-4B69-8066-027BA7C5E5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3580F871-E5E7-4B69-8066-027BA7C5E5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3580F871-E5E7-4B69-8066-027BA7C5E5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3580F871-E5E7-4B69-8066-027BA7C5E5D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8819CDD-22F7-4DB4-B1E1-90BF8546C1CD}
+	EndGlobalSection
+EndGlobal
