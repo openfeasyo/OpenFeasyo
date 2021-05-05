@@ -9,7 +9,7 @@
     <ProjectGuid>{8C4BEC08-EB16-4883-9D60-A641F82A0778}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GhostlyLib</RootNamespace>
+    <RootNamespace>GhostlyGame</RootNamespace>
     <AssemblyName>GhostlyGame</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
@@ -44,12 +44,38 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Game\Activities\AdaptCalibrationActivity.cs">
+      <Link>Activities\AdaptCalibrationActivity.cs</Link>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticAnalysisManager.cs" />
+    <Compile Include="StaticDriverManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="DelsysAPI, Version=1.7.1.854, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DelsysAPI.WindowsBT.1.7.1.856\lib\DelsysAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="DelsysAPI.NET, Version=1.7.1.854, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DelsysAPI.WindowsBT.1.7.1.856\lib\DelsysAPI.NET.dll</HintPath>
+    </Reference>
     <Reference Include="MonoGame.Framework, Version=3.8.0.1641, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MonoGame.Framework.WindowsDX.3.8.0.1641\lib\net452\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.BLE, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Delsys\Basic Streaming\Basic Streaming .NET\bin\Debug\Plugin.BLE.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.BLE.Abstractions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Delsys\Basic Streaming\Basic Streaming .NET\bin\Debug\Plugin.BLE.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.BLE.NET, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Delsys\Basic Streaming\Basic Streaming .NET\bin\Debug\Plugin.BLE.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Portable.Licensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Portable.Licensing.1.1.0\lib\portable-net40+sl4+wp7+win8\Portable.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="SharpDX, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SharpDX.4.0.1\lib\net45\SharpDX.dll</HintPath>
@@ -77,6 +103,9 @@
     </Reference>
     <Reference Include="SharpDX.XInput, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SharpDX.XInput.4.0.1\lib\net45\SharpDX.XInput.dll</HintPath>
+    </Reference>
+    <Reference Include="Stateless, Version=4.0.0.0, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stateless.4.2.1\lib\net45\Stateless.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -537,6 +566,10 @@
     <ProjectReference Include="..\..\..\..\Analyzers\C3dSerializer\Platforms\Windows\C3dSerializer.csproj">
       <Project>{3a88ddf8-e5e5-4f50-84a0-c97ea3f90ca0}</Project>
       <Name>C3dSerializer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Drivers\TrignoEmg\Platforms\Windows\TrignoEmg.csproj">
+      <Project>{683b751b-543f-4452-938e-87c5e37571c3}</Project>
+      <Name>TrignoEmg</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\OpenFeasyo.GameTools\Platforms\Windows\OpenFeasyo.GameTools.csproj">
       <Project>{96808fe5-faa8-4b59-b203-1e7106ec2ab6}</Project>

@@ -72,7 +72,7 @@ namespace GhostlyLib.Activities
             if (e.CalibrationEvent == CalibrationResults.Finished) {
                 // TODO maybe show information about successful calibration first
                 _emgInput.MuscleActivationChanged -= _emgInput_MuscleActivationChanged;
-                StartActivity(new MainMenuActivity(_engine));
+                StartActivity(new AdaptCalibrationActivity(_engine,_emgInput));
             }
         }
 

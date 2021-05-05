@@ -13,6 +13,8 @@
  * within i-DEPOT holding reference number: 122388.
  */
 using System;
+using OpenFeasyo.Platform.Controls.Analysis;
+using OpenFeasyo.Platform.Controls.Drivers;
 
 namespace GhostlyGame
 {
@@ -28,6 +30,8 @@ namespace GhostlyGame
         [STAThread]
         static void Main()
         {
+            InputDeviceManager.Instance = new GhostlyLib.StaticDriverManager();
+            InputAnalyzerManager.Instance = new GhostlyLib.StaticAnalysisManager();
             using (var game = new GhostlyLib.GhostlyGame())
                 game.Run();
         }
