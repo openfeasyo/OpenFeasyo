@@ -67,7 +67,7 @@
     <PackageReference Include="MonoGame.Framework.Android">
       <Version>3.8.0.1641</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
@@ -76,9 +76,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OpenFeasyo.Platform\Platforms\Android.old\OpenFeasyo.Platform.Old.csproj">
-      <Project>{629e19a8-cd11-4ae9-a9bf-d37345dc5d69}</Project>
-      <Name>OpenFeasyo.Platform.Old</Name>
+    <ProjectReference Include="..\..\..\..\OpenFeasyo.Platform\Platforms\Android\OpenFeasyo.Platform.csproj">
+      <Project>{f4b39014-007a-4272-a985-ac55594fc476}</Project>
+      <Name>OpenFeasyo.Platform</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
