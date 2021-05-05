@@ -118,7 +118,13 @@ namespace TrignoEmg
         public event EventHandler<CalibrationChangedEventArgs> CalibrationChanged;
         private void OnCalibrationChanged(CalibrationResults calibEvent) {
             if (CalibrationChanged != null) {
-                CalibrationChanged(this, new CalibrationChangedEventArgs(calibEvent));
+                CalibrationChangedEventArgs args = new CalibrationChangedEventArgs(calibEvent);
+                if (calibEvent == CalibrationResults.Finished) {
+                    args.CalibrationsData = _baselineData;
+                    args.ZeroMean = _baselineMean;
+                    args.ZeroStandardDeviation = _baselineStdev;
+                }
+                CalibrationChanged(this, args);
             }
         }
 
