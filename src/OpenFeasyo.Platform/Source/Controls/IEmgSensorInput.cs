@@ -13,6 +13,7 @@
  * within i-DEPOT holding reference number: 122388.
  */
 using System;
+using System.Collections.Generic;
 
 namespace OpenFeasyo.Platform.Controls
 {
@@ -54,8 +55,11 @@ namespace OpenFeasyo.Platform.Controls
     public class CalibrationChangedEventArgs : EventArgs
     {
         public CalibrationResults CalibrationEvent { get; set; }
-   
-        public CalibrationChangedEventArgs(CalibrationResults calibEvent) {
+        public List<double>[] CalibrationsData { get; set; }
+        public double[] ZeroMean { get; set; }
+        public double[] ZeroStandardDeviation { get; set; }
+        
+public CalibrationChangedEventArgs(CalibrationResults calibEvent) {
             CalibrationEvent = calibEvent;
         }
     }
