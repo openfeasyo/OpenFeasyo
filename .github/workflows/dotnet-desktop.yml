@@ -56,6 +56,7 @@ jobs:
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       Solution_Name: src/Games/GhostlyGame/GhostlyGame.Windows.sln                        # Replace with your solution name, i.e. MyWpfApp.sln.
       #Test_Project_Path: src/Games/GhostlyGame/Platforms/Windows/Tests/GhostlyGame.Tests.sln                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       #Wap_Project_Directory: your-wap-project-directory-name    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
