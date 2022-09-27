@@ -1,0 +1,32 @@
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                                                                                                                                                                                                               e
+                                                                                                                                                                                                               e
+                                                                                                                                                                                                               e
+                                                                                                                                                                                                               e
+                                                                                                                                                                                                               e
+                                                                                                                                                                                                               e                            
+                                                                                                                                                                                                               e
+                                                                                                                                                                                                               e
+                                                                                                                                                                                                               e
+                                                                                                                                                                                                               e
+                                                                                                                                              B                                                                e
+                                                  Y                          B                                                                             B            B                                      e
+                                     Y      \\\                                                                                 Y       lmmmmmmmmmr                                  Y                         e
+                                           \\\\\\               B      lmmmmmmmmmr        Y            B                                              lmmmmmmmmr   lmmmmmmmmr                                  e
+                               mmmmmmmmmmmmmmmmmmmm                                                                Y      mmmmmmmmmmmm                                         mmmmmmmmmmmmmmmm       @        e
+                              m####################mmmmm   lmmmmmmmmr               lmmmmmmmmmr   mmmmmmm\\\             m############~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~################m               e
+mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm##########################~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#######mmm~~~mmmmmmmmmm#############%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#################mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmr
+
+! l grass left
+! m grass middle
+! r grass right
+! | invisible tile
+
+! # ground_dirt
+! * ice
+! ~ water
+! % deep_water
+! ! exclamation tile
+! @ exit
+! \ crate
+! = fence
