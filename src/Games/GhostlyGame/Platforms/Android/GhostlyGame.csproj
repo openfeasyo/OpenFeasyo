@@ -51,6 +51,9 @@
     <AndroidSupportedAbis>armeabi-v7a;arm64-v8a</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\..\Game\Activities\AdaptCalibrationActivity.cs">
+      <Link>Activities\AdaptCalibrationActivity.cs</Link>
+    </Compile>
     <Compile Include="BaseUrlAndroid.cs" />
     <Compile Include="GhostlyLogActivity.cs" />
     <Compile Include="MainActivity.cs" />
@@ -599,6 +602,95 @@
     <Reference Include="System.Xml">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Xml.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map100.txt">
+      <Link>Content\Levels\Ghostly\ice\map100.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map101.txt">
+      <Link>Content\Levels\Ghostly\ice\map101.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map102.txt">
+      <Link>Content\Levels\Ghostly\ice\map102.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map103.txt">
+      <Link>Content\Levels\Ghostly\ice\map103.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map104.txt">
+      <Link>Content\Levels\Ghostly\ice\map104.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map105.txt">
+      <Link>Content\Levels\Ghostly\ice\map105.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map106.txt">
+      <Link>Content\Levels\Ghostly\ice\map106.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map107.txt">
+      <Link>Content\Levels\Ghostly\ice\map107.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map108.txt">
+      <Link>Content\Levels\Ghostly\ice\map108.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map109.txt">
+      <Link>Content\Levels\Ghostly\ice\map109.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map110.txt">
+      <Link>Content\Levels\Ghostly\ice\map110.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map111.txt">
+      <Link>Content\Levels\Ghostly\ice\map111.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map112.txt">
+      <Link>Content\Levels\Ghostly\ice\map112.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map113.txt">
+      <Link>Content\Levels\Ghostly\ice\map113.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map114.txt">
+      <Link>Content\Levels\Ghostly\ice\map114.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map115.txt">
+      <Link>Content\Levels\Ghostly\ice\map115.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map116.txt">
+      <Link>Content\Levels\Ghostly\ice\map116.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map117.txt">
+      <Link>Content\Levels\Ghostly\ice\map117.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map118.txt">
+      <Link>Content\Levels\Ghostly\ice\map118.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map119.txt">
+      <Link>Content\Levels\Ghostly\ice\map119.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map120.txt">
+      <Link>Content\Levels\Ghostly\ice\map120.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map92.txt">
+      <Link>Content\Levels\Ghostly\ice\map92.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map93.txt">
+      <Link>Content\Levels\Ghostly\ice\map93.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map94.txt">
+      <Link>Content\Levels\Ghostly\ice\map94.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map95.txt">
+      <Link>Content\Levels\Ghostly\ice\map95.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map96.txt">
+      <Link>Content\Levels\Ghostly\ice\map96.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map97.txt">
+      <Link>Content\Levels\Ghostly\ice\map97.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map98.txt">
+      <Link>Content\Levels\Ghostly\ice\map98.txt</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\ice\map99.txt">
+      <Link>Content\Levels\Ghostly\ice\map99.txt</Link>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

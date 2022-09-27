@@ -10,6 +10,7 @@ using OpenFeasyo.Platform.Data;
 using OpenFeasyo.Platform.Controls.Drivers;
 using OpenFeasyo.Platform.Controls.Analysis;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 
 namespace GhostlyLib
 {
@@ -31,6 +32,8 @@ namespace GhostlyLib
             
 
             base.OnCreate(savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
             EnableImmersiveMode();
 
             Instance = this;
@@ -88,6 +91,7 @@ namespace GhostlyLib
 
         public void RequestPermissions(string[] permissions, int requestCode, Action<bool> action)
         {
+
             // On older devices, permisisons are always granted while the app installation
             if(Android.OS.Build.VERSION.SdkInt < BuildVersionCodes.M) {
                 action.Invoke(true);
@@ -115,6 +119,7 @@ namespace GhostlyLib
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             if (permissionRequests.ContainsKey(requestCode))
             {

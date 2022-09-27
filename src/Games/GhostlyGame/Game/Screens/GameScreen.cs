@@ -144,6 +144,13 @@ namespace GhostlyLib.Screens
                 GameBackground.SetParallaxLayers(new List<Texture2D> { _level.BackgroundFurthest, _level.BackgroundClose, _level.BackgroundClosest });
 
             }
+            else if (this._currentLevel <= 120)
+            {
+                this._level = new IceLevel(this, this._elements);
+                this._level.LoadMap("ice.map" + this._currentLevel + ".txt");
+                GameBackground.SetParallaxLayers(new List<Texture2D> { _level.BackgroundFurthest, _level.BackgroundClose, _level.BackgroundClosest });
+
+            }
             this.GameCharacter = this._level.Character;
             GameBackground.ContinuousLayer = this._level.Background;
             GhostlyActionHandlers.CurrentLevel = this._level;

@@ -22,7 +22,7 @@ namespace GhostlyLib.Activities
     {
         public SelectWorldActivity(UIEngine engine) : base(engine) {
 
-            float cell = engine.Screen.ScreenHeight / 8;
+            float cell = engine.Screen.ScreenHeight / 9;
 
             Image backgroundImage = new Image(_engine.Content.LoadTexture("textures/ghostly/menu_background"));
             backgroundImage.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
@@ -45,10 +45,15 @@ namespace GhostlyLib.Activities
             world3Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectLevelActivity(engine, 3)); };
             world3Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - world3Button.Size / 2;
 
+            TextButton world4Button = new TextButton("Rock Advanced", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            world4Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectLevelActivity(engine, 4)); };
+            world4Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 6) - world4Button.Size / 2;
+
             Components.Add(infoLabel);
             Components.Add(world1Button);
             Components.Add(world2Button);
             Components.Add(world3Button);
+            Components.Add(world4Button);
         }
 
         public override void Update(GameTime gameTime)

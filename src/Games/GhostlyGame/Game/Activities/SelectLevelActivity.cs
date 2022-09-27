@@ -48,7 +48,7 @@ namespace GhostlyLib.Activities
                             "<?xml version=\"1.0\" encoding=\"utf - 8\"?><Configuration>"+
                             "<devices><device name=\"TrignoEmg\">"+
                                 "<analyzers><analyzer file=\"C3DSerializer.dll\" /></analyzers>"+
-                            "</device></devices>"+
+                            "</device></devices>" +
                             "<bindings>"+
                                 "<binding point=\"Jump/Swim\" zeroAngle=\"0\" sensitivity=\"1\" device=\"TrignoEmg\"><emgSensor device=\"TrignoEmg\" channel=\"0\"></emgSensor></binding>"+
                                 "<binding point=\"Shoot\" zeroAngle=\"0\" sensitivity=\"1\" device=\"TrignoEmg\"><emgSensor device=\"TrignoEmg\" channel=\"1\"></emgSensor></binding>"+

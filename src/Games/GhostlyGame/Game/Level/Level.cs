@@ -84,10 +84,18 @@ namespace GhostlyLib.Level
             String line;
             List<String> lines = new List<String>();
             int width = 0;
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Level)).Assembly;
-            string[] res = assembly.GetManifestResourceNames();
-            Stream stream = assembly.GetManifestResourceStream("GhostlyGame.Content.Levels.Ghostly." + p);
-            System.IO.StreamReader file = new System.IO.StreamReader(stream);
+            System.IO.StreamReader file;
+            if (File.Exists("Levels/" + p))
+            {
+                file = new System.IO.StreamReader("Levels/" + p);
+            }
+            else { 
+                var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Level)).Assembly;
+                string[] res = assembly.GetManifestResourceNames();
+                Stream stream = assembly.GetManifestResourceStream("GhostlyGame.Content.Levels.Ghostly." + p);
+                file = new System.IO.StreamReader(stream);
+            }
+
             while ((line = file.ReadLine()) != null)
             {
                 if (!line.StartsWith("!"))
