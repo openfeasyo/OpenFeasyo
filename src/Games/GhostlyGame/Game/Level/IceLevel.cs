@@ -18,18 +18,24 @@ using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
+using System.Timers;
 using System;
 
 namespace GhostlyLib.Level
 {
     public class IceLevel : Level
     {
+        #region Private members
+        private bool canShoot = true;
+        private Timer _timer;
+
         private LevelElements _elements;
+        #endregion Private members
 
         #region Public members
         public override Texture2D Background { get { return ImagesAndAnimations.Instance.Background; } }
 
-        public override EnemyAnimation BlackEnemyAnimation { get { return null; } }
+        public override EnemyAnimation BlackEnemyAnimation { get { return ImagesAndAnimations.Instance.BlackFlyAnimation; } }
 
         public override Texture2D CliffLeft { get { return ImagesAndAnimations.Instance.IceCliffLeft; } }
 
@@ -41,31 +47,31 @@ namespace GhostlyLib.Level
 
         public override Texture2D Foreground { get { return null; } }
 
-        public override EnemyAnimation GreenEnemyAnimation { get { return null; } }
+        public override EnemyAnimation GreenEnemyAnimation { get { return ImagesAndAnimations.Instance.GreenFlyAnimation; } }
 
         public override Texture2D Ground { get { return ImagesAndAnimations.Instance.Ice; } }
 
-        public override Texture2D LargeHill { get { return null; } }
+        public override Texture2D LargeHill { get { return ImagesAndAnimations.Instance.HillLarge; } }
 
-        public override EnemyAnimation RedEnemyAnimation { get { return null; } }
+        public override EnemyAnimation RedEnemyAnimation { get { return ImagesAndAnimations.Instance.RedFlyAnimation; } }
 
-        public override Texture2D SmallHill { get { return null; } }
+        public override Texture2D SmallHill { get { return ImagesAndAnimations.Instance.HillSmall; } }
 
-        public override EnemyAnimation YellowEnemyAnimation { get { return null; } }
+        public override EnemyAnimation YellowEnemyAnimation { get { return ImagesAndAnimations.Instance.YellowFlyAnimation; } }
 
         public override GameCharacter Character { get; protected set; }
 
-        public override Texture2D BackgroundClosest => throw new NotImplementedException();
+        public override Texture2D BackgroundClosest { get { return ImagesAndAnimations.Instance.BackgroundClosestRock; } }
 
-        public override Texture2D BackgroundCloser => throw new NotImplementedException();
+        public override Texture2D BackgroundCloser { get { return ImagesAndAnimations.Instance.BackgroundCloserRock; } }
 
-        public override Texture2D BackgroundClose => throw new NotImplementedException();
+        public override Texture2D BackgroundClose { get { return ImagesAndAnimations.Instance.BackgroundCloseRock; } }
 
-        public override Texture2D BackgroundFar => throw new NotImplementedException();
+        public override Texture2D BackgroundFar { get { return ImagesAndAnimations.Instance.BackgroundFar; } }
 
-        public override Texture2D BackgroundFurther => throw new NotImplementedException();
+        public override Texture2D BackgroundFurther { get { return ImagesAndAnimations.Instance.BackgroundFurther; } }
 
-        public override Texture2D BackgroundFurthest => throw new NotImplementedException();
+        public override Texture2D BackgroundFurthest { get { return ImagesAndAnimations.Instance.BackgroundFurthest; } }
 
         #endregion Public members
 
@@ -75,44 +81,67 @@ namespace GhostlyLib.Level
             this.Character = new EarthCharacter(gameScreen, elements);
         }
 
-        //public override void ProcessPrimaryAction(IEmgSignal[] signals, int index)
         public override void ProcessPrimaryAction(bool state)
         {
-            throw new NotImplementedException();
-            //TODO
-            //stop sliding
+            if (state)
+            {
+                if (GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.LongJumping) || GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.Jumping))
+                {
+                    GameScreen.GameCharacter.LongJump();
+                }
+                else
+                {
+                    GameScreen.GameCharacter.Jump();
+                }
+            }
+            else
+            {
+                if (GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.LongJumping))
+                {
+                    GameScreen.GameCharacter.BreakLongJump();
+                }
+                else if (GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.Jumping))
+                {
+                    GameScreen.GameCharacter.Falling();
+                }
+            }
         }
 
-        //public override void ProcessSecondaryAction(IEmgSignal[] signals, int index)
         public override void ProcessSecondaryAction(bool state)
         {
-            throw new NotImplementedException();
-            //TODO
-            //shoot
+            if (state && canShoot)
+            {
+                canShoot = false;
 
-            //if (signals[index].MuscleActivated && _prevShootState != signals[index].MuscleActivated)
-            //{
-            //    GameScreen.GameCharacter.Shoot();
-            //}
+                GameScreen.GameCharacter.Shoot();
 
-            //_prevShootState = signals[index].MuscleActivated;
+                this._timer = new Timer(200);
+                this._timer.Elapsed += Timer_Elapsed;
+                this._timer.Start();
+            }
+        }
+
+        void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            this.canShoot = true;
+            this._timer.Stop();
         }
 
         public override Enemy CreateBlackEnemy(int i, int j)
         {
-            return null;
+            return new BlackFlyEnemy(i, j, this.Elements, this.BlackEnemyAnimation, this.GameScreen);
         }
         public override Enemy CreateGreenEnemy(int i, int j)
         {
-            return null;
+            return new GreenFlyEnemy(i, j, this.Elements, this.GreenEnemyAnimation, this.GameScreen);
         }
         public override Enemy CreateRedEnemy(int i, int j)
         {
-            return null;
+            return new RedFlyEnemy(i, j, this.Elements, this.RedEnemyAnimation, this.GameScreen);
         }
         public override Enemy CreateYellowEnemy(int i, int j)
         {
-            return null;
+            return new YellowFlyEnemy(i, j, this.Elements, this.YellowEnemyAnimation, this.GameScreen);
         }
     }
 }

@@ -52,9 +52,12 @@
     <Compile Include="StaticDriverManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MathNet.Filtering">
+      <Version>0.7.0</Version>
+    </PackageReference>
     <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.0" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0" />
-</ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="DelsysAPI, Version=1.7.1.854, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DelsysAPI.WindowsBT.1.7.1.856\lib\DelsysAPI.dll</HintPath>

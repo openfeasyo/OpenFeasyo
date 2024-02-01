@@ -50,8 +50,16 @@ namespace GhostlyLib.Activities
             touchButton.Position = engine.Screen.ScreenMiddle - touchButton.Size/2 - new Vector2(engine.Screen.ScreenMiddle.X/2, 0);
 
             TextButton emgButton = new TextButton("EMG", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            emgButton.Clicked += EmgButton_Clicked;
-                //(object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectSensorActivity(_engine)); };
+            emgButton.Clicked += //EmgButton_Clicked;
+                (object sender, TextButton.ClickedEventArgs e) => {
+                    StartActivity(
+#if ANDROID
+                    new ProminentDisclosureActivity(_engine)
+#else
+                    new SelectSensorActivity(_engine)
+#endif
+                );
+                };
             emgButton.CursorEntered += (object sender, EventArgs e) => { engine.MusicPlayer.PlayEffect("hover"); };
             emgButton.Position = engine.Screen.ScreenMiddle - emgButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
 
@@ -82,7 +90,9 @@ namespace GhostlyLib.Activities
             GhostlyLib.MainActivity.Instance.RequestPermissions(new[] {
                         Manifest.Permission.AccessCoarseLocation,
                         Manifest.Permission.AccessFineLocation,
-                        Manifest.Permission.BluetoothAdmin}, 3, granted => { _permissionsGranted = granted; });
+                        Manifest.Permission.BluetoothAdmin,
+                        Manifest.Permission.Bluetooth
+            }, 3, granted => { _permissionsGranted = granted; });
 #else
             _permissionsGranted = true;
 #endif

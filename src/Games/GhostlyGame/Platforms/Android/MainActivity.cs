@@ -44,12 +44,14 @@ namespace GhostlyLib
             InputAnalyzerManager.Instance = new StaticAnalysisManager();
             SeriousGames.CurrentGame = new ConfiguredGame();
             SeriousGames.CurrentGame.Name = "Ghostly";
-            SeriousGames.HomeLocation = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
-            
+            SeriousGames.HomeLocation = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
+                //Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
+
             UIThread.Instance = new AndroidUIThread(this);
 
 
-            if (Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.M) {
+            //if (Android.OS.Build.VERSION.SdkInt >= BuildVersionCodes.M) 
+            {
                 // TODO check whether we need to show permission rationalle
                 this.RequestPermissions(new string[] {
                             Manifest.Permission.WakeLock,
