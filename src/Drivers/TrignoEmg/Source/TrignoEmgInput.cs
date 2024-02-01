@@ -74,6 +74,8 @@ namespace TrignoEmg
             get { return _device; }
         }
 
+        public float[] ActivationThreshold { get; set; }
+
         private Dictionary<string, SensorTrignoBt> _sensors = new Dictionary<string, SensorTrignoBt>();
 
 
@@ -81,6 +83,7 @@ namespace TrignoEmg
             _device = device;
             InitializeSignalProcessing();
             InitializeDataSource();
+            ActivationThreshold = new float[2];
         }
 
         #region Input events
@@ -224,6 +227,8 @@ namespace TrignoEmg
 
         public void CollectionDataReady(object sender, ComponentDataReadyEventArgs e)
         {
+           // Console.WriteLine("@");
+
             TransformData[] tData = new TransformData[e.Data.Length];
             foreach (TransformData td in e.Data) {
                 tData[_sensorToChannel[_guidToSensor[td.Id]]] = td;
@@ -236,7 +241,7 @@ namespace TrignoEmg
             //    {
             //        for (int j = 0; j < tData.Length; j++)
             //        {
-            //            data[j] = tData[j].Data[i];
+            //            data[j][i] = tData[j].Data[i];
             //        }
             //        switch (_calibrationState)
             //        {
@@ -289,7 +294,7 @@ namespace TrignoEmg
             else {
                 Console.Write("E");
             }
-          
+
         }
 
         private void CollectionStarted(object sender, DelsysAPI.Events.CollectionStartedEvent e)
@@ -418,7 +423,7 @@ namespace TrignoEmg
                     OnConnectionFailed(sensors[i]);
                     continue;
                }
-                Console.WriteLine("Selecting sensor " + sensors[i] + " - " + _sensors[sensors[i]].Id);
+                Console.WriteLine("Selecting sensor '" + sensors[i] + "' - '" + _sensors[sensors[i]].Id + "'");
                 BTPipeline.TrignoBtManager.SelectComponentAsync(_sensors[sensors[i]]).Wait();
                 _sensorToChannel.Add(sensors[i], i);
             }
@@ -596,7 +601,9 @@ namespace TrignoEmg
 
                 signal.AveragedSample[i] = currentMean;
 
-                if (currentMean > (_baselineMean[index] + (3 * _baselineStdev[index])))
+                double threshold = ActivationThreshold[index] <= 0 ? (_baselineMean[index] + (3 * _baselineStdev[index])) : ActivationThreshold[index];
+
+                if (currentMean > threshold)
                 {
                     onOff = currentMean;
                 }
