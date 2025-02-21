@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Source\Components2D\InfoPanel.cs" Link="Components2D\InfoPanel.cs" />
+    <Compile Include="..\..\Source\Core\Camera.cs" Link="Core\Camera.cs" />
+    <Compile Include="..\..\Source\Core\ContentDatabase.cs" Link="Core\ContentDatabase.cs" />
+    <Compile Include="..\..\Source\Core\ContentRepository.cs" Link="Core\ContentRepository.cs" />
+    <Compile Include="..\..\Source\Core\ICamera.cs" Link="Core\ICamera.cs" />
+    <Compile Include="..\..\Source\Effects\MusicPlayer.cs" Link="Effects\MusicPlayer.cs" />
+    <Compile Include="..\..\Source\Effects\Particles\ParticleEmitter.cs" Link="Effects\Particles\ParticleEmitter.cs" />
+    <Compile Include="..\..\Source\Effects\Particles\ParticleSettings.cs" Link="Effects\Particles\ParticleSettings.cs" />
+    <Compile Include="..\..\Source\Effects\Particles\ParticleSystem.cs" Link="Effects\Particles\ParticleSystem.cs" />
+    <Compile Include="..\..\Source\Effects\Particles\ParticleVertex.cs" Link="Effects\Particles\ParticleVertex.cs" />
+    <Compile Include="..\..\Source\Effects\Particles\Projectile.cs" Link="Effects\Particles\Projectile.cs" />
+    <Compile Include="..\..\Source\GameTools.cs" Link="GameTools.cs" />
+    <Compile Include="..\..\Source\ILevel.cs" Link="ILevel.cs" />
+    <Compile Include="..\..\Source\Screen.cs" Link="Screen.cs" />
+    <Compile Include="..\..\Source\UI\Activity.cs" Link="UI\Activity.cs" />
+    <Compile Include="..\..\Source\UI\Button.cs" Link="UI\Button.cs" />
+    <Compile Include="..\..\Source\UI\Component.cs" Link="UI\Component.cs" />
+    <Compile Include="..\..\Source\UI\ComponentCollection.cs" Link="UI\ComponentCollection.cs" />
+    <Compile Include="..\..\Source\UI\Image.cs" Link="UI\Image.cs" />
+    <Compile Include="..\..\Source\UI\ImageSwitch.cs" Link="UI\ImageSwitch.cs" />
+    <Compile Include="..\..\Source\UI\Label.cs" Link="UI\Label.cs" />
+    <Compile Include="..\..\Source\UI\ListItem.cs" Link="UI\ListItem.cs" />
+    <Compile Include="..\..\Source\UI\UIEngine.cs" Link="UI\UIEngine.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bepu\" />
+    <Folder Include="Components2D\" />
+    <Folder Include="Core\" />
+    <Folder Include="Effects\Particles\" />
+    <Folder Include="UI\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepuPhysics" Version="2.4.0" />
+    <PackageReference Include="BepuUtilities" Version="2.4.0" />
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.2.1105" />
+  </ItemGroup>
+
+</Project>

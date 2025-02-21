@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.Platform.net8", "OpenFeasyo.Platform\Platforms\Windows.net8\OpenFeasyo.Platform.net8.csproj", "{CDB050C4-7835-421E-9E27-DA03C8274FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.GameTools.net8", "OpenFeasyo.GameTools\Platforms\Windows.net8\OpenFeasyo.GameTools.net8.csproj", "{8EA9AFEE-FB00-486B-97E3-78CF92B119C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzers", "Analyzers", "{05F981B8-7454-4858-BE26-95B626FE0D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C3dSerializer", "Analyzers\C3dSerializer\Platforms\Windows.net8\C3dSerializer.csproj", "{718AE835-7116-42AF-A570-45D6D77AD9E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drivers", "Drivers", "{F0E5DD7B-85CF-4E6D-A370-0753C76FBD70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDB050C4-7835-421E-9E27-DA03C8274FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB050C4-7835-421E-9E27-DA03C8274FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB050C4-7835-421E-9E27-DA03C8274FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB050C4-7835-421E-9E27-DA03C8274FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA9AFEE-FB00-486B-97E3-78CF92B119C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA9AFEE-FB00-486B-97E3-78CF92B119C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA9AFEE-FB00-486B-97E3-78CF92B119C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA9AFEE-FB00-486B-97E3-78CF92B119C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718AE835-7116-42AF-A570-45D6D77AD9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718AE835-7116-42AF-A570-45D6D77AD9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718AE835-7116-42AF-A570-45D6D77AD9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718AE835-7116-42AF-A570-45D6D77AD9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{718AE835-7116-42AF-A570-45D6D77AD9E6} = {05F981B8-7454-4858-BE26-95B626FE0D01}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43A570F5-728E-45F2-A199-1C81AA720BEE}
+	EndGlobalSection
+EndGlobal

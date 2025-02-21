@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Source\C3dBalanceBoardSerializer.cs" Link="C3dBalanceBoardSerializer.cs" />
+    <Compile Include="..\..\Source\C3dBaseSerializer.cs" Link="C3dBaseSerializer.cs" />
+    <Compile Include="..\..\Source\C3dEmgSignalSerializer.cs" Link="C3dEmgSignalSerializer.cs" />
+    <Compile Include="..\..\Source\C3dSkeletonSerializer.cs" Link="C3dSkeletonSerializer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.2.1105" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\OpenFeasyo.Platform\Platforms\Windows.net8\OpenFeasyo.Platform.net8.csproj" />
+  </ItemGroup>
+
+</Project>

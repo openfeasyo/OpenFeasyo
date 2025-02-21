@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostlyGame", "Platforms\Windows.net8\GhostlyGame.csproj", "{DF0541F9-0FBE-423F-BB20-F2494C0F241E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.Platform.net8", "..\..\OpenFeasyo.Platform\Platforms\Windows.net8\OpenFeasyo.Platform.net8.csproj", "{F831735C-C3B6-4526-A83F-C20B66F6A895}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.GameTools.net8", "..\..\OpenFeasyo.GameTools\Platforms\Windows.net8\OpenFeasyo.GameTools.net8.csproj", "{F0B4726F-3C09-4780-8D41-AFA7C9680A70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C3dSerializer", "..\..\Analyzers\C3dSerializer\Platforms\Windows.net8\C3dSerializer.csproj", "{E30AFAC4-2776-45C5-AB35-5CADFEB9FBE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzers", "Analyzers", "{E52BAD47-561D-4CBE-BDE3-34D4ADD86232}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drivers", "Drivers", "{70005586-AE4F-4EA1-9A87-701D91364FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostlyGameApp", "GhostlyGameApp\GhostlyGameApp.csproj", "{2DC7BB91-F6D8-46BA-8C3E-8375C8287309}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF0541F9-0FBE-423F-BB20-F2494C0F241E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0541F9-0FBE-423F-BB20-F2494C0F241E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0541F9-0FBE-423F-BB20-F2494C0F241E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0541F9-0FBE-423F-BB20-F2494C0F241E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F831735C-C3B6-4526-A83F-C20B66F6A895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F831735C-C3B6-4526-A83F-C20B66F6A895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F831735C-C3B6-4526-A83F-C20B66F6A895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F831735C-C3B6-4526-A83F-C20B66F6A895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B4726F-3C09-4780-8D41-AFA7C9680A70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B4726F-3C09-4780-8D41-AFA7C9680A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B4726F-3C09-4780-8D41-AFA7C9680A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B4726F-3C09-4780-8D41-AFA7C9680A70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30AFAC4-2776-45C5-AB35-5CADFEB9FBE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E30AFAC4-2776-45C5-AB35-5CADFEB9FBE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30AFAC4-2776-45C5-AB35-5CADFEB9FBE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E30AFAC4-2776-45C5-AB35-5CADFEB9FBE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC7BB91-F6D8-46BA-8C3E-8375C8287309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC7BB91-F6D8-46BA-8C3E-8375C8287309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC7BB91-F6D8-46BA-8C3E-8375C8287309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC7BB91-F6D8-46BA-8C3E-8375C8287309}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E30AFAC4-2776-45C5-AB35-5CADFEB9FBE1} = {E52BAD47-561D-4CBE-BDE3-34D4ADD86232}
+	EndGlobalSection
+EndGlobal
