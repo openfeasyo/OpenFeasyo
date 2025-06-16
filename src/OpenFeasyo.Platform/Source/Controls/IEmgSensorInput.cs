@@ -28,6 +28,8 @@ namespace OpenFeasyo.Platform.Controls
         //event EventHandler<ErrorArgs> Error;
 
         void Calibrate();
+
+        float[] ActivationThreshold { get; }
     }
 
     public class MuscleActivationChangedEventArgs : EventArgs

@@ -38,9 +38,10 @@ namespace GhostlyLib.Elements
 
         #endregion Public members
 
-        public Coin(int x, int y, int value, LevelElements elements, GameScreen gameScreen) : base(gameScreen)
+        public Coin(int x, int y, int value, LevelElements elements, GameScreen gameScreen, double checkpoint) : base(gameScreen)
         {
-            this.X = x * 40;
+            //checkpoint is number of tiles that need to be "shifted" left, thus minus sign
+            this.X = (-checkpoint + x) * 40;
             this.Y = y * 40;
             this.Value = value;
             this._elements = elements;
@@ -70,7 +71,7 @@ namespace GhostlyLib.Elements
             this.X += this.GameScreen.GameBackground.HorizontalSpeed;
             _rectangle = new Rectangle((int)this.X, (int)this.Y, this._width, this._height);
 
-            if (this.IsVisible && _rectangle.Intersects(this.GameScreen.GameCharacter.YellowRed))
+            if (this.IsVisible && _rectangle.Intersects(this.GameScreen.GameCharacter.MainBody))
             {
                 CheckVerticalCollision(this.GameScreen.GameCharacter.TopBody, GameScreen.GameCharacter.BottomBody);
                 CheckSideCollision(this.GameScreen.GameCharacter.LeftSide, GameScreen.GameCharacter.RightSide);

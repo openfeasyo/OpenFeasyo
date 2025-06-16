@@ -36,7 +36,7 @@ namespace GhostlyLib.Elements.Enemies
             }
         }
 
-        public DifficultEnemy(int x, int y, LevelElements elements, GameScreen gameScreen) : base(x, y, elements, gameScreen)
+        public DifficultEnemy(int x, int y, LevelElements elements, GameScreen gameScreen, double checkpoint) : base(x, y, elements, gameScreen, checkpoint)
         {
             this.CurrentHealth = 3;
             this.Bonus = 5;

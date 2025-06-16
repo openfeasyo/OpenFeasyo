@@ -59,7 +59,10 @@ namespace GhostlyLib.Elements
         Jumping,
         LongJumping,
         Standing,
-        Swimming
+        Swimming,
+        Left,
+        Right,
+        None
     }
 
     public enum EnemyState
@@ -93,6 +96,15 @@ namespace GhostlyLib.Elements
         InvisibleTile,
         Lava,
         //Sand,
-        Water
+        Water,
+        Planet,
+        Checkpoint,
+        Star,
+        Ufo,
+        Debris,
+        DebrisLong,
+        SpaceSpiral,
+        SpaceMist,
+        FinishLine
     }
 }

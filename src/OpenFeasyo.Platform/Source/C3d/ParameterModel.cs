@@ -339,7 +339,7 @@ namespace Vub.Etro.IO
             {
                 _dimensions = new int[] { };
                 _paramType = 1;
-                _vectorData = BitConverter.GetBytes((byte)(object)data);
+                _vectorData = new byte[] { (byte)(object)data};
                 _length = 1;
                 IsScalar = true;
             }
@@ -466,7 +466,7 @@ namespace Vub.Etro.IO
                     byte n = ((byte[])(object)data)[i];
 
                     // TODO : check this
-                    Array.Copy(BitConverter.GetBytes(n), 0, _vectorData, i * GetSize(_paramType), GetSize(_paramType));
+                    Array.Copy(new byte[] { n }, 0, _vectorData, i * GetSize(_paramType), GetSize(_paramType));
                 }
                 IsScalar = false;
             }

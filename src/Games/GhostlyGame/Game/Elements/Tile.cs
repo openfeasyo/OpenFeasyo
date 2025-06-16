@@ -21,7 +21,6 @@ namespace GhostlyLib.Elements
     public class Tile : Drawable
     {
         #region Private members
-
         private int _width = 40, _height = 40;
         private Texture2D _image = null;
         private LevelElements _elements;
@@ -30,6 +29,7 @@ namespace GhostlyLib.Elements
 
         #region Public members
 
+        public int OriginalX { get; private set; }
         public Rectangle Rectangle { get; private set; }
         public TileType TileType { get; private set; }
         public override Texture2D Sprite { get { return _image; } }
@@ -37,9 +37,14 @@ namespace GhostlyLib.Elements
 
         #endregion Public members
 
-        public Tile(int x, int y, TileType typeInt, LevelElements elements, Texture2D image, GameScreen gameScreen) : base(gameScreen)
+        public Tile(int x, int y, int width, int height, TileType typeInt, LevelElements elements, Texture2D image, GameScreen gameScreen, double checkpoint) : base(gameScreen)
         {
-            this.X = x * 40;
+            this._width = width;
+            this._height = height;
+            //checkpoint is number of tiles that need to be "shifted" left, thus minus sign
+            this.X = (-checkpoint + x) * 40;
+            this.OriginalX = x;
+
             this.Y = y * 40;
             this.TileType = typeInt;
             this._elements = elements;
@@ -66,12 +71,14 @@ namespace GhostlyLib.Elements
             }
         }
 
+        public Tile(int x, int y, TileType typeInt, LevelElements elements, Texture2D image, GameScreen gameScreen, double checkpoint) : this(x, y, 40, 40, typeInt, elements, image, gameScreen, checkpoint) { }
+
         public override void Update(GameTime gameTime)
         {
             this.X += this.GameScreen.GameBackground.HorizontalSpeed;
             this.Rectangle = new Rectangle((int)this.X, (int)this.Y, this._width, this._height);
 
-            if (this.X < this.GameScreen.GameCharacter.X - 400)
+            if (this.X < this.GameScreen.GameCharacter.X - 600)
             {
                 this.IsVisible = false;
                 _elements.RemoveElement(this);
@@ -90,7 +97,7 @@ namespace GhostlyLib.Elements
         {
             if (this.Sprite != null && this.IsVisible)
             {
-                spriteBatch.Draw(this.Sprite, /*new Rectangle(*/GameScreen.Screen.ToScreen( (int)this.X, (int)this.Y, this._width+1, this._height+1), Color.White);
+                spriteBatch.Draw(this.Sprite, /*new Rectangle(*/GameScreen.Screen.ToScreen((int)this.X, (int)this.Y, this._width + 1, this._height + 1), Color.White);
             }
         }
     }

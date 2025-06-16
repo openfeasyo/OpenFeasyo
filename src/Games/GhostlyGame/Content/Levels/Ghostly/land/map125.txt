@@ -1,0 +1,35 @@
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                                                                                                        c                                                                                  e
+                                                                                                        c                                                                                  e
+                                                                                                        c                                                                                  e
+                                                                                                        c                                                                                  e
+                                                                                                        c                                                                                  e
+                                                                                                        c                      Y                                                           e
+                                                                                                        c                                                                                  e
+                                                                                                        c               lmmmmmmmr         B                                                e
+                                                                                                 B      c          lmmmr                                                                   e
+                                                                                             \\         c                        lmmmmmmmmmmr                                              e
+                                                  B                                     Y lmmmmmmr      c   lmmmmmr                                   Y                                    e
+                                      Y                       B lmmmmmmr        B                       c                                                                     Y   @        e
+                                   \\        lmmmmmr                              lmmmmmmr        lmmmmmmmmr                                 lmmmmmmmmmmr        Y   B                     e
+                              lmmmmmmmr                    lmmmr        lmmmmmmmmr                                                                                         mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+                                       mmmmmm'''''''mmmmmmm''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''mmmmmmmmmmmmmmmmmm###########################################
+mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm'''''''''######"""""""#######""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""#############################################################
+"""""""""""""""""""""""""""""""""""""""######"""""""#######""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""#############################################################
+
+! l grass left
+! m grass middle
+! r grass right
+! | invisible tile
+
+! # ground_dirt
+! * ice
+! ~ water
+! % deep_water
+! ' lava
+! " deep_lava
+! ! exclamation tile
+! @ exit
+! \ crate
+! = fence
+! c checkpoint

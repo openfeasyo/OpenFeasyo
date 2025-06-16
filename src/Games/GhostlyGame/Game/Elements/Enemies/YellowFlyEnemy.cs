@@ -22,7 +22,7 @@ namespace GhostlyLib.Elements.Enemies
         public override int Height { get { return 40; } }
         public override int Width { get { return 63; } }
 
-        public YellowFlyEnemy(int x, int y, LevelElements elements, EnemyAnimation animation, GameScreen gameScreen) : base(x, y, elements, gameScreen)
+        public YellowFlyEnemy(int x, int y, LevelElements elements, EnemyAnimation animation, GameScreen gameScreen, double checkpoint) : base(x, y, elements, gameScreen, checkpoint)
         {
             this.Animation = animation;
             this.Animation.SetCurrentFrames(EnemyState.FullHealth);

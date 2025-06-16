@@ -49,10 +49,20 @@ namespace GhostlyLib.Level
         Texture2D SmallHill { get; }
         Texture2D Water { get; }
         EnemyAnimation YellowEnemyAnimation { get; }
+
+
+        //Textures for space levels
+        Texture2D BluePlanet { get; }
+        Texture2D YellowPlanet { get; }
+        Texture2D OrangePlanet { get; }
+        Texture2D PinkPlanet { get; }
+        Texture2D RedPlanet { get; }
+
+
         int MaxScore { get; set; }
         void ProcessPrimaryAction(bool state);
         void ProcessSecondaryAction(bool state);
-        void LoadMap(String p);
+        void LoadMap(String p, double checkpoint);
 
         GameCharacter Character { get; }
     }

@@ -20,7 +20,7 @@ namespace GhostlyLib.Elements.Enemies
     {
         public override EnemyState State { get { return EnemyState.FullHealth; } }
 
-        public EasyEnemy(int x, int y, LevelElements elements, GameScreen gameScreen) : base(x, y, elements, gameScreen)
+        public EasyEnemy(int x, int y, LevelElements elements, GameScreen gameScreen, double checkpoint) : base(x, y, elements, gameScreen, checkpoint)
         {
             this.CurrentHealth = 1;
             this.Bonus = 1;

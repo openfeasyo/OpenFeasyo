@@ -20,6 +20,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using GhostlyLib.Animations;
 using OpenFeasyo.GameTools.Effects;
+using System.Diagnostics;
 
 namespace GhostlyLib.Activities
 {
@@ -305,7 +306,7 @@ namespace GhostlyLib.Activities
                 calibrationMean = e.ZeroMean;
                 calibrationStdDev = e.ZeroStandardDeviation;
                 calibrationData = e.CalibrationsData;
-                Console.WriteLine("Calibration data " + calibrationData);
+                Debug.WriteLine("Calibration data " + calibrationData);
                 //Color[] pixelData = new Color[emgTexture.Width * emgTexture.Height];
                 //emgTexture.GetData<Color>(pixelData);
                 //double emgMax = e.ZeroMean[0] * 3 * 2;

@@ -26,7 +26,7 @@ namespace GhostlyLib.Level
     {
         #region Private members
         private bool canShoot = true;
-        private Timer _timer;
+        private System.Timers.Timer _timer;
 
         private LevelElements _elements;
         #endregion Private members
@@ -72,6 +72,24 @@ namespace GhostlyLib.Level
 
         public override Texture2D BackgroundFurthest => throw new System.NotImplementedException();
 
+
+        public override Texture2D BluePlanet { get { return null; } }
+        public override Texture2D YellowPlanet { get { return null; } }
+        public override Texture2D OrangePlanet { get { return null; } }
+        public override Texture2D PinkPlanet { get { return null; } }
+        public override Texture2D RedPlanet { get { return null; } }
+        public override Texture2D Star { get { return null; } }
+
+        public override Texture2D ExitSign { get { return ImagesAndAnimations.Instance.ExitDoor; } }
+
+        public override Texture2D Ufo { get { return null; } }
+
+        public override Texture2D Debris { get { return null; } }
+
+        public override Texture2D SpaceSpiral { get { return null; } }
+
+        public override Texture2D SpaceMist { get { return null; } }
+
         #endregion Public members
 
         public WaterLevel(GameScreen gameScreen, LevelElements elements): base(gameScreen)
@@ -100,27 +118,27 @@ namespace GhostlyLib.Level
 
                 this.Character.Shoot();
 
-                this._timer = new Timer(200);
+                this._timer = new System.Timers.Timer(200);
                 this._timer.Elapsed += Timer_Elapsed;
                 this._timer.Start();
             }
         }
 
-        public override Enemy CreateBlackEnemy(int i, int j)
+        public override Enemy CreateBlackEnemy(int i, int j, double checkpoint)
         {
-            return new BlackFishEnemy(i, j, this.Elements, this.BlackEnemyAnimation, this.GameScreen);
+            return new BlackFishEnemy(i, j, this.Elements, this.BlackEnemyAnimation, this.GameScreen, checkpoint);
         }
-        public override Enemy CreateGreenEnemy(int i, int j)
+        public override Enemy CreateGreenEnemy(int i, int j, double checkpoint)
         {
-            return new GreenFishEnemy(i, j, this.Elements, this.GreenEnemyAnimation, this.GameScreen);
+            return new GreenFishEnemy(i, j, this.Elements, this.GreenEnemyAnimation, this.GameScreen, checkpoint);
         }
-        public override Enemy CreateRedEnemy(int i, int j)
+        public override Enemy CreateRedEnemy(int i, int j, double checkpoint)
         {
-            return new RedFishEnemy(i, j, this.Elements, this.RedEnemyAnimation, this.GameScreen);
+            return new RedFishEnemy(i, j, this.Elements, this.RedEnemyAnimation, this.GameScreen, checkpoint);
         }
-        public override Enemy CreateYellowEnemy(int i, int j)
+        public override Enemy CreateYellowEnemy(int i, int j, double checkpoint)
         {
-            return new YellowFishEnemy(i, j, this.Elements, this.YellowEnemyAnimation, this.GameScreen);
+            return new YellowFishEnemy(i, j, this.Elements, this.YellowEnemyAnimation, this.GameScreen, checkpoint);
         }
 
         void Timer_Elapsed(object sender, ElapsedEventArgs e)

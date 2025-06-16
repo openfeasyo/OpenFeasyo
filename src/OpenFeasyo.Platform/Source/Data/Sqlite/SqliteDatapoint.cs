@@ -19,12 +19,13 @@ using System.Text;
 //#if ANDROID
 //    using Mono.Data.Sqlite;
 //#else
-using System.Data.SQLite;
+//using Microsoft.Data.Sqlite;
 //#endif
 
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
+using Microsoft.Data.Sqlite;
 
 namespace OpenFeasyo.Platform.Data.Sqlite
 {
@@ -36,7 +37,7 @@ namespace OpenFeasyo.Platform.Data.Sqlite
                 "<type><BindingType>SingleBoneAngle</BindingType></type><firstBone><BoneMarkers>Spine</BoneMarkers></firstBone></skeleton>" +
                 "</binding></bindings></Configuration>";
 
-        private SQLiteConnection connection;
+        private SqliteConnection connection;
         private string _therapist;
 
         public SqliteDatapoint(string therapist)
@@ -60,7 +61,9 @@ namespace OpenFeasyo.Platform.Data.Sqlite
             if (!exists){
                 // Need to create the database before seeding it with some data
                 Trace.WriteLine("Creating database: " + dbPath);
-                SQLiteConnection.CreateFile(dbPath);
+#if FALSE // TODO conversion from SQLiteConnection (System.Data.SQLite)
+                SqliteConnection.CreateFile(dbPath);
+#endif
             }
             connection = InitializeTables(dbPath);
         }
@@ -178,10 +181,10 @@ namespace OpenFeasyo.Platform.Data.Sqlite
         }
 
 
-        private SQLiteConnection InitializeTables(string dbPath)
+        private SqliteConnection InitializeTables(string dbPath)
         {
             
-            SQLiteConnection connection = new SQLiteConnection("Data Source=" + dbPath,true);
+            SqliteConnection connection = new SqliteConnection("Data Source=" + dbPath);
             connection.Open();
             List<string> createCommands = new List<string>();
 
@@ -216,7 +219,7 @@ namespace OpenFeasyo.Platform.Data.Sqlite
             return connection;
         }
         
-        private bool tableExists(SQLiteConnection connection, Type t) {
+        private bool tableExists(SqliteConnection connection, Type t) {
             bool ret = false;
                 using (var c = connection.CreateCommand())
                 {

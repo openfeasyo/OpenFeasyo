@@ -58,6 +58,7 @@ namespace GhostlyLib.Activities
             TextButton playAgainButton = new TextButton("Play again", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             playAgainButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
                 Components.Remove(_gameOverPanel);
+                _screen.Initialize();   //to initalize background
                 _screen.LoadLevel();
             };
             playAgainButton.Position = engine.Screen.ScreenMiddle - playAgainButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
@@ -221,8 +222,7 @@ namespace GhostlyLib.Activities
         {
             base.OnCreate();
             _screen.Initialize();
-            _screen.LoadContent(_engine.Content);
-            
+            _screen.LoadContent(_engine.Content);            
         }
 
         public override void Update(GameTime gameTime)

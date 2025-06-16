@@ -16,7 +16,7 @@ using GhostlyLib.Animations;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
+using System.Diagnostics;
 using System.Timers;
 
 namespace GhostlyLib.Elements.Character
@@ -24,7 +24,7 @@ namespace GhostlyLib.Elements.Character
     public abstract class GameCharacter : Drawable
     {
         private double _speedY = 0;
-        private Timer _timer;
+        private System.Timers.Timer _timer;
 
         protected CharacterAnimation Animation { get; set; }
         public int CurrentHealth { get; protected set; }
@@ -36,14 +36,14 @@ namespace GhostlyLib.Elements.Character
         public double SpeedY
         {
             get { return _speedY; }
-            set { _speedY = value; }
+            set { _speedY = value; /*Debug.WriteLine("character speedY = " + value);*/ }
         }
 
         public Rectangle TopBody { get; protected set; }
         public Rectangle BottomBody { get; protected set; }
         public Rectangle LeftSide { get; protected set; }
         public Rectangle RightSide { get; protected set; }
-        public Rectangle YellowRed { get; protected set; }
+        public Rectangle MainBody { get; protected set; }
         public VerticalMovement VerticalMovement { get; protected set; }
         public HorizontalMovement HorizontalMovement { get; protected set; }
         public CharacterLiveState LiveState { get; protected set; }
@@ -70,7 +70,7 @@ namespace GhostlyLib.Elements.Character
             this.LiveState = CharacterLiveState.Hit;
             this.Animation.SetCurrentFrames(this.LiveState);
 
-            this._timer = new Timer(1000);
+            this._timer = new System.Timers.Timer(1000);
             this._timer.Elapsed += Timer_Elapsed;
             this._timer.Start();
 
@@ -107,5 +107,8 @@ namespace GhostlyLib.Elements.Character
         public abstract void Falling();
         public abstract void SlidingOnIce();
         public abstract void Swimming();
+        public abstract void MoveLeft(); 
+        public abstract void MoveRight();
+        public abstract void StopLeftRightMovement();
     }
 }

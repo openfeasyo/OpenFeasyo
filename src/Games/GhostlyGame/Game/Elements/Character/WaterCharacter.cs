@@ -17,9 +17,6 @@ using GhostlyLib.Elements.Weapons;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace GhostlyLib.Elements.Character
 {
@@ -110,7 +107,7 @@ namespace GhostlyLib.Elements.Character
                 this.Y = 0;
             }
 
-            YellowRed = new Rectangle((int)this.X - 32, (int)this.Y - 51, 180, 120);
+            MainBody = new Rectangle((int)this.X - 32, (int)this.Y - 51, 180, 120);
             TopBody = new Rectangle((int)this.X, (int)this.Y + 1, 55, 30);
             BottomBody = new Rectangle((int)this.X + 5, (int)this.Y + 39, 45, 16);
 
@@ -129,18 +126,27 @@ namespace GhostlyLib.Elements.Character
 
         private void CheckCollisions()
         {
-            IEnumerable<Drawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.YellowRed));
+            IEnumerable<Drawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
 
             IEnumerable<Drawable> tilesAhead = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide));
 
             if (tilesAhead.Count() > 0)
             {
-                this.X = tilesAhead.ElementAt(0).X - this.Width;
-                this.Blocked();
-
-                if (tilesAhead.Where(t => ((Tile)t).TileType.Equals(TileType.Exit) || ((Tile)t).TileType.Equals(TileType.ExitSign)).Count() > 0)
+                if (((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.Checkpoint))
                 {
-                    this.GameScreen.LevelDone();
+                    //original X stores original position of the tile, at the start of the level, e.g. 50th tile from the left
+                    //also, we save the checkpoint position 5 tiles before the actual checkpoint in the game
+                    GameScreen.Checkpoint(((Tile)tilesAhead.ElementAt(0)).OriginalX - 5);
+                }
+                else
+                {
+                    this.X = tilesAhead.ElementAt(0).X - this.Width;
+                    this.Blocked();
+
+                    if (tilesAhead.Where(t => ((Tile)t).TileType.Equals(TileType.Exit) || ((Tile)t).TileType.Equals(TileType.ExitSign)).Count() > 0)
+                    {
+                        this.GameScreen.LevelDone();
+                    }
                 }
             }
             else
@@ -169,7 +175,7 @@ namespace GhostlyLib.Elements.Character
                 this.Falling();
             }
 
-            IEnumerable<Drawable> tilesBehinf = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.TopBody));
+            //IEnumerable<Drawable> tilesBehinf = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.TopBody));
         }
 
         public override void Jump()
@@ -229,6 +235,21 @@ namespace GhostlyLib.Elements.Character
             //not applicable in water level
         }
         public override void BreakLongJump()
+        {
+            //not applicable in water level
+        }
+
+        public override void MoveLeft()
+        {
+            //not applicable in water level
+        }
+
+        public override void MoveRight()
+        {
+            //not applicable in water level
+        }
+
+        public override void StopLeftRightMovement()
         {
             //not applicable in water level
         }

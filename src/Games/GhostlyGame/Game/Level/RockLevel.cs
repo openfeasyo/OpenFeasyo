@@ -26,7 +26,7 @@ namespace GhostlyLib.Level
     {
         #region Private members
         private bool canShoot = true;
-        private Timer _timer;
+        private System.Timers.Timer _timer;
 
         private LevelElements _elements;
         #endregion Private members
@@ -71,6 +71,25 @@ namespace GhostlyLib.Level
         public override Texture2D BackgroundFurther { get { return ImagesAndAnimations.Instance.BackgroundFurther; } }
 
         public override Texture2D BackgroundFurthest { get { return ImagesAndAnimations.Instance.BackgroundFurthest; } }
+
+
+        public override Texture2D BluePlanet { get { return null; } }
+        public override Texture2D YellowPlanet { get { return null; } }
+        public override Texture2D OrangePlanet { get { return null; } }
+        public override Texture2D PinkPlanet { get { return null; } }
+        public override Texture2D RedPlanet { get { return null; } }
+
+        public override Texture2D Star { get { return null; } }
+
+        public override Texture2D ExitSign {get { return ImagesAndAnimations.Instance.ExitDoor; } }
+
+        public override Texture2D Ufo { get { return null; } }
+
+        public override Texture2D Debris { get { return null; } }
+
+        public override Texture2D SpaceSpiral { get { return null; } }
+
+        public override Texture2D SpaceMist { get { return null; } }
         #endregion Public members
 
         public RockLevel(GameScreen gameScreen, LevelElements elements): base(gameScreen)
@@ -79,21 +98,21 @@ namespace GhostlyLib.Level
             this.Character = new RockCharacter(gameScreen, elements);
         }
 
-        public override Enemy CreateBlackEnemy(int i, int j)
+        public override Enemy CreateBlackEnemy(int i, int j, double checkpoint)
         {
-            return new BlackFlyEnemy(i, j, this.Elements, this.BlackEnemyAnimation, this.GameScreen);
+            return new BlackFlyEnemy(i, j, this.Elements, this.BlackEnemyAnimation, this.GameScreen, checkpoint);
         }
-        public override Enemy CreateGreenEnemy(int i, int j)
+        public override Enemy CreateGreenEnemy(int i, int j, double checkpoint)
         {
-            return new GreenFlyEnemy(i, j, this.Elements, this.GreenEnemyAnimation, this.GameScreen);
+            return new GreenFlyEnemy(i, j, this.Elements, this.GreenEnemyAnimation, this.GameScreen, checkpoint);
         }
-        public override Enemy CreateRedEnemy(int i, int j)
+        public override Enemy CreateRedEnemy(int i, int j, double checkpoint)
         {
-            return new RedFlyEnemy(i, j, this.Elements, this.RedEnemyAnimation, this.GameScreen);
+            return new RedFlyEnemy(i, j, this.Elements, this.RedEnemyAnimation, this.GameScreen, checkpoint);
         }
-        public override Enemy CreateYellowEnemy(int i, int j)
+        public override Enemy CreateYellowEnemy(int i, int j, double checkpoint)
         {
-            return new YellowFlyEnemy(i, j, this.Elements, this.YellowEnemyAnimation, this.GameScreen);
+            return new YellowFlyEnemy(i, j, this.Elements, this.YellowEnemyAnimation, this.GameScreen, checkpoint);
         }
 
         public override void ProcessPrimaryAction(bool state)
@@ -130,7 +149,7 @@ namespace GhostlyLib.Level
 
                 GameScreen.GameCharacter.Shoot();
 
-                this._timer = new Timer(200);
+                this._timer = new System.Timers.Timer(200);
                 this._timer.Elapsed += Timer_Elapsed;
                 this._timer.Start();
             }

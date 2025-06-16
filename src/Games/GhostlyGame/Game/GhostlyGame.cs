@@ -24,6 +24,7 @@ using OpenFeasyo.GameTools.UI;
 using System;
 using System.Collections.Concurrent;
 using OpenFeasyo.Platform.Controls.Drivers;
+using System.Diagnostics;
 
 namespace GhostlyLib
 {
@@ -254,7 +255,7 @@ namespace GhostlyLib
         internal void OnGameStarted(GameStartedEventArgs args)
         {
             ConfigurationLoader.LoadConfigurationFromString(Configuration, this);
-            Console.WriteLine("Game Started ");
+            Debug.WriteLine("Game Started ");
             if (GameStarted != null)
             {
                 GameStarted(this, args);
@@ -265,7 +266,7 @@ namespace GhostlyLib
 
         internal void OnGameFinished(int score, int level, GameFinishedEventArgs.EndReason reason)
         {
-            Console.WriteLine("Game Finished - Score: " + score);
+            Debug.WriteLine("Game Finished - Score: " + score);
             if (GameFinished != null)
             {
                 GameFinished(this, new GameFinishedEventArgs(_definition.Name, score, level, reason));

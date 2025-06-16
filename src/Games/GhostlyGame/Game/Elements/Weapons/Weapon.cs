@@ -101,15 +101,16 @@ namespace GhostlyLib.Elements.Weapons
                     if (enemy.CurrentHealth == 0)
                     {
                         this.GameScreen.GameCharacter.Score += enemy.Bonus;
-                        enemy.Die();
-                        
+                        enemy.Die();                        
                     }
                 }
             }
 
             foreach (Tile tile in _elements.Tiles)
             {
-                if (this.IsVisible && tile.IsVisible && tile.TileType != TileType.InvisibleTile && tile.TileType != TileType.Exit && (this._rectangle.Intersects(tile.Rectangle)))
+                if (this.IsVisible && tile.IsVisible && tile.TileType != TileType.InvisibleTile 
+                    && tile.TileType != TileType.Exit && tile.TileType != TileType.Checkpoint 
+                    && (this._rectangle.Intersects(tile.Rectangle)))
                 {
                     this.IsVisible = false;
                     _elements.RemoveElement(this);

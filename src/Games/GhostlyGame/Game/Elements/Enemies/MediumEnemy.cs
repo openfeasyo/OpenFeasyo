@@ -34,7 +34,7 @@ namespace GhostlyLib.Elements.Enemies
             }
         }
 
-        public MediumEnemy(int x, int y, LevelElements elements, GameScreen gameScreen) : base(x, y, elements, gameScreen)
+        public MediumEnemy(int x, int y, LevelElements elements, GameScreen gameScreen, double checkpoint) : base(x, y, elements, gameScreen, checkpoint)
         {
             this.CurrentHealth = 2;
             this.Bonus = 3;

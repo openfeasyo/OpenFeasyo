@@ -39,9 +39,10 @@ namespace GhostlyLib.Elements.Enemies
 
         public abstract EnemyState State { get; }
 
-        public Enemy(int x, int y, LevelElements elements, GameScreen gameScreen) : base(gameScreen)
+        public Enemy(int x, int y, LevelElements elements, GameScreen gameScreen, double checkpoint) : base(gameScreen)
         {
-            this.X = x * 40;
+            //checkpoint is number of tiles that need to be "shifted" left, thus minus sign
+            this.X = (-checkpoint + x) * 40;
             this.Y = y * 40;
 
             this._elements = elements;
@@ -53,7 +54,7 @@ namespace GhostlyLib.Elements.Enemies
             this.X += this.GameScreen.GameBackground.HorizontalSpeed;
             this.Rectangle = new Rectangle((int)X, (int)Y, this.Width, this.Height);
 
-            if (this.Rectangle.Intersects(this.GameScreen.GameCharacter.YellowRed))
+            if (this.Rectangle.Intersects(this.GameScreen.GameCharacter.MainBody))
             {
                 CheckCollision();
             }

@@ -17,6 +17,7 @@ using OpenFeasyo.Platform.Controls;
 using OpenFeasyo.Platform.Data;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using Vub.Etro.IO;
@@ -57,8 +58,8 @@ namespace FeasyMotion.C3dSerializer
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: Couldn't load current context directory in C3DStreamSerializer");
-                Console.WriteLine(e.ToString());
+                Debug.WriteLine("Error: Couldn't load current context directory in C3DStreamSerializer");
+                Debug.WriteLine(e.ToString());
             }
             return dir;
         }

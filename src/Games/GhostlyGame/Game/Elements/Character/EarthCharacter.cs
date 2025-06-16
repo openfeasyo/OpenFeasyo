@@ -17,9 +17,6 @@ using GhostlyLib.Elements.Weapons;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace GhostlyLib.Elements.Character
 {
@@ -30,8 +27,8 @@ namespace GhostlyLib.Elements.Character
 
         #region Private members
 
-        private List<Projectile> projectiles = new List<Projectile>();
-        private List<Projectile> projectilesToAdd = new List<Projectile>();
+        //private List<Projectile> projectiles = new List<Projectile>();
+        //private List<Projectile> projectilesToAdd = new List<Projectile>();
 
         private Texture2D _jumpingImage;
         private LevelElements _elements;
@@ -124,26 +121,19 @@ namespace GhostlyLib.Elements.Character
             }
 
             // Move Character or Scroll Background accordingly.
-            if (this.SpeedX < 0)
-            {
-                this.X += (int)(gameTime.ElapsedGameTime.Milliseconds * this.SpeedX);
-            }
-
-            //if (this.SpeedX == 0 || this.SpeedX < 0)
+            //KATKa: is this ever used???
+            //if (this.SpeedX < 0)
             //{
-            //    GameScreen.GameBackground.HorizontalSpeed = 0;
+            //    this.X += (int)(gameTime.ElapsedGameTime.Milliseconds * this.SpeedX);
             //}
 
-            if (this.X <= 200 && this.SpeedX > 0)
-            {
-                this.X += (int)(gameTime.ElapsedGameTime.Milliseconds * this.SpeedX);
-            }
-            //if (this.SpeedX > 0 && this.X > 200)
+            //KATKA: is this ever used???
+            //if (this.X <= 200 && this.SpeedX > 0)
             //{
-            //    GameScreen.GameBackground.HorizontalSpeed = -1 * GameScreen.SPEED;
+            //    this.X += (int)(gameTime.ElapsedGameTime.Milliseconds * this.SpeedX);
             //}
-
-            YellowRed = new Rectangle((int)this.X - 32, (int)this.Y - 71, 120, 180);
+            
+            MainBody = new Rectangle((int)this.X - 32, (int)this.Y - 71, 120, 180);
             TopBody = new Rectangle((int)this.X + 12, (int)this.Y + 1, 35, 35);
             BottomBody = new Rectangle((int)this.X + 23, (int)this.Y + 59, 13, 19);
             //LeftSide = new Rectangle(this.X, this.TopBody.Y + 29, 11, 25);
@@ -163,20 +153,30 @@ namespace GhostlyLib.Elements.Character
 
         private void CheckCollisions()
         {
-            IEnumerable<Drawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.YellowRed));
+            IEnumerable<Drawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
 
             IEnumerable<Drawable> tilesAhead = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide)
-                    && (!((Tile)o).TileType.Equals(TileType.Dirt) && !((Tile)o).TileType.Equals(TileType.DeepWater) && !((Tile)o).TileType.Equals(TileType.Water)
+                    && (!((Tile)o).TileType.Equals(TileType.Dirt)
+                    && !((Tile)o).TileType.Equals(TileType.DeepWater) && !((Tile)o).TileType.Equals(TileType.Water)
                     && !((Tile)o).TileType.Equals(TileType.DeepLava) && !((Tile)o).TileType.Equals(TileType.Lava)));
 
             if (tilesAhead.Count() > 0)
             {
-                this.X = tilesAhead.ElementAt(0).X - this.Width;
-                this.Blocked();
-
-                if (((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.Exit) || ((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.ExitSign))
+                if (((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.Checkpoint))
                 {
-                    GameScreen.LevelDone();
+                    //original X stores original position of the tile, at the start of the level, e.g. 50th tile from the left
+                    //also, we save the checkpoint position 5 tiles before the actual checkpoint in the game
+                    GameScreen.Checkpoint(((Tile)tilesAhead.ElementAt(0)).OriginalX - 5);   
+                }
+                else
+                {
+                    this.X = tilesAhead.ElementAt(0).X - this.Width;
+                    this.Blocked();
+
+                    if (((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.Exit) || ((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.ExitSign))
+                    {
+                        GameScreen.LevelDone();
+                    }
                 }
             }
             else
@@ -185,7 +185,9 @@ namespace GhostlyLib.Elements.Character
             }
 
             IEnumerable<Drawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.TopBody)
-                                                                 && !((Tile)o).TileType.Equals(TileType.DeepWater) && !((Tile)o).TileType.Equals(TileType.DeepLava));
+                && !((Tile)o).TileType.Equals(TileType.DeepWater) 
+                && !((Tile)o).TileType.Equals(TileType.DeepLava) 
+                && !((Tile)o).TileType.Equals(TileType.Checkpoint));
 
             if (tilesAbove.Count() > 0)
             {
@@ -206,8 +208,9 @@ namespace GhostlyLib.Elements.Character
             }
 
             IEnumerable<Drawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.BottomBody)
-                                                                 && !((Tile)o).TileType.Equals(TileType.Water) && !((Tile)o).TileType.Equals(TileType.Lava)
-                                                                 && !((Tile)o).TileType.Equals(TileType.DeepWater) && !((Tile)o).TileType.Equals(TileType.DeepLava));
+                    && !((Tile)o).TileType.Equals(TileType.Water) && !((Tile)o).TileType.Equals(TileType.Lava)
+                    && !((Tile)o).TileType.Equals(TileType.DeepWater) && !((Tile)o).TileType.Equals(TileType.DeepLava)
+                    && !((Tile)o).TileType.Equals(TileType.Checkpoint));
 
             if (tilesBelow.Count() > 0)
             {
@@ -296,6 +299,21 @@ namespace GhostlyLib.Elements.Character
         private void AddOnetimePlusTwoAnimation()
         {
             this.GameScreen.OnetimeAnimations.Add(new OnetimeAnimation((int)this.X + 10, (int)this.Y - 40, 40, 40, ImagesAndAnimations.Instance.PlusTwoFrames, this.GameScreen));
+        }
+
+        public override void MoveLeft()
+        {
+            //not applicable in earth level
+        }
+
+        public override void MoveRight()
+        {
+            //not applicable in earth level
+        }
+
+        public override void StopLeftRightMovement()
+        {
+            // not applicable in earth level
         }
     }
 }

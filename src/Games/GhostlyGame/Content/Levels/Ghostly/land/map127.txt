@@ -1,0 +1,35 @@
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                                                                                                                             c                                                                              e
+                                                                                                                             c                                                                              e
+                                                                                                                             c                                                                              e
+                                                                                                                             c                                                                              e
+                                                                                                                             c                                                                              e
+                                                                                                                             c                                                                              e
+                                                                                                                             c                                                                              e
+                                                                                                                             c                                                                              e
+                                                                                                                             c                                                                              e
+                                                       Y               B                 Y                B                  c                                                                              e
+                                                                    \\                 \\                                  B c                                                                              e
+                                                lmmmmmmmr       lmmmmmmmr       Y lmmmmmmmr         lmmmmmmmmmmmmmr     \\   c       B                               B                        B     @       e
+                                                                                                                   lmmmmmmmr c                 Y                  \\                                        e
+                                         lmmmmmr         mmmmmmm         mmmmmmmmm         lmmmmmmmr                        lmmmmmmmr      \\              B lmmmmmmmr             Y   mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm'''''''''''''''m###"###m'''''''m###'''###m''''''''''''''''''''''''''''''''''''''''''''''''''lmmmmmmmmmr                                     mm###############################################
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""####"""####"""""####"""""####""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""mmmmmmmmmmmmr         lmmmmmmmmmmmmmm#################################################
+""""""""""""""""""""""""""""""""""""""""""""""""""""""###"""""""###""""###"""""""###"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''''''''""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+! l grass left
+! m grass middle
+! r grass right
+! | invisible tile
+
+! # ground_dirt
+! * ice
+! ~ water
+! % deep_water
+! ' lava
+! " deep_lava
+! ! exclamation tile
+! @ exit
+! \ crate
+! = fence
+! c checkpoint

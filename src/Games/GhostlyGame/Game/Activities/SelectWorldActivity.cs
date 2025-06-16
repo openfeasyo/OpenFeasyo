@@ -49,11 +49,16 @@ namespace GhostlyLib.Activities
             world4Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectLevelActivity(engine, 4)); };
             world4Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 6) - world4Button.Size / 2;
 
+            /*TextButton world5Button = new TextButton("Space", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            world5Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectLevelActivity(engine, 6)); };
+            world5Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - world5Button.Size / 2;*/
+                        
             Components.Add(infoLabel);
             Components.Add(world1Button);
             Components.Add(world2Button);
             Components.Add(world3Button);
             Components.Add(world4Button);
+            /*Components.Add(world5Button);*/
         }
 
         public override void Update(GameTime gameTime)

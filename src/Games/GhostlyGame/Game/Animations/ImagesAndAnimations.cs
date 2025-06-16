@@ -32,6 +32,9 @@ namespace GhostlyLib.Animations
         private Texture2D _swimmingGameCharacter1, _swimmingGameCharacter2, _swimmingGameCharacter3;
         private Texture2D _swimmingCharacterHit1, _swimmingCharacterHit2, _swimmingCharacterHit3;
 
+        private Texture2D _spaceCharacter1, _spaceCharacter2, _spaceCharacter3;
+        private Texture2D _spaceCharacterHit1, _spaceCharacterHit2, _spaceCharacterHit3;
+
         private Texture2D _redEnemyFullLifeImg4, _redEnemyFullLifeImg5;
         private Texture2D _redEnemyHalfLifeImg4, _redEnemyHalfLifeImg5;
         private Texture2D _redEnemyLittleLifeImg4, _redEnemyLittleLifeImg5;
@@ -89,12 +92,17 @@ namespace GhostlyLib.Animations
         public Texture2D BackgroundClosestWater { get; set; }
         public Texture2D BackgroundCloserWater { get; set; }
         public Texture2D BackgroundCloseWater { get; set; }
+        public Texture2D BackgroundClosestSpace { get; set; }
+        public Texture2D BackgroundCloserSpace { get; set; }
+        public Texture2D BackgroundCloseSpace { get; set; }
         public Texture2D BackgroundClosestRock { get; set; }
         public Texture2D BackgroundCloserRock { get; set; }
         public Texture2D BackgroundCloseRock { get; set; }
         public Texture2D BackgroundFar { get; set; }
         public Texture2D BackgroundFurther { get; set; }
         public Texture2D BackgroundFurthest { get; set; }
+        public Texture2D BackgroundFurthestSpace { get; set; }
+        public Texture2D BackgroundSpace { get; set; }
         public Texture2D BackgroundWater { get; set; }
         public Texture2D Crate { get; private set; }
         public Texture2D DeepLava { get; private set; }
@@ -103,6 +111,7 @@ namespace GhostlyLib.Animations
         public Texture2D Exclamation { get; private set; }
         public Texture2D ExitArea { get; private set; }
         public Texture2D ExitDoor { get; private set; }
+        public Texture2D ExitLine { get; private set; }
         public Texture2D Fence { get; private set; }
         //public Texture2D Foreground { get; private set; }
         //public Texture2D ForegroundWater { get; private set; }
@@ -129,6 +138,19 @@ namespace GhostlyLib.Animations
         public Texture2D SandCliffLeft { get; private set; }
         public Texture2D SandCliffRight { get; private set; }
         public Texture2D Water { get; private set; }
+
+        //Textures for space levels
+        public Texture2D BluePlanet { get; private set; }
+        public Texture2D YellowPlanet { get; private set; }
+        public Texture2D OrangePlanet { get; private set; }
+        public Texture2D PinkPlanet { get; private set; }
+        public Texture2D RedPlanet { get; private set; }
+        public Texture2D Star { get; private set; }
+        public Texture2D Ufo { get; private set; }
+        public Texture2D Debris { get; private set; }
+        public Texture2D DebrisLong { get; private set; }
+        public Texture2D SpaceSpiral { get; private set; }
+        public Texture2D SpaceMist { get; private set; }
 
         public CharacterAnimation CharacterAnimation
         {
@@ -166,6 +188,28 @@ namespace GhostlyLib.Animations
                     new AnimFrame(_swimmingCharacterHit1, 30),
                     new AnimFrame(_swimmingCharacterHit2, 60),
                     new AnimFrame(_swimmingCharacterHit3, 90)
+                };
+
+                return new CharacterAnimation(normalFrames, hitFrames);
+            }
+        }
+
+        public CharacterAnimation SpaceCharacterAnimation
+        {
+            get
+            {
+                List<AnimFrame> normalFrames = new List<AnimFrame> {
+                new AnimFrame(_spaceCharacter1, 30),
+                new AnimFrame(_spaceCharacter2, 60),
+                new AnimFrame(_spaceCharacter1, 90),
+                new AnimFrame(_spaceCharacter3, 120)
+            };
+
+                List<AnimFrame> hitFrames = new List<AnimFrame>() {
+                new AnimFrame(_spaceCharacterHit1, 30),
+                new AnimFrame(_spaceCharacterHit2, 60),
+                new AnimFrame(_spaceCharacterHit1, 90),
+                new AnimFrame(_spaceCharacterHit3, 120),
                 };
 
                 return new CharacterAnimation(normalFrames, hitFrames);
@@ -497,6 +541,11 @@ namespace GhostlyLib.Animations
         {
             Background = content.Load<Texture2D>("Textures\\Ghostly\\background");
 
+            BackgroundClosestSpace = content.Load<Texture2D>("Textures\\Ghostly\\closest_space");
+            BackgroundCloserSpace = content.Load<Texture2D>("Textures\\Ghostly\\closer_space");
+            BackgroundCloseSpace = content.Load<Texture2D>("Textures\\Ghostly\\close_space");
+            BackgroundFurthestSpace = content.Load<Texture2D>("Textures\\Ghostly\\furthest_space");
+
             BackgroundClosestWater = content.Load<Texture2D>("Textures\\Ghostly\\closest_water");
             BackgroundCloserWater = content.Load<Texture2D>("Textures\\Ghostly\\closer_water");
             BackgroundCloseWater = content.Load<Texture2D>("Textures\\Ghostly\\close_water");
@@ -504,17 +553,21 @@ namespace GhostlyLib.Animations
             BackgroundClosestRock = content.Load<Texture2D>("Textures\\Ghostly\\closest_rock");
             BackgroundCloserRock = content.Load<Texture2D>("Textures\\Ghostly\\closer_rock");
             BackgroundCloseRock = content.Load<Texture2D>("Textures\\Ghostly\\close_rock");
+
             BackgroundClosest = content.Load<Texture2D>("Textures\\Ghostly\\closest");
             BackgroundCloser = content.Load<Texture2D>("Textures\\Ghostly\\closer");
             BackgroundClose = content.Load<Texture2D>("Textures\\Ghostly\\close");
             BackgroundFar = content.Load<Texture2D>("Textures\\Ghostly\\far");
             BackgroundFurther = content.Load<Texture2D>("Textures\\Ghostly\\further");
             BackgroundFurthest = content.Load<Texture2D>("Textures\\Ghostly\\furthest");
+
+            BackgroundSpace = content.Load<Texture2D>("Textures\\Ghostly\\backgroundSpace");
             BackgroundWater = content.Load<Texture2D>("Textures\\Ghostly\\water_bg"); //background_water;
             //Foreground = content.Load<Texture2D>("Textures\\Ghostly\\foreground");
             //ForegroundWater = content.Load<Texture2D>("Textures\\Ghostly\\foreground_water");
 
-            CharacterJumping = content.Load<Texture2D>("Textures\\Ghostly\\jump");
+            //CharacterJumping = content.Load<Texture2D>("Textures\\Ghostly\\jump");
+            CharacterJumping = content.Load<Texture2D>("Textures\\Ghostly\\jump 4");
 
             Crate = content.Load<Texture2D>("Textures\\Ghostly\\crate");
             DeepLava = content.Load<Texture2D>("Textures\\Ghostly\\deep_lava");
@@ -523,6 +576,7 @@ namespace GhostlyLib.Animations
             Exclamation = content.Load<Texture2D>("Textures\\Ghostly\\exclamation");
             ExitArea = content.Load<Texture2D>("Textures\\Ghostly\\invisible_tile");
             ExitDoor = content.Load<Texture2D>("Textures\\Ghostly\\signExit");
+            ExitLine = content.Load<Texture2D>("Textures\\Ghostly\\exitLine");
             Fence = content.Load<Texture2D>("Textures\\Ghostly\\fence");
             Grass = content.Load<Texture2D>("Textures\\Ghostly\\ground_grass");
             GrassCliffLeft = content.Load<Texture2D>("Textures\\Ghostly\\grassCliffLeft");
@@ -547,12 +601,27 @@ namespace GhostlyLib.Animations
             SandCliffLeft = content.Load<Texture2D>("Textures\\Ghostly\\sandCliffLeft");
             SandCliffRight = content.Load<Texture2D>("Textures\\Ghostly\\sandCliffRight");
             Water = content.Load<Texture2D>("Textures\\Ghostly\\water");
+
+            BluePlanet = content.Load<Texture2D>("Textures\\Ghostly\\bluePlanet");
+            YellowPlanet = content.Load<Texture2D>("Textures\\Ghostly\\yellowPlanet");
+            OrangePlanet = content.Load<Texture2D>("Textures\\Ghostly\\orangePlanet");
+            PinkPlanet = content.Load<Texture2D>("Textures\\Ghostly\\pinkPlanet");
+            RedPlanet = content.Load<Texture2D>("Textures\\Ghostly\\redPlanet");
+            Star = content.Load<Texture2D>("Textures\\Ghostly\\star");
+            Ufo = content.Load<Texture2D>("Textures\\Ghostly\\ufo");
+            Debris = content.Load<Texture2D>("Textures\\Ghostly\\grey debris");
+            DebrisLong = content.Load<Texture2D>("Textures\\Ghostly\\grey debris long");
+            SpaceSpiral = content.Load<Texture2D>("Textures\\Ghostly\\spaceSpiral");
+            SpaceMist = content.Load<Texture2D>("Textures\\Ghostly\\spaceMist");
+
+
             LoadBlackEnemyAnimationImages(content);
 
             LoadRedEnemyAnimationImages(content);
 
             LoadCharacterAnimation(content);
             LoadSwimmingCharacterAnimation(content);
+            LoadSpaceCharacterAnimation(content);
 
             LoadYellowEnemyAnimationImages(content);
             LoadFishAnimationImages(content);
@@ -571,32 +640,67 @@ namespace GhostlyLib.Animations
 
         private void LoadCharacterAnimation(ContentManager content)
         {
-            _gameCharacterImg1 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0001");
-            _gameCharacterImg2 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0002");
-            _gameCharacterImg3 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0003");
-            _gameCharacterImg4 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0004");
-            _gameCharacterImg5 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0005");
-            _gameCharacterImg6 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0006");
-            _gameCharacterImg7 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0007");
-            _gameCharacterImg8 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0008");
-            _gameCharacterImg9 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0009");
-            _gameCharacterImg10 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0010");
-            _gameCharacterImg11 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0011");
+            /* _gameCharacterImg1 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0001");
+             _gameCharacterImg2 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0002");
+             _gameCharacterImg3 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0003");
+             _gameCharacterImg4 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0004");
+             _gameCharacterImg5 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0005");
+             _gameCharacterImg6 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0006");
+             _gameCharacterImg7 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0007");
+             _gameCharacterImg8 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0008");
+             _gameCharacterImg9 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0009");
+             _gameCharacterImg10 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0010");
+             _gameCharacterImg11 = content.Load<Texture2D>("Textures\\Ghostly\\character\\walk0011");
 
-            _characterHitImg3 = content.Load<Texture2D>("Textures\\Ghostly\\character\\hit0003");
-            _characterHitImg4 = content.Load<Texture2D>("Textures\\Ghostly\\character\\hit0004");
-            _characterHitImg5 = content.Load<Texture2D>("Textures\\Ghostly\\character\\hit0005");
+             _characterHitImg3 = content.Load<Texture2D>("Textures\\Ghostly\\character\\hit0003");
+             _characterHitImg4 = content.Load<Texture2D>("Textures\\Ghostly\\character\\hit0004");
+             _characterHitImg5 = content.Load<Texture2D>("Textures\\Ghostly\\character\\hit0005");*/
+
+            _gameCharacterImg1 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0001");
+            _gameCharacterImg2 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0002");
+            _gameCharacterImg3 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0003");
+            _gameCharacterImg4 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0004");
+            _gameCharacterImg5 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0005");
+            _gameCharacterImg6 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0006");
+            _gameCharacterImg7 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0007");
+            _gameCharacterImg8 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0008");
+            _gameCharacterImg9 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0009");
+            _gameCharacterImg10 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0010");
+            _gameCharacterImg11 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\walk0011");
+
+            _characterHitImg3 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\hit0003");
+            _characterHitImg4 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\hit0004");
+            _characterHitImg5 = content.Load<Texture2D>("Textures\\Ghostly\\character 4\\hit0005");
         }
 
         private void LoadSwimmingCharacterAnimation(ContentManager content)
         {
-            _swimmingGameCharacter1 = content.Load<Texture2D>("Textures\\Ghostly\\water character\\swim01");
+            /*_swimmingGameCharacter1 = content.Load<Texture2D>("Textures\\Ghostly\\water character\\swim01");
             _swimmingGameCharacter2 = content.Load<Texture2D>("Textures\\Ghostly\\water character\\swim02");
             _swimmingGameCharacter3 = content.Load<Texture2D>("Textures\\Ghostly\\water character\\swim03");
 
             _swimmingCharacterHit1 = content.Load<Texture2D>("Textures\\Ghostly\\water character\\swimHit01");
             _swimmingCharacterHit2 = content.Load<Texture2D>("Textures\\Ghostly\\water character\\swimHit02");
-            _swimmingCharacterHit3 = content.Load<Texture2D>("Textures\\Ghostly\\water character\\swimHit03");
+            _swimmingCharacterHit3 = content.Load<Texture2D>("Textures\\Ghostly\\water character\\swimHit03");*/
+
+            _swimmingGameCharacter1 = content.Load<Texture2D>("Textures\\Ghostly\\water character 4\\swim01");
+            _swimmingGameCharacter2 = content.Load<Texture2D>("Textures\\Ghostly\\water character 4\\swim02");
+            _swimmingGameCharacter3 = content.Load<Texture2D>("Textures\\Ghostly\\water character 4\\swim03");
+
+            _swimmingCharacterHit1 = content.Load<Texture2D>("Textures\\Ghostly\\water character 4\\swimHit01");
+            _swimmingCharacterHit2 = content.Load<Texture2D>("Textures\\Ghostly\\water character 4\\swimHit02");
+            _swimmingCharacterHit3 = content.Load<Texture2D>("Textures\\Ghostly\\water character 4\\swimHit03");
+        }
+
+        private void LoadSpaceCharacterAnimation(ContentManager content)
+        {
+            _spaceCharacter1 = content.Load<Texture2D>("Textures\\Ghostly\\space character\\rocket01");
+            _spaceCharacter2 = content.Load<Texture2D>("Textures\\Ghostly\\space character\\rocket02");
+            _spaceCharacter3 = content.Load<Texture2D>("Textures\\Ghostly\\space character\\rocket03");
+
+            _spaceCharacterHit1 = content.Load<Texture2D>("Textures\\Ghostly\\space character\\rocketHit01");
+            _spaceCharacterHit2 = content.Load<Texture2D>("Textures\\Ghostly\\space character\\rocketHit02");
+            _spaceCharacterHit3 = content.Load<Texture2D>("Textures\\Ghostly\\space character\\rocketHit03");
         }
 
         private void LoadRedEnemyAnimationImages(ContentManager content)

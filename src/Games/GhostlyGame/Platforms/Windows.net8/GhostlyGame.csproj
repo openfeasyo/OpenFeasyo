@@ -14,6 +14,8 @@
     <Compile Include="..\..\Game\Activities\ConfigureTouchActivity.cs" Link="Activities\ConfigureTouchActivity.cs" />
     <Compile Include="..\..\Game\Activities\GamePlayActivity.cs" Link="Activities\GamePlayActivity.cs" />
     <Compile Include="..\..\Game\Activities\InputSelectionActivity.cs" Link="Activities\InputSelectionActivity.cs" />
+    <Compile Include="..\..\Game\Activities\LimitedSelectLevelActivity.cs" Link="Activities\LimitedSelectLevelActivity.cs" />
+    <Compile Include="..\..\Game\Activities\LimitedSelectWorldActivity.cs" Link="Activities\LimitedSelectWorldActivity.cs" />
     <Compile Include="..\..\Game\Activities\MainMenuActivity.cs" Link="Activities\MainMenuActivity.cs" />
     <Compile Include="..\..\Game\Activities\SelectLevelActivity.cs" Link="Activities\SelectLevelActivity.cs" />
     <Compile Include="..\..\Game\Activities\SelectSensorActivity.cs" Link="Activities\SelectSensorActivity.cs" />
@@ -29,7 +31,9 @@
     <Compile Include="..\..\Game\Drawing\DrawingEngine.cs" Link="Drawing\DrawingEngine.cs" />
     <Compile Include="..\..\Game\Elements\Character\EarthCharacter.cs" Link="Elements\Character\EarthCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Character\GameCharacter.cs" Link="Elements\Character\GameCharacter.cs" />
+    <Compile Include="..\..\Game\Elements\Character\LandCharacter.cs" Link="Elements\Character\LandCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Character\RockCharacter.cs" Link="Elements\Character\RockCharacter.cs" />
+    <Compile Include="..\..\Game\Elements\Character\SpaceCharacter.cs" Link="Elements\Character\SpaceCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Character\WaterCharacter.cs" Link="Elements\Character\WaterCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Coin.cs" Link="Elements\Coin.cs" />
     <Compile Include="..\..\Game\Elements\Drawable.cs" Link="Elements\Drawable.cs" />
@@ -51,6 +55,7 @@
     <Compile Include="..\..\Game\Elements\Enums.cs" Link="Elements\Enums.cs" />
     <Compile Include="..\..\Game\Elements\GameBackground.cs" Link="Elements\GameBackground.cs" />
     <Compile Include="..\..\Game\Elements\LevelElements.cs" Link="Elements\LevelElements.cs" />
+    <Compile Include="..\..\Game\Elements\Star.cs" Link="Elements\Star.cs" />
     <Compile Include="..\..\Game\Elements\Tile.cs" Link="Elements\Tile.cs" />
     <Compile Include="..\..\Game\Elements\Weapons\Fireball.cs" Link="Elements\Weapons\Fireball.cs" />
     <Compile Include="..\..\Game\Elements\Weapons\Projectile.cs" Link="Elements\Weapons\Projectile.cs" />
@@ -62,7 +67,49 @@
     <Compile Include="..\..\Game\Level\ILevel.cs" Link="Level\ILevel.cs" />
     <Compile Include="..\..\Game\Level\Level.cs" Link="Level\Level.cs" />
     <Compile Include="..\..\Game\Level\RockLevel.cs" Link="Level\RockLevel.cs" />
+    <Compile Include="..\..\Game\Level\SpaceLevel.cs" Link="Level\SpaceLevel.cs" />
     <Compile Include="..\..\Game\Level\WaterLevel.cs" Link="Level\WaterLevel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\space\map146.txt" Link="Content\Levels\Ghostly\space\map146.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\space\map145.txt" Link="Content\Levels\Ghostly\space\map145.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\space\map144.txt" Link="Content\Levels\Ghostly\space\map144.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\space\map141.txt" Link="Content\Levels\Ghostly\space\map141.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\space\map142.txt" Link="Content\Levels\Ghostly\space\map142.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\space\map143.txt" Link="Content\Levels\Ghostly\space\map143.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map121.txt" Link="Content\Levels\Ghostly\land\map121.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map122.txt" Link="Content\Levels\Ghostly\land\map122.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map123.txt" Link="Content\Levels\Ghostly\land\map123.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map124.txt" Link="Content\Levels\Ghostly\land\map124.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map125.txt" Link="Content\Levels\Ghostly\land\map125.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map126.txt" Link="Content\Levels\Ghostly\land\map126.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map127.txt" Link="Content\Levels\Ghostly\land\map127.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map128.txt" Link="Content\Levels\Ghostly\land\map128.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map129.txt" Link="Content\Levels\Ghostly\land\map129.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map130.txt" Link="Content\Levels\Ghostly\land\map130.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map131.txt" Link="Content\Levels\Ghostly\land\map131.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map132.txt" Link="Content\Levels\Ghostly\land\map132.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map133.txt" Link="Content\Levels\Ghostly\land\map133.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map134.txt" Link="Content\Levels\Ghostly\land\map134.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map135.txt" Link="Content\Levels\Ghostly\land\map135.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map136.txt" Link="Content\Levels\Ghostly\land\map136.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map137.txt" Link="Content\Levels\Ghostly\land\map137.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map138.txt" Link="Content\Levels\Ghostly\land\map138.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map139.txt" Link="Content\Levels\Ghostly\land\map139.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\land\map140.txt" Link="Content\Levels\Ghostly\land\map140.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -189,17 +236,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Activities\" />
     <Folder Include="Animations\" />
     <Folder Include="Content\Levels\Ghostly\earth\" />
     <Folder Include="Content\Levels\Ghostly\ice\" />
+    <Folder Include="Content\Levels\Ghostly\land\" />
     <Folder Include="Content\Levels\Ghostly\water\" />
     <Folder Include="Content\Levels\Ghostly\rock\" />
     <Folder Include="Drawing\" />
-    <Folder Include="Elements\Character\" />
     <Folder Include="Elements\Enemies\" />
     <Folder Include="Elements\Weapons\" />
-    <Folder Include="Level\" />
   </ItemGroup>
 
   <ItemGroup>
