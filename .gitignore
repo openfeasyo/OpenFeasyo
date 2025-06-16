@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Games/GhostlyGame/GhostlyGameApp/.config
+/src/Games/GhostlyGame/GhostlyGameApp/bin
+/src/Games/GhostlyGame/GhostlyGameApp/obj
+/src/Analyzers/C3dSerializer/Platforms/Windows.net8/bin
+/src/Analyzers/C3dSerializer/Platforms/Windows.net8/obj
+/src/Analyzers/C3dSerializer/Platforms/Windows/.vs
+/src/Drivers/TrignoEmg/Platforms/Windows/.vs
+/src/Games/GhostlyGame/Platforms/Windows/.vs
+/src/Games/GhostlyGame/Platforms/Windows.net8/bin
+/src/Games/GhostlyGame/Platforms/Windows.net8/obj
+/src/OpenFeasyo.GameTools/Platforms/Windows/.vs
+/src/OpenFeasyo.GameTools/Platforms/Windows.net8/bin
+/src/OpenFeasyo.GameTools/Platforms/Windows.net8/obj
+/src/OpenFeasyo.Platform/Platforms/Windows/.vs
+/src/OpenFeasyo.Platform/Platforms/Windows.net8/bin
+/src/OpenFeasyo.Platform/Platforms/Windows.net8/obj
+/src/packages
