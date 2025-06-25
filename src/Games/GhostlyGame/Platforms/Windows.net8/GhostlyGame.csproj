@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\Game\3DCamera.cs" Link="3DCamera.cs" />
     <Compile Include="..\..\Game\Activities\AboutActivity.cs" Link="Activities\AboutActivity.cs" />
     <Compile Include="..\..\Game\Activities\AdaptCalibrationActivity.cs" Link="Activities\AdaptCalibrationActivity.cs" />
     <Compile Include="..\..\Game\Activities\CalibrationActivity.cs" Link="Activities\CalibrationActivity.cs" />
@@ -28,23 +29,33 @@
     <Compile Include="..\..\Game\Animations\ImagesAndAnimations.cs" Link="Animations\ImagesAndAnimations.cs" />
     <Compile Include="..\..\Game\Animations\InfiniteAnimation.cs" Link="Animations\InfiniteAnimation.cs" />
     <Compile Include="..\..\Game\Animations\OnetimeAnimation.cs" Link="Animations\OnetimeAnimation.cs" />
+    <Compile Include="..\..\Game\Animations\ThreeDEffects.cs" Link="Animations\ThreeDEffects.cs" />
     <Compile Include="..\..\Game\Drawing\DrawingEngine.cs" Link="Drawing\DrawingEngine.cs" />
     <Compile Include="..\..\Game\Elements\Character\EarthCharacter.cs" Link="Elements\Character\EarthCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Character\GameCharacter.cs" Link="Elements\Character\GameCharacter.cs" />
+    <Compile Include="..\..\Game\Elements\Character\GameCharacter3D.cs" Link="Elements\Character\GameCharacter3D.cs" />
+    <Compile Include="..\..\Game\Elements\Character\IGameCharacter.cs" Link="Elements\Character\IGameCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Character\LandCharacter.cs" Link="Elements\Character\LandCharacter.cs" />
+    <Compile Include="..\..\Game\Elements\Character\MazeCharacter3D.cs" Link="Elements\Character\MazeCharacter3D.cs" />
     <Compile Include="..\..\Game\Elements\Character\RockCharacter.cs" Link="Elements\Character\RockCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Character\SpaceCharacter.cs" Link="Elements\Character\SpaceCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Character\WaterCharacter.cs" Link="Elements\Character\WaterCharacter.cs" />
     <Compile Include="..\..\Game\Elements\Coin.cs" Link="Elements\Coin.cs" />
     <Compile Include="..\..\Game\Elements\Drawable.cs" Link="Elements\Drawable.cs" />
+    <Compile Include="..\..\Game\Elements\Drawable2D.cs" Link="Elements\Drawable2D.cs" />
+    <Compile Include="..\..\Game\Elements\Drawable3D.cs" Link="Elements\Drawable3D.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\BlackEnemy.cs" Link="Elements\Enemies\BlackEnemy.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\BlackFishEnemy.cs" Link="Elements\Enemies\BlackFishEnemy.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\BlackFlyEnemy.cs" Link="Elements\Enemies\BlackFlyEnemy.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\DifficultEnemy.cs" Link="Elements\Enemies\DifficultEnemy.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\EasyEnemy.cs" Link="Elements\Enemies\EasyEnemy.cs" />
+    <Compile Include="..\..\Game\Elements\Enemies\EasyEnemy3D.cs" Link="Elements\Enemies\EasyEnemy3D.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\Enemy.cs" Link="Elements\Enemies\Enemy.cs" />
+    <Compile Include="..\..\Game\Elements\Enemies\Enemy3D.cs" Link="Elements\Enemies\Enemy3D.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\GreenFishEnemy.cs" Link="Elements\Enemies\GreenFishEnemy.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\GreenFlyEnemy.cs" Link="Elements\Enemies\GreenFlyEnemy.cs" />
+    <Compile Include="..\..\Game\Elements\Enemies\IEnemy.cs" Link="Elements\Enemies\IEnemy.cs" />
+    <Compile Include="..\..\Game\Elements\Enemies\MazeEnemy3D.cs" Link="Elements\Enemies\MazeEnemy3D.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\MediumEnemy.cs" Link="Elements\Enemies\MediumEnemy.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\RedEnemy.cs" Link="Elements\Enemies\RedEnemy.cs" />
     <Compile Include="..\..\Game\Elements\Enemies\RedFishEnemy.cs" Link="Elements\Enemies\RedFishEnemy.cs" />
@@ -54,9 +65,13 @@
     <Compile Include="..\..\Game\Elements\Enemies\YellowFlyEnemy.cs" Link="Elements\Enemies\YellowFlyEnemy.cs" />
     <Compile Include="..\..\Game\Elements\Enums.cs" Link="Elements\Enums.cs" />
     <Compile Include="..\..\Game\Elements\GameBackground.cs" Link="Elements\GameBackground.cs" />
+    <Compile Include="..\..\Game\Elements\IDrawable.cs" Link="Elements\IDrawable.cs" />
+    <Compile Include="..\..\Game\Elements\ITile.cs" Link="Elements\ITile.cs" />
     <Compile Include="..\..\Game\Elements\LevelElements.cs" Link="Elements\LevelElements.cs" />
     <Compile Include="..\..\Game\Elements\Star.cs" Link="Elements\Star.cs" />
+    <Compile Include="..\..\Game\Elements\Start3D.cs" Link="Elements\Start3D.cs" />
     <Compile Include="..\..\Game\Elements\Tile.cs" Link="Elements\Tile.cs" />
+    <Compile Include="..\..\Game\Elements\Tile3D.cs" Link="Elements\Tile3D.cs" />
     <Compile Include="..\..\Game\Elements\Weapons\Fireball.cs" Link="Elements\Weapons\Fireball.cs" />
     <Compile Include="..\..\Game\Elements\Weapons\Projectile.cs" Link="Elements\Weapons\Projectile.cs" />
     <Compile Include="..\..\Game\Elements\Weapons\Weapon.cs" Link="Elements\Weapons\Weapon.cs" />
@@ -65,10 +80,29 @@
     <Compile Include="..\..\Game\Level\EarthLevel.cs" Link="Level\EarthLevel.cs" />
     <Compile Include="..\..\Game\Level\IceLevel.cs" Link="Level\IceLevel.cs" />
     <Compile Include="..\..\Game\Level\ILevel.cs" Link="Level\ILevel.cs" />
+    <Compile Include="..\..\Game\Level\ILevel2D.cs" Link="Level\ILevel2D.cs" />
+    <Compile Include="..\..\Game\Level\ILevel3D.cs" Link="Level\ILevel3D.cs" />
     <Compile Include="..\..\Game\Level\Level.cs" Link="Level\Level.cs" />
+    <Compile Include="..\..\Game\Level\Level3D.cs" Link="Level\Level3D.cs" />
+    <Compile Include="..\..\Game\Level\MazeLevel3D.cs" Link="Level\MazeLevel3D.cs" />
     <Compile Include="..\..\Game\Level\RockLevel.cs" Link="Level\RockLevel.cs" />
     <Compile Include="..\..\Game\Level\SpaceLevel.cs" Link="Level\SpaceLevel.cs" />
     <Compile Include="..\..\Game\Level\WaterLevel.cs" Link="Level\WaterLevel.cs" />
+    <Compile Include="..\..\Game\Screens\GameScreen2D.cs" Link="Screens\GameScreen2D.cs" />
+    <Compile Include="..\..\Game\Screens\GameScreen3D.cs" Link="Screens\GameScreen3D.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map161.txt" Link="Content\Levels\Ghostly\maze\map161.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map162.txt" Link="Content\Levels\Ghostly\maze\map162.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map163.txt" Link="Content\Levels\Ghostly\maze\map163.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map164.txt" Link="Content\Levels\Ghostly\maze\map164.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map165.txt" Link="Content\Levels\Ghostly\maze\map165.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map166.txt" Link="Content\Levels\Ghostly\maze\map166.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map167.txt" Link="Content\Levels\Ghostly\maze\map167.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map168.txt" Link="Content\Levels\Ghostly\maze\map168.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map169.txt" Link="Content\Levels\Ghostly\maze\map169.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map170.txt" Link="Content\Levels\Ghostly\maze\map170.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -236,10 +270,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Animations\" />
     <Folder Include="Content\Levels\Ghostly\earth\" />
     <Folder Include="Content\Levels\Ghostly\ice\" />
     <Folder Include="Content\Levels\Ghostly\land\" />
+    <Folder Include="Content\Levels\Ghostly\maze\" />
     <Folder Include="Content\Levels\Ghostly\water\" />
     <Folder Include="Content\Levels\Ghostly\rock\" />
     <Folder Include="Drawing\" />

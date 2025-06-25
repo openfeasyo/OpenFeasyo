@@ -23,25 +23,25 @@ namespace GhostlyLib.Drawing
     {
         #region Private members
 
-        private List<Drawable> _drawables;
-        private List<Drawable> _drawablesToAdd;
-        private List<Drawable> _drawablesToRemove;
+        private List<Elements.IDrawable> _drawables;
+        private List<Elements.IDrawable> _drawablesToAdd;
+        private List<Elements.IDrawable> _drawablesToRemove;
 
         #endregion Private members
 
         public DrawingEngine()
         {
-            _drawables = new List<Drawable>();
-            _drawablesToAdd = new List<Drawable>();
-            _drawablesToRemove = new List<Drawable>();
+            _drawables = new List<Elements.IDrawable>();
+            _drawablesToAdd = new List<Elements.IDrawable>();
+            _drawablesToRemove = new List<Elements.IDrawable>();
         }
 
-        public void AddDrawable(Drawable d)
+        public void AddDrawable(Elements.IDrawable d)
         {
             this._drawablesToAdd.Add(d);
         }
 
-        public void RemoveDrawable(Drawable d)
+        public void RemoveDrawable(Elements.IDrawable d)
         {
             this._drawablesToRemove.Add(d);
         }
@@ -51,23 +51,23 @@ namespace GhostlyLib.Drawing
             _drawables.AddRange(_drawablesToAdd);
             _drawablesToAdd.Clear();
 
-            foreach (Drawable d in _drawables)
+            foreach (Elements.IDrawable d in _drawables)
             {
                 d.Update(gameTime);
             }
 
-            foreach (Drawable d in _drawablesToRemove)
+            foreach (Elements.IDrawable d in _drawablesToRemove)
             {
                 _drawables.Remove(d);
             }
             _drawablesToRemove.Clear();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            foreach (Drawable d in _drawables)
+            foreach (Elements.IDrawable d in _drawables)
             {
-                d.Draw(spriteBatch);
+                d.Draw(spriteBatch, gameTime);
             }
         }
     }

@@ -35,9 +35,18 @@ namespace GhostlyLib.Activities
         private GameScreen _screen;
 
 
-        public GamePlayActivity(UIEngine engine, int level, string intputConfig) : base(engine) {
+        public GamePlayActivity(UIEngine engine, int level, string intputConfig) : base(engine)
+        {
 
-            _screen = new GameScreen(level, engine.MusicPlayer, engine.Screen);
+            if (level >= 161 && level <= 180)
+            {
+                _screen = new GameScreen3D(level, engine.MusicPlayer, engine.Screen, engine.Device);
+            }
+            else
+            {
+                _screen = new GameScreen2D(level, engine.MusicPlayer, engine.Screen);
+            }
+
             _screen.GameStarted += _screen_GameStarted;
             _screen.GameFinished += _screen_GameFinished;
 
@@ -46,17 +55,19 @@ namespace GhostlyLib.Activities
             #region Game Over Panel
             _gameOverPanel = new ComponentCollection();
             _gameOverPanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
-            
+
 
             TextButton backButton = new TextButton("Back to menu", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            backButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            backButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
                 StartActivity(new MainMenuActivity(engine));
                 _engine.MusicPlayer.Play("menu");
             };
             backButton.Position = engine.Screen.ScreenMiddle - backButton.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
             TextButton playAgainButton = new TextButton("Play again", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            playAgainButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            playAgainButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
                 Components.Remove(_gameOverPanel);
                 _screen.Initialize();   //to initalize background
                 _screen.LoadLevel();
@@ -64,7 +75,7 @@ namespace GhostlyLib.Activities
             playAgainButton.Position = engine.Screen.ScreenMiddle - playAgainButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
 
             Label gameOverLabel = new Label("GAME OVER", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-            gameOverLabel.Position = engine.Screen.ScreenMiddle - gameOverLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y * 2 / 3 ); ;
+            gameOverLabel.Position = engine.Screen.ScreenMiddle - gameOverLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y * 2 / 3); ;
 
             _gameOverPanel.Components.Add(gameOverLabel);
             _gameOverPanel.Components.Add(playAgainButton);
@@ -76,21 +87,23 @@ namespace GhostlyLib.Activities
             _levelDonePanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
 
             TextButton nextButton = new TextButton("Next Level", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
                 Components.Remove(_levelDonePanel);
                 _screen.LoadNextLevel();
             };
             nextButton.Position = engine.Screen.ScreenMiddle - nextButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
 
             backButton = new TextButton("Back to menu", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            backButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            backButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
                 StartActivity(new MainMenuActivity(engine));
                 _engine.MusicPlayer.Play("menu");
             };
             backButton.Position = engine.Screen.ScreenMiddle - backButton.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
             Label levelDoneLabel = new Label("LEVEL COMPLETED", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-            levelDoneLabel.Position = engine.Screen.ScreenMiddle - levelDoneLabel.Size / 2 - new Vector2(0,engine.Screen.ScreenMiddle.Y * 2 / 3);
+            levelDoneLabel.Position = engine.Screen.ScreenMiddle - levelDoneLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y * 2 / 3);
 
             _scoreLabel = new Label("Score: 00", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _scoreLabel.Position = engine.Screen.ScreenMiddle - _scoreLabel.Size / 2 + new Vector2(0, -engine.Screen.ScreenMiddle.Y / 3);
@@ -110,9 +123,10 @@ namespace GhostlyLib.Activities
             texture.SetData(new Color[] { Color.FromNonPremultiplied(0, 0, 0, 170) });
             Image background = new Image(texture);
             background.Size = _pausePanel.Size;
-            
+
             TextButton exitButton = new TextButton("Exit", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            exitButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            exitButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
                 _screen.Exit();
                 StartActivity(new MainMenuActivity(engine));
                 _engine.MusicPlayer.Play("menu");
@@ -120,7 +134,8 @@ namespace GhostlyLib.Activities
             exitButton.Position = engine.Screen.ScreenMiddle - exitButton.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
             TextButton continueButton = new TextButton("Continue", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            continueButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            continueButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
                 Components.Remove(_pausePanel);
                 Components.Add(_gameplayPanel);
                 _screen.ResumeGame();
@@ -130,15 +145,16 @@ namespace GhostlyLib.Activities
             _pausePanel.Components.Add(background);
             _pausePanel.Components.Add(exitButton);
             _pausePanel.Components.Add(continueButton);
-            
+
             #endregion Pause Panel
 
             #region Gameplay Panel
             _gameplayPanel = new ComponentCollection();
             _gameplayPanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
-            
+
             TextButton pauseButton = new TextButton("\uf04c", engine.Content.LoadFont("Fonts/Awesome" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            pauseButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            pauseButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
                 Components.Remove(_gameplayPanel);
                 Components.Add(_pausePanel);
                 _screen.PauseGame();
@@ -202,7 +218,8 @@ namespace GhostlyLib.Activities
                 Components.Remove(_gameplayPanel);
                 Components.Add(_gameOverPanel);
             }
-            else if (e.Reason == GameFinishedEventArgs.EndReason.GoalAccomplished) {
+            else if (e.Reason == GameFinishedEventArgs.EndReason.GoalAccomplished)
+            {
                 Components.Remove(_gameplayPanel);
                 Components.Add(_levelDonePanel);
                 _scoreLabel.Text = "Score: " + e.Score;
@@ -222,14 +239,15 @@ namespace GhostlyLib.Activities
         {
             base.OnCreate();
             _screen.Initialize();
-            _screen.LoadContent(_engine.Content);            
+            _screen.LoadContent(_engine.Content);
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
             _screen.Update(gameTime);
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 if (Components.Contains(_gameplayPanel))
                 {
                     Components.Remove(_gameplayPanel);
@@ -242,7 +260,8 @@ namespace GhostlyLib.Activities
                     Components.Add(_gameplayPanel);
                     _screen.ResumeGame();
                 }
-                else {
+                else
+                {
                     StartActivity(new MainMenuActivity(_engine));
                     _engine.MusicPlayer.Play("menu");
                 }
@@ -252,7 +271,6 @@ namespace GhostlyLib.Activities
 
         public override void Draw(GameTime gameTime, SpriteBatch spritebatch)
         {
-            
             _screen.Draw(spritebatch, gameTime);
             base.Draw(gameTime, spritebatch);
         }

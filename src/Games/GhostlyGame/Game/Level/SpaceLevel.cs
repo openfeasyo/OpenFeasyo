@@ -53,7 +53,7 @@ namespace GhostlyLib.Level
 
         public override EnemyAnimation YellowEnemyAnimation { get { return null; } }
 
-        public override GameCharacter Character { get; protected set; }
+        public override IGameCharacter Character { get; set; }
 
         public override Texture2D BluePlanet { get { return ImagesAndAnimations.Instance.BluePlanet; } }
         public override Texture2D YellowPlanet { get { return ImagesAndAnimations.Instance.YellowPlanet; } }
@@ -87,18 +87,18 @@ namespace GhostlyLib.Level
         {
             if (state)  //contracted muscle
             {
-                if (GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.Right))
+                if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Right))
                 {
-                    this.GameScreen.GameCharacter.StopLeftRightMovement();
+                    ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
                 }
                 else
                 {
-                    GameScreen.GameCharacter.MoveLeft();
+                    ((GameCharacter)GameScreen.GameCharacter).MoveLeft();
                 }
             }
             else
             {
-                this.GameScreen.GameCharacter.StopLeftRightMovement();
+                ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
             }
         }
 
@@ -106,18 +106,18 @@ namespace GhostlyLib.Level
         {
             if (state)  //contracted muscle
             {
-                if (GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.Left))
+                if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Left))
                 {
-                    this.GameScreen.GameCharacter.StopLeftRightMovement();
+                    ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
                 }
                 else
                 {
-                    this.GameScreen.GameCharacter.MoveRight();
+                    ((GameCharacter)GameScreen.GameCharacter).MoveRight();
                 }
             }
             else
             {
-                this.GameScreen.GameCharacter.StopLeftRightMovement();
+                ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
             }
         }
     }

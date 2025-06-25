@@ -25,6 +25,7 @@ using System;
 using System.Collections.Concurrent;
 using OpenFeasyo.Platform.Controls.Drivers;
 using System.Diagnostics;
+using GhostlyGame.Animations;
 
 namespace GhostlyLib
 {
@@ -56,7 +57,7 @@ namespace GhostlyLib
 
         private OpenFeasyo.GameTools.Screen viewport;
 
-        
+        private _3DCamera threeDcamera;
 
         /// <summary>
         /// Contains the latest snapshot of the keyboard's input state.
@@ -109,8 +110,11 @@ namespace GhostlyLib
             _engine = new UIEngine(_contentRepository, GraphicsDevice);
             _engine.ActivitiesFinished += _engine_ActivitiesFinished;
             _engine.StartActivity(new SplashActivity(_engine));
-            
-            
+
+            threeDcamera = new _3DCamera();
+
+            threeDcamera.Initialize(GraphicsDevice);
+
             base.Initialize();
         }
 
@@ -131,6 +135,7 @@ namespace GhostlyLib
 
             //Context.Instance.LoadAppSettings();
             ImagesAndAnimations.Instance.LoadImages(this.Content);
+            ThreeDEffects.Instance.LoadEffects(this.Content, GraphicsDevice);
 
             _engine.MusicPlayer.AddSoundEffect("coin", _contentRepository.LoadSoundEffect("Sounds/coin"));
             _engine.MusicPlayer.AddSoundEffect("jump", _contentRepository.LoadSoundEffect("Sounds/jump"));
@@ -209,7 +214,7 @@ namespace GhostlyLib
             this.viewport.ScreenHeight = GraphicsDevice.Viewport.Height;
 
             GraphicsDevice.Clear(Color.FromNonPremultiplied(208,244,247,256) /*Color.White*/);
-
+            
             spriteBatch.Begin();
             //screen.Draw(spriteBatch, gameTime);
             _engine.Draw(gameTime, spriteBatch);

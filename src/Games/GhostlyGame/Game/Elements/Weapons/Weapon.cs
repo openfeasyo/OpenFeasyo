@@ -20,7 +20,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostlyLib.Elements.Weapons
 {
-    public abstract class Weapon : Drawable
+    public abstract class Weapon : Drawable2D
     {
         #region Private members
 
@@ -62,11 +62,11 @@ namespace GhostlyLib.Elements.Weapons
             this.X += this._speedX;
             this._rectangle = new Rectangle((int)X, (int)Y, this._width, this._height);
 
-            if (X > GameScreen.GameCharacter.X + 1000)
+            if (X > ((Drawable)this.GameScreen.GameCharacter).X + 1000)
             {
-                _elements.RemoveElement(this);
+                this._elements.RemoveElement(this);
             }
-            if (X < GameScreen.GameCharacter.X + 1000)
+            if (X < ((Drawable)this.GameScreen.GameCharacter).X + 1000)
             {
                 CheckCollision();
             }
@@ -74,7 +74,7 @@ namespace GhostlyLib.Elements.Weapons
             this._animation.Update(8);
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             if (this.Sprite != null && this.IsVisible)
             {
@@ -89,14 +89,14 @@ namespace GhostlyLib.Elements.Weapons
                 if (this.IsVisible && enemy.IsVisible && this._rectangle.Intersects(enemy.Rectangle))
                 {
                     this.IsVisible = false;
-                    _elements.RemoveElement(this);
+                    this._elements.RemoveElement(this);
 
                     if (enemy.CurrentHealth > 0)
                     {
                         this.GameScreen.GameCharacter.Score += 1;
                         enemy.Hit();
 
-                        GameScreen.MusicPlayer.PlayEffect(enemy.CurrentHealth == 0  ? "kill": "hit");
+                        this.GameScreen.MusicPlayer.PlayEffect(enemy.CurrentHealth == 0  ? "kill": "hit");
                     }
                     if (enemy.CurrentHealth == 0)
                     {
@@ -113,7 +113,7 @@ namespace GhostlyLib.Elements.Weapons
                     && (this._rectangle.Intersects(tile.Rectangle)))
                 {
                     this.IsVisible = false;
-                    _elements.RemoveElement(this);
+                    this._elements.RemoveElement(this);
                 }
             }
         }

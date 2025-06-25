@@ -18,7 +18,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostlyLib.Elements
 {
-    public abstract class Drawable
+    public abstract class Drawable : IDrawable
     {
         private double _x, _y;
         private GameScreen gameScreen;
@@ -48,10 +48,10 @@ namespace GhostlyLib.Elements
 
         public bool IsVisible { get; set; }
 
-        public abstract Texture2D Sprite { get; }
+        //public abstract Texture2D Sprite { get; }
 
         public abstract void Update(GameTime gameTime);
-        public abstract void Draw(SpriteBatch spriteBatch);
+        public abstract void Draw(SpriteBatch spriteBatch, GameTime gameTime);
 
         public GameScreen GameScreen { get { return gameScreen; } }
 

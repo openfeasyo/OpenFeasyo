@@ -58,7 +58,7 @@ namespace GhostlyLib.Level
 
         public override EnemyAnimation YellowEnemyAnimation { get { return ImagesAndAnimations.Instance.YellowFishAnimation; } }
 
-        public override GameCharacter Character { get; protected set; }
+        public override IGameCharacter Character { get; set; }
 
         public override Texture2D BackgroundClosest { get { return ImagesAndAnimations.Instance.BackgroundClosestWater; } }
 
@@ -71,7 +71,6 @@ namespace GhostlyLib.Level
         public override Texture2D BackgroundFurther => throw new System.NotImplementedException();
 
         public override Texture2D BackgroundFurthest => throw new System.NotImplementedException();
-
 
         public override Texture2D BluePlanet { get { return null; } }
         public override Texture2D YellowPlanet { get { return null; } }
@@ -102,11 +101,11 @@ namespace GhostlyLib.Level
         {
             if (state)
             {
-                this.Character.Swimming();
+                ((GameCharacter)Character).Swimming();
             }
             else
             {
-                this.Character.Falling();
+                ((GameCharacter)Character).Falling();
             }
         }
 
@@ -116,7 +115,7 @@ namespace GhostlyLib.Level
             {
                 canShoot = false;
 
-                this.Character.Shoot();
+                ((GameCharacter)Character).Shoot();
 
                 this._timer = new System.Timers.Timer(200);
                 this._timer.Elapsed += Timer_Elapsed;

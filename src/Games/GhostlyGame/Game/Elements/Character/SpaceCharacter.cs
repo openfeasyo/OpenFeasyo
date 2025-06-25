@@ -43,8 +43,8 @@ namespace GhostlyLib.Elements.Character
             this.X = 100;
             this.Y = 300;
 
-            this.HorizontalMovement = HorizontalMovement.MovingForward;
-            this.VerticalMovement = VerticalMovement.None;
+            this.AutomaticMovement = AutomaticMovement.MovingForward;
+            this.ActionMovement = ActionMovement.None;
 
             this.Animation.SetCurrentFrames(CharacterLiveState.Normal);
             this.IsVisible = true;
@@ -73,7 +73,7 @@ namespace GhostlyLib.Elements.Character
                 this.Y -= GRAVITY;
             }           
 
-            if (HorizontalMovement.Equals(HorizontalMovement.MovingForward))
+            if (AutomaticMovement.Equals(AutomaticMovement.MovingForward))
             {
                 this.SpeedX = GameScreen.SPEED;
             }
@@ -83,22 +83,22 @@ namespace GhostlyLib.Elements.Character
             }
 
             MainBody = new Rectangle((int)this.X - 32, (int)this.Y - 71, 250, 190);
-            TopBody = new Rectangle((int)this.X + 12, (int)this.Y + 1, 88, 20);     //in case of rocket this is "left side"
-            BottomBody = new Rectangle((int)this.X + 12, (int)this.Y + 70, 88, 43); //in case of rocket this is "right side"
+            Top = new Rectangle((int)this.X + 12, (int)this.Y + 1, 88, 20);     //in case of rocket this is "left side"
+            Bottom = new Rectangle((int)this.X + 12, (int)this.Y + 70, 88, 43); //in case of rocket this is "right side"
             //LeftSide = new Rectangle(this.X, this.TopBody.Y + 29, 11, 25);
-            RightSide = new Rectangle((int)this.X + 112, this.TopBody.Y + 30, 45, 55); //in case of rocket this is front of the rocker
+            RightSide = new Rectangle((int)this.X + 112, this.Top.Y + 30, 45, 55); //in case of rocket this is front of the rocker
 
             Animation.Update(gameTime);
 
             CheckCollisions();
-            GameScreen.GameBackground.HorizontalSpeed = HorizontalMovement == HorizontalMovement.Blocked ? 0 : -GameScreen.SPEED;
+            GameScreen.GameBackground.HorizontalSpeed = AutomaticMovement == AutomaticMovement.Blocked ? 0 : -GameScreen.SPEED;
         }
 
         private void CheckCollisions()
         {
-            IEnumerable<Drawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
+            IEnumerable<IDrawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
 
-            IEnumerable<Drawable> tilesAhead = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide));
+            IEnumerable<IDrawable> tilesAhead = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide));
 
             if (tilesAhead.Count() > 0)
             {
@@ -106,12 +106,12 @@ namespace GhostlyLib.Elements.Character
                 {
                     //original X stores original position of the tile, at the start of the level, e.g. 50th tile from the left
                     //also, we save the checkpoint position 5 tiles before the actual checkpoint in the game
-                    GameScreen.Checkpoint(((Tile)tilesAhead.ElementAt(0)).OriginalX - 5);
+                    GameScreen.SetCheckpoint(((Tile)tilesAhead.ElementAt(0)).OriginalX - 5);
                 }
                 else
                 {
                     //Debug.WriteLine("front collision " + this.X + " " + this.Y);
-                    this.X = tilesAhead.ElementAt(0).X - this.Width + 5;
+                    this.X = ((Drawable)tilesAhead.ElementAt(0)).X - this.Width + 5;
                     this.Blocked();
 
                     if (((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.Exit) || ((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.FinishLine))
@@ -123,10 +123,10 @@ namespace GhostlyLib.Elements.Character
             else
             {
                 //Debug.WriteLine("moving forward");
-                this.HorizontalMovement = HorizontalMovement.MovingForward;
+                this.AutomaticMovement = AutomaticMovement.MovingForward;
             }
 
-            IEnumerable<Drawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.TopBody));
+            IEnumerable<IDrawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Top));
 
             if (tilesAbove.Count() > 0)
             {
@@ -134,11 +134,11 @@ namespace GhostlyLib.Elements.Character
                 {
                     //Debug.WriteLine("left side collision " + this.X + " " + this.Y + " tile: " + tilesAbove.ElementAt(0).X + " " + tilesAbove.ElementAt(0).Y);
                     this.SpeedY = 0;
-                    this.Y = tilesAbove.ElementAt(0).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
+                    this.Y = ((Drawable)tilesAbove.ElementAt(0)).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
                 }
             }
 
-            IEnumerable<Drawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.BottomBody)); 
+            IEnumerable<IDrawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Bottom)); 
 
             if (tilesBelow.Count() > 0)
             {
@@ -146,7 +146,7 @@ namespace GhostlyLib.Elements.Character
                 {
                     //Debug.WriteLine("right side collision " + this.X + " " + this.Y + " tile: " + tilesBelow.ElementAt(0).X + " " + tilesBelow.ElementAt(0).Y);
                     this.SpeedY = 0;
-                    this.Y = tilesBelow.ElementAt(0).Y - this.Height;
+                    this.Y = ((Drawable)tilesBelow.ElementAt(0)).Y - this.Height;
                 }
             }
 
@@ -164,8 +164,8 @@ namespace GhostlyLib.Elements.Character
 
         public override void Blocked()
         {
-            this.HorizontalMovement = HorizontalMovement.Blocked;
-            this.VerticalMovement = VerticalMovement.None;
+            this.AutomaticMovement = AutomaticMovement.Blocked;
+            this.ActionMovement = ActionMovement.None;
         }
 
         public override void BreakLongJump()
@@ -218,7 +218,7 @@ namespace GhostlyLib.Elements.Character
             //if (this.VerticalMovement.Equals(VerticalMovement.None))
             //{
             //GameScreen.MusicPlayer.PlayEffect("rocket_moving");
-            this.VerticalMovement = VerticalMovement.Left;
+            this.ActionMovement = ActionMovement.Left;
             this.SpeedY = SIDEMOVEMENTSPEED;
             this.SpeedX = GameScreen.SPEED;
             //}
@@ -229,7 +229,7 @@ namespace GhostlyLib.Elements.Character
             //if (this.VerticalMovement.Equals(VerticalMovement.None))
             //{
             //GameScreen.MusicPlayer.PlayEffect("rocket_moving");
-            this.VerticalMovement = VerticalMovement.Right;
+            this.ActionMovement = ActionMovement.Right;
             this.SpeedY = -SIDEMOVEMENTSPEED;
             this.SpeedX = GameScreen.SPEED;
             //}
@@ -237,7 +237,7 @@ namespace GhostlyLib.Elements.Character
 
         public override void StopLeftRightMovement()
         {
-            this.VerticalMovement = VerticalMovement.None;
+            this.ActionMovement = ActionMovement.None;
 
             //KATKA: should this be here??
             //this.SpeedY = 0;

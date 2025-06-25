@@ -22,7 +22,7 @@ using System.Reflection;
 
 namespace GhostlyLib.Level
 {
-    public abstract class Level : ILevel
+    public abstract class Level : ILevel2D
     {
         private GameScreen gameScreen;
 
@@ -73,9 +73,12 @@ namespace GhostlyLib.Level
 
         public int MaxScore { get; set; }
 
-        public abstract GameCharacter Character { get; protected set; }
+        //public abstract GameCharacter Character { get; protected set; }
 
         public GameScreen GameScreen { get { return gameScreen; } }
+
+        public abstract IGameCharacter Character { get; set; }
+
         protected Level(GameScreen gameScreen) {
             this.gameScreen = gameScreen;
         }
@@ -272,6 +275,11 @@ namespace GhostlyLib.Level
             }
 
             file.Close();
+        }
+
+        public IEnemy GenerateEnemy(int i, int j)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace GhostlyLib.Elements.Character
         {
             get
             {
-                if (this.VerticalMovement.Equals(VerticalMovement.Jumping) || this.VerticalMovement.Equals(VerticalMovement.LongJumping) || this.VerticalMovement.Equals(VerticalMovement.Falling))
+                if (this.ActionMovement.Equals(ActionMovement.Jumping) || this.ActionMovement.Equals(ActionMovement.LongJumping) || this.ActionMovement.Equals(ActionMovement.Falling))
                 {
                     return _jumpingImage;
                 }
@@ -72,8 +72,8 @@ namespace GhostlyLib.Elements.Character
             this.X = 100;
             this.Y = 250;
 
-            this.HorizontalMovement = HorizontalMovement.MovingForward;
-            this.VerticalMovement = VerticalMovement.Falling;
+            this.AutomaticMovement = AutomaticMovement.MovingForward;
+            this.ActionMovement = ActionMovement.Falling;
 
             this.Animation.SetCurrentFrames(CharacterLiveState.Normal);
             this.IsVisible = true;
@@ -82,13 +82,13 @@ namespace GhostlyLib.Elements.Character
         public override void Update(GameTime gameTime)
         {
             //while longjumping gravity applies only until 0 gravity
-            if (this.VerticalMovement.Equals(VerticalMovement.LongJumping) && this.SpeedY >= 0)
+            if (this.ActionMovement.Equals(ActionMovement.LongJumping) && this.SpeedY >= 0)
             {
                 this.SpeedY = 0;
             }
             else
             {
-                if (this.VerticalMovement.Equals(VerticalMovement.Falling))
+                if (this.ActionMovement.Equals(ActionMovement.Falling))
                 {
                     fall += (double)GRAVITY / 2;
 
@@ -111,7 +111,7 @@ namespace GhostlyLib.Elements.Character
                 this.Y = 0;
             }
 
-            if (HorizontalMovement.Equals(HorizontalMovement.MovingForward))
+            if (AutomaticMovement.Equals(AutomaticMovement.MovingForward))
             {
                 this.SpeedX = GameScreen.SPEED;
             }
@@ -134,28 +134,28 @@ namespace GhostlyLib.Elements.Character
             //}
             
             MainBody = new Rectangle((int)this.X - 32, (int)this.Y - 71, 120, 180);
-            TopBody = new Rectangle((int)this.X + 12, (int)this.Y + 1, 35, 35);
-            BottomBody = new Rectangle((int)this.X + 23, (int)this.Y + 59, 13, 19);
+            Top = new Rectangle((int)this.X + 12, (int)this.Y + 1, 35, 35);
+            Bottom = new Rectangle((int)this.X + 23, (int)this.Y + 59, 13, 19);
             //LeftSide = new Rectangle(this.X, this.TopBody.Y + 29, 11, 25);
-            RightSide = new Rectangle((int)this.X + 48, this.TopBody.Y + 19, 11, 32);
+            RightSide = new Rectangle((int)this.X + 48, this.Top.Y + 19, 11, 32);
 
             Animation.Update(gameTime);
 
-            if (this.TopBody.Y > 720)
+            if (this.Top.Y > 720)
             {
                 GameScreen.MusicPlayer.PlayEffect("drown");
                 this.Die();
             }
 
             CheckCollisions();
-            GameScreen.GameBackground.HorizontalSpeed = HorizontalMovement == HorizontalMovement.Blocked ? 0 : -GameScreen.SPEED;
+            GameScreen.GameBackground.HorizontalSpeed = AutomaticMovement == AutomaticMovement.Blocked ? 0 : -GameScreen.SPEED;
         }
 
         private void CheckCollisions()
         {
-            IEnumerable<Drawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
+            IEnumerable<IDrawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
 
-            IEnumerable<Drawable> tilesAhead = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide)
+            IEnumerable<IDrawable> tilesAhead = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide)
                     && (!((Tile)o).TileType.Equals(TileType.Dirt)
                     && !((Tile)o).TileType.Equals(TileType.DeepWater) && !((Tile)o).TileType.Equals(TileType.Water)
                     && !((Tile)o).TileType.Equals(TileType.DeepLava) && !((Tile)o).TileType.Equals(TileType.Lava)));
@@ -166,11 +166,11 @@ namespace GhostlyLib.Elements.Character
                 {
                     //original X stores original position of the tile, at the start of the level, e.g. 50th tile from the left
                     //also, we save the checkpoint position 5 tiles before the actual checkpoint in the game
-                    GameScreen.Checkpoint(((Tile)tilesAhead.ElementAt(0)).OriginalX - 5);   
+                    GameScreen.SetCheckpoint(((Tile)tilesAhead.ElementAt(0)).OriginalX - 5);   
                 }
                 else
                 {
-                    this.X = tilesAhead.ElementAt(0).X - this.Width;
+                    this.X = ((Drawable)tilesAhead.ElementAt(0)).X - this.Width;
                     this.Blocked();
 
                     if (((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.Exit) || ((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.ExitSign))
@@ -181,10 +181,10 @@ namespace GhostlyLib.Elements.Character
             }
             else
             {
-                this.HorizontalMovement = HorizontalMovement.MovingForward;
+                this.AutomaticMovement = AutomaticMovement.MovingForward;
             }
 
-            IEnumerable<Drawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.TopBody)
+            IEnumerable<IDrawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Top)
                 && !((Tile)o).TileType.Equals(TileType.DeepWater) 
                 && !((Tile)o).TileType.Equals(TileType.DeepLava) 
                 && !((Tile)o).TileType.Equals(TileType.Checkpoint));
@@ -193,9 +193,9 @@ namespace GhostlyLib.Elements.Character
             {
                 this.SpeedY = 0;
                 this.Falling();
-                this.Y = tilesAbove.ElementAt(0).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
+                this.Y = ((Drawable)tilesAbove.ElementAt(0)).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
 
-                IEnumerable<Drawable> tilesExclam = tilesAbove.Where(o => ((Tile)o).TileType.Equals(TileType.Exclamation));
+                IEnumerable<IDrawable> tilesExclam = tilesAbove.Where(o => ((Tile)o).TileType.Equals(TileType.Exclamation));
 
                 foreach (Tile ex in tilesExclam)
                 {
@@ -207,7 +207,7 @@ namespace GhostlyLib.Elements.Character
                 }
             }
 
-            IEnumerable<Drawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.BottomBody)
+            IEnumerable<IDrawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Bottom)
                     && !((Tile)o).TileType.Equals(TileType.Water) && !((Tile)o).TileType.Equals(TileType.Lava)
                     && !((Tile)o).TileType.Equals(TileType.DeepWater) && !((Tile)o).TileType.Equals(TileType.DeepLava)
                     && !((Tile)o).TileType.Equals(TileType.Checkpoint));
@@ -216,7 +216,7 @@ namespace GhostlyLib.Elements.Character
             {
                 this.Standing((Tile)tilesBelow.ElementAt(0));
             }
-            else if (this.VerticalMovement.Equals(VerticalMovement.Standing))
+            else if (this.ActionMovement.Equals(ActionMovement.Standing))
             {
                 this.Falling();
             }
@@ -224,10 +224,10 @@ namespace GhostlyLib.Elements.Character
 
         public override void Jump()
         {
-            if (this.VerticalMovement.Equals(VerticalMovement.Standing))
+            if (this.ActionMovement.Equals(ActionMovement.Standing))
             {
                 GameScreen.MusicPlayer.PlayEffect("jump");
-                this.VerticalMovement = VerticalMovement.Jumping;
+                this.ActionMovement = ActionMovement.Jumping;
                 this.SpeedY = JUMPSPEED;
                 this.SpeedX = GameScreen.SPEED;
             }
@@ -235,7 +235,7 @@ namespace GhostlyLib.Elements.Character
 
         public override void LongJump()
         {
-            this.VerticalMovement = VerticalMovement.LongJumping;
+            this.ActionMovement = ActionMovement.LongJumping;
         }
 
         public override void Shoot()
@@ -252,15 +252,15 @@ namespace GhostlyLib.Elements.Character
         //character collided with some tiles & cannot move forward
         public override void Blocked()
         {
-            this.HorizontalMovement = HorizontalMovement.Blocked;
+            this.AutomaticMovement = AutomaticMovement.Blocked;
 
-            if (this.VerticalMovement.Equals(VerticalMovement.Jumping) || this.VerticalMovement.Equals(VerticalMovement.LongJumping) || this.VerticalMovement.Equals(VerticalMovement.Falling))
+            if (this.ActionMovement.Equals(ActionMovement.Jumping) || this.ActionMovement.Equals(ActionMovement.LongJumping) || this.ActionMovement.Equals(ActionMovement.Falling))
             {
-                this.VerticalMovement = VerticalMovement.Falling;
+                this.ActionMovement = ActionMovement.Falling;
             }
             else
             {
-                this.VerticalMovement = VerticalMovement.Standing;
+                this.ActionMovement = ActionMovement.Standing;
             }
         }
 
@@ -268,7 +268,7 @@ namespace GhostlyLib.Elements.Character
         public override void Standing()
         {
             this.SpeedY = 0;
-            this.VerticalMovement = VerticalMovement.Standing;
+            this.ActionMovement = ActionMovement.Standing;
         }
 
         private void Standing(Tile t)
@@ -279,7 +279,7 @@ namespace GhostlyLib.Elements.Character
 
         public override void Falling()
         {
-            this.VerticalMovement = VerticalMovement.Falling;
+            this.ActionMovement = ActionMovement.Falling;
         }
 
         public override void SlidingOnIce()

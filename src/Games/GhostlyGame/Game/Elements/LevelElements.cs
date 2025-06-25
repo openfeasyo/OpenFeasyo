@@ -25,38 +25,38 @@ namespace GhostlyLib.Elements
         #region Private members
 
         private DrawingEngine _engine;
-        private List<Drawable> _elements;
+        private List<IDrawable> _elements;
 
-        private List<Drawable> _elementsToAdd = new List<Drawable>();
-        private List<Drawable> _elementsToRemove = new List<Drawable>();
+        private List<IDrawable> _elementsToAdd = new List<IDrawable>();
+        private List<IDrawable> _elementsToRemove = new List<IDrawable>();
 
-        private List<Drawable> _enemiesToAdd = new List<Drawable>();
-        private List<Drawable> _enemiesToRemove = new List<Drawable>();
+        private List<IDrawable> _enemiesToAdd = new List<IDrawable>();
+        private List<IDrawable> _enemiesToRemove = new List<IDrawable>();
 
-        private List<Drawable> _tilesToAdd = new List<Drawable>();
-        private List<Drawable> _tilesToRemove = new List<Drawable>();
+        private List<IDrawable> _tilesToAdd = new List<IDrawable>();
+        private List<IDrawable> _tilesToRemove = new List<IDrawable>();
 
         #endregion Private members
 
-        public List<Drawable> Enemies { get; private set; }
-        public List<Drawable> Tiles { get; private set; }
+        public List<IDrawable> Enemies { get; private set; }
+        public List<IDrawable> Tiles { get; private set; }
 
         public LevelElements()
         {
             this._engine = new DrawingEngine();
-            this._elements = new List<Drawable>();
+            this._elements = new List<IDrawable>();
 
-            this.Enemies = new List<Drawable>();
-            this.Tiles = new List<Drawable>();
+            this.Enemies = new List<IDrawable>();
+            this.Tiles = new List<IDrawable>();
         }
 
-        public void AddElement(Drawable drawable)
+        public void AddElement(IDrawable drawable)
         {
-            if (drawable is Enemy)
+            if (drawable is IEnemy)
             {
                 this._enemiesToAdd.Add(drawable);
             }
-            else if (drawable is Tile)
+            else if (drawable is ITile)
             {
                 this._tilesToAdd.Add(drawable);
             }
@@ -68,13 +68,13 @@ namespace GhostlyLib.Elements
             this._engine.AddDrawable(drawable);
         }
 
-        public void RemoveElement(Drawable drawable)
+        public void RemoveElement(IDrawable drawable)
         {
-            if (drawable is Enemy)
+            if (drawable is IEnemy)
             {
                 this._enemiesToRemove.Add(drawable);
             }
-            else if (drawable is Tile)
+            else if (drawable is ITile)
             {
                 this._tilesToRemove.Add(drawable);
             }
@@ -119,9 +119,9 @@ namespace GhostlyLib.Elements
             _tilesToRemove.Clear();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            _engine.Draw(spriteBatch);
+            _engine.Draw(spriteBatch, gameTime);
         }
     }
 }

@@ -47,13 +47,43 @@ namespace GhostlyLib.Elements
         Hit,
         Normal
     }
-    public enum HorizontalMovement
+
+    public enum Direction
+    {
+        East,
+        South,
+        West,
+        North
+    }
+
+    public enum TurningDirection
+    {
+        Left,
+        Right,
+        None
+    }
+
+    public enum RotationStatus
+    {
+        Completed,
+        Interupted,
+        Rotating,
+        None
+    }
+
+    public enum RotationDirection
+    {
+        Left,
+        Right,
+        None
+    }
+    public enum AutomaticMovement
     {
         Blocked,
         MovingForward
     }
 
-    public enum VerticalMovement
+    public enum ActionMovement
     {
         Falling,
         Jumping,

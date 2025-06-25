@@ -61,8 +61,8 @@ namespace GhostlyLib.Elements.Character
             this.X = 100;
             this.Y = 250;
 
-            this.VerticalMovement = VerticalMovement.Falling;
-            this.HorizontalMovement = HorizontalMovement.MovingForward;
+            this.ActionMovement = ActionMovement.Falling;
+            this.AutomaticMovement = AutomaticMovement.MovingForward;
             this.LiveState = CharacterLiveState.Normal;
             this.Animation.SetCurrentFrames(this.LiveState);
             this.IsVisible = true;
@@ -108,15 +108,15 @@ namespace GhostlyLib.Elements.Character
             }
 
             MainBody = new Rectangle((int)this.X - 32, (int)this.Y - 51, 180, 120);
-            TopBody = new Rectangle((int)this.X, (int)this.Y + 1, 55, 30);
-            BottomBody = new Rectangle((int)this.X + 5, (int)this.Y + 39, 45, 16);
+            Top = new Rectangle((int)this.X, (int)this.Y + 1, 55, 30);
+            Bottom = new Rectangle((int)this.X + 5, (int)this.Y + 39, 45, 16);
 
-            LeftSide = new Rectangle((int)this.X, this.TopBody.Y + 10, 22, 35);
-            RightSide = new Rectangle((int)this.X + 48, this.TopBody.Y + 10, 22, 35);
+            LeftSide = new Rectangle((int)this.X, this.Top.Y + 10, 22, 35);
+            RightSide = new Rectangle((int)this.X + 48, this.Top.Y + 10, 22, 35);
 
             this.Animation.Update(gameTime);
 
-            if (this.TopBody.Y > 720)
+            if (this.Top.Y > 720)
             {
                 this.Die();
             }
@@ -126,9 +126,9 @@ namespace GhostlyLib.Elements.Character
 
         private void CheckCollisions()
         {
-            IEnumerable<Drawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
+            IEnumerable<IDrawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
 
-            IEnumerable<Drawable> tilesAhead = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide));
+            IEnumerable<IDrawable> tilesAhead = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide));
 
             if (tilesAhead.Count() > 0)
             {
@@ -136,11 +136,11 @@ namespace GhostlyLib.Elements.Character
                 {
                     //original X stores original position of the tile, at the start of the level, e.g. 50th tile from the left
                     //also, we save the checkpoint position 5 tiles before the actual checkpoint in the game
-                    GameScreen.Checkpoint(((Tile)tilesAhead.ElementAt(0)).OriginalX - 5);
+                    this.GameScreen.SetCheckpoint(((Tile)tilesAhead.ElementAt(0)).OriginalX - 5);
                 }
                 else
                 {
-                    this.X = tilesAhead.ElementAt(0).X - this.Width;
+                    this.X = ((Drawable)tilesAhead.ElementAt(0)).X - this.Width;
                     this.Blocked();
 
                     if (tilesAhead.Where(t => ((Tile)t).TileType.Equals(TileType.Exit) || ((Tile)t).TileType.Equals(TileType.ExitSign)).Count() > 0)
@@ -151,26 +151,26 @@ namespace GhostlyLib.Elements.Character
             }
             else
             {
-                this.HorizontalMovement = HorizontalMovement.MovingForward;
+                this.AutomaticMovement = AutomaticMovement.MovingForward;
             }
 
-            IEnumerable<Drawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.TopBody));
+            IEnumerable<IDrawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Top));
 
             if (tilesAbove.Count() > 0)
             {
                 this.SpeedY = 0;
                 this.Falling();
-                this.Y = tilesAbove.ElementAt(0).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
+                this.Y = ((Drawable)tilesAbove.ElementAt(0)).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
             }
 
-            IEnumerable<Drawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.BottomBody)
+            IEnumerable<IDrawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Bottom)
                                                                        && !((Tile)o).TileType.Equals(TileType.InvisibleTile));
 
             if (tilesBelow.Count() > 0)
             {
                 this.Standing((Tile)tilesBelow.ElementAt(0));
             }
-            else if (this.VerticalMovement.Equals(VerticalMovement.Standing))
+            else if (this.ActionMovement.Equals(ActionMovement.Standing))
             {
                 this.Falling();
             }
@@ -199,14 +199,14 @@ namespace GhostlyLib.Elements.Character
 
         public override void Blocked() //character collided with some tiles & cannot move forward
         {
-            this.HorizontalMovement = HorizontalMovement.Blocked;
+            this.AutomaticMovement = AutomaticMovement.Blocked;
             this.SpeedX = 0;
         }
 
         public override void Standing() //legs on ground/platform
         {
-            this.VerticalMovement = VerticalMovement.Standing;
-            this.HorizontalMovement = HorizontalMovement.Blocked;
+            this.ActionMovement = ActionMovement.Standing;
+            this.AutomaticMovement = AutomaticMovement.Blocked;
 
             this.SpeedY = 0;
             this.SpeedX = 0;
@@ -220,12 +220,12 @@ namespace GhostlyLib.Elements.Character
 
         public override void Falling()
         {
-            this.VerticalMovement = VerticalMovement.Falling;
+            this.ActionMovement = ActionMovement.Falling;
         }
         
         public override void Swimming()
         {
-            this.VerticalMovement = VerticalMovement.Swimming;
+            this.ActionMovement = ActionMovement.Swimming;
             this.SpeedY = SWIMSPEED;
             this.SpeedX = GameScreen.SPEED;
         }

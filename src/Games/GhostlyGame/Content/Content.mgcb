@@ -433,6 +433,18 @@
 /processorParam:TextureFormat=Color
 /build:Textures/Ghostly/enemies/redFly2.png
 
+#begin Textures/Ghostly/enemies/red_ufo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Ghostly/enemies/red_ufo.png
+
 #begin Textures/Ghostly/enemies/yellowFishSwim1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -480,6 +492,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/Ghostly/enemies/yellowFly2.png
+
+#begin Textures/Ghostly/maze character/rocketWithCharacter.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Ghostly/maze character/rocketWithCharacter.png
 
 #begin Textures/Ghostly/minus/minusOne01.png
 /importer:TextureImporter
@@ -1681,6 +1705,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/Ghostly/lava.png
+
+#begin Textures/Ghostly/leftArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Ghostly/leftArrow.png
+
+#begin Textures/Ghostly/rightArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Ghostly/rightArrow.png
 
 #begin Textures/Ghostly/rock.png
 /importer:TextureImporter

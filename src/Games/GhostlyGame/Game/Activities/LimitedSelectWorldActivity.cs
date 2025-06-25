@@ -41,14 +41,18 @@ namespace GhostlyLib.Activities
             world2Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 141)); };
             world2Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - world2Button.Size / 2;
 
-            
+            TextButton world3Button = new TextButton("Maze", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            world3Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 161)); };
+            world3Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - world3Button.Size / 2;
+
             TextButton allWorldsButton = new TextButton("All Worlds", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
-            allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 6) - allWorldsButton.Size / 2;
+            allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - allWorldsButton.Size / 2;
                         
             Components.Add(infoLabel);
             Components.Add(world1Button);
             Components.Add(world2Button);
+            Components.Add(world3Button);
 
             Components.Add(allWorldsButton);
         }

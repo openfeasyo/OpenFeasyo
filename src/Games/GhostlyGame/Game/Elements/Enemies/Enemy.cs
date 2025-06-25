@@ -19,9 +19,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostlyLib.Elements.Enemies
 {
-    public abstract class Enemy : Drawable
+    public abstract class Enemy : Drawable2D, IEnemy
     {
+        #region Private members
         private LevelElements _elements;
+        #endregion Private members
 
         #region Public members
 
@@ -34,10 +36,13 @@ namespace GhostlyLib.Elements.Enemies
 
         #endregion Public members
 
+        #region Abstract members
         public abstract int Height { get; }
         public abstract int Width { get; }
 
         public abstract EnemyState State { get; }
+
+        #endregion Abstract members
 
         public Enemy(int x, int y, LevelElements elements, GameScreen gameScreen, double checkpoint) : base(gameScreen)
         {
@@ -61,11 +66,11 @@ namespace GhostlyLib.Elements.Enemies
 
             Animation.Update(8);
 
-            if (this.X < this.GameScreen.GameCharacter.X - 400)
+            if (this.X < ((Drawable)this.GameScreen.GameCharacter).X - 400)
             {
                 this.IsVisible = false;
             }
-            else if (this.X > this.GameScreen.GameCharacter.X + 1300)
+            else if (this.X > ((Drawable)this.GameScreen.GameCharacter).X + 1300)
             {
                 this.IsVisible = false;
             }
@@ -75,7 +80,7 @@ namespace GhostlyLib.Elements.Enemies
             }
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             if (this.Sprite != null && this.IsVisible)
             {
@@ -85,7 +90,7 @@ namespace GhostlyLib.Elements.Enemies
 
         private void CheckCollision()
         {
-            if (this.Rectangle.Intersects(GameScreen.GameCharacter.TopBody) || this.Rectangle.Intersects(GameScreen.GameCharacter.BottomBody)
+            if (this.Rectangle.Intersects(GameScreen.GameCharacter.Top) || this.Rectangle.Intersects(GameScreen.GameCharacter.Bottom)
                 || this.Rectangle.Intersects(GameScreen.GameCharacter.LeftSide) || this.Rectangle.Intersects(GameScreen.GameCharacter.RightSide))
             {
                 if (GameScreen.GameCharacter.CurrentHealth == 1)

@@ -19,7 +19,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostlyLib.Elements
 {
-    public class Coin : Drawable
+    public class Coin : Drawable2D
     {
         #region Private members
 
@@ -69,20 +69,20 @@ namespace GhostlyLib.Elements
         public override void Update(GameTime gameTime)
         {
             this.X += this.GameScreen.GameBackground.HorizontalSpeed;
-            _rectangle = new Rectangle((int)this.X, (int)this.Y, this._width, this._height);
+            this._rectangle = new Rectangle((int)this.X, (int)this.Y, this._width, this._height);
 
             if (this.IsVisible && _rectangle.Intersects(this.GameScreen.GameCharacter.MainBody))
             {
-                CheckVerticalCollision(this.GameScreen.GameCharacter.TopBody, GameScreen.GameCharacter.BottomBody);
+                CheckVerticalCollision(this.GameScreen.GameCharacter.Top, GameScreen.GameCharacter.Bottom);
                 CheckSideCollision(this.GameScreen.GameCharacter.LeftSide, GameScreen.GameCharacter.RightSide);
             }
 
-            if (this.X < this.GameScreen.GameCharacter.X - 400)
+            if (this.X < ((Drawable)this.GameScreen.GameCharacter).X - 400)
             {
                 this.IsVisible = false;
-                _elements.RemoveElement(this);
+                this._elements.RemoveElement(this);
             }
-            else if (this.X > this.GameScreen.GameCharacter.X + 1300)
+            else if (this.X > ((Drawable)this.GameScreen.GameCharacter).X + 1300)
             {
                 this.IsVisible = false;
             }
@@ -94,7 +94,7 @@ namespace GhostlyLib.Elements
             this._animation.Update(8);
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             if (this.Sprite != null && this.IsVisible)
             {
@@ -107,8 +107,8 @@ namespace GhostlyLib.Elements
             if (topBody.Intersects(_rectangle) || bottomBody.Intersects(_rectangle))
             {
                 AddOnetimeAnimation();
-                GameScreen.MusicPlayer.PlayEffect("coin");
-                GameScreen.GameCharacter.Score += this.Value;
+                this.GameScreen.MusicPlayer.PlayEffect("coin");
+                this.GameScreen.GameCharacter.Score += this.Value;
                 this.IsVisible = false;
                 _elements.RemoveElement(this);
             }
@@ -118,9 +118,9 @@ namespace GhostlyLib.Elements
         {
             if (leftHand.Intersects(_rectangle) || rightHand.Intersects(_rectangle))
             {
-                GameScreen.MusicPlayer.PlayEffect("coin");
+                this.GameScreen.MusicPlayer.PlayEffect("coin");
                 AddOnetimeAnimation();
-                GameScreen.GameCharacter.Score += this.Value;
+                this.GameScreen.GameCharacter.Score += this.Value;
                 this.IsVisible = false;
                 _elements.RemoveElement(this);
             }

@@ -18,7 +18,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostlyLib.Elements
 {
-    public class Tile : Drawable
+    public class Tile : Drawable2D, ITile
     {
         #region Private members
         private int _width = 40, _height = 40;
@@ -78,12 +78,12 @@ namespace GhostlyLib.Elements
             this.X += this.GameScreen.GameBackground.HorizontalSpeed;
             this.Rectangle = new Rectangle((int)this.X, (int)this.Y, this._width, this._height);
 
-            if (this.X < this.GameScreen.GameCharacter.X - 600)
+            if (this.X < ((Drawable)this.GameScreen.GameCharacter).X - 600)
             {
                 this.IsVisible = false;
-                _elements.RemoveElement(this);
+                this._elements.RemoveElement(this);
             }
-            else if (this.X > this.GameScreen.GameCharacter.X + 1300)
+            else if (this.X > ((Drawable)this.GameScreen.GameCharacter).X + 1300)
             {
                 this.IsVisible = false;
             }
@@ -93,7 +93,7 @@ namespace GhostlyLib.Elements
             }
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
             if (this.Sprite != null && this.IsVisible)
             {

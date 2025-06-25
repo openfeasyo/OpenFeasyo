@@ -12,10 +12,9 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
+using GhostlyLib.Screens;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using OpenFeasyo.GameTools;
-using System.Collections.Generic;
 
 namespace GhostlyLib.Elements
 {
@@ -30,9 +29,9 @@ namespace GhostlyLib.Elements
         private List<Texture2D> ParallaxLayers { get; set; }
         public Texture2D ContinuousLayer { get; set; }
 
-        private Screen _screen;
+        private OpenFeasyo.GameTools.Screen _screen;
 
-        public GameBackground(int x, float horizontalSpeed, Screen screen)
+        public GameBackground(int x, float horizontalSpeed, OpenFeasyo.GameTools.Screen screen)
         {
             _screen = screen;
             ParallaxLayers = new List<Texture2D>();
@@ -53,7 +52,7 @@ namespace GhostlyLib.Elements
         public void Update(GameTime gameTime)
         {
             //this.X += GameScreen.SPEED; //(int) (gameTime.ElapsedGameTime.Milliseconds /3);
-            x += (-Screens.GameScreen.SPEED*0.2f + HorizontalSpeed/6);// gameTime.ElapsedGameTime.Milliseconds;
+            x += (-Screens.GameScreen.CONST_SPEED * 0.2f + HorizontalSpeed/6);// gameTime.ElapsedGameTime.Milliseconds;
             
             if (this.x <= -ContinuousLayer.Width)
             {

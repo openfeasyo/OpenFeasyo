@@ -152,6 +152,10 @@ namespace GhostlyLib.Animations
         public Texture2D SpaceSpiral { get; private set; }
         public Texture2D SpaceMist { get; private set; }
 
+        public Texture2D LeftArrow { get; private set; }
+        public Texture2D RightArrow { get; private set; }
+
+
         public CharacterAnimation CharacterAnimation
         {
             get
@@ -613,6 +617,9 @@ namespace GhostlyLib.Animations
             DebrisLong = content.Load<Texture2D>("Textures\\Ghostly\\grey debris long");
             SpaceSpiral = content.Load<Texture2D>("Textures\\Ghostly\\spaceSpiral");
             SpaceMist = content.Load<Texture2D>("Textures\\Ghostly\\spaceMist");
+
+            LeftArrow = content.Load<Texture2D>("Textures\\Ghostly\\leftArrow");
+            RightArrow = content.Load<Texture2D>("Textures\\Ghostly\\rightArrow");
 
 
             LoadBlackEnemyAnimationImages(content);

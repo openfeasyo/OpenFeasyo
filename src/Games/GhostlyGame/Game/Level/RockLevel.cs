@@ -58,7 +58,7 @@ namespace GhostlyLib.Level
 
         public override EnemyAnimation YellowEnemyAnimation { get { return ImagesAndAnimations.Instance.YellowFlyAnimation; } }
 
-        public override GameCharacter Character { get; protected set; }
+        public override IGameCharacter Character { get; set; }
 
         public override Texture2D BackgroundClosest { get { return ImagesAndAnimations.Instance.BackgroundClosestRock; } }
 
@@ -119,24 +119,24 @@ namespace GhostlyLib.Level
         {
             if (state)
             {
-                if (GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.LongJumping) || GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.Jumping))
+                if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.LongJumping) || GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Jumping))
                 {
-                    GameScreen.GameCharacter.LongJump();
+                    ((GameCharacter)GameScreen.GameCharacter).LongJump();
                 }
                 else
                 {
-                    GameScreen.GameCharacter.Jump();
+                    ((GameCharacter)GameScreen.GameCharacter).Jump();
                 }
             }
             else
             {
-                if (GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.LongJumping))
+                if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.LongJumping))
                 {
-                    GameScreen.GameCharacter.BreakLongJump();
+                    ((GameCharacter)GameScreen.GameCharacter).BreakLongJump();
                 }
-                else if (GameScreen.GameCharacter.VerticalMovement.Equals(VerticalMovement.Jumping))
+                else if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Jumping))
                 {
-                    GameScreen.GameCharacter.Falling();
+                    ((GameCharacter)GameScreen.GameCharacter).Falling();
                 }
             }
         }
@@ -147,7 +147,7 @@ namespace GhostlyLib.Level
             {
                 canShoot = false;
 
-                GameScreen.GameCharacter.Shoot();
+                ((GameCharacter)GameScreen.GameCharacter).Shoot();
 
                 this._timer = new System.Timers.Timer(200);
                 this._timer.Elapsed += Timer_Elapsed;

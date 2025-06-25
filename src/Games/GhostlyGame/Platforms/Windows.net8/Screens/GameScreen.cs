@@ -18,7 +18,6 @@ using GhostlyLib.Elements.Character;
 using GhostlyLib.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using OpenFeasyo.GameTools.Core;
 using OpenFeasyo.GameTools.Effects;
 using OpenFeasyo.Platform.Controls;
@@ -27,35 +26,43 @@ using System.Diagnostics;
 
 namespace GhostlyLib.Screens
 {
-    public class GameScreen : Screens.Screen
+    public abstract class GameScreen : Screens.Screen
     {
-        public const int SPEED = 3;
+        public const int CONST_SPEED = 3;
+        public abstract float SPEED { get; }// { get { return 3f; } }
 
-        #region Private members
+        //#region Private members
 
-        private GameState? _gameState = null;
-        private double _checkpoint = 0;
+        //private GameState? _gameState = null;
+        public GameState? State { get; protected set; }
+        //private double _checkpoint = 0;
 
         //private SpriteFont _font24, _font36, _font48;
-        private int _currentLevel = 1;
-
+        //private int _currentLevel = 1;
+        public int CurrentLevel = 1;
+        
         private IDevice _emgDevice;
         private IEmgSensorInput _emgInput;
-        private ILevel _level;
+        //private ILevel _level;
+        public ILevel Level;
 
-        private LevelElements _elements;
+        protected double Checkpoint = 0;
 
-        private State emgState = new State(false, false);
+        //private LevelElements _elements;
+        public LevelElements Elements;
+
+        public State EmgState = new State(false, false);
 
         private SpriteFont[] _font = new SpriteFont[4];
+        public SpriteFont[] Font { get { return _font; } }
 
-        private Vector3 Position { get; set; }
+        //private Vector3 Position { get; set; }
 
-        #endregion Private members
+        //#endregion Private members
 
         #region Public properties
-        public GameCharacter GameCharacter;
-        public GameBackground GameBackground { get; private set; }
+        public IGameCharacter GameCharacter;
+        public GameBackground GameBackground { get; set; }
         public MusicPlayer MusicPlayer { get; private set; }
 
         public List<OnetimeAnimation> OnetimeAnimations = new List<OnetimeAnimation>();
@@ -67,7 +74,7 @@ namespace GhostlyLib.Screens
         {
             get
             {
-                return (int)(((double)GameCharacter.Score / _level.MaxScore) * 100);
+                return (int)(((double)GameCharacter.Score / Level.MaxScore) * 100);
             }
         }
 
@@ -75,18 +82,20 @@ namespace GhostlyLib.Screens
 
         public GameScreen(int level, MusicPlayer player, OpenFeasyo.GameTools.Screen screen)
         {
-            this._currentLevel = level;
+            this.CurrentLevel = level;
             this.MusicPlayer = player;
             this.Screen = screen;
 
             ///_gameState = GameState.DeviceConnected;
-            _gameState = GameState.DeviceTrained;
+            State = GameState.DeviceTrained;
         }
 
-        public void Initialize()
+        /*public void Initialize()
         {
             GameBackground = new GameBackground(0, SPEED, Screen);
-        }
+        }*/
+
+        public abstract void Initialize();
 
         #region Loaders
 
@@ -109,11 +118,12 @@ namespace GhostlyLib.Screens
 
         public void LoadNextLevel()
         {
-            this._currentLevel += 1;
+            this.CurrentLevel += 1;
             LoadLevel();
         }
-
-        public void LoadLevel()
+        
+        public abstract void LoadLevel();
+        /*public void LoadLevel()
         {
             Debug.WriteLine("reloading level, checkpoint " + _checkpoint);
             this._gameState = GameState.Running;
@@ -165,54 +175,55 @@ namespace GhostlyLib.Screens
 
             Position = Vector3.Zero;
             GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position);
-        }
+        }*/
         #endregion Loaders
 
         public void UnloadContent()
         {
         }
 
-        public void Update(GameTime gameTime)
+        /*public void Update(GameTime gameTime)
         {
-            Position = new Vector3((float)(Position.X - GameBackground.HorizontalSpeed), (float)(Screen.Height - _level.Character.Y), GameBackground.HorizontalSpeed);
-            GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position + new Vector3((float)(GameCharacter.X + GameCharacter.Width / 2), 0, 0));
+            Position = new Vector3((float)(Position.X - GameBackground.HorizontalSpeed), (float)(Screen.Height - Level.Character.Y), GameBackground.HorizontalSpeed);
+            GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position + new Vector3((float)(((Drawable)GameCharacter).X + GameCharacter.Width / 2), 0, 0));
             KeyboardUpdate();
 
-            if (_gameState.Equals(GameState.Running))
+            if (State.Equals(GameState.Running))
             {
                 UpdateAllElements(gameTime);
             }
-        }
+        }*/
 
         public void Exit()
         {
-            if (_gameState.Equals(GameState.Running))
+            if (State.Equals(GameState.Running))
             {
-                _gameState = GameState.Paused;
+                State = GameState.Paused;
             }
         }
 
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            if (_gameState.Equals(GameState.Running) || _gameState.Equals(GameState.Paused))
+            if (State.Equals(GameState.Running) || State.Equals(GameState.Paused))
             {
                 DrawGameplay(spriteBatch, gameTime);
             }
         }
 
-        private void UpdateAllElements(GameTime gameTime)
+        
+        /*private void UpdateAllElements(GameTime gameTime)
         {
-            this._level.ProcessPrimaryAction(emgState.Primary);
-            this._level.ProcessSecondaryAction(emgState.Secondary);
+            this.Level.ProcessPrimaryAction(emgState.Primary);
+            this.Level.ProcessSecondaryAction(emgState.Secondary);
 
             this.GameCharacter.Update(gameTime);
 
-            this._elements.Update(gameTime);
+            this.Elements.Update(gameTime);
 
             UpdateOnetimeAnimations();
 
             this.GameBackground.Update(gameTime);
-        }
+        }*/
 
         private void UpdateOnetimeAnimations()
         {
@@ -226,128 +237,50 @@ namespace GhostlyLib.Screens
             OnetimeAnimations.RemoveAll(o => o.IsVisible == false);
         }
 
-        private void DrawGameplay(SpriteBatch spriteBatch, GameTime gameTime)
-        {
-            GameBackground.Draw(gameTime, spriteBatch);
-
-            this._elements.Draw(spriteBatch);
-
-            this.GameCharacter.Draw(spriteBatch);
-
-            DrawOnetimeAnimations(spriteBatch);
-
-            float position = 15;
-
-            spriteBatch.DrawString(_font[2], "Level: " + this._currentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
-
-            position = _font[2].MeasureString("Level: " + this._currentLevel.ToString()).X + 100;
-
-            switch (this.GameCharacter.CurrentHealth)
-            {
-                case 3:
-                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartFull, new Rectangle((int)position, 20, 53, 45), Color.White);
-                    break;
-                case 2:
-                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartHalf, new Rectangle((int)position, 20, 53, 45), Color.White);
-                    break;
-                case 1:
-                    spriteBatch.Draw(ImagesAndAnimations.Instance.HeartEmpty, new Rectangle((int)position, 20, 53, 45), Color.White);
-                    break;
-                default:
-                    spriteBatch.Draw(ImagesAndAnimations.Instance.InvisibleTile, new Rectangle((int)position, 20, 53, 45), Color.White);
-                    break;
-            }
-
-            position += 153;
-
-            spriteBatch.DrawString(_font[2], "Score: " + GameCharacter.Score.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
-        }
-
-        private void DrawOnetimeAnimations(SpriteBatch spriteBatch)
-        {
-            foreach (OnetimeAnimation anim in OnetimeAnimations)
-            {
-                spriteBatch.Draw(anim.Image, Screen.ToScreen(anim.X, anim.Y, anim.Width, anim.Height), Color.White);
-            }
-        }
-
-        private void KeyboardUpdate()
-        {
-            KeyboardState state = Keyboard.GetState();
-
-            if (state.IsKeyDown(Keys.Up) && this._gameState.Equals(GameState.Running))
-            {
-                if (_level is EarthLevel || _level is RockLevel || _level is IceLevel)
-                {
-                    this.GameCharacter.Jump();
-                }
-                else if (_level is WaterLevel)
-                {
-                    this.GameCharacter.Swimming();
-                }
-            }
-            else if (state.IsKeyDown(Keys.LeftAlt) && this._gameState.Equals(GameState.Running))
-            {
-                //this.GameCharacter.Shoot();
-                GhostlyActionHandlers.SecondaryActionHandle(0, 1);
-            }
-            else if (state.IsKeyDown(Keys.Left) && this._gameState.Equals(GameState.Running))
-            {
-                if (_level is SpaceLevel)
-                {
-                    this.GameCharacter.MoveLeft();
-                }
-            }
-            else if (state.IsKeyDown(Keys.Right) && this._gameState.Equals(GameState.Running))
-            {
-                if (_level is SpaceLevel)
-                {
-                    this.GameCharacter.MoveRight();
-                }
-            }
-        }
+        protected abstract void DrawGameplay(SpriteBatch spriteBatch, GameTime gameTime);
+            
 
         public void PauseGame()
         {
-            if (this._gameState.Equals(GameState.Running))
+            if (this.State.Equals(GameState.Running))
             {
-                this._gameState = GameState.Paused;
+                this.State = GameState.Paused;
             }
 
         }
 
         public void ResumeGame()
         {
-            if (this._gameState.Equals(GameState.Paused))
+            if (this.State.Equals(GameState.Paused))
             {
-                this._gameState = GameState.Running;
+                this.State = GameState.Running;
             }
         }
 
         public void GameOver()
         {
-            this.GameCharacter.Stop();
-            this._gameState = GameState.GameOver;
-            OnGameFinished(GameCharacter.Score, _currentLevel, GameFinishedEventArgs.EndReason.GameFailed);
+            ((GameCharacter)this.GameCharacter).Stop();
+            this.State = GameState.GameOver;
+            OnGameFinished(GameCharacter.Score, CurrentLevel, GameFinishedEventArgs.EndReason.GameFailed);
         }
 
         public void LevelDone()
         {
             MusicPlayer.PlayEffect("win");
-            this._checkpoint = 0;
-            this.GameCharacter.Stop();
-            this._gameState = GameState.LevelDone;
-            OnGameFinished(GameCharacter.Score, _currentLevel, GameFinishedEventArgs.EndReason.GoalAccomplished);
+            this.Checkpoint = 0;
+            ((GameCharacter)this.GameCharacter).Stop();
+            this.State = GameState.LevelDone;
+            OnGameFinished(GameCharacter.Score, CurrentLevel, GameFinishedEventArgs.EndReason.GoalAccomplished);
         }
-        public void Checkpoint(double checkpoint)
-        {
+        public abstract void SetCheckpoint(double checkpoint);
+        /*{
             Debug.WriteLine("checkpoint " + checkpoint);
             this._checkpoint = checkpoint;
-            this._gameState = GameState.Running;
-        }
+            this.State = GameState.Running;
+        }*/
 
         public event EventHandler<GameStartedEventArgs> GameStarted;
-        private void OnGameStarted(int level)
+        protected void OnGameStarted(int level)
         {
             if (GameStarted != null)
             {
@@ -365,9 +298,11 @@ namespace GhostlyLib.Screens
                 GameFinished(this, new GameFinishedEventArgs("", score, level, reason));
             }
         }
+
+        public abstract void Update(GameTime gameTime);
     }
 
-    class State
+    public class State
     {
         internal bool Primary { get; }
         internal bool Secondary { get; }
