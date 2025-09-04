@@ -26,7 +26,8 @@ using Vub.Etro.IO;
 namespace FeasyMotion.C3dSerializer
 {
 
-    internal static class ArrayCopyHelper {
+    internal static class ArrayCopyHelper
+    {
         public static T[] SubArray<T>(this T[] data, int index, int length)
         {
             T[] result = new T[length];
@@ -35,7 +36,8 @@ namespace FeasyMotion.C3dSerializer
         }
     }
 
-    public abstract class C3dBaseSerializer {
+    public abstract class C3dBaseSerializer
+    {
         protected C3dWriter _writer = null;
         protected string _fileName;
         protected Vub.Etro.IO.Vector4[] _currentData = null;
@@ -64,8 +66,10 @@ namespace FeasyMotion.C3dSerializer
             return dir;
         }
 
-        public static string TimeIdentifier { 
-            get {
+        public static string TimeIdentifier
+        {
+            get
+            {
                 return DateTime.Now.Year.ToString("00") +
                        "" + DateTime.Now.Month.ToString("00") +
                        "" + DateTime.Now.Day.ToString("00") +
@@ -73,10 +77,11 @@ namespace FeasyMotion.C3dSerializer
                        "-" + DateTime.Now.Minute.ToString("00") +
                        "-" + DateTime.Now.Second.ToString("00") +
                        "-" + DateTime.Now.Millisecond.ToString("0000");
-            } 
+            }
         }
 
-        internal void Create(Dictionary<string, string> parameters, IGame game, string[] pointNames, float expectedFrameRate, string[] analogChannelNames = null, Int16 analogSamplesPerFrame = 0, bool eventsEnabled = false) {
+        internal void Create(Dictionary<string, string> parameters, IGame game, string[] pointNames, float expectedFrameRate, string[] analogChannelNames = null, Int16 analogSamplesPerFrame = 0, bool eventsEnabled = false)
+        {
             game.GameFinished += (o, args) =>
             {
                 _score = (Int16)args.Score;
@@ -87,17 +92,17 @@ namespace FeasyMotion.C3dSerializer
             string therapist = SeriousGames.GetTherapistName();
             string player = SeriousGames.CurrentPatient != null ? SeriousGames.CurrentPatient.Id : "---";
             string gameName = SeriousGames.CurrentGame != null ? SeriousGames.CurrentGame.Name : "[na]";
-            string group = 
-                SeriousGames.CurrentPatient != null && 
+            string group =
+                SeriousGames.CurrentPatient != null &&
                 SeriousGames.CurrentPatient.Id != null &&
-                SeriousGames.CurrentPatient.HospitalId != null ? 
+                SeriousGames.CurrentPatient.HospitalId != null ?
                 SeriousGames.CurrentPatient.HospitalId : "---";
             therapist = therapist == null ? "---" : therapist;
 
 
-            _fileName = SeriousGames.GetPatientDirectory(SeriousGames.CurrentPatient) + "/" + gameName +                   
+            _fileName = SeriousGames.GetPatientDirectory(SeriousGames.CurrentPatient) + "/" + gameName +
                     GetTypeName() + TimeIdentifier + ".c3d";
-            
+
             // TODO
             _uploading = new DataUploading();
             _uploading.Id = player == "Default" ? -2 : -1;
@@ -139,7 +144,7 @@ namespace FeasyMotion.C3dSerializer
             _writer.SetParameter<string>("INFO:GROUP_ID", group);
             _writer.SetParameter<string>("SUBJECTS:PLAYER_NAME", player);
             _writer.SetParameter<float>("SUBJECTS:GAME_SCORE", 0.0f);
-            _writer.SetParameter<string[]>("INFO:TIME", new string [] {
+            _writer.SetParameter<string[]>("INFO:TIME", new string[] {
                 _time.Year.ToString(),
                 _time.Month.ToString(),
                 _time.Day.ToString(),
@@ -159,14 +164,16 @@ namespace FeasyMotion.C3dSerializer
 
         }
 
-        internal void Destroy() {
+        internal void Destroy()
+        {
             float results = _score;
             Int16 level = _level;
             TimeSpan span = DateTime.Now.Subtract(_time);
 
             _writer.SetParameter<Int16>("INFO:DURATION", (Int16)span.TotalSeconds);
-            _writer.SetParameter<float>("SUBJECTS:GAME_SCORE", (float) results /* TODO */);
+            _writer.SetParameter<float>("SUBJECTS:GAME_SCORE", (float)results /* TODO */);
             _writer.SetParameter<Int16>("INFO:GAME_LEVEL", _level);
+
             _writer.Close();
             _writer = null;
 
@@ -175,10 +182,12 @@ namespace FeasyMotion.C3dSerializer
             SeriousGames.LocalDatapoint.Insert<DataUploading>(_uploading);
         }
 
-        internal void writeGameObjects(IGame game, int vectorArrayStartIndex) {
-            foreach (string s in game.GameObjects.Keys) {
+        internal void writeGameObjects(IGame game, int vectorArrayStartIndex)
+        {
+            foreach (string s in game.GameObjects.Keys)
+            {
                 Vector3 v = game.GameObjects.GetValue(s);
-                _currentData[vectorArrayStartIndex++] = new Vub.Etro.IO.Vector4(v.X,v.Y,v.Z,0);
+                _currentData[vectorArrayStartIndex++] = new Vub.Etro.IO.Vector4(v.X, v.Y, v.Z, 0);
             }
         }
 

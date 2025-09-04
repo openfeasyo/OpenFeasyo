@@ -27,6 +27,8 @@ namespace GhostlyLib.Activities
         private ComponentCollection _levelDonePanel;
         private ComponentCollection _pausePanel;
         private ComponentCollection _gameplayPanel;
+        private ComponentCollection _selfAssesmentPanel;
+        private ComponentCollection _bfrVopPanel;
 
         private Label _scoreLabel;
 
@@ -37,7 +39,6 @@ namespace GhostlyLib.Activities
 
         public GamePlayActivity(UIEngine engine, int level, string intputConfig) : base(engine)
         {
-
             if (level >= 161 && level <= 180)
             {
                 _screen = new GameScreen3D(level, engine.MusicPlayer, engine.Screen, engine.Device);
@@ -49,8 +50,11 @@ namespace GhostlyLib.Activities
 
             _screen.GameStarted += _screen_GameStarted;
             _screen.GameFinished += _screen_GameFinished;
+            //_scene.SelfAssesmentFinished += _screen_SelfAssesmentFinished;
 
             _configuration = intputConfig;
+
+            float cell = engine.Screen.ScreenHeight / 16;
 
             #region Game Over Panel
             _gameOverPanel = new ComponentCollection();
@@ -148,6 +152,97 @@ namespace GhostlyLib.Activities
 
             #endregion Pause Panel
 
+            #region Self-assesment Rated Perceived Exertion Scale
+            _selfAssesmentPanel = new ComponentCollection();
+            _selfAssesmentPanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
+
+            int assesmentValue = 0;
+
+            float verticalSpacing = engine.Screen.ScreenHeight * 0.02f;
+            float horizontalSpacing = engine.Screen.ScreenWidth * 0.02f;
+            float tileWidth = (engine.Screen.ScreenWidth * 0.9f) / 6 - horizontalSpacing;
+            float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 5 - verticalSpacing;
+            Vector2 offset = new Vector2(engine.Screen.ScreenWidth * 0.08f, engine.Screen.ScreenHeight * 0.22f);
+
+            for (int y = 0; y < 2; y++)
+                for (int x = 0; x < 5; x++)
+                {
+                    TextButton assesmentButton = new TextButton(assesmentValue.ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                    assesmentButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+                    {
+                        //TODO save self assesment value
+                        //selfAssesment = Int16.Parse(assesmentButton.Text);
+                        Components.Remove(_selfAssesmentPanel);
+                        Components.Add(_bfrVopPanel);
+                    };
+                    assesmentButton.Position = (offset + new Vector2(x * (tileWidth + horizontalSpacing), y * (tileHeight + verticalSpacing)));
+                    assesmentButton.Size = new Vector2(tileWidth, tileHeight);
+                    assesmentValue++;
+                    _selfAssesmentPanel.Components.Add(assesmentButton);
+                }
+
+            Label selfAssesmentLabel = new Label("RATED PERCEIVED EXERTION", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            selfAssesmentLabel.Position = engine.Screen.ScreenMiddle - selfAssesmentLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y * 2 / 3);
+
+            _selfAssesmentPanel.Components.Add(selfAssesmentLabel);
+            #endregion Self-assesment Rated Perceived Exertion Scale
+
+            #region BFR AOP
+            _bfrVopPanel = new ComponentCollection();
+            _bfrVopPanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
+
+            EmgImage emgImage1 = new EmgImage(engine.Device, 0.2f);
+            emgImage1.Size = new Vector2((int)(engine.Screen.ScreenWidth * 0.1), (int)(engine.Screen.ScreenHeight * 0.6));
+            emgImage1.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.3) - (emgImage1.Size.X / 2), cell * 2);
+            _bfrVopPanel.Components.Add(emgImage1);
+
+            EmgImage emgImage2 = new EmgImage(engine.Device, 0.2f);
+            emgImage2.Size = new Vector2((int)(engine.Screen.ScreenWidth * 0.1), (int)(engine.Screen.ScreenHeight * 0.6));
+            emgImage2.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.7) - (emgImage2.Size.X / 2), cell * 2);
+            _bfrVopPanel.Components.Add(emgImage2);
+
+            Label percentageBFRLeftLabel = new Label("50% ", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
+            percentageBFRLeftLabel.Position = emgImage1.Position + emgImage1.Size - percentageBFRLeftLabel.Size;
+            _bfrVopPanel.Components.Add(percentageBFRLeftLabel);
+
+            Label percentageBfrRightLabel = new Label("50% ", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
+            percentageBfrRightLabel.Position = emgImage2.Position + emgImage2.Size - percentageBfrRightLabel.Size;
+            _bfrVopPanel.Components.Add(percentageBfrRightLabel);
+
+            DraggableButton bfrLeftVOPButton = new DraggableButton("Left VOP", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device, 0.5f);
+            bfrLeftVOPButton.MinY = emgImage1.Position.Y;
+            bfrLeftVOPButton.MaxY = emgImage1.Position.Y + emgImage1.Size.Y;
+            bfrLeftVOPButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { };
+            bfrLeftVOPButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.3), cell * 2 + emgImage1.Size.Y / 2) - bfrLeftVOPButton.Size / 2;
+            bfrLeftVOPButton.PercentageChanged += (float value) => { percentageBFRLeftLabel.Text = (value * 100).ToString("00.") + "%"; };
+            _bfrVopPanel.Components.Add(bfrLeftVOPButton);
+
+            DraggableButton bfrRightVOPButton = new DraggableButton("Right VOP", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device, 0.5f);
+            bfrRightVOPButton.MinY = emgImage2.Position.Y;
+            bfrRightVOPButton.MaxY = emgImage2.Position.Y + emgImage2.Size.Y;
+            bfrRightVOPButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { };
+            bfrRightVOPButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.7), cell * 2 + emgImage2.Size.Y / 2) - bfrRightVOPButton.Size / 2;
+            bfrRightVOPButton.PercentageChanged += (float value) => { percentageBfrRightLabel.Text = (value * 100).ToString("00.") + "%"; };
+            _bfrVopPanel.Components.Add(bfrRightVOPButton);
+
+            TextButton okButton = new TextButton("OK", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            okButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
+                //TODO save values from sliders
+                //BFR_L = bfrLeftVOPButton.Percentage;
+                //BFR_R = bfrRightVOPButton.Percentage;
+                Components.Remove(_bfrVopPanel);
+                Components.Add(_levelDonePanel);
+            };
+            okButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.5) - (okButton.Size.X / 2), (int)(engine.Screen.ScreenHeight * 0.8));
+            _bfrVopPanel.Components.Add(okButton);
+
+            Label bfrVopValuesLabel = new Label("Are BFR VOP Values correct?", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            bfrVopValuesLabel.Position = new Vector2((int)((engine.Screen.ScreenWidth - bfrVopValuesLabel.Size.X) / 2), (int)(engine.Screen.ScreenHeight * 0.1));
+
+            _bfrVopPanel.Components.Add(bfrVopValuesLabel);
+            #endregion
+
             #region Gameplay Panel
             _gameplayPanel = new ComponentCollection();
             _gameplayPanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
@@ -164,11 +259,7 @@ namespace GhostlyLib.Activities
 
             _gameplayPanel.Components.Add(pauseButton);
 
-            #endregion Gameplay Panel
-
-
-
-
+            #endregion Gameplay Panel            
         }
 
         public override void OnCursorDown(Vector2 pos)
@@ -221,10 +312,10 @@ namespace GhostlyLib.Activities
             else if (e.Reason == GameFinishedEventArgs.EndReason.GoalAccomplished)
             {
                 Components.Remove(_gameplayPanel);
-                Components.Add(_levelDonePanel);
+                //Components.Add(_levelDonePanel);
+                Components.Add(_selfAssesmentPanel);
                 _scoreLabel.Text = "Score: " + e.Score;
             }
-
         }
 
         private void _screen_GameStarted(object sender, GameStartedEventArgs e)

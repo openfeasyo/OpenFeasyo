@@ -69,6 +69,7 @@ namespace GhostlyLib.Elements.Character
         public CharacterLiveState LiveState { get; set; }
         public ActionMovement ActionMovement { get; set; }
         public AutomaticMovement AutomaticMovement { get; set; }
+        public Instruction Instruction { get; set; }
 
         public override Texture2D Sprite { get; } 
 

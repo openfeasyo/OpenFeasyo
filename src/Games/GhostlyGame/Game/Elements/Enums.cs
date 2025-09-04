@@ -48,6 +48,14 @@ namespace GhostlyLib.Elements
         Normal
     }
 
+    public enum Instruction
+    { 
+        None,
+        Contract,
+        Hold,
+        Release
+    }
+
     public enum Direction
     {
         East,
@@ -135,6 +143,8 @@ namespace GhostlyLib.Elements
         DebrisLong,
         SpaceSpiral,
         SpaceMist,
-        FinishLine
+        FinishLine,
+        LeftRotation,
+        RightRotation
     }
 }

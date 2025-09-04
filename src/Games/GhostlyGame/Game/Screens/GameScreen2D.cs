@@ -41,7 +41,6 @@ namespace GhostlyLib.Screens
 
         public override void LoadLevel()
         {
-            Debug.WriteLine("reloading level, checkpoint " + this.Checkpoint);
             this.State = GameState.Running;
             //clear elements & start logging
             this.Elements = new LevelElements();

@@ -119,6 +119,7 @@ namespace GhostlyLib.Screens
         public void LoadNextLevel()
         {
             this.CurrentLevel += 1;
+            this.CurrentLevel = Math.Min(this.CurrentLevel, 180); // Max level cannot exceed 180
             LoadLevel();
         }
         
@@ -238,7 +239,6 @@ namespace GhostlyLib.Screens
         }
 
         protected abstract void DrawGameplay(SpriteBatch spriteBatch, GameTime gameTime);
-            
 
         public void PauseGame()
         {
@@ -268,10 +268,11 @@ namespace GhostlyLib.Screens
         {
             MusicPlayer.PlayEffect("win");
             this.Checkpoint = 0;
-            ((GameCharacter)this.GameCharacter).Stop();
+            ((IGameCharacter)this.GameCharacter).Stop();
             this.State = GameState.LevelDone;
             OnGameFinished(GameCharacter.Score, CurrentLevel, GameFinishedEventArgs.EndReason.GoalAccomplished);
         }
+
         public abstract void SetCheckpoint(double checkpoint);
         /*{
             Debug.WriteLine("checkpoint " + checkpoint);
@@ -292,7 +293,7 @@ namespace GhostlyLib.Screens
 
         public void OnGameFinished(int score, int level, GameFinishedEventArgs.EndReason reason)
         {
-            Debug.WriteLine("Game Finished - Score: " + score);
+            //Debug.WriteLine("Game Finished - Score: " + score);
             if (GameFinished != null)
             {
                 GameFinished(this, new GameFinishedEventArgs("", score, level, reason));

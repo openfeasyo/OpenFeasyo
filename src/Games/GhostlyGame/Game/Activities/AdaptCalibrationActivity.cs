@@ -97,6 +97,11 @@ namespace GhostlyLib.Activities
             percentage = 0.75f;
         }
 
+        public DraggableButton(string text, SpriteFont font, GraphicsDevice device, float initialPercentage) : base(text, font, device)
+        {
+            percentage = initialPercentage;
+        }
+
         public float MaxY { get; set; }
         public float MinY { get; set; }
 

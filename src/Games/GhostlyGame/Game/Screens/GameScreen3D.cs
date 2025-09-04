@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using OpenFeasyo.GameTools.Effects;
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace GhostlyLib.Screens
 {
@@ -46,7 +47,6 @@ namespace GhostlyLib.Screens
 
         public override void LoadLevel()
         {
-            Debug.WriteLine("reloading level, checkpoint " + this.Checkpoint);
             this.State = GameState.Running;
             
             this.Elements = new LevelElements();
@@ -136,14 +136,31 @@ namespace GhostlyLib.Screens
 
             if (this.GameCharacter.TurningDirection == TurningDirection.Left)
             {
-                //spriteBatch.Draw(ImagesAndAnimations.Instance.LeftArrow, new Rectangle(10, 220, 85, 72), Color.White);
                 spriteBatch.Draw(ImagesAndAnimations.Instance.RightArrow, new Rectangle(700, 220, 85, 72), Color.White);
             }
             else if (this.GameCharacter.TurningDirection == TurningDirection.Right)
             {
-                //spriteBatch.Draw(ImagesAndAnimations.Instance.RightArrow, new Rectangle(700, 220, 85, 72), Color.White);
                 spriteBatch.Draw(ImagesAndAnimations.Instance.LeftArrow, new Rectangle(10, 220, 85, 72), Color.White);
             }
+
+            //Draw instruction in the middle of the screen
+            switch (this.GameCharacter.Instruction) {
+                case Instruction.Contract:
+                    spriteBatch.DrawString(this.Font[2], "Contract", new Vector2(320, 110), Color.Red);
+                    break;
+                case Instruction.Hold:
+                    spriteBatch.DrawString(this.Font[2], "Hold", new Vector2(320, 110), Color.Orange);
+                    break;
+                case Instruction.Release:
+                    spriteBatch.DrawString(this.Font[2], "Release", new Vector2(320, 110), Color.Green);
+                    break;
+                default:
+                    break;
+            }
+ 
+            //print minutes:seconds since the start of the app
+            //TODO: consider what time needs to be shown and how to calculate it
+            spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(300, 430), Color.FromNonPremultiplied(11, 206, 196, 256));
         }
 
         private void KeyboardUpdate()

@@ -27,10 +27,13 @@ namespace GhostlyLib.Elements.Character
         RotationStatus RotationStatus { get; protected set; }
         CharacterLiveState LiveState { get; protected set; }
 
+        Instruction Instruction { get; protected set; }
+
         public ActionMovement ActionMovement { get; protected set; }
         public AutomaticMovement AutomaticMovement { get; protected set; }
 
         void Hit();
         void Die();
+        void Stop();
     }
 }

@@ -152,8 +152,6 @@ namespace GhostlyLib
             _engine.MusicPlayer.AddSong("game_rock", _contentRepository.LoadSong("Music/wholesome"));
 
 
-
-
             //screen.LoadContent(this.Content);
 
             // TODO: use this.Content to load your game content here

@@ -93,6 +93,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map171.txt" Link="Content\Levels\Ghostly\maze\map171.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map172.txt" Link="Content\Levels\Ghostly\maze\map172.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map173.txt" Link="Content\Levels\Ghostly\maze\map173.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map174.txt" Link="Content\Levels\Ghostly\maze\map174.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map175.txt" Link="Content\Levels\Ghostly\maze\map175.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map176.txt" Link="Content\Levels\Ghostly\maze\map176.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map177.txt" Link="Content\Levels\Ghostly\maze\map177.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map178.txt" Link="Content\Levels\Ghostly\maze\map178.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map179.txt" Link="Content\Levels\Ghostly\maze\map179.txt" />
+    <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map180.txt" Link="Content\Levels\Ghostly\maze\map180.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map161.txt" Link="Content\Levels\Ghostly\maze\map161.txt" />
     <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map162.txt" Link="Content\Levels\Ghostly\maze\map162.txt" />
     <EmbeddedResource Include="..\..\Content\Levels\Ghostly\maze\map163.txt" Link="Content\Levels\Ghostly\maze\map163.txt" />

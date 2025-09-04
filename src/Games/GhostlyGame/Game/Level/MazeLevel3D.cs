@@ -32,7 +32,7 @@ namespace GhostlyLib.Level
         public MazeLevel3D(GameScreen gameScreen, LevelElements elements) : base(gameScreen)
         {
             this._elements = elements;
-            this.Character = new MazeCharacter3D(gameScreen, elements, ThreeDEffects.Instance.Character);
+            this.Character = new MazeCharacter3D(gameScreen, elements, ThreeDEffects.Instance.Character, ThreeDEffects.Instance.CharacterLeftRotating, ThreeDEffects.Instance.CharacterRightRotating);
         }
 
         public override void ProcessPrimaryAction(bool state)

@@ -28,6 +28,8 @@ namespace GhostlyGame.Animations
         public BasicEffect Star { get; private set; }
 
         public BasicEffect Character { get; private set; }
+        public BasicEffect CharacterLeftRotating { get; private set; }
+        public BasicEffect CharacterRightRotating { get; private set; }
 
         public BasicEffect Enemy { get; private set; }
         #endregion Public member
@@ -43,6 +45,8 @@ namespace GhostlyGame.Animations
             this.Star = new BasicEffect(graphicsDevice) { TextureEnabled = true, Texture = content.Load<Texture2D>("Textures\\Ghostly\\star") };
 
             this.Character = new BasicEffect(graphicsDevice) { TextureEnabled = true, Texture = content.Load<Texture2D>("Textures\\Ghostly\\maze character\\rocketWithCharacter") };
+            this.CharacterLeftRotating = new BasicEffect(graphicsDevice) { TextureEnabled = true, Texture = content.Load<Texture2D>("Textures\\Ghostly\\maze character\\rocketLeftRotating") };
+            this.CharacterRightRotating = new BasicEffect(graphicsDevice) { TextureEnabled = true, Texture = content.Load<Texture2D>("Textures\\Ghostly\\maze character\\rocketRightRotating") };
             this.Enemy = new BasicEffect(graphicsDevice) { TextureEnabled = true, Texture = content.Load<Texture2D>("Textures\\Ghostly\\enemies\\red_ufo") };
 
         }

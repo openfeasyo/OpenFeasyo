@@ -113,10 +113,10 @@ namespace GhostlyLib.Elements.Enemies
         {
             IEnumerable<IDrawable> tilesAround = this._elements.Tiles.Where(o => ((Tile3D)o).Rectangle.Intersects(this.MainBody));
 
-            IEnumerable<IDrawable> tilesAhead = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Top));
-            IEnumerable<IDrawable> tilesBehind = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Bottom));
-            IEnumerable<IDrawable> tilesOnLeft = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Left));
-            IEnumerable<IDrawable> tilesOnRight = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Right));
+            IEnumerable<IDrawable> tilesAhead = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Top) && !((Tile3D)o).TileType.Equals(TileType.LeftRotation) && !((Tile3D)o).TileType.Equals(TileType.RightRotation));
+            IEnumerable<IDrawable> tilesBehind = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Bottom) && !((Tile3D)o).TileType.Equals(TileType.LeftRotation) && !((Tile3D)o).TileType.Equals(TileType.RightRotation));
+            IEnumerable<IDrawable> tilesOnLeft = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Left) && !((Tile3D)o).TileType.Equals(TileType.LeftRotation) && !((Tile3D)o).TileType.Equals(TileType.RightRotation));
+            IEnumerable<IDrawable> tilesOnRight = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Right) && !((Tile3D)o).TileType.Equals(TileType.LeftRotation) && !((Tile3D)o).TileType.Equals(TileType.RightRotation));
 
             //check if there are no tiles ahead
             if (tilesAhead.Count() == 0 && this.Direction == Direction.North)

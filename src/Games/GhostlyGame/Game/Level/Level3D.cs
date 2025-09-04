@@ -94,7 +94,8 @@ namespace GhostlyLib.Level
                         else if (ch.Equals('E'))
                         {
                             //SetEntryPoint(i, j, (MathHelper.Pi * 2) / 4, Direction.East);
-                            SetEntryPoint(i, j, -((MathHelper.Pi * 2) / 2), Direction.East);
+                            //SetEntryPoint(i, j, -((MathHelper.Pi * 2) / 2), Direction.East);
+                            SetEntryPoint(i, j, ((MathHelper.Pi * 2) / 4) + (MathHelper.Pi * 2) / 2, Direction.East);
                         }
                         else if (ch.Equals('S'))
                         {
@@ -110,6 +111,14 @@ namespace GhostlyLib.Level
                         {
                             //SetEntryPoint(i, j, 0, Direction.North);
                             SetEntryPoint(i, j, (MathHelper.Pi * 2) / 2, Direction.North);
+                        }
+                        else if (ch.Equals('L'))
+                        {
+                            d = new Tile3D(i, j, TileType.LeftRotation, this.Elements, this.Invisible, this.GameScreen);
+                        }
+                        else if (ch.Equals('R'))
+                        {
+                            d = new Tile3D(i, j, TileType.RightRotation, this.Elements, this.Invisible, this.GameScreen);
                         }
 
                         if (d != null)
@@ -131,6 +140,8 @@ namespace GhostlyLib.Level
             ((GameCharacter3D)this.Character).Direction = direction;
 
             ((GameScreen3D)this.GameScreen).LevelEntryPoint = new Vector2(i, j);
+            //update maze rotation based on the levelEntryPoint
+            //_3DCamera.UpdateView(rotationAngle, 0, ((GameCharacter3D)this.Character).Xi, ((GameCharacter3D)this.Character).Yi);
         }
 
         public abstract void ProcessPrimaryAction(bool state);

@@ -11,11 +11,19 @@ namespace GhostlyLib.Elements.Character
         #region Private members
         private System.Timers.Timer _timer;
 
-        private BasicEffect _effect;
+        private BasicEffect _standardEffect, _leftActionEffect, _rightActionEffect;
         #endregion Private members
 
         #region Public members
-        public override BasicEffect Effect { get { return _effect; } }
+        public override BasicEffect Effect
+        {
+            get
+            {
+                if (RotationDirection == RotationDirection.Left) { return _leftActionEffect; }
+                else if (RotationDirection == RotationDirection.Right) { return _rightActionEffect; }
+                return _standardEffect;
+            }
+        }
         public int CurrentHealth { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
@@ -39,12 +47,16 @@ namespace GhostlyLib.Elements.Character
         public CharacterLiveState LiveState { get; set; }
         public ActionMovement ActionMovement { get; set; }
         public AutomaticMovement AutomaticMovement { get; set; }
+        public Instruction Instruction { get; set; }
 
         #endregion Public members
 
-        protected GameCharacter3D(GameScreen gameScreen, BasicEffect effect) : base(gameScreen)
+        protected GameCharacter3D(GameScreen gameScreen, BasicEffect standardEffect, BasicEffect leftActionEffect, BasicEffect rightActionEffect) : base(gameScreen)
         {
-            this._effect = effect;
+            this._standardEffect = standardEffect;
+            this._leftActionEffect = leftActionEffect;
+            this._rightActionEffect = rightActionEffect;
+
             this._timer = new System.Timers.Timer(1);
         }
 
@@ -98,6 +110,8 @@ namespace GhostlyLib.Elements.Character
             this.SpeedX = 0;
             this.GameScreen.GameOver();
         }
+
+        public abstract void Stop();
 
         public override void Update(GameTime gameTime) { }
 

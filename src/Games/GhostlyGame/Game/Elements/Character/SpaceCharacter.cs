@@ -110,7 +110,6 @@ namespace GhostlyLib.Elements.Character
                 }
                 else
                 {
-                    //Debug.WriteLine("front collision " + this.X + " " + this.Y);
                     this.X = ((Drawable)tilesAhead.ElementAt(0)).X - this.Width + 5;
                     this.Blocked();
 
@@ -122,7 +121,6 @@ namespace GhostlyLib.Elements.Character
             }
             else
             {
-                //Debug.WriteLine("moving forward");
                 this.AutomaticMovement = AutomaticMovement.MovingForward;
             }
 
@@ -132,7 +130,6 @@ namespace GhostlyLib.Elements.Character
             {
                 if (!((Tile)tilesAbove.ElementAt(0)).TileType.Equals(TileType.Checkpoint))
                 {
-                    //Debug.WriteLine("left side collision " + this.X + " " + this.Y + " tile: " + tilesAbove.ElementAt(0).X + " " + tilesAbove.ElementAt(0).Y);
                     this.SpeedY = 0;
                     this.Y = ((Drawable)tilesAbove.ElementAt(0)).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
                 }
@@ -144,7 +141,6 @@ namespace GhostlyLib.Elements.Character
             {
                 if (!((Tile)tilesBelow.ElementAt(0)).TileType.Equals(TileType.Checkpoint))
                 {
-                    //Debug.WriteLine("right side collision " + this.X + " " + this.Y + " tile: " + tilesBelow.ElementAt(0).X + " " + tilesBelow.ElementAt(0).Y);
                     this.SpeedY = 0;
                     this.Y = ((Drawable)tilesBelow.ElementAt(0)).Y - this.Height;
                 }
@@ -152,12 +148,10 @@ namespace GhostlyLib.Elements.Character
 
             if (this.Y < 0)
             {
-                //Debug.WriteLine("rocket going out of the top of the screen");
                 this.Y = 0;
             }
             else if (this.Y > 700 - this.Height)
             {
-                //Debug.WriteLine("rocket going out of the bottom of the screen");
                 this.Y = 700 - this.Height;
             }
         }
