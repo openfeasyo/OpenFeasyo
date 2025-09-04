@@ -88,10 +88,8 @@
     <Compile Include="..\..\Game\Level\RockLevel.cs" Link="Level\RockLevel.cs" />
     <Compile Include="..\..\Game\Level\SpaceLevel.cs" Link="Level\SpaceLevel.cs" />
     <Compile Include="..\..\Game\Level\WaterLevel.cs" Link="Level\WaterLevel.cs" />
-    <Compile Include="..\..\Game\Screens\GameScreen.cs" Link="Screens\GameScreen.cs" />
     <Compile Include="..\..\Game\Screens\GameScreen2D.cs" Link="Screens\GameScreen2D.cs" />
     <Compile Include="..\..\Game\Screens\GameScreen3D.cs" Link="Screens\GameScreen3D.cs" />
-    <Compile Include="..\..\Game\Screens\Screen.cs" Link="Screens\Screen.cs" />
   </ItemGroup>
 
   <ItemGroup>
