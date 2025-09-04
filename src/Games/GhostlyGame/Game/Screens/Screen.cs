@@ -16,7 +16,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using OpenFeasyo.GameTools.Core;
 using OpenFeasyo.Platform.Controls;
-using System;
 
 namespace GhostlyLib.Screens
 {
