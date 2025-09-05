@@ -1,0 +1,329 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net9.0-android</TargetFrameworks> <!-- ;net9.0-ios;net9.0-maccatalyst -->
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
+
+		<!-- Note for MacCatalyst:
+		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
+		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
+		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
+		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
+		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
+		<OutputType>Exe</OutputType>
+		<RootNamespace>maui.net9</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Display name -->
+		<ApplicationTitle>maui.net9</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.maui.net9</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
+		<WindowsPackageType>None</WindowsPackageType>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="OpenFeasyo.GameTools.UI"/>
+		<Using Include="Microsoft.Xna.Framework.Input"/>
+		<Using Include="Microsoft.Xna.Framework"/>
+		<Using Remove="Microsoft.Maui.Graphics"/>
+		<Using Remove="Microsoft.Maui.Controls"/>
+		<Using Remove="Microsoft.Maui"/>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<Compile Include="..\..\..\Game\Activities\AboutActivity.cs" Link="Activities\AboutActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\AdaptCalibrationActivity.cs" Link="Activities\AdaptCalibrationActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\CalibrationActivity.cs" Link="Activities\CalibrationActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\ConfigureTouchActivity.cs" Link="Activities\ConfigureTouchActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\GamePlayActivity.cs" Link="Activities\GamePlayActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\InputSelectionActivity.cs" Link="Activities\InputSelectionActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\LimitedSelectWorldActivity.cs" Link="Activities\LimitedSelectWorldActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\LimitedSelectLevelActivity.cs" Link="Activities\LimitedSelectLevelActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\MainMenuActivity.cs" Link="Activities\MainMenuActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\SelectLevelActivity.cs" Link="Activities\SelectLevelActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\SelectSensorActivity.cs" Link="Activities\SelectSensorActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\SelectWorldActivity.cs" Link="Activities\SelectWorldActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\SplashActivity.cs" Link="Activities\SplashActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\StartCalibrationActivity.cs" Link="Activities\StartCalibrationActivity.cs" />
+		<Compile Include="..\..\..\Game\Animations\AnimFrame.cs" Link="Animations\AnimFrame.cs" />
+		<Compile Include="..\..\..\Game\Animations\CharacterAnimation.cs" Link="Animations\CharacterAnimation.cs" />
+		<Compile Include="..\..\..\Game\Animations\EnemyAnimation.cs" Link="Animations\EnemyAnimation.cs" />
+		<Compile Include="..\..\..\Game\Animations\ImagesAndAnimations.cs" Link="Animations\ImagesAndAnimations.cs" />
+		<Compile Include="..\..\..\Game\Animations\InfiniteAnimation.cs" Link="Animations\InfiniteAnimation.cs" />
+		<Compile Include="..\..\..\Game\Animations\OnetimeAnimation.cs" Link="Animations\OnetimeAnimation.cs" />
+		<Compile Include="..\..\..\Game\Animations\ThreeDEffects.cs" Link="Animations\ThreeDEffects.cs" />
+		<Compile Include="..\..\..\Game\Drawing\DrawingEngine.cs" Link="Drawing\DrawingEngine.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\EarthCharacter.cs" Link="Elements\Character\EarthCharacter.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\GameCharacter.cs" Link="Elements\Character\GameCharacter.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\GameCharacter3D.cs" Link="Elements\Character\GameCharacter3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\IGameCharacter.cs" Link="Elements\Character\IGameCharacter.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\MazeCharacter3D.cs" Link="Elements\Character\MazeCharacter3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\RockCharacter.cs" Link="Elements\Character\RockCharacter.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\SpaceCharacter.cs" Link="Elements\Character\SpaceCharacter.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\WaterCharacter.cs" Link="Elements\Character\WaterCharacter.cs" />
+		<Compile Include="..\..\..\Game\Elements\Coin.cs" Link="Elements\Coin.cs" />
+		<Compile Include="..\..\..\Game\Elements\Drawable.cs" Link="Elements\Drawable.cs" />
+		<Compile Include="..\..\..\Game\Elements\Drawable2D.cs" Link="Elements\Drawable2D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Drawable3D.cs" Link="Elements\Drawable3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\BlackEnemy.cs" Link="Elements\Enemies\BlackEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\BlackFishEnemy.cs" Link="Elements\Enemies\BlackFishEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\BlackFlyEnemy.cs" Link="Elements\Enemies\BlackFlyEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\DifficultEnemy.cs" Link="Elements\Enemies\DifficultEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\EasyEnemy.cs" Link="Elements\Enemies\EasyEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\EasyEnemy3D.cs" Link="Elements\Enemies\EasyEnemy3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\Enemy.cs" Link="Elements\Enemies\Enemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\Enemy3D.cs" Link="Elements\Enemies\Enemy3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\IEnemy.cs" Link="Elements\Enemies\IEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\GreenFishEnemy.cs" Link="Elements\Enemies\GreenFishEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\GreenFlyEnemy.cs" Link="Elements\Enemies\GreenFlyEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\MediumEnemy.cs" Link="Elements\Enemies\MediumEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\MazeEnemy3D.cs" Link="Elements\Enemies\MazeEnemy3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\RedEnemy.cs" Link="Elements\Enemies\RedEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\RedFishEnemy.cs" Link="Elements\Enemies\RedFishEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\RedFlyEnemy.cs" Link="Elements\Enemies\RedFlyEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\YellowEnemy.cs" Link="Elements\Enemies\YellowEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\YellowFishEnemy.cs" Link="Elements\Enemies\YellowFishEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enemies\YellowFlyEnemy.cs" Link="Elements\Enemies\YellowFlyEnemy.cs" />
+		<Compile Include="..\..\..\Game\Elements\Enums.cs" Link="Elements\Enums.cs" />
+		<Compile Include="..\..\..\Game\Elements\GameBackground.cs" Link="Elements\GameBackground.cs" />
+		<Compile Include="..\..\..\Game\Elements\IDrawable.cs" Link="Elements\IDrawable.cs" />
+		<Compile Include="..\..\..\Game\Elements\ITile.cs" Link="Elements\ITile.cs" />
+		<Compile Include="..\..\..\Game\Elements\LevelElements.cs" Link="Elements\LevelElements.cs" />
+		<Compile Include="..\..\..\Game\Elements\Star.cs" Link="Elements\Star.cs" />
+		<Compile Include="..\..\..\Game\Elements\Start3D.cs" Link="Elements\Start3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Tile.cs" Link="Elements\Tile.cs" />
+		<Compile Include="..\..\..\Game\Elements\Tile3D.cs" Link="Elements\Tile3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Weapons\Fireball.cs" Link="Elements\Weapons\Fireball.cs" />
+		<Compile Include="..\..\..\Game\Elements\Weapons\Projectile.cs" Link="Elements\Weapons\Projectile.cs" />
+		<Compile Include="..\..\..\Game\Elements\Weapons\Weapon.cs" Link="Elements\Weapons\Weapon.cs" />
+		<Compile Include="..\..\..\Game\GhostlyActionHandlers.cs" Link="GhostlyActionHandlers.cs" />
+		<Compile Include="..\..\..\Game\GhostlyGame.cs" Link="GhostlyGame.cs" />
+		<Compile Include="..\..\..\Game\3DCamera.cs" Link="3DCamera.cs" />
+		<Compile Include="..\..\..\Game\Level\EarthLevel.cs" Link="Level\EarthLevel.cs" />
+		<Compile Include="..\..\..\Game\Level\IceLevel.cs" Link="Level\IceLevel.cs" />
+		<Compile Include="..\..\..\Game\Level\ILevel.cs" Link="Level\ILevel.cs" />
+		<Compile Include="..\..\..\Game\Level\ILevel2D.cs" Link="Level\ILevel2D.cs" />
+		<Compile Include="..\..\..\Game\Level\ILevel3D.cs" Link="Level\ILevel3D.cs" />
+		<Compile Include="..\..\..\Game\Level\Level.cs" Link="Level\Level.cs" />
+		<Compile Include="..\..\..\Game\Level\Level3D.cs" Link="Level\Level3D.cs" />
+		<Compile Include="..\..\..\Game\Level\MazeLevel3D.cs" Link="Level\MazeLevel3D.cs" />
+		<Compile Include="..\..\..\Game\Level\RockLevel.cs" Link="Level\RockLevel.cs" />
+		<Compile Include="..\..\..\Game\Level\SpaceLevel.cs" Link="Level\SpaceLevel.cs" />
+		<Compile Include="..\..\..\Game\Level\WaterLevel.cs" Link="Level\WaterLevel.cs" />
+		<Compile Include="..\..\..\Game\Screens\GameScreen.cs" Link="Screens\GameScreen.cs" />
+		<Compile Include="..\..\..\Game\Screens\GameScreen2D.cs" Link="Screens\GameScreen2D.cs" />
+		<Compile Include="..\..\..\Game\Screens\GameScreen3D.cs" Link="Screens\GameScreen3D.cs" />
+		<Compile Include="..\..\..\Game\Screens\Screen.cs" Link="Screens\Screen.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map1.txt" Link="Content\Levels\Ghostly\earth\map1.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map10.txt" Link="Content\Levels\Ghostly\earth\map10.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map11.txt" Link="Content\Levels\Ghostly\earth\map11.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map12.txt" Link="Content\Levels\Ghostly\earth\map12.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map13.txt" Link="Content\Levels\Ghostly\earth\map13.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map14.txt" Link="Content\Levels\Ghostly\earth\map14.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map15.txt" Link="Content\Levels\Ghostly\earth\map15.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map16.txt" Link="Content\Levels\Ghostly\earth\map16.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map17.txt" Link="Content\Levels\Ghostly\earth\map17.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map18.txt" Link="Content\Levels\Ghostly\earth\map18.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map19.txt" Link="Content\Levels\Ghostly\earth\map19.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map2.txt" Link="Content\Levels\Ghostly\earth\map2.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map20.txt" Link="Content\Levels\Ghostly\earth\map20.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map21.txt" Link="Content\Levels\Ghostly\earth\map21.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map22.txt" Link="Content\Levels\Ghostly\earth\map22.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map23.txt" Link="Content\Levels\Ghostly\earth\map23.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map24.txt" Link="Content\Levels\Ghostly\earth\map24.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map25.txt" Link="Content\Levels\Ghostly\earth\map25.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map26.txt" Link="Content\Levels\Ghostly\earth\map26.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map27.txt" Link="Content\Levels\Ghostly\earth\map27.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map28.txt" Link="Content\Levels\Ghostly\earth\map28.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map29.txt" Link="Content\Levels\Ghostly\earth\map29.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map3.txt" Link="Content\Levels\Ghostly\earth\map3.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map30.txt" Link="Content\Levels\Ghostly\earth\map30.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map4.txt" Link="Content\Levels\Ghostly\earth\map4.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map5.txt" Link="Content\Levels\Ghostly\earth\map5.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map6.txt" Link="Content\Levels\Ghostly\earth\map6.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map7.txt" Link="Content\Levels\Ghostly\earth\map7.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map8.txt" Link="Content\Levels\Ghostly\earth\map8.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map9.txt" Link="Content\Levels\Ghostly\earth\map9.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map100.txt" Link="Content\Levels\Ghostly\ice\map100.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map101.txt" Link="Content\Levels\Ghostly\ice\map101.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map102.txt" Link="Content\Levels\Ghostly\ice\map102.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map103.txt" Link="Content\Levels\Ghostly\ice\map103.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map104.txt" Link="Content\Levels\Ghostly\ice\map104.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map105.txt" Link="Content\Levels\Ghostly\ice\map105.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map106.txt" Link="Content\Levels\Ghostly\ice\map106.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map107.txt" Link="Content\Levels\Ghostly\ice\map107.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map108.txt" Link="Content\Levels\Ghostly\ice\map108.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map109.txt" Link="Content\Levels\Ghostly\ice\map109.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map110.txt" Link="Content\Levels\Ghostly\ice\map110.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map111.txt" Link="Content\Levels\Ghostly\ice\map111.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map112.txt" Link="Content\Levels\Ghostly\ice\map112.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map113.txt" Link="Content\Levels\Ghostly\ice\map113.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map114.txt" Link="Content\Levels\Ghostly\ice\map114.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map115.txt" Link="Content\Levels\Ghostly\ice\map115.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map116.txt" Link="Content\Levels\Ghostly\ice\map116.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map117.txt" Link="Content\Levels\Ghostly\ice\map117.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map118.txt" Link="Content\Levels\Ghostly\ice\map118.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map119.txt" Link="Content\Levels\Ghostly\ice\map119.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map120.txt" Link="Content\Levels\Ghostly\ice\map120.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map91.txt" Link="Content\Levels\Ghostly\ice\map91.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map92.txt" Link="Content\Levels\Ghostly\ice\map92.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map93.txt" Link="Content\Levels\Ghostly\ice\map93.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map94.txt" Link="Content\Levels\Ghostly\ice\map94.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map95.txt" Link="Content\Levels\Ghostly\ice\map95.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map96.txt" Link="Content\Levels\Ghostly\ice\map96.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map97.txt" Link="Content\Levels\Ghostly\ice\map97.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map98.txt" Link="Content\Levels\Ghostly\ice\map98.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map99.txt" Link="Content\Levels\Ghostly\ice\map99.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map61.txt" Link="Content\Levels\Ghostly\rock\map61.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map62.txt" Link="Content\Levels\Ghostly\rock\map62.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map63.txt" Link="Content\Levels\Ghostly\rock\map63.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map64.txt" Link="Content\Levels\Ghostly\rock\map64.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map65.txt" Link="Content\Levels\Ghostly\rock\map65.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map66.txt" Link="Content\Levels\Ghostly\rock\map66.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map67.txt" Link="Content\Levels\Ghostly\rock\map67.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map68.txt" Link="Content\Levels\Ghostly\rock\map68.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map69.txt" Link="Content\Levels\Ghostly\rock\map69.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map70.txt" Link="Content\Levels\Ghostly\rock\map70.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map71.txt" Link="Content\Levels\Ghostly\rock\map71.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map72.txt" Link="Content\Levels\Ghostly\rock\map72.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map73.txt" Link="Content\Levels\Ghostly\rock\map73.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map74.txt" Link="Content\Levels\Ghostly\rock\map74.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map75.txt" Link="Content\Levels\Ghostly\rock\map75.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map76.txt" Link="Content\Levels\Ghostly\rock\map76.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map77.txt" Link="Content\Levels\Ghostly\rock\map77.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map78.txt" Link="Content\Levels\Ghostly\rock\map78.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map79.txt" Link="Content\Levels\Ghostly\rock\map79.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map80.txt" Link="Content\Levels\Ghostly\rock\map80.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map81.txt" Link="Content\Levels\Ghostly\rock\map81.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map82.txt" Link="Content\Levels\Ghostly\rock\map82.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map83.txt" Link="Content\Levels\Ghostly\rock\map83.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map84.txt" Link="Content\Levels\Ghostly\rock\map84.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map85.txt" Link="Content\Levels\Ghostly\rock\map85.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map86.txt" Link="Content\Levels\Ghostly\rock\map86.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map87.txt" Link="Content\Levels\Ghostly\rock\map87.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map88.txt" Link="Content\Levels\Ghostly\rock\map88.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map89.txt" Link="Content\Levels\Ghostly\rock\map89.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map90.txt" Link="Content\Levels\Ghostly\rock\map90.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map31.txt" Link="Content\Levels\Ghostly\water\map31.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map32.txt" Link="Content\Levels\Ghostly\water\map32.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map33.txt" Link="Content\Levels\Ghostly\water\map33.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map34.txt" Link="Content\Levels\Ghostly\water\map34.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map35.txt" Link="Content\Levels\Ghostly\water\map35.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map36.txt" Link="Content\Levels\Ghostly\water\map36.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map37.txt" Link="Content\Levels\Ghostly\water\map37.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map38.txt" Link="Content\Levels\Ghostly\water\map38.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map39.txt" Link="Content\Levels\Ghostly\water\map39.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map40.txt" Link="Content\Levels\Ghostly\water\map40.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map41.txt" Link="Content\Levels\Ghostly\water\map41.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map42.txt" Link="Content\Levels\Ghostly\water\map42.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map43.txt" Link="Content\Levels\Ghostly\water\map43.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map44.txt" Link="Content\Levels\Ghostly\water\map44.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map45.txt" Link="Content\Levels\Ghostly\water\map45.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map46.txt" Link="Content\Levels\Ghostly\water\map46.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map47.txt" Link="Content\Levels\Ghostly\water\map47.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map48.txt" Link="Content\Levels\Ghostly\water\map48.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map49.txt" Link="Content\Levels\Ghostly\water\map49.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map50.txt" Link="Content\Levels\Ghostly\water\map50.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map51.txt" Link="Content\Levels\Ghostly\water\map51.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map52.txt" Link="Content\Levels\Ghostly\water\map52.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map53.txt" Link="Content\Levels\Ghostly\water\map53.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map54.txt" Link="Content\Levels\Ghostly\water\map54.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map55.txt" Link="Content\Levels\Ghostly\water\map55.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map56.txt" Link="Content\Levels\Ghostly\water\map56.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map57.txt" Link="Content\Levels\Ghostly\water\map57.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map58.txt" Link="Content\Levels\Ghostly\water\map58.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map59.txt" Link="Content\Levels\Ghostly\water\map59.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map60.txt" Link="Content\Levels\Ghostly\water\map60.txt" />
+	</ItemGroup>
+
+	
+	
+	<ItemGroup>
+		<Folder Include="Content\Levels\Ghostly\earth\" />
+		<Folder Include="Content\Levels\Ghostly\ice\" />
+		<Folder Include="Content\Levels\Ghostly\land\" />
+		<Folder Include="Content\Levels\Ghostly\maze\" />
+		<Folder Include="Content\Levels\Ghostly\space\" />
+		<Folder Include="Content\Levels\Ghostly\water\" />
+		<Folder Include="Content\Levels\Ghostly\rock\" />
+		<Folder Include="Drawing\" />
+		<Folder Include="Elements\Enemies\" />
+		<Folder Include="Elements\Weapons\" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <PackageReference Include="MonoGame.Framework.Android" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('windows'))">
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <PackageReference Include="MonoGame.Framework.iOS" Version="3.8.4" />
+    </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.4" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj">
+			<ReferenceSourceTarget></ReferenceSourceTarget>
+		</ProjectReference>
+		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj">
+			<ReferenceSourceTarget></ReferenceSourceTarget>
+		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Content\" />
+	</ItemGroup>
+	<ItemGroup>
+		<MonoGameContentReference Include="..\..\..\Content\Content.mgcb" Link="Content\Content.mgcb" />
+	</ItemGroup>
+
+</Project>

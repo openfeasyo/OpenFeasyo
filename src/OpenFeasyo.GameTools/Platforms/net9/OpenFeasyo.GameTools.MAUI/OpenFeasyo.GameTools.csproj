@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+        <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+        <!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+        <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <PackageReference Include="MonoGame.Framework.Android" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('windows'))">
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <PackageReference Include="MonoGame.Framework.iOS" Version="3.8.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="..\..\..\Source\Components2D\InfoPanel.cs" Link="Components2D\InfoPanel.cs" />
+        <Compile Include="..\..\..\Source\Core\Camera.cs" Link="Core\Camera.cs" />
+        <Compile Include="..\..\..\Source\Core\ContentDatabase.cs" Link="Core\ContentDatabase.cs" />
+        <Compile Include="..\..\..\Source\Core\ContentRepository.cs" Link="Core\ContentRepository.cs" />
+        <Compile Include="..\..\..\Source\Core\ICamera.cs" Link="Core\ICamera.cs" />
+        <Compile Include="..\..\..\Source\Effects\MusicPlayer.cs" Link="Effects\MusicPlayer.cs" />
+        <Compile Include="..\..\..\Source\Effects\Particles\ParticleEmitter.cs" Link="Effects\Particles\ParticleEmitter.cs" />
+        <Compile Include="..\..\..\Source\Effects\Particles\ParticleSettings.cs" Link="Effects\Particles\ParticleSettings.cs" />
+        <Compile Include="..\..\..\Source\Effects\Particles\ParticleSystem.cs" Link="Effects\Particles\ParticleSystem.cs" />
+        <Compile Include="..\..\..\Source\Effects\Particles\ParticleVertex.cs" Link="Effects\Particles\ParticleVertex.cs" />
+        <Compile Include="..\..\..\Source\Effects\Particles\Projectile.cs" Link="Effects\Particles\Projectile.cs" />
+        <Compile Include="..\..\..\Source\GameTools.cs" Link="GameTools.cs" />
+        <Compile Include="..\..\..\Source\ILevel.cs" Link="ILevel.cs" />
+        <Compile Include="..\..\..\Source\Screen.cs" Link="Screen.cs" />
+        <Compile Include="..\..\..\Source\UI\Activity.cs" Link="UI\Activity.cs" />
+        <Compile Include="..\..\..\Source\UI\Button.cs" Link="UI\Button.cs" />
+        <Compile Include="..\..\..\Source\UI\Component.cs" Link="UI\Component.cs" />
+        <Compile Include="..\..\..\Source\UI\ComponentCollection.cs" Link="UI\ComponentCollection.cs" />
+        <Compile Include="..\..\..\Source\UI\Image.cs" Link="UI\Image.cs" />
+        <Compile Include="..\..\..\Source\UI\ImageSwitch.cs" Link="UI\ImageSwitch.cs" />
+        <Compile Include="..\..\..\Source\UI\Label.cs" Link="UI\Label.cs" />
+        <Compile Include="..\..\..\Source\UI\ListItem.cs" Link="UI\ListItem.cs" />
+        <Compile Include="..\..\..\Source\UI\UIEngine.cs" Link="UI\UIEngine.cs" />
+    </ItemGroup>
+    
+</Project>

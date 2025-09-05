@@ -1,0 +1,134 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+        <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+        <!-- <TargetFrameworks>$(TargetFrameworks);net9.0-tizen</TargetFrameworks> -->
+        <UseMaui>true</UseMaui>
+        <SingleProject>true</SingleProject>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">15.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+        <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="10.0.0-preview.7.25380.108" />
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <PackageReference Include="MonoGame.Framework.Android" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('windows'))">
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+        <PackageReference Include="MonoGame.Framework.iOS" Version="3.8.4" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="..\..\..\Source\C3d\C3dHeader.cs" Link="C3d\C3dHeader.cs" />
+        <Compile Include="..\..\..\Source\C3d\C3dReader.cs" Link="C3d\C3dReader.cs" />
+        <Compile Include="..\..\..\Source\C3d\C3dWriter.cs" Link="C3d\C3dWriter.cs" />
+        <Compile Include="..\..\..\Source\C3d\ParameterModel.cs" Link="C3d\ParameterModel.cs" />
+        <Compile Include="..\..\..\Source\Configuration\BalanceBoardConfig.cs" Link="Configuration\BalanceBoardConfig.cs" />
+        <Compile Include="..\..\..\Source\Configuration\Bindings\BalanceBoardBinding.cs" Link="Configuration\Bindings\BalanceBoardBinding.cs" />
+        <Compile Include="..\..\..\Source\Configuration\Bindings\EmgBinding.cs" Link="Configuration\Bindings\EmgBinding.cs" />
+        <Compile Include="..\..\..\Source\Configuration\Bindings\InputBinding.cs" Link="Configuration\Bindings\InputBinding.cs" />
+        <Compile Include="..\..\..\Source\Configuration\Configuration.cs" Link="Configuration\Configuration.cs" />
+        <Compile Include="..\..\..\Source\Configuration\ConfigurationLoader.cs" Link="Configuration\ConfigurationLoader.cs" />
+        <Compile Include="..\..\..\Source\Configuration\EmgConfig.cs" Link="Configuration\EmgConfig.cs" />
+        <Compile Include="..\..\..\Source\Configuration\InputConfig.cs" Link="Configuration\InputConfig.cs" />
+        <Compile Include="..\..\..\Source\Configuration\JointPositionConfig.cs" Link="Configuration\JointPositionConfig.cs" />
+        <Compile Include="..\..\..\Source\Configuration\SegmentAngleConfig.cs" Link="Configuration\SegmentAngleConfig.cs" />
+        <Compile Include="..\..\..\Source\Configuration\Xml\XmlSerializableConfiguration.cs" Link="Configuration\Xml\XmlSerializableConfiguration.cs" />
+        <Compile Include="..\..\..\Source\Controls\AGamingInput.cs" Link="Controls\AGamingInput.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\AnalysisManager.cs" Link="Controls\Analysis\AnalysisManager.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\AnalyzerWrapper.cs" Link="Controls\Analysis\AnalyzerWrapper.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\IAccelerometerAnalyser.cs" Link="Controls\Analysis\IAccelerometerAnalyser.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\IAnalysisManager.cs" Link="Controls\Analysis\IAnalysisManager.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\IAnalyzer.cs" Link="Controls\Analysis\IAnalyzer.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\IBalanceBoardAnalyzer.cs" Link="Controls\Analysis\IBalanceBoardAnalyzer.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\IEmgSignalAnalyzer.cs" Link="Controls\Analysis\IEmgSignalAnalyzer.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\InputAnalyzerManager.cs" Link="Controls\Analysis\InputAnalyzerManager.cs" />
+        <Compile Include="..\..\..\Source\Controls\Analysis\ISkeletonAnalyzer.cs" Link="Controls\Analysis\ISkeletonAnalyzer.cs" />
+        <Compile Include="..\..\..\Source\Controls\Constraints\ISkeletonConstraint.cs" Link="Controls\Constraints\ISkeletonConstraint.cs" />
+        <Compile Include="..\..\..\Source\Controls\Constraints\SkeletonConstraintAngle.cs" Link="Controls\Constraints\SkeletonConstraintAngle.cs" />
+        <Compile Include="..\..\..\Source\Controls\Constraints\SkeletonConstraintCollection.cs" Link="Controls\Constraints\SkeletonConstraintCollection.cs" />
+        <Compile Include="..\..\..\Source\Controls\Constraints\SkeletonConstraintPosition.cs" Link="Controls\Constraints\SkeletonConstraintPosition.cs" />
+        <Compile Include="..\..\..\Source\Controls\Drivers\DeviceHelper.cs" Link="Controls\Drivers\DeviceHelper.cs" />
+        <Compile Include="..\..\..\Source\Controls\Drivers\DriverManager.cs" Link="Controls\Drivers\DriverManager.cs" />
+        <Compile Include="..\..\..\Source\Controls\Drivers\IDevice.cs" Link="Controls\Drivers\IDevice.cs" />
+        <Compile Include="..\..\..\Source\Controls\Drivers\IDriverManager.cs" Link="Controls\Drivers\IDriverManager.cs" />
+        <Compile Include="..\..\..\Source\Controls\Drivers\InputDeviceManager.cs" Link="Controls\Drivers\InputDeviceManager.cs" />
+        <Compile Include="..\..\..\Source\Controls\Drivers\LibraryLoader.cs" Link="Controls\Drivers\LibraryLoader.cs" />
+        <Compile Include="..\..\..\Source\Controls\Gaming\Task\ITask.cs" Link="Controls\Gaming\Task\ITask.cs" />
+        <Compile Include="..\..\..\Source\Controls\Gaming\Task\Task.cs" Link="Controls\Gaming\Task\Task.cs" />
+        <Compile Include="..\..\..\Source\Controls\Guides\AGuide.cs" Link="Controls\Guides\AGuide.cs" />
+        <Compile Include="..\..\..\Source\Controls\Guides\ASkeletonGuide.cs" Link="Controls\Guides\ASkeletonGuide.cs" />
+        <Compile Include="..\..\..\Source\Controls\Guides\IGuide.cs" Link="Controls\Guides\IGuide.cs" />
+        <Compile Include="..\..\..\Source\Controls\IAccelerometer.cs" Link="Controls\IAccelerometer.cs" />
+        <Compile Include="..\..\..\Source\Controls\IAccelerometerInput.cs" Link="Controls\IAccelerometerInput.cs" />
+        <Compile Include="..\..\..\Source\Controls\IBalanceBoard.cs" Link="Controls\IBalanceBoard.cs" />
+        <Compile Include="..\..\..\Source\Controls\IBalanceBoardInput.cs" Link="Controls\IBalanceBoardInput.cs" />
+        <Compile Include="..\..\..\Source\Controls\ICamera.cs" Link="Controls\ICamera.cs" />
+        <Compile Include="..\..\..\Source\Controls\IDiscoverable.cs" Link="Controls\IDiscoverable.cs" />
+        <Compile Include="..\..\..\Source\Controls\IEmgSensorInput.cs" Link="Controls\IEmgSensorInput.cs" />
+        <Compile Include="..\..\..\Source\Controls\IEmgSignal.cs" Link="Controls\IEmgSignal.cs" />
+        <Compile Include="..\..\..\Source\Controls\IGame.cs" Link="Controls\IGame.cs" />
+        <Compile Include="..\..\..\Source\Controls\IGamingInput.cs" Link="Controls\IGamingInput.cs" />
+        <Compile Include="..\..\..\Source\Controls\ISkeleton.cs" Link="Controls\ISkeleton.cs" />
+        <Compile Include="..\..\..\Source\Controls\ISkeletonInput.cs" Link="Controls\ISkeletonInput.cs" />
+        <Compile Include="..\..\..\Source\Controls\ITouch.cs" Link="Controls\ITouch.cs" />
+        <Compile Include="..\..\..\Source\Controls\ITouchscreenInput.cs" Link="Controls\ITouchscreenInput.cs" />
+        <Compile Include="..\..\..\Source\Controls\Reports\IReport.cs" Link="Controls\Reports\IReport.cs" />
+        <Compile Include="..\..\..\Source\Controls\Reports\ISkeletonCorrective.cs" Link="Controls\Reports\ISkeletonCorrective.cs" />
+        <Compile Include="..\..\..\Source\Controls\Reports\ISkeletonReport.cs" Link="Controls\Reports\ISkeletonReport.cs" />
+        <Compile Include="..\..\..\Source\Controls\Reports\SkeletonCorrectiveAngle.cs" Link="Controls\Reports\SkeletonCorrectiveAngle.cs" />
+        <Compile Include="..\..\..\Source\Controls\Reports\SkeletonCorrectiveCollection.cs" Link="Controls\Reports\SkeletonCorrectiveCollection.cs" />
+        <Compile Include="..\..\..\Source\Controls\Reports\SkeletonCorrectivePosition.cs" Link="Controls\Reports\SkeletonCorrectivePosition.cs" />
+        <Compile Include="..\..\..\Source\Data\Data.cs" Link="Data\Data.cs" />
+        <Compile Include="..\..\..\Source\Data\Datapoint.cs" Link="Data\Datapoint.cs" />
+        <Compile Include="..\..\..\Source\Data\DataProvider.cs" Link="Data\DataProvider.cs" />
+        <Compile Include="..\..\..\Source\Data\FloatAverageFilter.cs" Link="Data\FloatAverageFilter.cs" />
+        <Compile Include="..\..\..\Source\Data\Ict4Rehab.cs" Link="Data\Ict4Rehab.cs" />
+        <Compile Include="..\..\..\Source\Data\JsonProvider.cs" Link="Data\JsonProvider.cs" />
+        <Compile Include="..\..\..\Source\Data\Offline\OfflineDatapoint.cs" Link="Data\Offline\OfflineDatapoint.cs" />
+        <Compile Include="..\..\..\Source\Data\Program.cs" Link="Data\Program.cs" />
+        <Compile Include="..\..\..\Source\Data\SeriousGames.cs" Link="Data\SeriousGames.cs" />
+        <Compile Include="..\..\..\Source\Data\Sqlite\DatapointReplicator.cs" Link="Data\Sqlite\DatapointReplicator.cs" />
+        <Compile Include="..\..\..\Source\Data\Sqlite\SqliteDatapoint.cs" Link="Data\Sqlite\SqliteDatapoint.cs" />
+        <Compile Include="..\..\..\Source\Network\Attributes.cs" Link="Network\Attributes.cs" />
+        <Compile Include="..\..\..\Source\Network\Controls\BalanceBoardInputProxy.cs" Link="Network\Controls\BalanceBoardInputProxy.cs" />
+        <Compile Include="..\..\..\Source\Network\Controls\BalanceBoardProxy.cs" Link="Network\Controls\BalanceBoardProxy.cs" />
+        <Compile Include="..\..\..\Source\Network\Controls\DeviceProxy.cs" Link="Network\Controls\DeviceProxy.cs" />
+        <Compile Include="..\..\..\Source\Network\Controls\DriverManagerProxy.cs" Link="Network\Controls\DriverManagerProxy.cs" />
+        <Compile Include="..\..\..\Source\Network\Controls\SkeletonInputProxy.cs" Link="Network\Controls\SkeletonInputProxy.cs" />
+        <Compile Include="..\..\..\Source\Network\Controls\SkeletonProxy.cs" Link="Network\Controls\SkeletonProxy.cs" />
+        <Compile Include="..\..\..\Source\Network\IObject.cs" Link="Network\IObject.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="C3d\" />
+        <Folder Include="Configuration\Bindings\" />
+        <Folder Include="Configuration\Xml\" />
+        <Folder Include="Controls\Analysis\" />
+        <Folder Include="Controls\Constraints\" />
+        <Folder Include="Controls\Drivers\" />
+        <Folder Include="Controls\Gaming\Task\" />
+        <Folder Include="Controls\Guides\" />
+        <Folder Include="Controls\Reports\" />
+        <Folder Include="Data\Sqlite\" />
+        <Folder Include="Data\Offline\" />
+        <Folder Include="Network\Controls\" />
+    </ItemGroup>
+
+</Project>

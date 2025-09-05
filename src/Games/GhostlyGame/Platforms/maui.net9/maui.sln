@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostlyGame", "GhostlyGame\GhostlyGame.csproj", "{55F7F478-AB34-4CF1-A3A2-F7EE7C12AD23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.GameTools", "..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj", "{AA092F8A-12D1-4A66-8BCB-4D1C3877E431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.Platform", "..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj", "{9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55F7F478-AB34-4CF1-A3A2-F7EE7C12AD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F7F478-AB34-4CF1-A3A2-F7EE7C12AD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F7F478-AB34-4CF1-A3A2-F7EE7C12AD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F7F478-AB34-4CF1-A3A2-F7EE7C12AD23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Release|Any CPU.Build.0 = Release|Any CPU
+        {9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
