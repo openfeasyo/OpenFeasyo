@@ -22,7 +22,7 @@ using Microsoft.Win32;
     using OpenFeasyo.Platform.Data.Offline;
     using Vub.Etro.IO;
     using System.Globalization;
-    #if !ANDROID && !__MACOS__ && !NET8_0
+    #if !ANDROID && !__MACOS__ && !NET8_0_OR_GREATER
         using System.Windows.Threading;
     #endif
 #endif
@@ -99,11 +99,8 @@ namespace OpenFeasyo.Platform.Data
         {
 
             String PersonalFolder = HomeLocation != "" ? HomeLocation :
-#if ANDROID
-                Xamarin.Essentials.FileSystem.AppDataDirectory;
-#else
                 Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-#endif
+
             if (!Directory.Exists(PersonalFolder + DIR_SEPARATOR + HOME_FOLDER + DIR_SEPARATOR + "Patients"))
             {
                 Directory.CreateDirectory(PersonalFolder + DIR_SEPARATOR + HOME_FOLDER);
@@ -364,7 +361,7 @@ namespace OpenFeasyo.Platform.Data
         }
 #endregion
 
-#if !INSTALLER && !ANDROID && !__MACOS__ && !NET8_0
+#if !INSTALLER && !ANDROID && !__MACOS__ && !NET8_0_OR_GREATER
         public static bool UploadFiles(Datapoint dp, ExtendedPatient patient, Dispatcher dispatcher) {
 
             List<DataUploading> uploadings = dispatcher.Invoke(new Func< List<DataUploading> >(() => {

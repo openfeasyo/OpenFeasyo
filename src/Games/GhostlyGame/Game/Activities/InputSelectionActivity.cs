@@ -15,7 +15,7 @@
 #if ANDROID
 using Android;
 using Android.Content.PM;
-using Android.Support.Design.Widget;
+using AndroidX.AppCompat.Widget;
 using Android.Support.V4.App;
 #endif
 using Microsoft.Xna.Framework;
@@ -53,7 +53,7 @@ namespace GhostlyLib.Activities
             emgButton.Clicked += //EmgButton_Clicked;
                 (object sender, TextButton.ClickedEventArgs e) => {
                     StartActivity(
-#if ANDROID
+#if FALSE //ANDROID
                     new ProminentDisclosureActivity(_engine)
 #else
                     new SelectSensorActivity(_engine)
@@ -87,7 +87,7 @@ namespace GhostlyLib.Activities
         private void EmgButton_Clicked(object sender, TextButton.ClickedEventArgs e)
         {
 #if ANDROID
-            GhostlyLib.MainActivity.Instance.RequestPermissions(new[] {
+            GhostlyLib.GhostlyGameActivity.Instance.RequestPermissions(new[] {
                         Manifest.Permission.AccessCoarseLocation,
                         Manifest.Permission.AccessFineLocation,
                         Manifest.Permission.BluetoothAdmin,

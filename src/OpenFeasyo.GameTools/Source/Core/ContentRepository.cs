@@ -88,7 +88,7 @@ namespace OpenFeasyo.GameTools.Core
         {
             return _game.Content.Load<SpriteFont>(name);
         }
-#if !NET8_0
+#if !NET8_0_OR_GREATER
         public PrefabObjectGenerator LoadPrefab(Camera camera, string prefabName) {
             Model model = null;
             if (!_allModels.ContainsKey(prefabName)) {

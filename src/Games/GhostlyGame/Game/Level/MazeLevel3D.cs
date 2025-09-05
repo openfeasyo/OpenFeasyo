@@ -1,4 +1,3 @@
-using GhostlyGame.Animations;
 using GhostlyLib.Animations;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;

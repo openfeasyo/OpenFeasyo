@@ -1,4 +1,3 @@
-using GhostlyGame.Animations;
 using GhostlyLib.Animations;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;

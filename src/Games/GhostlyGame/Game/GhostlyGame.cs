@@ -121,7 +121,7 @@ namespace GhostlyLib
         private void _engine_ActivitiesFinished(object sender, EventArgs e)
         {
             UnloadContent();
-            this.Exit();
+            //this.Exit();
         }
 
         /// <summary>
