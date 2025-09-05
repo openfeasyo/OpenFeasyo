@@ -325,5 +325,8 @@
 	<ItemGroup>
 		<MonoGameContentReference Include="..\..\..\Content\Content.mgcb" Link="Content\Content.mgcb" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Include="Platforms\Windows\PlatformNavigator.cs" />
+	</ItemGroup>
 
 </Project>

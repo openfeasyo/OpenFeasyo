@@ -19,8 +19,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Using Remove="Microsoft.Maui.Graphics"/>
+        <Using Remove="Microsoft.Maui.Controls"/>
+        <Using Remove="Microsoft.Maui"/>
+    </ItemGroup>
+    
+    <ItemGroup>
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
     </ItemGroup>
+    
+    
+    
     <ItemGroup Condition="$(TargetFramework.Contains('android'))">
         <PackageReference Include="MonoGame.Framework.Android" Version="3.8.4" />
     </ItemGroup>

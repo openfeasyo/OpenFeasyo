@@ -5,10 +5,12 @@ using Microsoft.Maui.Controls;
 public partial class MainPage : ContentPage
 {
 	int count = 0;
-
-	public MainPage()
+	private readonly IPlatformNavigator _navigator;
+	
+	public MainPage(IPlatformNavigator navigator)
 	{
 		InitializeComponent();
+		_navigator = navigator;
 	}
 
 	private void OnCounterClicked(object? sender, EventArgs e)
@@ -17,9 +19,10 @@ public partial class MainPage : ContentPage
 
 		if (count == 1)
 			CounterBtn.Text = $"Clicked {count} time";
-		else
+		else {
 			CounterBtn.Text = $"Clicked {count} times";
-
+			_navigator.OpenGameView();
+		}
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
 }
