@@ -8,9 +8,13 @@ using Android.Views;
 namespace GhostlyLib;
 
 
-
-    public class GhostlyGameActivity : AndroidGameActivity
-    {
+[Activity(Theme = "@style/Maui.SplashTheme", 
+    ScreenOrientation = ScreenOrientation.SensorLandscape,
+    MainLauncher = false,
+    LaunchMode = LaunchMode.SingleTop,
+    ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.Density)]
+public class GhostlyGameActivity : AndroidGameActivity
+{
         public static GhostlyGameActivity Instance { get; private set; } 
     
         private GhostlyLib.GhostlyGame _game;
@@ -18,8 +22,12 @@ namespace GhostlyLib;
 
         protected override void OnCreate(Bundle bundle)
         {
+            this.Window.AddFlags(WindowManagerFlags.Fullscreen);
+            this.Window.AddFlags(WindowManagerFlags.KeepScreenOn);
             base.OnCreate(bundle);
 
+            EnableImmersiveMode()
+                
             _game = new GhostlyLib.GhostlyGame();
             _view = _game.Services.GetService(typeof(Android.Views.View)) as Android.Views.View;
 

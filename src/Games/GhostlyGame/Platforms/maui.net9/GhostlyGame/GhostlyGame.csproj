@@ -14,7 +14,6 @@
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
 		<OutputType>Exe</OutputType>
-		<RootNamespace>maui.net9</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -156,6 +155,14 @@
 
 	<ItemGroup>
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map1.txt" Link="Content\Levels\Ghostly\earth\map1.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map2.txt" Link="Content\Levels\Ghostly\earth\map2.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map3.txt" Link="Content\Levels\Ghostly\earth\map3.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map4.txt" Link="Content\Levels\Ghostly\earth\map4.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map5.txt" Link="Content\Levels\Ghostly\earth\map5.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map6.txt" Link="Content\Levels\Ghostly\earth\map6.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map7.txt" Link="Content\Levels\Ghostly\earth\map7.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map8.txt" Link="Content\Levels\Ghostly\earth\map8.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map9.txt" Link="Content\Levels\Ghostly\earth\map9.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map10.txt" Link="Content\Levels\Ghostly\earth\map10.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map11.txt" Link="Content\Levels\Ghostly\earth\map11.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map12.txt" Link="Content\Levels\Ghostly\earth\map12.txt" />
@@ -166,7 +173,6 @@
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map17.txt" Link="Content\Levels\Ghostly\earth\map17.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map18.txt" Link="Content\Levels\Ghostly\earth\map18.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map19.txt" Link="Content\Levels\Ghostly\earth\map19.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map2.txt" Link="Content\Levels\Ghostly\earth\map2.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map20.txt" Link="Content\Levels\Ghostly\earth\map20.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map21.txt" Link="Content\Levels\Ghostly\earth\map21.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map22.txt" Link="Content\Levels\Ghostly\earth\map22.txt" />
@@ -177,74 +183,7 @@
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map27.txt" Link="Content\Levels\Ghostly\earth\map27.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map28.txt" Link="Content\Levels\Ghostly\earth\map28.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map29.txt" Link="Content\Levels\Ghostly\earth\map29.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map3.txt" Link="Content\Levels\Ghostly\earth\map3.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map30.txt" Link="Content\Levels\Ghostly\earth\map30.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map4.txt" Link="Content\Levels\Ghostly\earth\map4.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map5.txt" Link="Content\Levels\Ghostly\earth\map5.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map6.txt" Link="Content\Levels\Ghostly\earth\map6.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map7.txt" Link="Content\Levels\Ghostly\earth\map7.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map8.txt" Link="Content\Levels\Ghostly\earth\map8.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\earth\map9.txt" Link="Content\Levels\Ghostly\earth\map9.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map100.txt" Link="Content\Levels\Ghostly\ice\map100.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map101.txt" Link="Content\Levels\Ghostly\ice\map101.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map102.txt" Link="Content\Levels\Ghostly\ice\map102.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map103.txt" Link="Content\Levels\Ghostly\ice\map103.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map104.txt" Link="Content\Levels\Ghostly\ice\map104.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map105.txt" Link="Content\Levels\Ghostly\ice\map105.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map106.txt" Link="Content\Levels\Ghostly\ice\map106.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map107.txt" Link="Content\Levels\Ghostly\ice\map107.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map108.txt" Link="Content\Levels\Ghostly\ice\map108.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map109.txt" Link="Content\Levels\Ghostly\ice\map109.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map110.txt" Link="Content\Levels\Ghostly\ice\map110.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map111.txt" Link="Content\Levels\Ghostly\ice\map111.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map112.txt" Link="Content\Levels\Ghostly\ice\map112.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map113.txt" Link="Content\Levels\Ghostly\ice\map113.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map114.txt" Link="Content\Levels\Ghostly\ice\map114.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map115.txt" Link="Content\Levels\Ghostly\ice\map115.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map116.txt" Link="Content\Levels\Ghostly\ice\map116.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map117.txt" Link="Content\Levels\Ghostly\ice\map117.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map118.txt" Link="Content\Levels\Ghostly\ice\map118.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map119.txt" Link="Content\Levels\Ghostly\ice\map119.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map120.txt" Link="Content\Levels\Ghostly\ice\map120.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map91.txt" Link="Content\Levels\Ghostly\ice\map91.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map92.txt" Link="Content\Levels\Ghostly\ice\map92.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map93.txt" Link="Content\Levels\Ghostly\ice\map93.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map94.txt" Link="Content\Levels\Ghostly\ice\map94.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map95.txt" Link="Content\Levels\Ghostly\ice\map95.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map96.txt" Link="Content\Levels\Ghostly\ice\map96.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map97.txt" Link="Content\Levels\Ghostly\ice\map97.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map98.txt" Link="Content\Levels\Ghostly\ice\map98.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map99.txt" Link="Content\Levels\Ghostly\ice\map99.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map61.txt" Link="Content\Levels\Ghostly\rock\map61.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map62.txt" Link="Content\Levels\Ghostly\rock\map62.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map63.txt" Link="Content\Levels\Ghostly\rock\map63.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map64.txt" Link="Content\Levels\Ghostly\rock\map64.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map65.txt" Link="Content\Levels\Ghostly\rock\map65.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map66.txt" Link="Content\Levels\Ghostly\rock\map66.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map67.txt" Link="Content\Levels\Ghostly\rock\map67.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map68.txt" Link="Content\Levels\Ghostly\rock\map68.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map69.txt" Link="Content\Levels\Ghostly\rock\map69.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map70.txt" Link="Content\Levels\Ghostly\rock\map70.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map71.txt" Link="Content\Levels\Ghostly\rock\map71.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map72.txt" Link="Content\Levels\Ghostly\rock\map72.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map73.txt" Link="Content\Levels\Ghostly\rock\map73.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map74.txt" Link="Content\Levels\Ghostly\rock\map74.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map75.txt" Link="Content\Levels\Ghostly\rock\map75.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map76.txt" Link="Content\Levels\Ghostly\rock\map76.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map77.txt" Link="Content\Levels\Ghostly\rock\map77.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map78.txt" Link="Content\Levels\Ghostly\rock\map78.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map79.txt" Link="Content\Levels\Ghostly\rock\map79.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map80.txt" Link="Content\Levels\Ghostly\rock\map80.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map81.txt" Link="Content\Levels\Ghostly\rock\map81.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map82.txt" Link="Content\Levels\Ghostly\rock\map82.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map83.txt" Link="Content\Levels\Ghostly\rock\map83.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map84.txt" Link="Content\Levels\Ghostly\rock\map84.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map85.txt" Link="Content\Levels\Ghostly\rock\map85.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map86.txt" Link="Content\Levels\Ghostly\rock\map86.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map87.txt" Link="Content\Levels\Ghostly\rock\map87.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map88.txt" Link="Content\Levels\Ghostly\rock\map88.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map89.txt" Link="Content\Levels\Ghostly\rock\map89.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map90.txt" Link="Content\Levels\Ghostly\rock\map90.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map31.txt" Link="Content\Levels\Ghostly\water\map31.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map32.txt" Link="Content\Levels\Ghostly\water\map32.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map33.txt" Link="Content\Levels\Ghostly\water\map33.txt" />
@@ -275,8 +214,114 @@
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map58.txt" Link="Content\Levels\Ghostly\water\map58.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map59.txt" Link="Content\Levels\Ghostly\water\map59.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\water\map60.txt" Link="Content\Levels\Ghostly\water\map60.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map61.txt" Link="Content\Levels\Ghostly\rock\map61.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map62.txt" Link="Content\Levels\Ghostly\rock\map62.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map63.txt" Link="Content\Levels\Ghostly\rock\map63.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map64.txt" Link="Content\Levels\Ghostly\rock\map64.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map65.txt" Link="Content\Levels\Ghostly\rock\map65.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map66.txt" Link="Content\Levels\Ghostly\rock\map66.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map67.txt" Link="Content\Levels\Ghostly\rock\map67.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map68.txt" Link="Content\Levels\Ghostly\rock\map68.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map69.txt" Link="Content\Levels\Ghostly\rock\map69.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map70.txt" Link="Content\Levels\Ghostly\rock\map70.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map71.txt" Link="Content\Levels\Ghostly\rock\map71.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map72.txt" Link="Content\Levels\Ghostly\rock\map72.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map73.txt" Link="Content\Levels\Ghostly\rock\map73.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map74.txt" Link="Content\Levels\Ghostly\rock\map74.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map75.txt" Link="Content\Levels\Ghostly\rock\map75.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map76.txt" Link="Content\Levels\Ghostly\rock\map76.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map77.txt" Link="Content\Levels\Ghostly\rock\map77.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map78.txt" Link="Content\Levels\Ghostly\rock\map78.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map79.txt" Link="Content\Levels\Ghostly\rock\map79.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map80.txt" Link="Content\Levels\Ghostly\rock\map80.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map81.txt" Link="Content\Levels\Ghostly\rock\map81.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map82.txt" Link="Content\Levels\Ghostly\rock\map82.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map83.txt" Link="Content\Levels\Ghostly\rock\map83.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map84.txt" Link="Content\Levels\Ghostly\rock\map84.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map85.txt" Link="Content\Levels\Ghostly\rock\map85.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map86.txt" Link="Content\Levels\Ghostly\rock\map86.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map87.txt" Link="Content\Levels\Ghostly\rock\map87.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map88.txt" Link="Content\Levels\Ghostly\rock\map88.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map89.txt" Link="Content\Levels\Ghostly\rock\map89.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\rock\map90.txt" Link="Content\Levels\Ghostly\rock\map90.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map91.txt" Link="Content\Levels\Ghostly\ice\map91.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map92.txt" Link="Content\Levels\Ghostly\ice\map92.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map93.txt" Link="Content\Levels\Ghostly\ice\map93.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map94.txt" Link="Content\Levels\Ghostly\ice\map94.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map95.txt" Link="Content\Levels\Ghostly\ice\map95.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map96.txt" Link="Content\Levels\Ghostly\ice\map96.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map97.txt" Link="Content\Levels\Ghostly\ice\map97.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map98.txt" Link="Content\Levels\Ghostly\ice\map98.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map99.txt" Link="Content\Levels\Ghostly\ice\map99.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map100.txt" Link="Content\Levels\Ghostly\ice\map100.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map101.txt" Link="Content\Levels\Ghostly\ice\map101.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map102.txt" Link="Content\Levels\Ghostly\ice\map102.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map103.txt" Link="Content\Levels\Ghostly\ice\map103.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map104.txt" Link="Content\Levels\Ghostly\ice\map104.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map105.txt" Link="Content\Levels\Ghostly\ice\map105.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map106.txt" Link="Content\Levels\Ghostly\ice\map106.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map107.txt" Link="Content\Levels\Ghostly\ice\map107.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map108.txt" Link="Content\Levels\Ghostly\ice\map108.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map109.txt" Link="Content\Levels\Ghostly\ice\map109.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map110.txt" Link="Content\Levels\Ghostly\ice\map110.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map111.txt" Link="Content\Levels\Ghostly\ice\map111.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map112.txt" Link="Content\Levels\Ghostly\ice\map112.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map113.txt" Link="Content\Levels\Ghostly\ice\map113.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map114.txt" Link="Content\Levels\Ghostly\ice\map114.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map115.txt" Link="Content\Levels\Ghostly\ice\map115.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map116.txt" Link="Content\Levels\Ghostly\ice\map116.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map117.txt" Link="Content\Levels\Ghostly\ice\map117.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map118.txt" Link="Content\Levels\Ghostly\ice\map118.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map119.txt" Link="Content\Levels\Ghostly\ice\map119.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\ice\map120.txt" Link="Content\Levels\Ghostly\ice\map120.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map121.txt" Link="Content\Levels\Ghostly\land\map121.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map122.txt" Link="Content\Levels\Ghostly\land\map122.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map123.txt" Link="Content\Levels\Ghostly\land\map123.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map124.txt" Link="Content\Levels\Ghostly\land\map124.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map125.txt" Link="Content\Levels\Ghostly\land\map125.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map126.txt" Link="Content\Levels\Ghostly\land\map126.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map127.txt" Link="Content\Levels\Ghostly\land\map127.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map128.txt" Link="Content\Levels\Ghostly\land\map128.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map129.txt" Link="Content\Levels\Ghostly\land\map129.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map130.txt" Link="Content\Levels\Ghostly\land\map130.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map131.txt" Link="Content\Levels\Ghostly\land\map131.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map132.txt" Link="Content\Levels\Ghostly\land\map132.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map133.txt" Link="Content\Levels\Ghostly\land\map133.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map134.txt" Link="Content\Levels\Ghostly\land\map134.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map135.txt" Link="Content\Levels\Ghostly\land\map135.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map136.txt" Link="Content\Levels\Ghostly\land\map136.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map137.txt" Link="Content\Levels\Ghostly\land\map137.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map138.txt" Link="Content\Levels\Ghostly\land\map138.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map139.txt" Link="Content\Levels\Ghostly\land\map139.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\land\map140.txt" Link="Content\Levels\Ghostly\land\map140.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map141.txt" Link="Content\Levels\Ghostly\space\map141.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map142.txt" Link="Content\Levels\Ghostly\space\map142.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map143.txt" Link="Content\Levels\Ghostly\space\map143.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map144.txt" Link="Content\Levels\Ghostly\space\map144.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map145.txt" Link="Content\Levels\Ghostly\space\map145.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map146.txt" Link="Content\Levels\Ghostly\space\map146.txt" />
+		
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map161.txt" Link="Content\Levels\Ghostly\maze\map161.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map162.txt" Link="Content\Levels\Ghostly\maze\map162.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map163.txt" Link="Content\Levels\Ghostly\maze\map163.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map164.txt" Link="Content\Levels\Ghostly\maze\map164.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map165.txt" Link="Content\Levels\Ghostly\maze\map165.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map166.txt" Link="Content\Levels\Ghostly\maze\map166.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map167.txt" Link="Content\Levels\Ghostly\maze\map167.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map168.txt" Link="Content\Levels\Ghostly\maze\map168.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map169.txt" Link="Content\Levels\Ghostly\maze\map169.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map170.txt" Link="Content\Levels\Ghostly\maze\map170.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map171.txt" Link="Content\Levels\Ghostly\maze\map171.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map172.txt" Link="Content\Levels\Ghostly\maze\map172.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map173.txt" Link="Content\Levels\Ghostly\maze\map173.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map174.txt" Link="Content\Levels\Ghostly\maze\map174.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map175.txt" Link="Content\Levels\Ghostly\maze\map175.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map176.txt" Link="Content\Levels\Ghostly\maze\map176.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map177.txt" Link="Content\Levels\Ghostly\maze\map177.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map178.txt" Link="Content\Levels\Ghostly\maze\map178.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map179.txt" Link="Content\Levels\Ghostly\maze\map179.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map180.txt" Link="Content\Levels\Ghostly\maze\map180.txt" />
 	</ItemGroup>
-
 	
 	
 	<ItemGroup>

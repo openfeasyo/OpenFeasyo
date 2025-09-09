@@ -545,7 +545,7 @@ namespace GhostlyLib.Animations
         {
             Background = content.Load<Texture2D>("Textures\\Ghostly\\background");
 
-            BackgroundClosestSpace = content.Load<Texture2D>("Textures\\Ghostly\\closest_space");
+            BackgroundClosestSpace = content.Load<Texture2D>("Textures\\Ghostly\\closer_space");
             BackgroundCloserSpace = content.Load<Texture2D>("Textures\\Ghostly\\closer_space");
             BackgroundCloseSpace = content.Load<Texture2D>("Textures\\Ghostly\\close_space");
             BackgroundFurthestSpace = content.Load<Texture2D>("Textures\\Ghostly\\furthest_space");

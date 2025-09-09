@@ -25,7 +25,6 @@ using System;
 using System.Collections.Concurrent;
 using OpenFeasyo.Platform.Controls.Drivers;
 using System.Diagnostics;
-using GhostlyGame.Animations;
 
 namespace GhostlyLib
 {
