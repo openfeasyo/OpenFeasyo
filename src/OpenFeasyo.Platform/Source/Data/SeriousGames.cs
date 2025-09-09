@@ -134,7 +134,7 @@ namespace OpenFeasyo.Platform.Data
         public static string Server { 
             get {
                 if (_server == null) {
-#if WINDOWS
+#if false //WINDOWS
                     _server = (string)Registry.GetValue(RegistryElements.REGISTRY_ROOT_SECTION, RegistryElements.REGISTRY_SERVER, null);
 #endif
                     if (_server == null) {
