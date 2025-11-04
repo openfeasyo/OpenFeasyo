@@ -88,7 +88,7 @@ namespace GhostlyLib.Screens
 
         public override void Update(GameTime gameTime)
         {
-            KeyboardUpdate();
+            //KeyboardUpdate();
 
             if (this.State.Equals(GameState.Running))
             {

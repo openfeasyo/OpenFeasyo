@@ -34,16 +34,69 @@ namespace GhostlyLib.Level
             this.Character = new MazeCharacter3D(gameScreen, elements, ThreeDEffects.Instance.Character, ThreeDEffects.Instance.CharacterLeftRotating, ThreeDEffects.Instance.CharacterRightRotating);
         }
 
-        public override void ProcessPrimaryAction(bool state)
+        /*public override void ProcessPrimaryAction(bool state)
         {
-            //TODO
-            //throw new NotImplementedException();
+            if (GameScreen.GameCharacter.RotationStatus == RotationStatus.Rotating && !state)
+            {
+                ((GameCharacter3D)GameScreen.GameCharacter).TurningInterupted();
+            }
+            else if (state && GameScreen.State.Equals(GameState.Running))
+            {
+                ((GameCharacter3D)GameScreen.GameCharacter).TurnCounterClockwise();
+            }
         }
 
         public override void ProcessSecondaryAction(bool state)
         {
-            //TODO
-            //throw new NotImplementedException();
+            if (GameScreen.GameCharacter.RotationStatus == RotationStatus.Rotating && !state)
+            {
+                ((GameCharacter3D)GameScreen.GameCharacter).TurningInterupted();
+            }
+            else if (state && GameScreen.State.Equals(GameState.Running))
+            {
+                ((GameCharacter3D)GameScreen.GameCharacter).TurnClockwise();
+            }
+        }*/
+        
+        public override void ProcessPrimaryAction(bool state)
+        {
+            //TODO uncomment and test with sensors
+            if (state)
+            {
+                //rotating to the right at the moment => interupt turning
+                if (this.Character.RotationStatus == RotationStatus.Rotating && this.Character.RotationDirection == RotationDirection.Right)
+                {
+                    ((GameCharacter3D)this.Character).TurningInterupted();
+                }
+                ((GameCharacter3D)this.Character).TurnCounterClockwise();
+            }
+            else
+            {
+                if (this.Character.RotationStatus == RotationStatus.Rotating && this.Character.RotationDirection == RotationDirection.Left)
+                {
+                    //muscle not contracted => interupt turning
+                    ((GameCharacter3D)this.Character).TurningInterupted();
+                }
+            }
+        }
+
+        public override void ProcessSecondaryAction(bool state)
+        {
+            //TODO uncomment and test with sensors
+            if (state)
+            {
+                //rotating to the left at the moment => interupt turning
+                if (this.Character.RotationStatus == RotationStatus.Rotating && this.Character.RotationDirection == RotationDirection.Left)
+                {
+                    ((GameCharacter3D)this.Character).TurningInterupted();
+                }
+                ((GameCharacter3D)this.Character).TurnClockwise();
+            }
+            else
+            {
+                //muscle not contracted => interupted turning
+                ((GameCharacter3D)this.Character).TurningInterupted();
+            }
         }
 
         public override IEnemy GenerateEnemy(int i, int j)
