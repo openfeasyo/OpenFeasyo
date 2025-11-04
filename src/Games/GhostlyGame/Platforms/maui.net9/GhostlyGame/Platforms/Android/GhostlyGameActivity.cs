@@ -1,8 +1,10 @@
+using Android;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Android.Content.PM;
 using Android.Views;
+using AndroidX.Core.App;
 
 
 namespace GhostlyLib;
@@ -15,6 +17,7 @@ namespace GhostlyLib;
     ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.Density)]
 public class GhostlyGameActivity : AndroidGameActivity
 {
+        private const int REQUEST_PERMISSION_CODE = 1001;
         public static GhostlyGameActivity Instance { get; private set; } 
     
         private GhostlyLib.GhostlyGame _game;
@@ -26,8 +29,10 @@ public class GhostlyGameActivity : AndroidGameActivity
             this.Window.AddFlags(WindowManagerFlags.KeepScreenOn);
             base.OnCreate(bundle);
 
-            EnableImmersiveMode()
-                
+            InitPermission();
+            
+            EnableImmersiveMode();
+            
             _game = new GhostlyLib.GhostlyGame();
             _view = _game.Services.GetService(typeof(Android.Views.View)) as Android.Views.View;
 
@@ -55,54 +60,75 @@ public class GhostlyGameActivity : AndroidGameActivity
                 // Ugly ugly ugly. This is done to cleanup the Delsys pipeline. Without the following line, it is going to crash every second start
                 //Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
             }
-
-
-            private Dictionary<int, Action<bool>> permissionRequests = new Dictionary<int, Action<bool>>();
-
-            public void RequestPermissions(string[] permissions, int requestCode, Action<bool> action)
+            
+            private void InitPermission()
             {
-
-                // On older devices, permisisons are always granted while the app installation
-                if(Android.OS.Build.VERSION.SdkInt < BuildVersionCodes.M) {
-                    action.Invoke(true);
-                    return;
-                }
-
-                List<string> neededPermissions = new List<string>();
-                foreach (string permission in permissions)
+                List<string> mPermissionList = new List<string>();
+                // When the Android version is 12 or greater, apply for new Bluetooth permissions
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.S)
                 {
-                    if (CheckSelfPermission(permission) != Permission.Granted)
-                    {
-                        neededPermissions.Add(permission);
-                    }
-                }
-                if (neededPermissions.Count > 0)
-                {
-                    RequestPermissions(neededPermissions.ToArray(), requestCode);
-                    permissionRequests.Add(requestCode, action);
+                    mPermissionList.Add(Manifest.Permission.BluetoothScan);
+                    mPermissionList.Add(Manifest.Permission.BluetoothAdvertise);
+                    mPermissionList.Add(Manifest.Permission.BluetoothConnect);
+                    //Request for location permissions based on your actual needs
+                    mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
+                    mPermissionList.Add(Manifest.Permission.AccessFineLocation);
                 }
                 else
                 {
-                    action.Invoke(true);
+                    mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
+                    mPermissionList.Add(Manifest.Permission.AccessFineLocation);
                 }
+
+                ActivityCompat.RequestPermissions(this, mPermissionList.ToArray(), REQUEST_PERMISSION_CODE);
             }
 
-            public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
-            {
-                Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-                base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-                if (permissionRequests.ContainsKey(requestCode))
-                {
-                    bool granted = true;
-                    foreach (Permission p in grantResults)
-                    {
-                        granted = granted && p == Permission.Granted;
-                    }
-
-                    Action<bool> action = permissionRequests[requestCode];
-                    permissionRequests.Remove(requestCode);
-                    action.Invoke(granted);
-                }
-            }
+            // private Dictionary<int, Action<bool>> permissionRequests = new Dictionary<int, Action<bool>>();
+            //
+            // public void RequestPermissions(string[] permissions, int requestCode, Action<bool> action)
+            // {
+            //
+            //     // On older devices, permisisons are always granted while the app installation
+            //     if(Android.OS.Build.VERSION.SdkInt < BuildVersionCodes.M) {
+            //         action.Invoke(true);
+            //         return;
+            //     }
+            //
+            //     List<string> neededPermissions = new List<string>();
+            //     foreach (string permission in permissions)
+            //     {
+            //         if (CheckSelfPermission(permission) != Permission.Granted)
+            //         {
+            //             neededPermissions.Add(permission);
+            //         }
+            //     }
+            //     if (neededPermissions.Count > 0)
+            //     {
+            //         RequestPermissions(neededPermissions.ToArray(), requestCode);
+            //         permissionRequests.Add(requestCode, action);
+            //     }
+            //     else
+            //     {
+            //         action.Invoke(true);
+            //     }
+            // }
+            //
+            // public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+            // {
+            //     Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            //     base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            //     if (permissionRequests.ContainsKey(requestCode))
+            //     {
+            //         bool granted = true;
+            //         foreach (Permission p in grantResults)
+            //         {
+            //             granted = granted && p == Permission.Granted;
+            //         }
+            //
+            //         Action<bool> action = permissionRequests[requestCode];
+            //         permissionRequests.Remove(requestCode);
+            //         action.Invoke(granted);
+            //     }
+            // }
     }   
 
