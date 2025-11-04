@@ -86,16 +86,16 @@ namespace GhostlyLib.Activities
 
         private void EmgButton_Clicked(object sender, TextButton.ClickedEventArgs e)
         {
-#if ANDROID
-            GhostlyLib.GhostlyGameActivity.Instance.RequestPermissions(new[] {
-                        Manifest.Permission.AccessCoarseLocation,
-                        Manifest.Permission.AccessFineLocation,
-                        Manifest.Permission.BluetoothAdmin,
-                        Manifest.Permission.Bluetooth
-            }, 3, granted => { _permissionsGranted = granted; });
-#else
+// #if ANDROID
+//             GhostlyLib.GhostlyGameActivity.Instance.RequestPermissions(new[] {
+//                         Manifest.Permission.AccessCoarseLocation,
+//                         Manifest.Permission.AccessFineLocation,
+//                         Manifest.Permission.BluetoothAdmin,
+//                         Manifest.Permission.Bluetooth
+//             }, 3, granted => { _permissionsGranted = granted; });
+// #else
             _permissionsGranted = true;
-#endif
+// #endif
         }
 
         public override void Update(GameTime gameTime)

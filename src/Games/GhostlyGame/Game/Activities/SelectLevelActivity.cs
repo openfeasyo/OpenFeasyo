@@ -51,8 +51,8 @@ namespace GhostlyLib.Activities
                                 "<analyzers><analyzer file=\"C3DSerializer.dll\" /></analyzers>" +
                             "</device></devices>" +
                             "<bindings>" +
-                                "<binding point=\"Jump/Swim\" zeroAngle=\"0\" sensitivity=\"1\" device=\"TrignoEmg\"><emgSensor device=\"TrignoEmg\" channel=\"0\"></emgSensor></binding>" +
-                                "<binding point=\"Shoot\" zeroAngle=\"0\" sensitivity=\"1\" device=\"TrignoEmg\"><emgSensor device=\"TrignoEmg\" channel=\"1\"></emgSensor></binding>" +
+                                "<binding point=\"Jump/Swim\" zeroAngle=\"0\" sensitivity=\"1\" device=\"TrignoAvantiCustom\"><emgSensor device=\"TrignoAvantiCustom\" channel=\"0\"></emgSensor></binding>" +
+                                "<binding point=\"Shoot\" zeroAngle=\"0\" sensitivity=\"1\" device=\"TrignoAvantiCustom\"><emgSensor device=\"TrignoAvantiCustom\" channel=\"1\"></emgSensor></binding>" +
                             "</bindings></Configuration>"
                             ));
                     };

@@ -27,7 +27,9 @@ namespace GhostlyLib.Activities
         private TextButton _scanButton;
         private TextButton _jumpingButton = null;
         private TextButton _shootingButton = null;
+        private TextButton _connectButton;
         private TextButton _nextButton;
+
 
         private Label _scanningLabel;
         private Label _connectingLabel;
@@ -43,6 +45,8 @@ namespace GhostlyLib.Activities
 
         //private Dictionary<string, SensorTrignoBt> _sensors = new Dictionary<string, SensorTrignoBt>();
         private ICollection<string> _sensors = new List<string>();
+        private ICollection<string> _connected = new List<string>();
+
         private List<TextButton> _buttons = new List<TextButton>();
 
         private bool _emgConfiguredAndReady = false;
@@ -64,10 +68,10 @@ namespace GhostlyLib.Activities
             Components.Add(backgroundImage);
 
             Dictionary<string, IDevice> devices = PrepareDevicesByName();
-            if (!devices.ContainsKey("TrignoEmg")) {
-                throw new ApplicationException("TrignoEmg not loaded");
+            if (!devices.ContainsKey("Trigno Avanti")) {
+                throw new ApplicationException("TrignoAvantiCustomEmg not loaded");
             }
-            dev = devices["TrignoEmg"];
+            dev = devices["Trigno Avanti"];
             if (!dev.IsLoaded) {
                 dev.LoadDriver(new Dictionary<string, string>());
             }
@@ -116,9 +120,19 @@ namespace GhostlyLib.Activities
             _buttons.Add(s);
             Components.Add(s);
 
-            _nextButton = new TextButton("Connect", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT+ GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            _nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            _connectButton = new TextButton("Connect", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT+ GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            _connectButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
                 SelectSensor();
+            };
+            _connectButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - _connectButton.Size / 2 + new Vector2(cell*2, 0);
+            _connectButton.Visible = false;
+            _connectButton.CursorEntered += (object sender, EventArgs e) => {
+                engine.MusicPlayer.PlayEffect("hover");
+            };
+            
+            _nextButton = new TextButton("Next", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT+ GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            _nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+                StartActivity(new StartCalibrationActivity(_engine, dev.GamingInput as IEmgSensorInput));
             };
             _nextButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - _nextButton.Size / 2 + new Vector2(cell*2, 0);
             _nextButton.Visible = false;
@@ -147,6 +161,7 @@ namespace GhostlyLib.Activities
             _shootQuestionLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 2) - _shootQuestionLabel.Size / 2;
             _shootQuestionLabel.Visible = false;
 
+            Components.Add(_connectButton);
             Components.Add(_nextButton);
             Components.Add(_connectingLabel);
             Components.Add(_scanningLabel);
@@ -197,16 +212,16 @@ namespace GhostlyLib.Activities
             {
                 _jumpQuestionLabel.Visible = _sensors.Count >= 2;
                 _shootQuestionLabel.Visible = false;
-                _nextButton.Visible = false;
+                _connectButton.Visible = false;
             } else if (_shootingButton == null) {
 
                 _jumpQuestionLabel.Visible = false;
                 _shootQuestionLabel.Visible = true;
-                _nextButton.Visible = false;
+                _connectButton.Visible = false;
             } else {
                 _jumpQuestionLabel.Visible = false;
                 _shootQuestionLabel.Visible = false;
-                _nextButton.Visible = true;
+                _connectButton.Visible = true;
             }
         }
 
@@ -231,10 +246,12 @@ namespace GhostlyLib.Activities
 
         public override void OnCreate()
         {
-            if (dev.GamingInput is IDiscoverable)
+            if (dev is IDiscoverable)
             {
-                _discoveryProvider = (IDiscoverable)dev.GamingInput;
+                _discoveryProvider = (IDiscoverable)dev;
                 _discoveryProvider.ScanFinished += _discoveryProvider_ScanFinished;
+                _discoveryProvider.ConnectionEstablished += _discoveryProvider_ConnectionEstablished;
+                _discoveryProvider.ConnectionFailed += _discoveryProvider_ConnectionFailed;
             }
             if (dev.GamingInput is IEmgSensorInput)
             {
@@ -244,7 +261,7 @@ namespace GhostlyLib.Activities
 
             _emgConfiguredAndReady = false;
             base.OnCreate();
-            if (dev != null && !dev.IsLoaded) {
+/*            if (dev != null && !dev.IsLoaded) {
                 dev.LoadDriver(new Dictionary<string, string>());
                 if (_discoveryProvider != null) {
                     _discoveryProvider.ScanFinished += (object sender, ScanResultsEventArgs e) 
@@ -257,7 +274,7 @@ namespace GhostlyLib.Activities
                     _discoveryProvider.ConnectionFailed += _discoveryProvider_ConnectionFailed;
                 }
             }
-
+*/
             
             ScanForSensors();
         }
@@ -282,7 +299,13 @@ namespace GhostlyLib.Activities
 
         private void _discoveryProvider_ConnectionEstablished(object sender, ConnectionEventArgs e)
         {
-            throw new NotImplementedException();
+            _connected.Add(e.Devices);
+            if (new HashSet<string>(_connected).SetEquals(_sensors))
+            {
+                _nextButton.Visible = true;
+            }
+
+            
         }
 
         public override void Update(GameTime gameTime)
@@ -299,10 +322,8 @@ namespace GhostlyLib.Activities
         private void SelectSensor() {
             _discoveryProvider.ConnectAsync(_jumpingButton.Text + ";" +_shootingButton.Text);
             _scanButton.Visible = false;
+            _connectButton.Visible = false;
             //_connectingLabel.Visible = true;
-            
-            // TODO check the connection
-            StartActivity(new StartCalibrationActivity(_engine, dev.GamingInput as IEmgSensorInput));
         }
 
         private void UpdateSensors(ICollection<string> sensors) {
