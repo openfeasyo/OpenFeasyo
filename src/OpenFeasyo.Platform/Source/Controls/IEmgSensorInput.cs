@@ -61,8 +61,11 @@ namespace OpenFeasyo.Platform.Controls
         public double[] ZeroMean { get; set; }
         public double[] ZeroStandardDeviation { get; set; }
         
-public CalibrationChangedEventArgs(CalibrationResults calibEvent) {
+        public string SensorName { get; private set; }
+        
+        public CalibrationChangedEventArgs(CalibrationResults calibEvent, string sensorName) {
             CalibrationEvent = calibEvent;
+            SensorName = sensorName;
         }
     }
 

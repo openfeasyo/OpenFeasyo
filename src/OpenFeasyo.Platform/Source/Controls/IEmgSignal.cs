@@ -16,6 +16,7 @@ namespace OpenFeasyo.Platform.Controls
 {
     public interface IEmgSignal
     {
+        int Channel { get;  } 
         bool MuscleActivated { get; }
         double [] RawSample { get; }
         double [] BpfSample { get; }

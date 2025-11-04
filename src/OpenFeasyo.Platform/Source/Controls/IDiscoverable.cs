@@ -43,12 +43,18 @@ namespace OpenFeasyo.Platform.Controls
 
     public class ConnectionEventArgs : EventArgs
     {
+        private Object _sensor;
         private string _device;
+        private string _details;
         public string Devices { get { return _device; } }
+        public string Details { get { return _details; } }
+        public Object Sensor { get { return _sensor; } }
 
-        public ConnectionEventArgs(string device)
+        public ConnectionEventArgs(string device, string details="", Object sensor=null)
         {
             _device = device;
+            _details = details;
+            _sensor = sensor;
         }
     }
 

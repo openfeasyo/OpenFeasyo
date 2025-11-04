@@ -67,8 +67,9 @@ namespace OpenFeasyo.Platform.Configuration.Bindings
 
         void _event_handle(object sender, MuscleActivationChangedEventArgs e)
         {
-            if(e.EMGSensor.Length > _channel) { 
-                CallHandle(0, e.EMGSensor[_channel].MuscleActivated ? 1 : 0);
+            if(e.EMGSensor.Length > 0) { 
+                if(e.EMGSensor[0].Channel == _channel)
+                    CallHandle(0, e.EMGSensor[0].MuscleActivated ? 1 : 0);
             }
         }
 
