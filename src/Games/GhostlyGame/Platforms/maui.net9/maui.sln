@@ -9,14 +9,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.GameTools", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFeasyo.Platform", "..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj", "{9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}"
 EndProject
-
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drivers", "Drivers", "{74553503-8F02-3961-70FA-B3C80C1C4ED6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzers", "Analyzers", "{F883AD26-E2D9-0064-49F2-B333EF800629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrignoAvantiCustom", "..\..\..\..\Drivers\TrignoAvantiCustom\Platforms\Android\TrignoAvantiCustom.csproj", "{E5D49E84-0EC1-4B77-8673-195221546FEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C3dSerializer", "Analyzers\C3dSerializer\C3dSerializer.csproj", "{35EDC350-8BA6-48E7-A7DF-4C6CE38C1B90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrignoEmgV2", "..\..\..\..\Drivers\TrignoEmgV2\TrignoEmgV2.csproj", "{FDF7AC4E-B817-4596-81B6-0DC3646D2423}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{55F7F478-AB34-4CF1-A3A2-F7EE7C12AD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,12 +30,31 @@ Global
 		{55F7F478-AB34-4CF1-A3A2-F7EE7C12AD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55F7F478-AB34-4CF1-A3A2-F7EE7C12AD23}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Release|Any CPU.Build.0 = Release|Any CPU
-        {9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA092F8A-12D1-4A66-8BCB-4D1C3877E431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D522D92-E8D1-4AE4-AADE-0ED6F2555EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5D49E84-0EC1-4B77-8673-195221546FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5D49E84-0EC1-4B77-8673-195221546FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5D49E84-0EC1-4B77-8673-195221546FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5D49E84-0EC1-4B77-8673-195221546FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35EDC350-8BA6-48E7-A7DF-4C6CE38C1B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35EDC350-8BA6-48E7-A7DF-4C6CE38C1B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35EDC350-8BA6-48E7-A7DF-4C6CE38C1B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35EDC350-8BA6-48E7-A7DF-4C6CE38C1B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDF7AC4E-B817-4596-81B6-0DC3646D2423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF7AC4E-B817-4596-81B6-0DC3646D2423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF7AC4E-B817-4596-81B6-0DC3646D2423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF7AC4E-B817-4596-81B6-0DC3646D2423}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5D49E84-0EC1-4B77-8673-195221546FEA} = {74553503-8F02-3961-70FA-B3C80C1C4ED6}
+		{35EDC350-8BA6-48E7-A7DF-4C6CE38C1B90} = {F883AD26-E2D9-0064-49F2-B333EF800629}
 	EndGlobalSection
 EndGlobal
