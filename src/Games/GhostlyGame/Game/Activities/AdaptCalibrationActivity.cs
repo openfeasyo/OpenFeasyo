@@ -395,27 +395,37 @@ namespace GhostlyLib.Activities
         private void _emgInput_MuscleActivationChanged(object sender, MuscleActivationChangedEventArgs e)
         {
             _framesReceived++;
-            if (e.EMGSensor != null) {
-                max0 = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], max0);
-                max1 = (float)Math.Max(e.EMGSensor[1].AveragedSample[0], max1);
-                float valJumping = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], 0);
-                float valShooting = (float)Math.Max(e.EMGSensor[1].AveragedSample[0], 0);
-                emgImage1.Percentage = valJumping / max0;
-                emgImage2.Percentage = valShooting / max1;
+            if (e.EMGSensor != null)
+            {
+                if (e.EMGSensor[0].Channel == 0)
+                {
+                    max0 = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], max0);
+                    float valJumping = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], 0);
+                    emgImage1.Percentage = valJumping / max0;
+                    _emgInput.ActivationThreshold[0] = (max0 * jumpingButton.Percentage);
+                    if (valJumping > _emgInput.ActivationThreshold[0])
+                    {
+                        character.Jump();
 
-                //if (e.EMGSensor[0].MuscleActivated) {
-                _emgInput.ActivationThreshold[0] = (max0 * jumpingButton.Percentage);
-                _emgInput.ActivationThreshold[1] = (max1 * shootingButton.Percentage);
-
-                if (valJumping > _emgInput.ActivationThreshold[0]) {
-                    character.Jump();
-                    
-                }
-                //else if (e.EMGSensor[1].MuscleActivated) {
-                else if (valShooting > _emgInput.ActivationThreshold[1]) { 
-                    character.Shoot();
+                    }
                 }
 
+                if (e.EMGSensor[0].Channel == 1)
+                {
+
+
+                    max1 = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], max1);
+                    float valShooting = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], 0);
+                    emgImage2.Percentage = valShooting / max1;
+
+                    _emgInput.ActivationThreshold[1] = (max1 * shootingButton.Percentage);
+
+                    if (valShooting > _emgInput.ActivationThreshold[1])
+                    {
+                        character.Shoot();
+                    }
+
+                }
             }
 
             if ((DateTime.Now - _lastTime).TotalSeconds >= 1)

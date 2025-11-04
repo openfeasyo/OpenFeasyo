@@ -262,6 +262,7 @@ namespace GhostlyLib.Activities
             #endregion Gameplay Panel            
         }
 
+        
         public override void OnCursorDown(Vector2 pos)
         {
             base.OnCursorDown(pos);
