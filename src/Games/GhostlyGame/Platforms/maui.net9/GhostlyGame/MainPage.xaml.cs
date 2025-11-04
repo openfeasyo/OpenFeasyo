@@ -1,4 +1,7 @@
-﻿namespace maui.net9;
+﻿using GhostlyGame;
+using OpenFeasyo.Platform.Controls.Drivers;
+
+namespace maui.net9;
 
 using Microsoft.Maui.Controls;
 
@@ -11,18 +14,11 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		_navigator = navigator;
+		InputDeviceManager.Instance = new StaticDriverManager();
 	}
 
 	private void OnCounterClicked(object? sender, EventArgs e)
 	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else {
-			CounterBtn.Text = $"Clicked {count} times";
-			_navigator.OpenGameView();
-		}
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		_navigator.OpenGameView();
 	}
 }
