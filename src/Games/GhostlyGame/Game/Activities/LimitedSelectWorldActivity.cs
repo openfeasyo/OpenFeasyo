@@ -5,17 +5,13 @@
  * a part of the open source project OpenFeasyo found at
  * https://github.com/openfeasyo/OpenFeasyo>.
  * 
- * Copyright (c) 2020 - Lubos Omelina
+ * Copyright (c) 2025 - Katarina Kostkova
  * 
  * This program is free software: you can redistribute it and/or modify it 
  * under the terms of the GNU General Public License version 3 as published 
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using OpenFeasyo.GameTools.UI;
-
 namespace GhostlyLib.Activities
 {
     public class LimitedSelectWorldActivity : OpenFeasyo.GameTools.UI.Activity
@@ -34,15 +30,15 @@ namespace GhostlyLib.Activities
 
 
             TextButton world1Button = new TextButton("Land", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            world1Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 121)); };
+            world1Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 121, 140)); };
             world1Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 3) - world1Button.Size / 2;
 
             TextButton world2Button = new TextButton("Space", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            world2Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 141)); };
+            world2Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 141, 160)); };
             world2Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - world2Button.Size / 2;
 
             TextButton world3Button = new TextButton("Maze", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            world3Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 161)); };
+            world3Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 161, 190)); };
             world3Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - world3Button.Size / 2;
 
             TextButton allWorldsButton = new TextButton("All Worlds", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);

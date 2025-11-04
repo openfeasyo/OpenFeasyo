@@ -61,6 +61,8 @@ namespace OpenFeasyo.Platform.Data
 
         public static string HomeLocation = "";
 
+        public static string LastC3DFileCreated {  get; set; }
+
         public const string DIR_SEPARATOR =
 #if ANDROID
             "/";

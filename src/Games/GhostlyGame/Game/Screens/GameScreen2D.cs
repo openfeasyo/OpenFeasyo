@@ -2,11 +2,8 @@
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Level;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using OpenFeasyo.GameTools.Effects;
-using System.Diagnostics;
 
 namespace GhostlyLib.Screens
 {
@@ -92,15 +89,6 @@ namespace GhostlyLib.Screens
             GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position);
         }
 
-       /* private void UpdateAllElements(GameTime gameTime)
-        {
-            this.GameCharacter.Update(gameTime);
-
-            this.Elements.Update(gameTime);
-
-            UpdateOnetimeAnimations();
-        }*/
-
         private void UpdateAllElements(GameTime gameTime)
         {
             this.Level.ProcessPrimaryAction(EmgState.Primary);
@@ -138,44 +126,6 @@ namespace GhostlyLib.Screens
                 UpdateAllElements(gameTime);
             }
         }
-
-        /* protected override void DrawGameplay(SpriteBatch spriteBatch, GameTime gameTime)
-         {
-             spriteBatch.Draw(this.Level.Background, new Rectangle(0, 0, 2160, 800), Color.White);
-
-             this.Elements.Draw(spriteBatch, gameTime);
-
-             this.GameCharacter.Draw(spriteBatch, gameTime);
-
-             //DrawOnetimeAnimations(spriteBatch);
-             spriteBatch.DrawString(this.Font30, "Level: " + this.CurrentLevel.ToString(), new Vector2(10, 10), Color.White);
-
-             switch (this.GameCharacter.CurrentHealth)
-             {
-                 case 3:
-                     spriteBatch.Draw(ImagesAndAnimations.Instance.HeartFull, new Rectangle(300, 10, 53, 45), Color.White);
-                     break;
-                 case 2:
-                     spriteBatch.Draw(ImagesAndAnimations.Instance.HeartHalf, new Rectangle(300, 10, 53, 45), Color.White);
-                     break;
-                 case 1:
-                     spriteBatch.Draw(ImagesAndAnimations.Instance.HeartEmpty, new Rectangle(300, 10, 53, 45), Color.White);
-                     break;
-                 default:
-                     break;
-             }
-
-             spriteBatch.DrawString(this.Font30, "Score: " + this.GameCharacter.Score.ToString(), new Vector2(550, 10), Color.White);
-
-             if (this.GameCharacter.TurningDirection == TurningDirection.Left)
-             {
-                 spriteBatch.Draw(ImagesAndAnimations.Instance.LeftArrow, new Rectangle(10, 220, 85, 72), Color.White);
-             }
-             else if (this.GameCharacter.TurningDirection == TurningDirection.Right)
-             {
-                 spriteBatch.Draw(ImagesAndAnimations.Instance.RightArrow, new Rectangle(700, 220, 85, 72), Color.White);
-             }
-         }*/
 
         protected override void DrawGameplay(SpriteBatch spriteBatch, GameTime gameTime)
         {

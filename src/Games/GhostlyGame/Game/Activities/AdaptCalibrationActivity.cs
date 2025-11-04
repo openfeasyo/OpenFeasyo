@@ -152,10 +152,8 @@ namespace GhostlyLib.Activities
                 Percentage = (1 - ((newY - MinY) / (MaxY - MinY)));
                 //Console.WriteLine("Percentage: " + (1-((newY-MinY)/(MaxY-MinY)))*100 );
                 Position = new Vector2(Position.X, newY - Size.Y / 2);
-
             }
         }
-
     }
 
     public class EmgImage: Image {
@@ -174,7 +172,6 @@ namespace GhostlyLib.Activities
                 }
                 Texture.SetData<Color>(pixelData);
             }
-
         }
 
         public EmgImage(GraphicsDevice device, float percentage) : base(new Texture2D(device, 1, 100))  {

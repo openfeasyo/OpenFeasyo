@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-android</TargetFrameworks> <!-- ;net9.0-ios;net9.0-maccatalyst -->
@@ -59,12 +59,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Using Include="OpenFeasyo.GameTools.UI"/>
-		<Using Include="Microsoft.Xna.Framework.Input"/>
-		<Using Include="Microsoft.Xna.Framework"/>
-		<Using Remove="Microsoft.Maui.Graphics"/>
-		<Using Remove="Microsoft.Maui.Controls"/>
-		<Using Remove="Microsoft.Maui"/>
+		<Using Include="OpenFeasyo.GameTools.UI" />
+		<Using Include="Microsoft.Xna.Framework.Input" />
+		<Using Include="Microsoft.Xna.Framework" />
+		<Using Remove="Microsoft.Maui.Graphics" />
+		<Using Remove="Microsoft.Maui.Controls" />
+		<Using Remove="Microsoft.Maui" />
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -90,6 +90,7 @@
 		<Compile Include="..\..\..\Game\Animations\OnetimeAnimation.cs" Link="Animations\OnetimeAnimation.cs" />
 		<Compile Include="..\..\..\Game\Animations\ThreeDEffects.cs" Link="Animations\ThreeDEffects.cs" />
 		<Compile Include="..\..\..\Game\Drawing\DrawingEngine.cs" Link="Drawing\DrawingEngine.cs" />
+		<Compile Include="..\..\..\Game\DynamicDifficulty\LevelAnalytics.cs" Link="DynamicDifficulty\LevelAnalytics.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\EarthCharacter.cs" Link="Elements\Character\EarthCharacter.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\GameCharacter.cs" Link="Elements\Character\GameCharacter.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\GameCharacter3D.cs" Link="Elements\Character\GameCharacter3D.cs" />
@@ -151,6 +152,45 @@
 		<Compile Include="..\..\..\Game\Screens\GameScreen2D.cs" Link="Screens\GameScreen2D.cs" />
 		<Compile Include="..\..\..\Game\Screens\GameScreen3D.cs" Link="Screens\GameScreen3D.cs" />
 		<Compile Include="..\..\..\Game\Screens\Screen.cs" Link="Screens\Screen.cs" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map181.txt" Link="Content\Levels\Ghostly\maze\map181.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map182.txt" Link="Content\Levels\Ghostly\maze\map182.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map183.txt" Link="Content\Levels\Ghostly\maze\map183.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map184.txt" Link="Content\Levels\Ghostly\maze\map184.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map185.txt" Link="Content\Levels\Ghostly\maze\map185.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map186.txt" Link="Content\Levels\Ghostly\maze\map186.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map187.txt" Link="Content\Levels\Ghostly\maze\map187.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map188.txt" Link="Content\Levels\Ghostly\maze\map188.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map189.txt" Link="Content\Levels\Ghostly\maze\map189.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map190.txt" Link="Content\Levels\Ghostly\maze\map190.txt" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map155.txt" Link="Content\Levels\Ghostly\space\map155.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map156.txt" Link="Content\Levels\Ghostly\space\map156.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map157.txt" Link="Content\Levels\Ghostly\space\map157.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map158.txt" Link="Content\Levels\Ghostly\space\map158.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map159.txt" Link="Content\Levels\Ghostly\space\map159.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map160.txt" Link="Content\Levels\Ghostly\space\map160.txt" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map154.txt" Link="Content\Levels\Ghostly\space\map154.txt" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map149.txt" Link="Content\Levels\Ghostly\space\map149.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map150.txt" Link="Content\Levels\Ghostly\space\map150.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map151.txt" Link="Content\Levels\Ghostly\space\map151.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map152.txt" Link="Content\Levels\Ghostly\space\map152.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map153.txt" Link="Content\Levels\Ghostly\space\map153.txt" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map147.txt" Link="Content\Levels\Ghostly\space\map147.txt" />
+	  <EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\space\map148.txt" Link="Content\Levels\Ghostly\space\map148.txt" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -335,6 +375,7 @@
 		<Folder Include="Drawing\" />
 		<Folder Include="Elements\Enemies\" />
 		<Folder Include="Elements\Weapons\" />
+		<Folder Include="DynamicDifficulty\" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('android'))">
@@ -351,19 +392,14 @@
     </ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="6.1.2" />
 		<PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.4" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.90" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Supabase" Version="1.1.1" />
 	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj">
-			<ReferenceSourceTarget></ReferenceSourceTarget>
-		</ProjectReference>
-		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj">
-			<ReferenceSourceTarget></ReferenceSourceTarget>
-		</ProjectReference>
-	</ItemGroup>
-
+	
 	<ItemGroup>
 		<Folder Include="Content\" />
 	</ItemGroup>
@@ -374,8 +410,31 @@
 	  <None Include="Platforms\Windows\PlatformNavigator.cs" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj">
+			<ReferenceSourceTarget></ReferenceSourceTarget>
+		</ProjectReference>
+		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj">
+			<ReferenceSourceTarget></ReferenceSourceTarget>
+		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PatientSelectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\VideoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+
 	<Target Name="RestoreDotnetTools" BeforeTargets="Restore">
       <Message Text="Restoring dotnet tools" Importance="High" />
 	  <Exec Command="dotnet tool restore" />
-	</Target>
+	</Target>	
+	
 </Project>

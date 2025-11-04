@@ -1,6 +1,6 @@
+using GhostlyGame.Models;
 using GhostlyLib.Animations;
 using GhostlyLib.Screens;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostlyLib.Elements.Enemies
@@ -118,25 +118,32 @@ namespace GhostlyLib.Elements.Enemies
             IEnumerable<IDrawable> tilesOnLeft = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Left) && !((Tile3D)o).TileType.Equals(TileType.LeftRotation) && !((Tile3D)o).TileType.Equals(TileType.RightRotation));
             IEnumerable<IDrawable> tilesOnRight = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Right) && !((Tile3D)o).TileType.Equals(TileType.LeftRotation) && !((Tile3D)o).TileType.Equals(TileType.RightRotation));
 
+            float enemyRelativeCoef = 1f;
+            if (GameSessionInfo.Instance.SelectedPatient !=null)
+            {
+                float playerRotationLength = (GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms > GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms) ? (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms : (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms;
+                enemyRelativeCoef = 3000f / playerRotationLength;      //to proportionally slow the enemies as required rotation duration increses
+            }
+
             //check if there are no tiles ahead
             if (tilesAhead.Count() == 0 && this.Direction == Direction.North)
-            {
-                this.Y -= (0.4f * GameScreen.SPEED);
+            {                
+                this.Y -= (0.4f * enemyRelativeCoef * GameScreen.SPEED);
                 return;
             }
             if (tilesBehind.Count() == 0 && this.Direction == Direction.South)
             {
-                this.Y += (0.4f * GameScreen.SPEED);
+                this.Y += (0.4f * enemyRelativeCoef * GameScreen.SPEED);
                 return;
             }
             if (tilesOnLeft.Count() == 0 && this.Direction == Direction.West)
             {
-                this.X -= (0.4f * GameScreen.SPEED);
+                this.X -= (0.4f * enemyRelativeCoef * GameScreen.SPEED);
                 return;
             }
             if (tilesOnRight.Count() == 0 && this.Direction == Direction.East)
             {
-                this.X += (0.4f * GameScreen.SPEED);
+                this.X += (0.4f * enemyRelativeCoef * GameScreen.SPEED);
                 return;
             }
 
@@ -197,10 +204,5 @@ namespace GhostlyLib.Elements.Enemies
             this.IsVisible = false;
             this._elements.RemoveElement(this);
         }
-
-        /*private void AddOnetimeHitAnimation()
-        {
-            this.GameScreen.OnetimeAnimations.Add(new OnetimeAnimation((int)this.X + 10, (int)this.Y - 40, 40, 40, ImagesAndAnimations.Instance.PlusOneFrames, this.GameScreen));
-        }*/
     }
 }

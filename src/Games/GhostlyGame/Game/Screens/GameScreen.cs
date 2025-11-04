@@ -5,18 +5,18 @@
  * a part of the open source project OpenFeasyo found at
  * https://github.com/openfeasyo/OpenFeasyo>.
  * 
- * Copyright (c) 2020 - Katarina Kostkoa
+ * Copyright (c) 2020 - Katarina Kostkova
  * 
  * This program is free software: you can redistribute it and/or modify it 
  * under the terms of the GNU General Public License version 3 as published 
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
+using GhostlyGame.Models;
 using GhostlyLib.Animations;
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Level;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using OpenFeasyo.GameTools.Core;
 using OpenFeasyo.GameTools.Effects;
@@ -31,34 +31,25 @@ namespace GhostlyLib.Screens
         public const int CONST_SPEED = 3;
         public abstract float SPEED { get; }// { get { return 3f; } }
 
-        //#region Private members
-
-        //private GameState? _gameState = null;
-        public GameState? State { get; protected set; }
-        //private double _checkpoint = 0;
-
-        //private SpriteFont _font24, _font36, _font48;
-        //private int _currentLevel = 1;
-        public int CurrentLevel = 1;
-        
+        #region Private members
         private IDevice _emgDevice;
         private IEmgSensorInput _emgInput;
-        //private ILevel _level;
-        public ILevel Level;
+        private SpriteFont[] _font = new SpriteFont[4];
+        #endregion Private members
 
         protected double Checkpoint = 0;
 
-        //private LevelElements _elements;
+        public GameState? State { get; protected set; }
+        public int CurrentLevel = 1;
+
+        public ILevel Level;
+
         public LevelElements Elements;
 
         public State EmgState = new State(false, false);
 
-        private SpriteFont[] _font = new SpriteFont[4];
         public SpriteFont[] Font { get { return _font; } }
 
-        //private Vector3 Position { get; set; }
-
-        //#endregion Private members
 
         #region Public properties
         public IGameCharacter GameCharacter;
@@ -119,81 +110,14 @@ namespace GhostlyLib.Screens
         public void LoadNextLevel()
         {
             this.CurrentLevel += 1;
-            this.CurrentLevel = Math.Min(this.CurrentLevel, 180); // Max level cannot exceed 180
+            this.CurrentLevel = Math.Min(this.CurrentLevel, 190); // Max level cannot exceed 190
             LoadLevel();
         }
-        
+
         public abstract void LoadLevel();
-        /*public void LoadLevel()
-        {
-            Debug.WriteLine("reloading level, checkpoint " + _checkpoint);
-            this._gameState = GameState.Running;
-            //clear elements & start logging
-            this._elements = new LevelElements();
-            OnGameStarted(_currentLevel);
-
-            if (this._currentLevel <= 30)
-            {
-                this._level = new EarthLevel(this, this._elements);
-                this._level.LoadMap("earth.map" + this._currentLevel + ".txt", _checkpoint);
-                GameBackground.SetParallaxLayers(new List<Texture2D> { _level.BackgroundFurthest, _level.BackgroundFurther, _level.BackgroundFar, _level.BackgroundClose, _level.BackgroundCloser, _level.BackgroundClosest });
-            }
-            else if (this._currentLevel <= 60)
-            {
-                this._level = new WaterLevel(this, this._elements);
-                this._level.LoadMap("water.map" + this._currentLevel + ".txt", _checkpoint);
-                GameBackground.SetParallaxLayers(new List<Texture2D> { _level.BackgroundClose, _level.BackgroundCloser, _level.BackgroundClosest });
-            }
-            else if (this._currentLevel <= 90)
-            {
-                this._level = new RockLevel(this, this._elements);
-                this._level.LoadMap("rock.map" + this._currentLevel + ".txt", _checkpoint);
-                GameBackground.SetParallaxLayers(new List<Texture2D> { _level.BackgroundFurthest, _level.BackgroundClose, _level.BackgroundClosest });
-
-            }
-            else if (this._currentLevel <= 120)
-            {
-                this._level = new IceLevel(this, this._elements);
-                this._level.LoadMap("ice.map" + this._currentLevel + ".txt", _checkpoint);
-                GameBackground.SetParallaxLayers(new List<Texture2D> { _level.BackgroundFurthest, _level.BackgroundClose, _level.BackgroundClosest });
-            }
-            else if (this._currentLevel <= 140)
-            {
-                this._level = new RockLevel(this, this._elements);
-                this._level.LoadMap("land.map" + this._currentLevel + ".txt", _checkpoint);
-                GameBackground.SetParallaxLayers(new List<Texture2D> { _level.BackgroundFurthest, _level.BackgroundClose, _level.BackgroundClosest });
-            }
-            else if (this._currentLevel <= 160)
-            {
-                this._level = new SpaceLevel(this, this._elements);
-                this._level.LoadMap("space.map" + this._currentLevel + ".txt", _checkpoint);
-                GameBackground.SetParallaxLayers(new List<Texture2D> { _level.BackgroundFurthest, _level.BackgroundClose, _level.BackgroundCloser });//, _level.BackgroundClosest });
-            }
-
-            this.GameCharacter = this._level.Character;
-            GameBackground.ContinuousLayer = this._level.Background;
-            GhostlyActionHandlers.CurrentLevel = this._level;
-
-            Position = Vector3.Zero;
-            GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position);
-        }*/
         #endregion Loaders
 
-        public void UnloadContent()
-        {
-        }
-
-        /*public void Update(GameTime gameTime)
-        {
-            Position = new Vector3((float)(Position.X - GameBackground.HorizontalSpeed), (float)(Screen.Height - Level.Character.Y), GameBackground.HorizontalSpeed);
-            GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position + new Vector3((float)(((Drawable)GameCharacter).X + GameCharacter.Width / 2), 0, 0));
-            KeyboardUpdate();
-
-            if (State.Equals(GameState.Running))
-            {
-                UpdateAllElements(gameTime);
-            }
-        }*/
+        public void UnloadContent() { }
 
         public void Exit()
         {
@@ -209,33 +133,6 @@ namespace GhostlyLib.Screens
             {
                 DrawGameplay(spriteBatch, gameTime);
             }
-        }
-
-        
-        /*private void UpdateAllElements(GameTime gameTime)
-        {
-            this.Level.ProcessPrimaryAction(emgState.Primary);
-            this.Level.ProcessSecondaryAction(emgState.Secondary);
-
-            this.GameCharacter.Update(gameTime);
-
-            this.Elements.Update(gameTime);
-
-            UpdateOnetimeAnimations();
-
-            this.GameBackground.Update(gameTime);
-        }*/
-
-        private void UpdateOnetimeAnimations()
-        {
-            foreach (OnetimeAnimation anim in OnetimeAnimations)
-            {
-                if (anim.IsVisible)
-                {
-                    anim.Update(8);
-                }
-            }
-            OnetimeAnimations.RemoveAll(o => o.IsVisible == false);
         }
 
         protected abstract void DrawGameplay(SpriteBatch spriteBatch, GameTime gameTime);
@@ -274,11 +171,6 @@ namespace GhostlyLib.Screens
         }
 
         public abstract void SetCheckpoint(double checkpoint);
-        /*{
-            Debug.WriteLine("checkpoint " + checkpoint);
-            this._checkpoint = checkpoint;
-            this.State = GameState.Running;
-        }*/
 
         public event EventHandler<GameStartedEventArgs> GameStarted;
         protected void OnGameStarted(int level)
@@ -293,7 +185,6 @@ namespace GhostlyLib.Screens
 
         public void OnGameFinished(int score, int level, GameFinishedEventArgs.EndReason reason)
         {
-            //Debug.WriteLine("Game Finished - Score: " + score);
             if (GameFinished != null)
             {
                 GameFinished(this, new GameFinishedEventArgs("", score, level, reason));
@@ -301,6 +192,23 @@ namespace GhostlyLib.Screens
         }
 
         public abstract void Update(GameTime gameTime);
+
+        public void UpdateRequiredContractionDuration(int evaluation)
+        {
+            if (evaluation < 0)
+            {
+                //decrease
+                GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms = Math.Max((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms - 1000, 3000);
+                GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms = Math.Max((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms - 1000, 3000);
+            }
+            else if (evaluation > 0)
+            {
+                //increase
+                GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms = Math.Min((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms + 1000, 10000);
+                GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms = Math.Min((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms + 1000, 10000);
+            }
+            else { }//no change   
+        }
     }
 
     public class State

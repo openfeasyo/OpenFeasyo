@@ -1,7 +1,8 @@
+using GhostlyGame.Models;
+using GhostlyLib.Activities;
+using GhostlyLib.Level;
 using GhostlyLib.Screens;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Graphics.PackedVector;
 using System.Diagnostics;
 
 namespace GhostlyLib.Elements.Character
@@ -10,23 +11,40 @@ namespace GhostlyLib.Elements.Character
     {
         #region Private members
         private LevelElements _elements;
-        //private Rectangle _rectangle;
-        private float target_duration = 3f;
-
+        private float default_target_duration = 3f;
+        private int completedRotations = 0;
+        //private bool turnInterupted = false;
         #endregion Private members
 
-        protected float Target_Duration
+        protected float Target_Duration_Left
         {
-            get { return target_duration; }
-            set
+            get
             {
-                target_duration = value;
+                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms != null)
+                    return (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms / 1000;
+
+                return default_target_duration;
+            }
+        }
+        protected float Target_Duration_Right
+        {
+            get
+            {
+                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms != null)
+                    return (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms / 1000;
+
+                return default_target_duration;
             }
         }
 
-        protected float Rot_Step
+        protected float Rot_Step_Left
         {
-            get { return (float)(((Math.PI / 2) / Target_Duration) / 1000); }
+            get { return (float)(((Math.PI / 2) / Target_Duration_Left) / 1000); }
+        }
+
+        protected float Rot_Step_Right
+        {
+            get { return (float)(((Math.PI / 2) / Target_Duration_Right) / 1000); }
         }
 
         public MazeCharacter3D(GameScreen gameScreen, LevelElements elements,
@@ -38,12 +56,12 @@ namespace GhostlyLib.Elements.Character
             this.SpeedX = GameScreen.SPEED;
             this.SpeedY = 0;
 
-            this.Height = 38; // 37; // 112;
-            this.Width = 38; //50; // 152;
+            this.Height = 38;
+            this.Width = 38;
 
             this.CurrentHealth = 3;
-            this.X = 10; // 100;
-            this.Y = 10; // 250;
+            this.X = 10;
+            this.Y = 10;
 
             this.AutomaticMovement = AutomaticMovement.MovingForward;
             this.RotationStatus = RotationStatus.None;
@@ -82,10 +100,8 @@ namespace GhostlyLib.Elements.Character
             //if the character is rotating / muscles are contracted / increment current rotation
             if (this.RotationDirection == RotationDirection.Right)
             {
-                this.CurrentRotation -= (Rot_Step * gameTime.ElapsedGameTime.Milliseconds);
+                this.CurrentRotation -= (Rot_Step_Right * gameTime.ElapsedGameTime.Milliseconds);
                 this.CurrentRotation %= (MathHelper.Pi * 2);        //normalize
-
-                //Debug.WriteLine("this.CurrentRotation " + this.CurrentRotation + " this.TargetRotation " + this.TargetRotation);
 
                 if (TargetRotationReached())
                 {
@@ -98,10 +114,8 @@ namespace GhostlyLib.Elements.Character
             }
             else if (this.RotationDirection == RotationDirection.Left)
             {
-                this.CurrentRotation += (Rot_Step * gameTime.ElapsedGameTime.Milliseconds);
+                this.CurrentRotation += (Rot_Step_Left * gameTime.ElapsedGameTime.Milliseconds);
                 this.CurrentRotation %= (MathHelper.Pi * 2);        //normalize 
-
-                //Debug.WriteLine("this.CurrentRotation " + this.CurrentRotation + " this.TargetRotation " + this.TargetRotation);
 
                 if (TargetRotationReached())
                 {
@@ -119,7 +133,6 @@ namespace GhostlyLib.Elements.Character
                 {
                     this.CurrentRotation = 0;
 
-                    //TODO check if works
                     if (this.AutomaticMovement == AutomaticMovement.Blocked)
                     {
                         this.Instruction = Instruction.Contract;
@@ -128,7 +141,7 @@ namespace GhostlyLib.Elements.Character
                 else if (this.RotationStatus == RotationStatus.Completed)
                 {
                     //rotation was completed, so the OrientationRotation has to be updated
-                    updateOrientationAndOriginalRotation();
+                    UpdateOrientationAndOriginalRotation();
 
                     //reinitialize rotation variables - target, current, and status
                     this.TargetRotation = 0;
@@ -144,10 +157,8 @@ namespace GhostlyLib.Elements.Character
             LeftSide = new Rectangle((int)this.X - 5, (int)this.Y + 5, 5, 28);      // left side of the rocket - purple
             RightSide = new Rectangle((int)this.X + 36, (int)this.Y + 5, 5, 28);    // right side of the rocket - green
             Center = new Rectangle((int)this.X + 15, (int)this.Y + 15, 10, 10);     // center of the rocket - orange
-            //Animation.Update(gameTime);
 
             CheckCollisionsAndMove();
-            //CheckCollisionsWithEnemies();
         }
 
         private void CheckCollisionsAndMove()
@@ -165,7 +176,6 @@ namespace GhostlyLib.Elements.Character
                 (tilesBehind.Count() > 0 && tilesBehind.Any(o => ((Tile3D)o).TileType.Equals(TileType.Exit))) ||
                 (tilesOnLeft.Count() > 0 && tilesOnLeft.Any(o => ((Tile3D)o).TileType.Equals(TileType.Exit))) ||
                 (tilesOnRight.Count() > 0 && tilesOnRight.Any(o => ((Tile3D)o).TileType.Equals(TileType.Exit))))
-            /*if (tilesCenter.Count() > 0 && tilesCenter.Any(o => ((Tile)o).TileType.Equals(TileType.Exit)))*/
             {
                 GameScreen.LevelDone();
             }
@@ -181,16 +191,7 @@ namespace GhostlyLib.Elements.Character
                 else //is blocked. Which way can it go?
                 {
                     this.AutomaticMovement = AutomaticMovement.Blocked;
-
-                    /*if (tilesOnLeft.Count() == 0) // can go west
-                    {
-                        this.TurningDirection = TurningDirection.Left;
-                    }
-                    else if (tilesOnRight.Count() == 0)
-                    {
-                        this.TurningDirection = TurningDirection.Right;
-                    }*/
-                    updateTargetRotationAndTurningDirection(tilesCenter, tilesOnLeft, tilesOnRight, tilesBehind);
+                    UpdateTargetRotationAndTurningDirection(tilesCenter, tilesOnLeft, tilesOnRight, tilesBehind);
                 }
             }
             else if (this.Direction == Direction.South) // front of the rocket is turned down / "south"
@@ -204,17 +205,7 @@ namespace GhostlyLib.Elements.Character
                 else //is blocked, which way can it go?
                 {
                     this.AutomaticMovement = AutomaticMovement.Blocked;
-
-                    /*if (tilesOnLeft.Count() == 0)
-                    {
-                        this.TurningDirection = TurningDirection.Right;
-                    }
-                    else if (tilesOnRight.Count() == 0)
-                    {
-                        this.TurningDirection = TurningDirection.Left;
-                    }*/
-
-                    updateTargetRotationAndTurningDirection(tilesCenter, tilesOnRight, tilesOnLeft, tilesAhead);
+                    UpdateTargetRotationAndTurningDirection(tilesCenter, tilesOnRight, tilesOnLeft, tilesAhead);
                 }
             }
             else if (this.Direction == Direction.West)  // front of the rocket is turned left / "east"
@@ -228,17 +219,7 @@ namespace GhostlyLib.Elements.Character
                 else // is blocked, which way can it go?
                 {
                     this.AutomaticMovement = AutomaticMovement.Blocked;
-
-                    /* if (tilesAhead.Count() == 0)
-                     {
-                         this.TurningDirection = TurningDirection.Right;
-                     }
-                     else if (tilesBehind.Count() == 0)
-                     {
-                         this.TurningDirection = TurningDirection.Left;
-                     }*/
-
-                    updateTargetRotationAndTurningDirection(tilesCenter, tilesBehind, tilesAhead, tilesOnRight);
+                    UpdateTargetRotationAndTurningDirection(tilesCenter, tilesBehind, tilesAhead, tilesOnRight);
                 }
             }
             else if (this.Direction == Direction.East) //front of the rocket is turned right / "west"
@@ -252,17 +233,7 @@ namespace GhostlyLib.Elements.Character
                 else // is blocked, which way can it go?
                 {
                     this.AutomaticMovement = AutomaticMovement.Blocked;
-
-                    /*if (tilesAhead.Count() == 0)
-                    {
-                        this.TurningDirection = TurningDirection.Left;
-                    }
-                    else if (tilesBehind.Count() == 0)
-                    {
-                        this.TurningDirection = TurningDirection.Right; ;
-                    }*/
-
-                    updateTargetRotationAndTurningDirection(tilesCenter, tilesAhead, tilesBehind, tilesOnLeft);
+                    UpdateTargetRotationAndTurningDirection(tilesCenter, tilesAhead, tilesBehind, tilesOnLeft);
                 }
             }
 
@@ -277,28 +248,9 @@ namespace GhostlyLib.Elements.Character
             }
         }
 
-        /*private void CheckCollisionsWithEnemies()
-        {
-            foreach (Enemy enemy in this._elements.Enemies)
-            {
-                if (this.IsVisible && enemy.IsVisible && this._rectangle.Intersects(enemy.Rectangle))
-                {
-                    if (enemy.CurrentHealth > 0)
-                    {
-                        enemy.Hit();
-                        //GameScreen.MusicPlayer.PlayEffect(enemy.CurrentHealth == 0 ? "kill" : "hit");
-                    }
-                    if (enemy.CurrentHealth == 0)
-                    {
-                        this.GameScreen.GameCharacter.Score += enemy.Bonus;
-                        enemy.Die();
-                    }
-                }
-            }
-        }*/
-
         private bool TargetRotationReached()
         {
+            Debug.WriteLine("currrentRot " + this.CurrentRotation + " targetRot " + this.TargetRotation);
             if (this.TargetRotation < 0) // target is negative, e.g. -90dgrs, -1.57rad
             {
                 //if current rotation exceeds the target rotation but does not exceed it by more than 90 dgr
@@ -329,22 +281,21 @@ namespace GhostlyLib.Elements.Character
             return false;
         }
 
-        private void updateTargetRotationAndTurningDirection(IEnumerable<IDrawable> tilesCenter, IEnumerable<IDrawable> tilesOnLeft, IEnumerable<IDrawable> tilesOnRight, IEnumerable<IDrawable> tilesBehind)
+        private void UpdateTargetRotationAndTurningDirection(IEnumerable<IDrawable> tilesCenter, IEnumerable<IDrawable> tilesOnLeft, IEnumerable<IDrawable> tilesOnRight, IEnumerable<IDrawable> tilesBehind)
         {
             //Which way to ratate, based on what was indicated in the maze map, i.e. 'L' or 'R'
-
             if (tilesCenter.Any(o => ((Tile3D)o).TileType.Equals(TileType.LeftRotation)))
             {
                 this.TurningDirection = TurningDirection.Left;
 
                 //Target rotation, rotate by +90, -90, (or +180, -180 degrees when previously went backwards)
-                if (tilesOnLeft.Count() == 0)
+                if (tilesOnRight.Count() == 0)
                 {
-                    this.TargetRotation = -(MathHelper.Pi * 2) / 4;
+                    this.TargetRotation = +(MathHelper.Pi * 2) / 4;
                 }
                 else if (tilesBehind.Count() == 0)
                 {
-                    this.target_duration = -(MathHelper.Pi * 2) / 2;
+                    this.TargetRotation = +(MathHelper.Pi * 2) / 2;
                 }
             }
             else if (tilesCenter.Any(o => ((Tile3D)o).TileType.Equals(TileType.RightRotation)))
@@ -352,35 +303,49 @@ namespace GhostlyLib.Elements.Character
                 this.TurningDirection = TurningDirection.Right;
 
                 //Target rotation, rotate by +90, -90, (or +180, -180 degrees when previously went backwards)
-                if (tilesOnRight.Count() == 0)
+                if (tilesOnLeft.Count() == 0)
                 {
-                    this.TargetRotation = +((MathHelper.Pi * 2) / 4);
+                    this.TargetRotation = -((MathHelper.Pi * 2) / 4);
                 }
                 else if (tilesBehind.Count() == 0)
                 {
-                    this.TargetRotation = +((MathHelper.Pi * 2) / 2);
+                    this.TargetRotation = -((MathHelper.Pi * 2) / 2);
                 }
             }
         }
 
-        public override void Stop()
+        public TileType StandingOn()
         {
-            //this.SpeedX = 0;
+            IEnumerable<IDrawable> tilesAround = this._elements.Tiles.Where(o => ((Tile3D)o).Rectangle.Intersects(this.MainBody));
+            IEnumerable<IDrawable> tilesCenter = tilesAround.Where(o => ((Tile3D)o).Rectangle.Intersects(this.Center));
+
+            if (tilesCenter.Count() > 0)
+            {
+                return ((Tile3D)tilesCenter.First<IDrawable>()).TileType;
+            }
+
+            return TileType.Dirt;
         }
+
+        public override void Stop() { }
 
         public override void TurnCounterClockwise()
         {
             //if the rocket is flying forward, it cannot rotate
             if (this.AutomaticMovement == AutomaticMovement.MovingForward)
-                return;
+                return;            
 
             if (this.RotationDirection == RotationDirection.None)
             {
                 this.RotationDirection = RotationDirection.Left;
-                //this.TargetRotation = +((MathHelper.Pi * 2) / 4);
                 this.RotationStatus = RotationStatus.Rotating;
-                //TODO
+
                 this.Instruction = Instruction.Hold;
+
+                if (GameScreen.Level.GetType() == typeof(MazeLevel3D))
+                {
+                    ((MazeLevel3D)GameScreen.Level).Analytics.UpdateTurn(completedRotations, 1, TileTypeToRotationDirection(this.StandingOn()), RotationDirection.Left);
+                }
             }
             else if (this.RotationDirection == RotationDirection.Right)
             {
@@ -395,14 +360,18 @@ namespace GhostlyLib.Elements.Character
             //if the rocket is flying forward, it cannot rotate
             if (this.AutomaticMovement == AutomaticMovement.MovingForward)
                 return;
-
+            
             if (this.RotationDirection == RotationDirection.None)
             {
                 this.RotationDirection = RotationDirection.Right;
-                //this.TargetRotation = -(MathHelper.Pi * 2) / 4;
                 this.RotationStatus = RotationStatus.Rotating;
-                //TODO
+
                 this.Instruction = Instruction.Hold;
+
+                if (GameScreen.Level.GetType() == typeof(MazeLevel3D))
+                {
+                    ((MazeLevel3D)GameScreen.Level).Analytics.UpdateTurn(completedRotations, 1, TileTypeToRotationDirection(this.StandingOn()), RotationDirection.Right);
+                }
             }
             else if (this.RotationDirection == RotationDirection.Left)
             {
@@ -416,10 +385,10 @@ namespace GhostlyLib.Elements.Character
         {
             if (this.RotationDirection != RotationDirection.None)   //RotationDirection is left or right
             {
-                //if completed
-                if (TargetRotationReached())
+                if (TargetRotationReached())            //rotation completed
                 {
                     this.RotationStatus = RotationStatus.Completed;
+                    this.completedRotations++;
                 }
                 else //interupted
                 {
@@ -430,7 +399,7 @@ namespace GhostlyLib.Elements.Character
             }
         }
 
-        private void updateOrientationAndOriginalRotation()
+        private void UpdateOrientationAndOriginalRotation()
         {
             var rot = (int)(this.CurrentRotation / ((MathHelper.Pi * 2) / 4));     // rot = number of quarter rotations done, carries + and -
             //normalzie, remove full circle rotations
@@ -450,6 +419,16 @@ namespace GhostlyLib.Elements.Character
             if (newIndex < 0) newIndex += 4;
 
             this.Direction = cardinalDirections[newIndex];
+        }
+
+        private RotationDirection TileTypeToRotationDirection(TileType tiletype)
+        {
+            if (tiletype == TileType.LeftRotation)
+                return RotationDirection.Left;
+            else if (tiletype == TileType.RightRotation)
+                return RotationDirection.Right;
+
+            return RotationDirection.None;
         }
     }
 }
