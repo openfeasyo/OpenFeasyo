@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GhostlyGame.Views.LoginPage"
+             Title=""
+             BackgroundImageSource="menu_background.png">
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label x:Name="Title"
+               Text="Ghostly"
+               TextColor="#0BCEC4"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="120"
+               FontFamily="Vitamin"
+               Padding="10,40,10,20"/>
+        
+        <Entry x:Name="username"
+               Placeholder="Enter username"
+               PlaceholderColor="#393939"
+               Text="{Binding Username}"
+               FontSize="25"/>
+
+        <Entry x:Name="password"
+               Placeholder="Enter password"
+               PlaceholderColor="#393939"
+               IsPassword="True"
+               Text="{Binding Password}"
+               FontSize="25"/>
+
+        <Button
+            x:Name="LoginBtn"
+            Text="Log In" 
+            Clicked="OnLoginClicked"
+            HorizontalOptions="Fill"
+            BackgroundColor="#0BCEC4"
+            TextColor="White"
+            FontFamily="Vitamin"
+            FontSize="Large"/>
+
+        <Label 
+            x:Name="ErrorMsg"
+            Text=""
+            TextColor="Red"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="Large"
+            Padding="10,40,10,20"/>
+
+        <Button
+            x:Name="InstructionVideoBtn"
+            Text="Watch Instructions" 
+            Clicked="OnInstructionVideoClicked"
+            HorizontalOptions="Center"
+            BackgroundColor="#0BCEC4"
+            TextColor="White"
+            FontFamily="Vitamin"
+            FontSize="Large"
+            Padding="20"/>
+    </VerticalStackLayout>
+</ContentPage>

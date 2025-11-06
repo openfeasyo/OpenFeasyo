@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GhostlyGame.Views.PatientSelectionPage"
+             xmlns:models="clr-namespace:GhostlyGame.Models"
+             xmlns:converters="clr-namespace:GhostlyGame.Converters"
+             x:DataType="models:AllPatients"
+             Title=""
+             BackgroundImageSource="menu_background.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BoolToPatientStatusConverter x:Key="BoolToPatientStatusConverter" />
+            <converters:PatientStatusToColorConverter x:Key="PatientStatusToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <VerticalStackLayout x:Name="Selection" IsVisible="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Select Patient"
+               TextColor="#0BCEC4"
+               FontSize="40"
+               FontFamily="Vitamin"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               Padding="10,40,10,40"/>
+        <CollectionView x:Name="PatientsCollection"
+                        ItemsSource="{Binding Patients}"
+                        Margin="20"
+                        SelectionMode="Single">
+
+            <!-- Designate how the collection of items are laid out -->
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <!-- Define the appearance of each item in the list -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Patient">
+                    <Grid Padding="10"
+                          ColumnDefinitions="*,Auto"
+                          HorizontalOptions="FillAndExpand"
+                          Margin="5" >
+
+                        <Label Grid.Column="0"
+                               Text="{Binding PatientCode}"
+                               VerticalOptions="Center"
+                               FontSize="Large" />
+
+                        <Label Grid.Column="1"
+                               Text="{Binding Active, Converter={StaticResource BoolToPatientStatusConverter}}"
+                               VerticalOptions="Center"
+                               FontSize="Small"
+                               TextColor="{Binding Active, Converter={StaticResource PatientStatusToColorConverter}}" />
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal"/>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#0BCEC4" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button x:Name="ContinueBtn"
+                Text="Continue" 
+                Clicked="OnContinueClicked"
+                HorizontalOptions="Center" 
+                BackgroundColor="#0BCEC4"
+                TextColor="White"
+                FontFamily="Vitamin"
+                FontSize="Large"/>
+    </VerticalStackLayout>
+        <VerticalStackLayout x:Name="Loading" IsVisible="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="Loading game ..."
+                   TextColor="#0BCEC4"
+                   FontSize="40"
+                   FontFamily="Vitamin"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   Padding="10,40,10,40" />
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
