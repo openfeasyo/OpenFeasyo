@@ -16,8 +16,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrignoAvantiCustom", "..\..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C3dSerializer", "..\..\..\..\Analyzers\C3dSerializer\Platforms\net9\C3dSerializer.csproj", "{35EDC350-8BA6-48E7-A7DF-4C6CE38C1B90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrignoEmgV2", "..\..\..\..\Drivers\TrignoEmgV2\TrignoEmgV2.csproj", "{FDF7AC4E-B817-4596-81B6-0DC3646D2423}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
