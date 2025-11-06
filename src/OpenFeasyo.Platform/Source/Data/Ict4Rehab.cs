@@ -129,14 +129,14 @@ namespace OpenFeasyo.Platform.Data
 
         public static void SaveTherapistName(String name)
         {
-#if WINDOWS
+#if false //WINDOWS
             Registry.SetValue(RegistryElements.REGISTRY_SECTION, RegistryElements.REGISTRY_THERAPIST_TAG, Convert.ToBase64String(Encoding.UTF8.GetBytes(name)));
 #endif
         }
 
         public static string LoadTherapistName()
         {
-#if WINDOWS
+#if false //WINDOWS
             string therapist = (string)Registry.GetValue(RegistryElements.REGISTRY_SECTION, RegistryElements.REGISTRY_THERAPIST_TAG, null);
             if (therapist != null)
             {

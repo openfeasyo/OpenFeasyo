@@ -2,12 +2,8 @@
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Level;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using OpenFeasyo.GameTools.Effects;
-using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
 
 namespace GhostlyLib.Screens
 {
@@ -54,7 +50,7 @@ namespace GhostlyLib.Screens
             this.LevelTimeMilliseconds = 0;
             OnGameStarted(CurrentLevel);
 
-            if (CurrentLevel > 160 && CurrentLevel <= 180)
+            if (CurrentLevel > 160 && CurrentLevel <= 190)
             {
                 this.Level = new MazeLevel3D(this, this.Elements);
                 this.Level.LoadMap("maze.map" + this.CurrentLevel + ".txt", 0);
@@ -67,6 +63,11 @@ namespace GhostlyLib.Screens
 
         private void UpdateAllElements(GameTime gameTime)
         {
+            //TODO should this be here???
+            this.Level.ProcessPrimaryAction(EmgState.Primary);
+            this.Level.ProcessSecondaryAction(EmgState.Secondary);
+
+
             this.GameCharacter.Update(gameTime);
 
             this.Elements.Update(gameTime);
@@ -96,7 +97,7 @@ namespace GhostlyLib.Screens
 
                 this.LevelTimeMilliseconds += gameTime.ElapsedGameTime.Milliseconds;
 
-                //every 30 seconds generate an enemy, max 2 times
+                //every 30 seconds generate an enemy, max 2 enemies
                 if (((int)this.LevelTimeMilliseconds / 30000) > this.EnemiesCount && this.EnemiesCount < 2)
                 {
                     this.EnemiesCount += 1;
@@ -107,14 +108,12 @@ namespace GhostlyLib.Screens
 
         protected override void DrawGameplay(SpriteBatch spriteBatch, GameTime gameTime)
         {
-            //spriteBatch.Draw(this._level.Background, new Rectangle(0, 0, 2160, 800), Color.White);
             GraphicsDevice.Clear(Color.Black);
 
             this.Elements.Draw(spriteBatch, gameTime);
 
             this.GameCharacter.Draw(spriteBatch, gameTime);
 
-            //DrawOnetimeAnimations(spriteBatch);
             spriteBatch.DrawString(this.Font[2], "Level: " + this.CurrentLevel.ToString(), new Vector2(10, 10), Color.White);
 
             switch (this.GameCharacter.CurrentHealth)
@@ -136,23 +135,23 @@ namespace GhostlyLib.Screens
 
             if (this.GameCharacter.TurningDirection == TurningDirection.Left)
             {
-                spriteBatch.Draw(ImagesAndAnimations.Instance.RightArrow, new Rectangle(700, 220, 85, 72), Color.White);
+                spriteBatch.Draw(ImagesAndAnimations.Instance.LeftArrow, new Rectangle(10, 220, 85, 72), Color.White);
             }
             else if (this.GameCharacter.TurningDirection == TurningDirection.Right)
             {
-                spriteBatch.Draw(ImagesAndAnimations.Instance.LeftArrow, new Rectangle(10, 220, 85, 72), Color.White);
+                spriteBatch.Draw(ImagesAndAnimations.Instance.RightArrow, new Rectangle(700, 220, 85, 72), Color.White);
             }
 
             //Draw instruction in the middle of the screen
             switch (this.GameCharacter.Instruction) {
                 case Instruction.Contract:
-                    spriteBatch.DrawString(this.Font[2], "Contract", new Vector2(320, 110), Color.Red);
+                    spriteBatch.DrawString(this.Font[2], "Contract", new Vector2(320, 100), Color.Red);
                     break;
                 case Instruction.Hold:
-                    spriteBatch.DrawString(this.Font[2], "Hold", new Vector2(320, 110), Color.Orange);
+                    spriteBatch.DrawString(this.Font[2], "Hold", new Vector2(320, 100), Color.Orange);
                     break;
                 case Instruction.Release:
-                    spriteBatch.DrawString(this.Font[2], "Release", new Vector2(320, 110), Color.Green);
+                    spriteBatch.DrawString(this.Font[2], "Release", new Vector2(320, 100), Color.Green);
                     break;
                 default:
                     break;

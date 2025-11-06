@@ -12,8 +12,6 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
-using System;
-
 namespace OpenFeasyo.Platform.Data
 {
     public interface DataProvider

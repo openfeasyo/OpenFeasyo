@@ -36,15 +36,26 @@ namespace GhostlyLib.Level
 
         /*public override void ProcessPrimaryAction(bool state)
         {
-            if (GameScreen.GameCharacter.RotationStatus == RotationStatus.Rotating && !state)
+            //TODO uncomment and test with sensors
+            /*if (state)
             {
-                ((GameCharacter3D)GameScreen.GameCharacter).TurningInterupted();
+                //rotating to the right at the moment => interupt turning
+                if (this.Character.RotationStatus == RotationStatus.Rotating && this.Character.RotationDirection == RotationDirection.Right)
+                {
+                    ((GameCharacter3D)this.Character).TurningInterupted();
+                }
+
+                ((GameCharacter3D)this.Character).TurnCounterClockwise();
             }
-            else if (state && GameScreen.State.Equals(GameState.Running))
+            else
             {
-                ((GameCharacter3D)GameScreen.GameCharacter).TurnCounterClockwise();
+                if (this.Character.RotationStatus == RotationStatus.Rotating && this.Character.RotationDirection == RotationDirection.Left)
+                {
+                    //muscle not contracted => interupt turning
+                    ((GameCharacter3D)this.Character).TurningInterupted();
+                }
             }
-        }
+        }/*
 
         public override void ProcessSecondaryAction(bool state)
         {

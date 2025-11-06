@@ -1,9 +1,9 @@
 using GhostlyLib.Animations;
+using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;
 using GhostlyLib.Screens;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Reflection;
 
@@ -22,6 +22,7 @@ namespace GhostlyLib.Level
         public BasicEffect Star { get { return ThreeDEffects.Instance.Star; } }
         public int MaxScore { get; set; }
         public GameScreen GameScreen { get { return gameScreen; } }
+        public LevelAnalytics Analytics { get; private set; }
         #endregion Public members
 
         #region Abstract members
@@ -34,6 +35,7 @@ namespace GhostlyLib.Level
         protected Level3D(GameScreen gameScreen)
         {
             this.gameScreen = gameScreen;
+            this.Analytics = new LevelAnalytics();
         }
         
         public void LoadMap(String p, double checkpoint)
@@ -113,11 +115,15 @@ namespace GhostlyLib.Level
                         }
                         else if (ch.Equals('L'))
                         {
-                            d = new Tile3D(i, j, TileType.LeftRotation, this.Elements, this.Invisible, this.GameScreen);
+                            //d = new Tile3D(i, j, TileType.LeftRotation, this.Elements, this.Invisible, this.GameScreen);
+                            //in 3D game, things are displaye mirrored - left is right
+                            d = new Tile3D(i, j, TileType.RightRotation, this.Elements, this.Invisible, this.GameScreen);
                         }
                         else if (ch.Equals('R'))
                         {
-                            d = new Tile3D(i, j, TileType.RightRotation, this.Elements, this.Invisible, this.GameScreen);
+                            //d = new Tile3D(i, j, TileType.RightRotation, this.Elements, this.Invisible, this.GameScreen);
+                            //in 3D game, things are displaye mirrored - right is left
+                            d = new Tile3D(i, j, TileType.LeftRotation, this.Elements, this.Invisible, this.GameScreen);
                         }
 
                         if (d != null)

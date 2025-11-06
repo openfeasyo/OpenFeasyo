@@ -12,12 +12,16 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
-using OpenFeasyo.GameTools.UI;
-using Microsoft.Xna.Framework;
+using GhostlyGame.Models;
+using GhostlyLib.Level;
 using GhostlyLib.Screens;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Xna.Framework.Graphics;
 using OpenFeasyo.Platform.Controls;
-using Microsoft.Xna.Framework.Input;
+using OpenFeasyo.Platform.Data;
+using System.Diagnostics;
+using Vub.Etro.IO;
+using Vector4 = Vub.Etro.IO.Vector4;
 
 namespace GhostlyLib.Activities
 {
@@ -39,7 +43,7 @@ namespace GhostlyLib.Activities
 
         public GamePlayActivity(UIEngine engine, int level, string intputConfig) : base(engine)
         {
-            if (level >= 161 && level <= 180)
+            if (level >= 161 && level <= 190)
             {
                 _screen = new GameScreen3D(level, engine.MusicPlayer, engine.Screen, engine.Device);
             }
@@ -94,7 +98,18 @@ namespace GhostlyLib.Activities
             nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
                 Components.Remove(_levelDonePanel);
-                _screen.LoadNextLevel();
+
+                if (_screen.CurrentLevel == 160)
+                {
+                    //levels 161+ are 3D levels
+                    //we need to go back to main menu, to select maze game explicitly, to initialize GameScreen3D,
+                    StartActivity(new MainMenuActivity(engine));
+                }
+                else
+                {
+                    //otherwise we remain in the same GameScreen 2D for levels up to 160, and 3D for levels 161 and higher
+                    _screen.LoadNextLevel();
+                }
             };
             nextButton.Position = engine.Screen.ScreenMiddle - nextButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
 
@@ -111,7 +126,6 @@ namespace GhostlyLib.Activities
 
             _scoreLabel = new Label("Score: 00", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _scoreLabel.Position = engine.Screen.ScreenMiddle - _scoreLabel.Size / 2 + new Vector2(0, -engine.Screen.ScreenMiddle.Y / 3);
-
 
             _levelDonePanel.Components.Add(nextButton);
             _levelDonePanel.Components.Add(backButton);
@@ -170,8 +184,10 @@ namespace GhostlyLib.Activities
                     TextButton assesmentButton = new TextButton(assesmentValue.ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
                     assesmentButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
                     {
-                        //TODO save self assesment value
-                        //selfAssesment = Int16.Parse(assesmentButton.Text);
+                        if (GameSessionInfo.Instance.Session != null)
+                        {
+                            GameSessionInfo.Instance.Session.Rpe_post_session = Int16.Parse(assesmentButton.Text.ToString());
+                        }
                         Components.Remove(_selfAssesmentPanel);
                         Components.Add(_bfrVopPanel);
                     };
@@ -229,8 +245,22 @@ namespace GhostlyLib.Activities
             okButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
                 //TODO save values from sliders
-                //BFR_L = bfrLeftVOPButton.Percentage;
-                //BFR_R = bfrRightVOPButton.Percentage;
+                if (GameSessionInfo.Instance.Session != null)
+                {
+                    GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch1 = bfrLeftVOPButton.Percentage;
+                    GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch2 = bfrRightVOPButton.Percentage;
+
+                    //Evaluate the level - > check analytics
+                    if (_screen.Level.GetType() == typeof(MazeLevel3D))
+                    {
+                        int evaluation = ((MazeLevel3D)_screen.Level).Analytics.Evaluate();
+                        _screen.UpdateRequiredContractionDuration(evaluation);
+                    }
+
+                    // write to c3d
+                    UpdateC3D();
+                }
+
                 Components.Remove(_bfrVopPanel);
                 Components.Add(_levelDonePanel);
             };
@@ -262,7 +292,92 @@ namespace GhostlyLib.Activities
             #endregion Gameplay Panel            
         }
 
-        
+        private void UpdateC3D()
+        {
+            if (GameSessionInfo.Instance.Session == null || GameSessionInfo.Instance.SelectedPatient == null)
+            {
+                Debug.WriteLine("No data to be written to the file, update canceled!");
+                return;
+            }
+
+            //get the name of the last written c3d
+            var _c3dFile = SeriousGames.LastC3DFileCreated;
+
+            if (_c3dFile.IsNullOrEmpty())
+            {
+                Debug.WriteLine("No C3D file was found.");
+                return;
+            }
+
+            // read file
+            C3dReader reader = new C3dReader();
+
+            if (!reader.Open(_c3dFile))
+            {
+                throw new ApplicationException("Could not open file " + (_c3dFile) + "!");
+            }
+
+            //existing file is loaded with all it's header, parameters, events, and data
+            C3dWriter writer = new C3dWriter(reader, false);
+
+            //add prameters
+            writer.SetParameter<float>("INFO:BFR_target_lop_percentage_ch1", GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch1);
+            writer.SetParameter<float>("INFO:BFR_target_lop_percentage_ch2", GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch2);
+            writer.SetParameter<float>("INFO:target_contractions_ch1)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms);
+            writer.SetParameter<float>("INFO:target_contractions_ch2)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms);
+            writer.SetParameter<Int16>("INFO:rpe_post_session", GameSessionInfo.Instance.Session.Rpe_post_session);
+
+            //TODO rethink this!!!!!!!!!!!!!!!!!!!!!!
+            writer.Open("new_" + _c3dFile);
+            //float[] analogData = new float[reader.AnalogLabels.Count * reader.AnalogChannels];
+            //short[] analogData_int = new short[reader.AnalogLabels.Count * reader.AnalogChannels];
+
+            for (int i = 0; i < reader.FramesCount; i++)
+            {
+                Vector4[] points = reader.ReadFrame();
+                AnalogDataArray adr = reader.AnalogData;
+
+                if (reader.IsFloat)
+                {
+                    writer.WriteFloatFrame(points);
+
+                    float[] analogData = new float[reader.AnalogLabels.Count];
+
+                    for (int j = 0; j < reader.AnalogChannels; j++)
+                    {
+                        for (int k = 0; k < reader.AnalogLabels.Count; k++)
+                        {
+                            analogData[k] = reader.AnalogData.Data[k, j];
+                        }
+
+                        writer.WriteFloatAnalogData(analogData);
+                    }
+                }
+                else if (reader.IsInterger)
+                {
+                    writer.WriteIntFrame(points);
+
+                    short[] analogData = new short[reader.AnalogLabels.Count];
+
+                    for (int j = 0; j < reader.AnalogChannels; j++)
+                    {
+                        for (int k = 0; k < reader.AnalogLabels.Count; k++)
+                        {
+                            analogData[k] = (short)reader.AnalogData.Data[k, j];
+                        }
+
+                        writer.WriteIntAnalogData(analogData);
+                    }
+                }
+            }
+
+            //re-write the file
+            writer.Close();
+
+            //TODO
+            //re write the old with new file
+        }
+
         public override void OnCursorDown(Vector2 pos)
         {
             base.OnCursorDown(pos);
