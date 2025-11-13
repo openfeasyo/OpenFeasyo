@@ -37,6 +37,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<SignAssembly>False</SignAssembly>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -382,13 +383,9 @@
 		<PackageReference Include="Supabase" Version="1.1.1" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj">
-			<ReferenceSourceTarget></ReferenceSourceTarget>
-		</ProjectReference>
-		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj">
-			<ReferenceSourceTarget></ReferenceSourceTarget>
-		</ProjectReference>
+		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj" />
 		<ProjectReference Include="..\..\..\..\..\Drivers\TrignoAvantiCustom\Platforms\Android\TrignoAvantiCustom.csproj" />
+		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -399,15 +396,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Platforms\Windows\PlatformNavigator.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj">
-			<ReferenceSourceTarget></ReferenceSourceTarget>
-		</ProjectReference>
-		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj">
-			<ReferenceSourceTarget></ReferenceSourceTarget>
-		</ProjectReference>
 	</ItemGroup>
 
 	<ItemGroup>
