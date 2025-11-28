@@ -21,7 +21,7 @@
 ! @ exit line
 ! | side tile
 ! o orange planet
-! r red planet
+! g red planet
 ! p pink planet
 ! b blue planet
 ! * star, 

@@ -29,6 +29,7 @@ namespace GhostlyLib.Elements.Character
         public int Width { get; set; }
         public int Score { get; set; }
         public float OriginalRotation { get; set; }
+        public float CameraOriginalRotation { get; set; }
         public float TargetRotation { get; set; }
         public float CurrentRotation { get; set; }
         public Direction Direction { get; set; }

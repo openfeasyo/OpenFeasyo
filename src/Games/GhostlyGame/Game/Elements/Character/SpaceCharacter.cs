@@ -1,6 +1,5 @@
 ﻿using GhostlyLib.Animations;
 using GhostlyLib.Screens;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostlyLib.Elements.Character
@@ -27,7 +26,7 @@ namespace GhostlyLib.Elements.Character
 
         #endregion Public properties
 
-        public SpaceCharacter(GameScreen gameScreen, LevelElements elements) : base(gameScreen)
+        public SpaceCharacter(GameScreen gameScreen, LevelElements elements, double initialYPosition) : base(gameScreen)
         {
             this._elements = elements;
 
@@ -41,7 +40,7 @@ namespace GhostlyLib.Elements.Character
 
             this.CurrentHealth = 3;
             this.X = 100;
-            this.Y = 300;
+            this.Y = initialYPosition;// 300;
 
             this.AutomaticMovement = AutomaticMovement.MovingForward;
             this.ActionMovement = ActionMovement.None;
@@ -63,7 +62,7 @@ namespace GhostlyLib.Elements.Character
 
             this.Y += (int)this.SpeedY;
 
-            //once the jumping is done (speed& == 0), gravity should apply
+            //once the contraction triggered movement is done (speed == 0), gravity should apply
             if (this.SpeedY == 0 && this.Y < 300)
             {
                 this.Y += GRAVITY;
@@ -71,7 +70,7 @@ namespace GhostlyLib.Elements.Character
             else if (this.SpeedY == 0 && this.Y > 300)
             {
                 this.Y -= GRAVITY;
-            }           
+            }
 
             if (AutomaticMovement.Equals(AutomaticMovement.MovingForward))
             {
@@ -122,6 +121,7 @@ namespace GhostlyLib.Elements.Character
             else
             {
                 this.AutomaticMovement = AutomaticMovement.MovingForward;
+                this.Instruction = Instruction.Release;
             }
 
             IEnumerable<IDrawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Top));
@@ -135,7 +135,7 @@ namespace GhostlyLib.Elements.Character
                 }
             }
 
-            IEnumerable<IDrawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Bottom)); 
+            IEnumerable<IDrawable> tilesBelow = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Bottom));
 
             if (tilesBelow.Count() > 0)
             {
@@ -160,6 +160,14 @@ namespace GhostlyLib.Elements.Character
         {
             this.AutomaticMovement = AutomaticMovement.Blocked;
             this.ActionMovement = ActionMovement.None;
+            if (this.SpeedY == 0)
+            {
+                this.Instruction = Instruction.Contract;
+            }
+            else
+            {
+                this.Instruction = Instruction.Hold;
+            }
         }
 
         public override void BreakLongJump()

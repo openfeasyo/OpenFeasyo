@@ -1,9 +1,8 @@
 using GhostlyGame.Models;
-using GhostlyLib.Activities;
+using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Level;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
-using System.Diagnostics;
 
 namespace GhostlyLib.Elements.Character
 {
@@ -14,6 +13,7 @@ namespace GhostlyLib.Elements.Character
         private float default_target_duration = 3f;
         private int completedRotations = 0;
         //private bool turnInterupted = false;
+        private bool firstPersonRotation = true;
         #endregion Private members
 
         protected float Target_Duration_Left
@@ -48,7 +48,7 @@ namespace GhostlyLib.Elements.Character
         }
 
         public MazeCharacter3D(GameScreen gameScreen, LevelElements elements,
-            BasicEffect standardEffect, BasicEffect leftActionEffect, BasicEffect rightActionEffect) : base(gameScreen, standardEffect, leftActionEffect, rightActionEffect)
+            BasicEffect standardEffect, BasicEffect leftActionEffect, BasicEffect rightActionEffect, bool firstPersonRotation = true) : base(gameScreen, standardEffect, leftActionEffect, rightActionEffect)
         {
             this._elements = elements;
             //this.Animation = ImagesAndAnimations.Instance.SpaceCharacterAnimation;
@@ -70,6 +70,8 @@ namespace GhostlyLib.Elements.Character
             this.Instruction = Instruction.None;
 
             this.IsVisible = true;
+
+            this.firstPersonRotation = firstPersonRotation;
         }
 
         public override void Update(GameTime gameTime)
@@ -82,7 +84,15 @@ namespace GhostlyLib.Elements.Character
             if (this.AutomaticMovement == AutomaticMovement.Blocked)
             {
                 // Update View matrix
-                _3DCamera.UpdateView(this.OriginalRotation + this.CurrentRotation, -0.1f, this.Xi, this.Yi);
+                if (firstPersonRotation)
+                {
+                    _3DCamera.UpdateView(this.OriginalRotation + this.CurrentRotation, -0.1f, this.Xi, this.Yi);
+                }
+                else
+                {
+                    _3DCamera.UpdateView(this.CameraOriginalRotation, -0.1f, this.Xi, this.Yi);
+                }
+
 
                 if (this.RotationStatus == RotationStatus.None)
                 {
@@ -93,7 +103,14 @@ namespace GhostlyLib.Elements.Character
             else
             {
                 // Update View matrix
-                _3DCamera.UpdateView(this.OriginalRotation + this.CurrentRotation, 0.1f, this.Xi, this.Yi);
+                if (firstPersonRotation)
+                {
+                    _3DCamera.UpdateView(this.OriginalRotation + this.CurrentRotation, 0.1f, this.Xi, this.Yi);
+                }
+                else
+                {
+                    _3DCamera.UpdateView(this.CameraOriginalRotation, 0.1f, this.Xi, this.Yi);
+                }
             }
 
 
@@ -250,7 +267,7 @@ namespace GhostlyLib.Elements.Character
 
         private bool TargetRotationReached()
         {
-            Debug.WriteLine("currrentRot " + this.CurrentRotation + " targetRot " + this.TargetRotation);
+            //Debug.WriteLine("currrentRot " + this.CurrentRotation + " targetRot " + this.TargetRotation);
             if (this.TargetRotation < 0) // target is negative, e.g. -90dgrs, -1.57rad
             {
                 //if current rotation exceeds the target rotation but does not exceed it by more than 90 dgr
@@ -333,7 +350,7 @@ namespace GhostlyLib.Elements.Character
         {
             //if the rocket is flying forward, it cannot rotate
             if (this.AutomaticMovement == AutomaticMovement.MovingForward)
-                return;            
+                return;
 
             if (this.RotationDirection == RotationDirection.None)
             {
@@ -344,7 +361,7 @@ namespace GhostlyLib.Elements.Character
 
                 if (GameScreen.Level.GetType() == typeof(MazeLevel3D))
                 {
-                    ((MazeLevel3D)GameScreen.Level).Analytics.UpdateTurn(completedRotations, 1, TileTypeToRotationDirection(this.StandingOn()), RotationDirection.Left);
+                    ((Maze3DLevelAnalytics)((MazeLevel3D)GameScreen.Level).Analytics).UpdateTurn(completedRotations, 1, TileTypeToRotationDirection(this.StandingOn()), RotationDirection.Left);
                 }
             }
             else if (this.RotationDirection == RotationDirection.Right)
@@ -360,7 +377,7 @@ namespace GhostlyLib.Elements.Character
             //if the rocket is flying forward, it cannot rotate
             if (this.AutomaticMovement == AutomaticMovement.MovingForward)
                 return;
-            
+
             if (this.RotationDirection == RotationDirection.None)
             {
                 this.RotationDirection = RotationDirection.Right;
@@ -370,7 +387,7 @@ namespace GhostlyLib.Elements.Character
 
                 if (GameScreen.Level.GetType() == typeof(MazeLevel3D))
                 {
-                    ((MazeLevel3D)GameScreen.Level).Analytics.UpdateTurn(completedRotations, 1, TileTypeToRotationDirection(this.StandingOn()), RotationDirection.Right);
+                    ((Maze3DLevelAnalytics)((MazeLevel3D)GameScreen.Level).Analytics).UpdateTurn(completedRotations, 1, TileTypeToRotationDirection(this.StandingOn()), RotationDirection.Right);
                 }
             }
             else if (this.RotationDirection == RotationDirection.Left)

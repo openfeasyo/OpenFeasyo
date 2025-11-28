@@ -90,6 +90,7 @@
 		<Compile Include="..\..\..\Game\Animations\OnetimeAnimation.cs" Link="Animations\OnetimeAnimation.cs" />
 		<Compile Include="..\..\..\Game\Animations\ThreeDEffects.cs" Link="Animations\ThreeDEffects.cs" />
 		<Compile Include="..\..\..\Game\Drawing\DrawingEngine.cs" Link="Drawing\DrawingEngine.cs" />
+		<Compile Include="..\..\..\Game\DynamicDifficulty\DifficultyLevelDefinition.cs" Link="DynamicDifficulty\DifficultyLevelDefinition.cs" />
 		<Compile Include="..\..\..\Game\DynamicDifficulty\LevelAnalytics.cs" Link="DynamicDifficulty\LevelAnalytics.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\EarthCharacter.cs" Link="Elements\Character\EarthCharacter.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\GameCharacter.cs" Link="Elements\Character\GameCharacter.cs" />
@@ -97,6 +98,8 @@
 		<Compile Include="..\..\..\Game\Elements\Character\IGameCharacter.cs" Link="Elements\Character\IGameCharacter.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\MazeCharacter3D.cs" Link="Elements\Character\MazeCharacter3D.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\RockCharacter.cs" Link="Elements\Character\RockCharacter.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\SimpleMazeCharacter3D.cs" Link="Elements\Character\SimpleMazeCharacter3D.cs" />
+		<Compile Include="..\..\..\Game\Elements\Character\SimpleSpaceCharacter.cs" Link="Elements\Character\SimpleSpaceCharacter.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\SpaceCharacter.cs" Link="Elements\Character\SpaceCharacter.cs" />
 		<Compile Include="..\..\..\Game\Elements\Character\WaterCharacter.cs" Link="Elements\Character\WaterCharacter.cs" />
 		<Compile Include="..\..\..\Game\Elements\Coin.cs" Link="Elements\Coin.cs" />
@@ -146,6 +149,8 @@
 		<Compile Include="..\..\..\Game\Level\Level3D.cs" Link="Level\Level3D.cs" />
 		<Compile Include="..\..\..\Game\Level\MazeLevel3D.cs" Link="Level\MazeLevel3D.cs" />
 		<Compile Include="..\..\..\Game\Level\RockLevel.cs" Link="Level\RockLevel.cs" />
+		<Compile Include="..\..\..\Game\Level\SimpleMazeLevel3D.cs" Link="Level\SimpleMazeLevel3D.cs" />
+		<Compile Include="..\..\..\Game\Level\SimpleSpaceLevel.cs" Link="Level\SimpleSpaceLevel.cs" />
 		<Compile Include="..\..\..\Game\Level\SpaceLevel.cs" Link="Level\SpaceLevel.cs" />
 		<Compile Include="..\..\..\Game\Level\WaterLevel.cs" Link="Level\WaterLevel.cs" />
 		<Compile Include="..\..\..\Game\Screens\GameScreen.cs" Link="Screens\GameScreen.cs" />
@@ -345,6 +350,13 @@
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map188.txt" Link="Content\Levels\Ghostly\maze\map188.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map189.txt" Link="Content\Levels\Ghostly\maze\map189.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map190.txt" Link="Content\Levels\Ghostly\maze\map190.txt" />
+
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleMaze\map191.txt" Link="Content\Levels\Ghostly\simpleMaze\map191.txt" />
+		
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map221.txt" Link="Content\Levels\Ghostly\simpleSpace\map221.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map222.txt" Link="Content\Levels\Ghostly\simpleSpace\map222.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map223.txt" Link="Content\Levels\Ghostly\simpleSpace\map223.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map224.txt" Link="Content\Levels\Ghostly\simpleSpace\map224.txt" />
 	</ItemGroup>
 		
 	<ItemGroup>
@@ -352,6 +364,8 @@
 		<Folder Include="Content\Levels\Ghostly\ice\" />
 		<Folder Include="Content\Levels\Ghostly\land\" />
 		<Folder Include="Content\Levels\Ghostly\maze\" />
+		<Folder Include="Content\Levels\Ghostly\simpleMaze\" />
+		<Folder Include="Content\Levels\Ghostly\simpleSpace\" />
 		<Folder Include="Content\Levels\Ghostly\space\" />
 		<Folder Include="Content\Levels\Ghostly\water\" />
 		<Folder Include="Content\Levels\Ghostly\rock\" />
@@ -386,10 +400,6 @@
 		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj" />
 		<ProjectReference Include="..\..\..\..\..\Drivers\TrignoAvantiCustom\Platforms\Android\TrignoAvantiCustom.csproj" />
 		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Content\" />
 	</ItemGroup>
 	<ItemGroup>
 		<MonoGameContentReference Include="..\..\..\Content\Content.mgcb" Link="Content\Content.mgcb" />

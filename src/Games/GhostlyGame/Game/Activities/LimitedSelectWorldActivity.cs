@@ -18,7 +18,7 @@ namespace GhostlyLib.Activities
     {
         public LimitedSelectWorldActivity(UIEngine engine) : base(engine) {
 
-            float cell = engine.Screen.ScreenHeight / 9;
+            float cell = engine.Screen.ScreenHeight / 10;
 
             Image backgroundImage = new Image(_engine.Content.LoadTexture("textures/ghostly/menu_background"));
             backgroundImage.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
@@ -41,14 +41,24 @@ namespace GhostlyLib.Activities
             world3Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 161, 190)); };
             world3Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - world3Button.Size / 2;
 
+            TextButton world4Button = new TextButton("Simple Maze", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            world4Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 191, 200)); };
+            world4Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 6) - world4Button.Size / 2;
+
+            TextButton world5Button = new TextButton("Simple Space", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            world5Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 221, 225)); };
+            world5Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - world4Button.Size / 2;
+
             TextButton allWorldsButton = new TextButton("All Worlds", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
-            allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - allWorldsButton.Size / 2;
+            allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 9) - allWorldsButton.Size / 2;
                         
             Components.Add(infoLabel);
             Components.Add(world1Button);
             Components.Add(world2Button);
             Components.Add(world3Button);
+            Components.Add(world4Button);
+            Components.Add(world5Button);
 
             Components.Add(allWorldsButton);
         }

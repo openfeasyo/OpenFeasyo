@@ -110,7 +110,7 @@ namespace GhostlyLib.Screens
         public void LoadNextLevel()
         {
             this.CurrentLevel += 1;
-            this.CurrentLevel = Math.Min(this.CurrentLevel, 190); // Max level cannot exceed 190
+            this.CurrentLevel = Math.Min(this.CurrentLevel, 224);// 191); // Max level cannot exceed 190
             LoadLevel();
         }
 
@@ -208,6 +208,36 @@ namespace GhostlyLib.Screens
                 GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms = Math.Min((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms + 1000, 10000);
             }
             else { }//no change   
+        }
+
+        public void UpdateDifficultyLevel(int evaluation)
+        {
+            if (evaluation < 0)
+            {
+                //decrease
+                if (GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
+                {
+                    GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = Math.Max((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel - 1, 1);
+                }
+                else
+                {
+                    GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 1;
+                }
+            }
+            else if (evaluation > 0)
+            {
+                //increase
+                if (GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
+                {
+                    GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = Math.Min((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel + 1, 27);
+                }
+                else
+                {
+                    GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 2;
+                }
+
+            }
+            else { }    //no change
         }
     }
 

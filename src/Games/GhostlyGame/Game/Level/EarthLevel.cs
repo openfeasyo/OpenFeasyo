@@ -13,6 +13,7 @@
  * within i-DEPOT holding reference number: 122388.
  */
 using GhostlyLib.Animations;
+using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;
@@ -71,22 +72,9 @@ namespace GhostlyLib.Level
 
         public override Texture2D BackgroundFurthest { get { return ImagesAndAnimations.Instance.BackgroundFurthest; } }
 
-        public override Texture2D BluePlanet { get { return null; } }
-        public override Texture2D YellowPlanet { get { return null; } }
-        public override Texture2D OrangePlanet { get { return null; } }
-        public override Texture2D PinkPlanet { get { return null; } }
-        public override Texture2D RedPlanet { get { return null; } }
-        public override Texture2D Star { get { return null; } }
-
         public override Texture2D ExitSign { get { return ImagesAndAnimations.Instance.ExitDoor; } }
 
-        public override Texture2D Ufo { get { return null; } }
-
-        public override Texture2D Debris { get { return null; } }
-
-        public override Texture2D SpaceSpiral { get { return null; } }
-
-        public override Texture2D SpaceMist { get { return null; } }
+        public override LevelAnalytics Analytics { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
 
         #endregion Public members
 

@@ -15,7 +15,6 @@
 using GhostlyLib.Animations;
 using GhostlyLib.Elements.Weapons;
 using GhostlyLib.Screens;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace GhostlyLib.Elements.Character

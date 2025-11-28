@@ -1,4 +1,5 @@
 ﻿using GhostlyLib.Animations;
+using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;
@@ -55,24 +56,186 @@ namespace GhostlyLib.Level
 
         public override IGameCharacter Character { get; set; }
 
-        public override Texture2D BluePlanet { get { return ImagesAndAnimations.Instance.BluePlanet; } }
-        public override Texture2D YellowPlanet { get { return ImagesAndAnimations.Instance.YellowPlanet; } }
-        public override Texture2D OrangePlanet { get { return ImagesAndAnimations.Instance.OrangePlanet; } }
-        public override Texture2D PinkPlanet { get { return ImagesAndAnimations.Instance.PinkPlanet; } }
-        public override Texture2D RedPlanet { get { return ImagesAndAnimations.Instance.RedPlanet; } }
-        public override Texture2D Star { get { return ImagesAndAnimations.Instance.Star; } }
-        public override Texture2D Ufo { get { return ImagesAndAnimations.Instance.Ufo; } }
-        public override Texture2D Debris { get { return ImagesAndAnimations.Instance.Debris; } }
         public override Texture2D ExitSign { get { return ImagesAndAnimations.Instance.ExitLine; } }
-        public override Texture2D SpaceSpiral { get { return ImagesAndAnimations.Instance.SpaceSpiral; } }
-        public override Texture2D SpaceMist { get { return ImagesAndAnimations.Instance.SpaceMist; } }
+
+        public Texture2D BluePlanet { get { return ImagesAndAnimations.Instance.BluePlanet; } }
+        public Texture2D YellowPlanet { get { return ImagesAndAnimations.Instance.YellowPlanet; } }
+        public Texture2D OrangePlanet { get { return ImagesAndAnimations.Instance.OrangePlanet; } }
+        public Texture2D PinkPlanet { get { return ImagesAndAnimations.Instance.PinkPlanet; } }
+        public Texture2D RedPlanet { get { return ImagesAndAnimations.Instance.RedPlanet; } }
+        public Texture2D Star { get { return ImagesAndAnimations.Instance.Star; } }
+        public Texture2D Ufo { get { return ImagesAndAnimations.Instance.Ufo; } }
+        public Texture2D Debris { get { return ImagesAndAnimations.Instance.Debris; } }
+        public Texture2D DebrisLong { get { return ImagesAndAnimations.Instance.DebrisLong; } }
+        public Texture2D PurpleDebris { get { return ImagesAndAnimations.Instance.PurpleDebris; } }
+        public Texture2D PurpleDebrisLong { get { return ImagesAndAnimations.Instance.PurpleDebrisLong; } }
+        public Texture2D RedDebris { get { return ImagesAndAnimations.Instance.RedDebris; } }
+        public Texture2D RedDebrisLong { get { return ImagesAndAnimations.Instance.RedDebrisLong; } }
+        public Texture2D DebrisRocks { get { return ImagesAndAnimations.Instance.DebrisRocks; } }
+        
+        public Texture2D SpaceSpiral { get { return ImagesAndAnimations.Instance.SpaceSpiral; } }
+        public Texture2D SpaceMist { get { return ImagesAndAnimations.Instance.SpaceMist; } }
+
+        public Texture2D FallingStars { get { return ImagesAndAnimations.Instance.FallingStars; } }
+        public Texture2D OrangeMist { get { return ImagesAndAnimations.Instance.OrangeMist; } }
+        public Texture2D BlueLine { get { return ImagesAndAnimations.Instance.BlueLine; } }
+
+        public override LevelAnalytics Analytics { get; protected set; }
 
         #endregion Public members
 
-        public SpaceLevel(GameScreen gameScreen, LevelElements elements) : base(gameScreen)
+        public SpaceLevel(GameScreen gameScreen, LevelElements elements, double initialYPosition) : base(gameScreen)
         {
             this._elements = elements;
-            this.Character = new SpaceCharacter(gameScreen, elements);
+            this.Character = new SpaceCharacter(gameScreen, elements, initialYPosition);
+        }
+
+        public override void LoadMap(String p, double checkpoint)
+        {
+            String line;
+            List<String> lines = new List<String>();
+            int width = 0;
+            System.IO.StreamReader file = loadFile(p);
+
+            while ((line = file.ReadLine()) != null)
+            {
+                if (!line.StartsWith("!"))
+                {
+                    lines.Add(line);
+                    width = Math.Max(width, line.Length);
+                }
+            }
+
+            for (int j = 0; j < lines.Count; j++)
+            {
+                line = lines[j];
+                for (int i = 0; i < width; i++)
+                {
+                    if (i < line.Length)
+                    {
+                        char ch = line[i];
+
+                        Drawable d = null;
+
+                        if (ch.Equals('|'))
+                        {
+                            d = new Tile(i, j, TileType.InvisibleTile, this.Elements, this.Invisible, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('e'))
+                        {
+                            d = new Tile(i, j, TileType.Exit, this.Elements, this.ExitArea, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('@'))
+                        {
+                            d = new Tile(i, j, TileType.ExitSign, this.Elements, this.ExitSign, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('c'))    //checkpoint
+                        {
+                            d = new Tile(i, j, TileType.Checkpoint, this.Elements, this.Invisible, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('b'))
+                        {
+                            d = new Tile(i, j, 80, 80, TileType.Planet, this.Elements, this.BluePlanet, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('o'))
+                        {
+                            d = new Tile(i, j, 80, 62, TileType.Planet, this.Elements, this.OrangePlanet, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('p'))
+                        {
+                            d = new Tile(i, j, 80, 62, TileType.Planet, this.Elements, this.PinkPlanet, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('g'))
+                        {
+                            d = new Tile(i, j, 80, 62, TileType.Planet, this.Elements, this.RedPlanet, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('y'))
+                        {
+                            d = new Tile(i, j, 80, 80, TileType.Planet, this.Elements, this.YellowPlanet, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('*'))
+                        {
+                            d = new Star(i, j, this.Elements, this.Star, this.GameScreen, checkpoint);
+                        }
+                        /*else if (ch.Equals('u'))
+                        {
+                            d = new Tile(i, j, 80, 80, TileType.Ufo, this.Elements, this.Ufo, this.GameScreen, checkpoint);
+                        }*/
+                        else if (ch.Equals('d'))
+                        {
+                            d = new Tile(i, j, 160, 320, TileType.Debris, this.Elements, this.Debris, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('D'))
+                        {
+                            d = new Tile(i, j, 160, 480, TileType.DebrisLong, this.Elements, this.DebrisLong, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('l'))
+                        {
+                            d = new Tile(i, j, 160, 480, TileType.PurpleDebris, this.Elements, this.PurpleDebris, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('L'))
+                        {
+                            d = new Tile(i, j, 160, 560, TileType.PurpleDebrisLong, this.Elements, this.PurpleDebrisLong, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('v'))
+                        {
+                            d = new Tile(i, j, 160, 480, TileType.RedDebris, this.Elements, this.RedDebris, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('V'))
+                        {
+                            d = new Tile(i, j, 160, 560, TileType.RedDebrisLong, this.Elements, this.RedDebrisLong, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('s'))
+                        {
+                            d = new Tile(i, j, 400, 400, TileType.SpaceSpiral, this.Elements, this.SpaceSpiral, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('i'))
+                        {
+                            d = new Tile(i, j, 400, 400, TileType.SpaceMist, this.Elements, this.SpaceMist, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('k'))
+                        {
+                            d = new Tile(i, j, 40, 40, TileType.DebrisRocks, this.Elements, this.DebrisRocks, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('{'))
+                        {
+                            d = new Tile(i, j, 40, 720, TileType.PullUp, this.Elements, this.Invisible, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('}'))
+                        {
+                            d = new Tile(i, j, 40, 720, TileType.PullDown, this.Elements, this.Invisible, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('f')) //falling stars
+                        {
+                            d = new Tile(i, j, 400, 560, TileType.FallingStars, this.Elements, this.FallingStars, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('q')) //orange mist
+                        {
+                            d = new Tile(i, j, 400, 440, TileType.OrangeMist, this.Elements, this.OrangeMist, this.GameScreen, checkpoint);
+                        }
+                        else if (ch.Equals('w')) //blue line
+                        {
+                            d = new Tile(i, j, 400, 560, TileType.BlueLine, this.Elements, this.BlueLine, this.GameScreen, checkpoint);
+                        }
+                        else if (Char.IsNumber(ch))
+                        {
+                            int coinValue = Int16.Parse(Char.GetNumericValue(ch).ToString());
+                            if (coinValue == 1 || coinValue == 2 || coinValue == 3)
+                            {
+                                d = new Coin(i, j, coinValue, this.Elements, this.GameScreen, checkpoint);
+                                this.MaxScore += ((Coin)d).Value;
+                            }
+                        }
+
+                        if (d != null)
+                        {
+                            this.Elements.AddElement(d);
+                        }
+                    }
+                }
+            }
+
+            file.Close();
         }
 
         public override Enemy CreateBlackEnemy(int i, int j, double checkpoint) { return null; }

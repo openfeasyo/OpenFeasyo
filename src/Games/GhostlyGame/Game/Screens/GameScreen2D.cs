@@ -1,4 +1,6 @@
-﻿using GhostlyLib.Animations;
+﻿using GhostlyGame.Models;
+using GhostlyLib.Animations;
+using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Level;
@@ -9,27 +11,39 @@ namespace GhostlyLib.Screens
 {
     public class GameScreen2D : GameScreen
     {
-        public override float SPEED { get { return 3f; } }
+        #region Private members
+        private Vector3 Position { get; set; }
         //private double _checkpoint = 0;
+        #endregion Private members
 
-        #region Public properties
+        #region Public members
+
+        public override float SPEED
+        {
+            get
+            {
+                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
+                {
+                    switch (DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).restDuration)
+                    {
+                        case 10:
+                            return 1f;
+                        case 6:
+                            return 1.5f;
+                        default:
+                            return 3f;
+                    }
+                }
+                return 3f;
+            }
+        }
+
+
+        #endregion Public members
 
         public GameScreen2D(int level, MusicPlayer player, OpenFeasyo.GameTools.Screen screen) : base(level, player, screen)
         {
         }
-
-        /*public int Completion
-        {
-            get
-            {
-                return (int)(((double)GameCharacter.Score / Level.MaxScore) * 100);
-            }
-        }*/
-
-
-        private Vector3 Position { get; set; }
-
-        #endregion Public properties
 
         public override void Initialize()
         {
@@ -68,7 +82,7 @@ namespace GhostlyLib.Screens
                 this.Level.LoadMap("ice.map" + this.CurrentLevel + ".txt", this.Checkpoint);
                 this.GameBackground.SetParallaxLayers(new List<Texture2D> { ((ILevel2D)Level).BackgroundFurthest, ((ILevel2D)Level).BackgroundClose, ((ILevel2D)Level).BackgroundClosest });
             }
-            else if (this.CurrentLevel <= 140)
+            else if (this.CurrentLevel <= 140)  //Land Levels - Ruben designed levels
             {
                 this.Level = new RockLevel(this, this.Elements);
                 this.Level.LoadMap("land.map" + this.CurrentLevel + ".txt", this.Checkpoint);
@@ -76,9 +90,15 @@ namespace GhostlyLib.Screens
             }
             else if (this.CurrentLevel <= 160)
             {
-                this.Level = new SpaceLevel(this, this.Elements);
+                this.Level = new SpaceLevel(this, this.Elements, 300);
                 this.Level.LoadMap("space.map" + this.CurrentLevel + ".txt", this.Checkpoint);
                 this.GameBackground.SetParallaxLayers(new List<Texture2D> { ((ILevel2D)Level).BackgroundFurthest, ((ILevel2D)Level).BackgroundClose, ((ILevel2D)Level).BackgroundCloser });//, _level.BackgroundClosest });
+            }
+            else if (this.CurrentLevel > 220 && this.CurrentLevel <= 250)
+            {
+                this.Level = new SimpleSpaceLevel(this, this.Elements, 100);
+                this.Level.LoadMap("simpleSpace.map" + this.CurrentLevel + ".txt", this.Checkpoint);
+                this.GameBackground.SetParallaxLayers(new List<Texture2D> { ((ILevel2D)Level).BackgroundFurthest, ((ILevel2D)Level).BackgroundClose, ((ILevel2D)Level).BackgroundCloser });
             }
 
             this.GameCharacter = this.Level.Character;
@@ -138,9 +158,10 @@ namespace GhostlyLib.Screens
             DrawOnetimeAnimations(spriteBatch);
 
             float position = 15;
-
-            spriteBatch.DrawString(Font[2], "Level: " + this.CurrentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
-
+            if (!(this.Level is SpaceLevel) || !(this.Level is SimpleSpaceLevel)) // for space levels don't show level info, it covers the space ship
+            {
+                spriteBatch.DrawString(Font[2], "Level: " + this.CurrentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
+            }
             position = Font[2].MeasureString("Level: " + this.CurrentLevel.ToString()).X + 100;
 
             switch (this.GameCharacter.CurrentHealth)
@@ -162,6 +183,27 @@ namespace GhostlyLib.Screens
             position += 153;
 
             spriteBatch.DrawString(Font[2], "Score: " + GameCharacter.Score.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
+
+
+            //Draw instruction in the middle of the screen
+            switch (this.GameCharacter.Instruction)
+            {
+                case Instruction.Contract:
+                    spriteBatch.DrawString(this.Font[2], "Contract", new Vector2(320, 100), Color.Red);
+                    break;
+                case Instruction.Hold:
+                    spriteBatch.DrawString(this.Font[2], "Hold", new Vector2(320, 100), Color.Orange);
+                    break;
+                case Instruction.Release:
+                    spriteBatch.DrawString(this.Font[2], "Release", new Vector2(320, 100), Color.Green);
+                    break;
+                default:
+                    break;
+            }
+
+            //print minutes:seconds since the start of the app
+            //TODO: consider what time needs to be shown and how to calculate it
+            spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(300, 430), Color.FromNonPremultiplied(11, 206, 196, 256));
         }
 
         private void DrawOnetimeAnimations(SpriteBatch spriteBatch)
@@ -175,6 +217,13 @@ namespace GhostlyLib.Screens
         private void KeyboardUpdate()
         {
             KeyboardState state = Keyboard.GetState();
+
+            if ((this.Level is SimpleSpaceLevel && ((SimpleSpaceCharacter)this.GameCharacter).ActionMovement == ActionMovement.Left && (state.IsKeyUp(Keys.Left)))
+                ||
+                (this.Level is SimpleSpaceLevel && ((SimpleSpaceCharacter)this.GameCharacter).ActionMovement == ActionMovement.Right && (state.IsKeyUp(Keys.Right))))
+            {
+                ((SimpleSpaceCharacter)GameCharacter).StopLeftRightMovement();
+            }
 
             if (state.IsKeyDown(Keys.Up) && this.State.Equals(GameState.Running))
             {
@@ -194,14 +243,14 @@ namespace GhostlyLib.Screens
             }
             else if (state.IsKeyDown(Keys.Left) && this.State.Equals(GameState.Running))
             {
-                if (this.Level is SpaceLevel)
+                if (this.Level is SpaceLevel || this.Level is SimpleSpaceLevel)
                 {
                     ((GameCharacter)this.GameCharacter).MoveLeft();
                 }
             }
             else if (state.IsKeyDown(Keys.Right) && this.State.Equals(GameState.Running))
             {
-                if (this.Level is SpaceLevel)
+                if (this.Level is SpaceLevel || this.Level is SimpleSpaceLevel)
                 {
                     ((GameCharacter)this.GameCharacter).MoveRight();
                 }

@@ -22,7 +22,7 @@ namespace GhostlyLib.Level
         public BasicEffect Star { get { return ThreeDEffects.Instance.Star; } }
         public int MaxScore { get; set; }
         public GameScreen GameScreen { get { return gameScreen; } }
-        public LevelAnalytics Analytics { get; private set; }
+        public abstract LevelAnalytics Analytics { get; }
         #endregion Public members
 
         #region Abstract members
@@ -35,7 +35,7 @@ namespace GhostlyLib.Level
         protected Level3D(GameScreen gameScreen)
         {
             this.gameScreen = gameScreen;
-            this.Analytics = new LevelAnalytics();
+            //this.Analytics = new Maze3DLevelAnalytics();
         }
         
         public void LoadMap(String p, double checkpoint)
@@ -142,6 +142,7 @@ namespace GhostlyLib.Level
             ((GameCharacter3D)this.Character).X = i * 40; // i * 0.4f; //40; //40 is the standard tile size
             ((GameCharacter3D)this.Character).Y = j * 40; // j * 0.4f; // 40;
             ((GameCharacter3D)this.Character).OriginalRotation = rotationAngle;
+            ((GameCharacter3D)this.Character).CameraOriginalRotation = rotationAngle;
             ((GameCharacter3D)this.Character).Direction = direction;
 
             ((GameScreen3D)this.GameScreen).LevelEntryPoint = new Vector2(i, j);

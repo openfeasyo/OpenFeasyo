@@ -56,6 +56,12 @@ namespace GhostlyLib.Screens
                 this.Level.LoadMap("maze.map" + this.CurrentLevel + ".txt", 0);
                 this.GameCharacter = ((MazeLevel3D)this.Level).Character;
             }
+            else if (CurrentLevel > 190)
+            { 
+                this.Level = new SimpleMazeLevel3D(this, this.Elements);
+                this.Level.LoadMap("simpleMaze.map" + this.CurrentLevel + ".txt", 0);
+                this.GameCharacter = ((SimpleMazeLevel3D)this.Level).Character;
+            }
 
             GhostlyActionHandlers.CurrentLevel = this.Level;
         }
@@ -66,7 +72,6 @@ namespace GhostlyLib.Screens
             //TODO should this be here???
             this.Level.ProcessPrimaryAction(EmgState.Primary);
             this.Level.ProcessSecondaryAction(EmgState.Secondary);
-
 
             this.GameCharacter.Update(gameTime);
 
@@ -89,7 +94,7 @@ namespace GhostlyLib.Screens
 
         public override void Update(GameTime gameTime)
         {
-            //KeyboardUpdate();
+            KeyboardUpdate();
 
             if (this.State.Equals(GameState.Running))
             {

@@ -65,5 +65,8 @@ namespace GhostlyGame.Models
 
         [Column("last_assesment_date")]
         public DateTime? LastAssesmentDate { get; set; }
+
+        [Column("difficulty_level")]
+        public int? DifficultyLevel { get; set; }
     }
 }

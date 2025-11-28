@@ -49,7 +49,7 @@ namespace GhostlyLib.Elements
     }
 
     public enum Instruction
-    { 
+    {
         None,
         Contract,
         Hold,
@@ -141,10 +141,27 @@ namespace GhostlyLib.Elements
         Ufo,
         Debris,
         DebrisLong,
+        DebrisRocks,
         SpaceSpiral,
         SpaceMist,
         FinishLine,
         LeftRotation,
-        RightRotation
+        RightRotation,
+        PullUp,
+        PullDown,
+        FallingStars,
+        OrangeMist,
+        BlueLine,
+        PurpleDebris,
+        PurpleDebrisLong,
+        RedDebris,
+        RedDebrisLong
+    }
+
+    public enum Pull
+    {
+        No,
+        Up,
+        Down
     }
 }

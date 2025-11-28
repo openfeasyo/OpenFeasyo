@@ -1,4 +1,4 @@
-              d   d   d                           d   d   d                                                                                                     i                      r              d   d   d                        c    d   d   d                            d   d   d                                                                                                                                          i                      r          *      e
+              d   d   d                           d   d   d                                                                                                     i                      g              d   d   d                        c    d   d   d                            d   d   d                                                                                                                                          i                      g          *      e
                                                                                         i                               d   d   d                                                                                                      c                                                                               i                                  s                                    d   d   d                                                              *      e
                                                                           *                                                                                                    o            p                                   *      c                                                                *                                                                                                               *                         o            p      *      e
                                   *                                 *                                                                                                              y                                       *           c                         *                                  *                                                                        *                                                                          y             *      e
@@ -21,7 +21,7 @@
 ! @ exit line
 ! | side tile
 ! o orange planet
-! r red planet
+! g red planet
 ! p pink planer
 ! b blue platen
 ! * star, 

@@ -9,7 +9,8 @@ namespace GhostlyLib.Elements.Character
         int Height { get; protected set; }
         int Width { get; protected set; }
         int Score { get; set; }
-        public float OriginalRotation { get; set; } // how the character was rotated at the start of the game / before rotation on turns started
+        float OriginalRotation { get; set; } // how the character was rotated at the start of the game / before rotation on turns started
+        float CameraOriginalRotation { get; set; }
         float TargetRotation { get; set; }
         float CurrentRotation { get; set; } // used in character sprite drawing, i.e., rotation of the original image
         Direction Direction { get; set; }

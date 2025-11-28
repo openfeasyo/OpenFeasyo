@@ -13,6 +13,7 @@
  * within i-DEPOT holding reference number: 122388.
  */
 using GhostlyLib.Animations;
+using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;
@@ -24,8 +25,11 @@ namespace GhostlyLib.Level
 {
     public abstract class Level : ILevel2D
     {
+        #region Private members
         private GameScreen gameScreen;
+        #endregion Private members
 
+        #region Public Abstract members
         public abstract Texture2D Background { get; }
         public abstract Texture2D BackgroundClosest { get; }
         public abstract Texture2D BackgroundCloser { get; }
@@ -48,6 +52,13 @@ namespace GhostlyLib.Level
         public abstract EnemyAnimation YellowEnemyAnimation { get; }
         public abstract Texture2D ExitSign { get; }
 
+        public abstract IGameCharacter Character { get; set; }
+
+        public abstract LevelAnalytics Analytics { get; protected set; }
+
+        #endregion Public Abstract members
+
+        #region Public members
         public Texture2D Crate { get { return ImagesAndAnimations.Instance.Crate; } }
         public Texture2D DeepLava { get { return ImagesAndAnimations.Instance.DeepLava; } }
         public Texture2D DeepWater { get { return ImagesAndAnimations.Instance.DeepWater; } }
@@ -57,29 +68,17 @@ namespace GhostlyLib.Level
         public Texture2D Invisible { get { return ImagesAndAnimations.Instance.InvisibleTile; } }
         public Texture2D Lava { get { return ImagesAndAnimations.Instance.Lava; } }
         public Texture2D Water { get { return ImagesAndAnimations.Instance.Water; } }
-
-        //Textures for space levels
-        public abstract Texture2D BluePlanet { get; }
-        public abstract Texture2D YellowPlanet { get; }
-        public abstract Texture2D OrangePlanet { get; }
-        public abstract Texture2D PinkPlanet { get;}
-        public abstract Texture2D RedPlanet { get; }
-
-        public abstract Texture2D Star { get; }
-        public abstract Texture2D Ufo { get; }
-        public abstract Texture2D Debris { get; }
-        public abstract Texture2D SpaceSpiral { get; }
-        public abstract Texture2D SpaceMist { get; }
+        public Texture2D Star { get { return ImagesAndAnimations.Instance.Star; } }
 
         public int MaxScore { get; set; }
-
-        //public abstract GameCharacter Character { get; protected set; }
-
+                
         public GameScreen GameScreen { get { return gameScreen; } }
 
-        public abstract IGameCharacter Character { get; set; }
+        #endregion Public members        
 
-        protected Level(GameScreen gameScreen) {
+        
+        protected Level(GameScreen gameScreen)
+        {
             this.gameScreen = gameScreen;
         }
 
@@ -91,22 +90,31 @@ namespace GhostlyLib.Level
         public abstract Enemy CreateRedEnemy(int i, int j, double checkpoint);
         public abstract Enemy CreateYellowEnemy(int i, int j, double checkpoint);
 
-        public void LoadMap(String p, double checkpoint)
+
+        protected System.IO.StreamReader loadFile(String p)
         {
-            String line;
-            List<String> lines = new List<String>();
-            int width = 0;
             System.IO.StreamReader file;
             if (File.Exists("Levels/" + p))
             {
                 file = new System.IO.StreamReader("Levels/" + p);
             }
-            else { 
+            else
+            {
                 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(Level)).Assembly;
                 string[] res = assembly.GetManifestResourceNames();
                 Stream stream = assembly.GetManifestResourceStream("GhostlyGame.Content.Levels.Ghostly." + p);
                 file = new System.IO.StreamReader(stream);
-            }
+            }           
+
+            return file;
+        }
+
+        public virtual void LoadMap(String p, double checkpoint)
+        {
+            String line;
+            List<String> lines = new List<String>();
+            int width = 0;
+            System.IO.StreamReader file = loadFile(p);
 
             while ((line = file.ReadLine()) != null)
             {
@@ -211,50 +219,6 @@ namespace GhostlyLib.Level
                         else if (ch.Equals('Y'))
                         {
                             d = this.CreateYellowEnemy(i, j, checkpoint);
-                        }
-                        else if (ch.Equals('b'))
-                        {
-                            d = new Tile(i, j, 80, 80, TileType.Planet, this.Elements, this.BluePlanet, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('o'))
-                        {
-                            d = new Tile(i, j, 80, 62, TileType.Planet, this.Elements, this.OrangePlanet, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('p'))
-                        {
-                            d = new Tile(i, j, 80, 62, TileType.Planet, this.Elements, this.PinkPlanet, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('r'))
-                        {
-                            d = new Tile(i, j, 80, 62, TileType.Planet, this.Elements, this.RedPlanet, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('y'))
-                        {
-                            d = new Tile(i, j, 80, 80, TileType.Planet, this.Elements, this.YellowPlanet, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('*'))
-                        {
-                            d = new Star(i, j, this.Elements, this.Star, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('u'))
-                        {
-                            d = new Tile(i, j, 80, 80, TileType.Ufo, this.Elements, this.Ufo, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('d'))
-                        {
-                            d = new Tile(i, j, 160, 320, TileType.Debris, this.Elements, this.Debris, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('D'))
-                        {
-                            d = new Tile(i, j, 160, 480, TileType.DebrisLong, this.Elements, this.Debris, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('s'))
-                        {
-                            d = new Tile(i, j, 400, 400, TileType.SpaceSpiral, this.Elements, this.SpaceSpiral, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('i'))
-                        {
-                            d = new Tile(i, j, 400, 400, TileType.SpaceMist, this.Elements, this.SpaceMist, this.GameScreen, checkpoint);
                         }
                         else if (Char.IsNumber(ch))
                         {

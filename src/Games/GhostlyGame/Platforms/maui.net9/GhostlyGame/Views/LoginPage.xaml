@@ -13,7 +13,7 @@
                FontSize="120"
                FontFamily="Vitamin"
                Padding="10,40,10,20"/>
-        
+
         <Entry x:Name="username"
                Placeholder="Enter username"
                PlaceholderColor="#393939"
@@ -56,5 +56,41 @@
             FontFamily="Vitamin"
             FontSize="Large"
             Padding="20"/>
+
+        <HorizontalStackLayout>
+            <Button
+                x:Name="FR_lang"
+                Text="FR"
+                Clicked="OnFR_langClicked"
+                HorizontalOptions="Center"
+                Background="#0BCEC4"
+                TextColor="White"
+                FontFamily="Vitamin"
+                FontSize="Large"
+                Padding="20"/>
+
+            <Button
+                x:Name="NL_lang"
+                Text="NL"
+                Clicked="OnNL_langClicked"
+                HorizontalOptions="Center"
+                Background="#0BCEC4"
+                TextColor="White"
+                FontFamily="Vitamin"
+                FontSize="Large"
+                Padding="20"/>
+
+            <Button
+                x:Name="EN_lang"
+                Text="EN"
+                Clicked="OnEN_langClicked"
+                HorizontalOptions="Center"
+                Background="#0BCEC4"
+                TextColor="White"
+                FontFamily="Vitamin"
+                FontSize="Large"
+                Padding="20"/>
+            
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

@@ -43,11 +43,11 @@ namespace GhostlyLib.Activities
 
         public GamePlayActivity(UIEngine engine, int level, string intputConfig) : base(engine)
         {
-            if (level >= 161 && level <= 190)
+            if (level >= 161 && level <= 220)//190) //3D maze levels
             {
                 _screen = new GameScreen3D(level, engine.MusicPlayer, engine.Screen, engine.Device);
             }
-            else
+            else    //2D levels
             {
                 _screen = new GameScreen2D(level, engine.MusicPlayer, engine.Screen);
             }
@@ -99,7 +99,7 @@ namespace GhostlyLib.Activities
             {
                 Components.Remove(_levelDonePanel);
 
-                if (_screen.CurrentLevel == 160)
+                if (_screen.CurrentLevel == 220)
                 {
                     //levels 161+ are 3D levels
                     //we need to go back to main menu, to select maze game explicitly, to initialize GameScreen3D,
@@ -179,8 +179,11 @@ namespace GhostlyLib.Activities
             Vector2 offset = new Vector2(engine.Screen.ScreenWidth * 0.08f, engine.Screen.ScreenHeight * 0.22f);
 
             for (int y = 0; y < 2; y++)
-                for (int x = 0; x < 5; x++)
+                for (int x = 0; x < 6; x++)
                 {
+                    if (assesmentValue > 10)
+                        continue;
+
                     TextButton assesmentButton = new TextButton(assesmentValue.ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
                     assesmentButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
                     {
@@ -256,6 +259,11 @@ namespace GhostlyLib.Activities
                         int evaluation = ((MazeLevel3D)_screen.Level).Analytics.Evaluate();
                         _screen.UpdateRequiredContractionDuration(evaluation);
                     }
+                    else if (_screen.Level.GetType() == typeof(SimpleSpaceLevel))
+                    {
+                        int evaluation = ((SimpleSpaceLevel)_screen.Level).Analytics.Evaluate();
+                        _screen.UpdateDifficultyLevel(evaluation);
+                    }
 
                     // write to c3d
                     UpdateC3D();
@@ -326,6 +334,7 @@ namespace GhostlyLib.Activities
             writer.SetParameter<float>("INFO:target_contractions_ch1)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms);
             writer.SetParameter<float>("INFO:target_contractions_ch2)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms);
             writer.SetParameter<Int16>("INFO:rpe_post_session", GameSessionInfo.Instance.Session.Rpe_post_session);
+            writer.SetParameter<Int16>("INFO:difficulty_level", (Int16)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel);
 
             //TODO rethink this!!!!!!!!!!!!!!!!!!!!!!
             writer.Open("new_" + _c3dFile);
