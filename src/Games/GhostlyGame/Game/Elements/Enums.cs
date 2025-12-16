@@ -149,12 +149,9 @@ namespace GhostlyLib.Elements
         RightRotation,
         PullUp,
         PullDown,
-        FallingStars,
-        OrangeMist,
-        BlueLine,
         PurpleDebris,
         PurpleDebrisLong,
-        RedDebris,
+        GreenDebris,
         RedDebrisLong
     }
 

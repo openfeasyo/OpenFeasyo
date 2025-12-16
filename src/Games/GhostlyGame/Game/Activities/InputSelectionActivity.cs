@@ -18,10 +18,7 @@ using Android.Content.PM;
 using AndroidX.AppCompat.Widget;
 using Android.Support.V4.App;
 #endif
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using OpenFeasyo.GameTools.UI;
-using System;
+using GhostlyGame;
 
 namespace GhostlyLib.Activities
 {
@@ -33,25 +30,26 @@ namespace GhostlyLib.Activities
         {
             float cell = engine.Screen.ScreenHeight / 16;
 
-            Image backgroundImage = new Image(_engine.Content.LoadTexture("textures/ghostly/menu_background"));
+            Image backgroundImage = new Image(_engine.Content.LoadTexture("Textures/Ghostly/menu_background"));// ("textures/ghostly/menu_background"));
             backgroundImage.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label questionLabel = new Label("I want to control the game using", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label questionLabel = new Label(LocalizationResourceManager.Instance["IWantToControlTheGameUsing"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             questionLabel.Position = engine.Screen.ScreenMiddle - questionLabel.Size / 2 - new Vector2(0, 200);
 
-            Label orLabel = new Label("or", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label orLabel = new Label(LocalizationResourceManager.Instance["or"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             orLabel.Position = engine.Screen.ScreenMiddle - orLabel.Size / 2 - new Vector2(0, 0);
 
-            TextButton touchButton = new TextButton("Touch", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton touchButton = new TextButton(LocalizationResourceManager.Instance["Touch"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             touchButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new ConfigureTouchActivity(engine)); };
             touchButton.CursorEntered += (object sender, EventArgs e) => { engine.MusicPlayer.PlayEffect("hover"); };
-            touchButton.Position = engine.Screen.ScreenMiddle - touchButton.Size/2 - new Vector2(engine.Screen.ScreenMiddle.X/2, 0);
+            touchButton.Position = engine.Screen.ScreenMiddle - touchButton.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
-            TextButton emgButton = new TextButton("EMG", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton emgButton = new TextButton(LocalizationResourceManager.Instance["EMG"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             emgButton.Clicked += //EmgButton_Clicked;
-                (object sender, TextButton.ClickedEventArgs e) => {
+                (object sender, TextButton.ClickedEventArgs e) =>
+                {
                     StartActivity(
 #if FALSE //ANDROID
                     new ProminentDisclosureActivity(_engine)
@@ -63,15 +61,13 @@ namespace GhostlyLib.Activities
             emgButton.CursorEntered += (object sender, EventArgs e) => { engine.MusicPlayer.PlayEffect("hover"); };
             emgButton.Position = engine.Screen.ScreenMiddle - emgButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
 
-            Image vubetrologoImage = new Image(_engine.Content.LoadTexture("textures/vubetrologo"));
+            Image vubetrologoImage = new Image(_engine.Content.LoadTexture("Textures/vubetrologo"));// ("textures/vubetrologo"));
             vubetrologoImage.Size = new Vector2((vubetrologoImage.Size.X / vubetrologoImage.Size.Y) * cell * 2, cell * 2);
             vubetrologoImage.Position = engine.Screen.ScreenMiddle + new Vector2(-vubetrologoImage.Size.X, engine.Screen.ScreenMiddle.Y * 2 / 3 - vubetrologoImage.Size.Y / 2);
 
-            Image delucalogoImage = new Image(_engine.Content.LoadTexture("textures/delucafoundationlogo"));
+            Image delucalogoImage = new Image(_engine.Content.LoadTexture("Textures/delucafoundationlogo"));// ("textures/delucafoundationlogo"));
             delucalogoImage.Size = new Vector2((delucalogoImage.Size.X / delucalogoImage.Size.Y) * cell * 2, cell * 2);
             delucalogoImage.Position = engine.Screen.ScreenMiddle + new Vector2(10, engine.Screen.ScreenMiddle.Y * 2 / 3 - delucalogoImage.Size.Y / 2);
-
-            
 
             Components.Add(vubetrologoImage);
             Components.Add(delucalogoImage);
@@ -79,33 +75,32 @@ namespace GhostlyLib.Activities
             Components.Add(orLabel);
             Components.Add(touchButton);
             Components.Add(emgButton);
-
         }
-
-        
 
         private void EmgButton_Clicked(object sender, TextButton.ClickedEventArgs e)
         {
-// #if ANDROID
-//             GhostlyLib.GhostlyGameActivity.Instance.RequestPermissions(new[] {
-//                         Manifest.Permission.AccessCoarseLocation,
-//                         Manifest.Permission.AccessFineLocation,
-//                         Manifest.Permission.BluetoothAdmin,
-//                         Manifest.Permission.Bluetooth
-//             }, 3, granted => { _permissionsGranted = granted; });
-// #else
+            // #if ANDROID
+            //             GhostlyLib.GhostlyGameActivity.Instance.RequestPermissions(new[] {
+            //                         Manifest.Permission.AccessCoarseLocation,
+            //                         Manifest.Permission.AccessFineLocation,
+            //                         Manifest.Permission.BluetoothAdmin,
+            //                         Manifest.Permission.Bluetooth
+            //             }, 3, granted => { _permissionsGranted = granted; });
+            // #else
             _permissionsGranted = true;
-// #endif
+            // #endif
         }
 
         public override void Update(GameTime gameTime)
         {
-            if (_permissionsGranted.HasValue) {
+            if (_permissionsGranted.HasValue)
+            {
                 if (_permissionsGranted.Value)
                 {
                     StartActivity(new SelectSensorActivity(_engine));
                 }
-                else {
+                else
+                {
                     // TODO room for improvement
                     _permissionsGranted = null;
                 }
@@ -117,8 +112,5 @@ namespace GhostlyLib.Activities
             }
             base.Update(gameTime);
         }
-        
-
-
     }
 }

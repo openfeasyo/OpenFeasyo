@@ -2,22 +2,52 @@ using GhostlyGame.Models;
 using maui.net9;
 using Microsoft.Maui.Controls;
 using OpenFeasyo.Platform.Data;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace GhostlyGame.Views;
 
-public partial class PatientSelectionPage : ContentPage
+public partial class PatientSelectionPage : ContentPage, INotifyPropertyChanged
 {
     private readonly IPlatformNavigator _navigator;
 
-    public PatientSelectionPage(IPlatformNavigator navigator)
-    { 
-        InitializeComponent();
+    public LocalizationResourceManager LocalizationResourceManager => LocalizationResourceManager.Instance;
 
-        BindingContext = new Models.AllPatients();
-        _navigator = navigator;
+    private ObservableCollection<Models.Patient> _patients;
+    public ObservableCollection<Models.Patient> Patients
+    {
+        get
+        {
+            Debug.WriteLine("reading patients " + _patients.Count());
+            return _patients;
+        }
+        set
+        {
+            _patients = value;
+            PatientsCollection.ItemsSource = Patients;
+            OnPropertyChanged("Patients");
+        }
     }
 
-    async private void OnContinueClicked(object sender, EventArgs e)
+    public PatientSelectionPage(IPlatformNavigator navigator)
+    {
+        InitializeComponent();
+
+        BindingContext = this; // Models.AllPatients.CreateAsync();
+        _navigator = navigator;
+
+        LoadPatients();
+    }
+
+    private async void LoadPatients()
+    {
+        var allpatients = await Models.AllPatients.CreateAsync();
+        Patients = allpatients.Patients;
+    }
+
+    private async void OnContinueClicked(object sender, EventArgs e)
     {
         Models.Patient selectedPatient = (Models.Patient)this.PatientsCollection.SelectedItem;
 
@@ -29,9 +59,11 @@ public partial class PatientSelectionPage : ContentPage
 
             //save selected patient to game session info
             GameSessionInfo.Instance.SelectedPatient = selectedPatient;
-            
+
             //update the currentpatient.id, which is stored in the c3d file
             SeriousGames.CurrentPatient.Id = selectedPatient.PatientCode;
+
+            await SecureStorage.Default.SetAsync("patient", selectedPatient.PatientCode);
 
             //TODO - change dashboard to return default value
             if (GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms == null)
@@ -44,4 +76,9 @@ public partial class PatientSelectionPage : ContentPage
             _navigator.OpenGameView(Application.Current);
         }
     }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }

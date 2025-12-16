@@ -15,7 +15,7 @@
     </ContentPage.Resources>
     <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
     <VerticalStackLayout x:Name="Selection" IsVisible="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Select Patient"
+            <Label Text="{Binding LocalizationResourceManager[SelectPatient], Mode=OneWay}"
                TextColor="#0BCEC4"
                FontSize="40"
                FontFamily="Vitamin"
@@ -68,7 +68,7 @@
         </CollectionView>
 
         <Button x:Name="ContinueBtn"
-                Text="Continue" 
+                Text="{Binding LocalizationResourceManager[Continue], Mode=OneWay}" 
                 Clicked="OnContinueClicked"
                 HorizontalOptions="Center" 
                 BackgroundColor="#0BCEC4"
@@ -77,7 +77,7 @@
                 FontSize="Large"/>
     </VerticalStackLayout>
         <VerticalStackLayout x:Name="Loading" IsVisible="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Label Text="Loading game ..."
+            <Label Text="{Binding LocalizationResourceManager[LoadingGame], Mode=OneWay}"
                    TextColor="#0BCEC4"
                    FontSize="40"
                    FontFamily="Vitamin"

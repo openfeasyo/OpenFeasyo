@@ -12,12 +12,15 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
+using GhostlyGame;
+using GhostlyGame.Models;
+
 namespace GhostlyLib.Activities
 {
-    public class LimitedSelectWorldActivity : OpenFeasyo.GameTools.UI.Activity
+   /* public class LimitedSelectWorldActivity : OpenFeasyo.GameTools.UI.Activity
     {
-        public LimitedSelectWorldActivity(UIEngine engine) : base(engine) {
-
+        public LimitedSelectWorldActivity(UIEngine engine) : base(engine)
+        {
             float cell = engine.Screen.ScreenHeight / 10;
 
             Image backgroundImage = new Image(_engine.Content.LoadTexture("textures/ghostly/menu_background"));
@@ -25,42 +28,54 @@ namespace GhostlyLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label infoLabel = new Label("Select the world", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabel = new Label(LocalizationResourceManager.Instance["SelectTheWorld"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (infoLabel.Size.X / 2), 70);
-
-
-            TextButton world1Button = new TextButton("Land", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            world1Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 121, 140)); };
-            world1Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 3) - world1Button.Size / 2;
-
-            TextButton world2Button = new TextButton("Space", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            world2Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 141, 160)); };
-            world2Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - world2Button.Size / 2;
-
-            TextButton world3Button = new TextButton("Maze", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            world3Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 161, 190)); };
-            world3Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - world3Button.Size / 2;
-
-            TextButton world4Button = new TextButton("Simple Maze", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            world4Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 191, 200)); };
-            world4Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 6) - world4Button.Size / 2;
-
-            TextButton world5Button = new TextButton("Simple Space", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            world5Button.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine, 221, 225)); };
-            world5Button.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - world4Button.Size / 2;
-
-            TextButton allWorldsButton = new TextButton("All Worlds", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
-            allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 9) - allWorldsButton.Size / 2;
-                        
             Components.Add(infoLabel);
-            Components.Add(world1Button);
-            Components.Add(world2Button);
-            Components.Add(world3Button);
-            Components.Add(world4Button);
-            Components.Add(world5Button);
 
-            Components.Add(allWorldsButton);
+            if (GameSessionInfo.Instance.LevelsCompleted < GameSessionInfo.Instance.RequiredLevels)
+            {
+                int firstLevel = GameSessionInfo.Instance.StartLevel;
+
+                float verticalSpacing = engine.Screen.ScreenHeight * 0.01f;
+                float horizontalSpacing = engine.Screen.ScreenWidth * 0.01f;
+                float tileWidth = (engine.Screen.ScreenWidth * 0.9f) / 6 - horizontalSpacing;
+                float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 5 - verticalSpacing;
+                Vector2 offset = new Vector2(engine.Screen.ScreenWidth * 0.06f, engine.Screen.ScreenHeight * 0.20f);
+
+                for (int i = 0 + GameSessionInfo.Instance.LevelsCompleted; i < 3; i++)
+                {
+                    int lvl = (firstLevel + i) % 200;
+                    LevelSelectionButton level1Button = new LevelSelectionButton(lvl.ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                    level1Button.Level = lvl;
+                    level1Button.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+                    {
+                        StartActivity(new GamePlayActivity(engine, ((LevelSelectionButton)sender).Level,
+                            "<?xml version=\"1.0\" encoding=\"utf - 8\"?><Configuration>" +
+                            "<devices><device name=\"Trigno Avanti\">" +
+                            "<analyzers><analyzer file=\"C3DSerializer.dll\" /></analyzers>" +
+                            "</device></devices>" +
+                            "<bindings>" +
+                            "<binding point=\"Jump/Swim\" zeroAngle=\"0\" sensitivity=\"1\" device=\"Trigno Avanti\"><emgSensor device=\"Trigno Avanti\" channel=\"0\"></emgSensor></binding>" +
+                            "<binding point=\"Shoot\" zeroAngle=\"0\" sensitivity=\"1\" device=\"Trigno Avanti\"><emgSensor device=\"Trigno Avanti\" channel=\"1\"></emgSensor></binding>" +
+                            "</bindings></Configuration>"
+                            ));
+                    };
+                    level1Button.Position = (offset + new Vector2(engine.Screen.ScreenMiddle.X - (tileWidth + horizontalSpacing), (i+1) * (tileHeight + verticalSpacing)));
+                    level1Button.Size = new Vector2(tileWidth, tileHeight);
+                    Components.Add(level1Button);
+                }
+            }
+            else
+            {
+                Label sessionCompleted = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (sessionCompleted.Size.X / 2), cell * 4);
+                Components.Add(infoLabel);
+
+                TextButton allWorldsButton = new TextButton(LocalizationResourceManager.Instance["AllWorlds"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
+                allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - allWorldsButton.Size / 2;
+                Components.Add(allWorldsButton);
+            }
         }
 
         public override void Update(GameTime gameTime)
@@ -71,5 +86,5 @@ namespace GhostlyLib.Activities
                 _engine.StartActivity(new MainMenuActivity(_engine));
             }
         }
-    }
+    }*/
 }

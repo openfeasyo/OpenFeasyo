@@ -1,4 +1,5 @@
-﻿using GhostlyGame.Models;
+﻿using GhostlyGame;
+using GhostlyGame.Models;
 using GhostlyLib.Animations;
 using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Elements;
@@ -6,6 +7,7 @@ using GhostlyLib.Elements.Character;
 using GhostlyLib.Level;
 using Microsoft.Xna.Framework.Graphics;
 using OpenFeasyo.GameTools.Effects;
+using System.Reflection.Metadata.Ecma335;
 
 namespace GhostlyLib.Screens
 {
@@ -22,12 +24,18 @@ namespace GhostlyLib.Screens
         {
             get
             {
-                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
+                if (this.Level == null)
+                    return 3f;
+
+                //the Simple Space Level is the only level where the difficulty levels should apply, and thus influence the game speed
+                if (this.Level.GetType().Equals(typeof(SimpleSpaceLevel)) 
+                    && GameSessionInfo.Instance.SelectedPatient != null 
+                    && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
                 {
                     switch (DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).restDuration)
                     {
                         case 10:
-                            return 1f;
+                            return 0.9f;
                         case 6:
                             return 1.5f;
                         default:
@@ -43,6 +51,8 @@ namespace GhostlyLib.Screens
 
         public GameScreen2D(int level, MusicPlayer player, OpenFeasyo.GameTools.Screen screen) : base(level, player, screen)
         {
+            if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel == null)
+                GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 1;
         }
 
         public override void Initialize()
@@ -74,7 +84,6 @@ namespace GhostlyLib.Screens
                 this.Level = new RockLevel(this, this.Elements);
                 this.Level.LoadMap("rock.map" + this.CurrentLevel + ".txt", this.Checkpoint);
                 this.GameBackground.SetParallaxLayers(new List<Texture2D> { ((ILevel2D)Level).BackgroundFurthest, ((ILevel2D)Level).BackgroundClose, ((ILevel2D)Level).BackgroundClosest });
-
             }
             else if (this.CurrentLevel <= 120)
             {
@@ -90,13 +99,13 @@ namespace GhostlyLib.Screens
             }
             else if (this.CurrentLevel <= 160)
             {
-                this.Level = new SpaceLevel(this, this.Elements, 300);
+                this.Level = new SpaceLevel(this, this.Elements);
                 this.Level.LoadMap("space.map" + this.CurrentLevel + ".txt", this.Checkpoint);
                 this.GameBackground.SetParallaxLayers(new List<Texture2D> { ((ILevel2D)Level).BackgroundFurthest, ((ILevel2D)Level).BackgroundClose, ((ILevel2D)Level).BackgroundCloser });//, _level.BackgroundClosest });
             }
-            else if (this.CurrentLevel > 220 && this.CurrentLevel <= 250)
+            else if (this.CurrentLevel > 190 && this.CurrentLevel <= 200)
             {
-                this.Level = new SimpleSpaceLevel(this, this.Elements, 100);
+                this.Level = new SimpleSpaceLevel(this, this.Elements);
                 this.Level.LoadMap("simpleSpace.map" + this.CurrentLevel + ".txt", this.Checkpoint);
                 this.GameBackground.SetParallaxLayers(new List<Texture2D> { ((ILevel2D)Level).BackgroundFurthest, ((ILevel2D)Level).BackgroundClose, ((ILevel2D)Level).BackgroundCloser });
             }
@@ -160,9 +169,9 @@ namespace GhostlyLib.Screens
             float position = 15;
             if (!(this.Level is SpaceLevel) || !(this.Level is SimpleSpaceLevel)) // for space levels don't show level info, it covers the space ship
             {
-                spriteBatch.DrawString(Font[2], "Level: " + this.CurrentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
-            }
-            position = Font[2].MeasureString("Level: " + this.CurrentLevel.ToString()).X + 100;
+                spriteBatch.DrawString(Font[2], LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
+            }            
+            position = Font[2].MeasureString(LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString()).X + 100;
 
             switch (this.GameCharacter.CurrentHealth)
             {
@@ -181,28 +190,25 @@ namespace GhostlyLib.Screens
             }
 
             position += 153;
-
-            spriteBatch.DrawString(Font[2], "Score: " + GameCharacter.Score.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
-
+            spriteBatch.DrawString(Font[2], LocalizationResourceManager.Instance["Score"].ToString() + ": " + GameCharacter.Score.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
 
             //Draw instruction in the middle of the screen
             switch (this.GameCharacter.Instruction)
             {
                 case Instruction.Contract:
-                    spriteBatch.DrawString(this.Font[2], "Contract", new Vector2(320, 100), Color.Red);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Contract"].ToString(), new Vector2(300, 100), Color.Red);
                     break;
                 case Instruction.Hold:
-                    spriteBatch.DrawString(this.Font[2], "Hold", new Vector2(320, 100), Color.Orange);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Hold"].ToString(), new Vector2(300, 100), Color.Orange);
                     break;
                 case Instruction.Release:
-                    spriteBatch.DrawString(this.Font[2], "Release", new Vector2(320, 100), Color.Green);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Release"].ToString(), new Vector2(300, 100), Color.Green);
                     break;
                 default:
                     break;
             }
 
             //print minutes:seconds since the start of the app
-            //TODO: consider what time needs to be shown and how to calculate it
             spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(300, 430), Color.FromNonPremultiplied(11, 206, 196, 256));
         }
 

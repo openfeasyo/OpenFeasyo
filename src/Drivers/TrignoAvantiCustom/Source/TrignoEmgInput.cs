@@ -39,7 +39,7 @@ public class TrignoEmgInput : IEmgSensorInput
 
     public event EventHandler<MuscleActivationChangedEventArgs>? MuscleActivationChanged;
 
-    private void OnMuscleActivationChanged(object? sender, MuscleActivationChangedEventArgs e)
+    private void OnMuscleActivationChanged(object sender, MuscleActivationChangedEventArgs e)
     {
         MuscleActivationChanged?.Invoke(sender, e);
     }
@@ -47,7 +47,7 @@ public class TrignoEmgInput : IEmgSensorInput
 
     public event EventHandler<CalibrationChangedEventArgs>? CalibrationChanged;
 
-    private void OnCalibrationChanged(object? sender, CalibrationChangedEventArgs e)
+    private void OnCalibrationChanged(object sender, CalibrationChangedEventArgs e)
     {
         CalibrationChanged?.Invoke(sender, e);
     }

@@ -24,13 +24,14 @@ namespace GhostlyLib.Elements
         private float[] positions;
 
         public float HorizontalSpeed { get; set; }
+
         private float[] speeds;
 
         private List<Texture2D> ParallaxLayers { get; set; }
         public Texture2D ContinuousLayer { get; set; }
 
         private OpenFeasyo.GameTools.Screen _screen;
-
+        
         public GameBackground(int x, float horizontalSpeed, OpenFeasyo.GameTools.Screen screen)
         {
             _screen = screen;
@@ -39,38 +40,43 @@ namespace GhostlyLib.Elements
             this.HorizontalSpeed = horizontalSpeed;
         }
 
-        public void SetParallaxLayers(List<Texture2D> parallaxLayers) {
+        public void SetParallaxLayers(List<Texture2D> parallaxLayers)
+        {
             ParallaxLayers = parallaxLayers;
             positions = new float[parallaxLayers.Count];
             speeds = new float[parallaxLayers.Count];
-            for (int i = 0; i < parallaxLayers.Count; i++) {
+            for (int i = 0; i < parallaxLayers.Count; i++)
+            {
                 positions[i] = 0;
-                speeds[i] = (HorizontalSpeed / (parallaxLayers.Count *3))*(i+1);
+                speeds[i] = (HorizontalSpeed / (parallaxLayers.Count * 3)) * (i + 1);
             }
         }
 
         public void Update(GameTime gameTime)
         {
             //this.X += GameScreen.SPEED; //(int) (gameTime.ElapsedGameTime.Milliseconds /3);
-            x += (-Screens.GameScreen.CONST_SPEED * 0.2f + HorizontalSpeed/6);// gameTime.ElapsedGameTime.Milliseconds;
-            
+            x += (-Screens.GameScreen.CONST_SPEED * 0.2f + HorizontalSpeed / 6);// gameTime.ElapsedGameTime.Milliseconds;
+
             if (this.x <= -ContinuousLayer.Width)
             {
                 this.x += ContinuousLayer.Width;
             }
-            if(HorizontalSpeed != 0) { 
+            if (HorizontalSpeed != 0)
+            {
                 for (int i = 0; i < positions.Length; i++)
                 {
                     positions[i] -= speeds[i];
                     float width = ParallaxLayers[i].Width * (_screen.ScreenHeight / (float)ParallaxLayers[i].Height);
-                    if (positions[i] <= -width) {
+                    if (positions[i] <= -width)
+                    {
                         positions[i] += width;
                     }
                 }
             }
         }
 
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+        {
             //TODO do it for all paralax layers
 
             for (int i = 0; i < positions.Length; i++)
@@ -85,13 +91,14 @@ namespace GhostlyLib.Elements
             //}
         }
 
-        private void Draw(SpriteBatch spriteBatch, Texture2D texture, int pos) {
-            int width =(int) (texture.Width * (_screen.ScreenHeight / (float)texture.Height));
+        private void Draw(SpriteBatch spriteBatch, Texture2D texture, int pos)
+        {
+            int width = (int)(texture.Width * (_screen.ScreenHeight / (float)texture.Height));
             spriteBatch.Draw(texture, new Rectangle((int)pos, 0, width, _screen.ScreenHeight), Color.White);
             if (pos + width < _screen.ScreenWidth)
             {
                 spriteBatch.Draw(texture, new Rectangle((int)(pos + width), 0, width, _screen.ScreenHeight), Color.White);
-                spriteBatch.Draw(texture, new Rectangle((int)(pos + width*2), 0, width, _screen.ScreenHeight), Color.White);
+                spriteBatch.Draw(texture, new Rectangle((int)(pos + width * 2), 0, width, _screen.ScreenHeight), Color.White);
             }
         }
     }

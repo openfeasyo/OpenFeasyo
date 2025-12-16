@@ -12,16 +12,13 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
-using System;
-using OpenFeasyo.GameTools.UI;
-using Microsoft.Xna.Framework;
+using GhostlyGame;
 using OpenFeasyo.Platform.Controls;
 
 namespace GhostlyLib.Activities
 {
     public class CalibrationActivity : OpenFeasyo.GameTools.UI.Activity
     {
-
         private Label _fpsLabel;
 
         private const int CALIBRATION_TIME_MILLISECONDS = 10000;
@@ -35,7 +32,7 @@ namespace GhostlyLib.Activities
         private Label counterLabel;
         private Label instructionLabel;
         private Label infoLabel;
-        private double  timer = 0;
+        private double timer = 0;
         private bool countdown;
         private bool calibrationFinished = false;
         private bool adaptationStarted = false;
@@ -50,33 +47,32 @@ namespace GhostlyLib.Activities
             Components.Add(backgroundImage);
 
 
-            counterLabel = new Label("Rest your muscles in", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-            counterLabel.Position = (engine.Screen.ScreenMiddle - counterLabel.Size / 2) - new Vector2(0,counterLabel.Size.Y);
+            counterLabel = new Label(LocalizationResourceManager.Instance["ResetYourMusclesIn"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            counterLabel.Position = (engine.Screen.ScreenMiddle - counterLabel.Size / 2) - new Vector2(0, counterLabel.Size.Y);
             Components.Add(counterLabel);
 
-            instructionLabel = new Label("5", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE),GhostlyGame.MENU_FONT_COLOR);
+            instructionLabel = new Label("5", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             instructionLabel.Position = (engine.Screen.ScreenMiddle - instructionLabel.Size / 2) + new Vector2(0, instructionLabel.Size.Y);
             Components.Add(instructionLabel);
 
-            infoLabel = new Label("Calibrating ... ", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            infoLabel = new Label(LocalizationResourceManager.Instance["Calibrating"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel.Position = engine.Screen.ScreenMiddle - infoLabel.Size / 2;
             Components.Add(infoLabel);
 
-            _fpsLabel = new Label("Sensor data: - fps", engine.Content.LoadFont("Fonts/Ubuntu12"), GhostlyGame.MENU_FONT_COLOR);
+            _fpsLabel = new Label(LocalizationResourceManager.Instance["SensorData"].ToString() + " - fps", engine.Content.LoadFont("Fonts/Ubuntu12"), GhostlyGame.MENU_FONT_COLOR);
             _fpsLabel.Position = new Vector2(0, engine.Screen.ScreenHeight - _fpsLabel.Size.Y) + new Vector2(10, -10);
             Components.Add(_fpsLabel);
 
             _emgInput.CalibrationChanged += _emgInput_CalibrationChanged;
-            
         }
 
         private void _emgInput_CalibrationChanged(object sender, CalibrationChangedEventArgs e)
         {
-            if (e.CalibrationEvent == CalibrationResults.Finished) {
+            if (e.CalibrationEvent == CalibrationResults.Finished)
+            {
                 // TODO maybe show information about successful calibration first
                 _emgInput.MuscleActivationChanged -= _emgInput_MuscleActivationChanged;
                 calibrationFinished = true;
-                
             }
         }
 
@@ -84,18 +80,23 @@ namespace GhostlyLib.Activities
         {
             base.Update(gameTime);
 
-            if(countdown) { 
-                if (timer == 0) {
+            if (countdown)
+            {
+                if (timer == 0)
+                {
                     timer = gameTime.TotalGameTime.TotalMilliseconds + 5000;
                     counterLabel.Visible = true;
                     instructionLabel.Visible = true;
                     infoLabel.Visible = false;
                 }
-                else if (timer > gameTime.TotalGameTime.TotalMilliseconds) {
+                else if (timer > gameTime.TotalGameTime.TotalMilliseconds)
+                {
                     // convert the difference to seconds
                     int displayCount = (((int)(timer - gameTime.TotalGameTime.TotalMilliseconds)) / 1000) + 1;
                     instructionLabel.Text = displayCount.ToString();
-                } else {
+                }
+                else
+                {
                     countdown = false;
                     counterLabel.Visible = false;
                     instructionLabel.Visible = false;
@@ -104,12 +105,11 @@ namespace GhostlyLib.Activities
                 }
             }
 
-            if (calibrationFinished && !adaptationStarted) {
+            if (calibrationFinished && !adaptationStarted)
+            {
                 StartActivity(new AdaptCalibrationActivity(_engine, _emgInput));
                 adaptationStarted = true;
             }
-
-
         }
 
         public override void OnCreate()
@@ -136,7 +136,7 @@ namespace GhostlyLib.Activities
                 _fps = _framesReceived;
                 _framesReceived = 0;
                 _lastTime = DateTime.Now;
-                _fpsLabel.Text = "Sensor data: " + _fps + " fps";
+                _fpsLabel.Text = LocalizationResourceManager.Instance["SensorData"].ToString() + " " + _fps + " fps";
             }
         }
     }

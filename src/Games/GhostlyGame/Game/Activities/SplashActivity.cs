@@ -12,6 +12,7 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
+using GhostlyGame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using OpenFeasyo.GameTools.UI;
@@ -59,7 +60,7 @@ namespace GhostlyLib.Activities
 
 
 
-            TextButton next = new TextButton("Next >", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT+GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton next = new TextButton(LocalizationResourceManager.Instance["Next"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT+GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             next.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
                 StartActivity(new InputSelectionActivity(engine));
             };

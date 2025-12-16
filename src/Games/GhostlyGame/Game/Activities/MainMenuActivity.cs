@@ -12,10 +12,7 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using OpenFeasyo.GameTools.UI;
-
+using GhostlyGame;
 
 namespace GhostlyLib.Activities
 {
@@ -29,30 +26,30 @@ namespace GhostlyLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label infoLabel = new Label("Ghostly", engine.Content.LoadFont("Fonts/Vitamin128"), Color.FromNonPremultiplied(11, 206, 196, 256));
+            Label infoLabel = new Label(LocalizationResourceManager.Instance["Ghostly"].ToString(), engine.Content.LoadFont("Fonts/Vitamin128"), Color.FromNonPremultiplied(11, 206, 196, 256));
             infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell*2 ) - infoLabel.Size/2;
 
-            Label infoLabelOutline = new Label("Ghostly", engine.Content.LoadFont("Fonts/VitaminOutline128"), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabelOutline = new Label(LocalizationResourceManager.Instance["Ghostly"].ToString(), engine.Content.LoadFont("Fonts/VitaminOutline128"), GhostlyGame.MENU_FONT_COLOR);
             infoLabelOutline.Position = engine.Screen.ScreenMiddle - infoLabelOutline.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y / 2);
 
-            TextButton startGameButton = new TextButton("Start Game", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton startGameButton = new TextButton(LocalizationResourceManager.Instance["StartGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             //TextButton startGameButton = new TextButton("\uf04b", engine.Content.LoadFont("Fonts/Awesome48"), engine.Device);
             //startGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
-            startGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectWorldActivity(engine)); };
+            startGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine)); };
             startGameButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - startGameButton.Size/2;
 
-            TextButton calibrateButton = new TextButton("Calibrate", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton calibrateButton = new TextButton(LocalizationResourceManager.Instance["Calibrate"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             calibrateButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new StartCalibrationActivity(engine, null)); };
             calibrateButton.Size = startGameButton.Size;
             calibrateButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - calibrateButton.Size / 2;
 
-            TextButton aboutButton = new TextButton("Credits", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton aboutButton = new TextButton(LocalizationResourceManager.Instance["Credits"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             //TextButton aboutButton = new TextButton("\uf05a", engine.Content.LoadFont("Fonts/Awesome48"), engine.Device);
             aboutButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new AboutActivity(engine)); };
             aboutButton.Size = startGameButton.Size;
             aboutButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - aboutButton.Size / 2;
 
-            TextButton exitButton = new TextButton("Exit", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton exitButton = new TextButton(LocalizationResourceManager.Instance["Exit"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             //TextButton exitButton = new TextButton("\uf52b", engine.Content.LoadFont("Fonts/Awesome48"), engine.Device);
             exitButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { engine.StartActivity(null); };
             exitButton.Size = startGameButton.Size;
@@ -66,15 +63,13 @@ namespace GhostlyLib.Activities
             delucalogoImage.Size = new Vector2((delucalogoImage.Size.X / delucalogoImage.Size.Y) * cell , cell );
             delucalogoImage.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - new Vector2(10, delucalogoImage.Size.Y / 2);
 
-
             Components.Add(vubetrologoImage);
             Components.Add(delucalogoImage);
             Components.Add(aboutButton);
             Components.Add(startGameButton);
             Components.Add(infoLabel);
             Components.Add(infoLabelOutline);
-            Components.Add(exitButton);
-            
+            Components.Add(exitButton);            
         }
 
         public override void Update(GameTime gameTime)

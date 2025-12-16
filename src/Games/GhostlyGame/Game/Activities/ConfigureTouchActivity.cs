@@ -12,9 +12,7 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using OpenFeasyo.GameTools.UI;
+using GhostlyGame;
 
 namespace GhostlyLib.Activities
 {
@@ -31,24 +29,25 @@ namespace GhostlyLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label infoLabel = new Label("Touch the halves of the screen to", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabel = new Label(LocalizationResourceManager.Instance["TouchTheHalvesOfTheScreenTo"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel.Position = engine.Screen.ScreenMiddle - infoLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y / 2);
 
-            _jumpLabel = new Label("Jump", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-            _jumpLabel.Position = engine.Screen.ScreenMiddle - _jumpLabel.Size / 2 + new Vector2(engine.Screen.ScreenMiddle.X/2, 0);
+            _jumpLabel = new Label(LocalizationResourceManager.Instance["Jump"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            _jumpLabel.Position = engine.Screen.ScreenMiddle - _jumpLabel.Size / 2 + new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
-            _shootLabel = new Label("Shoot", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            _shootLabel = new Label(LocalizationResourceManager.Instance["Shoot"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _shootLabel.Position = engine.Screen.ScreenMiddle - _shootLabel.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
-
-            TextButton next = new TextButton("Next >", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            next.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
-                StartActivity(new MainMenuActivity(engine)); 
+            TextButton next = new TextButton(LocalizationResourceManager.Instance["Next"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            next.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
+                StartActivity(new MainMenuActivity(engine));
             };
-            next.Position = engine.Screen.ScreenMiddle - next.Size / 2 + new Vector2(0, engine.Screen.ScreenMiddle.Y/2);
+            next.Position = engine.Screen.ScreenMiddle - next.Size / 2 + new Vector2(0, engine.Screen.ScreenMiddle.Y / 2);
 
-            TextButton switchButton = new TextButton(/*"< switch >"*/"< switch >", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            switchButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
+            TextButton switchButton = new TextButton(LocalizationResourceManager.Instance["Switch"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            switchButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
                 Reversed = !Reversed;
                 UpdateLabelsPosition(engine);
             };
@@ -61,11 +60,11 @@ namespace GhostlyLib.Activities
             Components.Add(infoLabel);
         }
 
-        private void UpdateLabelsPosition(UIEngine engine) {
-            Vector2 quarterDist = new Vector2((engine.Screen.ScreenMiddle.X / 2 ) * (Reversed? -1:1), 0);
+        private void UpdateLabelsPosition(UIEngine engine)
+        {
+            Vector2 quarterDist = new Vector2((engine.Screen.ScreenMiddle.X / 2) * (Reversed ? -1 : 1), 0);
             _jumpLabel.Position = engine.Screen.ScreenMiddle - _jumpLabel.Size / 2 + quarterDist;
             _shootLabel.Position = engine.Screen.ScreenMiddle - _shootLabel.Size / 2 - quarterDist;
-
         }
 
         public override void Update(GameTime gameTime)
@@ -76,6 +75,5 @@ namespace GhostlyLib.Activities
                 _engine.StartActivity(new InputSelectionActivity(_engine));
             }
         }
-
     }
 }

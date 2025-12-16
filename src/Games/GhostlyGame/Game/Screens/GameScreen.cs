@@ -32,8 +32,8 @@ namespace GhostlyLib.Screens
         public abstract float SPEED { get; }// { get { return 3f; } }
 
         #region Private members
-        private IDevice _emgDevice;
-        private IEmgSensorInput _emgInput;
+        //private IDevice _emgDevice;
+        //private IEmgSensorInput _emgInput;
         private SpriteFont[] _font = new SpriteFont[4];
         #endregion Private members
 
@@ -77,7 +77,7 @@ namespace GhostlyLib.Screens
             this.MusicPlayer = player;
             this.Screen = screen;
 
-            ///_gameState = GameState.DeviceConnected;
+            //_gameState = GameState.DeviceConnected;
             State = GameState.DeviceTrained;
         }
 
@@ -168,6 +168,7 @@ namespace GhostlyLib.Screens
             ((IGameCharacter)this.GameCharacter).Stop();
             this.State = GameState.LevelDone;
             OnGameFinished(GameCharacter.Score, CurrentLevel, GameFinishedEventArgs.EndReason.GoalAccomplished);
+            GameSessionInfo.Instance.LevelsCompleted++;
         }
 
         public abstract void SetCheckpoint(double checkpoint);

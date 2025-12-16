@@ -3,7 +3,9 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using AndroidX.Core.App;
+using GhostlyGame;
 using Microsoft.Maui;
+using OpenFeasyo.Platform.Controls.Drivers;
 
 namespace maui.net9;
 
@@ -18,6 +20,7 @@ public class MainActivity : MauiAppCompatActivity
 
     protected override void OnCreate(Bundle? savedInstanceState)
     {
+        InputDeviceManager.Instance = new StaticDriverManager();
         base.OnCreate(savedInstanceState);
         initPermission();
     }

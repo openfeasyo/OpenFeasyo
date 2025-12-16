@@ -12,23 +12,21 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
-using Microsoft.Xna.Framework;
+using GhostlyGame;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using OpenFeasyo.GameTools.UI;
 
 namespace GhostlyLib.Activities
 {
     public class SelectLevelActivity : OpenFeasyo.GameTools.UI.Activity
     {
-        public SelectLevelActivity(UIEngine engine, int world) : base(engine)
+        public SelectLevelActivity(UIEngine engine, int levelFrom, int levelTo) : base(engine)
         {
             Image backgroundImage = new Image(_engine.Content.LoadTexture("textures/ghostly/menu_background"));
             backgroundImage.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label infoLabel = new Label("Select the level", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabel = new Label(LocalizationResourceManager.Instance["SelectTheLevel"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (infoLabel.Size.X / 2), engine.Screen.ScreenHeight * 0.10f - (GhostlyGame.MENU_BUTTON_FONT_SIZE / 2));
 
             Components.Add(infoLabel);
@@ -37,10 +35,14 @@ namespace GhostlyLib.Activities
             float tileWidth = (engine.Screen.ScreenWidth * 0.9f) / 6 - horizontalSpacing;
             float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 5 - verticalSpacing;
             Vector2 offset = new Vector2(engine.Screen.ScreenWidth * 0.06f, engine.Screen.ScreenHeight * 0.20f);
-            int levelNum = 1 + (world - 1) * 30;
+
+            int levelNum = levelFrom; //int levelNum = 1 + (world - 1) * 30;
             for (int y = 0; y < 5; y++)
                 for (int x = 0; x < 6; x++)
                 {
+                    if (((y * 6) + x) > (levelTo - levelFrom))
+                        continue;
+
                     LevelSelectionButton level1Button = new LevelSelectionButton(levelNum.ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
                     level1Button.Level = levelNum;
                     level1Button.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
@@ -56,7 +58,7 @@ namespace GhostlyLib.Activities
                             "</bindings></Configuration>"
                             ));
                     };
-                    level1Button.Position = /*engine.Screen.ToScreen*/(offset + new Vector2(x * (tileWidth + horizontalSpacing), y * (tileHeight + verticalSpacing)));
+                    level1Button.Position = (offset + new Vector2(x * (tileWidth + horizontalSpacing), y * (tileHeight + verticalSpacing)));
                     level1Button.Size = new Vector2(tileWidth, tileHeight);
                     levelNum++;
                     Components.Add(level1Button);

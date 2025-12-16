@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ghostlyGame="clr-namespace:GhostlyGame"
              x:Class="GhostlyGame.Views.LoginPage"
              Title=""
              BackgroundImageSource="menu_background.png">
@@ -15,13 +16,13 @@
                Padding="10,40,10,20"/>
 
         <Entry x:Name="username"
-               Placeholder="Enter username"
+               Placeholder="{Binding LocalizationResourceManager[EnterUsername], Mode=OneWay}"
                PlaceholderColor="#393939"
                Text="{Binding Username}"
                FontSize="25"/>
 
         <Entry x:Name="password"
-               Placeholder="Enter password"
+               Placeholder="{Binding LocalizationResourceManager[EnterPassword], Mode=OneWay}"
                PlaceholderColor="#393939"
                IsPassword="True"
                Text="{Binding Password}"
@@ -29,7 +30,7 @@
 
         <Button
             x:Name="LoginBtn"
-            Text="Log In" 
+            Text="{Binding LocalizationResourceManager[LogIn], Mode=OneWay}" 
             Clicked="OnLoginClicked"
             HorizontalOptions="Fill"
             BackgroundColor="#0BCEC4"
@@ -48,7 +49,7 @@
 
         <Button
             x:Name="InstructionVideoBtn"
-            Text="Watch Instructions" 
+            Text="{Binding LocalizationResourceManager[WatchInstructions], Mode=OneWay}" 
             Clicked="OnInstructionVideoClicked"
             HorizontalOptions="Center"
             BackgroundColor="#0BCEC4"
@@ -57,7 +58,7 @@
             FontSize="Large"
             Padding="20"/>
 
-        <HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="End">
             <Button
                 x:Name="FR_lang"
                 Text="FR"
@@ -66,8 +67,8 @@
                 Background="#0BCEC4"
                 TextColor="White"
                 FontFamily="Vitamin"
-                FontSize="Large"
-                Padding="20"/>
+                FontSize="Small"
+                Padding="10"/>
 
             <Button
                 x:Name="NL_lang"
@@ -77,8 +78,8 @@
                 Background="#0BCEC4"
                 TextColor="White"
                 FontFamily="Vitamin"
-                FontSize="Large"
-                Padding="20"/>
+                FontSize="Small"
+                Padding="10"/>
 
             <Button
                 x:Name="EN_lang"
@@ -88,8 +89,8 @@
                 Background="#0BCEC4"
                 TextColor="White"
                 FontFamily="Vitamin"
-                FontSize="Large"
-                Padding="20"/>
+                FontSize="Small"
+                Padding="10"/>
             
         </HorizontalStackLayout>
     </VerticalStackLayout>

@@ -151,14 +151,11 @@ namespace GhostlyLib.Animations
         public Texture2D DebrisLong { get; private set; }
         public Texture2D PurpleDebris { get; private set; }
         public Texture2D PurpleDebrisLong { get; private set; }
-        public Texture2D RedDebris { get; private set; }
+        public Texture2D GreenDebris { get; private set; }
         public Texture2D RedDebrisLong { get; private set; }
         public Texture2D DebrisRocks { get; private set; }
         public Texture2D SpaceSpiral { get; private set; }
         public Texture2D SpaceMist { get; private set; }
-        public Texture2D FallingStars { get; private set; }
-        public Texture2D OrangeMist { get; private set; }
-        public Texture2D BlueLine { get; private set; }
 
         public Texture2D LeftArrow { get; private set; }
         public Texture2D RightArrow { get; private set; }
@@ -625,15 +622,12 @@ namespace GhostlyLib.Animations
             DebrisLong = content.Load<Texture2D>("Textures\\Ghostly\\grey debris long");
             PurpleDebris = content.Load<Texture2D>("Textures\\Ghostly\\purple debris");
             PurpleDebrisLong = content.Load<Texture2D>("Textures\\Ghostly\\purple debris long");
-            RedDebris = content.Load<Texture2D>("Textures\\Ghostly\\red debris");
+            GreenDebris = content.Load<Texture2D>("Textures\\Ghostly\\green debris");
             RedDebrisLong = content.Load<Texture2D>("Textures\\Ghostly\\red debris long"); 
             DebrisRocks = content.Load<Texture2D>("Textures\\Ghostly\\debris rocks");
             SpaceSpiral = content.Load<Texture2D>("Textures\\Ghostly\\spaceSpiral");
             SpaceMist = content.Load<Texture2D>("Textures\\Ghostly\\spaceMist");
-            FallingStars = content.Load<Texture2D>("Textures\\Ghostly\\fallingStars");
-            OrangeMist = content.Load<Texture2D>("Textures\\Ghostly\\orangeMist");
-            BlueLine = content.Load<Texture2D>("Textures\\Ghostly\\blueLine");
-
+            
             LeftArrow = content.Load<Texture2D>("Textures\\Ghostly\\leftArrow");
             RightArrow = content.Load<Texture2D>("Textures\\Ghostly\\rightArrow");
 

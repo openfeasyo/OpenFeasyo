@@ -77,20 +77,20 @@ namespace GhostlyLib
             Content.RootDirectory = "Content";
             _contentRepository = new ContentRepository(this);
 
-            viewport = new OpenFeasyo.GameTools.Screen( 
+            viewport = new OpenFeasyo.GameTools.Screen(
                 graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
 
             _gameEvents = new ConcurrentQueue<short>();
-            _gameObjects = new PreDefinedDictionary<Vector3>(new string[] { "PlayerPosition" },Vector3.Zero);
+            _gameObjects = new PreDefinedDictionary<Vector3>(new string[] { "PlayerPosition" }, Vector3.Zero);
             _gameStream = new PreDefinedDictionary<double>(new string[] { }, 0);
 
-            MENU_BUTTON_FONT_SIZE = new int [] { 12, 24, 36, 48, 64 }[viewport.FontSize];
+            MENU_BUTTON_FONT_SIZE = new int[] { 12, 24, 36, 48, 64 }[viewport.FontSize];
             //screen.GameStarted += Screen_GameStarted;
             //screen.GameFinished += Screen_GameFinished;
             //pauseScreenKey = new KeyTracker(Keys.Space, (o, i) => { screen.Pause(); });
         }
-        
-        
+
+
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -108,7 +108,18 @@ namespace GhostlyLib
 
             _engine = new UIEngine(_contentRepository, GraphicsDevice);
             _engine.ActivitiesFinished += _engine_ActivitiesFinished;
-            _engine.StartActivity(new SplashActivity(_engine));
+
+            //TODO changed for the study
+            //_engine.StartActivity(new SplashActivity(_engine));
+            _engine.StartActivity(
+#if FALSE //ANDROID
+                    new ProminentDisclosureActivity(_engine)
+#else
+                    new SelectSensorActivity(_engine)
+#endif
+                    );
+
+            //_engine.StartActivity(new InputSelectionActivity(_engine));
 
             threeDcamera = new _3DCamera();
 
@@ -180,7 +191,7 @@ namespace GhostlyLib
         protected override void Update(GameTime gameTime)
         {
             FrameworkDispatcher.Update();
-            
+
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //    Exit();
 
@@ -210,8 +221,8 @@ namespace GhostlyLib
             this.viewport.ScreenWidth = GraphicsDevice.Viewport.Width;
             this.viewport.ScreenHeight = GraphicsDevice.Viewport.Height;
 
-            GraphicsDevice.Clear(Color.FromNonPremultiplied(208,244,247,256) /*Color.White*/);
-            
+            GraphicsDevice.Clear(Color.FromNonPremultiplied(208, 244, 247, 256) /*Color.White*/);
+
             spriteBatch.Begin();
             //screen.Draw(spriteBatch, gameTime);
             _engine.Draw(gameTime, spriteBatch);

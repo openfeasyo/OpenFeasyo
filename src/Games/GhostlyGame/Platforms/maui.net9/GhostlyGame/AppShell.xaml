@@ -7,8 +7,8 @@
     Title="GhostlyGame">
 
     <ShellContent
-        Title="Login"
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+        Title="PatientLogin"
+        ContentTemplate="{DataTemplate local:PatientLogin}"
+        Route="PatientLogin" />
 
 </Shell>

@@ -1,4 +1,5 @@
-﻿using GhostlyLib.Animations;
+﻿using GhostlyGame;
+using GhostlyLib.Animations;
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Level;
@@ -56,12 +57,12 @@ namespace GhostlyLib.Screens
                 this.Level.LoadMap("maze.map" + this.CurrentLevel + ".txt", 0);
                 this.GameCharacter = ((MazeLevel3D)this.Level).Character;
             }
-            else if (CurrentLevel > 190)
+            /*else if (CurrentLevel > 190)
             { 
                 this.Level = new SimpleMazeLevel3D(this, this.Elements);
                 this.Level.LoadMap("simpleMaze.map" + this.CurrentLevel + ".txt", 0);
                 this.GameCharacter = ((SimpleMazeLevel3D)this.Level).Character;
-            }
+            }*/
 
             GhostlyActionHandlers.CurrentLevel = this.Level;
         }
@@ -119,7 +120,7 @@ namespace GhostlyLib.Screens
 
             this.GameCharacter.Draw(spriteBatch, gameTime);
 
-            spriteBatch.DrawString(this.Font[2], "Level: " + this.CurrentLevel.ToString(), new Vector2(10, 10), Color.White);
+            spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString(), new Vector2(10, 10), Color.White);
 
             switch (this.GameCharacter.CurrentHealth)
             {
@@ -136,7 +137,7 @@ namespace GhostlyLib.Screens
                     break;
             }
 
-            spriteBatch.DrawString(this.Font[2], "Score: " + this.GameCharacter.Score.ToString(), new Vector2(550, 10), Color.White);
+            spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Score"].ToString() + ": " + this.GameCharacter.Score.ToString(), new Vector2(550, 10), Color.White);
 
             if (this.GameCharacter.TurningDirection == TurningDirection.Left)
             {
@@ -150,13 +151,13 @@ namespace GhostlyLib.Screens
             //Draw instruction in the middle of the screen
             switch (this.GameCharacter.Instruction) {
                 case Instruction.Contract:
-                    spriteBatch.DrawString(this.Font[2], "Contract", new Vector2(320, 100), Color.Red);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Contract"].ToString(), new Vector2(320, 100), Color.Red);
                     break;
                 case Instruction.Hold:
-                    spriteBatch.DrawString(this.Font[2], "Hold", new Vector2(320, 100), Color.Orange);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Hold"].ToString(), new Vector2(320, 100), Color.Orange);
                     break;
                 case Instruction.Release:
-                    spriteBatch.DrawString(this.Font[2], "Release", new Vector2(320, 100), Color.Green);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Release"].ToString(), new Vector2(320, 100), Color.Green);
                     break;
                 default:
                     break;

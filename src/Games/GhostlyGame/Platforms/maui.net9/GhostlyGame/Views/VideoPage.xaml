@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:local="clr-namespace:GhostlyGame"
              x:Class="GhostlyGame.Views.VideoPage"
              BackgroundImageSource="menu_background.png"
              Title="">
     <VerticalStackLayout>
         <Label 
-            Text="How to play Ghostly+ Game"
+            Text="{Binding LocalizationResourceManager[HowToPlayGhostlyGame], Mode=OneWay}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
             TextColor="#0BCEC4"
@@ -23,7 +24,7 @@
 
         <Button
             x:Name="OkBtn"
-            Text="OK" 
+            Text="{Binding LocalizationResourceManager[Ok], Mode=OneWay}" 
             Clicked="OnOKClicked"
             HorizontalOptions="Center"
             BackgroundColor="#0BCEC4"

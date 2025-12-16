@@ -21,17 +21,38 @@
 
         public Uploader Uploader { get; }
 
+        private int _startLevel = 191;
+
+        public int StartLevel
+        {
+            get
+            {
+                return _startLevel;
+                //TODO - read from the patient
+                //SelectedPatient.FirstLevel
+            }
+        }
+
+        public int LevelsCompleted { get; set; }
+        public int RequiredLevels { get { return 3; } }//TODO read this from server??
+
         public GameSessionInfo()
         {
             Uploader = new Uploader();
             InitializeUploader();
 
             Session = new Session();
+            LevelsCompleted = 0;
         }
 
         private async void InitializeUploader()
         {
             await Uploader.Initialize();
+        }
+
+        public bool SessionCompleted()
+        {
+            return LevelsCompleted == RequiredLevels;
         }
     }
 

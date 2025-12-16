@@ -4,12 +4,20 @@ namespace GhostlyGame.Models
 {
     internal class AllPatients
     {
+        public LocalizationResourceManager LocalizationResourceManager => LocalizationResourceManager.Instance;
+
         public ObservableCollection<Patient> Patients { get; set; } = new ObservableCollection<Patient>();
 
-        public AllPatients() =>
-            LoadPatients();
+        public AllPatients() { }
 
-        public async void LoadPatients()
+        public static async Task<AllPatients> CreateAsync()
+        {
+            var instance = new AllPatients();
+            await instance.LoadPatients();
+            return instance;
+        }
+
+        public async Task LoadPatients()
         {
             Patients.Clear();
 

@@ -12,19 +12,17 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
-using System;
-using OpenFeasyo.GameTools.UI;
-using Microsoft.Xna.Framework;
-using OpenFeasyo.Platform.Controls;
-using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
+using GhostlyGame;
 using GhostlyLib.Animations;
+using Microsoft.Xna.Framework.Graphics;
 using OpenFeasyo.GameTools.Effects;
+using OpenFeasyo.Platform.Controls;
 using System.Diagnostics;
 
 namespace GhostlyLib.Activities
 {
-    internal class TestCharacter : Image {
+    internal class TestCharacter : Image
+    {
         private Texture2D standing;
         private Texture2D jumping;
 
@@ -34,19 +32,22 @@ namespace GhostlyLib.Activities
         private double shootingTimer = 0;
 
         private Vector2 _position;
-        public Vector2 Position {
-            get {
+        public Vector2 Position
+        {
+            get
+            {
                 return _position;
             }
 
-            set {
+            set
+            {
                 base.Position = value;
                 _position = value;
             }
         }
 
-
-        public TestCharacter(MusicPlayer player, Texture2D standing, Texture2D jumping) : base(standing) {
+        public TestCharacter(MusicPlayer player, Texture2D standing, Texture2D jumping) : base(standing)
+        {
             this.standing = standing;
             this.jumping = jumping;
             this.player = player;
@@ -54,15 +55,18 @@ namespace GhostlyLib.Activities
 
         public void Jump()
         {
-            if (jumpSpeed == 0) {
+            if (jumpSpeed == 0)
+            {
                 player.PlayEffect("jump");
                 jumpSpeed = -500;
                 base.Texture = jumping;
             }
         }
 
-        public void Shoot() {
-            if (shootingTimer <= 0) {
+        public void Shoot()
+        {
+            if (shootingTimer <= 0)
+            {
                 shootingTimer = 1;
                 player.PlayEffect("shoot");
             }
@@ -71,16 +75,19 @@ namespace GhostlyLib.Activities
         public override void Update(GameTime gameTime)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            if (jumpSpeed != 0) {
+            if (jumpSpeed != 0)
+            {
                 base.Position = new Vector2(Position.X, base.Position.Y + jumpSpeed * dt * 2);
                 jumpSpeed += 700 * dt * 2;
             }
-            if (base.Position.Y > this.Position.Y) {
+            if (base.Position.Y > this.Position.Y)
+            {
                 base.Position = this.Position;
                 base.Texture = standing;
                 jumpSpeed = 0;
             }
-            if (shootingTimer > 0) {
+            if (shootingTimer > 0)
+            {
                 shootingTimer -= dt;
             }
 
@@ -88,7 +95,8 @@ namespace GhostlyLib.Activities
         }
     }
 
-    public class DraggableButton : TextButton {
+    public class DraggableButton : TextButton
+    {
 
         public delegate void ValueChanged(float newValue);
 
@@ -106,10 +114,13 @@ namespace GhostlyLib.Activities
         public float MinY { get; set; }
 
         private float percentage;
-        public float Percentage {
+        public float Percentage
+        {
             get { return percentage; }
-            private set {
-                if (percentage != value) { 
+            private set
+            {
+                if (percentage != value)
+                {
                     percentage = value;
                     OnPercentageChanged(value);
                 }
@@ -118,7 +129,7 @@ namespace GhostlyLib.Activities
         }
 
         public event ValueChanged PercentageChanged;
-        protected virtual void OnPercentageChanged(float value) 
+        protected virtual void OnPercentageChanged(float value)
         {
             PercentageChanged?.Invoke(value);
         }
@@ -145,7 +156,8 @@ namespace GhostlyLib.Activities
         public override void OnCursorMove(Vector2 oldPos, Vector2 newPos)
         {
             base.OnCursorMove(oldPos, newPos);
-            if (isDown) {
+            if (isDown)
+            {
                 float newY = newPos.Y - offset.Y;
                 newY = Math.Min(newY, MaxY);
                 newY = Math.Max(newY, MinY);
@@ -156,25 +168,29 @@ namespace GhostlyLib.Activities
         }
     }
 
-    public class EmgImage: Image {
+    public class EmgImage : Image
+    {
 
         private Color[] pixelData;
 
         private float percentage;
-        public float Percentage {
+        public float Percentage
+        {
             get { return percentage; }
-            set {
+            set
+            {
                 percentage = value;
                 for (int i = 0; i < pixelData.Length; i++)
                 {
-                    
-                    pixelData[i] = i < ((1-percentage)*100) ? Color.LightBlue: Color.Blue;
+
+                    pixelData[i] = i < ((1 - percentage) * 100) ? Color.LightBlue : Color.Blue;
                 }
                 Texture.SetData<Color>(pixelData);
             }
         }
 
-        public EmgImage(GraphicsDevice device, float percentage) : base(new Texture2D(device, 1, 100))  {
+        public EmgImage(GraphicsDevice device, float percentage) : base(new Texture2D(device, 1, 100))
+        {
             pixelData = new Color[Texture.Width * Texture.Height];
             Texture.GetData<Color>(pixelData);
             Percentage = percentage;
@@ -196,7 +212,7 @@ namespace GhostlyLib.Activities
         private DateTime _lastTime = DateTime.Now; // marks the beginning the measurement began
         private int _framesReceived = 0; // an increasing count
         private int _fps = 0;
-        
+
         private Texture2D emgTexture1;
         private Texture2D emgTexture2;
         private EmgImage emgImage1;
@@ -211,8 +227,7 @@ namespace GhostlyLib.Activities
             _emgInput = emgInput;
             float cell = engine.Screen.ScreenHeight / 16;
 
-
-            Label infoLabel = new Label("Contract muscles maximally 3 times", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabel = new Label(LocalizationResourceManager.Instance["ContractMusclesMax3Times"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (infoLabel.Size.X / 2), engine.Screen.ScreenHeight * 0.05f - (GhostlyGame.MENU_BUTTON_FONT_SIZE / 2));
             Components.Add(infoLabel);
 
@@ -221,12 +236,13 @@ namespace GhostlyLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            emgTexture1 = new Texture2D(engine.Device,100, 1);
+            emgTexture1 = new Texture2D(engine.Device, 100, 1);
             emgTexture2 = new Texture2D(engine.Device, 100, 1);
-            
+
             Color[] pixelData = new Color[emgTexture1.Width * emgTexture1.Height];
             emgTexture1.GetData<Color>(pixelData);
-            for (int i = 0; i < pixelData.Length; i++) {
+            for (int i = 0; i < pixelData.Length; i++)
+            {
                 pixelData[i] = Color.Blue;
             }
             emgTexture1.SetData<Color>(pixelData);
@@ -240,14 +256,14 @@ namespace GhostlyLib.Activities
             emgTexture2.SetData<Color>(pixelData);
 
 
-            emgImage1 = new EmgImage(engine.Device,0.2f);
-            emgImage1.Size = new Vector2((int)(engine.Screen.ScreenWidth*0.1), (int)(engine.Screen.ScreenHeight*0.6));
-            emgImage1.Position = new Vector2((int)(engine.Screen.ScreenWidth*0.5) - (emgImage1.Size.X/2),cell*2);
+            emgImage1 = new EmgImage(engine.Device, 0.2f);
+            emgImage1.Size = new Vector2((int)(engine.Screen.ScreenWidth * 0.1), (int)(engine.Screen.ScreenHeight * 0.6));
+            emgImage1.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.5) - (emgImage1.Size.X / 2), cell * 2);
             Components.Add(emgImage1);
 
-            emgImage2 = new EmgImage(engine.Device,0.2f);
+            emgImage2 = new EmgImage(engine.Device, 0.2f);
             emgImage2.Size = new Vector2((int)(engine.Screen.ScreenWidth * 0.1), (int)(engine.Screen.ScreenHeight * 0.6));
-            emgImage2.Position = new Vector2((int)(engine.Screen.ScreenWidth*0.8) - (emgImage2.Size.X / 2), cell * 2);
+            emgImage2.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.8) - (emgImage2.Size.X / 2), cell * 2);
             Components.Add(emgImage2);
 
             percentageJumpingLabel = new Label("75%  ", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
@@ -259,43 +275,42 @@ namespace GhostlyLib.Activities
             Components.Add(percentageShootingLabel);
 
 
-            jumpingButton = new DraggableButton("Jumping", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            jumpingButton = new DraggableButton(LocalizationResourceManager.Instance["Left"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             jumpingButton.MinY = emgImage1.Position.Y;
             jumpingButton.MaxY = emgImage1.Position.Y + emgImage1.Size.Y;
-            jumpingButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {  };
+            jumpingButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { };
             jumpingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.5), cell * 2 + emgImage1.Size.Y / 4) - jumpingButton.Size / 2;
             jumpingButton.PercentageChanged += (float value) => { percentageJumpingLabel.Text = (value * 100).ToString("00.") + "%"; };
             Components.Add(jumpingButton);
 
-            shootingButton = new DraggableButton("Shooting", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            shootingButton = new DraggableButton(LocalizationResourceManager.Instance["Right"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             shootingButton.MinY = emgImage2.Position.Y;
             shootingButton.MaxY = emgImage2.Position.Y + emgImage2.Size.Y;
-            shootingButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => {  };
-            shootingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.8) , cell * 2 + emgImage2.Size.Y / 4) - shootingButton.Size / 2;
-            shootingButton.PercentageChanged += (float value) => { percentageShootingLabel.Text = (value * 100).ToString("00.") + "%" ; };
+            shootingButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { };
+            shootingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.8), cell * 2 + emgImage2.Size.Y / 4) - shootingButton.Size / 2;
+            shootingButton.PercentageChanged += (float value) => { percentageShootingLabel.Text = (value * 100).ToString("00.") + "%"; };
             Components.Add(shootingButton);
 
-            
-            TextButton nextButton = new TextButton("Next", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new MainMenuActivity(_engine)); };
+            //TODO for the Ghostly+ study
+            TextButton nextButton = new TextButton(LocalizationResourceManager.Instance["Next"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            //nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new MainMenuActivity(_engine)); };
+            nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new StartGameActivity(_engine)); };
             nextButton.Position = new Vector2(engine.Screen.ScreenMiddle.X + nextButton.Size.X, cell * 14) - nextButton.Size / 2;
             Components.Add(nextButton);
 
-            TextButton recalibrateButton = new TextButton("Recalibrate", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton recalibrateButton = new TextButton(LocalizationResourceManager.Instance["Recalibrate"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             recalibrateButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new CalibrationActivity(_engine, emgInput)); };
-            recalibrateButton.Position = new Vector2(engine.Screen.ScreenMiddle.X- recalibrateButton.Size.X/2, cell * 14) - recalibrateButton.Size / 2;
-            Components.Add(recalibrateButton);
+            recalibrateButton.Position = new Vector2(engine.Screen.ScreenMiddle.X - recalibrateButton.Size.X / 2, cell * 14) - recalibrateButton.Size / 2;
+            //Components.Add(recalibrateButton);
 
 
-            character = new TestCharacter(engine.MusicPlayer,_engine.Content.LoadTexture("Textures\\Ghostly\\character\\walk0001"), ImagesAndAnimations.Instance.CharacterJumping);
-            character.Position = new Vector2(engine.Screen.ScreenMiddle.X/5 - (character.Size.X / 2), (int)(engine.Screen.ScreenMiddle.Y *1.2));
+            character = new TestCharacter(engine.MusicPlayer, _engine.Content.LoadTexture("Textures\\Ghostly\\character\\walk0001"), ImagesAndAnimations.Instance.CharacterJumping);
+            character.Position = new Vector2(engine.Screen.ScreenMiddle.X / 5 - (character.Size.X / 2), (int)(engine.Screen.ScreenMiddle.Y * 1.2));
             Components.Add(character);
 
-            _fpsLabel = new Label("Sensor data: - fps", engine.Content.LoadFont("Fonts/Ubuntu12"), GhostlyGame.MENU_FONT_COLOR);
+            _fpsLabel = new Label(LocalizationResourceManager.Instance["SensorData"].ToString() + " - fps", engine.Content.LoadFont("Fonts/Ubuntu12"), GhostlyGame.MENU_FONT_COLOR);
             _fpsLabel.Position = new Vector2(0, engine.Screen.ScreenHeight - _fpsLabel.Size.Y) + new Vector2(10, -10);
             Components.Add(_fpsLabel);
-
-            
 
             emgInput.CalibrationChanged += EmgInput_CalibrationChanged;
             emgInput.MuscleActivationChanged += _emgInput_MuscleActivationChanged;
@@ -303,8 +318,8 @@ namespace GhostlyLib.Activities
 
         private void EmgInput_CalibrationChanged(object sender, CalibrationChangedEventArgs e)
         {
-            if(e.CalibrationEvent == CalibrationResults.Finished) {
-                
+            if (e.CalibrationEvent == CalibrationResults.Finished)
+            {
                 calibrationMean = e.ZeroMean;
                 calibrationStdDev = e.ZeroStandardDeviation;
                 calibrationData = e.CalibrationsData;
@@ -326,7 +341,6 @@ namespace GhostlyLib.Activities
                 //emgTexture.SetData<Color>(pixelData);
                 //emgImage.Texture = emgTexture;
                 //Console.WriteLine("Texture updated");
-
             }
         }
 
@@ -335,31 +349,31 @@ namespace GhostlyLib.Activities
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (calibrationData != null && emgDrawn == false) { 
+            if (calibrationData != null && emgDrawn == false)
+            {
                 //Color[] pixelData = new Color[emgTexture.Width * emgTexture.Height];
                 //emgTexture.GetData<Color>(pixelData);
                 //double emgMax1 = calibrationMean[0] * 3 * 2;
                 //double emgMax2 = calibrationMean[1] * 3 * 2;
 
                 //for (int x = 0; x < Math.Min(pixelData.Length, calibrationData[0].Count); x++)
-               // {
-                 //   double height1 = 250 - Math.Max(0, Math.Min(calibrationData[0][x] / emgMax1, 1))*250;
-                 //   double height2 = 250 - Math.Max(0, Math.Min(calibrationData[1][x] / emgMax2, 1)) * 250;
-                    
-                 //   for (int y = 0; y < emgTexture.Height/2; y++) {
-                 //       pixelData[y*emgTexture.Width+x] = y<=height1 ?Color.Transparent :Color.Red;
-                 //   }
+                // {
+                //   double height1 = 250 - Math.Max(0, Math.Min(calibrationData[0][x] / emgMax1, 1))*250;
+                //   double height2 = 250 - Math.Max(0, Math.Min(calibrationData[1][x] / emgMax2, 1)) * 250;
 
-                 //   for (int y = emgTexture.Height/2; y < emgTexture.Height; y++)
-                 //   {
+                //   for (int y = 0; y < emgTexture.Height/2; y++) {
+                //       pixelData[y*emgTexture.Width+x] = y<=height1 ?Color.Transparent :Color.Red;
+                //   }
 
-                 //       pixelData[y * emgTexture.Width + x] = (y-250) <= height2 ? Color.Transparent : Color.Blue;
-                 //   }
+                //   for (int y = emgTexture.Height/2; y < emgTexture.Height; y++)
+                //   {
 
-//                }
-  //              emgTexture.SetData<Color>(pixelData);
-    //            emgDrawn = true;
+                //       pixelData[y * emgTexture.Width + x] = (y-250) <= height2 ? Color.Transparent : Color.Blue;
+                //   }
 
+                //                }
+                //              emgTexture.SetData<Color>(pixelData);
+                //            emgDrawn = true;
             }
 
             //for (int x = 0; x < Math.Min(pixelData.Length, e.CalibrationsData[0].Count); x++)
@@ -370,7 +384,6 @@ namespace GhostlyLib.Activities
 
             //        pixelData[y*emgTexture.Width+x] = y<=height ?Color.Blue :Color.Red;
             //    }
-
         }
 
         public override void OnCreate()
@@ -430,10 +443,8 @@ namespace GhostlyLib.Activities
                 _fps = _framesReceived;
                 _framesReceived = 0;
                 _lastTime = DateTime.Now;
-                _fpsLabel.Text = "Sensor data: " + _fps + " fps";
+                _fpsLabel.Text = LocalizationResourceManager.Instance["SensorData"].ToString() + " " + _fps + " fps";
             }
         }
     }
-
-    
 }

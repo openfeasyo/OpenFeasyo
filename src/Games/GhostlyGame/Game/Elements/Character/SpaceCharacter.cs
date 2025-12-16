@@ -1,6 +1,7 @@
 ﻿using GhostlyLib.Animations;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics;
 
 namespace GhostlyLib.Elements.Character
 {
@@ -26,7 +27,7 @@ namespace GhostlyLib.Elements.Character
 
         #endregion Public properties
 
-        public SpaceCharacter(GameScreen gameScreen, LevelElements elements, double initialYPosition) : base(gameScreen)
+        public SpaceCharacter(GameScreen gameScreen, LevelElements elements) : base(gameScreen)
         {
             this._elements = elements;
 
@@ -40,7 +41,7 @@ namespace GhostlyLib.Elements.Character
 
             this.CurrentHealth = 3;
             this.X = 100;
-            this.Y = initialYPosition;// 300;
+            this.Y = 300;
 
             this.AutomaticMovement = AutomaticMovement.MovingForward;
             this.ActionMovement = ActionMovement.None;

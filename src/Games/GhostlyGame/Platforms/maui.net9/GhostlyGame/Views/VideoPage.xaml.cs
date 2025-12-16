@@ -4,10 +4,13 @@ namespace GhostlyGame.Views;
 
 public partial class VideoPage : ContentPage
 {
-	public VideoPage()
-	{
-		InitializeComponent();
-	}
+    public LocalizationResourceManager LocalizationResourceManager => LocalizationResourceManager.Instance;
+
+    public VideoPage()
+    {
+        InitializeComponent();
+        BindingContext = this;
+    }
 
     private async void OnOKClicked(object sender, EventArgs e)
     {

@@ -49,13 +49,21 @@
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidResource Remove="Content\Levels\Ghostly\simpleMaze\**" />
+	  <Compile Remove="Content\Levels\Ghostly\simpleMaze\**" />
+	  <EmbeddedResource Remove="Content\Levels\Ghostly\simpleMaze\**" />
+	  <MauiCss Remove="Content\Levels\Ghostly\simpleMaze\**" />
+	  <MauiXaml Remove="Content\Levels\Ghostly\simpleMaze\**" />
+	  <None Remove="Content\Levels\Ghostly\simpleMaze\**" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -82,6 +90,7 @@
 		<Compile Include="..\..\..\Game\Activities\SelectWorldActivity.cs" Link="Activities\SelectWorldActivity.cs" />
 		<Compile Include="..\..\..\Game\Activities\SplashActivity.cs" Link="Activities\SplashActivity.cs" />
 		<Compile Include="..\..\..\Game\Activities\StartCalibrationActivity.cs" Link="Activities\StartCalibrationActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\StartGameActivity.cs" Link="Activities\StartGameActivity.cs" />
 		<Compile Include="..\..\..\Game\Animations\AnimFrame.cs" Link="Animations\AnimFrame.cs" />
 		<Compile Include="..\..\..\Game\Animations\CharacterAnimation.cs" Link="Animations\CharacterAnimation.cs" />
 		<Compile Include="..\..\..\Game\Animations\EnemyAnimation.cs" Link="Animations\EnemyAnimation.cs" />
@@ -350,13 +359,17 @@
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map188.txt" Link="Content\Levels\Ghostly\maze\map188.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map189.txt" Link="Content\Levels\Ghostly\maze\map189.txt" />
 		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\maze\map190.txt" Link="Content\Levels\Ghostly\maze\map190.txt" />
-
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleMaze\map191.txt" Link="Content\Levels\Ghostly\simpleMaze\map191.txt" />
 		
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map221.txt" Link="Content\Levels\Ghostly\simpleSpace\map221.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map222.txt" Link="Content\Levels\Ghostly\simpleSpace\map222.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map223.txt" Link="Content\Levels\Ghostly\simpleSpace\map223.txt" />
-		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map224.txt" Link="Content\Levels\Ghostly\simpleSpace\map224.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map191.txt" Link="Content\Levels\Ghostly\simpleSpace\map191.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map192.txt" Link="Content\Levels\Ghostly\simpleSpace\map192.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map193.txt" Link="Content\Levels\Ghostly\simpleSpace\map193.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map194.txt" Link="Content\Levels\Ghostly\simpleSpace\map194.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map195.txt" Link="Content\Levels\Ghostly\simpleSpace\map195.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map196.txt" Link="Content\Levels\Ghostly\simpleSpace\map196.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map197.txt" Link="Content\Levels\Ghostly\simpleSpace\map197.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map198.txt" Link="Content\Levels\Ghostly\simpleSpace\map198.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map199.txt" Link="Content\Levels\Ghostly\simpleSpace\map199.txt" />
+		<EmbeddedResource Include="..\..\..\Content\Levels\Ghostly\simpleSpace\map200.txt" Link="Content\Levels\Ghostly\simpleSpace\map200.txt" />
 	</ItemGroup>
 		
 	<ItemGroup>
@@ -364,7 +377,6 @@
 		<Folder Include="Content\Levels\Ghostly\ice\" />
 		<Folder Include="Content\Levels\Ghostly\land\" />
 		<Folder Include="Content\Levels\Ghostly\maze\" />
-		<Folder Include="Content\Levels\Ghostly\simpleMaze\" />
 		<Folder Include="Content\Levels\Ghostly\simpleSpace\" />
 		<Folder Include="Content\Levels\Ghostly\space\" />
 		<Folder Include="Content\Levels\Ghostly\water\" />
@@ -407,9 +419,25 @@
 	<ItemGroup>
 	  <None Include="Platforms\Windows\PlatformNavigator.cs" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Resources\Strings\AppResource.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>AppResource.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Strings\AppResource.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PatientLogin.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PatientSelectionPage.xaml">

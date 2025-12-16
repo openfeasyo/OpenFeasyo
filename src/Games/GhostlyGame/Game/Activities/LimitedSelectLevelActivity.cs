@@ -12,61 +12,73 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
+using GhostlyGame;
+using GhostlyGame.Models;
+
 namespace GhostlyLib.Activities
 {
     public class LimitedSelectLevelActivity : OpenFeasyo.GameTools.UI.Activity
     {
-        public LimitedSelectLevelActivity(UIEngine engine, int levelFrom, int levelTo) : base(engine)
+        public LimitedSelectLevelActivity(UIEngine engine) : base(engine)
         {
+            float cell = engine.Screen.ScreenHeight / 10;
+
             Image backgroundImage = new Image(_engine.Content.LoadTexture("textures/ghostly/menu_background"));
             backgroundImage.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label infoLabel = new Label("Select the level", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-            infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (infoLabel.Size.X / 2), engine.Screen.ScreenHeight * 0.10f - (GhostlyGame.MENU_BUTTON_FONT_SIZE / 2));
-
+            Label infoLabel = new Label(LocalizationResourceManager.Instance["StartTheLevel"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (infoLabel.Size.X / 2), 70);
             Components.Add(infoLabel);
-            float verticalSpacing = engine.Screen.ScreenHeight * 0.01f;
-            float horizontalSpacing = engine.Screen.ScreenWidth * 0.01f;
-            float tileWidth = (engine.Screen.ScreenWidth * 0.9f) / 6 - horizontalSpacing;
-            float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 5 - verticalSpacing;
-            Vector2 offset = new Vector2(engine.Screen.ScreenWidth * 0.06f, engine.Screen.ScreenHeight * 0.20f);
-            
-            int levelNum = levelFrom;
-            for (int y = 0; y < 5; y++)
-                for (int x = 0; x < 6; x++)
-                {
-                    if( ((y*6) + x) > (levelTo-levelFrom))
-                        continue;
 
-                    LevelSelectionButton level1Button = new LevelSelectionButton(levelNum.ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-                    level1Button.Level = levelNum;
-                    level1Button.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
-                    {
-                        StartActivity(new GamePlayActivity(engine, ((LevelSelectionButton)sender).Level,
-                            "<?xml version=\"1.0\" encoding=\"utf - 8\"?><Configuration>" +
-                            "<devices><device name=\"Trigno Avanti\">" +
-                            "<analyzers><analyzer file=\"C3DSerializer.dll\" /></analyzers>" +
-                            "</device></devices>" +
-                            "<bindings>" +
-                            "<binding point=\"Jump/Swim\" zeroAngle=\"0\" sensitivity=\"1\" device=\"Trigno Avanti\"><emgSensor device=\"Trigno Avanti\" channel=\"0\"></emgSensor></binding>" +
-                            "<binding point=\"Shoot\" zeroAngle=\"0\" sensitivity=\"1\" device=\"Trigno Avanti\"><emgSensor device=\"Trigno Avanti\" channel=\"1\"></emgSensor></binding>" +
-                            "</bindings></Configuration>"
-                            ));
-                    };
-                    level1Button.Position = (offset + new Vector2(x * (tileWidth + horizontalSpacing), y * (tileHeight + verticalSpacing)));
-                    level1Button.Size = new Vector2(tileWidth, tileHeight);
-                    levelNum++;
-                    Components.Add(level1Button);
-                }
+            if (GameSessionInfo.Instance.LevelsCompleted < GameSessionInfo.Instance.RequiredLevels)
+            {
+                float verticalSpacing = engine.Screen.ScreenHeight * 0.01f;
+                float horizontalSpacing = engine.Screen.ScreenWidth * 0.01f;
+                float tileWidth = (engine.Screen.ScreenWidth * 0.9f) / 6 - horizontalSpacing;
+                float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 5 - verticalSpacing;
+
+                Vector2 offset = new Vector2(engine.Screen.ScreenWidth * 0.06f, engine.Screen.ScreenHeight * 0.20f);
+
+                LevelSelectionButton level1Button = new LevelSelectionButton(LocalizationResourceManager.Instance["StartToPlay"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                level1Button.Level = GameSessionInfo.Instance.StartLevel;
+                level1Button.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+                {
+                    StartActivity(new GamePlayActivity(engine, ((LevelSelectionButton)sender).Level,
+                        "<?xml version=\"1.0\" encoding=\"utf - 8\"?><Configuration>" +
+                        "<devices><device name=\"Trigno Avanti\">" +
+                        "<analyzers><analyzer file=\"C3DSerializer.dll\" /></analyzers>" +
+                        "</device></devices>" +
+                        "<bindings>" +
+                        "<binding point=\"Jump/Swim\" zeroAngle=\"0\" sensitivity=\"1\" device=\"Trigno Avanti\"><emgSensor device=\"Trigno Avanti\" channel=\"0\"></emgSensor></binding>" +
+                        "<binding point=\"Shoot\" zeroAngle=\"0\" sensitivity=\"1\" device=\"Trigno Avanti\"><emgSensor device=\"Trigno Avanti\" channel=\"1\"></emgSensor></binding>" +
+                        "</bindings></Configuration>"
+                        ));
+                };
+                level1Button.Position = (offset + new Vector2(engine.Screen.ScreenMiddle.X - level1Button.Size.X / 2, engine.Screen.ScreenMiddle.Y - level1Button.Size.Y / 2));
+                level1Button.Size = new Vector2(tileWidth, tileHeight);
+                Components.Add(level1Button);
+            }
+            else
+            {
+                Label sessionCompleted = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (sessionCompleted.Size.X / 2), cell * 4);
+                Components.Add(infoLabel);
+
+                TextButton allWorldsButton = new TextButton(LocalizationResourceManager.Instance["AllWorlds"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
+                allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - allWorldsButton.Size / 2;
+                Components.Add(allWorldsButton);
+            }
         }
+
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
-                _engine.StartActivity(new SelectWorldActivity(_engine));
+                _engine.StartActivity(new MainMenuActivity(_engine));
             }
         }
     }

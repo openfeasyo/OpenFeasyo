@@ -14,16 +14,14 @@
  */
 using GhostlyLib.Animations;
 using GhostlyLib.Screens;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Diagnostics;
 using System.Timers;
 
 namespace GhostlyLib.Elements.Character
 {
     public abstract class GameCharacter : Drawable2D, IGameCharacter
     {
-        private double _speedY = 0;
+        //private double _speedY = 0;
         private System.Timers.Timer _timer;
 
         protected CharacterAnimation Animation { get; set; }
@@ -73,7 +71,7 @@ namespace GhostlyLib.Elements.Character
         public AutomaticMovement AutomaticMovement { get; set; }
         public Instruction Instruction { get; set; }
 
-        public override Texture2D Sprite { get; } 
+        public override Texture2D Sprite { get; }
 
         protected GameCharacter(GameScreen gameScreen) : base(gameScreen) { }
 
@@ -86,13 +84,13 @@ namespace GhostlyLib.Elements.Character
 #if DEBUG
                 //Debug.WriteLine("screenrec: " + GameScreen.Screen.ToScreen((int)this.X, (int)this.Y, this.Width, this.Height));
                 //draw the bounds for collision detection
-                Texture2D pixel = new Texture2D(spriteBatch.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
+                /*Texture2D pixel = new Texture2D(spriteBatch.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
                 pixel.SetData(new[] { Color.White });
                 spriteBatch.Draw(pixel, GameScreen.Screen.ToScreen((int)this.Top.X, (int)this.Top.Y, this.Top.Width, this.Top.Height), Color.Red);
                 spriteBatch.Draw(pixel, GameScreen.Screen.ToScreen((int)this.Bottom.X, (int)this.Bottom.Y, this.Bottom.Width, this.Bottom.Height), Color.Blue);
                 spriteBatch.Draw(pixel, GameScreen.Screen.ToScreen((int)this.LeftSide.X, (int)this.LeftSide.Y, this.LeftSide.Width, this.LeftSide.Height), Color.Purple);
-                spriteBatch.Draw(pixel, GameScreen.Screen.ToScreen((int)this.RightSide.X, (int) this.RightSide.Y, this.RightSide.Width, this.RightSide.Height), Color.Green);
-                spriteBatch.Draw(pixel, GameScreen.Screen.ToScreen((int)this.Center.X, (int) this.Center.Y, this.Center.Width, this.Center.Height), Color.Orange);
+                spriteBatch.Draw(pixel, GameScreen.Screen.ToScreen((int)this.RightSide.X, (int)this.RightSide.Y, this.RightSide.Width, this.RightSide.Height), Color.Green);
+                spriteBatch.Draw(pixel, GameScreen.Screen.ToScreen((int)this.Center.X, (int)this.Center.Y, this.Center.Width, this.Center.Height), Color.Orange);*/
 #endif
             }
         }

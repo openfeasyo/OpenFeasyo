@@ -89,12 +89,12 @@ namespace GhostlyLib.DynamicDifficulty
             return 0;
         }
 
-        public void UpdateMovement(int movementNumber, int contractions, ActionMovement desiredMovement, ActionMovement performedMovement)
+        public void UpdateMovement(int movementNumber, int contractions, ActionMovement desiredMovement, ActionMovement performedMovement, long timestamp)
         {
             // Debug.WriteLine("novement num = " + movementNumber + " contractions " + contractions + " desired Movement = " + desiredMovement + " performed " + performedMovement);
             if (_movements.Count < movementNumber + 1) // new turn
             {
-                _movements.Add(new MovementAnalytics() { movementNumber = movementNumber, contractions = contractions, desiredMovement = desiredMovement, performedMovement = performedMovement });
+                _movements.Add(new MovementAnalytics() { movementNumber = movementNumber, contractions = contractions, desiredMovement = desiredMovement, performedMovement = performedMovement, startTime = timestamp });
             }
             else //update, i.e., another contraction and possible change of direction
             {
@@ -104,6 +104,11 @@ namespace GhostlyLib.DynamicDifficulty
                 movementAnalytics.performedMovement = performedMovement;
             }
         }
+        public void UpdateMovementEnd(int movementNumber, long timestamp)
+        {
+            MovementAnalytics movementAnalytics = _movements[movementNumber];
+            movementAnalytics.endTime = timestamp;
+        }
 
         private class MovementAnalytics
         {
@@ -111,6 +116,8 @@ namespace GhostlyLib.DynamicDifficulty
             internal int contractions;
             internal ActionMovement desiredMovement;
             internal ActionMovement performedMovement;
+            internal long startTime;
+            internal long endTime;
 
             public MovementAnalytics() { }
         }

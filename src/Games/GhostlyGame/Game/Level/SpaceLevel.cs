@@ -63,31 +63,27 @@ namespace GhostlyLib.Level
         public Texture2D OrangePlanet { get { return ImagesAndAnimations.Instance.OrangePlanet; } }
         public Texture2D PinkPlanet { get { return ImagesAndAnimations.Instance.PinkPlanet; } }
         public Texture2D RedPlanet { get { return ImagesAndAnimations.Instance.RedPlanet; } }
-        public Texture2D Star { get { return ImagesAndAnimations.Instance.Star; } }
+        /*public Texture2D Star { get { return ImagesAndAnimations.Instance.Star; } }*/
         public Texture2D Ufo { get { return ImagesAndAnimations.Instance.Ufo; } }
         public Texture2D Debris { get { return ImagesAndAnimations.Instance.Debris; } }
         public Texture2D DebrisLong { get { return ImagesAndAnimations.Instance.DebrisLong; } }
         public Texture2D PurpleDebris { get { return ImagesAndAnimations.Instance.PurpleDebris; } }
         public Texture2D PurpleDebrisLong { get { return ImagesAndAnimations.Instance.PurpleDebrisLong; } }
-        public Texture2D RedDebris { get { return ImagesAndAnimations.Instance.RedDebris; } }
+        public Texture2D GreenDebris { get { return ImagesAndAnimations.Instance.GreenDebris; } }
         public Texture2D RedDebrisLong { get { return ImagesAndAnimations.Instance.RedDebrisLong; } }
         public Texture2D DebrisRocks { get { return ImagesAndAnimations.Instance.DebrisRocks; } }
         
         public Texture2D SpaceSpiral { get { return ImagesAndAnimations.Instance.SpaceSpiral; } }
         public Texture2D SpaceMist { get { return ImagesAndAnimations.Instance.SpaceMist; } }
 
-        public Texture2D FallingStars { get { return ImagesAndAnimations.Instance.FallingStars; } }
-        public Texture2D OrangeMist { get { return ImagesAndAnimations.Instance.OrangeMist; } }
-        public Texture2D BlueLine { get { return ImagesAndAnimations.Instance.BlueLine; } }
-
         public override LevelAnalytics Analytics { get; protected set; }
 
         #endregion Public members
 
-        public SpaceLevel(GameScreen gameScreen, LevelElements elements, double initialYPosition) : base(gameScreen)
+        public SpaceLevel(GameScreen gameScreen, LevelElements elements) : base(gameScreen)
         {
             this._elements = elements;
-            this.Character = new SpaceCharacter(gameScreen, elements, initialYPosition);
+            this.Character = new SpaceCharacter(gameScreen, elements);
         }
 
         public override void LoadMap(String p, double checkpoint)
@@ -179,7 +175,7 @@ namespace GhostlyLib.Level
                         }
                         else if (ch.Equals('v'))
                         {
-                            d = new Tile(i, j, 160, 480, TileType.RedDebris, this.Elements, this.RedDebris, this.GameScreen, checkpoint);
+                            d = new Tile(i, j, 160, 480, TileType.GreenDebris, this.Elements, this.GreenDebris, this.GameScreen, checkpoint);
                         }
                         else if (ch.Equals('V'))
                         {
@@ -204,18 +200,6 @@ namespace GhostlyLib.Level
                         else if (ch.Equals('}'))
                         {
                             d = new Tile(i, j, 40, 720, TileType.PullDown, this.Elements, this.Invisible, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('f')) //falling stars
-                        {
-                            d = new Tile(i, j, 400, 560, TileType.FallingStars, this.Elements, this.FallingStars, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('q')) //orange mist
-                        {
-                            d = new Tile(i, j, 400, 440, TileType.OrangeMist, this.Elements, this.OrangeMist, this.GameScreen, checkpoint);
-                        }
-                        else if (ch.Equals('w')) //blue line
-                        {
-                            d = new Tile(i, j, 400, 560, TileType.BlueLine, this.Elements, this.BlueLine, this.GameScreen, checkpoint);
                         }
                         else if (Char.IsNumber(ch))
                         {

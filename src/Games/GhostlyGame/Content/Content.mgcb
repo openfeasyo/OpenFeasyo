@@ -2815,7 +2815,7 @@
 /processorParam:TextureFormat=Color
 /build:Textures/Ghostly/purple debris long.png
 
-#begin Textures/Ghostly/red debris.png
+#begin Textures/Ghostly/green debris.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -2825,7 +2825,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Textures/Ghostly/red debris.png
+/build:Textures/Ghostly/green debris.png
 
 #begin Textures/Ghostly/red debris long.png
 /importer:TextureImporter
@@ -2874,44 +2874,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/Ghostly/spaceMist.png
-
-#begin Textures/Ghostly/orangeMist.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Textures/Ghostly/orangeMist.png
-
-#begin Textures/Ghostly/blueLine.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Textures/Ghostly/blueLine.png
-
-
-#begin Textures/Ghostly/fallingStars.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Textures/Ghostly/fallingStars.png
-
 
 #begin Textures/Ghostly/ufo.png
 /importer:TextureImporter
