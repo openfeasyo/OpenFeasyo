@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GhostlyGame.Views.PatientLogin"
+             Title=" "
+             BackgroundImageSource="menu_background.png">
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <VerticalStackLayout x:Name="Selection" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label x:Name="Title"
+                       Text="Ghostly"
+                       TextColor="#0BCEC4"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       FontSize="120"
+                       FontFamily="Vitamin"
+                       Padding="10,40,10,20"/>
+                
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label 
+                        Text="{Binding LocalizationResourceManager[AreYouPatient], Mode=OneWay}"
+                        FontSize="35"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" 
+                        Margin="5" />
+                    <Label 
+                        Text="{Binding StoredPatient}"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="DarkGreen"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" 
+                        Margin="5"/>
+                    <Label 
+                        Text="?"  
+                        FontSize="35"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center" 
+                        Margin="5"/>
+                </HorizontalStackLayout> 
+                <Button
+                    x:Name="YesBtn"
+                    Text="{Binding LocalizationResourceManager[Yes], Mode=OneWay}" 
+                    Clicked="OnYesClicked"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="#0BCEC4"
+                    TextColor="White"
+                    FontFamily="Vitamin"
+                    FontSize="Large"
+                    Margin="30"/>
+
+                <Button
+                    x:Name="NoBtn"
+                    Text="{Binding LocalizationResourceManager[No], Mode=OneWay}" 
+                    Clicked="OnNoClicked"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    FontFamily="Vitamin"
+                    FontSize="Large"
+                    Margin="30"/>
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="0" HorizontalOptions="End" VerticalOptions="End" Margin="20">
+                <Button
+                    x:Name="FR_lang"
+                    Text="FR"
+                    Clicked="OnFR_langClicked"
+                    HorizontalOptions="Center"
+                    Background="#0BCEC4"
+                    TextColor="White"
+                    FontFamily="Vitamin"
+                    FontSize="Small"
+                    Padding="10"/>
+
+                <Button
+                    x:Name="NL_lang"
+                    Text="NL"
+                    Clicked="OnNL_langClicked"
+                    HorizontalOptions="Center"
+                    Background="#0BCEC4"
+                    TextColor="White"
+                    FontFamily="Vitamin"
+                    FontSize="Small"
+                    Padding="10"/>
+
+                <Button
+                    x:Name="EN_lang"
+                    Text="EN"
+                    Clicked="OnEN_langClicked"
+                    HorizontalOptions="Center"
+                    Background="#0BCEC4"
+                    TextColor="White"
+                    FontFamily="Vitamin"
+                    FontSize="Small"
+                    Padding="10"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout x:Name="Loading" IsVisible="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="{Binding LocalizationResourceManager[LoadingGame], Mode=OneWay}"
+                   TextColor="#0BCEC4"
+                   FontSize="40"
+                   FontFamily="Vitamin"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   Padding="10,40,10,40" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
