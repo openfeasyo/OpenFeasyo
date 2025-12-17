@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllWorlds" xml:space="preserve">
+    <value>Tous les mondes</value>
+  </data>
+  <data name="AreBFRVOPValuesCorrect" xml:space="preserve">
+    <value>Les valeurs VOP-BFR sont-elles correctes?</value>
+  </data>
+  <data name="AreYouPatient" xml:space="preserve">
+    <value>Etes-vous le patient </value>
+  </data>
+  <data name="BackToMenu" xml:space="preserve">
+    <value>Retour au menu</value>
+  </data>
+  <data name="Calibrating" xml:space="preserve">
+    <value>Calibration …</value>
+  </data>
+  <data name="ClickOnTheButtonToStartTheCalibration" xml:space="preserve">
+    <value>Cliquez sur le bouton pour demarrer la calibration</value>
+  </data>
+  <data name="CloseGame" xml:space="preserve">
+    <value>Close Game</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connecter</value>
+  </data>
+  <data name="ConnectingTo" xml:space="preserve">
+    <value>Connexion a</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continuer</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contracter</value>
+  </data>
+  <data name="ContractMusclesMax3Times" xml:space="preserve">
+    <value>Contractez vos muscles maximum 3 fois</value>
+  </data>
+  <data name="Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>Terre</value>
+  </data>
+  <data name="EMG" xml:space="preserve">
+    <value>EMG</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Saisir le mot de passe</value>
+  </data>
+  <data name="EnterUsername" xml:space="preserve">
+    <value>Saisir le nom d utilisateur</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="GameOver" xml:space="preserve">
+    <value>Fin du jeu</value>
+  </data>
+  <data name="Ghostly" xml:space="preserve">
+    <value>Ghostly</value>
+  </data>
+  <data name="Hold" xml:space="preserve">
+    <value>Maintenir</value>
+  </data>
+  <data name="HowToPlayGhostlyGame" xml:space="preserve">
+    <value>Comment jouer au jeu Ghostly</value>
+  </data>
+  <data name="Ice" xml:space="preserve">
+    <value>Glace</value>
+  </data>
+  <data name="IWantToControlTheGameUsing" xml:space="preserve">
+    <value>Je veux controler le jeu avec</value>
+  </data>
+  <data name="Jump" xml:space="preserve">
+    <value>Saute</value>
+  </data>
+  <data name="Jumping" xml:space="preserve">
+    <value>Sauter</value>
+  </data>
+  <data name="L" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="Land" xml:space="preserve">
+    <value>Terre</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="LeftVOP" xml:space="preserve">
+    <value>VOP gauche</value>
+  </data>
+  <data name="LevelCompleted" xml:space="preserve">
+    <value>Niveau termine</value>
+  </data>
+  <data name="LoadingGame" xml:space="preserve">
+    <value>Chargement du jeu</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="Maze" xml:space="preserve">
+    <value>Labyrinthe</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>n.d.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="NextLevel" xml:space="preserve">
+    <value>Niveau suivant</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>ou</value>
+  </data>
+  <data name="PlayAgain" xml:space="preserve">
+    <value>Rejouer</value>
+  </data>
+  <data name="RatedPerceivedExertion" xml:space="preserve">
+    <value>Effort percu (RPE)</value>
+  </data>
+  <data name="Recalibrate" xml:space="preserve">
+    <value>Recalibrer</value>
+  </data>
+  <data name="Release" xml:space="preserve">
+    <value>Relacher</value>
+  </data>
+  <data name="ResetYourMusclesIn" xml:space="preserve">
+    <value>Relachez vos muscles dans</value>
+  </data>
+  <data name="RestYourMuscles" xml:space="preserve">
+    <value>Relachez vos muscles pour calibration</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Droit</value>
+  </data>
+  <data name="RightVOP" xml:space="preserve">
+    <value>VOP droite</value>
+  </data>
+  <data name="Rock" xml:space="preserve">
+    <value>Roche</value>
+  </data>
+  <data name="ScanForSensors" xml:space="preserve">
+    <value>Rechercher des capteurs</value>
+  </data>
+  <data name="Scanning" xml:space="preserve">
+    <value>Recherche</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="SelectLeftSensor" xml:space="preserve">
+    <value>Selectionner gauche sensor</value>
+  </data>
+  <data name="SelectPatient" xml:space="preserve">
+    <value>Selectionner un patient</value>
+  </data>
+  <data name="SelectRightSensor" xml:space="preserve">
+    <value>Selectionner droit sensor</value>
+  </data>
+  <data name="SelectSensorForJumping" xml:space="preserve">
+    <value>Selectionner le capteur pour sauter</value>
+  </data>
+  <data name="SelectSensorForShooting" xml:space="preserve">
+    <value>Selectionner le capteur pour tirer</value>
+  </data>
+  <data name="SelectTheLevel" xml:space="preserve">
+    <value>Selectionner le niveau</value>
+  </data>
+  <data name="SelectTheWorld" xml:space="preserve">
+    <value>Selectionner le monde</value>
+  </data>
+  <data name="SensorData" xml:space="preserve">
+    <value>Donnees du capteur:</value>
+  </data>
+  <data name="SessionCompleted" xml:space="preserve">
+    <value>Votre session est terminée, vous pouvez éteindre le jeu.</value>
+  </data>
+  <data name="Shoot" xml:space="preserve">
+    <value>Tire</value>
+  </data>
+  <data name="Shooting" xml:space="preserve">
+    <value>Tirer</value>
+  </data>
+  <data name="SimpleMaze" xml:space="preserve">
+    <value>Labyrinthe simple</value>
+  </data>
+  <data name="SimpleSpace" xml:space="preserve">
+    <value>Espace simple</value>
+  </data>
+  <data name="Space" xml:space="preserve">
+    <value>Espace</value>
+  </data>
+  <data name="StartCalibration" xml:space="preserve">
+    <value>Demarrer la calibration</value>
+  </data>
+  <data name="StartGame" xml:space="preserve">
+    <value>Demarrer le jeu</value>
+  </data>
+  <data name="StartTheGame" xml:space="preserve">
+    <value>Commancer le jeu</value>
+  </data>
+  <data name="StartToPlay" xml:space="preserve">
+    <value>Commancer le jeu</value>
+  </data>
+  <data name="Switch" xml:space="preserve">
+    <value>Changer</value>
+  </data>
+  <data name="Touch" xml:space="preserve">
+    <value>Toucher</value>
+  </data>
+  <data name="TouchTheHalvesOfTheScreenTo" xml:space="preserve">
+    <value>Touchez les deux moities de l ecran pour</value>
+  </data>
+  <data name="UsernameOrPasswordAreIncorrect" xml:space="preserve">
+    <value>Nom d utilisateur ou mot de passe incorrect</value>
+  </data>
+  <data name="WatchInstructions" xml:space="preserve">
+    <value>Voir les instructions</value>
+  </data>
+  <data name="Water" xml:space="preserve">
+    <value>Eau</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Qui</value>
+  </data>
+</root>
