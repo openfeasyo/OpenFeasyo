@@ -20,7 +20,6 @@ public partial class PatientSelectionPage : ContentPage, INotifyPropertyChanged
     {
         get
         {
-            Debug.WriteLine("reading patients " + _patients.Count());
             return _patients;
         }
         set
@@ -30,7 +29,7 @@ public partial class PatientSelectionPage : ContentPage, INotifyPropertyChanged
             OnPropertyChanged("Patients");
         }
     }
-
+        
     public PatientSelectionPage(IPlatformNavigator navigator)
     {
         InitializeComponent();
@@ -39,6 +38,9 @@ public partial class PatientSelectionPage : ContentPage, INotifyPropertyChanged
         _navigator = navigator;
 
         LoadPatients();
+
+        this.SelectPatientLabel.Text = LocalizationResourceManager.Instance["SelectPatient"].ToString();
+        this.ContinueBtn.Text = LocalizationResourceManager.Instance["Continue"].ToString();
     }
 
     private async void LoadPatients()

@@ -15,7 +15,8 @@
     </ContentPage.Resources>
     <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
     <VerticalStackLayout x:Name="Selection" IsVisible="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="{Binding LocalizationResourceManager[SelectPatient], Mode=OneWay}"
+            <Label x:Name="SelectPatientLabel"
+                Text="{Binding LocalizationResourceManager[SelectPatient], Mode=OneWay}"
                TextColor="#0BCEC4"
                FontSize="40"
                FontFamily="Vitamin"

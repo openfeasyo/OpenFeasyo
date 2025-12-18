@@ -16,6 +16,7 @@ namespace GhostlyLib.Screens
         #region Private members
         private Vector3 Position { get; set; }
         //private double _checkpoint = 0;
+        private OpenFeasyo.GameTools.Screen _screen;
         #endregion Private members
 
         #region Public members
@@ -53,6 +54,8 @@ namespace GhostlyLib.Screens
         {
             if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel == null)
                 GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 1;
+
+            _screen = screen;
         }
 
         public override void Initialize()
@@ -196,20 +199,20 @@ namespace GhostlyLib.Screens
             switch (this.GameCharacter.Instruction)
             {
                 case Instruction.Contract:
-                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Contract"].ToString(), new Vector2(300, 100), Color.Red);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Contract"].ToString(), new Vector2(_screen.ScreenMiddle.X - 60, _screen.ScreenMiddle.Y - 10), Color.Red);
                     break;
                 case Instruction.Hold:
-                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Hold"].ToString(), new Vector2(300, 100), Color.Orange);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Hold"].ToString(), new Vector2(_screen.ScreenMiddle.X - 60, _screen.ScreenMiddle.Y - 10), Color.Orange);
                     break;
                 case Instruction.Release:
-                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Release"].ToString(), new Vector2(300, 100), Color.Green);
+                    spriteBatch.DrawString(this.Font[2], LocalizationResourceManager.Instance["Release"].ToString(), new Vector2(_screen.ScreenMiddle.X - 60, _screen.ScreenMiddle.Y - 10), Color.Green);
                     break;
                 default:
                     break;
             }
 
             //print minutes:seconds since the start of the app
-            spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(300, 430), Color.FromNonPremultiplied(11, 206, 196, 256));
+            spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(_screen.ScreenMiddle.X - 60, _screen.ScreenHeight - 20), Color.FromNonPremultiplied(11, 206, 196, 256));
         }
 
         private void DrawOnetimeAnimations(SpriteBatch spriteBatch)
