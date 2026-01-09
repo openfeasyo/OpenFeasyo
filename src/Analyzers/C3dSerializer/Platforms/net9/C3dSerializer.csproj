@@ -23,6 +23,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Include="..\..\Source\C3dBalanceBoardSerializer.cs">
+			<Link>C3dBalanceBoardSerializer.cs</Link>
+		</Compile>
+		<Compile Include="..\..\Source\C3dBaseSerializer.cs">
+			<Link>C3dBaseSerializer.cs</Link>
+		</Compile>
+		<Compile Include="..\..\Source\C3dEmgSignalSerializer.cs">
+			<Link>C3dEmgSignalSerializer.cs</Link>
+		</Compile>
+		<Compile Include="..\..\Source\C3dSkeletonSerializer.cs">
+			<Link>C3dSkeletonSerializer.cs</Link>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
 	  <ProjectReference Include="..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj">
 	    <ReferenceSourceTarget></ReferenceSourceTarget>
 	  </ProjectReference>
