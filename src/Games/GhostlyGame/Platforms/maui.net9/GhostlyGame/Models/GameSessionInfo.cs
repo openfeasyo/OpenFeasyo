@@ -2,6 +2,9 @@
 {
     internal class GameSessionInfo
     {
+        private const int firstPossibleLevel = 191; // first level of the simple space game used in the Ghostly+ study
+        private const int lastPossibleLevel = 200; // last level of the simple space game used in the Ghostly+ study
+
         private static GameSessionInfo _instance;
         internal static GameSessionInfo Instance
         {
@@ -21,18 +24,6 @@
 
         public Uploader Uploader { get; }
 
-        private int _startLevel = 191;
-
-        public int StartLevel
-        {
-            get
-            {
-                return _startLevel;
-                //TODO - read from the patient
-                //SelectedPatient.FirstLevel
-            }
-        }
-
         public int LevelsCompleted { get; set; }
         public int RequiredLevels { get { return 3; } }//TODO read this from server??
 
@@ -50,9 +41,15 @@
             await Uploader.Initialize();
         }
 
-        public bool SessionCompleted()
+        /*public bool SessionCompleted()
         {
             return LevelsCompleted == RequiredLevels;
+        }*/
+
+        //helper method to ensure only levels 191 - 200 are played, in a loop, i.e. 200 -> 191 ...
+        public int LevelToPlay()
+        {
+            return GameSessionInfo.firstPossibleLevel + (((int)GameSessionInfo.Instance.SelectedPatient.LevelToPlay - GameSessionInfo.firstPossibleLevel) + this.LevelsCompleted) % (GameSessionInfo.lastPossibleLevel - GameSessionInfo.firstPossibleLevel + 1);
         }
     }
 

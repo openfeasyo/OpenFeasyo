@@ -68,5 +68,9 @@ namespace GhostlyGame.Models
 
         [Column("difficulty_level")]
         public int? DifficultyLevel { get; set; }
+
+        [Column("level_to_play")]
+        public int? LevelToPlay { get; set; }
+
     }
 }

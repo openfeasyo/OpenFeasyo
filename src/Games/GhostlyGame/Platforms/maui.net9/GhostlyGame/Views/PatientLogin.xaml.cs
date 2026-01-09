@@ -3,7 +3,6 @@ using maui.net9;
 using Microsoft.Maui.Controls;
 using OpenFeasyo.Platform.Data;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
@@ -64,6 +63,13 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
             if (storedUsername == null || storedPassword == null || StoredPatient == null)
                 NavigateToLogin();
 
+            if (storedLanguage == null)
+            {
+                //set default language
+                storedLanguage = "en-EN";
+                await SecureStorage.Default.SetAsync("language", storedLanguage);
+            }
+
             //set up culture
             CultureInfo.CurrentCulture = new CultureInfo(storedLanguage);
             LocalizationResourceManager.Instance.SetCulture(new CultureInfo(storedLanguage));
@@ -93,7 +99,12 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
                 SeriousGames.CurrentPatient.Id = StoredPatient;
 
                 GameSessionInfo.Instance.SelectedPatient = p.First();
-                                
+
+                if (GameSessionInfo.Instance.SelectedPatient.DifficultyLevel == null)
+                    GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 1;
+                if (GameSessionInfo.Instance.SelectedPatient.LevelToPlay == null)
+                    GameSessionInfo.Instance.SelectedPatient.LevelToPlay = 191;
+
                 // Should navigate to game menu page
                 _navigator.OpenGameView(Application.Current);
             }
@@ -126,10 +137,9 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
         // Change the current culture to fr-FR
         CultureInfo.CurrentCulture = new CultureInfo("fr-FR");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("fr-FR"));
-        Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
+        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "fr-FR");
-
     }
 
     private async void OnNL_langClicked(object sender, EventArgs e)
@@ -137,7 +147,7 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
         // Change the current culture to nl-NL
         CultureInfo.CurrentCulture = new CultureInfo("nl-NL");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("nl-NL"));
-        Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
+        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "nl-NL");
     }
@@ -147,7 +157,7 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
         // Change the current culture to en-EN
         CultureInfo.CurrentCulture = new CultureInfo("en-EN");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("en-EN"));
-        Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
+        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "en-EN");
     }

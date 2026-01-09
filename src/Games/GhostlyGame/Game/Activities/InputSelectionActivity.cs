@@ -35,10 +35,10 @@ namespace GhostlyLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label questionLabel = new Label(LocalizationResourceManager.Instance["IWantToControlTheGameUsing"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label questionLabel = new Label(LocalizationResourceManager.Instance["IWantToControlTheGameUsing"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             questionLabel.Position = engine.Screen.ScreenMiddle - questionLabel.Size / 2 - new Vector2(0, 200);
 
-            Label orLabel = new Label(LocalizationResourceManager.Instance["or"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label orLabel = new Label(LocalizationResourceManager.Instance["or"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             orLabel.Position = engine.Screen.ScreenMiddle - orLabel.Size / 2 - new Vector2(0, 0);
 
             TextButton touchButton = new TextButton(LocalizationResourceManager.Instance["Touch"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);

@@ -130,7 +130,7 @@
     <value>Retour au menu</value>
   </data>
   <data name="Calibrating" xml:space="preserve">
-    <value>Calibration …</value>
+    <value>Calibration ...</value>
   </data>
   <data name="ClickOnTheButtonToStartTheCalibration" xml:space="preserve">
     <value>Cliquez sur le bouton pour demarrer la calibration</value>
@@ -206,6 +206,9 @@
   </data>
   <data name="LeftVOP" xml:space="preserve">
     <value>VOP gauche</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Niv</value>
   </data>
   <data name="LevelCompleted" xml:space="preserve">
     <value>Niveau termine</value>
@@ -298,7 +301,7 @@
     <value>Donnees du capteur:</value>
   </data>
   <data name="SessionCompleted" xml:space="preserve">
-    <value>Votre session est terminée, vous pouvez éteindre le jeu.</value>
+    <value>Votre session est terminée.</value>
   </data>
   <data name="Shoot" xml:space="preserve">
     <value>Tire</value>
@@ -335,6 +338,9 @@
   </data>
   <data name="TouchTheHalvesOfTheScreenTo" xml:space="preserve">
     <value>Touchez les deux moities de l ecran pour</value>
+  </data>
+  <data name="TurnOffTheGame" xml:space="preserve">
+    <value>Vous pouvez éteindre le jeu.</value>
   </data>
   <data name="UsernameOrPasswordAreIncorrect" xml:space="preserve">
     <value>Nom d utilisateur ou mot de passe incorrect</value>

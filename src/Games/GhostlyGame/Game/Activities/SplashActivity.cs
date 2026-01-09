@@ -46,16 +46,16 @@ namespace GhostlyLib.Activities
             Label infoLabelOutline = new Label("Ghostly", engine.Content.LoadFont("Fonts/VitaminOutline128"), GhostlyGame.MENU_FONT_COLOR);
             infoLabelOutline.Position = engine.Screen.ScreenMiddle - infoLabelOutline.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y / 2);
 
-            Label info1Label = new Label("Application development was supported by the De Luca Foundation and Delsys, Inc.", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize ), GhostlyGame.MENU_FONT_COLOR);
+            Label info1Label = new Label("Application development was supported by the De Luca Foundation and Delsys, Inc.", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + fontSize ), GhostlyGame.MENU_FONT_COLOR);
             info1Label.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - info1Label.Size / 2;
 
-            Label info2Label = new Label("Application is intended for exploratory data acquisition and ", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
+            Label info2Label = new Label("Application is intended for exploratory data acquisition and ", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
             info2Label.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 8.5f) - info2Label.Size / 2;
 
-            Label info3Label = new Label("feedback purposes, and is not intended for clinical/diagnostic use.", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
+            Label info3Label = new Label("feedback purposes, and is not intended for clinical/diagnostic use.", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
             info3Label.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 9.0f) - info3Label.Size / 2;
 
-            Label info4Label = new Label("Application is not to be used for commercial distribution.", engine.Content.LoadFont("Fonts/Ubuntu" + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
+            Label info4Label = new Label("Application is not to be used for commercial distribution.", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + fontSize), Color.DarkRed/*GhostlyGame.MENU_FONT_COLOR*/);
             info4Label.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 10) - info4Label.Size / 2;
 
 

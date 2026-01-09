@@ -21,7 +21,6 @@ using Microsoft.Xna.Framework.Graphics;
 using OpenFeasyo.GameTools.Core;
 using OpenFeasyo.GameTools.Effects;
 using OpenFeasyo.Platform.Controls;
-using OpenFeasyo.Platform.Controls.Drivers;
 using System.Diagnostics;
 
 namespace GhostlyLib.Screens
@@ -109,8 +108,16 @@ namespace GhostlyLib.Screens
 
         public void LoadNextLevel()
         {
-            this.CurrentLevel += 1;
-            this.CurrentLevel = Math.Min(this.CurrentLevel, 224);// 191); // Max level cannot exceed 190
+            //TODO Ghostly+ study...only levels 191 - 200 can be played
+            if (GameSessionInfo.Instance.SelectedPatient != null)
+            {
+                this.CurrentLevel = GameSessionInfo.Instance.LevelToPlay();
+            }
+            else
+            {
+                this.CurrentLevel += 1;
+                this.CurrentLevel = Math.Min(this.CurrentLevel, 224);
+            }
             LoadLevel();
         }
 
@@ -143,7 +150,6 @@ namespace GhostlyLib.Screens
             {
                 this.State = GameState.Paused;
             }
-
         }
 
         public void ResumeGame()
@@ -194,7 +200,8 @@ namespace GhostlyLib.Screens
 
         public abstract void Update(GameTime gameTime);
 
-        public void UpdateRequiredContractionDuration(int evaluation)
+
+        /*public void UpdateRequiredContractionDuration(int evaluation)
         {
             if (evaluation < 0)
             {
@@ -209,7 +216,7 @@ namespace GhostlyLib.Screens
                 GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms = Math.Min((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms + 1000, 10000);
             }
             else { }//no change   
-        }
+        }*/
 
         public void UpdateDifficultyLevel(int evaluation)
         {

@@ -47,19 +47,19 @@ namespace GhostlyLib.Activities
             Components.Add(backgroundImage);
 
 
-            counterLabel = new Label(LocalizationResourceManager.Instance["ResetYourMusclesIn"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            counterLabel = new Label(LocalizationResourceManager.Instance["ResetYourMusclesIn"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             counterLabel.Position = (engine.Screen.ScreenMiddle - counterLabel.Size / 2) - new Vector2(0, counterLabel.Size.Y);
             Components.Add(counterLabel);
 
-            instructionLabel = new Label("5", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            instructionLabel = new Label("5", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             instructionLabel.Position = (engine.Screen.ScreenMiddle - instructionLabel.Size / 2) + new Vector2(0, instructionLabel.Size.Y);
             Components.Add(instructionLabel);
 
-            infoLabel = new Label(LocalizationResourceManager.Instance["Calibrating"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            infoLabel = new Label(LocalizationResourceManager.Instance["Calibrating"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel.Position = engine.Screen.ScreenMiddle - infoLabel.Size / 2;
             Components.Add(infoLabel);
 
-            _fpsLabel = new Label(LocalizationResourceManager.Instance["SensorData"].ToString() + " - fps", engine.Content.LoadFont("Fonts/Ubuntu12"), GhostlyGame.MENU_FONT_COLOR);
+            _fpsLabel = new Label(LocalizationResourceManager.Instance["SensorData"].ToString() + " - fps", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_SMALL_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _fpsLabel.Position = new Vector2(0, engine.Screen.ScreenHeight - _fpsLabel.Size.Y) + new Vector2(10, -10);
             Components.Add(_fpsLabel);
 

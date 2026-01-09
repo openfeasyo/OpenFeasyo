@@ -122,8 +122,6 @@ namespace GhostlyLib.Elements.Character
                 this.Y -= (UpDown_Movement_Step_Right * gameTime.ElapsedGameTime.Milliseconds);
             }
 
-            //Debug.WriteLine("SpeedY = " + SpeedY + " Y = " + Y);
-
             if (AutomaticMovement.Equals(AutomaticMovement.MovingForward))
             {
                 this.SpeedX = GameScreen.SPEED;
@@ -167,7 +165,7 @@ namespace GhostlyLib.Elements.Character
             {
                 if (GravityPull != Pull.No && this.ActionMovement == ActionMovement.None)
                 {
-                    ((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovementEnd(completedMovements, DateTime.Now.Ticks);
+                    //((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovementEnd(completedMovements, DateTime.Now.Ticks);
                     //completed required movement
                     completedMovements++;
                     GravityPull = Pull.No;
@@ -311,9 +309,9 @@ namespace GhostlyLib.Elements.Character
                 //this.SpeedY = SIDEMOVEMENTSPEED;
                 this.SpeedX = GameScreen.SPEED;
 
-                Debug.WriteLine("Contraction L started: " + DateTime.Now.Ticks);
+                //Debug.WriteLine("Contraction L started: " + DateTime.Now.Ticks);
 
-                ((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovement(completedMovements, 1, desiredMovement, this.ActionMovement, DateTime.Now.Ticks);
+                //((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovement(completedMovements, 1, desiredMovement, this.ActionMovement, DateTime.Now.Ticks);
             }//}
         }
 
@@ -328,9 +326,9 @@ namespace GhostlyLib.Elements.Character
                 //this.SpeedY = -SIDEMOVEMENTSPEED;
                 this.SpeedX = GameScreen.SPEED;
 
-                Debug.WriteLine("Contraction R started: " + DateTime.Now.Ticks);
+                //Debug.WriteLine("Contraction R started: " + DateTime.Now.Ticks);
 
-                ((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovement(completedMovements, 1, desiredMovement, this.ActionMovement, DateTime.Now.Ticks);
+                //((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovement(completedMovements, 1, desiredMovement, this.ActionMovement, DateTime.Now.Ticks);
             }
             //}
         }

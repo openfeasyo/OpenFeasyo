@@ -71,18 +71,18 @@ namespace GhostlyLib.Activities
                 dev.LoadDriver(new Dictionary<string, string>());
             }
 
-            _scanButton = new TextButton(LocalizationResourceManager.Instance["ScanForSensors"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            _scanButton = new TextButton(LocalizationResourceManager.Instance["ScanForSensors"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             _scanButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
                 ScanForSensors();
             };
             _scanButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 1) - _scanButton.Size / 2;
 
-            _scanningLabel = new Label(LocalizationResourceManager.Instance["Scanning"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            _scanningLabel = new Label(LocalizationResourceManager.Instance["Scanning"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _scanningLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 1) - _scanningLabel.Size / 2;
             _scanningLabel.Visible = false;
 
-            TextButton s = new TextButton(LocalizationResourceManager.Instance["NA"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton s = new TextButton(LocalizationResourceManager.Instance["NA"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             s.Clicked += S_Clicked;
             s.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 3) - s.Size / 2;
             s.Hidden = true;
@@ -93,21 +93,21 @@ namespace GhostlyLib.Activities
             _buttons.Add(s);
             Components.Add(s);
 
-            s = new TextButton(LocalizationResourceManager.Instance["NA"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            s = new TextButton(LocalizationResourceManager.Instance["NA"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             s.Clicked += S_Clicked;
             s.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - s.Size / 2;
             s.Hidden = true;
             _buttons.Add(s);
             Components.Add(s);
 
-            s = new TextButton(LocalizationResourceManager.Instance["NA"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            s = new TextButton(LocalizationResourceManager.Instance["NA"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             s.Clicked += S_Clicked;
             s.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - s.Size / 2;
             s.Hidden = true;
             _buttons.Add(s);
             Components.Add(s);
 
-            s = new TextButton(LocalizationResourceManager.Instance["NA"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            s = new TextButton(LocalizationResourceManager.Instance["NA"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             s.Clicked += S_Clicked;
             s.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 6) - s.Size / 2;
             s.Hidden = true;
@@ -138,7 +138,7 @@ namespace GhostlyLib.Activities
                 engine.MusicPlayer.PlayEffect("hover");
             };
 
-            _connectingLabel = new Label(LocalizationResourceManager.Instance["ConnectingTo"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            _connectingLabel = new Label(LocalizationResourceManager.Instance["ConnectingTo"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _connectingLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 7) - _connectingLabel.Size / 2 + new Vector2(cell * 2, 0);
             _connectingLabel.Visible = false;
 
@@ -151,11 +151,11 @@ namespace GhostlyLib.Activities
             _shootLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - _shootLabel.Size / 2 + new Vector2(s.Size.X * 1.5f, 0);
             _shootLabel.Visible = false;
 
-            _jumpQuestionLabel = new Label(LocalizationResourceManager.Instance["SelectLeftSensor"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            _jumpQuestionLabel = new Label(LocalizationResourceManager.Instance["SelectLeftSensor"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _jumpQuestionLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 2) - _jumpQuestionLabel.Size / 2;
             _jumpQuestionLabel.Visible = true;
 
-            _shootQuestionLabel = new Label(LocalizationResourceManager.Instance["SelectRightSensor"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            _shootQuestionLabel = new Label(LocalizationResourceManager.Instance["SelectRightSensor"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _shootQuestionLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 2) - _shootQuestionLabel.Size / 2;
             _shootQuestionLabel.Visible = false;
 
@@ -215,7 +215,6 @@ namespace GhostlyLib.Activities
             }
             else if (_shootingButton == null)
             {
-
                 _jumpQuestionLabel.Visible = false;
                 _shootQuestionLabel.Visible = true;
                 _connectButton.Visible = false;
@@ -356,7 +355,7 @@ namespace GhostlyLib.Activities
                 _fps = _framesReceived;
                 _framesReceived = 0;
                 _lastTime = DateTime.Now;
-                Console.WriteLine("FPS : " + _fps);
+                //Console.WriteLine("FPS : " + _fps);
             }
             //Console.WriteLine("Raw signal: " + e.EMGSensor[0].RawSample);
             //          _emgSignalViewer.AddValue(e.EMGSensor[0]);

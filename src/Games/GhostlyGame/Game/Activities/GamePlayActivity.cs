@@ -68,7 +68,16 @@ namespace GhostlyLib.Activities
             TextButton backButton = new TextButton(LocalizationResourceManager.Instance["BackToMenu"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             backButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
-                StartActivity(new MainMenuActivity(engine));
+                //TODO for Ghostly+ study
+                if (GameSessionInfo.Instance.SelectedPatient != null)
+                {
+                    StartActivity(new StartGameActivity(engine));
+                }
+                else
+                {
+                    StartActivity(new MainMenuActivity(engine));
+                }
+
                 _engine.MusicPlayer.Play("menu");
             };
             backButton.Position = engine.Screen.ScreenMiddle - backButton.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
@@ -91,55 +100,7 @@ namespace GhostlyLib.Activities
             #endregion Game Over Panel
 
             #region Level Done Panel
-            _levelDonePanel = new ComponentCollection();
-            _levelDonePanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
-
-            if (GameSessionInfo.Instance.SessionCompleted())
-            {
-                Label sessionCompletedLabel = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString().ToUpper(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-                sessionCompletedLabel.Position = engine.Screen.ScreenMiddle - sessionCompletedLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y );
-            }
-            else
-            {
-                TextButton nextButton = new TextButton(LocalizationResourceManager.Instance["NextLevel"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-                nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
-                {
-                    Components.Remove(_levelDonePanel);
-
-                    if (_screen.CurrentLevel == 160 || _screen.CurrentLevel == 190)
-                    {
-                        //levels 161+ are 3D levels, and levels 191+ are again 2D levels
-                        //we need to go back to main menu, to select maze game explicitly, to initialize GameScreen3D or GameScreen2D,
-                        StartActivity(new MainMenuActivity(engine));
-                    }
-                    else
-                    {
-                        //otherwise we remain in the same GameScreen 2D for levels up to 160, and 3D for levels 161 and higher
-                        _screen.LoadNextLevel();
-                    }
-                };
-                nextButton.Position = engine.Screen.ScreenMiddle - nextButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
-
-                _levelDonePanel.Components.Add(nextButton);
-            }
-
-            backButton = new TextButton(LocalizationResourceManager.Instance["BackToMenu"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            backButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
-            {
-                StartActivity(new MainMenuActivity(engine));
-                _engine.MusicPlayer.Play("menu");
-            };
-            backButton.Position = engine.Screen.ScreenMiddle - backButton.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
-
-            Label levelDoneLabel = new Label(LocalizationResourceManager.Instance["LevelCompleted"].ToString().ToUpper(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-            levelDoneLabel.Position = engine.Screen.ScreenMiddle - levelDoneLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y * 2 / 3);
-
-            _scoreLabel = new Label(LocalizationResourceManager.Instance["Score"].ToString() + ": 00", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-            _scoreLabel.Position = engine.Screen.ScreenMiddle - _scoreLabel.Size / 2 + new Vector2(0, -engine.Screen.ScreenMiddle.Y / 3);
-
-            _levelDonePanel.Components.Add(backButton);
-            _levelDonePanel.Components.Add(levelDoneLabel);
-            _levelDonePanel.Components.Add(_scoreLabel);
+            LoadLevelDonePanel(engine);
 
             #endregion Level Done Panel
 
@@ -199,11 +160,11 @@ namespace GhostlyLib.Activities
             emgImage2.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.7) - (emgImage2.Size.X / 2), cell * 2);
             _bfrVopPanel.Components.Add(emgImage2);
 
-            Label percentageBFRLeftLabel = new Label("50% ", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
+            Label percentageBFRLeftLabel = new Label("50% ", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
             percentageBFRLeftLabel.Position = emgImage1.Position + emgImage1.Size - percentageBFRLeftLabel.Size;
             _bfrVopPanel.Components.Add(percentageBFRLeftLabel);
 
-            Label percentageBfrRightLabel = new Label("50% ", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
+            Label percentageBfrRightLabel = new Label("50% ", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
             percentageBfrRightLabel.Position = emgImage2.Position + emgImage2.Size - percentageBfrRightLabel.Size;
             _bfrVopPanel.Components.Add(percentageBfrRightLabel);
 
@@ -236,7 +197,7 @@ namespace GhostlyLib.Activities
                     UpdateC3D();
 
                     //Evaluate the level - > check analytics
-                    if (_screen.Level.GetType() == typeof(MazeLevel3D))
+                    /*if (_screen.Level.GetType() == typeof(MazeLevel3D))
                     {
                         int evaluation = ((MazeLevel3D)_screen.Level).Analytics.Evaluate();
 
@@ -245,25 +206,24 @@ namespace GhostlyLib.Activities
 
                         _screen.UpdateRequiredContractionDuration(evaluation);
                     }
-                    else if (_screen.Level.GetType() == typeof(SimpleSpaceLevel))
+                    else */
+                    if (_screen.Level.GetType() == typeof(SimpleSpaceLevel))
                     {
                         int evaluation = ((SimpleSpaceLevel)_screen.Level).Analytics.Evaluate();
-
-                        //TODO
-                        //load the c3d file, process it and calculate performance score
-                        //AnalyzeEmg();
-
                         _screen.UpdateDifficultyLevel(evaluation);
                     }
                 }
 
                 Components.Remove(_bfrVopPanel);
+                //TODO the panel needs to be loaded, since it's content changes based on session
+                LoadLevelDonePanel(engine);
                 Components.Add(_levelDonePanel);
+
             };
             okButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.5) - (okButton.Size.X / 2), (int)(engine.Screen.ScreenHeight * 0.8));
             _bfrVopPanel.Components.Add(okButton);
 
-            Label bfrVopValuesLabel = new Label(LocalizationResourceManager.Instance["AreTheBFRVOPValuesCorrect"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label bfrVopValuesLabel = new Label(LocalizationResourceManager.Instance["AreBFRVOPValuesCorrect"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             bfrVopValuesLabel.Position = new Vector2((int)((engine.Screen.ScreenWidth - bfrVopValuesLabel.Size.X) / 2), (int)(engine.Screen.ScreenHeight * 0.1));
 
             _bfrVopPanel.Components.Add(bfrVopValuesLabel);
@@ -300,7 +260,16 @@ namespace GhostlyLib.Activities
             exitButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
                 _screen.Exit();
-                StartActivity(new MainMenuActivity(engine));
+                //TODO for Ghostly+ study
+                if (GameSessionInfo.Instance.SelectedPatient != null)
+                {
+                    StartActivity(new StartGameActivity(engine));
+                }
+                else
+                {
+                    StartActivity(new MainMenuActivity(engine));
+                }
+
                 _engine.MusicPlayer.Play("menu");
             };
             exitButton.Position = engine.Screen.ScreenMiddle - exitButton.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
@@ -319,6 +288,73 @@ namespace GhostlyLib.Activities
             _pausePanel.Components.Add(continueButton);
 
             #endregion Pause Panel
+        }
+
+        private void LoadLevelDonePanel(UIEngine engine)
+        {
+            _levelDonePanel = new ComponentCollection();
+            _levelDonePanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
+
+            //this is prepared before this level is finished, we check if completed levels + this one equal required number of levels
+            if (GameSessionInfo.Instance.LevelsCompleted == GameSessionInfo.Instance.RequiredLevels)
+            {
+                Label sessionCompleted = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                sessionCompleted.Position = new Vector2(engine.Screen.ScreenMiddle.X - (sessionCompleted.Size.X / 2), engine.Screen.ScreenMiddle.Y - 35);
+                _levelDonePanel.Components.Add(sessionCompleted);
+
+                Label turnOffTheGame = new Label(LocalizationResourceManager.Instance["TurnOffTheGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                turnOffTheGame.Position = new Vector2(engine.Screen.ScreenMiddle.X - (turnOffTheGame.Size.X / 2), engine.Screen.ScreenMiddle.Y + 35);
+                _levelDonePanel.Components.Add(turnOffTheGame);
+            }
+            else
+            {
+                TextButton nextButton = new TextButton(LocalizationResourceManager.Instance["NextLevel"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+                {
+                    Components.Remove(_levelDonePanel);
+
+                    if (_screen.CurrentLevel == 160 || _screen.CurrentLevel == 190)
+                    {
+                        //levels 161+ are 3D levels, and levels 191+ are again 2D levels
+                        //we need to go back to main menu, to select maze game explicitly, to initialize GameScreen3D or GameScreen2D,
+                        StartActivity(new MainMenuActivity(engine));
+                    }
+                    else
+                    {
+                        //otherwise we remain in the same GameScreen 2D for levels up to 160, and 3D for levels 161 and higher
+                        _screen.LoadNextLevel();
+                    }
+                };
+                nextButton.Position = engine.Screen.ScreenMiddle - nextButton.Size / 2 - new Vector2(-engine.Screen.ScreenMiddle.X / 2, 0);
+
+                _levelDonePanel.Components.Add(nextButton);
+
+                TextButton backButton = new TextButton(LocalizationResourceManager.Instance["BackToMenu"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                backButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+                {
+                    //TODO for Ghostly+ study
+                    if (GameSessionInfo.Instance.SelectedPatient != null)
+                    {
+                        StartActivity(new StartGameActivity(engine));
+                    }
+                    else {
+                        StartActivity(new MainMenuActivity(engine));
+                    }
+
+                    _engine.MusicPlayer.Play("menu");
+                };
+                backButton.Position = engine.Screen.ScreenMiddle - backButton.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
+
+                Label levelDoneLabel = new Label(LocalizationResourceManager.Instance["LevelCompleted"].ToString().ToUpper(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                levelDoneLabel.Position = engine.Screen.ScreenMiddle - levelDoneLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y * 2 / 3);
+
+                _scoreLabel = new Label(LocalizationResourceManager.Instance["Score"].ToString() + ": 00", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                _scoreLabel.Position = engine.Screen.ScreenMiddle - _scoreLabel.Size / 2 + new Vector2(0, -engine.Screen.ScreenMiddle.Y / 3);
+
+                _levelDonePanel.Components.Add(backButton);
+                _levelDonePanel.Components.Add(levelDoneLabel);
+                _levelDonePanel.Components.Add(_scoreLabel);
+            }
         }
 
         private void UpdateC3D()
@@ -352,8 +388,14 @@ namespace GhostlyLib.Activities
             //add prameters
             writer.SetParameter<float>("INFO:BFR_target_lop_percentage_ch1", GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch1);
             writer.SetParameter<float>("INFO:BFR_target_lop_percentage_ch2", GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch2);
-            writer.SetParameter<float>("INFO:target_contractions_ch1)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms);
-            writer.SetParameter<float>("INFO:target_contractions_ch2)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms);
+            //writer.SetParameter<float>("INFO:target_contractions_ch1)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms);
+            //writer.SetParameter<float>("INFO:target_contractions_ch2)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms);
+
+            float contractionDuration = (float)DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).contractionDuration / 1000;
+
+            writer.SetParameter<float>("INFO:target_contractions_ch1)", (float)contractionDuration);
+            writer.SetParameter<float>("INFO:target_contractions_ch2)", (float)contractionDuration);
+
             writer.SetParameter<Int16>("INFO:rpe_post_session", GameSessionInfo.Instance.Session.Rpe_post_session);
 
             int difficultyLevel = (int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel;

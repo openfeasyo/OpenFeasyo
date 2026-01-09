@@ -207,6 +207,9 @@
   <data name="LeftVOP" xml:space="preserve">
     <value>Linker VOP</value>
   </data>
+  <data name="Level" xml:space="preserve">
+    <value>Niv</value>
+  </data>
   <data name="LevelCompleted" xml:space="preserve">
     <value>Niveau voltooid</value>
   </data>
@@ -298,7 +301,7 @@
     <value>Sensorgegevens:</value>
   </data>
   <data name="SessionCompleted" xml:space="preserve">
-    <value>Je sessie is voltooid, je kunt het spel afsluiten.</value>
+    <value>Je sessie is voltooid.</value>
   </data>
   <data name="Shoot" xml:space="preserve">
     <value>Schiet</value>
@@ -335,6 +338,9 @@
   </data>
   <data name="TouchTheHalvesOfTheScreenTo" xml:space="preserve">
     <value>Raak beide helften van het scherm aan om</value>
+  </data>
+  <data name="TurnOffTheGame" xml:space="preserve">
+    <value>Je kunt het spel afsluiten.</value>
   </data>
   <data name="UsernameOrPasswordAreIncorrect" xml:space="preserve">
     <value>Gebruikersnaam of wachtwoord is onjuist</value>

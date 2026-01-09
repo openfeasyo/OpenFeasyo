@@ -34,11 +34,11 @@ namespace GhostlyLib.Activities
 
             if (GameSessionInfo.Instance.LevelsCompleted < GameSessionInfo.Instance.RequiredLevels)
             {
-                int firstLevel = GameSessionInfo.Instance.StartLevel;
-                float tileWidth = (engine.Screen.ScreenWidth * 0.9f) / 6;
-                float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 5;
+                int firstLevel = GameSessionInfo.Instance.LevelToPlay();
+                float tileWidth =  (engine.Screen.ScreenWidth * 0.9f) / 2;
+                float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 4;
 
-                LevelSelectionButton StartGameButton = new LevelSelectionButton(LocalizationResourceManager.Instance["StartToPlay"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                LevelSelectionButton StartGameButton = new LevelSelectionButton(LocalizationResourceManager.Instance["StartToPlay"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
                 StartGameButton.Level = firstLevel;
                 StartGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
                 {
@@ -53,25 +53,36 @@ namespace GhostlyLib.Activities
                         "</bindings></Configuration>"
                         ));
                 };
-                StartGameButton.Position = (new Vector2(engine.Screen.ScreenMiddle.X - (tileWidth), engine.Screen.ScreenMiddle.Y - (tileHeight)));
+                StartGameButton.Position = (new Vector2(engine.Screen.ScreenMiddle.X - (tileWidth/2), engine.Screen.ScreenMiddle.Y - (tileHeight/2)));
                 StartGameButton.Size = new Vector2(tileWidth, tileHeight);
                 Components.Add(StartGameButton);
             }
             else
             {
-                Label sessionCompleted = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-                sessionCompleted.Position = new Vector2(engine.Screen.ScreenMiddle.X - (sessionCompleted.Size.X / 2), cell * 4);
+                //Label sessionCompleted = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                Label sessionCompleted = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                sessionCompleted.Position = new Vector2(engine.Screen.ScreenMiddle.X - (sessionCompleted.Size.X / 2), engine.Screen.ScreenMiddle.Y - 35);
                 Components.Add(sessionCompleted);
 
-                Label closeGame = new Label(LocalizationResourceManager.Instance["CloseGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-                closeGame.Position = new Vector2(engine.Screen.ScreenMiddle.X - (sessionCompleted.Size.X / 2), cell * 6);
-                Components.Add(closeGame);
+                //Label turnOffTheGame = new Label(LocalizationResourceManager.Instance["TurnOffTheGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                Label turnOffTheGame = new Label(LocalizationResourceManager.Instance["TurnOffTheGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                turnOffTheGame.Position = new Vector2(engine.Screen.ScreenMiddle.X - (turnOffTheGame.Size.X / 2), engine.Screen.ScreenMiddle.Y + 35);
+                Components.Add(turnOffTheGame);
 
-                //TextButton allWorldsButton = new TextButton(LocalizationResourceManager.Instance["AllWorlds"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-                //allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
-                //allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - allWorldsButton.Size / 2;
-                //Components.Add(allWorldsButton);
+                //Label closeGame = new Label(LocalizationResourceManager.Instance["CloseGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                //closeGame.Position = new Vector2(engine.Screen.ScreenMiddle.X - (closeGame.Size.X / 2), cell * 3);
+                //Components.Add(closeGame);
+
+                /*TextButton allWorldsButton = new TextButton(LocalizationResourceManager.Instance["AllWorlds"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
+                allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - allWorldsButton.Size / 2;
+                Components.Add(allWorldsButton);*/
             }
+
+            /*TextButton allWorldsButton = new TextButton(LocalizationResourceManager.Instance["AllWorlds"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
+            allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - allWorldsButton.Size / 2;
+            Components.Add(allWorldsButton);*/
         }
 
         public override void Update(GameTime gameTime)

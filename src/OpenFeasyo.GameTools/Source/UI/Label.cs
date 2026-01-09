@@ -44,7 +44,5 @@ namespace OpenFeasyo.GameTools.UI
 		{
 			spritebatch.DrawString(_font,_text,Position,_color);
 		}
-
-
 	}
 }
