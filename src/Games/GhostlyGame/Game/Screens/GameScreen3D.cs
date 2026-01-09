@@ -71,8 +71,8 @@ namespace GhostlyLib.Screens
         private void UpdateAllElements(GameTime gameTime)
         {
             //TODO should this be here???
-            this.Level.ProcessPrimaryAction(EmgState.Primary);
-            this.Level.ProcessSecondaryAction(EmgState.Secondary);
+            //this.Level.ProcessPrimaryAction(EmgState.Primary);
+            //this.Level.ProcessSecondaryAction(EmgState.Secondary);
 
             this.GameCharacter.Update(gameTime);
 
