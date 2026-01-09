@@ -409,6 +409,7 @@
 		<PackageReference Include="Supabase" Version="1.1.1" />
 	</ItemGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\..\Analyzers\C3dSerializer\Platforms\net9\C3dSerializer.csproj" />
 		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.GameTools\Platforms\net9\OpenFeasyo.GameTools.MAUI\OpenFeasyo.GameTools.csproj" />
 		<ProjectReference Include="..\..\..\..\..\Drivers\TrignoAvantiCustom\Platforms\Android\TrignoAvantiCustom.csproj" />
 		<ProjectReference Include="..\..\..\..\..\OpenFeasyo.Platform\Platforms\net9\OpenFeasyo.Platform.MAUI\OpenFeasyo.Platform.csproj" />
