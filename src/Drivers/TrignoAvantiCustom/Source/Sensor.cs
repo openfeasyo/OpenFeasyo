@@ -1,5 +1,6 @@
 using OpenFeasyo.Platform.Controls;
 using Plugin.BLE.Abstractions.Contracts;
+using System.Diagnostics;
 
 namespace TrignoAvantiCustom;
 
@@ -262,6 +263,8 @@ public class Sensor
             signals[index] = MovingWindowAverageFilter(signal, index);
         }
 
+        //Debug.WriteLine("Signals " + signals);
+
         return signals;
     }
 
@@ -302,7 +305,7 @@ public class Sensor
             double threshold = ActivationThreshold[index] <= 0
                 ? (_baselineMean[index] + (3 * _baselineStdev[index]))
                 : ActivationThreshold[index];
-
+            
             if (currentMean > threshold)
             {
                 onOff = currentMean;

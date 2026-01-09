@@ -1,6 +1,5 @@
 using GhostlyGame.Models;
 using Microsoft.Maui.Controls;
-using System.Diagnostics;
 using System.Globalization;
 
 namespace GhostlyGame.Views;
@@ -44,10 +43,9 @@ public partial class LoginPage : ContentPage
         // Change the current culture to fr-FR
         CultureInfo.CurrentCulture = new CultureInfo("fr-FR");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("fr-FR"));
-        Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
+        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "fr-FR");
-
     }
 
     private async void OnNL_langClicked(object sender, EventArgs e)
@@ -55,7 +53,7 @@ public partial class LoginPage : ContentPage
         // Change the current culture to nl-NL
         CultureInfo.CurrentCulture = new CultureInfo("nl-NL");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("nl-NL")); 
-        Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
+        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "nl-NL");
     }
@@ -65,7 +63,7 @@ public partial class LoginPage : ContentPage
         // Change the current culture to en-EN
         CultureInfo.CurrentCulture = new CultureInfo("en-EN");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("en-EN"));
-        Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
+        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "en-EN");
     }

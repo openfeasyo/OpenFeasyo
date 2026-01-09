@@ -41,8 +41,10 @@ namespace GhostlyLib
     {
 
         public static Color MENU_FONT_COLOR = Color.FromNonPremultiplied(102, 102, 102, 256);
-        public static string MENU_BUTTON_FONT = "Fonts/Vitamin";
+        public static string MENU_BUTTON_FONT = "Fonts/Ubuntu"; //"Fonts/Vitamin";
+        public static string MENU_STANDARD_FONT = "Fonts/Ubuntu";
         public static int MENU_BUTTON_FONT_SIZE = 48;
+        public static int MENU_SMALL_FONT_SIZE = 12;
 
         internal static GhostlyGame Instance { get; set; }
 

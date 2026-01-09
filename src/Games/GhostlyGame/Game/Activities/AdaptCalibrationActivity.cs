@@ -13,8 +13,10 @@
  * within i-DEPOT holding reference number: 122388.
  */
 using GhostlyGame;
+using GhostlyGame.Models;
 using GhostlyLib.Animations;
 using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json.Linq;
 using OpenFeasyo.GameTools.Effects;
 using OpenFeasyo.Platform.Controls;
 using System.Diagnostics;
@@ -227,7 +229,7 @@ namespace GhostlyLib.Activities
             _emgInput = emgInput;
             float cell = engine.Screen.ScreenHeight / 16;
 
-            Label infoLabel = new Label(LocalizationResourceManager.Instance["ContractMusclesMax3Times"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabel = new Label(LocalizationResourceManager.Instance["ContractMusclesMax3Times"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (infoLabel.Size.X / 2), engine.Screen.ScreenHeight * 0.05f - (GhostlyGame.MENU_BUTTON_FONT_SIZE / 2));
             Components.Add(infoLabel);
 
@@ -256,6 +258,14 @@ namespace GhostlyLib.Activities
             emgTexture2.SetData<Color>(pixelData);
 
 
+            //TODO - set expected MVC based on initial difficulty level
+            float initialPercentage = 0.5f;
+
+            if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
+            {
+                initialPercentage = DynamicDifficulty.DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel)._MVCLevel;
+            }
+
             emgImage1 = new EmgImage(engine.Device, 0.2f);
             emgImage1.Size = new Vector2((int)(engine.Screen.ScreenWidth * 0.1), (int)(engine.Screen.ScreenHeight * 0.6));
             emgImage1.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.5) - (emgImage1.Size.X / 2), cell * 2);
@@ -265,39 +275,49 @@ namespace GhostlyLib.Activities
             emgImage2.Size = new Vector2((int)(engine.Screen.ScreenWidth * 0.1), (int)(engine.Screen.ScreenHeight * 0.6));
             emgImage2.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.8) - (emgImage2.Size.X / 2), cell * 2);
             Components.Add(emgImage2);
-
-            percentageJumpingLabel = new Label("75%  ", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
+            //"75%  "
+            percentageJumpingLabel = new Label((initialPercentage * 100).ToString("00.") + "%", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
             percentageJumpingLabel.Position = emgImage1.Position + emgImage1.Size - percentageJumpingLabel.Size;
             Components.Add(percentageJumpingLabel);
 
-            percentageShootingLabel = new Label("75%  ", engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
+            percentageShootingLabel = new Label((initialPercentage * 100).ToString("00.") + "%", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), Color.White);
             percentageShootingLabel.Position = emgImage2.Position + emgImage2.Size - percentageShootingLabel.Size;
             Components.Add(percentageShootingLabel);
 
-
-            jumpingButton = new DraggableButton(LocalizationResourceManager.Instance["Left"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            jumpingButton = new DraggableButton(LocalizationResourceManager.Instance["Left"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device, initialPercentage);
             jumpingButton.MinY = emgImage1.Position.Y;
             jumpingButton.MaxY = emgImage1.Position.Y + emgImage1.Size.Y;
             jumpingButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { };
-            jumpingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.5), cell * 2 + emgImage1.Size.Y / 4) - jumpingButton.Size / 2;
+            //jumpingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.5), cell * 2 + emgImage1.Size.Y / 4) - jumpingButton.Size / 2;
+            jumpingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.5), cell * 2 + emgImage1.Size.Y * (1 - initialPercentage)) - jumpingButton.Size / 2;
             jumpingButton.PercentageChanged += (float value) => { percentageJumpingLabel.Text = (value * 100).ToString("00.") + "%"; };
             Components.Add(jumpingButton);
 
-            shootingButton = new DraggableButton(LocalizationResourceManager.Instance["Right"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            shootingButton = new DraggableButton(LocalizationResourceManager.Instance["Right"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device, initialPercentage);
             shootingButton.MinY = emgImage2.Position.Y;
             shootingButton.MaxY = emgImage2.Position.Y + emgImage2.Size.Y;
             shootingButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { };
-            shootingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.8), cell * 2 + emgImage2.Size.Y / 4) - shootingButton.Size / 2;
+            //shootingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.8), cell * 2 + emgImage2.Size.Y / 4) - shootingButton.Size / 2;
+            shootingButton.Position = new Vector2((int)(engine.Screen.ScreenWidth * 0.8), cell * 2 + emgImage2.Size.Y * (1 - initialPercentage)) - shootingButton.Size / 2;
             shootingButton.PercentageChanged += (float value) => { percentageShootingLabel.Text = (value * 100).ToString("00.") + "%"; };
             Components.Add(shootingButton);
 
-            //TODO for the Ghostly+ study
+
             TextButton nextButton = new TextButton(LocalizationResourceManager.Instance["Next"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-            //nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new MainMenuActivity(_engine)); };
-            nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new StartGameActivity(_engine)); };
+
+            //TODO for the Ghostly+ study
+            if (GameSessionInfo.Instance.SelectedPatient != null)
+            {
+                nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new StartGameActivity(_engine)); };
+            }
+            else
+            {
+                nextButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new MainMenuActivity(_engine)); };
+            }
             nextButton.Position = new Vector2(engine.Screen.ScreenMiddle.X + nextButton.Size.X, cell * 14) - nextButton.Size / 2;
             Components.Add(nextButton);
 
+            //TODO should we allow recalibration???
             TextButton recalibrateButton = new TextButton(LocalizationResourceManager.Instance["Recalibrate"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             recalibrateButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new CalibrationActivity(_engine, emgInput)); };
             recalibrateButton.Position = new Vector2(engine.Screen.ScreenMiddle.X - recalibrateButton.Size.X / 2, cell * 14) - recalibrateButton.Size / 2;
@@ -308,7 +328,7 @@ namespace GhostlyLib.Activities
             character.Position = new Vector2(engine.Screen.ScreenMiddle.X / 5 - (character.Size.X / 2), (int)(engine.Screen.ScreenMiddle.Y * 1.2));
             Components.Add(character);
 
-            _fpsLabel = new Label(LocalizationResourceManager.Instance["SensorData"].ToString() + " - fps", engine.Content.LoadFont("Fonts/Ubuntu12"), GhostlyGame.MENU_FONT_COLOR);
+            _fpsLabel = new Label(LocalizationResourceManager.Instance["SensorData"].ToString() + " - fps", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_SMALL_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _fpsLabel.Position = new Vector2(0, engine.Screen.ScreenHeight - _fpsLabel.Size.Y) + new Vector2(10, -10);
             Components.Add(_fpsLabel);
 
@@ -396,6 +416,8 @@ namespace GhostlyLib.Activities
         public override void OnDestroy()
         {
             //_emgInput.MuscleActivationChanged -= _emgInput_MuscleActivationChanged;
+            _emgInput.CalibrationChanged -= EmgInput_CalibrationChanged;
+            _emgInput.MuscleActivationChanged -= _emgInput_MuscleActivationChanged;
             base.OnDestroy();
         }
 

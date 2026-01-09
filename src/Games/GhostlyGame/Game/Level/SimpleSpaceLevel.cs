@@ -58,8 +58,6 @@ namespace GhostlyLib.Level
             this._elements = elements;
             this.Character = new SimpleSpaceCharacter(gameScreen, elements);
             this.Analytics = new SimpleSpaceLevelAnalytics();
-
-            Debug.WriteLine("Difficulty Level: " + GameSessionInfo.Instance.SelectedPatient.DifficultyLevel);
         }
 
         public override Enemy CreateBlackEnemy(int i, int j, double checkpoint) { return null; }
@@ -72,7 +70,7 @@ namespace GhostlyLib.Level
 
         public override void ProcessPrimaryAction(bool state)
         {
-            /*if (state)  //contracted muscle
+            if (state)  //contracted muscle
             {
                 if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Right))
                 {
@@ -85,13 +83,16 @@ namespace GhostlyLib.Level
             }
             else
             {
-                ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
-            }*/
+                if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Left))
+                {
+                    ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
+                }
+            }
         }
 
         public override void ProcessSecondaryAction(bool state)
         {
-           /* if (state)  //contracted muscle
+            if (state)  //contracted muscle
             {
                 if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Left))
                 {
@@ -104,8 +105,11 @@ namespace GhostlyLib.Level
             }
             else
             {
-                ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
-            }*/
+                if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Right))
+                {
+                    ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
+                }
+            }
         }
     }
 }

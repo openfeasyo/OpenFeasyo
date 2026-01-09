@@ -207,6 +207,9 @@
   <data name="LeftVOP" xml:space="preserve">
     <value>Left VOP</value>
   </data>
+  <data name="Level" xml:space="preserve">
+    <value>LVL</value>
+  </data>
   <data name="LevelCompleted" xml:space="preserve">
     <value>Level Completed</value>
   </data>
@@ -298,7 +301,7 @@
     <value>Sensor data:</value>
   </data>
   <data name="SessionCompleted" xml:space="preserve">
-    <value>Your session is completed you can turn of the game</value>
+    <value>Your session is completed.</value>
   </data>
   <data name="Shoot" xml:space="preserve">
     <value>Shoot</value>
@@ -325,7 +328,7 @@
     <value>Start the game</value>
   </data>
   <data name="StartToPlay" xml:space="preserve">
-    <value>StartToPlay</value>
+    <value>Start To Play</value>
   </data>
   <data name="Switch" xml:space="preserve">
     <value>&lt; Switch &gt;</value>
@@ -335,6 +338,9 @@
   </data>
   <data name="TouchTheHalvesOfTheScreenTo" xml:space="preserve">
     <value>Touch the halves of the screen to</value>
+  </data>
+  <data name="TurnOffTheGame" xml:space="preserve">
+    <value>You can turn of the game.</value>
   </data>
   <data name="UsernameOrPasswordAreIncorrect" xml:space="preserve">
     <value>Username or password are incorrect</value>

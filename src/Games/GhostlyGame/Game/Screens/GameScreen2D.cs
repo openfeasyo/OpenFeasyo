@@ -123,8 +123,8 @@ namespace GhostlyLib.Screens
 
         private void UpdateAllElements(GameTime gameTime)
         {
-            this.Level.ProcessPrimaryAction(EmgState.Primary);
-            this.Level.ProcessSecondaryAction(EmgState.Secondary);
+            //this.Level.ProcessPrimaryAction(EmgState.Primary);
+            //this.Level.ProcessSecondaryAction(EmgState.Secondary);
 
             ((GameCharacter)this.GameCharacter).Update(gameTime);
 
@@ -151,7 +151,7 @@ namespace GhostlyLib.Screens
         {
             this.Position = new Vector3((float)(Position.X - GameBackground.HorizontalSpeed), (float)(Screen.Height - ((Drawable)Level.Character).Y), GameBackground.HorizontalSpeed);
             GhostlyGame.Instance.GameObjects.TryUpdate("PlayerPosition", Position + new Vector3((float)(((Drawable)GameCharacter).X + GameCharacter.Width / 2), 0, 0));
-            KeyboardUpdate();
+            //KeyboardUpdate();
 
             if (State.Equals(GameState.Running))
             {
@@ -170,12 +170,13 @@ namespace GhostlyLib.Screens
             DrawOnetimeAnimations(spriteBatch);
 
             float position = 15;
-            if (!(this.Level is SpaceLevel) || !(this.Level is SimpleSpaceLevel)) // for space levels don't show level info, it covers the space ship
-            {
-                spriteBatch.DrawString(Font[2], LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
-            }            
-            position = Font[2].MeasureString(LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString()).X + 100;
+            //if (!(this.Level is SpaceLevel) || !(this.Level is SimpleSpaceLevel)) // for space levels don't show level info, it covers the space ship
+            //{
+                spriteBatch.DrawString(Font[1], LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
+            //}            
+            //position = Font[2].MeasureString(LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString()).X + 100;
 
+            position = _screen.ScreenMiddle.X - 60;
             switch (this.GameCharacter.CurrentHealth)
             {
                 case 3:
@@ -212,7 +213,10 @@ namespace GhostlyLib.Screens
             }
 
             //print minutes:seconds since the start of the app
-            spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(_screen.ScreenMiddle.X - 60, _screen.ScreenHeight - 20), Color.FromNonPremultiplied(11, 206, 196, 256));
+            spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(_screen.ScreenMiddle.X - 60, _screen.ScreenHeight - 40), Color.FromNonPremultiplied(11, 206, 196, 256));
+            //print difficulty level number
+            //TODO remove before deploying
+            spriteBatch.DrawString(this.Font[1], "Diff Lvl: " + GameSessionInfo.Instance.SelectedPatient.DifficultyLevel.ToString(), new Vector2( 60, _screen.ScreenHeight - 40), Color.FromNonPremultiplied(11, 206, 196, 256));
         }
 
         private void DrawOnetimeAnimations(SpriteBatch spriteBatch)

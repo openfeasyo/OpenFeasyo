@@ -5,6 +5,7 @@ using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics;
 
 namespace GhostlyLib.Level
 {
@@ -232,6 +233,7 @@ namespace GhostlyLib.Level
 
         public override void ProcessPrimaryAction(bool state)
         {
+            Debug.WriteLine("PA: " + state);
             if (state)  //contracted muscle
             {
                 if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Right))
@@ -251,6 +253,7 @@ namespace GhostlyLib.Level
 
         public override void ProcessSecondaryAction(bool state)
         {
+            Debug.WriteLine("SA: " + state);
             if (state)  //contracted muscle
             {
                 if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Left))

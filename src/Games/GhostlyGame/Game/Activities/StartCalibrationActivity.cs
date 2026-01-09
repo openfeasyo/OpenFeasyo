@@ -40,19 +40,19 @@ namespace GhostlyLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label infoLabel1 = new Label(LocalizationResourceManager.Instance["RestYourMuscles"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu48"), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabel1 = new Label(LocalizationResourceManager.Instance["RestYourMuscles"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel1.Position = engine.Screen.ScreenMiddle - infoLabel1.Size / 2 - new Vector2(0, 150);
             Components.Add(infoLabel1);
 
-            Label infoLabel2 = new Label(LocalizationResourceManager.Instance["ClickOnTheButtonToStartTheCalibration"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu48"), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabel2 = new Label(LocalizationResourceManager.Instance["ClickOnTheButtonToStartTheCalibration"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel2.Position = engine.Screen.ScreenMiddle - infoLabel2.Size / 2 - new Vector2(0, 75);
             Components.Add(infoLabel2);
 
-            _fpsLabel = new Label(LocalizationResourceManager.Instance["SensorData"].ToString() + ": - fps", engine.Content.LoadFont("Fonts/Ubuntu12"), GhostlyGame.MENU_FONT_COLOR);
+            _fpsLabel = new Label(LocalizationResourceManager.Instance["SensorData"].ToString() + ": - fps", engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_SMALL_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _fpsLabel.Position = new Vector2(0,engine.Screen.ScreenHeight - _fpsLabel.Size.Y) + new Vector2(10, -10);
             Components.Add(_fpsLabel);
 
-            TextButton s1 = new TextButton(LocalizationResourceManager.Instance["StartCalibration"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu48"), engine.Device);
+            TextButton s1 = new TextButton(LocalizationResourceManager.Instance["StartCalibration"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             s1.Clicked += (object sender, TextButton.ClickedEventArgs e) => {
                 StartActivity(new CalibrationActivity(engine, emgInput));
             };

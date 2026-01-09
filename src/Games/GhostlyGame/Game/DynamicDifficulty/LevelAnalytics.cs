@@ -1,3 +1,4 @@
+using GhostlyGame.Models;
 using GhostlyLib.Elements;
 using System.Diagnostics;
 
@@ -71,9 +72,25 @@ namespace GhostlyLib.DynamicDifficulty
             _movements = new List<MovementAnalytics>();
         }
 
+        /* 
+         * We would like to implement the RPE in the decision to make change the difficulty of the level.
+         * We decided on the dividing it in the following categories: 
+         *      Score 1 to 4: level is too easy
+         *      Score 5 to 6/7: level is optimal difficulty
+         *      Score 7/8 to 10: level is too difficult
+         */
+
         public override int Evaluate()
         {
-            List<MovementAnalytics> movementsDonePerfectly = _movements.Where(o => o.desiredMovement.Equals(o.performedMovement) && o.contractions == 1).ToList();
+            if (GameSessionInfo.Instance.Session.Rpe_post_session < 4)
+                return 1;   //increase level difficulty
+            else if (GameSessionInfo.Instance.Session.Rpe_post_session >= 7)
+                return -1;  //decrease level difficulty
+            else
+                return 0;   //remain in this level difficutly
+                     
+
+           /* List<MovementAnalytics> movementsDonePerfectly = _movements.Where(o => o.desiredMovement.Equals(o.performedMovement) && o.contractions == 1).ToList();
 
             if (movementsDonePerfectly.Count() > (_movements.Count() * 0.75))
             {
@@ -86,10 +103,10 @@ namespace GhostlyLib.DynamicDifficulty
                 return -1;
             }
 
-            return 0;
+            return 0;*/
         }
 
-        public void UpdateMovement(int movementNumber, int contractions, ActionMovement desiredMovement, ActionMovement performedMovement, long timestamp)
+        /*public void UpdateMovement(int movementNumber, int contractions, ActionMovement desiredMovement, ActionMovement performedMovement, long timestamp)
         {
             // Debug.WriteLine("novement num = " + movementNumber + " contractions " + contractions + " desired Movement = " + desiredMovement + " performed " + performedMovement);
             if (_movements.Count < movementNumber + 1) // new turn
@@ -103,12 +120,12 @@ namespace GhostlyLib.DynamicDifficulty
                 movementAnalytics.desiredMovement = desiredMovement;
                 movementAnalytics.performedMovement = performedMovement;
             }
-        }
-        public void UpdateMovementEnd(int movementNumber, long timestamp)
+        }*/
+       /* public void UpdateMovementEnd(int movementNumber, long timestamp)
         {
             MovementAnalytics movementAnalytics = _movements[movementNumber];
             movementAnalytics.endTime = timestamp;
-        }
+        }*/
 
         private class MovementAnalytics
         {

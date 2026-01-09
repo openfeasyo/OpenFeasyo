@@ -41,9 +41,9 @@ namespace GhostlyLib.Activities
 
                 Vector2 offset = new Vector2(engine.Screen.ScreenWidth * 0.06f, engine.Screen.ScreenHeight * 0.20f);
 
-                LevelSelectionButton level1Button = new LevelSelectionButton(LocalizationResourceManager.Instance["StartToPlay"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-                level1Button.Level = GameSessionInfo.Instance.StartLevel;
-                level1Button.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+                LevelSelectionButton startLevelButton = new LevelSelectionButton(LocalizationResourceManager.Instance["StartToPlay"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+                startLevelButton.Level = (int) GameSessionInfo.Instance.LevelToPlay();
+                startLevelButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
                 {
                     StartActivity(new GamePlayActivity(engine, ((LevelSelectionButton)sender).Level,
                         "<?xml version=\"1.0\" encoding=\"utf - 8\"?><Configuration>" +
@@ -56,9 +56,9 @@ namespace GhostlyLib.Activities
                         "</bindings></Configuration>"
                         ));
                 };
-                level1Button.Position = (offset + new Vector2(engine.Screen.ScreenMiddle.X - level1Button.Size.X / 2, engine.Screen.ScreenMiddle.Y - level1Button.Size.Y / 2));
-                level1Button.Size = new Vector2(tileWidth, tileHeight);
-                Components.Add(level1Button);
+                startLevelButton.Position = (offset + new Vector2(engine.Screen.ScreenMiddle.X - startLevelButton.Size.X / 2, engine.Screen.ScreenMiddle.Y - startLevelButton.Size.Y / 2));
+                startLevelButton.Size = new Vector2(tileWidth, tileHeight);
+                Components.Add(startLevelButton);
             }
             else
             {

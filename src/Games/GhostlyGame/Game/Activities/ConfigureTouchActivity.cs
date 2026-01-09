@@ -29,13 +29,13 @@ namespace GhostlyLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            Label infoLabel = new Label(LocalizationResourceManager.Instance["TouchTheHalvesOfTheScreenTo"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label infoLabel = new Label(LocalizationResourceManager.Instance["TouchTheHalvesOfTheScreenTo"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             infoLabel.Position = engine.Screen.ScreenMiddle - infoLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y / 2);
 
-            _jumpLabel = new Label(LocalizationResourceManager.Instance["Jump"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            _jumpLabel = new Label(LocalizationResourceManager.Instance["Jump"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _jumpLabel.Position = engine.Screen.ScreenMiddle - _jumpLabel.Size / 2 + new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
-            _shootLabel = new Label(LocalizationResourceManager.Instance["Shoot"].ToString(), engine.Content.LoadFont("Fonts/Ubuntu" + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            _shootLabel = new Label(LocalizationResourceManager.Instance["Shoot"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             _shootLabel.Position = engine.Screen.ScreenMiddle - _shootLabel.Size / 2 - new Vector2(engine.Screen.ScreenMiddle.X / 2, 0);
 
             TextButton next = new TextButton(LocalizationResourceManager.Instance["Next"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
