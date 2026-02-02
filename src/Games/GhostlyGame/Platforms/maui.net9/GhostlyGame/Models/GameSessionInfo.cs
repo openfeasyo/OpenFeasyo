@@ -1,4 +1,7 @@
-﻿namespace GhostlyGame.Models
+﻿using OpenFeasyo.Platform.Controls;
+using OpenFeasyo.Platform.Controls.Drivers;
+
+namespace GhostlyGame.Models
 {
     internal class GameSessionInfo
     {
@@ -27,6 +30,9 @@
         public int LevelsCompleted { get; set; }
         public int RequiredLevels { get { return 3; } }//TODO read this from server??
 
+        public float Max0 { get; set; }
+        public float Max1 { get; set; }
+
         public GameSessionInfo()
         {
             Uploader = new Uploader();
@@ -51,6 +57,32 @@
         {
             return GameSessionInfo.firstPossibleLevel + (((int)GameSessionInfo.Instance.SelectedPatient.LevelToPlay - GameSessionInfo.firstPossibleLevel) + this.LevelsCompleted) % (GameSessionInfo.lastPossibleLevel - GameSessionInfo.firstPossibleLevel + 1);
         }
+
+        public IEmgSensorInput GetSensorInput()
+        {
+            Dictionary<string, IDevice> devices = PrepareDevicesByName();
+            if (!devices.ContainsKey("Trigno Avanti"))
+            {
+                throw new ApplicationException("TrignoAvantiCustomEmg not loaded");
+            }
+            IDevice dev = devices["Trigno Avanti"];
+            if (!dev.IsLoaded)
+            {
+                dev.LoadDriver(new Dictionary<string, string>());
+            }
+
+            return dev.GamingInput as IEmgSensorInput;
+        }
+
+        private static Dictionary<string, IDevice> PrepareDevicesByName()
+        {
+            Dictionary<string, IDevice> devicesByName = new Dictionary<string, IDevice>();
+            foreach (IDevice device in InputDeviceManager.Drivers)
+            {
+                devicesByName.Add(device.Name, device);
+            }
+            return devicesByName;
+        }
     }
 
     public class User
@@ -61,8 +93,8 @@
 
     public class Session
     {
-        public float BFR_target_lop_percentage_ch1 { get; set; }
-        public float BFR_target_lop_percentage_ch2 { get; set; }
+        public float BFR_target_vop_percentage_ch1 { get; set; }
+        public float BFR_target_vop_percentage_ch2 { get; set; }
         public Int16 Rpe_post_session { get; set; }
     }
 }

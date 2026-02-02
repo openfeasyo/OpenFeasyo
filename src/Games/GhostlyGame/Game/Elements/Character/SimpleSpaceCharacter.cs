@@ -111,7 +111,7 @@ namespace GhostlyLib.Elements.Character
                 this.SpeedY = 0;
             }
             this.Y += this.SpeedY;
-            
+
             //if player should contract but is not, pulling to opposite direction should apply
             if (this.ActionMovement == ActionMovement.None && GravityPull.Equals(Pull.Down))
             {
@@ -147,31 +147,79 @@ namespace GhostlyLib.Elements.Character
         {
             IEnumerable<IDrawable> tilesAround = this._elements.Tiles.Where(o => ((Tile)o).Rectangle.Intersects(this.MainBody));
             IEnumerable<IDrawable> tilesAhead = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.RightSide));
+            IEnumerable<IDrawable> tilesCenter = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Center));
 
+            //tiles in front of the ship
             if (tilesAhead.Count() > 0)
             {
-                if (((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.PullUp))
+                //BUT we exited the pull up / pull down section => release muscles
+                if (!((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.PullUp) && !((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.PullDown))
                 {
-                    GravityPull = Pull.Up;
-                    desiredMovement = ActionMovement.Right;
-                }
-                else if (((Tile)tilesAhead.ElementAt(0)).TileType.Equals(TileType.PullDown))
-                {
-                    GravityPull = Pull.Down;
-                    desiredMovement = ActionMovement.Left;
-                }
-            }
-            else
-            {
-                if (GravityPull != Pull.No && this.ActionMovement == ActionMovement.None)
-                {
-                    //((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovementEnd(completedMovements, DateTime.Now.Ticks);
-                    //completed required movement
-                    completedMovements++;
+                    this.Instruction = Instruction.Release;
                     GravityPull = Pull.No;
                     desiredMovement = ActionMovement.None;
-                    Debug.WriteLine("contraction finished " + DateTime.Now.Ticks);
+                    //Debug.WriteLine("ahead YES, no pulling -> RELEASE");
                 }
+                //they are pulling tiles
+                else
+                {
+                    //they are intersecting with the center of the ship
+                    if (tilesCenter.Count() > 0)
+                    {
+                        //center of the ship is in the pull up section
+                        if (((Tile)tilesCenter.ElementAt(0)).TileType.Equals(TileType.PullUp))
+                        {
+                            GravityPull = Pull.Up;
+                            desiredMovement = ActionMovement.Right;
+
+                            if (this.SpeedY == 0)
+                            {
+                                this.Instruction = Instruction.Contract;
+                            }
+                            else
+                            {
+                                this.Instruction = Instruction.Hold;
+                            }
+                        }
+                        //center of the ship is in the pull down section
+                        else if (((Tile)tilesCenter.ElementAt(0)).TileType.Equals(TileType.PullDown))
+                        {
+                            GravityPull = Pull.Down;
+                            desiredMovement = ActionMovement.Left;
+
+                            if (this.SpeedY == 0)
+                            {
+                                this.Instruction = Instruction.Contract;
+                            }
+                            else
+                            {
+                                this.Instruction = Instruction.Hold;
+                            }
+                        }
+                    }
+                    //not yet intersecting with the center of the ship
+                    else
+                    {
+                        if (GravityPull != Pull.No && this.ActionMovement == ActionMovement.None)
+                        {
+                            //((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovementEnd(completedMovements, DateTime.Now.Ticks);
+                            //completed required movement
+                            completedMovements++;
+                            GravityPull = Pull.No;
+                            desiredMovement = ActionMovement.None;
+                            this.Instruction = Instruction.Release;
+                            //Debug.WriteLine("no intersections with center = > RELEASE");
+                        }
+                    }
+                }
+            }
+            //no tiles ahead
+            else
+            {
+                this.Instruction = Instruction.Release;
+                GravityPull = Pull.No;
+                desiredMovement = ActionMovement.None;
+                //Debug.WriteLine("Nothing ahead -> release");
             }
 
             //remove up down pulling tiles for further processing
@@ -200,7 +248,8 @@ namespace GhostlyLib.Elements.Character
             else //no tiles ahead
             {
                 this.AutomaticMovement = AutomaticMovement.MovingForward;
-                this.Instruction = Instruction.Release;
+                //this.Instruction = Instruction.Release;
+                //Debug.WriteLine("nothing ahead => RELEASE");
             }
 
             IEnumerable<IDrawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Top)
@@ -211,7 +260,6 @@ namespace GhostlyLib.Elements.Character
             {
                 if (!((Tile)tilesAbove.ElementAt(0)).TileType.Equals(TileType.Checkpoint))
                 {
-                    //this.SpeedY = 0;
                     this.Y = ((Drawable)tilesAbove.ElementAt(0)).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
                 }
             }
@@ -224,7 +272,6 @@ namespace GhostlyLib.Elements.Character
             {
                 if (!((Tile)tilesBelow.ElementAt(0)).TileType.Equals(TileType.Checkpoint))
                 {
-                    //this.SpeedY = 0;
                     this.Y = ((Drawable)tilesBelow.ElementAt(0)).Y - this.Height;
                 }
             }
@@ -306,10 +353,7 @@ namespace GhostlyLib.Elements.Character
             if (this.ActionMovement != ActionMovement.Left)
             {
                 this.ActionMovement = ActionMovement.Left;
-                //this.SpeedY = SIDEMOVEMENTSPEED;
                 this.SpeedX = GameScreen.SPEED;
-
-                //Debug.WriteLine("Contraction L started: " + DateTime.Now.Ticks);
 
                 //((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovement(completedMovements, 1, desiredMovement, this.ActionMovement, DateTime.Now.Ticks);
             }//}
@@ -323,10 +367,7 @@ namespace GhostlyLib.Elements.Character
             if (this.ActionMovement != ActionMovement.Right)
             {
                 this.ActionMovement = ActionMovement.Right;
-                //this.SpeedY = -SIDEMOVEMENTSPEED;
                 this.SpeedX = GameScreen.SPEED;
-
-                //Debug.WriteLine("Contraction R started: " + DateTime.Now.Ticks);
 
                 //((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovement(completedMovements, 1, desiredMovement, this.ActionMovement, DateTime.Now.Ticks);
             }

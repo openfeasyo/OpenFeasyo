@@ -7,6 +7,7 @@ using GhostlyGame;
 using Microsoft.Maui;
 using OpenFeasyo.Platform.Controls.Drivers;
 using OpenFeasyo.Platform.Controls.Analysis;
+using OpenFeasyo.Platform.Data;
 
 namespace maui.net9;
 
@@ -24,6 +25,9 @@ public class MainActivity : MauiAppCompatActivity
         InputDeviceManager.Instance = new StaticDriverManager();
         InputAnalyzerManager.Instance = new StaticAnalysisManager();
         base.OnCreate(savedInstanceState);
+
+        SeriousGames.HomeLocation = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDownloads).AbsolutePath;
+
         initPermission();
     }
 
@@ -37,14 +41,19 @@ public class MainActivity : MauiAppCompatActivity
             mPermissionList.Add(Manifest.Permission.BluetoothAdvertise);
             mPermissionList.Add(Manifest.Permission.BluetoothConnect);
             //Request for location permissions based on your actual needs
-            mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
-            mPermissionList.Add(Manifest.Permission.AccessFineLocation);
+            //mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
+            //mPermissionList.Add(Manifest.Permission.AccessFineLocation);
         }
-        else
+        /*else
         {
             mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
             mPermissionList.Add(Manifest.Permission.AccessFineLocation);
-        }
+        }*/
+
+        mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
+        mPermissionList.Add(Manifest.Permission.AccessFineLocation);
+        mPermissionList.Add(Manifest.Permission.ReadExternalStorage);
+        mPermissionList.Add(Manifest.Permission.WriteExternalStorage);
 
         ActivityCompat.RequestPermissions(this, mPermissionList.ToArray(), REQUEST_PERMISSION_CODE);
     }

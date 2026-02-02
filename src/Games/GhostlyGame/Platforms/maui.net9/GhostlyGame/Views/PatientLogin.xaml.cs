@@ -137,7 +137,6 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
         // Change the current culture to fr-FR
         CultureInfo.CurrentCulture = new CultureInfo("fr-FR");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("fr-FR"));
-        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "fr-FR");
     }
@@ -147,7 +146,6 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
         // Change the current culture to nl-NL
         CultureInfo.CurrentCulture = new CultureInfo("nl-NL");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("nl-NL"));
-        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "nl-NL");
     }
@@ -157,7 +155,6 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
         // Change the current culture to en-EN
         CultureInfo.CurrentCulture = new CultureInfo("en-EN");
         LocalizationResourceManager.Instance.SetCulture(new CultureInfo("en-EN"));
-        //Debug.WriteLine("CurrentCulture is now {0}.", CultureInfo.CurrentCulture.Name);
 
         await SecureStorage.Default.SetAsync("language", "en-EN");
     }

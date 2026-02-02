@@ -14,9 +14,7 @@
  */
 using OpenFeasyo.Platform.Controls;
 using OpenFeasyo.Platform.Controls.Analysis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
 
 namespace FeasyMotion.C3dSerializer
 {
@@ -44,7 +42,7 @@ namespace FeasyMotion.C3dSerializer
             labels = game.GameObjects.Keys.ToArray<string>();
             _currentData = new Vub.Etro.IO.Vector4[labels.Length];
 
-            Create(parameters, game, labels, 33,analogLabels,30,false);
+            Create(parameters, game, labels, 66, analogLabels, 15, false);
 
             _writer.Header.ScaleFactor = -1;
             _writer.SetParameter<float>("POINT:SCALE", -1);
@@ -61,19 +59,19 @@ namespace FeasyMotion.C3dSerializer
         public void OnEmgSignalChanged(IEmgSignal[] emgSignal, IGame game)
         {
             if (_writer == null)
-                return;
-           
+                return;           
             
             writeGameObjects(game, 0);
 
             _writer.WriteFloatFrame(_currentData);
             WriteAnalogData(game, emgSignal);
+            Debug.WriteLine("WriteAnalogData");
         }
 
         private void WriteAnalogData(IGame game, IEmgSignal[] emgSignal)
         {
-            if (emgSignal[0].RawSample.Length != 30) {
-                throw new ApplicationException("ANALOG:RATE must be 30");
+            if (emgSignal[0].RawSample.Length != 15) {
+                throw new ApplicationException("ANALOG:RATE must be 15");
             }
             for(int i = 0; i<emgSignal[0].RawSample.Length; i++) { 
 

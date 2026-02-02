@@ -17,8 +17,6 @@ using OpenFeasyo.Platform.Controls;
 using OpenFeasyo.Platform.Controls.Analysis;
 using OpenFeasyo.Platform.Controls.Drivers;
 using OpenFeasyo.Platform.Platform;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Xml;
 using System.Xml.Schema;
@@ -168,7 +166,8 @@ namespace OpenFeasyo.Platform.Configuration.Xml
                 string point = bindingIt.Current.GetAttribute("point", "");
                 if (Configuration.GetHandle(point) == null) continue;
 
-                if (device.GamingInput is ISkeletonInput)
+                //if (device.GamingInput is ISkeletonInput)
+                if(gamingInput is ISkeletonInput)
                 {
                     binding = ConfigureSkeleton(navigator, bindingIt, (ISkeletonInput)device.GamingInput);
                     ObservableDictionary<string, ObservableDictionary<string, string>> analyzersParams =
@@ -214,10 +213,7 @@ namespace OpenFeasyo.Platform.Configuration.Xml
                 else if (gamingInput is IEmgSensorInput)
                 {
                     binding = ConfigureEmgSensor(navigator, bindingIt, (IEmgSensorInput)device.GamingInput);
-                    //ObservableDictionary<string, ObservableDictionary<string, string>> analyzerParams = 
-                    //                                    ParseAnalyzersParams(bindingIt.Current);
                 }
-
 
                 if (binding != null)
                 {

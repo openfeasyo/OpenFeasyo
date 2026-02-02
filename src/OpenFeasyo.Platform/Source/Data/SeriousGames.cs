@@ -19,22 +19,23 @@ using System.Linq;
 using Microsoft.Win32;
 
 #if !INSTALLER
-    using OpenFeasyo.Platform.Data.Offline;
-    using Vub.Etro.IO;
-    using System.Globalization;
-    #if !ANDROID && !__MACOS__ && !NET8_0_OR_GREATER
+using OpenFeasyo.Platform.Data.Offline;
+using Vub.Etro.IO;
+using System.Globalization;
+#if !ANDROID && !__MACOS__ && !NET8_0_OR_GREATER
         using System.Windows.Threading;
-    #endif
+#endif
 #endif
 
 namespace OpenFeasyo.Platform.Data
 {
-    public class FileUploadEventArgs : EventArgs {
-        public enum UploadAction {
+    public class FileUploadEventArgs : EventArgs
+    {
+        public enum UploadAction
+        {
             UploadStart,
             UploadFinished,
             UploadError
-
         }
 
         private string _fileName;
@@ -44,15 +45,15 @@ namespace OpenFeasyo.Platform.Data
         public string FileName { get { return _fileName; } }
 
         public UploadAction Action { get { return _action; } }
-        
+
         public string Message { get { return _message; } }
 
-        internal FileUploadEventArgs(string fileName, UploadAction action, string message = "") {
+        internal FileUploadEventArgs(string fileName, UploadAction action, string message = "")
+        {
             _fileName = fileName;
             _action = action;
             _message = message;
         }
-
     }
 
     public static class SeriousGames
@@ -61,7 +62,7 @@ namespace OpenFeasyo.Platform.Data
 
         public static string HomeLocation = "";
 
-        public static string LastC3DFileCreated {  get; set; }
+        public static string LastC3DFileCreated { get; set; }
 
         public const string DIR_SEPARATOR =
 #if ANDROID
@@ -87,8 +88,11 @@ namespace OpenFeasyo.Platform.Data
             }
         }
 
-        public static string SoftwareVersion { get {
-                return "OpenFeasyo."+
+        public static string SoftwareVersion
+        {
+            get
+            {
+                return "OpenFeasyo." +
 #if ANDROID
                     "Android";
 #else
@@ -99,7 +103,6 @@ namespace OpenFeasyo.Platform.Data
 
         internal static string CheckAndCreateHomeFolder()
         {
-
             String PersonalFolder = HomeLocation != "" ? HomeLocation :
                 Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 
@@ -126,28 +129,33 @@ namespace OpenFeasyo.Platform.Data
         // Refactor the code 
 
 
-        public static string DataDir { get;set; }
+        public static string DataDir { get; set; }
         public const string ID_FILE = "ID.txt";
         public const string PHOTO_FILE = "photo.png";
         public const string CONTEXT_FILE = "current_context.cfg";
-        
+
         private static string _server = null;
         private static string _default_server = "https://my.feasymotion.com/ict4rehab-katka";
-        public static string Server { 
-            get {
-                if (_server == null) {
+        public static string Server
+        {
+            get
+            {
+                if (_server == null)
+                {
 #if false //WINDOWS
                     _server = (string)Registry.GetValue(RegistryElements.REGISTRY_ROOT_SECTION, RegistryElements.REGISTRY_SERVER, null);
 #endif
-                    if (_server == null) {
+                    if (_server == null)
+                    {
                         _server = _default_server;
                     }
                 }
-                return _server; 
-            } 
-            set { 
-                _server = value; 
-            } 
+                return _server;
+            }
+            set
+            {
+                _server = value;
+            }
         }
         private static Ict4Rehab _sgData;
 
@@ -157,16 +165,17 @@ namespace OpenFeasyo.Platform.Data
 #else
         ;
 #endif
-        public static Datapoint LocalDatapoint {
+        public static Datapoint LocalDatapoint
+        {
             get { return _localDatapoint; }
-            set { _localDatapoint = value;  }
+            set { _localDatapoint = value; }
         }
-        
+
         //public static string SoftwareVersion { get; set; }
 
-        private static Game [] _games = null;
-        
-        
+        private static Game[] _games = null;
+
+
         private static ConfiguredGame _currentGame;
         public static ConfiguredGame CurrentGame
         {
@@ -174,15 +183,15 @@ namespace OpenFeasyo.Platform.Data
             set { _currentGame = value; }
         }
 
-        
+
         //private static Account GetCurrentAccount() {
-            //string currentContext = GetCurrentContext();
-            //foreach (Account a in GetLocalAccounts()) {
-            //    if (currentContext.StartsWith(a.Directory))
-            //    {
-            //        return a;
-            //    }
-            //}
+        //string currentContext = GetCurrentContext();
+        //foreach (Account a in GetLocalAccounts()) {
+        //    if (currentContext.StartsWith(a.Directory))
+        //    {
+        //        return a;
+        //    }
+        //}
         //    return null;
         //}
 
@@ -196,7 +205,7 @@ namespace OpenFeasyo.Platform.Data
         //        Account a = new Account();
         //        a.Directory = dir;
         //        a.Name = dir.Substring(dir.LastIndexOf("\\") + 1);
-                
+
         //        string idFilePath = dir + "\\" + ID_FILE;
         //        if (File.Exists(idFilePath)) {
         //            StreamReader reader = new StreamReader(idFilePath);
@@ -218,16 +227,17 @@ namespace OpenFeasyo.Platform.Data
         //    return path;
         //}
 
-        public static bool CreatePatientDirectory(ExtendedPatient patient) 
+        public static bool CreatePatientDirectory(ExtendedPatient patient)
         {
-            DirectoryInfo info = Directory.CreateDirectory(DataDir+"\\"+ patient.Id);
-            if (info != null) {
+            DirectoryInfo info = Directory.CreateDirectory(DataDir + "\\" + patient.Id);
+            if (info != null)
+            {
                 // create id-file
                 StreamWriter writer = new StreamWriter(info.FullName + "\\" + ID_FILE);
                 writer.WriteLine(patient.Id);
                 writer.WriteLine(patient.HospitalId);
                 writer.Close();
-                
+
                 return true;
             }
             return false;
@@ -240,15 +250,17 @@ namespace OpenFeasyo.Platform.Data
         //    writer.Close();
         //}
 
-        public static DataUploading[] getAllUploadings() {
-            if (_sgData == null)    
+        public static DataUploading[] getAllUploadings()
+        {
+            if (_sgData == null)
             {
                 _sgData = new Ict4Rehab(new JsonProvider("etro", "ict4rehab"), Server);
             }
             return (DataUploading[])_sgData.AllDataUploadings;
         }
 
-        public static bool UploadFile(String file, DataUploading uploading) {
+        public static bool UploadFile(String file, DataUploading uploading)
+        {
             return _sgData.UploadFile(file, uploading.Id);
         }
 
@@ -316,12 +328,15 @@ namespace OpenFeasyo.Platform.Data
 
         //}
 
-        public static Game GetGameForFileName(string fileName) {
-            if (_games == null) {
+        public static Game GetGameForFileName(string fileName)
+        {
+            if (_games == null)
+            {
                 _games = _sgData.Games;
             }
 
-            foreach(Game g in _games){
+            foreach (Game g in _games)
+            {
                 string packedName = fileName.Replace(" ", string.Empty).ToLower();
                 if (packedName.StartsWith(g.Name.ToLower()))
                 {
@@ -332,7 +347,7 @@ namespace OpenFeasyo.Platform.Data
         }
 
 
-#region File Upload Events 
+        #region File Upload Events 
 
         public static event EventHandler<FileUploadEventArgs> FileUploadStarted;
         public static event EventHandler<FileUploadEventArgs> FileUploadFinished;
@@ -340,7 +355,7 @@ namespace OpenFeasyo.Platform.Data
 
         private static void OnFileUploadStarted(FileUploadEventArgs args)
         {
-            if (FileUploadStarted != null) 
+            if (FileUploadStarted != null)
             {
                 FileUploadStarted(null, args);
             }
@@ -361,7 +376,7 @@ namespace OpenFeasyo.Platform.Data
                 FileUploadError(null, args);
             }
         }
-#endregion
+        #endregion
 
 #if !INSTALLER && !ANDROID && !__MACOS__ && !NET8_0_OR_GREATER
         public static bool UploadFiles(Datapoint dp, ExtendedPatient patient, Dispatcher dispatcher) {
@@ -511,11 +526,12 @@ namespace OpenFeasyo.Platform.Data
         //    data.PerformanceDate = fileCreatedDate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
         //    Game game = GetGameForFileName(Path.GetFileName("C:\\Users\\bubo\\Documents\\ict4rehab\\Patients\\2012-000001\\HitTheBoxes_Trunk_Accelerometer_20130224_21-55-01-0740.c3d"));
         //    data.Game = new PartialGame(game.Id);
-                
+
         //    _sgData.CreateDataUplodingRecord(data);
         //}
 
-        public static bool AuthenticateTherapist(string name, string password) {
+        public static bool AuthenticateTherapist(string name, string password)
+        {
             if (_sgData == null)
             {
                 _sgData = new Ict4Rehab(new JsonProvider("etro", "ict4rehab"), Server);
@@ -534,8 +550,8 @@ namespace OpenFeasyo.Platform.Data
 
         public static Session[] GetTodaySessionsForCurrentPatient()
         {
-
-            if (_sgData == null) {
+            if (_sgData == null)
+            {
                 _sgData = new Ict4Rehab(new JsonProvider("etro", "ict4rehab"), Server);
             }
 
@@ -548,7 +564,6 @@ namespace OpenFeasyo.Platform.Data
             {
                 _sgData = new Ict4Rehab(new JsonProvider("etro", "ict4rehab"), Server);
             }
-
 
             return Ict4Rehab.LoadTherapistName();
         }
@@ -585,14 +600,13 @@ namespace OpenFeasyo.Platform.Data
         //}
 
 
-        public static int FetchMaxScore(ExtendedPatient patient, ConfiguredGame game) {
-            
-
+        public static int FetchMaxScore(ExtendedPatient patient, ConfiguredGame game)
+        {
             return 0;
         }
 
-        public static void SaveMaxScore(ExtendedPatient patient, ConfiguredGame game, int score) {
-        
+        public static void SaveMaxScore(ExtendedPatient patient, ConfiguredGame game, int score)
+        {
         }
 
         public static void SynchronizeTables(Datapoint dp)
@@ -606,30 +620,33 @@ namespace OpenFeasyo.Platform.Data
             ConfiguredGame[] remoteGamesArray = _sgData.AllConfiguredGames;
             if (remoteGamesArray == null) return;
             List<ConfiguredGame> remoteGames = new List<ConfiguredGame>(remoteGamesArray);
-            foreach (ConfiguredGame g in remoteGames) {
+            foreach (ConfiguredGame g in remoteGames)
+            {
                 ConfiguredGame fullGame = _sgData.GetConfiguredGame(g.ConfiguredGameId);
                 List<ConfiguredGame> existing = new List<ConfiguredGame>(localGames.Where(l => l.ConfiguredGameId == fullGame.ConfiguredGameId));
-                foreach (ConfiguredGame found in existing) {
+                foreach (ConfiguredGame found in existing)
+                {
                     localGames.Remove(found);
                     if (!fullGame.Equals(found))
-                    { 
+                    {
                         // update in local database
                         dp.Update<ConfiguredGame>(fullGame);
                     }
                 }
-                if(existing.Count<ConfiguredGame>() <= 0){
+                if (existing.Count<ConfiguredGame>() <= 0)
+                {
                     // insert to local database
                     dp.Insert<ConfiguredGame>(fullGame);
                 }
             }
             // remove from local database
-            foreach (ConfiguredGame g in localGames) {
+            foreach (ConfiguredGame g in localGames)
+            {
                 if (g.ConfiguredGameId > 0) // negative ids mean that they need to be created remotely (TODO)
                 {
                     dp.Remove<ConfiguredGame>(g);
                 }
             }
-
 
             //
             //  Synchronizing Patients
@@ -640,7 +657,7 @@ namespace OpenFeasyo.Platform.Data
             List<ExtendedPatient> remotePatients = new List<ExtendedPatient>(remotePatientArray);
             foreach (ExtendedPatient p in remotePatients)
             {
-                List<ExtendedPatient> existing = new List<ExtendedPatient>(localPatients.Where(l => (l.Id == p.Id && l.HospitalId == p.HospitalId) ));
+                List<ExtendedPatient> existing = new List<ExtendedPatient>(localPatients.Where(l => (l.Id == p.Id && l.HospitalId == p.HospitalId)));
                 foreach (ExtendedPatient found in existing)
                 {
                     localPatients.Remove(found);
@@ -658,9 +675,6 @@ namespace OpenFeasyo.Platform.Data
             }
 
             //SynchronizeTable<ExtendedPatient>(dp, _sgData.AllPatients);
-
-
-            
         }
     }
 }

@@ -22,7 +22,7 @@
 		<ApplicationTitle>maui.net9</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.maui.net9</ApplicationId>
+		<ApplicationId>org.openfeasyo.ghostlygame</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>

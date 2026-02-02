@@ -432,21 +432,24 @@ namespace GhostlyLib.Activities
                 if (e.EMGSensor[0].Channel == 0)
                 {
                     max0 = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], max0);
+                    GameSessionInfo.Instance.Max0 = max0;
+
                     float valJumping = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], 0);
                     emgImage1.Percentage = valJumping / max0;
+                    
                     _emgInput.ActivationThreshold[0] = (max0 * jumpingButton.Percentage);
+                    
                     if (valJumping > _emgInput.ActivationThreshold[0])
                     {
                         character.Jump();
-
                     }
                 }
 
                 if (e.EMGSensor[0].Channel == 1)
                 {
-
-
                     max1 = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], max1);
+                    GameSessionInfo.Instance.Max1 = max1;
+
                     float valShooting = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], 0);
                     emgImage2.Percentage = valShooting / max1;
 
@@ -456,7 +459,6 @@ namespace GhostlyLib.Activities
                     {
                         character.Shoot();
                     }
-
                 }
             }
 

@@ -48,7 +48,7 @@ namespace GhostlyLib.Activities
                     StartActivity(new GamePlayActivity(engine, ((LevelSelectionButton)sender).Level,
                         "<?xml version=\"1.0\" encoding=\"utf - 8\"?><Configuration>" +
                         "<devices><device name=\"Trigno Avanti\">" +
-                        "<analyzers><analyzer file=\"C3DSerializer.dll\" /></analyzers>" +
+                        "<analyzers><analyzer file=\"C3dSerializer.dll\" /></analyzers>" +
                         "</device></devices>" +
                         "<bindings>" +
                         "<binding point=\"Jump/Swim\" zeroAngle=\"0\" sensitivity=\"1\" device=\"Trigno Avanti\"><emgSensor device=\"Trigno Avanti\" channel=\"0\"></emgSensor></binding>" +

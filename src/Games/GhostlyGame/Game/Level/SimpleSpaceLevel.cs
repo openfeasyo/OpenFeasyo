@@ -1,12 +1,10 @@
-﻿using GhostlyGame.Models;
-using GhostlyLib.Animations;
+﻿using GhostlyLib.Animations;
 using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Elements;
 using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
-using System.Diagnostics;
 
 namespace GhostlyLib.Level
 {

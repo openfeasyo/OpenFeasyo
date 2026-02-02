@@ -15,17 +15,13 @@
 using Microsoft.Xna.Framework;
 using OpenFeasyo.Platform.Controls;
 using OpenFeasyo.Platform.Data;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using Vub.Etro.IO;
 
 
 namespace FeasyMotion.C3dSerializer
 {
-
     internal static class ArrayCopyHelper
     {
         public static T[] SubArray<T>(this T[] data, int index, int length)
@@ -103,6 +99,9 @@ namespace FeasyMotion.C3dSerializer
             _fileName = SeriousGames.GetPatientDirectory(SeriousGames.CurrentPatient) + "/" + gameName +
                     GetTypeName() + TimeIdentifier + ".c3d";
 
+            Console.WriteLine("Creating a C3D file: " + _fileName);
+            SeriousGames.LastC3DFileCreated = _fileName;
+           
             // TODO
             _uploading = new DataUploading();
             _uploading.Id = player == "Default" ? -2 : -1;
@@ -161,7 +160,6 @@ namespace FeasyMotion.C3dSerializer
             //    "second    ",
             //    "milisecond"};
             //_writer.SetParameter<string[]>("ANALOG:LABELS", labels.Union<string>(game.GameStream.Keys).ToArray<string>());
-
         }
 
         internal void Destroy()
@@ -209,6 +207,5 @@ namespace FeasyMotion.C3dSerializer
         //    _writer.WriteIntAnalogData(_analogData);
         //}
         internal abstract string GetTypeName();
-
     }
 }

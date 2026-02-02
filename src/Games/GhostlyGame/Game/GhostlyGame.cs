@@ -25,6 +25,7 @@ using System;
 using System.Collections.Concurrent;
 using OpenFeasyo.Platform.Controls.Drivers;
 using System.Diagnostics;
+using OpenFeasyo.Platform.Data;
 
 namespace GhostlyLib
 {
@@ -162,6 +163,9 @@ namespace GhostlyLib
             _engine.MusicPlayer.AddSong("menu", _contentRepository.LoadSong("Music/arcadia"));
             _engine.MusicPlayer.AddSong("game", _contentRepository.LoadSong("Music/scheming-weasel"));
             _engine.MusicPlayer.AddSong("game_rock", _contentRepository.LoadSong("Music/wholesome"));
+
+            SeriousGames.CurrentGame = new ConfiguredGame();
+            SeriousGames.CurrentGame.Name = "GhostlyPlus";
 
 
             //screen.LoadContent(this.Content);

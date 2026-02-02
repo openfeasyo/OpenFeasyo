@@ -7,7 +7,8 @@ using GhostlyLib.Elements.Character;
 using GhostlyLib.Level;
 using Microsoft.Xna.Framework.Graphics;
 using OpenFeasyo.GameTools.Effects;
-using System.Reflection.Metadata.Ecma335;
+using OpenFeasyo.Platform.Controls;
+using System.Diagnostics;
 
 namespace GhostlyLib.Screens
 {
@@ -47,7 +48,6 @@ namespace GhostlyLib.Screens
             }
         }
 
-
         #endregion Public members
 
         public GameScreen2D(int level, MusicPlayer player, OpenFeasyo.GameTools.Screen screen) : base(level, player, screen)
@@ -65,6 +65,16 @@ namespace GhostlyLib.Screens
 
         public override void LoadLevel()
         {
+            //re-initialize BG
+            this.GameBackground = new GameBackground(0, SPEED, this.Screen);
+
+            //update activation threshold for the sensors based on current difficulty settings
+            IEmgSensorInput _emgInput = GameSessionInfo.Instance.GetSensorInput();
+            _emgInput.ActivationThreshold[0] = GameSessionInfo.Instance.Max0 * ((DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel))._MVCLevel);
+            _emgInput.ActivationThreshold[1] = GameSessionInfo.Instance.Max1 * ((DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel))._MVCLevel);
+            //Debug.WriteLine("!!!!!!! " + GameSessionInfo.Instance.Max0 + " " + _emgInput.ActivationThreshold[0]);
+            //Debug.WriteLine("!!!!!!! " + GameSessionInfo.Instance.Max1 + " " + _emgInput.ActivationThreshold[1]);
+
             this.State = GameState.Running;
             //clear elements & start logging
             this.Elements = new LevelElements();
@@ -193,7 +203,7 @@ namespace GhostlyLib.Screens
                     break;
             }
 
-            position += 153;
+            position += 170;
             spriteBatch.DrawString(Font[2], LocalizationResourceManager.Instance["Score"].ToString() + ": " + GameCharacter.Score.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
 
             //Draw instruction in the middle of the screen
@@ -214,9 +224,9 @@ namespace GhostlyLib.Screens
 
             //print minutes:seconds since the start of the app
             spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(_screen.ScreenMiddle.X - 60, _screen.ScreenHeight - 40), Color.FromNonPremultiplied(11, 206, 196, 256));
-            //print difficulty level number
             //TODO remove before deploying
-            spriteBatch.DrawString(this.Font[1], "Diff Lvl: " + GameSessionInfo.Instance.SelectedPatient.DifficultyLevel.ToString(), new Vector2( 60, _screen.ScreenHeight - 40), Color.FromNonPremultiplied(11, 206, 196, 256));
+            IEmgSensorInput _emgInput = GameSessionInfo.Instance.GetSensorInput();
+            spriteBatch.DrawString(this.Font[1], "DL: " + GameSessionInfo.Instance.SelectedPatient.DifficultyLevel.ToString() + " [0]: " + Math.Round(_emgInput.ActivationThreshold[0],5) + ", [1]: " + Math.Round(_emgInput.ActivationThreshold[1],5) , new Vector2( 60, _screen.ScreenHeight - 40), Color.FromNonPremultiplied(11, 206, 196, 256));
         }
 
         private void DrawOnetimeAnimations(SpriteBatch spriteBatch)

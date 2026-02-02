@@ -4,7 +4,6 @@ using Microsoft.Maui.Controls;
 using OpenFeasyo.Platform.Data;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace GhostlyGame.Views;
@@ -67,14 +66,17 @@ public partial class PatientSelectionPage : ContentPage, INotifyPropertyChanged
 
             await SecureStorage.Default.SetAsync("patient", selectedPatient.PatientCode);
 
-            //TODO - change dashboard to return default value
+            //TODO - fallback if dashboard returns nulls
             if (GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms == null)
                 GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms = 3000;
             if (GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms == null)
                 GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms = 3000;
+            if (GameSessionInfo.Instance.SelectedPatient.DifficultyLevel == null)
+                GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 1;
+            if (GameSessionInfo.Instance.SelectedPatient.LevelToPlay == null)
+                GameSessionInfo.Instance.SelectedPatient.LevelToPlay = 191;
 
-            // Should navigate to game menu page
-            //await Shell.Current.GoToAsync(nameof(GameMenuPage));
+            // Navigate to the game
             _navigator.OpenGameView(Application.Current);
         }
     }

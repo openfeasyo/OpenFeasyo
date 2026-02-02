@@ -36,7 +36,8 @@ namespace GhostlyLib.Activities
         private ComponentCollection _selfAssesmentPanel;
         private ComponentCollection _bfrVopPanel;
 
-        private Label _scoreLabel;
+        //private Label _scoreLabel;
+        private int score = 0;
 
         private string _configuration;
 
@@ -190,8 +191,8 @@ namespace GhostlyLib.Activities
                 //TODO save values from sliders
                 if (GameSessionInfo.Instance.Session != null)
                 {
-                    GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch1 = bfrLeftVOPButton.Percentage;
-                    GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch2 = bfrRightVOPButton.Percentage;
+                    GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch1 = bfrLeftVOPButton.Percentage;
+                    GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch2 = bfrRightVOPButton.Percentage;
 
                     // write to c3d
                     UpdateC3D();
@@ -233,7 +234,7 @@ namespace GhostlyLib.Activities
             _gameplayPanel = new ComponentCollection();
             _gameplayPanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
 
-            TextButton pauseButton = new TextButton("\uf04c", engine.Content.LoadFont("Fonts/Awesome" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton pauseButton = new TextButton("X", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device); //new TextButton("\uf04c", engine.Content.LoadFont("Fonts/Awesome" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             pauseButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
                 Components.Remove(_gameplayPanel);
@@ -337,7 +338,8 @@ namespace GhostlyLib.Activities
                     {
                         StartActivity(new StartGameActivity(engine));
                     }
-                    else {
+                    else
+                    {
                         StartActivity(new MainMenuActivity(engine));
                     }
 
@@ -348,7 +350,7 @@ namespace GhostlyLib.Activities
                 Label levelDoneLabel = new Label(LocalizationResourceManager.Instance["LevelCompleted"].ToString().ToUpper(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
                 levelDoneLabel.Position = engine.Screen.ScreenMiddle - levelDoneLabel.Size / 2 - new Vector2(0, engine.Screen.ScreenMiddle.Y * 2 / 3);
 
-                _scoreLabel = new Label(LocalizationResourceManager.Instance["Score"].ToString() + ": 00", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                Label _scoreLabel = new Label(LocalizationResourceManager.Instance["Score"].ToString() + ": " + score, engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
                 _scoreLabel.Position = engine.Screen.ScreenMiddle - _scoreLabel.Size / 2 + new Vector2(0, -engine.Screen.ScreenMiddle.Y / 3);
 
                 _levelDonePanel.Components.Add(backButton);
@@ -386,27 +388,33 @@ namespace GhostlyLib.Activities
             C3dWriter writer = new C3dWriter(reader, false);
 
             //add prameters
-            writer.SetParameter<float>("INFO:BFR_target_lop_percentage_ch1", GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch1);
-            writer.SetParameter<float>("INFO:BFR_target_lop_percentage_ch2", GameSessionInfo.Instance.Session.BFR_target_lop_percentage_ch2);
+            writer.SetParameter<float>("INFO:BFR_TARGET_VOP_PERCENTAGE_CH1", GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch1);
+            writer.SetParameter<float>("INFO:BFR_TARGET_VOP_PERCENTAGE_CH2", GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch2);
             //writer.SetParameter<float>("INFO:target_contractions_ch1)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms);
             //writer.SetParameter<float>("INFO:target_contractions_ch2)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms);
 
             float contractionDuration = (float)DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).contractionDuration / 1000;
 
-            writer.SetParameter<float>("INFO:target_contractions_ch1)", (float)contractionDuration);
-            writer.SetParameter<float>("INFO:target_contractions_ch2)", (float)contractionDuration);
+            writer.SetParameter<float>("INFO:TARGET_CONTRACTIONS_CH1)", (float)contractionDuration);
+            writer.SetParameter<float>("INFO:TARGET_CONTRACTIONS_CH2)", (float)contractionDuration);
 
-            writer.SetParameter<Int16>("INFO:rpe_post_session", GameSessionInfo.Instance.Session.Rpe_post_session);
+            writer.SetParameter<Int16>("INFO:RPE_POST_SESSION", GameSessionInfo.Instance.Session.Rpe_post_session);
 
             int difficultyLevel = (int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel;
 
-            writer.SetParameter<Int16>("INFO:difficulty_level", (Int16)difficultyLevel);
-            writer.SetParameter<float>("INFO:difficulty_level_MVC", DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel)._MVCLevel);
-            writer.SetParameter<Int16>("INFO:difficulty_level_contractionDuration", (Int16)DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel).contractionDuration);
-            writer.SetParameter<Int16>("INFO:difficulty_level_rest", (Int16)DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel).restDuration);
+            writer.SetParameter<Int16>("INFO:DIFFICULTY_LEVEL", (Int16)difficultyLevel);
+            writer.SetParameter<float>("INFO:DIFFICULTY_LEVEL_MVC", DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel)._MVCLevel);
+            writer.SetParameter<Int16>("INFO:DIFFICULTY_LEVEL_CONTRACTION_DURATION", (Int16)DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel).contractionDuration);
+            writer.SetParameter<Int16>("INFO:DIFFICULTY_LEVEL_REST_DURATION", (Int16)DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel).restDuration);
+
+            IEmgSensorInput _emgInput = GameSessionInfo.Instance.GetSensorInput();
+            writer.SetParameter<float>("INFO:ACTIVATION_THRESHOLD_CH1", _emgInput.ActivationThreshold[0]);
+            writer.SetParameter<float>("INFO:ACTIVATION_THRESHOLD_CH2", _emgInput.ActivationThreshold[1]);
 
             //TODO rethink this!!!!!!!!!!!!!!!!!!!!!!
-            writer.Open("new_" + _c3dFile);
+            var new_c3dFile = SeriousGames.LastC3DFileCreated;
+            new_c3dFile = new_c3dFile.Replace(".c3d", ".new.c3d");
+            writer.Open(new_c3dFile);
             //float[] analogData = new float[reader.AnalogLabels.Count * reader.AnalogChannels];
             //short[] analogData_int = new short[reader.AnalogLabels.Count * reader.AnalogChannels];
 
@@ -449,12 +457,17 @@ namespace GhostlyLib.Activities
                 }
             }
 
+            //close reader
+            reader.Close();
+
             //re-write the file
             writer.Close();
 
             //TODO
             //re write the old with new file
-            System.IO.File.Move(_c3dFile, "new" + _c3dFile);
+            System.IO.File.Move(new_c3dFile, _c3dFile, true);
+
+            //  Task<bool> t = GameSessionInfo.Instance.Uploader.UploadC3DFile(_c3dFile, GameSessionInfo.Instance.SelectedPatient.PatientCode);
         }
 
         public override void OnCursorDown(Vector2 pos)
@@ -509,7 +522,8 @@ namespace GhostlyLib.Activities
                 Components.Remove(_gameplayPanel);
                 //Components.Add(_levelDonePanel);
                 Components.Add(_selfAssesmentPanel);
-                _scoreLabel.Text = LocalizationResourceManager.Instance["Score"].ToString() + ": " + e.Score;
+                //_scoreLabel.Text = LocalizationResourceManager.Instance["Score"].ToString() + ": " + e.Score;
+                score = e.Score;
             }
         }
 
