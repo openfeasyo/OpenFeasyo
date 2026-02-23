@@ -65,7 +65,7 @@ public class TrignoEmgInput : IEmgSensorInput
 
 public class TrignoEmgSignal : IEmgSignal
 {
-    public TrignoEmgSignal(double[] rawSample, int channel)
+    public TrignoEmgSignal(double[] rawSample, int channel, int sequenceNumber)
     {
         RawSample = rawSample;
         Channel = channel;
@@ -74,9 +74,12 @@ public class TrignoEmgSignal : IEmgSignal
         OnOff = new double[rawSample.Length];
         RestingMean = new double[rawSample.Length];
         RestingStdev = new double[rawSample.Length];
+        SequenceNumber = sequenceNumber;
     }
 
-    public int Channel { get; private set; } 
+    public int Channel { get; private set; }
+    
+    public int SequenceNumber { get; private set; } 
         
     public bool MuscleActivated { get; set; }
 
