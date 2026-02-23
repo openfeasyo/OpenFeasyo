@@ -23,7 +23,8 @@ public class TrignoAvanti : IDiscoverable, OpenFeasyo.Platform.Controls.Drivers.
     private int _offset;
 
     private int? _lastPacketId; // for sequence check
-
+    public int LastPacketId => _lastPacketId ?? 0;
+    
     /// <summary>
     /// Largely chatGPT generated code to assemble the data packets comming from Bluetooth and putting them together
     /// into Delsys messages.
