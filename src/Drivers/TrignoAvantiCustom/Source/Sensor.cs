@@ -12,6 +12,7 @@ public class Sensor
     public string Name {  get => _name; }
 
     public int Channel { get; private set; }
+    
 
     public Sensor(string name, int channel)
     {
@@ -66,7 +67,7 @@ public class Sensor
             }
             
             
-            processPacket(signal);
+            processPacket(signal, _buffer.LastPacketId);
 
             _framesReceived++;
             // FPS Updates
@@ -81,22 +82,22 @@ public class Sensor
     }
 
    
-    private void processPacket(double[] packet)
+    private void processPacket(double[] packet, int packetId)
     {
-        var data = new double[][] { packet };
+        //var data = new double[][] { packet };
         
         switch (_calibrationState)
         {
             case CalibrationState.Calibrating:
                 Console.WriteLine("CALIBRATING");
-                Train(data);
-                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(new []{new TrignoEmgSignal(packet,Channel)}));
+                Train(packet);
+                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(new []{new TrignoEmgSignal(packet,Channel,packetId)}));
                 break;
             case CalibrationState.Calibrated:
-                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(Process(data)));
+                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(Process(packet,packetId)));
                 break;
             default: //CalibrationState.Uncalibrated
-                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(new []{new TrignoEmgSignal(packet,Channel)} ));
+                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(new []{new TrignoEmgSignal(packet,Channel,packetId)} ));
                 break;
         }
         
@@ -178,7 +179,7 @@ public class Sensor
         }
     }
 
-    private void Train(double[] rawData)
+    private void TrainOldOneParam(double[] rawData)
     {
         int count = Math.Min(_nChannels, rawData.Length);
 
@@ -186,7 +187,8 @@ public class Sensor
         {
             double filtered = _bandPassFilters[index].filterData(rawData[index]);
 
-            double value = FullWaveRectification(filtered)[0];
+            // Full wave rectification
+            double value = Math.Abs(filtered);
 
             if (_baselineDataCounters[index] < _baselineThrowOut)
             {
@@ -209,31 +211,28 @@ public class Sensor
         }
     }
 
-    private void Train(double[][] rawData)
+    private void Train(double[] rawData)
     {
-        int count = Math.Min(_nChannels, rawData.Length);
+            double[] filtered = _bandPassFilters[0].filterData(rawData);
 
-        for (int channel = 0; channel < count; channel++)
-        {
-            double[] filtered = _bandPassFilters[channel].filterData(rawData[channel]);
-
-            for (int i = 0; i < rawData[channel].Length; i++)
+            for (int i = 0; i < rawData.Length; i++)
             {
-                double value = FullWaveRectification(filtered[i])[0];
+                //Full wave rectification
+                double value = Math.Abs(filtered[i]);
 
 
-                if (_baselineDataCounters[channel] < _baselineThrowOut)
+                if (_baselineDataCounters[0] < _baselineThrowOut)
                 {
                     //throw these first few away
                 }
-                else if (_baselineDataCounters[channel] < _baselineDataLength + _baselineThrowOut)
+                else if (_baselineDataCounters[0] < _baselineDataLength + _baselineThrowOut)
                 {
-                    _baselineData[channel].Add(value);
+                    _baselineData[0].Add(value);
                 }
-                else if (_baselineDataCounters[channel] == _baselineDataLength + _baselineThrowOut)
+                else if (_baselineDataCounters[0] == _baselineDataLength + _baselineThrowOut)
                 {
-                    _baselineMean[channel] = Mean(_baselineData[channel]);
-                    _baselineStdev[channel] = StandardDeviation(_baselineData[channel], _baselineMean[channel]);
+                    _baselineMean[0] = Mean(_baselineData[0]);
+                    _baselineStdev[0] = StandardDeviation(_baselineData[0], _baselineMean[0]);
 
                     OnCalibrationChanged(CalibrationResults.Finished);
                     _calibrationState = CalibrationState.Calibrated;
@@ -243,35 +242,30 @@ public class Sensor
                     break;
                 }
 
-                _baselineDataCounters[channel]++;
+                _baselineDataCounters[0]++;
             }
-        }
+        
     }
 
-    private TrignoEmgSignal[] Process(double[][] rawData)
+    private TrignoEmgSignal[] Process(double[] rawData, int sequenceNumber)
     {
-        int count = Math.Min(_nChannels, rawData.Length);
-        TrignoEmgSignal[] signals = new TrignoEmgSignal[count];
+        TrignoEmgSignal[] signals = new TrignoEmgSignal[1];
 
+        TrignoEmgSignal signal = new TrignoEmgSignal(rawData,Channel, sequenceNumber);
 
-        for (int index = 0; index < count; index++)
-        {
-            TrignoEmgSignal signal = new TrignoEmgSignal(rawData[index],Channel);
-
-            signal.BpfSample = _bandPassFilters[index].filterData(signal.RawSample);
-            FullWaveRectification(signal.BpfSample, signal.FullWaveSample);
-            signals[index] = MovingWindowAverageFilter(signal, index);
-        }
-
+        signal.BpfSample = _bandPassFilters[0].filterData(signal.RawSample);
+        FullWaveRectification(signal.BpfSample, signal.FullWaveSample);
+        signals[0] = MovingWindowAverageFilter(signal, 0);
+       
         //Debug.WriteLine("Signals " + signals);
 
         return signals;
     }
 
-    private double[] FullWaveRectification(Double value)
-    {
-        return new double[] { Math.Abs(value) };
-    }
+//    private double[] FullWaveRectification(Double value)
+//    {
+//        return new double[] { Math.Abs(value) };
+//    }
 
     private void FullWaveRectification(double[] values, double[] destination)
     {
