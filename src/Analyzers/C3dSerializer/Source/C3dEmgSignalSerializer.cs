@@ -60,39 +60,76 @@ namespace FeasyMotion.C3dSerializer
         {
             if (_writer == null)
                 return;           
+            if (emgSignal[0].Channel == 0)
+            {
+                if(!channel0present){
+                    for (int i = 0; i < emgSignal[0].RawSample.Length; i++)
+                    {
+                        signal0Buffer[i] =  Convert.ToSingle((double)emgSignal[0].RawSample[i]);
+                        onoff0Buffer[i] = Convert.ToSingle((double) emgSignal[0].OnOff[i]);
+                    }
+                    channel0present = true;
+                }
+                else
+                {
+                    Console.WriteLine("Channel 0 double sequence");
+                }
+            }
+            if (emgSignal[0].Channel == 1)
+            {
+                if(!channel1present){
+                    for (int i = 0; i < emgSignal[0].RawSample.Length; i++)
+                    {
+                        signal1Buffer[i] =  Convert.ToSingle((double)emgSignal[0].RawSample[i]);
+                        onoff1Buffer[i] = Convert.ToSingle((double) emgSignal[0].OnOff[i]);
+                    }
+                    channel1present = true;
+                }
+                else
+                {
+                    Console.WriteLine("Channel 1 double sequence");
+                }
+            }
+            
+            if(!channel1present || !channel1present) return;
+
+            channel0present = false;
+            channel1present = false;
+            
             
             writeGameObjects(game, 0);
 
             _writer.WriteFloatFrame(_currentData);
             WriteAnalogData(game, emgSignal);
-            Debug.WriteLine("WriteAnalogData");
+            Debug.WriteLine("...WriteAnalogData...");
         }
+        
+        // EMG buffers
+        private float[] signal0Buffer = new float[15];
+        private float[] signal1Buffer = new float[15];
+        private float[] onoff0Buffer = new float[15];
+        private float[] onoff1Buffer = new float[15];
+
+        private float[] missingSignal = new float[15];
+
+        private bool channel0present = false;
+        private bool channel1present = false;
 
         private void WriteAnalogData(IGame game, IEmgSignal[] emgSignal)
         {
+           
+            
             if (emgSignal[0].RawSample.Length != 15) {
                 throw new ApplicationException("ANALOG:RATE must be 15");
             }
-            for(int i = 0; i<emgSignal[0].RawSample.Length; i++) { 
+            for(int i = 0; i<signal0Buffer.Length; i++) { 
 
                 int pos = 0;
-                if (emgSignal.Length > 0)
-                {
-                    _analogData[pos++] = Convert.ToSingle(emgSignal[0].RawSample[i]);
-                }
-                if (emgSignal.Length > 1)
-                {
-                    _analogData[pos++] = Convert.ToSingle(emgSignal[1].RawSample[i]);
-                }
-                if (emgSignal.Length > 0)
-                {
-                    _analogData[pos++] = Convert.ToSingle(emgSignal[0].OnOff[i]);
-                }
-                if (emgSignal.Length > 1)
-                {
-                    _analogData[pos++] = Convert.ToSingle(emgSignal[1].OnOff[i]);
-                }
-
+                _analogData[pos++] = signal0Buffer[i];
+                _analogData[pos++] = signal1Buffer[i];
+                _analogData[pos++] = onoff0Buffer[i]; 
+                _analogData[pos++] = onoff1Buffer[i];
+                
                 foreach (string s in game.GameStream.Keys)
                 {
                     _analogData[pos++] = (short)game.GameStream.GetValue(s);
