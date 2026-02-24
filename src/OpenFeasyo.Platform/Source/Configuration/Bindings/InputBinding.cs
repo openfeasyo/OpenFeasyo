@@ -83,7 +83,7 @@ namespace OpenFeasyo.Platform.Configuration.Bindings
 
         protected void CallPositionalHandle(int source, float value)
         {
-            handle(source, (value - ZeroAngle)*Sensitivity);
+            handle(source, (value - ZeroAngle) * Sensitivity);
         }
 
         private float adjustAngle(float angle)
@@ -341,7 +341,6 @@ namespace OpenFeasyo.Platform.Configuration.Bindings
             if (Vector3.Cross(boneVector, v).Z > 0)
                 angle2 = -angle2;
 
-
             Handle(0, angle2 * Sensitivity);
         }
 
@@ -436,9 +435,9 @@ namespace OpenFeasyo.Platform.Configuration.Bindings
                 return _baseJoint;
             }
 
-            set 
+            set
             {
-                _baseJoint = value;    
+                _baseJoint = value;
             }
         }
 
@@ -447,9 +446,6 @@ namespace OpenFeasyo.Platform.Configuration.Bindings
         {
             get { return _input; }
         }
-
-
-
 
         private EventHandler<SkeletonChangedEventArgs> _event_handler;
         private EventHandler<SkeletonChangedEventArgs> _analyzer_handler;
@@ -472,7 +468,7 @@ namespace OpenFeasyo.Platform.Configuration.Bindings
             _analyzer_handler = new EventHandler<SkeletonChangedEventArgs>(_analyzer_handle);
             input.SkeletonChanged += _event_handler;
             input.SkeletonChanged += _analyzer_handler;
-            
+
         }
 
         void _input_assign_position(object sender, SkeletonChangedEventArgs e)
@@ -523,5 +519,5 @@ namespace OpenFeasyo.Platform.Configuration.Bindings
                 analyzer.ProcessSkeleton(0, e.Skeleton);
             }
         }
-   } 
+    }
 }

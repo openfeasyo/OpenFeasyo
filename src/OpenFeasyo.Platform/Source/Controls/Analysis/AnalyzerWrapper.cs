@@ -62,7 +62,8 @@ namespace OpenFeasyo.Platform.Controls.Analysis
             }
         }
 
-        private class EmgSignalProcessRequest : IProcessRequest {
+        private class EmgSignalProcessRequest : IProcessRequest
+        {
             internal IEmgSignalAnalyzer Analyzer { get; set; }
             internal IEmgSignal[] CurrentEmgSignal { get; set; }
             internal override void Process(IGame game)
@@ -76,16 +77,16 @@ namespace OpenFeasyo.Platform.Controls.Analysis
         {
             private IGame _game = null;
 
-            
+
             public ProxyGame(IGame game)
             {
                 _game = game;
-                
+
                 _game.GameFinished += OnGameFinished;
                 _game.GameStarted += OnGameStarted;
             }
 
-            
+
 
             public void OnReport(IReport report)
             {
@@ -123,34 +124,37 @@ namespace OpenFeasyo.Platform.Controls.Analysis
 
             public GameDefinition Definition
             {
-                get 
+                get
                 {
                     return _game.Definition;
                 }
             }
 
-            public int MaxScore {
+            public int MaxScore
+            {
                 get { return _game.MaxScore; }
                 set { _game.MaxScore = value; }
             }
 
-            public string Configuration {
+            public string Configuration
+            {
                 get { return _game.Configuration; }
                 set { _game.Configuration = value; }
             }
 
             public event EventHandler<GameStartedEventArgs> GameStarted;
 
-            public void OnGameStarted(object sender, GameStartedEventArgs args) {
+            public void OnGameStarted(object sender, GameStartedEventArgs args)
+            {
                 //_dispatcher.Invoke(
-                    //new Action(() =>
-                    //{
-                        if (GameStarted != null)
-                        {
-                            GameStarted(sender, args);
-                        }
-                    //}), System.Windows.Threading.DispatcherPriority.Normal);
-                
+                //new Action(() =>
+                //{
+                if (GameStarted != null)
+                {
+                    GameStarted(sender, args);
+                }
+                //}), System.Windows.Threading.DispatcherPriority.Normal);
+
             }
 
             public event EventHandler<GameFinishedEventArgs> GameFinished;
@@ -160,10 +164,10 @@ namespace OpenFeasyo.Platform.Controls.Analysis
                 //_dispatcher.Invoke(
                 //    new Action(() =>
                 //    {
-                        if (GameFinished != null)
-                        {
-                            GameFinished(sender, args);
-                        }
+                if (GameFinished != null)
+                {
+                    GameFinished(sender, args);
+                }
                 //    }), System.Windows.Threading.DispatcherPriority.Normal);
             }
         }
@@ -277,7 +281,8 @@ namespace OpenFeasyo.Platform.Controls.Analysis
             }
         }
 
-        public void ProcessEmgSignal(IEmgSignal[] emgSignal) {
+        public void ProcessEmgSignal(IEmgSignal[] emgSignal)
+        {
             EmgSignalProcessRequest p = new EmgSignalProcessRequest();
             p.Analyzer = _analyzer as IEmgSignalAnalyzer;
             p.CurrentEmgSignal = emgSignal;
@@ -292,7 +297,7 @@ namespace OpenFeasyo.Platform.Controls.Analysis
                 }
             }
         }
-        
+
 
 
         public void Run()

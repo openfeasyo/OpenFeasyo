@@ -124,7 +124,7 @@
     <value>Les valeurs VOP-BFR sont-elles correctes?</value>
   </data>
   <data name="AreYouPatient" xml:space="preserve">
-    <value>Etes-vous le patient </value>
+    <value>Êtes-vous le patient</value>
   </data>
   <data name="BackToMenu" xml:space="preserve">
     <value>Retour au menu</value>
@@ -132,17 +132,20 @@
   <data name="Calibrating" xml:space="preserve">
     <value>Calibration ...</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
   <data name="ClickOnTheButtonToStartTheCalibration" xml:space="preserve">
-    <value>Cliquez sur le bouton pour demarrer la calibration</value>
+    <value>Cliquez sur le bouton pour démarrer la calibration</value>
   </data>
   <data name="CloseGame" xml:space="preserve">
-    <value>Close Game</value>
+    <value>Fermez l'application</value>
   </data>
   <data name="Connect" xml:space="preserve">
     <value>Connecter</value>
   </data>
   <data name="ConnectingTo" xml:space="preserve">
-    <value>Connexion a</value>
+    <value>Connexion à</value>
   </data>
   <data name="Continue" xml:space="preserve">
     <value>Continuer</value>
@@ -155,6 +158,9 @@
   </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
+  </data>
+  <data name="CurrentDifficulty" xml:space="preserve">
+    <value>Difficulté actuelle</value>
   </data>
   <data name="Earth" xml:space="preserve">
     <value>Terre</value>
@@ -187,7 +193,7 @@
     <value>Glace</value>
   </data>
   <data name="IWantToControlTheGameUsing" xml:space="preserve">
-    <value>Je veux controler le jeu avec</value>
+    <value>Je veux contrôler le jeu avec</value>
   </data>
   <data name="Jump" xml:space="preserve">
     <value>Saute</value>
@@ -211,7 +217,7 @@
     <value>Niv</value>
   </data>
   <data name="LevelCompleted" xml:space="preserve">
-    <value>Niveau termine</value>
+    <value>Niveau terminé</value>
   </data>
   <data name="LoadingGame" xml:space="preserve">
     <value>Chargement du jeu</value>
@@ -244,19 +250,22 @@
     <value>Rejouer</value>
   </data>
   <data name="RatedPerceivedExertion" xml:space="preserve">
-    <value>Effort percu (RPE)</value>
+    <value>Effort perçu (RPE)</value>
   </data>
   <data name="Recalibrate" xml:space="preserve">
     <value>Recalibrer</value>
   </data>
   <data name="Release" xml:space="preserve">
-    <value>Relacher</value>
+    <value>Relâcher</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Paramètres</value>
   </data>
   <data name="ResetYourMusclesIn" xml:space="preserve">
-    <value>Relachez vos muscles dans</value>
+    <value>Relâchez vos muscles dans</value>
   </data>
   <data name="RestYourMuscles" xml:space="preserve">
-    <value>Relachez vos muscles pour calibration</value>
+    <value>Relâchez vos muscles pour calibration</value>
   </data>
   <data name="Right" xml:space="preserve">
     <value>Droit</value>
@@ -280,25 +289,25 @@
     <value>Selectionner gauche sensor</value>
   </data>
   <data name="SelectPatient" xml:space="preserve">
-    <value>Selectionner un patient</value>
+    <value>Sélectionner un patient</value>
   </data>
   <data name="SelectRightSensor" xml:space="preserve">
     <value>Selectionner droit sensor</value>
   </data>
   <data name="SelectSensorForJumping" xml:space="preserve">
-    <value>Selectionner le capteur pour sauter</value>
+    <value>Sélectionner le capteur pour sauter</value>
   </data>
   <data name="SelectSensorForShooting" xml:space="preserve">
-    <value>Selectionner le capteur pour tirer</value>
+    <value>Sélectionner le capteur pour tirer</value>
   </data>
   <data name="SelectTheLevel" xml:space="preserve">
-    <value>Selectionner le niveau</value>
+    <value>Sélectionner le niveau</value>
   </data>
   <data name="SelectTheWorld" xml:space="preserve">
-    <value>Selectionner le monde</value>
+    <value>Sélectionner le monde</value>
   </data>
   <data name="SensorData" xml:space="preserve">
-    <value>Donnees du capteur:</value>
+    <value>Données du capteur:</value>
   </data>
   <data name="SessionCompleted" xml:space="preserve">
     <value>Votre session est terminée.</value>
@@ -319,10 +328,10 @@
     <value>Espace</value>
   </data>
   <data name="StartCalibration" xml:space="preserve">
-    <value>Demarrer la calibration</value>
+    <value>Démarrer la calibration</value>
   </data>
   <data name="StartGame" xml:space="preserve">
-    <value>Demarrer le jeu</value>
+    <value>Démarrer le jeu</value>
   </data>
   <data name="StartTheGame" xml:space="preserve">
     <value>Commancer le jeu</value>
@@ -337,13 +346,13 @@
     <value>Toucher</value>
   </data>
   <data name="TouchTheHalvesOfTheScreenTo" xml:space="preserve">
-    <value>Touchez les deux moities de l ecran pour</value>
+    <value>Touchez les deux moitiés de l’écran pour</value>
   </data>
   <data name="TurnOffTheGame" xml:space="preserve">
     <value>Vous pouvez éteindre le jeu.</value>
   </data>
   <data name="UsernameOrPasswordAreIncorrect" xml:space="preserve">
-    <value>Nom d utilisateur ou mot de passe incorrect</value>
+    <value>Nom d’utilisateur ou mot de passe incorrect</value>
   </data>
   <data name="WatchInstructions" xml:space="preserve">
     <value>Voir les instructions</value>
@@ -353,5 +362,8 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Qui</value>
+  </data>
+  <data name="ToChangeSettingsEnterPassword" xml:space="preserve">
+    <value>Pour modifier les paramètres, saisissez votre mot de passe.</value>
   </data>
 </root>

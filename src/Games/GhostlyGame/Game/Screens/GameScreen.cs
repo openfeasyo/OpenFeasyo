@@ -76,14 +76,8 @@ namespace GhostlyLib.Screens
             this.MusicPlayer = player;
             this.Screen = screen;
 
-            //_gameState = GameState.DeviceConnected;
             State = GameState.DeviceTrained;
         }
-
-        /*public void Initialize()
-        {
-            GameBackground = new GameBackground(0, SPEED, Screen);
-        }*/
 
         public abstract void Initialize();
 
@@ -91,10 +85,14 @@ namespace GhostlyLib.Screens
 
         public void LoadContent(ContentRepository content)
         {
-            _font[0] = content.LoadFont("Fonts/Vitamin12");
-            _font[1] = content.LoadFont("Fonts/Vitamin24");
-            _font[2] = content.LoadFont("Fonts/Vitamin36");
-            _font[3] = content.LoadFont("Fonts/Vitamin48");
+            //_font[0] = content.LoadFont("Fonts/Vitamin12");
+            //_font[1] = content.LoadFont("Fonts/Vitamin24");
+            //_font[2] = content.LoadFont("Fonts/Vitamin36");
+            //_font[3] = content.LoadFont("Fonts/Vitamin48");
+            _font[0] = content.LoadFont("Fonts/Ubuntu12");
+            _font[1] = content.LoadFont("Fonts/Ubuntu24");
+            _font[2] = content.LoadFont("Fonts/Ubuntu36");
+            _font[3] = content.LoadFont("Fonts/Ubuntu48");
 
             try
             {
@@ -108,7 +106,6 @@ namespace GhostlyLib.Screens
 
         public void LoadNextLevel()
         {
-            //TODO Ghostly+ study...only levels 191 - 200 can be played
             if (GameSessionInfo.Instance.SelectedPatient != null)
             {
                 this.CurrentLevel = GameSessionInfo.Instance.LevelToPlay();
@@ -200,24 +197,6 @@ namespace GhostlyLib.Screens
 
         public abstract void Update(GameTime gameTime);
 
-
-        /*public void UpdateRequiredContractionDuration(int evaluation)
-        {
-            if (evaluation < 0)
-            {
-                //decrease
-                GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms = Math.Max((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms - 1000, 3000);
-                GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms = Math.Max((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms - 1000, 3000);
-            }
-            else if (evaluation > 0)
-            {
-                //increase
-                GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms = Math.Min((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms + 1000, 10000);
-                GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms = Math.Min((float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms + 1000, 10000);
-            }
-            else { }//no change   
-        }*/
-
         public void UpdateDifficultyLevel(int evaluation)
         {
             if (evaluation < 0)
@@ -243,7 +222,6 @@ namespace GhostlyLib.Screens
                 {
                     GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 2;
                 }
-
             }
             else { }    //no change
         }

@@ -19,6 +19,8 @@ namespace GhostlyLib.Activities
 {
     public class StartGameActivity : OpenFeasyo.GameTools.UI.Activity
     {
+        private bool? permissionsApproved = null;
+
         public StartGameActivity(UIEngine engine) : base(engine)
         {
             float cell = engine.Screen.ScreenHeight / 10;
@@ -28,14 +30,10 @@ namespace GhostlyLib.Activities
             backgroundImage.Position = Vector2.Zero;
             Components.Add(backgroundImage);
 
-            /*Label infoLabel = new Label(LocalizationResourceManager.Instance["StartTheGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-            infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (infoLabel.Size.X / 2), 70);
-            Components.Add(infoLabel);*/
-
             if (GameSessionInfo.Instance.LevelsCompleted < GameSessionInfo.Instance.RequiredLevels)
             {
                 int firstLevel = GameSessionInfo.Instance.LevelToPlay();
-                float tileWidth =  (engine.Screen.ScreenWidth * 0.9f) / 2;
+                float tileWidth = (engine.Screen.ScreenWidth * 0.9f) / 2;
                 float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 4;
 
                 LevelSelectionButton StartGameButton = new LevelSelectionButton(LocalizationResourceManager.Instance["StartToPlay"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
@@ -53,25 +51,19 @@ namespace GhostlyLib.Activities
                         "</bindings></Configuration>"
                         ));
                 };
-                StartGameButton.Position = (new Vector2(engine.Screen.ScreenMiddle.X - (tileWidth/2), engine.Screen.ScreenMiddle.Y - (tileHeight/2)));
+                StartGameButton.Position = (new Vector2(engine.Screen.ScreenMiddle.X - (tileWidth / 2), engine.Screen.ScreenMiddle.Y - (tileHeight / 2)));
                 StartGameButton.Size = new Vector2(tileWidth, tileHeight);
                 Components.Add(StartGameButton);
             }
             else
             {
-                //Label sessionCompleted = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
                 Label sessionCompleted = new Label(LocalizationResourceManager.Instance["SessionCompleted"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
                 sessionCompleted.Position = new Vector2(engine.Screen.ScreenMiddle.X - (sessionCompleted.Size.X / 2), engine.Screen.ScreenMiddle.Y - 35);
                 Components.Add(sessionCompleted);
 
-                //Label turnOffTheGame = new Label(LocalizationResourceManager.Instance["TurnOffTheGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
                 Label turnOffTheGame = new Label(LocalizationResourceManager.Instance["TurnOffTheGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
                 turnOffTheGame.Position = new Vector2(engine.Screen.ScreenMiddle.X - (turnOffTheGame.Size.X / 2), engine.Screen.ScreenMiddle.Y + 35);
                 Components.Add(turnOffTheGame);
-
-                //Label closeGame = new Label(LocalizationResourceManager.Instance["CloseGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
-                //closeGame.Position = new Vector2(engine.Screen.ScreenMiddle.X - (closeGame.Size.X / 2), cell * 3);
-                //Components.Add(closeGame);
 
                 /*TextButton allWorldsButton = new TextButton(LocalizationResourceManager.Instance["AllWorlds"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
                 allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
@@ -83,6 +75,22 @@ namespace GhostlyLib.Activities
             allWorldsButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
             allWorldsButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 5) - allWorldsButton.Size / 2;
             Components.Add(allWorldsButton);*/
+
+            TextButton settings = new TextButton(LocalizationResourceManager.Instance["Settings"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_SMALL_FONT_SIZE), engine.Device);
+            settings.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+            {
+                //show dialog to reenter password
+                if (GhostlyGame.Instance.RequestTherapistLogin != null)
+                {
+                    GhostlyGame.Instance.RequestTherapistLogin(result =>
+                    {
+                        permissionsApproved = result;
+                    });
+                }
+            };
+            settings.Position = new Vector2(engine.Screen.ScreenWidth - settings.Size.X - 10, cell * 9);
+            settings.Size = new Vector2(110, 50);
+            Components.Add(settings);
         }
 
         public override void Update(GameTime gameTime)
@@ -91,6 +99,18 @@ namespace GhostlyLib.Activities
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
                 _engine.StartActivity(new MainMenuActivity(_engine));
+            }
+
+            if (permissionsApproved.HasValue)
+            {
+                if (permissionsApproved.Value)
+                {
+                    StartActivity(new ChangeDifficultySettingsActivity(_engine));
+                }
+                else
+                {
+                    //permission not granted -> stay in this activity
+                }
             }
         }
     }

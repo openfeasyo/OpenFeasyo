@@ -1,10 +1,8 @@
 ﻿using GhostlyGame.Models;
 using GhostlyLib.Animations;
 using GhostlyLib.DynamicDifficulty;
-using GhostlyLib.Level;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
-using System.Diagnostics;
 
 namespace GhostlyLib.Elements.Character
 {
@@ -71,7 +69,6 @@ namespace GhostlyLib.Elements.Character
         }
 
         #endregion Public properties
-
 
         public SimpleSpaceCharacter(GameScreen gameScreen, LevelElements elements) : base(gameScreen)
         {
@@ -158,7 +155,6 @@ namespace GhostlyLib.Elements.Character
                     this.Instruction = Instruction.Release;
                     GravityPull = Pull.No;
                     desiredMovement = ActionMovement.None;
-                    //Debug.WriteLine("ahead YES, no pulling -> RELEASE");
                 }
                 //they are pulling tiles
                 else
@@ -202,13 +198,11 @@ namespace GhostlyLib.Elements.Character
                     {
                         if (GravityPull != Pull.No && this.ActionMovement == ActionMovement.None)
                         {
-                            //((SimpleSpaceLevelAnalytics)((SimpleSpaceLevel)GameScreen.Level).Analytics).UpdateMovementEnd(completedMovements, DateTime.Now.Ticks);
                             //completed required movement
                             completedMovements++;
                             GravityPull = Pull.No;
                             desiredMovement = ActionMovement.None;
                             this.Instruction = Instruction.Release;
-                            //Debug.WriteLine("no intersections with center = > RELEASE");
                         }
                     }
                 }
@@ -248,8 +242,6 @@ namespace GhostlyLib.Elements.Character
             else //no tiles ahead
             {
                 this.AutomaticMovement = AutomaticMovement.MovingForward;
-                //this.Instruction = Instruction.Release;
-                //Debug.WriteLine("nothing ahead => RELEASE");
             }
 
             IEnumerable<IDrawable> tilesAbove = tilesAround.Where(o => ((Tile)o).Rectangle.Intersects(this.Top)

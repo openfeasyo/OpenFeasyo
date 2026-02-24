@@ -302,5 +302,9 @@ namespace GhostlyLib
         public string Configuration { get; set; }
 
         #endregion IGame
+
+        // Open password dialog
+        public delegate void OpenPasswordDialog(Action<bool> onOk);
+        public OpenPasswordDialog RequestTherapistLogin;
     }
 }

@@ -132,6 +132,9 @@
   <data name="Calibrating" xml:space="preserve">
     <value>Calibrating ...</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="ClickOnTheButtonToStartTheCalibration" xml:space="preserve">
     <value>click on the button to start the calibration</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
+  </data>
+  <data name="CurrentDifficulty" xml:space="preserve">
+    <value>Current Difficulty</value>
   </data>
   <data name="Earth" xml:space="preserve">
     <value>Earth</value>
@@ -251,6 +257,9 @@
   </data>
   <data name="Release" xml:space="preserve">
     <value>Release</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
   </data>
   <data name="ResetYourMusclesIn" xml:space="preserve">
     <value>Rest your muscles in </value>
@@ -353,5 +362,8 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="ToChangeSettingsEnterPassword" xml:space="preserve">
+    <value>To Change Settings Enter Password</value>
   </data>
 </root>

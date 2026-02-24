@@ -51,9 +51,24 @@ with.
     See the documentation for more information.
     -->
     <CharacterRegions>
-      <CharacterRegion>
+      <!--<CharacterRegion>
         <Start>&#32;</Start>
         <End>&#126;</End>
+      </CharacterRegion>-->
+
+      <CharacterRegion>
+	<Start> </Start>
+        <End>~</End>
+      </CharacterRegion>
+
+      <CharacterRegion>
+        <Start>À</Start>
+        <End>ÿ</End>
+      </CharacterRegion>
+
+      <CharacterRegion>
+        <Start>Ā</Start>
+        <End>ſ</End>
       </CharacterRegion>
     </CharacterRegions>
   </Asset>

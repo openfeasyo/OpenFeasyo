@@ -30,8 +30,8 @@ namespace GhostlyLib.Screens
                     return 3f;
 
                 //the Simple Space Level is the only level where the difficulty levels should apply, and thus influence the game speed
-                if (this.Level.GetType().Equals(typeof(SimpleSpaceLevel)) 
-                    && GameSessionInfo.Instance.SelectedPatient != null 
+                if (this.Level.GetType().Equals(typeof(SimpleSpaceLevel))
+                    && GameSessionInfo.Instance.SelectedPatient != null
                     && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
                 {
                     switch (DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).restDuration)
@@ -72,8 +72,6 @@ namespace GhostlyLib.Screens
             IEmgSensorInput _emgInput = GameSessionInfo.Instance.GetSensorInput();
             _emgInput.ActivationThreshold[0] = GameSessionInfo.Instance.Max0 * ((DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel))._MVCLevel);
             _emgInput.ActivationThreshold[1] = GameSessionInfo.Instance.Max1 * ((DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel))._MVCLevel);
-            //Debug.WriteLine("!!!!!!! " + GameSessionInfo.Instance.Max0 + " " + _emgInput.ActivationThreshold[0]);
-            //Debug.WriteLine("!!!!!!! " + GameSessionInfo.Instance.Max1 + " " + _emgInput.ActivationThreshold[1]);
 
             this.State = GameState.Running;
             //clear elements & start logging
@@ -133,9 +131,6 @@ namespace GhostlyLib.Screens
 
         private void UpdateAllElements(GameTime gameTime)
         {
-            //this.Level.ProcessPrimaryAction(EmgState.Primary);
-            //this.Level.ProcessSecondaryAction(EmgState.Secondary);
-
             ((GameCharacter)this.GameCharacter).Update(gameTime);
 
             this.Elements.Update(gameTime);
@@ -180,13 +175,9 @@ namespace GhostlyLib.Screens
             DrawOnetimeAnimations(spriteBatch);
 
             float position = 15;
-            //if (!(this.Level is SpaceLevel) || !(this.Level is SimpleSpaceLevel)) // for space levels don't show level info, it covers the space ship
-            //{
-                spriteBatch.DrawString(Font[1], LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
-            //}            
-            //position = Font[2].MeasureString(LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString()).X + 100;
-
+            spriteBatch.DrawString(Font[1], LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString(), new Vector2(position, 20), GhostlyGame.MENU_FONT_COLOR);
             position = _screen.ScreenMiddle.X - 60;
+
             switch (this.GameCharacter.CurrentHealth)
             {
                 case 3:
@@ -226,7 +217,7 @@ namespace GhostlyLib.Screens
             spriteBatch.DrawString(this.Font[1], gameTime.TotalGameTime.Minutes.ToString("D2") + ":" + gameTime.TotalGameTime.Seconds.ToString("D2"), new Vector2(_screen.ScreenMiddle.X - 60, _screen.ScreenHeight - 40), Color.FromNonPremultiplied(11, 206, 196, 256));
             //TODO remove before deploying
             IEmgSensorInput _emgInput = GameSessionInfo.Instance.GetSensorInput();
-            spriteBatch.DrawString(this.Font[1], "DL: " + GameSessionInfo.Instance.SelectedPatient.DifficultyLevel.ToString() + " [0]: " + Math.Round(_emgInput.ActivationThreshold[0],5) + ", [1]: " + Math.Round(_emgInput.ActivationThreshold[1],5) , new Vector2( 60, _screen.ScreenHeight - 40), Color.FromNonPremultiplied(11, 206, 196, 256));
+            spriteBatch.DrawString(this.Font[1], "DL: " + GameSessionInfo.Instance.SelectedPatient.DifficultyLevel.ToString() + " [0]: " + Math.Round(_emgInput.ActivationThreshold[0], 5) + ", [1]: " + Math.Round(_emgInput.ActivationThreshold[1], 5), new Vector2(60, _screen.ScreenHeight - 40), Color.FromNonPremultiplied(11, 206, 196, 256));
         }
 
         private void DrawOnetimeAnimations(SpriteBatch spriteBatch)

@@ -85,6 +85,7 @@
 		<Compile Include="..\..\..\Game\Activities\AboutActivity.cs" Link="Activities\AboutActivity.cs" />
 		<Compile Include="..\..\..\Game\Activities\AdaptCalibrationActivity.cs" Link="Activities\AdaptCalibrationActivity.cs" />
 		<Compile Include="..\..\..\Game\Activities\CalibrationActivity.cs" Link="Activities\CalibrationActivity.cs" />
+		<Compile Include="..\..\..\Game\Activities\ChangeDifficultySettingsActivity.cs" Link="Activities\ChangeDifficultySettingsActivity.cs" />
 		<Compile Include="..\..\..\Game\Activities\ConfigureTouchActivity.cs" Link="Activities\ConfigureTouchActivity.cs" />
 		<Compile Include="..\..\..\Game\Activities\GamePlayActivity.cs" Link="Activities\GamePlayActivity.cs" />
 		<Compile Include="..\..\..\Game\Activities\InputSelectionActivity.cs" Link="Activities\InputSelectionActivity.cs" />

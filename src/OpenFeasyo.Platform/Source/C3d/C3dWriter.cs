@@ -380,7 +380,6 @@ namespace Vub.Etro.IO
                 {
                     throw new ApplicationException("Cannot create a parameter group " + element + " after file was open.");
                 }
-
             }
         }
 

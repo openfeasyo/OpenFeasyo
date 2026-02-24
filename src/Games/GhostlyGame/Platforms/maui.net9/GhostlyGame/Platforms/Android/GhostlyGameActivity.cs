@@ -2,8 +2,12 @@ using Android;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Text;
 using Android.Views;
+using Android.Widget;
 using AndroidX.Core.App;
+using GhostlyGame;
+using GhostlyGame.Models;
 
 namespace GhostlyLib;
 
@@ -31,6 +35,7 @@ public class GhostlyGameActivity : AndroidGameActivity
         EnableImmersiveMode();
 
         _game = new GhostlyLib.GhostlyGame();
+        _game.RequestTherapistLogin = OpenPasswordDialog;
         _view = _game.Services.GetService(typeof(Android.Views.View)) as Android.Views.View;
 
         SetContentView(_view);
@@ -52,10 +57,58 @@ public class GhostlyGameActivity : AndroidGameActivity
         base.OnStop();
         this.Finish();
         this.FinishAffinity();
-        // Ugly ugly ugly. This is done to cleanup the Delsys pipeline. Without the following line, it is going to crash every second start
-        //Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
     }
-   
+
+    public void OpenPasswordDialog(Action<bool> onOk)
+    {
+        RunOnUiThread(() =>
+        {
+            // Dialog builder
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.SetTitle(LocalizationResourceManager.Instance["EnterPassword"].ToString());
+
+            // Root layout
+            LinearLayout layout = new LinearLayout(this)
+            {
+                Orientation = Orientation.Vertical
+            };
+            layout.SetPadding(50, 40, 50, 10);
+
+            // Password input
+            EditText passwordInput = new EditText(this)
+            {
+                Hint = LocalizationResourceManager.Instance["EnterPassword"].ToString()
+            };
+
+            passwordInput.InputType =
+                InputTypes.ClassText | InputTypes.TextVariationPassword;
+
+            layout.AddView(passwordInput,
+                new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MatchParent,
+                    ViewGroup.LayoutParams.WrapContent));
+
+            builder.SetView(layout);
+
+            // OK button
+            builder.SetPositiveButton(LocalizationResourceManager.Instance["Ok"].ToString(), async (s, e) =>
+            {
+                string storedUsername = await SecureStorage.Default.GetAsync("username");
+                onOk?.Invoke(await GameSessionInfo.Instance.Uploader.SignIn(storedUsername, passwordInput.Text));
+            });
+
+            // Cancel button
+            builder.SetNegativeButton(LocalizationResourceManager.Instance["Cancel"].ToString(), (s, e) =>
+            {
+                onOk?.Invoke(false);
+            });
+
+            // Optional: prevent dismiss on outside tap
+            builder.SetCancelable(false);
+
+            builder.Show();
+        });
+    }
 
     private void InitPermission()
     {

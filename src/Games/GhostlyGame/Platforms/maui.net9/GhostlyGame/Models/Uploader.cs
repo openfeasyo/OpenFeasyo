@@ -22,7 +22,7 @@ namespace GhostlyGame.Models
                 //1. connection to DB created by Guillaume
                 _supabaseClient = new Client("https://egihfsmxphqcsjotmhmm.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnaWhmc214cGhxY3Nqb3RtaG1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxMzM0MDksImV4cCI6MjA2MjcwOTQwOX0.T-SPGmTmS0gR2fHvuYgcrcrJRjROk691T9zdMvEH78E", options);
                 //2. connection to DB created by Katka (Guillaume's DB was dumped and restored to this DB)
-                //_supabaseClient = new Client("https://nucyljbytyasorkmtdfn.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51Y3lsamJ5dHlhc29ya210ZGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0NzE2MDksImV4cCI6MjA4NTA0NzYwOX0.JZybF-YlRH6Qcd5K9yT6MPGG0hEZTxmF7EfBxH2w2xI", options);
+            //    _supabaseClient = new Client("https://nucyljbytyasorkmtdfn.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51Y3lsamJ5dHlhc29ya210ZGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0NzE2MDksImV4cCI6MjA4NTA0NzYwOX0.JZybF-YlRH6Qcd5K9yT6MPGG0hEZTxmF7EfBxH2w2xI", options);
                 _bucketName = "emg_data";//bucketName;
             }
         }

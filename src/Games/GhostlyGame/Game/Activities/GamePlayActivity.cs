@@ -463,11 +463,11 @@ namespace GhostlyLib.Activities
             //re-write the file
             writer.Close();
 
-            //TODO
             //re write the old with new file
             System.IO.File.Move(new_c3dFile, _c3dFile, true);
 
-            //  Task<bool> t = GameSessionInfo.Instance.Uploader.UploadC3DFile(_c3dFile, GameSessionInfo.Instance.SelectedPatient.PatientCode);
+            //upload c3d file to the server
+            Task<bool> t = GameSessionInfo.Instance.Uploader.UploadC3DFile(_c3dFile, GameSessionInfo.Instance.SelectedPatient.PatientCode);
         }
 
         public override void OnCursorDown(Vector2 pos)
