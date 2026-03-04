@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using OpenFeasyo.Platform.Controls;
 using Plugin.BLE;
+using Plugin.BLE.Abstractions;
 using Plugin.BLE.Abstractions.Contracts;
 using Plugin.BLE.Abstractions.Extensions;
 
@@ -313,7 +314,13 @@ public class TrignoAvanti : IDiscoverable, OpenFeasyo.Platform.Controls.Drivers.
                 Plugin.BLE.Abstractions.Contracts.IDevice? device = _foundDevices
                 .FirstOrDefault(d => !string.IsNullOrEmpty(d.Name) && d.Name.EndsWith(strDev));
             if (device == null) throw new ArgumentNullException(nameof(device));
-            await _adapter.ConnectToDeviceAsync(device);
+            
+            var parameters = new ConnectParameters(
+                autoConnect: false,
+                forceBleTransport: true
+            );
+            await _adapter.ConnectToDeviceAsync(device,parameters);
+            await device.RequestMtuAsync(247);
             
             await Task.Delay(TimeSpan.FromMilliseconds(500));
             
