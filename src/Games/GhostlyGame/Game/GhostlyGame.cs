@@ -160,9 +160,24 @@ namespace GhostlyLib
             _engine.MusicPlayer.AddSoundEffect("hit", _contentRepository.LoadSoundEffect("Sounds/hit"));
             _engine.MusicPlayer.AddSoundEffect("win", _contentRepository.LoadSoundEffect("Sounds/win"));
             _engine.MusicPlayer.AddSoundEffect("kill", _contentRepository.LoadSoundEffect("Sounds/kill"));
+
             _engine.MusicPlayer.AddSong("menu", _contentRepository.LoadSong("Music/arcadia"));
             _engine.MusicPlayer.AddSong("game", _contentRepository.LoadSong("Music/scheming-weasel"));
             _engine.MusicPlayer.AddSong("game_rock", _contentRepository.LoadSong("Music/wholesome"));
+
+            _engine.MusicPlayer.AddSoundEffect("en-EN/release", _contentRepository.LoadSoundEffect("Sounds/en-EN/release"));
+            _engine.MusicPlayer.AddSoundEffect("en-EN/hold", _contentRepository.LoadSoundEffect("Sounds/en-EN/hold"));
+            _engine.MusicPlayer.AddSoundEffect("en-EN/contract", _contentRepository.LoadSoundEffect("Sounds/en-EN/contract"));
+
+            _engine.MusicPlayer.AddSoundEffect("fr-FR/release", _contentRepository.LoadSoundEffect("Sounds/fr-FR/release"));
+            _engine.MusicPlayer.AddSoundEffect("fr-FR/hold", _contentRepository.LoadSoundEffect("Sounds/fr-FR/hold"));
+            _engine.MusicPlayer.AddSoundEffect("fr-FR/contract", _contentRepository.LoadSoundEffect("Sounds/fr-FR/contract"));
+
+            _engine.MusicPlayer.AddSoundEffect("nl-NL/release", _contentRepository.LoadSoundEffect("Sounds/nl-NL/release"));
+            _engine.MusicPlayer.AddSoundEffect("nl-NL/hold", _contentRepository.LoadSoundEffect("Sounds/nl-NL/hold"));
+            _engine.MusicPlayer.AddSoundEffect("nl-NL/contract", _contentRepository.LoadSoundEffect("Sounds/nl-NL/contract"));
+
+            _engine.MusicPlayer.AddSoundEffect("rocket_engine", _contentRepository.LoadSoundEffect("Sounds/rocket_engine"));
 
             SeriousGames.CurrentGame = new ConfiguredGame();
             SeriousGames.CurrentGame.Name = "GhostlyPlus";

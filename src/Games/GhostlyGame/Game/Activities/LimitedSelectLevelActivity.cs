@@ -42,7 +42,7 @@ namespace GhostlyLib.Activities
                 Vector2 offset = new Vector2(engine.Screen.ScreenWidth * 0.06f, engine.Screen.ScreenHeight * 0.20f);
 
                 LevelSelectionButton startLevelButton = new LevelSelectionButton(LocalizationResourceManager.Instance["StartToPlay"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
-                startLevelButton.Level = (int) GameSessionInfo.Instance.LevelToPlay();
+                //startLevelButton.Level = (int) GameSessionInfo.Instance.LevelToPlay();
                 startLevelButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
                 {
                     StartActivity(new GamePlayActivity(engine, ((LevelSelectionButton)sender).Level,

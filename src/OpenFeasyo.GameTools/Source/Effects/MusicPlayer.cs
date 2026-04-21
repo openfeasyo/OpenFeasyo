@@ -14,8 +14,6 @@
  */
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
 
 namespace OpenFeasyo.GameTools.Effects
 {
@@ -41,18 +39,19 @@ namespace OpenFeasyo.GameTools.Effects
             {
                 Play(currentPlaylist);
             }
-            else {
+            else
+            {
                 if (GameTools.Mute)
                 {
                     Stop();
                 }
             }
-
         }
 
         public void Play(string playlist)
         {
-            if (!playlists.ContainsKey(playlist)) {
+            if (!playlists.ContainsKey(playlist))
+            {
                 return;
             }
 
@@ -60,15 +59,16 @@ namespace OpenFeasyo.GameTools.Effects
             {
                 currentPlaylist = playlist;
                 currentSong = 0;
-                if (Microsoft.Xna.Framework.Media.MediaPlayer.State == MediaState.Playing) {
+                if (Microsoft.Xna.Framework.Media.MediaPlayer.State == MediaState.Playing)
+                {
                     Microsoft.Xna.Framework.Media.MediaPlayer.Stop();
                 }
             }
 
-            if (playlists[playlist].Count == 0 || 
+            if (playlists[playlist].Count == 0 ||
                 GameTools.Mute ||
                 Microsoft.Xna.Framework.Media.MediaPlayer.State == MediaState.Playing) return;
-            
+
             if (playlists[playlist].Count <= currentSong)
             {
                 currentSong = 0;
@@ -80,7 +80,8 @@ namespace OpenFeasyo.GameTools.Effects
             {
                 Microsoft.Xna.Framework.Media.MediaPlayer.Play(playlists[playlist][currentSong]);
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Console.WriteLine(e.Message + " \n" + e.StackTrace);
             }
 
@@ -108,7 +109,8 @@ namespace OpenFeasyo.GameTools.Effects
             }
         }
 
-        public void Destroy() {
+        public void Destroy()
+        {
             _sounds.Clear();
             playlists.Clear();
         }

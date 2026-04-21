@@ -13,6 +13,7 @@
  * within i-DEPOT holding reference number: 122388.
  */
 using GhostlyGame;
+using GhostlyGame.Models;
 using OpenFeasyo.Platform.Controls;
 using OpenFeasyo.Platform.Controls.Drivers;
 
@@ -323,6 +324,8 @@ namespace GhostlyLib.Activities
             _scanButton.Visible = false;
             _connectButton.Visible = false;
             //_connectingLabel.Visible = true;
+            GameSessionInfo.Instance.LeftSensor = _jumpingButton.Text;
+            GameSessionInfo.Instance.RightSensor = _shootingButton.Text;
         }
 
         private void UpdateSensors(ICollection<string> sensors)

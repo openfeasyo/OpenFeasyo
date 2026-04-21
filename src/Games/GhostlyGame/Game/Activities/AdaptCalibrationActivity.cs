@@ -261,9 +261,9 @@ namespace GhostlyLib.Activities
             //TODO - set expected MVC based on initial difficulty level
             float initialPercentage = 0.5f;
 
-            if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
+            if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel != null)
             {
-                initialPercentage = DynamicDifficulty.DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel)._MVCLevel;
+                initialPercentage = DynamicDifficulty.DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel)._MVCLevel;
             }
 
             emgImage1 = new EmgImage(engine.Device, 0.2f);
@@ -432,7 +432,7 @@ namespace GhostlyLib.Activities
                 if (e.EMGSensor[0].Channel == 0)
                 {
                     max0 = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], max0);
-                    GameSessionInfo.Instance.Max0 = max0;
+                    if(GameSessionInfo.Instance.Max1 <= max0) GameSessionInfo.Instance.Max1 = max0;
 
                     float valJumping = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], 0);
                     emgImage1.Percentage = valJumping / max0;
@@ -448,7 +448,7 @@ namespace GhostlyLib.Activities
                 if (e.EMGSensor[0].Channel == 1)
                 {
                     max1 = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], max1);
-                    GameSessionInfo.Instance.Max1 = max1;
+                    if(GameSessionInfo.Instance.Max2 <= max1) GameSessionInfo.Instance.Max2 = max1;
 
                     float valShooting = (float)Math.Max(e.EMGSensor[0].AveragedSample[0], 0);
                     emgImage2.Percentage = valShooting / max1;

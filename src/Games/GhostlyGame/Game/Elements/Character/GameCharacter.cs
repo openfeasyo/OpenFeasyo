@@ -12,9 +12,11 @@
  * by the Free Software Foundation. The Software Source Code is submitted 
  * within i-DEPOT holding reference number: 122388.
  */
+using GhostlyGame.Resources.Localization;
 using GhostlyLib.Animations;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
+using System.Globalization;
 using System.Timers;
 
 namespace GhostlyLib.Elements.Character
@@ -69,7 +71,42 @@ namespace GhostlyLib.Elements.Character
         public CharacterLiveState LiveState { get; set; }
         public ActionMovement ActionMovement { get; set; }
         public AutomaticMovement AutomaticMovement { get; set; }
-        public Instruction Instruction { get; set; }
+
+
+        private long _releaseVoiceCommandTimer;
+        private long _contractVoiceCommandTimer;
+        private Instruction _instruction;
+        public Instruction Instruction
+        {
+            get { return _instruction; }
+            set
+            {
+                if (_instruction != value)
+                {
+                    _instruction = value;
+
+                    long now = Environment.TickCount64;
+                    if (_instruction == Instruction.Release)
+                    {
+                        if (now - _releaseVoiceCommandTimer < 3000)  //3 seconds delay
+                            return;
+
+                        CultureInfo ci = AppResources.Culture;
+                        GameScreen.MusicPlayer.PlayEffect(ci.Name + "/" + "release");
+                        _releaseVoiceCommandTimer = now;
+                    }
+                    else if (_instruction == Instruction.Contract)
+                    {
+                        if (now - _contractVoiceCommandTimer < 3000) //3 seconds delay
+                            return;
+
+                        CultureInfo ci = AppResources.Culture;
+                        GameScreen.MusicPlayer.PlayEffect(ci.Name + "/" + "contract");
+                        _contractVoiceCommandTimer = now;
+                    }
+                }
+            }
+        }
 
         public override Texture2D Sprite { get; }
 

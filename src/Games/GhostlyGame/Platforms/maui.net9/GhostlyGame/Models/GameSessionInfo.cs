@@ -30,8 +30,13 @@ namespace GhostlyGame.Models
         public int LevelsCompleted { get; set; }
         public int RequiredLevels { get { return 3; } }//TODO read this from server??
 
-        public float Max0 { get; set; }
-        public float Max1 { get; set; }
+        private float max1 = float.NegativeInfinity;
+        public float Max1 { get { return max1; } set { if (value != max1) max1 = value; } }
+        private float max2 = float.NegativeInfinity;
+        public float Max2 { get { return max2; } set { if (value != max2) max2 = value; } }
+
+        public string LeftSensor { get; set; }
+        public string RightSensor { get; set; }
 
         public GameSessionInfo()
         {
@@ -53,9 +58,14 @@ namespace GhostlyGame.Models
         }*/
 
         //helper method to ensure only levels 191 - 200 are played, in a loop, i.e. 200 -> 191 ...
-        public int LevelToPlay()
+        /*public int LevelToPlay()
         {
             return GameSessionInfo.firstPossibleLevel + (((int)GameSessionInfo.Instance.SelectedPatient.LevelToPlay - GameSessionInfo.firstPossibleLevel) + this.LevelsCompleted) % (GameSessionInfo.lastPossibleLevel - GameSessionInfo.firstPossibleLevel + 1);
+        }*/
+
+        public void UpdateSelectedPatientsLevelToPlay()
+        {
+            GameSessionInfo.Instance.SelectedPatient.LevelToPlay = GameSessionInfo.firstPossibleLevel + (((int)GameSessionInfo.Instance.SelectedPatient.LevelToPlay - GameSessionInfo.firstPossibleLevel) + this.LevelsCompleted) % (GameSessionInfo.lastPossibleLevel - GameSessionInfo.firstPossibleLevel + 1);
         }
 
         public IEmgSensorInput GetSensorInput()

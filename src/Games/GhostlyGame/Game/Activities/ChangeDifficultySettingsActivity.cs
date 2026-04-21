@@ -32,7 +32,7 @@ namespace GhostlyLib.Activities
             infoLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (infoLabel.Size.X / 2), 70);
             Components.Add(infoLabel);
 
-            Label diffLabel = new Label(GameSessionInfo.Instance.SelectedPatient.DifficultyLevel.ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+            Label diffLabel = new Label(GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel.ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             diffLabel.Position = new Vector2(engine.Screen.ScreenMiddle.X - (diffLabel.Size.X / 2), 150);
             Components.Add(diffLabel);
 
@@ -52,7 +52,7 @@ namespace GhostlyLib.Activities
                     diffLevelButton.Level = diffLevel;
                     diffLevelButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
                     {
-                        GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = diffLevelButton.Level;
+                        GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel = diffLevelButton.Level;
                         StartActivity(new StartGameActivity(engine));
                     };
                     diffLevelButton.Position = (offset + new Vector2(j * (tileWidth + horizontalSpacing), i * (tileHeight + verticalSpacing)));

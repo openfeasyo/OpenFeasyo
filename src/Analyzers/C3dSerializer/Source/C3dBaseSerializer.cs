@@ -101,7 +101,7 @@ namespace FeasyMotion.C3dSerializer
 
             Console.WriteLine("Creating a C3D file: " + _fileName);
             SeriousGames.LastC3DFileCreated = _fileName;
-           
+
             // TODO
             _uploading = new DataUploading();
             _uploading.Id = player == "Default" ? -2 : -1;
@@ -150,6 +150,38 @@ namespace FeasyMotion.C3dSerializer
                 _time.Hour.ToString(),
                 _time.Minute.ToString(),
             });
+
+            try
+            {
+                foreach (var entry in SeriousGames.C3dDataStore)
+                {
+                    if (entry.Value.Type == typeof(Int16))
+                    {
+                        string k = entry.Key;
+                        Int16 v = Convert.ToInt16(entry.Value.Value);
+
+                        _writer.SetParameter<Int16>(k, v);
+                    }
+                    else if (entry.Value.Type == typeof(float))
+                    {
+                        string k = entry.Key;
+                        float v = Convert.ToSingle(entry.Value.Value);
+
+                        _writer.SetParameter<float>(k, v);
+                    }
+                    else if (entry.Value.Type == typeof(string))
+                    {
+                        string k = entry.Key;
+                        string v = Convert.ToString(entry.Value.Value.ToString());
+
+                        _writer.SetParameter<string>(k, v);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+            }
 
             //string [] labels = new string[] { 
             //    "year      ", 

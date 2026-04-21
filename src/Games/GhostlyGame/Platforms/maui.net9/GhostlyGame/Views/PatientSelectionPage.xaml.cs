@@ -71,8 +71,8 @@ public partial class PatientSelectionPage : ContentPage, INotifyPropertyChanged
                 GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms = 3000;
             if (GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms == null)
                 GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms = 3000;
-            if (GameSessionInfo.Instance.SelectedPatient.DifficultyLevel == null)
-                GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 1;
+            if (GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel == null)
+                GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel = 1;
             if (GameSessionInfo.Instance.SelectedPatient.LevelToPlay == null)
                 GameSessionInfo.Instance.SelectedPatient.LevelToPlay = 191;
 

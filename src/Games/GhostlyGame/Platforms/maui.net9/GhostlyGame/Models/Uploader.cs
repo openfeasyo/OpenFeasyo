@@ -20,9 +20,12 @@ namespace GhostlyGame.Models
 
                 //TODO read from appsettings.json
                 //1. connection to DB created by Guillaume
-                _supabaseClient = new Client("https://egihfsmxphqcsjotmhmm.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnaWhmc214cGhxY3Nqb3RtaG1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxMzM0MDksImV4cCI6MjA2MjcwOTQwOX0.T-SPGmTmS0gR2fHvuYgcrcrJRjROk691T9zdMvEH78E", options);
+                //_supabaseClient = new Client("https://egihfsmxphqcsjotmhmm.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnaWhmc214cGhxY3Nqb3RtaG1tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxMzM0MDksImV4cCI6MjA2MjcwOTQwOX0.T-SPGmTmS0gR2fHvuYgcrcrJRjROk691T9zdMvEH78E", options);
                 //2. connection to DB created by Katka (Guillaume's DB was dumped and restored to this DB)
-            //    _supabaseClient = new Client("https://nucyljbytyasorkmtdfn.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51Y3lsamJ5dHlhc29ya210ZGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0NzE2MDksImV4cCI6MjA4NTA0NzYwOX0.JZybF-YlRH6Qcd5K9yT6MPGG0hEZTxmF7EfBxH2w2xI", options);
+                //_supabaseClient = new Client("https://nucyljbytyasorkmtdfn.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51Y3lsamJ5dHlhc29ya210ZGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0NzE2MDksImV4cCI6MjA4NTA0NzYwOX0.JZybF-YlRH6Qcd5K9yT6MPGG0hEZTxmF7EfBxH2w2xI", options);
+                //3. connection to self hosted DB (Guillaume's DB schema was respored here + some columns added)
+                _supabaseClient = new Client("https://ghostlydb.etro.vub.be", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzdXBhYmFzZSIsImlhdCI6MTc3NjE3NTMyMCwiZXhwIjo0OTMxODQ4OTIwLCJyb2xlIjoiYW5vbiJ9.pyg2KqXf8DqmDccpYY8m9K_u6VoBzKLlEZct5o_z0M4", options);
+                                
                 _bucketName = "emg_data";//bucketName;
             }
         }
@@ -103,6 +106,13 @@ namespace GhostlyGame.Models
                 Console.WriteLine($"❌ Upload error: {ex.Message}");
                 return false;
             }
+        }
+
+        public async void UpdatePatientsCurrentDifficultyLevel()
+        {
+            var updatedPatient = GameSessionInfo.Instance.SelectedPatient;
+
+            await _supabaseClient.From<Patient>().Where(x=>x.Id == updatedPatient.Id).Update(updatedPatient);
         }
 
         public async Task SignOut()

@@ -3,15 +3,12 @@ using GhostlyLib.Animations;
 using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics;
 
 namespace GhostlyLib.Elements.Character
 {
     public class SimpleSpaceCharacter : GameCharacter
     {
-        //private const int SIDEMOVEMENTSPEED = -5; //-2 leads to 10s contractions
-        //private const int MOVEMENTSLOWER = 1;
-        //private const int GRAVITY = 3;
-
         #region Private members
         private LevelElements _elements;
 
@@ -32,9 +29,9 @@ namespace GhostlyLib.Elements.Character
         {
             get
             {
-                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
+                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel != null)
                 {
-                    int contractionDuration = DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).contractionDuration;
+                    int contractionDuration = DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel).contractionDuration;
                     return (float)(averageObstacleHeight / contractionDuration) / 1000;
                 }
 
@@ -47,9 +44,9 @@ namespace GhostlyLib.Elements.Character
         {
             get
             {
-                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
+                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel != null)
                 {
-                    int contractionDuration = DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).contractionDuration;
+                    int contractionDuration = DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel).contractionDuration;
                     return (float)(averageObstacleHeight / contractionDuration) / 1000;
                 }
 
@@ -253,6 +250,8 @@ namespace GhostlyLib.Elements.Character
                 if (!((Tile)tilesAbove.ElementAt(0)).TileType.Equals(TileType.Checkpoint))
                 {
                     this.Y = ((Drawable)tilesAbove.ElementAt(0)).Y + ((Tile)tilesAbove.ElementAt(0)).Rectangle.Height + 1;
+                    Debug.WriteLine("Y: " + this.Y);
+                    Console.WriteLine("Y: " + this.Y);
                 }
             }
 
@@ -341,9 +340,9 @@ namespace GhostlyLib.Elements.Character
         {
             //if (this.VerticalMovement.Equals(VerticalMovement.None))
             //{
-            //GameScreen.MusicPlayer.PlayEffect("rocket_moving");
             if (this.ActionMovement != ActionMovement.Left)
             {
+                //GameScreen.MusicPlayer.PlayEffect("rocket_engine");
                 this.ActionMovement = ActionMovement.Left;
                 this.SpeedX = GameScreen.SPEED;
 
@@ -355,9 +354,9 @@ namespace GhostlyLib.Elements.Character
         {
             //if (this.VerticalMovement.Equals(VerticalMovement.None))
             //{
-            //GameScreen.MusicPlayer.PlayEffect("rocket_moving");
             if (this.ActionMovement != ActionMovement.Right)
             {
+                //GameScreen.MusicPlayer.PlayEffect("rocket_engine");
                 this.ActionMovement = ActionMovement.Right;
                 this.SpeedX = GameScreen.SPEED;
 

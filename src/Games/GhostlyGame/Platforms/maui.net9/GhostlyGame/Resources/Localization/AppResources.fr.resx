@@ -151,7 +151,7 @@
     <value>Continuer</value>
   </data>
   <data name="Contract" xml:space="preserve">
-    <value>Contracter</value>
+    <value>Contractez</value>
   </data>
   <data name="ContractMusclesMax3Times" xml:space="preserve">
     <value>Contractez vos muscles maximum 3 fois</value>
@@ -184,7 +184,7 @@
     <value>Ghostly</value>
   </data>
   <data name="Hold" xml:space="preserve">
-    <value>Maintenir</value>
+    <value>Maintenez</value>
   </data>
   <data name="HowToPlayGhostlyGame" xml:space="preserve">
     <value>Comment jouer au jeu Ghostly</value>
@@ -256,7 +256,7 @@
     <value>Recalibrer</value>
   </data>
   <data name="Release" xml:space="preserve">
-    <value>Relâcher</value>
+    <value>Relâchez</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Paramètres</value>
@@ -365,5 +365,11 @@
   </data>
   <data name="ToChangeSettingsEnterPassword" xml:space="preserve">
     <value>Pour modifier les paramètres, saisissez votre mot de passe.</value>
+  </data>
+  <data name="WatchOnline" xml:space="preserve">
+    <value>Regarder en ligne</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Retour</value>
   </data>
 </root>

@@ -1,6 +1,5 @@
 using OpenFeasyo.Platform.Controls;
 using Plugin.BLE.Abstractions.Contracts;
-using System.Diagnostics;
 
 namespace TrignoAvantiCustom;
 
@@ -9,10 +8,9 @@ public class Sensor
     private TrignoAvanti.BufferAssembler _buffer = new TrignoAvanti.BufferAssembler();
 
     private string _name;
-    public string Name {  get => _name; }
+    public string Name { get => _name; }
 
     public int Channel { get; private set; }
-    
 
     public Sensor(string name, int channel)
     {
@@ -20,7 +18,6 @@ public class Sensor
         InitializeSignalProcessing();
         ActivationThreshold = new float[2];
         Channel = channel;
-
     }
 
     private List<Guid> _services = new List<Guid>();
@@ -33,9 +30,8 @@ public class Sensor
     public byte[]? BatteryStatus { get; set; } = null;
     public byte[]? OriginalConfig { get; set; } = null;
     public byte[]? PowerStatus { get; set; } = null;
-    
-    public ICharacteristic? DataStreamer { get; set; } = null;
 
+    public ICharacteristic? DataStreamer { get; set; } = null;
 
     private DateTime _lastTime = DateTime.Now; // marks the beginning the measurement began
     private int _framesReceived = 0; // an increasing count
@@ -46,14 +42,13 @@ public class Sensor
     private const double Scale = 3.3 / 19660800;
     private const int Offset = 32768;
     private bool firstCall = false;
- 
-   
-    
+
+
     internal void ParseSensorData(byte[] data)
     {
         if (firstCall == false)
         {
-            Console.WriteLine("First call from "+ this.Name);
+            Console.WriteLine("First call from " + this.Name);
             firstCall = true;
         }
 
@@ -62,11 +57,10 @@ public class Sensor
         {
             for (int i = 0; i < SAMPLES_PER_PACKET; i++)
             {
-                double d = packet[4 + (i * 2)] << 8 | packet[4 + (i * 2)+1];//BitConverter.ToUInt16(packet, 4 + (i * 2)); // packet[4 + (i * 2)+1] << 8 | packet[4 + (i * 2)];
+                double d = packet[4 + (i * 2)] << 8 | packet[4 + (i * 2) + 1];//BitConverter.ToUInt16(packet, 4 + (i * 2)); // packet[4 + (i * 2)+1] << 8 | packet[4 + (i * 2)];
                 signal[i] = (d - Offset) * Scale;
             }
-            
-            
+
             processPacket(signal, _buffer.LastPacketId);
 
             _framesReceived++;
@@ -81,38 +75,36 @@ public class Sensor
         }
     }
 
-   
+
     private void processPacket(double[] packet, int packetId)
     {
         //var data = new double[][] { packet };
-        
+
         switch (_calibrationState)
         {
             case CalibrationState.Calibrating:
                 Console.WriteLine("CALIBRATING");
                 Train(packet);
-                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(new []{new TrignoEmgSignal(packet,Channel,packetId)}));
+                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(new[] { new TrignoEmgSignal(packet, Channel, packetId) }));
                 break;
             case CalibrationState.Calibrated:
-                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(Process(packet,packetId)));
+                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(Process(packet, packetId)));
                 break;
             default: //CalibrationState.Uncalibrated
-                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(new []{new TrignoEmgSignal(packet,Channel,packetId)} ));
+                OnMuscleActivationChanged(new MuscleActivationChangedEventArgs(new[] { new TrignoEmgSignal(packet, Channel, packetId) }));
                 break;
         }
-        
-       
     }
 
-
     public event EventHandler<MuscleActivationChangedEventArgs> MuscleActivationChanged;
-    private void OnMuscleActivationChanged(MuscleActivationChangedEventArgs args) {
-        if (MuscleActivationChanged != null) {
+    private void OnMuscleActivationChanged(MuscleActivationChangedEventArgs args)
+    {
+        if (MuscleActivationChanged != null)
+        {
             MuscleActivationChanged(this, args);
         }
     }
 
-    
     public override string ToString()
     {
         string FormatBytes(byte[]? data) =>
@@ -213,59 +205,58 @@ public class Sensor
 
     private void Train(double[] rawData)
     {
-            double[] filtered = _bandPassFilters[0].filterData(rawData);
+        double[] filtered = _bandPassFilters[0].filterData(rawData);
 
-            for (int i = 0; i < rawData.Length; i++)
+        for (int i = 0; i < rawData.Length; i++)
+        {
+            //Full wave rectification
+            double value = Math.Abs(filtered[i]);
+
+            if (_baselineDataCounters[0] < _baselineThrowOut)
             {
-                //Full wave rectification
-                double value = Math.Abs(filtered[i]);
-
-
-                if (_baselineDataCounters[0] < _baselineThrowOut)
-                {
-                    //throw these first few away
-                }
-                else if (_baselineDataCounters[0] < _baselineDataLength + _baselineThrowOut)
-                {
-                    _baselineData[0].Add(value);
-                }
-                else if (_baselineDataCounters[0] == _baselineDataLength + _baselineThrowOut)
-                {
-                    _baselineMean[0] = Mean(_baselineData[0]);
-                    _baselineStdev[0] = StandardDeviation(_baselineData[0], _baselineMean[0]);
-
-                    OnCalibrationChanged(CalibrationResults.Finished);
-                    _calibrationState = CalibrationState.Calibrated;
-                }
-                else
-                {
-                    break;
-                }
-
-                _baselineDataCounters[0]++;
+                //throw these first few away
             }
-        
+            else if (_baselineDataCounters[0] < _baselineDataLength + _baselineThrowOut)
+            {
+                _baselineData[0].Add(value);
+            }
+            else if (_baselineDataCounters[0] == _baselineDataLength + _baselineThrowOut)
+            {
+                _baselineMean[0] = Mean(_baselineData[0]);
+                _baselineStdev[0] = StandardDeviation(_baselineData[0], _baselineMean[0]);
+
+                OnCalibrationChanged(CalibrationResults.Finished);
+                _calibrationState = CalibrationState.Calibrated;
+            }
+            else
+            {
+                break;
+            }
+
+            _baselineDataCounters[0]++;
+        }
+
     }
 
     private TrignoEmgSignal[] Process(double[] rawData, int sequenceNumber)
     {
         TrignoEmgSignal[] signals = new TrignoEmgSignal[1];
 
-        TrignoEmgSignal signal = new TrignoEmgSignal(rawData,Channel, sequenceNumber);
+        TrignoEmgSignal signal = new TrignoEmgSignal(rawData, Channel, sequenceNumber);
 
         signal.BpfSample = _bandPassFilters[0].filterData(signal.RawSample);
         FullWaveRectification(signal.BpfSample, signal.FullWaveSample);
         signals[0] = MovingWindowAverageFilter(signal, 0);
-       
+
         //Debug.WriteLine("Signals " + signals);
 
         return signals;
     }
 
-//    private double[] FullWaveRectification(Double value)
-//    {
-//        return new double[] { Math.Abs(value) };
-//    }
+    //    private double[] FullWaveRectification(Double value)
+    //    {
+    //        return new double[] { Math.Abs(value) };
+    //    }
 
     private void FullWaveRectification(double[] values, double[] destination)
     {
@@ -299,7 +290,7 @@ public class Sensor
             double threshold = ActivationThreshold[index] <= 0
                 ? (_baselineMean[index] + (3 * _baselineStdev[index]))
                 : ActivationThreshold[index];
-            
+
             if (currentMean > threshold)
             {
                 onOff = currentMean;

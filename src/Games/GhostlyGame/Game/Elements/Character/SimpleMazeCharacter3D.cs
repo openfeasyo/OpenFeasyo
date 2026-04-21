@@ -22,8 +22,8 @@ namespace GhostlyLib.Elements.Character
             {
                 //if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms != null)
                 //    return (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms / 1000;
-                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
-                    return DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).contractionDuration / 1000;
+                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel != null)
+                    return DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel).contractionDuration / 1000;
 
                 return default_target_duration;
             }
@@ -34,8 +34,8 @@ namespace GhostlyLib.Elements.Character
             {
                 //if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms != null)
                 //    return (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms / 1000;
-                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.DifficultyLevel != null)
-                    return DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).contractionDuration / 1000;
+                if (GameSessionInfo.Instance.SelectedPatient != null && GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel != null)
+                    return DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel).contractionDuration / 1000;
 
 
                 return default_target_duration;

@@ -35,8 +35,8 @@ namespace GhostlyLib.Activities
             TextButton startGameButton = new TextButton(LocalizationResourceManager.Instance["StartGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             //TextButton startGameButton = new TextButton("\uf04b", engine.Content.LoadFont("Fonts/Awesome48"), engine.Device);
             //startGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new SelectWorldActivity(engine)); };
-            startGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine)); };
-            startGameButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - startGameButton.Size/2;
+            //startGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new LimitedSelectLevelActivity(engine)); };
+            //startGameButton.Position = new Vector2(engine.Screen.ScreenMiddle.X, cell * 4) - startGameButton.Size/2;
 
             TextButton calibrateButton = new TextButton(LocalizationResourceManager.Instance["Calibrate"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             calibrateButton.Clicked += (object sender, TextButton.ClickedEventArgs e) => { StartActivity(new StartCalibrationActivity(engine, null)); };

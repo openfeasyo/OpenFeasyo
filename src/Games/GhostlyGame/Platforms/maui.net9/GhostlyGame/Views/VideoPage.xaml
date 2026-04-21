@@ -16,21 +16,43 @@
             FontFamily="Vitamin"
             Padding="10,40,10,20"/>
 
-        <WebView BackgroundColor="Yellow"
-                 WidthRequest="600"
-                 HeightRequest="400"
-                 Source="https://www.youtube.com/embed/uf3yFalBmOw"
-                 Margin="20,20,20,20"/>
+
+        <!--<Image Source="menu_background.png"  WidthRequest="100" HeightRequest="100" Aspect="AspectFit">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnPlayVideoTapped"/>
+            </Image.GestureRecognizers>
+        </Image> -->
+
+        <Label x:Name="statusLabel"
+               Text="Loading video..."
+               HorizontalOptions="Center" />
+
+        <toolkit:MediaElement x:Name="mediaPlayer"
+                              HeightRequest="300"
+                              WidthRequest="500"
+                              ShouldShowPlaybackControls="True"/>
+        <!-- ShowsPlaybackControls="True" -->
+
+        <Button x:Name="WatchOnline"
+                Text="{Binding LocalizationResourceManager[WatchOnline], Mode=OneWay}"
+                Clicked="OnWatchOnline"
+                HorizontalOptions="Center"
+                Background="#0BCEC4"
+                TextColor="White"
+                FontFamily="Vitamin"
+                FontSize="Large"
+                Margin="10"/>
 
         <Button
             x:Name="OkBtn"
-            Text="{Binding LocalizationResourceManager[Ok], Mode=OneWay}" 
+            Text="{Binding LocalizationResourceManager[Back], Mode=OneWay}" 
             Clicked="OnOKClicked"
             HorizontalOptions="Center"
             BackgroundColor="#0BCEC4"
             TextColor="White"
             FontFamily="Vitamin"
-            FontSize="Large"/>
+            FontSize="Large"
+            Margin="10"/>
 
     </VerticalStackLayout>
 </ContentPage>

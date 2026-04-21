@@ -5,6 +5,7 @@ using GhostlyLib.Elements.Character;
 using GhostlyLib.Elements.Enemies;
 using GhostlyLib.Screens;
 using Microsoft.Xna.Framework.Graphics;
+using System.Timers;
 
 namespace GhostlyLib.Level
 {
@@ -66,10 +67,19 @@ namespace GhostlyLib.Level
 
         public override Enemy CreateYellowEnemy(int i, int j, double checkpoint) { return null; }
 
+        private long _primaryLastTrueTime;
+        private long _secondaryLastTrueTime;
+
+        public int OffDelayMs = 100;
+
         public override void ProcessPrimaryAction(bool state)
         {
+            long now = Environment.TickCount64;
+
             if (state)  //contracted muscle
             {
+                _primaryLastTrueTime = now;
+
                 if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Right))
                 {
                     ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
@@ -81,6 +91,9 @@ namespace GhostlyLib.Level
             }
             else
             {
+                if (now - _primaryLastTrueTime < OffDelayMs)
+                    return; // ignore short false
+
                 if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Left))
                 {
                     ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
@@ -90,8 +103,12 @@ namespace GhostlyLib.Level
 
         public override void ProcessSecondaryAction(bool state)
         {
+            long now = Environment.TickCount64;
+
             if (state)  //contracted muscle
             {
+                _secondaryLastTrueTime = now;
+
                 if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Left))
                 {
                     ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
@@ -103,10 +120,29 @@ namespace GhostlyLib.Level
             }
             else
             {
+                if (now - _secondaryLastTrueTime < OffDelayMs)
+                    return;
+
                 if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Right))
                 {
                     ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
                 }
+            }
+        }
+
+        private void PrimaryOffTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Left))
+            {
+                ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
+            }
+        }
+
+        private void SecondaryOffTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            if (GameScreen.GameCharacter.ActionMovement.Equals(ActionMovement.Right))
+            {
+                ((GameCharacter)GameScreen.GameCharacter).StopLeftRightMovement();
             }
         }
     }

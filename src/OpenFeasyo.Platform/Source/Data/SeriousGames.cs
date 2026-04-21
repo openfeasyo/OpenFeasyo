@@ -56,6 +56,19 @@ namespace OpenFeasyo.Platform.Data
         }
     }
 
+
+    public class C3DGhostlyPlusData
+    {
+        public C3DGhostlyPlusData(Type type, object value)
+        {
+            Type = type;
+            Value = value;
+        }
+
+        public Type Type { get; set; }
+        public object Value { get; set; }
+    }
+
     public static class SeriousGames
     {
         public const string HOME_FOLDER = "OpenFeasyo";
@@ -183,6 +196,7 @@ namespace OpenFeasyo.Platform.Data
             set { _currentGame = value; }
         }
 
+        public static Dictionary<string, C3DGhostlyPlusData> C3dDataStore = new Dictionary<string, C3DGhostlyPlusData>();
 
         //private static Account GetCurrentAccount() {
         //string currentContext = GetCurrentContext();

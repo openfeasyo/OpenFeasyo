@@ -32,13 +32,13 @@ namespace GhostlyLib.Activities
 
             if (GameSessionInfo.Instance.LevelsCompleted < GameSessionInfo.Instance.RequiredLevels)
             {
-                int firstLevel = GameSessionInfo.Instance.LevelToPlay();
+                int firstLevel = (int)GameSessionInfo.Instance.SelectedPatient.LevelToPlay;
                 float tileWidth = (engine.Screen.ScreenWidth * 0.9f) / 2;
                 float tileHeight = (engine.Screen.ScreenHeight * 0.75f) / 4;
 
                 LevelSelectionButton StartGameButton = new LevelSelectionButton(LocalizationResourceManager.Instance["StartToPlay"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
                 StartGameButton.Level = firstLevel;
-                StartGameButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
+                StartGameButton.Clicked += async (object sender, TextButton.ClickedEventArgs e) =>
                 {
                     StartActivity(new GamePlayActivity(engine, ((LevelSelectionButton)sender).Level,
                         "<?xml version=\"1.0\" encoding=\"utf - 8\"?><Configuration>" +

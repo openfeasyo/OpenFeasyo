@@ -14,7 +14,6 @@
  */
 using GhostlyGame;
 using GhostlyGame.Models;
-using GhostlyLib.DynamicDifficulty;
 using GhostlyLib.Level;
 using GhostlyLib.Screens;
 using Microsoft.IdentityModel.Tokens;
@@ -34,13 +33,13 @@ namespace GhostlyLib.Activities
         private ComponentCollection _pausePanel;
         private ComponentCollection _gameplayPanel;
         private ComponentCollection _selfAssesmentPanel;
-        private ComponentCollection _bfrVopPanel;
+        //private ComponentCollection _bfrVopPanel;
 
         //private Label _scoreLabel;
         private int score = 0;
 
         private string _configuration;
-
+        private string progress_info;
         private GameScreen _screen;
 
         public GamePlayActivity(UIEngine engine, int level, string intputConfig) : base(engine)
@@ -130,9 +129,22 @@ namespace GhostlyLib.Activities
                         if (GameSessionInfo.Instance.Session != null)
                         {
                             GameSessionInfo.Instance.Session.Rpe_post_session = Int16.Parse(assesmentButton.Text.ToString());
+
+                            // update and upload c3d
+                            UpdateAndUploadC3D(true);
+
+                            if (_screen.Level.GetType() == typeof(SimpleSpaceLevel))
+                            {
+                                int evaluation = ((SimpleSpaceLevel)_screen.Level).Analytics.Evaluate();
+                                _screen.UpdateDifficultyLevel(evaluation);
+                                GameSessionInfo.Instance.UpdateSelectedPatientsLevelToPlay();
+                            }
                         }
                         Components.Remove(_selfAssesmentPanel);
-                        Components.Add(_bfrVopPanel);
+                        //Components.Add(_bfrVopPanel);
+                        //the load level panel needs to be re-loaded, since it's content changes based on session's progress
+                        LoadLevelDonePanel(engine);
+                        Components.Add(_levelDonePanel);
                     };
                     assesmentButton.Position = (offset + new Vector2(x * (tileWidth + horizontalSpacing), y * (tileHeight + verticalSpacing)));
                     assesmentButton.Size = new Vector2(tileWidth, tileHeight);
@@ -148,7 +160,7 @@ namespace GhostlyLib.Activities
             #endregion Self-assesment Rated Perceived Exertion Scale
 
             #region BFR AOP
-            _bfrVopPanel = new ComponentCollection();
+            /*_bfrVopPanel = new ComponentCollection();
             _bfrVopPanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
 
             EmgImage emgImage1 = new EmgImage(engine.Device, 0.2f);
@@ -188,35 +200,24 @@ namespace GhostlyLib.Activities
             TextButton okButton = new TextButton(LocalizationResourceManager.Instance["Ok"].ToString().ToUpper(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             okButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
-                //TODO save values from sliders
                 if (GameSessionInfo.Instance.Session != null)
                 {
                     GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch1 = bfrLeftVOPButton.Percentage;
                     GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch2 = bfrRightVOPButton.Percentage;
 
-                    // write to c3d
-                    UpdateC3D();
+                    // update and upload c3d
+                    UpdateAndUploadC3D(true);
 
-                    //Evaluate the level - > check analytics
-                    /*if (_screen.Level.GetType() == typeof(MazeLevel3D))
-                    {
-                        int evaluation = ((MazeLevel3D)_screen.Level).Analytics.Evaluate();
-
-                        //TODO
-                        //load the c3d file, process it and calculate performance score
-
-                        _screen.UpdateRequiredContractionDuration(evaluation);
-                    }
-                    else */
                     if (_screen.Level.GetType() == typeof(SimpleSpaceLevel))
                     {
                         int evaluation = ((SimpleSpaceLevel)_screen.Level).Analytics.Evaluate();
                         _screen.UpdateDifficultyLevel(evaluation);
+                        GameSessionInfo.Instance.UpdateSelectedPatientsLevelToPlay();
                     }
                 }
 
                 Components.Remove(_bfrVopPanel);
-                //TODO the panel needs to be loaded, since it's content changes based on session
+                //the load level panel needs to be re-loaded, since it's content changes based on session's progress
                 LoadLevelDonePanel(engine);
                 Components.Add(_levelDonePanel);
 
@@ -227,14 +228,14 @@ namespace GhostlyLib.Activities
             Label bfrVopValuesLabel = new Label(LocalizationResourceManager.Instance["AreBFRVOPValuesCorrect"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
             bfrVopValuesLabel.Position = new Vector2((int)((engine.Screen.ScreenWidth - bfrVopValuesLabel.Size.X) / 2), (int)(engine.Screen.ScreenHeight * 0.1));
 
-            _bfrVopPanel.Components.Add(bfrVopValuesLabel);
+            _bfrVopPanel.Components.Add(bfrVopValuesLabel);*/
             #endregion
 
             #region Gameplay Panel
             _gameplayPanel = new ComponentCollection();
             _gameplayPanel.Size = new Vector2(engine.Screen.ScreenWidth, engine.Screen.ScreenHeight);
 
-            TextButton pauseButton = new TextButton("X", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device); //new TextButton("\uf04c", engine.Content.LoadFont("Fonts/Awesome" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
+            TextButton pauseButton = new TextButton("||", engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device); //new TextButton("\uf04c", engine.Content.LoadFont("Fonts/Awesome" + GhostlyGame.MENU_BUTTON_FONT_SIZE), engine.Device);
             pauseButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
                 Components.Remove(_gameplayPanel);
@@ -261,6 +262,10 @@ namespace GhostlyLib.Activities
             exitButton.Clicked += (object sender, TextButton.ClickedEventArgs e) =>
             {
                 _screen.Exit();
+
+                _screen.GameInteruptedByUser();
+                UpdateAndUploadC3D(false);  //no updates
+
                 //TODO for Ghostly+ study
                 if (GameSessionInfo.Instance.SelectedPatient != null)
                 {
@@ -306,6 +311,10 @@ namespace GhostlyLib.Activities
                 Label turnOffTheGame = new Label(LocalizationResourceManager.Instance["TurnOffTheGame"].ToString(), engine.Content.LoadFont(GhostlyGame.MENU_BUTTON_FONT + GhostlyGame.MENU_BUTTON_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
                 turnOffTheGame.Position = new Vector2(engine.Screen.ScreenMiddle.X - (turnOffTheGame.Size.X / 2), engine.Screen.ScreenMiddle.Y + 35);
                 _levelDonePanel.Components.Add(turnOffTheGame);
+
+                //Label progressInfo = new Label(progress_info, engine.Content.LoadFont(GhostlyGame.MENU_STANDARD_FONT + GhostlyGame.MENU_SMALL_FONT_SIZE), GhostlyGame.MENU_FONT_COLOR);
+                //progressInfo.Position = new Vector2(engine.Screen.ScreenMiddle.X - (progressInfo.Size.X / 2), engine.Screen.ScreenHeight - progressInfo.Size.Y - 10);
+                //_levelDonePanel.Components.Add(progressInfo);
             }
             else
             {
@@ -359,7 +368,7 @@ namespace GhostlyLib.Activities
             }
         }
 
-        private void UpdateC3D()
+        private void UpdateAndUploadC3D(bool update)
         {
             if (GameSessionInfo.Instance.Session == null || GameSessionInfo.Instance.SelectedPatient == null)
             {
@@ -376,100 +385,92 @@ namespace GhostlyLib.Activities
                 return;
             }
 
-            // read file
-            C3dReader reader = new C3dReader();
-
-            if (!reader.Open(_c3dFile))
+            if (update)
             {
-                throw new ApplicationException("Could not open file " + (_c3dFile) + "!");
-            }
+                // read file
+                C3dReader reader = new C3dReader();
 
-            //existing file is loaded with all it's header, parameters, events, and data
-            C3dWriter writer = new C3dWriter(reader, false);
-
-            //add prameters
-            writer.SetParameter<float>("INFO:BFR_TARGET_VOP_PERCENTAGE_CH1", GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch1);
-            writer.SetParameter<float>("INFO:BFR_TARGET_VOP_PERCENTAGE_CH2", GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch2);
-            //writer.SetParameter<float>("INFO:target_contractions_ch1)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh1Ms);
-            //writer.SetParameter<float>("INFO:target_contractions_ch2)", (float)GameSessionInfo.Instance.SelectedPatient.CurrentTargetCh2Ms);
-
-            float contractionDuration = (float)DifficultyLevelStateSpace.Instance.getLevelDefinition((int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel).contractionDuration / 1000;
-
-            writer.SetParameter<float>("INFO:TARGET_CONTRACTIONS_CH1)", (float)contractionDuration);
-            writer.SetParameter<float>("INFO:TARGET_CONTRACTIONS_CH2)", (float)contractionDuration);
-
-            writer.SetParameter<Int16>("INFO:RPE_POST_SESSION", GameSessionInfo.Instance.Session.Rpe_post_session);
-
-            int difficultyLevel = (int)GameSessionInfo.Instance.SelectedPatient.DifficultyLevel;
-
-            writer.SetParameter<Int16>("INFO:DIFFICULTY_LEVEL", (Int16)difficultyLevel);
-            writer.SetParameter<float>("INFO:DIFFICULTY_LEVEL_MVC", DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel)._MVCLevel);
-            writer.SetParameter<Int16>("INFO:DIFFICULTY_LEVEL_CONTRACTION_DURATION", (Int16)DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel).contractionDuration);
-            writer.SetParameter<Int16>("INFO:DIFFICULTY_LEVEL_REST_DURATION", (Int16)DifficultyLevelStateSpace.Instance.getLevelDefinition(difficultyLevel).restDuration);
-
-            IEmgSensorInput _emgInput = GameSessionInfo.Instance.GetSensorInput();
-            writer.SetParameter<float>("INFO:ACTIVATION_THRESHOLD_CH1", _emgInput.ActivationThreshold[0]);
-            writer.SetParameter<float>("INFO:ACTIVATION_THRESHOLD_CH2", _emgInput.ActivationThreshold[1]);
-
-            //TODO rethink this!!!!!!!!!!!!!!!!!!!!!!
-            var new_c3dFile = SeriousGames.LastC3DFileCreated;
-            new_c3dFile = new_c3dFile.Replace(".c3d", ".new.c3d");
-            writer.Open(new_c3dFile);
-            //float[] analogData = new float[reader.AnalogLabels.Count * reader.AnalogChannels];
-            //short[] analogData_int = new short[reader.AnalogLabels.Count * reader.AnalogChannels];
-
-            for (int i = 0; i < reader.FramesCount; i++)
-            {
-                Vector4[] points = reader.ReadFrame();
-                AnalogDataArray adr = reader.AnalogData;
-
-                if (reader.IsFloat)
+                if (!reader.Open(_c3dFile))
                 {
-                    writer.WriteFloatFrame(points);
+                    throw new ApplicationException("Could not open file " + (_c3dFile) + "!");
+                }
 
-                    float[] analogData = new float[reader.AnalogLabels.Count];
+                //existing file is loaded with all it's header, parameters, events, and data
+                C3dWriter writer = new C3dWriter(reader, false);
 
-                    for (int j = 0; j < reader.AnalogChannels; j++)
+                //add prameters
+                //KATKA - BFR screen was at the end removed, thus nothing to save
+                //if (GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch1 != null && GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch2 != null)
+                //{
+                //    writer.SetParameter<float>("INFO:BFR_TARGET_VOP_PERCENTAGE_CH1", GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch1);
+                //    writer.SetParameter<float>("INFO:BFR_TARGET_VOP_PERCENTAGE_CH2", GameSessionInfo.Instance.Session.BFR_target_vop_percentage_ch2);
+                //}
+
+                if (GameSessionInfo.Instance.Session.Rpe_post_session != null)
+                {
+                    writer.SetParameter<Int16>("INFO:RPE_POST_SESSION", GameSessionInfo.Instance.Session.Rpe_post_session);
+                }
+
+                var new_c3dFile = SeriousGames.LastC3DFileCreated;
+                new_c3dFile = new_c3dFile.Replace(".c3d", ".new.c3d");
+                writer.Open(new_c3dFile);
+
+                for (int i = 0; i < reader.FramesCount; i++)
+                {
+                    Vector4[] points = reader.ReadFrame();
+                    AnalogDataArray adr = reader.AnalogData;
+
+                    if (reader.IsFloat)
                     {
-                        for (int k = 0; k < reader.AnalogLabels.Count; k++)
-                        {
-                            analogData[k] = reader.AnalogData.Data[k, j];
-                        }
+                        writer.WriteFloatFrame(points);
 
-                        writer.WriteFloatAnalogData(analogData);
+                        float[] analogData = new float[reader.AnalogLabels.Count];
+
+                        for (int j = 0; j < reader.AnalogChannels; j++)
+                        {
+                            for (int k = 0; k < reader.AnalogLabels.Count; k++)
+                            {
+                                analogData[k] = reader.AnalogData.Data[k, j];
+                            }
+
+                            writer.WriteFloatAnalogData(analogData);
+                        }
+                    }
+                    else if (reader.IsInterger)
+                    {
+                        writer.WriteIntFrame(points);
+
+                        short[] analogData = new short[reader.AnalogLabels.Count];
+
+                        for (int j = 0; j < reader.AnalogChannels; j++)
+                        {
+                            for (int k = 0; k < reader.AnalogLabels.Count; k++)
+                            {
+                                analogData[k] = (short)reader.AnalogData.Data[k, j];
+                            }
+
+                            writer.WriteIntAnalogData(analogData);
+                        }
                     }
                 }
-                else if (reader.IsInterger)
-                {
-                    writer.WriteIntFrame(points);
 
-                    short[] analogData = new short[reader.AnalogLabels.Count];
+                //close reader
+                reader.Close();
 
-                    for (int j = 0; j < reader.AnalogChannels; j++)
-                    {
-                        for (int k = 0; k < reader.AnalogLabels.Count; k++)
-                        {
-                            analogData[k] = (short)reader.AnalogData.Data[k, j];
-                        }
+                //re-write the file
+                writer.Close();
 
-                        writer.WriteIntAnalogData(analogData);
-                    }
-                }
+                //re write the old with new file
+                System.IO.File.Move(new_c3dFile, _c3dFile, true);
             }
 
-            //close reader
-            reader.Close();
+            //update current difficulty level in patient's table
+            GameSessionInfo.Instance.Uploader.UpdatePatientsCurrentDifficultyLevel();
 
-            //re-write the file
-            writer.Close();
-
-            //re write the old with new file
-            System.IO.File.Move(new_c3dFile, _c3dFile, true);
-
-            //upload c3d file to the server
+            //upload c3d file to the server - whether there was update or not
             Task<bool> t = GameSessionInfo.Instance.Uploader.UploadC3DFile(_c3dFile, GameSessionInfo.Instance.SelectedPatient.PatientCode);
         }
-
+     
         public override void OnCursorDown(Vector2 pos)
         {
             base.OnCursorDown(pos);
@@ -520,9 +521,7 @@ namespace GhostlyLib.Activities
             else if (e.Reason == GameFinishedEventArgs.EndReason.GoalAccomplished)
             {
                 Components.Remove(_gameplayPanel);
-                //Components.Add(_levelDonePanel);
                 Components.Add(_selfAssesmentPanel);
-                //_scoreLabel.Text = LocalizationResourceManager.Instance["Score"].ToString() + ": " + e.Score;
                 score = e.Score;
             }
         }
@@ -565,7 +564,6 @@ namespace GhostlyLib.Activities
                     StartActivity(new MainMenuActivity(_engine));
                     _engine.MusicPlayer.Play("menu");
                 }
-
             }
         }
 

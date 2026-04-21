@@ -100,8 +100,8 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
 
                 GameSessionInfo.Instance.SelectedPatient = p.First();
 
-                if (GameSessionInfo.Instance.SelectedPatient.DifficultyLevel == null)
-                    GameSessionInfo.Instance.SelectedPatient.DifficultyLevel = 1;
+                if (GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel == null)
+                    GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel = 1;
                 if (GameSessionInfo.Instance.SelectedPatient.LevelToPlay == null)
                     GameSessionInfo.Instance.SelectedPatient.LevelToPlay = 191;
 

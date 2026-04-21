@@ -298,8 +298,6 @@ namespace OpenFeasyo.Platform.Controls.Analysis
             }
         }
 
-
-
         public void Run()
         {
             _bw.RunWorkerAsync();
@@ -313,8 +311,5 @@ namespace OpenFeasyo.Platform.Controls.Analysis
                 Monitor.Pulse(_lockObject);
             }
         }
-
-
-
     }
 }

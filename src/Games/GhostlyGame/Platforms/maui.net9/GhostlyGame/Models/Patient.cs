@@ -1,5 +1,5 @@
-﻿using Supabase.Postgrest.Models;
-using Supabase.Postgrest.Attributes;
+﻿using Supabase.Postgrest.Attributes;
+using Supabase.Postgrest.Models;
 
 
 namespace GhostlyGame.Models
@@ -38,19 +38,6 @@ namespace GhostlyGame.Models
         [Column("active")]
         public bool Active { get; set; }
 
-        // NOTE: These fields don't exist in the current database schema
-        // They're kept here for backward compatibility but will be null
-        // The actual schema uses: patient_code, age_group, gender, pathology_category
-
-        [Column("first_name")]
-        public string FirstName { get; set; }
-
-        [Column("last_name")]
-        public string LastName { get; set; }
-
-        [Column("date_of_birth")]
-        public DateTime? DateOfBirth { get; set; }
-
         [Column("current_mvc75_ch1")]
         public float? CurrentMvc75Ch1 { get; set; }
 
@@ -63,11 +50,8 @@ namespace GhostlyGame.Models
         [Column("current_target_ch2_ms")]
         public float? CurrentTargetCh2Ms { get; set; }
 
-        [Column("last_assesment_date")]
-        public DateTime? LastAssesmentDate { get; set; }
-
-        [Column("difficulty_level")]
-        public int? DifficultyLevel { get; set; }
+        [Column("current_difficulty_level")]
+        public int? CurrentDifficultyLevel { get; set; }
 
         [Column("level_to_play")]
         public int? LevelToPlay { get; set; }

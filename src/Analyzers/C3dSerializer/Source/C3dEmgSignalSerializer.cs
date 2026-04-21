@@ -14,7 +14,6 @@
  */
 using OpenFeasyo.Platform.Controls;
 using OpenFeasyo.Platform.Controls.Analysis;
-using System.Diagnostics;
 
 namespace FeasyMotion.C3dSerializer
 {
@@ -22,6 +21,11 @@ namespace FeasyMotion.C3dSerializer
     {
         private string[] labels;
         private new float[] _analogData = null;
+
+        private const int UPDATE_CYCLE_MS = 1000;
+        private const int SAMPLES_IN_FRAME = 15;
+        private int _updateCountdown = (int)(UPDATE_CYCLE_MS / SAMPLES_IN_FRAME);
+
 
         internal override string GetTypeName()
         {
@@ -47,7 +51,7 @@ namespace FeasyMotion.C3dSerializer
             _writer.Header.ScaleFactor = -1;
             _writer.SetParameter<float>("POINT:SCALE", -1);
             _writer.SetParameter<Int16>("POINT:DATA_TYPE", 3);
-            
+
             _writer.Open(_fileName);
         }
 
@@ -55,18 +59,19 @@ namespace FeasyMotion.C3dSerializer
         {
             Destroy();
         }
-       
+
         public void OnEmgSignalChanged(IEmgSignal[] emgSignal, IGame game)
         {
             if (_writer == null)
-                return;           
+                return;
             if (emgSignal[0].Channel == 0)
             {
-                if(!channel0present){
+                if (!channel0present)
+                {
                     for (int i = 0; i < emgSignal[0].RawSample.Length; i++)
                     {
-                        signal0Buffer[i] =  Convert.ToSingle((double)emgSignal[0].RawSample[i]);
-                        onoff0Buffer[i] = Convert.ToSingle((double) emgSignal[0].OnOff[i]);
+                        signal0Buffer[i] = Convert.ToSingle((double)emgSignal[0].RawSample[i]);
+                        onoff0Buffer[i] = Convert.ToSingle((double)emgSignal[0].OnOff[i]);
                     }
                     channel0present = true;
                 }
@@ -77,11 +82,12 @@ namespace FeasyMotion.C3dSerializer
             }
             if (emgSignal[0].Channel == 1)
             {
-                if(!channel1present){
+                if (!channel1present)
+                {
                     for (int i = 0; i < emgSignal[0].RawSample.Length; i++)
                     {
-                        signal1Buffer[i] =  Convert.ToSingle((double)emgSignal[0].RawSample[i]);
-                        onoff1Buffer[i] = Convert.ToSingle((double) emgSignal[0].OnOff[i]);
+                        signal1Buffer[i] = Convert.ToSingle((double)emgSignal[0].RawSample[i]);
+                        onoff1Buffer[i] = Convert.ToSingle((double)emgSignal[0].OnOff[i]);
                     }
                     channel1present = true;
                 }
@@ -90,20 +96,25 @@ namespace FeasyMotion.C3dSerializer
                     Console.WriteLine("Channel 1 double sequence");
                 }
             }
-            
-            if(!channel1present || !channel1present) return;
+
+            if (!channel0present || !channel1present) return;
 
             channel0present = false;
             channel1present = false;
-            
-            
+
             writeGameObjects(game, 0);
 
             _writer.WriteFloatFrame(_currentData);
             WriteAnalogData(game, emgSignal);
-            Debug.WriteLine("...WriteAnalogData...");
+
+            _updateCountdown--;
+            if (_updateCountdown <= 0)
+            {
+                _updateCountdown = (int)(UPDATE_CYCLE_MS / SAMPLES_IN_FRAME);
+                _writer.UpdateFramesCount();
+            }
         }
-        
+
         // EMG buffers
         private float[] signal0Buffer = new float[15];
         private float[] signal1Buffer = new float[15];
@@ -117,19 +128,18 @@ namespace FeasyMotion.C3dSerializer
 
         private void WriteAnalogData(IGame game, IEmgSignal[] emgSignal)
         {
-           
-            
-            if (emgSignal[0].RawSample.Length != 15) {
+            if (emgSignal[0].RawSample.Length != 15)
+            {
                 throw new ApplicationException("ANALOG:RATE must be 15");
             }
-            for(int i = 0; i<signal0Buffer.Length; i++) { 
-
+            for (int i = 0; i < signal0Buffer.Length; i++)
+            {
                 int pos = 0;
                 _analogData[pos++] = signal0Buffer[i];
                 _analogData[pos++] = signal1Buffer[i];
-                _analogData[pos++] = onoff0Buffer[i]; 
+                _analogData[pos++] = onoff0Buffer[i];
                 _analogData[pos++] = onoff1Buffer[i];
-                
+
                 foreach (string s in game.GameStream.Keys)
                 {
                     _analogData[pos++] = (short)game.GameStream.GetValue(s);

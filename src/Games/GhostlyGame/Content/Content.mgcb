@@ -2346,6 +2346,70 @@
 /processorParam:Quality=Best
 /build:Sounds/win.wav
 
+
+
+#begin Sounds/rocket_engine.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/rocket_engine.wav
+
+#begin Sounds/en-EN/contract.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/en-EN/contract.wav
+
+#begin Sounds/en-EN/hold.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/en-EN/hold.wav
+
+#begin Sounds/en-EN/release.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/en-EN/release.wav
+
+#begin Sounds/fr-FR/contract.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/fr-FR/contract.wav
+
+#begin Sounds/fr-FR/hold.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/fr-FR/hold.wav
+
+#begin Sounds/fr-FR/release.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/fr-FR/release.wav
+
+#begin Sounds/nl-NL/contract.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/nl-NL/contract.wav
+
+#begin Sounds/nl-NL/hold.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/nl-NL/hold.wav
+
+#begin Sounds/nl-NL/release.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/nl-NL/release.wav
+
+
+
 #begin Textures/vubetrologo.png
 /importer:TextureImporter
 /processor:TextureProcessor

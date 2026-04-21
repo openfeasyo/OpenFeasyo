@@ -366,4 +366,10 @@
   <data name="ToChangeSettingsEnterPassword" xml:space="preserve">
     <value>To Change Settings Enter Password</value>
   </data>
+  <data name="WatchOnline" xml:space="preserve">
+    <value>Watch Online</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
 </root>

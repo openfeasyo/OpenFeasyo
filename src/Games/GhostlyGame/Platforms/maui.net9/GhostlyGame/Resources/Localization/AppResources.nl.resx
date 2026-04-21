@@ -151,7 +151,7 @@
     <value>Doorgaan</value>
   </data>
   <data name="Contract" xml:space="preserve">
-    <value>Aanspannen</value>
+    <value>Spant aan</value>
   </data>
   <data name="ContractMusclesMax3Times" xml:space="preserve">
     <value>Span je spieren maximaal 3 keer aan</value>
@@ -184,7 +184,7 @@
     <value>Ghostly</value>
   </data>
   <data name="Hold" xml:space="preserve">
-    <value>Vasthouden</value>
+    <value>Houdt vast</value>
   </data>
   <data name="HowToPlayGhostlyGame" xml:space="preserve">
     <value>Hoe speel je het Ghostly+ spel</value>
@@ -256,7 +256,7 @@
     <value>Herkalibreren</value>
   </data>
   <data name="Release" xml:space="preserve">
-    <value>Ontspannen</value>
+    <value>Ontspan</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Instellingen</value>
@@ -365,5 +365,11 @@
   </data>
   <data name="ToChangeSettingsEnterPassword" xml:space="preserve">
     <value>Om de instellingen te wijzigen, voert u het wachtwoord in.</value>
+  </data>
+  <data name="WatchOnline" xml:space="preserve">
+    <value>online bekijken</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Terug</value>
   </data>
 </root>
