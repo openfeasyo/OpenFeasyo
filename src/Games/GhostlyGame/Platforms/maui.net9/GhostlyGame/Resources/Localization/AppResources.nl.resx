@@ -151,7 +151,7 @@
     <value>Doorgaan</value>
   </data>
   <data name="Contract" xml:space="preserve">
-    <value>Spant aan</value>
+    <value>Span aan</value>
   </data>
   <data name="ContractMusclesMax3Times" xml:space="preserve">
     <value>Span je spieren maximaal 3 keer aan</value>
@@ -184,7 +184,7 @@
     <value>Ghostly</value>
   </data>
   <data name="Hold" xml:space="preserve">
-    <value>Houdt vast</value>
+    <value>Houd vast</value>
   </data>
   <data name="HowToPlayGhostlyGame" xml:space="preserve">
     <value>Hoe speel je het Ghostly+ spel</value>
@@ -371,5 +371,17 @@
   </data>
   <data name="Back" xml:space="preserve">
     <value>Terug</value>
+  </data>
+  <data name="BfrBandsVideo" xml:space="preserve">
+    <value>BFR Banden</value>
+  </data>
+  <data name="HowToUse" xml:space="preserve">
+    <value>Hoe gebruik ik ...</value>
+  </data>
+  <data name="BfrAppVideo" xml:space="preserve">
+    <value>BFR App</value>
+  </data>
+  <data name="EmgSensorsVideo" xml:space="preserve">
+    <value>Sensoren</value>
   </data>
 </root>

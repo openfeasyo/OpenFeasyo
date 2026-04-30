@@ -257,13 +257,11 @@ namespace GhostlyLib.Screens
         private void DrawTextsForSimpleSpaceLevel(SpriteBatch spriteBatch, GameTime gameTime)
         {
             Vector2 textOrigin = new Vector2(0, 0);
-            float position = 200;
             float textRotation = MathHelper.ToRadians(90);
 
             textOrigin = this.Font[1].MeasureString(LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString() + "  /  " + GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel.ToString()) / 2;
-            spriteBatch.DrawString(Font[1], LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString() + "  /  " + GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel.ToString(), new Vector2(40, 60), Color.FromNonPremultiplied(11, 206, 196, 256), textRotation, textOrigin, 1.0f, SpriteEffects.None, 0.5f); // GhostlyGame.MENU_FONT_COLOR);
+            spriteBatch.DrawString(Font[1], LocalizationResourceManager.Instance["Level"].ToString() + ": " + this.CurrentLevel.ToString() + "  /  " + GameSessionInfo.Instance.SelectedPatient.CurrentDifficultyLevel.ToString(), new Vector2(40, 100), Color.FromNonPremultiplied(11, 206, 196, 256), textRotation, textOrigin, 1.0f, SpriteEffects.None, 0.5f); // GhostlyGame.MENU_FONT_COLOR);
 
-            position += 300;
             textOrigin = this.Font[1].MeasureString(LocalizationResourceManager.Instance["Score"].ToString() + ": " + GameCharacter.Score.ToString()) / 2;
             spriteBatch.DrawString(Font[1], LocalizationResourceManager.Instance["Score"].ToString() + ": " + GameCharacter.Score.ToString(), new Vector2(40, _screen.ScreenHeight - 200), Color.FromNonPremultiplied(11, 206, 196, 256), textRotation, textOrigin, 1.0f, SpriteEffects.None, 0.5f);
 

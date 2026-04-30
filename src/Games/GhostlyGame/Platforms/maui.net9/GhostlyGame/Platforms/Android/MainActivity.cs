@@ -54,6 +54,7 @@ public class MainActivity : MauiAppCompatActivity
         mPermissionList.Add(Manifest.Permission.AccessFineLocation);
         mPermissionList.Add(Manifest.Permission.ReadExternalStorage);
         mPermissionList.Add(Manifest.Permission.WriteExternalStorage);
+        mPermissionList.Add(Manifest.Permission.ReadExternalStorage);
 
         ActivityCompat.RequestPermissions(this, mPermissionList.ToArray(), REQUEST_PERMISSION_CODE);
     }

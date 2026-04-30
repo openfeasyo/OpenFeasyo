@@ -5,7 +5,7 @@ namespace GhostlyLib.DynamicDifficulty
         public int contractionDuration;
         public int restDuration;
         public float _MVCLevel;
-    }
+    } 
 
     public class DifficultyLevelStateSpace
     {

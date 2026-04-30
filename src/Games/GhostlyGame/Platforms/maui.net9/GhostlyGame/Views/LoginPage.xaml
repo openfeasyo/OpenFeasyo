@@ -18,14 +18,14 @@
         <Entry x:Name="username"
                Placeholder="{Binding LocalizationResourceManager[EnterUsername], Mode=OneWay}"
                PlaceholderColor="#393939"
-               Text="{Binding Username}"
+               Text=""
                FontSize="25"/>
 
         <Entry x:Name="password"
                Placeholder="{Binding LocalizationResourceManager[EnterPassword], Mode=OneWay}"
                PlaceholderColor="#393939"
                IsPassword="True"
-               Text="{Binding Password}"
+               Text=""
                FontSize="25"/>
 
         <Button

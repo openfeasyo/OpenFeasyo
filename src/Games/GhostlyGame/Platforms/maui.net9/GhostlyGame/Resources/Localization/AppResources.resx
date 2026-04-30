@@ -372,4 +372,16 @@
   <data name="Back" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="BfrBandsVideo" xml:space="preserve">
+    <value>BFR Bands</value>
+  </data>
+  <data name="HowToUse" xml:space="preserve">
+    <value>How to use ...</value>
+  </data>
+  <data name="BfrAppVideo" xml:space="preserve">
+    <value>BFR App</value>
+  </data>
+  <data name="EmgSensorsVideo" xml:space="preserve">
+    <value>Emg Sensors</value>
+  </data>
 </root>

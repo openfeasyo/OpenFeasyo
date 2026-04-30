@@ -122,11 +122,15 @@ public class GhostlyGameActivity : AndroidGameActivity
             //Request for location permissions based on your actual needs
             mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
             mPermissionList.Add(Manifest.Permission.AccessFineLocation);
+            mPermissionList.Add(Manifest.Permission.ReadExternalStorage);
+            mPermissionList.Add(Manifest.Permission.ManageExternalStorage);
         }
         else
         {
             mPermissionList.Add(Manifest.Permission.AccessCoarseLocation);
             mPermissionList.Add(Manifest.Permission.AccessFineLocation);
+            mPermissionList.Add(Manifest.Permission.ReadExternalStorage);
+            mPermissionList.Add(Manifest.Permission.ManageExternalStorage);
         }
 
         ActivityCompat.RequestPermissions(this, mPermissionList.ToArray(), REQUEST_PERMISSION_CODE);

@@ -8,13 +8,13 @@
              Title="">
     <VerticalStackLayout>
         <Label 
-            Text="{Binding LocalizationResourceManager[HowToPlayGhostlyGame], Mode=OneWay}"
+            Text="{Binding LocalizationResourceManager[HowToUse], Mode=OneWay}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
             TextColor="#0BCEC4"
-            FontSize="60"
+            FontSize="50"
             FontFamily="Vitamin"
-            Padding="10,40,10,20"/>
+            Padding="0"/>
 
 
         <!--<Image Source="menu_background.png"  WidthRequest="100" HeightRequest="100" Aspect="AspectFit">
@@ -23,17 +23,51 @@
             </Image.GestureRecognizers>
         </Image> -->
 
-        <Label x:Name="statusLabel"
+        <!--<Label x:Name="statusLabel"
                Text="Loading video..."
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center" />-->
 
         <toolkit:MediaElement x:Name="mediaPlayer"
-                              HeightRequest="300"
-                              WidthRequest="500"
-                              ShouldShowPlaybackControls="True"/>
+                              HeightRequest="500"
+                              WidthRequest="900"
+                              ShouldShowPlaybackControls="True"
+                              ShouldAutoPlay="True"
+                              ShouldKeepScreenOn="True"
+                              Aspect="AspectFit"
+                              IsVisible="False"/>
+        
         <!-- ShowsPlaybackControls="True" -->
 
-        <Button x:Name="WatchOnline"
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <Button Text="{Binding LocalizationResourceManager[BfrBandsVideo], Mode=OneWay}" 
+                    Clicked="OnBfrBandsVideo"
+                    HorizontalOptions="Center"
+                    Background="#0BCEC4"
+                    TextColor="White"
+                    FontFamily="Vitamin"
+                    FontSize="Large"
+                    Margin="10"/>
+
+            <Button Text="{Binding LocalizationResourceManager[BfrAppVideo], Mode=OneWay}" 
+                    Clicked="OnBfrAppVideo"
+                    HorizontalOptions="Center"
+                    Background="#0BCEC4"
+                    TextColor="White"
+                    FontFamily="Vitamin"
+                    FontSize="Large"
+                    Margin="10"/>
+
+            <Button Text="{Binding LocalizationResourceManager[EmgSensorsVideo], Mode=OneWay}" 
+                    Clicked="OnEmgVideo"
+                    HorizontalOptions="Center"
+                    Background="#0BCEC4"
+                    TextColor="White"
+                    FontFamily="Vitamin"
+                    FontSize="Large"
+                    Margin="10"/>
+        </HorizontalStackLayout>
+
+        <!-- <Button x:Name="WatchOnline"
                 Text="{Binding LocalizationResourceManager[WatchOnline], Mode=OneWay}"
                 Clicked="OnWatchOnline"
                 HorizontalOptions="Center"
@@ -41,9 +75,9 @@
                 TextColor="White"
                 FontFamily="Vitamin"
                 FontSize="Large"
-                Margin="10"/>
+                Margin="10"/> -->
 
-        <Button
+        <!--<Button
             x:Name="OkBtn"
             Text="{Binding LocalizationResourceManager[Back], Mode=OneWay}" 
             Clicked="OnOKClicked"
@@ -52,7 +86,7 @@
             TextColor="White"
             FontFamily="Vitamin"
             FontSize="Large"
-            Margin="10"/>
+            Margin="10"/> -->
 
     </VerticalStackLayout>
 </ContentPage>

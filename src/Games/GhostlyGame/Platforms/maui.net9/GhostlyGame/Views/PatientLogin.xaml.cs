@@ -124,6 +124,7 @@ public partial class PatientLogin : ContentPage, INotifyPropertyChanged
 
     private async void OnNoClicked(object sender, EventArgs e)
     {
+        SecureStorage.Default.Remove("patient");
         NavigateToLogin();
     }
 
